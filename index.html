@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>お金のプロのAI相棒診断｜金融AIカレッジ</title>
+<meta name="description" content="AIと組んだら、あなたの数字はどこから伸びる？ 全5問・約1分・登録不要。5タイプの動物があなたの持ち味とAIの任せどころを教えます。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="お金のプロのAI相棒診断">
+<meta property="og:description" content="AIと組んだら、あなたの数字はどこから伸びる？ 全5問・約1分・登録不要。">
+<meta property="og:url" content="https://mm738966m-boop.github.io/ai-aibou-shindan/">
+<meta property="og:image" content="https://mm738966m-boop.github.io/ai-aibou-shindan/og.png">
+<meta property="og:site_name" content="金融AIカレッジ">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐘</text></svg>">
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap">
+<style>
+:root{
+  --bg:#FBF8F3;
+  --card:#FFFFFF;
+  --ink:#2C3340;
+  --sub:#5B6480;
+  --line:#E7E0D4;
+  --soft:#F2EDE3;
+  --navy:#2C3340;
+  --shadow:0 2px 14px rgba(44,51,64,.08);
+  --lift:0 8px 26px rgba(44,51,64,.13);
+  --zou:#6C8AAE;      --zou-d:#4E6B89;   --zou-l:#AFC5D9;
+  --kirin:#DFA23C;    --kirin-d:#A97516; --kirin-l:#F1D79A;
+  --beaver:#B87355;   --beaver-d:#8D5038;--beaver-l:#E2B7A1;
+  --penguin:#4E8A86;  --penguin-d:#356461;--penguin-l:#A6D0CC;
+  --inu:#D8796B;      --inu-d:#AC5245;   --inu-l:#F0B7AD;
+  --hl:#4E6B89;
+}
+/* タイプ配色（結果ページ全体のトーン） */
+.t-zou{--tc:#6C8AAE;--tc-d:#4E6B89}
+.t-kirin{--tc:#DFA23C;--tc-d:#A97516}
+.t-beaver{--tc:#B87355;--tc-d:#8D5038}
+.t-penguin{--tc:#4E8A86;--tc-d:#356461}
+.t-inu{--tc:#D8796B;--tc-d:#AC5245}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--hl:#A9C3DB}
+  :root:not([data-theme="light"]) .t-zou{--tc-d:#A9C3DB}
+  :root:not([data-theme="light"]) .t-kirin{--tc-d:#F0C87A}
+  :root:not([data-theme="light"]) .t-beaver{--tc-d:#E3B49E}
+  :root:not([data-theme="light"]) .t-penguin{--tc-d:#9ED0CB}
+  :root:not([data-theme="light"]) .t-inu{--tc-d:#F1B0A4}
+}
+:root[data-theme="dark"]{--hl:#A9C3DB}
+:root[data-theme="dark"] .t-zou{--tc-d:#A9C3DB}
+:root[data-theme="dark"] .t-kirin{--tc-d:#F0C87A}
+:root[data-theme="dark"] .t-beaver{--tc-d:#E3B49E}
+:root[data-theme="dark"] .t-penguin{--tc-d:#9ED0CB}
+:root[data-theme="dark"] .t-inu{--tc-d:#F1B0A4}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#191C24; --card:#232733; --ink:#EFECE5; --sub:#AEB6C6;
+    --line:#363D4C; --soft:#282D3A; --navy:#EFECE5;
+    --shadow:0 2px 14px rgba(0,0,0,.4); --lift:0 8px 26px rgba(0,0,0,.5);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#191C24; --card:#232733; --ink:#EFECE5; --sub:#AEB6C6;
+  --line:#363D4C; --soft:#282D3A; --navy:#EFECE5;
+  --shadow:0 2px 14px rgba(0,0,0,.4); --lift:0 8px 26px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",sans-serif;
+  font-size:18px;font-weight:500;line-height:1.9;
+}
+.maru{font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif}
+.wrap{max-width:600px;margin:0 auto;padding:0 20px}
+.hidden{display:none !important}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
+p{text-wrap:pretty}
+
+/* ---------- 共通 ---------- */
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:20px 0 0;gap:12px}
+.brand{font-family:"Zen Maru Gothic",sans-serif;font-size:15.5px;font-weight:700;line-height:1.5}
+.brand small{display:block;color:var(--sub);font-weight:500;font-size:13px;letter-spacing:.03em}
+.pill{font-size:13px;color:var(--sub);background:var(--soft);border-radius:999px;padding:6px 14px;white-space:nowrap;font-weight:700}
+.btn{
+  display:block;width:100%;padding:20px;border:none;border-radius:16px;
+  background:var(--navy);color:var(--bg);cursor:pointer;
+  font-family:"Zen Maru Gothic",sans-serif;font-size:19.5px;font-weight:900;
+  letter-spacing:.02em;text-align:center;box-shadow:var(--lift);
+  transition:transform .14s ease,opacity .14s ease;
+}
+.btn:hover{opacity:.9}
+.btn:active{transform:scale(.985)}
+.btn.tinted{background:var(--tc,var(--navy));color:#fff}
+.ghost{
+  display:block;width:100%;background:none;border:2px solid var(--line);
+  border-radius:14px;padding:15px;font-family:inherit;font-size:16px;font-weight:700;
+  color:var(--ink);cursor:pointer;transition:border-color .15s ease;
+}
+.ghost:hover{border-color:var(--sub)}
+.note{font-size:13.5px;color:var(--sub);text-align:center;margin-top:12px}
+
+/* ---------- LP ---------- */
+.hero{padding:34px 0 6px;text-align:center}
+.parade{display:flex;justify-content:center;align-items:flex-end;gap:2px;margin-bottom:20px}
+.parade .p{width:60px;height:60px;animation:bob 2.6s ease-in-out infinite}
+.parade .p:nth-child(2){animation-delay:.2s}
+.parade .p:nth-child(3){animation-delay:.4s}
+.parade .p:nth-child(4){animation-delay:.6s}
+.parade .p:nth-child(5){animation-delay:.8s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+h1{
+  font-family:"Zen Maru Gothic",sans-serif;font-weight:900;
+  font-size:clamp(28px,7.6vw,37px);line-height:1.5;letter-spacing:.005em;
+}
+h1 .hl{color:var(--hl)}
+.hero .sub{margin-top:20px;font-size:17px;color:var(--sub);line-height:1.95;font-weight:500}
+.chips{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap;justify-content:center}
+.chips span{background:var(--soft);border-radius:999px;padding:6px 15px;font-size:14px;font-weight:700}
+.hero .btn{margin-top:26px}
+
+.sec{padding:52px 0 0}
+.kicker{font-family:"Zen Maru Gothic",sans-serif;font-size:14px;font-weight:700;color:var(--sub);text-align:center}
+.sec h2{
+  font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
+  font-size:clamp(23px,6.5vw,28px);line-height:1.55;margin:12px 0 16px;
+  text-align:center;text-wrap:balance;
+}
+.sec .desc{font-size:17px;color:var(--sub);line-height:1.95}
+
+.steps{display:flex;flex-direction:column;gap:12px;margin-top:22px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 22px;box-shadow:var(--shadow);display:flex;gap:15px;align-items:flex-start}
+.step .num{
+  flex:none;width:32px;height:32px;border-radius:50%;background:var(--soft);
+  font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:16px;
+  display:flex;align-items:center;justify-content:center;color:var(--sub);
+}
+.step h3{font-family:"Zen Maru Gothic",sans-serif;font-size:17.5px;font-weight:700;line-height:1.55}
+.step p{font-size:15.5px;color:var(--sub);line-height:1.9;margin-top:5px}
+
+.cast{display:flex;flex-direction:column;gap:11px;margin-top:22px}
+.castrow{display:flex;align-items:center;gap:15px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:15px 18px;box-shadow:var(--shadow)}
+.castrow .ic{width:60px;height:60px;flex:none}
+.castrow .nm{font-family:"Zen Maru Gothic",sans-serif;font-size:18px;font-weight:700;line-height:1.5}
+.castrow .tg{font-size:14.5px;color:var(--sub);line-height:1.65;font-weight:500}
+
+.axpre{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.axpre div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 10px;text-align:center;box-shadow:var(--shadow)}
+.axpre b{font-family:"Zen Maru Gothic",sans-serif;font-size:16px;display:block}
+.axpre span{font-size:13.5px;color:var(--sub);line-height:1.6}
+
+.foot{margin-top:56px;border-top:1px solid var(--line);padding:22px 0 84px;font-size:13.5px;color:var(--sub);line-height:1.85}
+
+/* ---------- 設問 ---------- */
+.qtop{padding:22px 0 0}
+.qtop .row{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--sub)}
+.qtop .row b{font-family:"Zen Maru Gothic",sans-serif;color:var(--ink);font-weight:900;font-size:16px}
+.dots{display:flex;gap:7px;margin-top:12px}
+.dots i{flex:1;height:6px;border-radius:3px;background:var(--line);transition:background .35s ease}
+.dots i.on{background:var(--ink)}
+.qbody{animation:slidein .4s cubic-bezier(.2,.75,.3,1)}
+@keyframes slidein{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.qnum{font-family:"Zen Maru Gothic",sans-serif;font-size:15px;font-weight:700;color:var(--sub);margin-top:32px}
+.qtext{font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:clamp(23px,6.4vw,28px);line-height:1.55;margin-top:8px;text-wrap:balance}
+.qnote{font-size:14.5px;color:var(--sub);margin-top:10px}
+.opts{display:flex;flex-direction:column;gap:11px;margin-top:24px}
+.opt{
+  display:flex;align-items:center;gap:14px;width:100%;text-align:left;
+  background:var(--card);border:2px solid var(--line);border-radius:16px;
+  padding:17px 18px;cursor:pointer;font-family:inherit;color:var(--ink);
+  font-size:16.5px;font-weight:500;line-height:1.65;box-shadow:var(--shadow);
+  transition:border-color .15s ease,transform .15s ease;
+}
+.opt:hover{border-color:var(--sub)}
+.opt:active{transform:scale(.985)}
+.opt .kk{
+  flex:none;width:30px;height:30px;border-radius:50%;background:var(--soft);
+  color:var(--sub);display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:900;transition:all .15s ease;
+}
+.opt.on{border-color:var(--ink)}
+.opt.on .kk{background:var(--ink);color:var(--bg)}
+.qback{margin-top:22px;background:none;border:none;color:var(--sub);font-family:inherit;font-size:14.5px;font-weight:500;cursor:pointer;padding:6px 2px;text-decoration:underline;text-underline-offset:5px}
+.qhint{text-align:center;margin-top:22px;font-size:13.5px;color:var(--sub);padding-bottom:44px}
+
+/* ---------- 読み込み ---------- */
+.loadwrap{padding:24vh 0 0;text-align:center}
+.loadanim{display:flex;justify-content:center;gap:6px;margin-bottom:28px}
+.loadanim div{width:54px;height:54px;animation:hop 1.5s ease-in-out infinite}
+.loadanim div:nth-child(2){animation-delay:.12s}
+.loadanim div:nth-child(3){animation-delay:.24s}
+.loadanim div:nth-child(4){animation-delay:.36s}
+.loadanim div:nth-child(5){animation-delay:.48s}
+@keyframes hop{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-14px)}}
+.loadwrap .s{font-size:15px;color:var(--sub)}
+.loadwrap .b{font-family:"Zen Maru Gothic",sans-serif;font-size:22px;font-weight:700;margin-top:10px;line-height:1.7}
+
+/* ---------- 結果 ---------- */
+.result-card{margin-top:20px;border-radius:26px;padding:34px 20px 30px;text-align:center;background:var(--card);border:2px solid var(--tc);box-shadow:var(--lift)}
+.result-card .youare{font-size:14.5px;color:var(--sub);font-weight:700}
+.result-card .big{width:154px;height:154px;margin:10px auto 4px;animation:pop .6s cubic-bezier(.2,.8,.3,1.2) both}
+@keyframes pop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+.result-card .tname{
+  font-family:"Zen Maru Gothic",sans-serif;font-weight:900;
+  font-size:clamp(31px,8.6vw,39px);line-height:1.4;color:var(--tc-d);
+  animation:up .55s ease .28s both;
+}
+.result-card .tcatch{font-family:"Zen Maru Gothic",sans-serif;font-size:17px;font-weight:700;margin-top:10px;line-height:1.7;animation:up .55s ease .42s both}
+.result-card .tags{font-size:13px;color:var(--sub);margin-top:16px}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+.stage{margin-top:16px;background:var(--soft);border-radius:16px;padding:18px 20px;font-size:16px;line-height:1.9}
+
+.rsec{margin-top:44px}
+.rsec .kicker{text-align:left}
+.rsec h3{font-family:"Zen Maru Gothic",sans-serif;font-size:22px;font-weight:700;line-height:1.55;margin:9px 0 14px;text-wrap:balance}
+.rsec .lead{font-size:15px;color:var(--sub);margin-bottom:16px;line-height:1.85}
+.story{font-size:17px;line-height:2.05}
+
+.axes{display:flex;flex-direction:column;gap:17px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 20px;box-shadow:var(--shadow)}
+.ax .lb{display:flex;justify-content:space-between;font-size:14.5px;color:var(--sub);margin-bottom:8px}
+.ax .lb .win{color:var(--tc-d);font-weight:900}
+.ax .track{height:10px;border-radius:5px;background:var(--soft);position:relative;overflow:hidden}
+.ax .track i{position:absolute;top:0;left:0;height:100%;border-radius:5px;background:var(--tc);width:0;transition:width 1s cubic-bezier(.2,.8,.3,1)}
+
+.acts{display:flex;flex-direction:column;gap:11px}
+.act{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 19px;box-shadow:var(--shadow);display:flex;gap:13px;align-items:flex-start}
+.act .no{flex:none;width:28px;height:28px;border-radius:50%;background:var(--tc);color:#fff;font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:15px;display:flex;align-items:center;justify-content:center;margin-top:3px}
+.act p{font-size:16px;line-height:1.85}
+
+.buddy{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow);display:flex;gap:16px;align-items:center}
+.buddy .ic{width:70px;height:70px;flex:none}
+.buddy .nm{font-family:"Zen Maru Gothic",sans-serif;font-size:17.5px;font-weight:700}
+.buddy p{font-size:15.5px;color:var(--sub);line-height:1.85;margin-top:4px}
+
+.biz{display:flex;flex-direction:column;gap:11px}
+.bcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:19px 21px;box-shadow:var(--shadow)}
+.bcard .cat{font-size:13.5px;color:var(--tc-d);font-weight:900}
+.bcard h4{font-family:"Zen Maru Gothic",sans-serif;font-size:16.5px;font-weight:700;margin:5px 0 6px;line-height:1.6}
+.bcard p{font-size:15px;color:var(--sub);line-height:1.85}
+
+.gift{margin-top:50px;background:var(--card);border:2px solid var(--tc);border-radius:22px;padding:30px 20px;box-shadow:var(--lift)}
+.gift .ge{font-size:14px;color:var(--tc-d);font-weight:900;text-align:center}
+.gift h3{font-family:"Zen Maru Gothic",sans-serif;font-size:20px;font-weight:900;line-height:1.6;margin:12px 0;text-align:center}
+.gift p{font-size:16px;color:var(--sub);line-height:1.9}
+.aiko{margin:22px auto 4px;display:block;width:fit-content;background:var(--soft);border-radius:16px;padding:12px 34px;text-align:center}
+.aiko .l{font-size:13px;color:var(--sub);font-weight:700}
+.aiko .w{font-family:"Zen Maru Gothic",sans-serif;font-size:31px;font-weight:900;color:var(--tc-d);line-height:1.45}
+.gift .dev{font-size:13px;color:var(--sub);margin-top:12px;text-align:center;line-height:1.7}
+
+.sharecard{margin-top:14px;border-radius:22px;padding:30px 20px;text-align:center;background:var(--tc);color:#fff;box-shadow:var(--lift)}
+.sharecard .sc-ic{width:114px;height:114px;margin:0 auto 12px;background:#fff;border-radius:50%;padding:6px;box-shadow:0 4px 14px rgba(0,0,0,.15)}
+.sharecard .sc-l{font-size:13.5px;opacity:.9;font-weight:700}
+.sharecard .sc-n{font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:32px;line-height:1.4;margin:5px 0 8px}
+.sharecard .sc-c{font-family:"Zen Maru Gothic",sans-serif;font-size:15.5px;font-weight:700;line-height:1.7;opacity:.97}
+.sharecard .sc-f{font-size:13px;margin-top:18px;border-top:1px solid rgba(255,255,255,.32);padding-top:13px;opacity:.9;line-height:1.8}
+
+.retry{display:block;margin:22px auto 0;background:none;border:none;color:var(--sub);font-family:inherit;font-size:14.5px;font-weight:500;cursor:pointer;text-decoration:underline;text-underline-offset:5px}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--bg);border-top:1px solid var(--line);padding:10px 20px calc(10px + env(safe-area-inset-bottom));transform:translateY(130%);transition:transform .32s cubic-bezier(.2,.8,.3,1)}
+.sticky.show{transform:none}
+.sticky .in{max-width:600px;margin:0 auto}
+.sticky .btn{padding:16px;font-size:17.5px;box-shadow:none}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important;transition:none !important}
+  .sticky{position:static;transform:none;border-top:none;padding:0;margin-top:20px}
+}
+</style>
+
+<!-- =================== LP =================== -->
+<div id="view-lp"><div class="wrap">
+  <div class="topbar">
+    <div class="brand">金融AIカレッジ<small>お金のプロのAI相棒診断</small></div>
+    <div class="pill">無料・登録なし</div>
+  </div>
+
+  <div class="hero">
+    <div class="parade" id="parade" aria-hidden="true"></div>
+    <h1>AIと組んだら、<br>あなたの<span class="hl">数字</span>は<br>どこから伸びる？</h1>
+    <p class="sub">
+      あなたの強みがいちばん伸びる<br>
+      AIの使い方が、5つの質問でわかります。<br>
+      結果は、あなたを表す1匹のどうぶつで。
+    </p>
+    <div class="chips"><span>全5問</span><span>約1分</span><span>登録不要</span><span>お金のプロ向け</span></div>
+    <button class="btn" onclick="startQuiz()">1分で、自分のタイプを診断する</button>
+    <p class="note">結果はその場で表示されます</p>
+  </div>
+
+  <div class="sec">
+    <p class="kicker">この診断でわかること</p>
+    <h2>「AIを使わなきゃ」の前に、<br>「どこで使うか」を決める。</h2>
+    <p class="desc">AIでできることが増えたぶん、お金のプロの間でも「結局、自分の仕事のどこに効くのか」が見えにくくなりました。仕事のクセは人それぞれなので、成果につながる場所も人それぞれです。</p>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><div><h3>5つの質問に、直感で答える</h3><p>AIの知識は要りません。いまの仕事に近いものを選ぶだけです。</p></div></div>
+      <div class="step"><div class="num">2</div><div><h3>あなたのタイプと相性がわかる</h3><p>4つの軸のスコアと、一緒に組むと強いタイプまで出ます。</p></div></div>
+      <div class="step"><div class="num">3</div><div><h3>明日から試せる3つが手に入る</h3><p>あなたに効くAIの使い方と、その先の商品の作り方まで。</p></div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <p class="kicker">タイプを分ける4つの軸</p>
+    <h2>あなたの仕事のクセを、<br>4つの軸ではかります。</h2>
+    <div class="axpre">
+      <div><b>ひらめき｜積み上げ</b><span>どう信頼をつくるか</span></div>
+      <div><b>一対一｜広く発信</b><span>どう出会うか</span></div>
+      <div><b>手ざわり｜仕組み</b><span>どう仕事を回すか</span></div>
+      <div><b>深める｜広げる</b><span>どこへ向かうか</span></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <p class="kicker">5つのタイプ</p>
+    <h2>同じAIでも、<br>伸びるところは人それぞれ。</h2>
+    <div class="cast" id="cast"></div>
+  </div>
+
+  <div class="sec" style="text-align:center">
+    <h2>あなたの強みが、<br>いちばん伸びる場所へ。</h2>
+    <p class="desc">AIを使ったことがなくても大丈夫です。いまの仕事に近いものを選ぶだけ。</p>
+    <button class="btn" onclick="startQuiz()">1分で、自分のタイプを診断する</button>
+  </div>
+
+  <div class="foot">
+    この診断は、お金のプロがAIを仕事に活かすヒントをお返しするものです。<br>
+    特定の成果を保証するものではありません。<br>
+    運営：金融AIカレッジ
+  </div>
+</div></div>
+
+<!-- =================== 設問 =================== -->
+<div id="view-quiz" class="hidden"><div class="wrap">
+  <div class="qtop">
+    <div class="row"><span class="maru" style="font-weight:700">お金のプロのAI相棒診断</span><span><b id="p-now">1</b> / 5</span></div>
+    <div class="dots" id="dots"></div>
+  </div>
+  <div class="qbody" id="qbody">
+    <div class="qnum" id="q-label"></div>
+    <div class="qtext" id="q-text"></div>
+    <p class="qnote" id="q-note"></p>
+    <div class="opts" id="q-opts"></div>
+    <button class="qback hidden" id="q-back" onclick="goBack()">← ひとつ戻る</button>
+  </div>
+  <p class="qhint">直感で選んで大丈夫です<br>（キーボードの 1〜5 でも選べます）</p>
+</div></div>
+
+<!-- =================== 読み込み =================== -->
+<div id="view-loading" class="hidden"><div class="wrap">
+  <div class="loadwrap">
+    <div class="loadanim" id="loadanim" aria-hidden="true"></div>
+    <p class="s">4つの軸を重ねています</p>
+    <p class="b">あなたにいちばん近い子を<br>探しています。</p>
+  </div>
+</div></div>
+
+<!-- =================== 結果 =================== -->
+<div id="view-result" class="hidden">
+ <div class="wrap">
+  <div class="topbar">
+    <div class="brand">金融AIカレッジ<small>お金のプロのAI相棒診断</small></div>
+    <button class="retry" style="margin:0" onclick="resetQuiz()">もう一度診断する</button>
+  </div>
+
+  <div class="result-card" id="rcard">
+    <div class="youare">あなたのタイプは</div>
+    <div class="big" id="r-ic"></div>
+    <div class="tname" id="r-name"></div>
+    <div class="tcatch" id="r-catch"></div>
+    <div class="tags">#お金のプロのAI相棒診断　#金融AIカレッジ</div>
+  </div>
+
+  <div class="stage" id="r-stage"></div>
+
+  <div class="rsec">
+    <p class="kicker">あなたの強み</p>
+    <h3 id="r-story-title"></h3>
+    <p class="story" id="r-story"></p>
+  </div>
+
+  <div class="rsec">
+    <p class="kicker">4つの軸のスコア</p>
+    <h3>あなたの仕事のクセ</h3>
+    <p class="lead">優劣ではなく、AIの使いどころを決めるための地図です。</p>
+    <div class="axes" id="r-axes"></div>
+  </div>
+
+  <div class="rsec">
+    <p class="kicker">明日からの3つ</p>
+    <h3>あなたに効く、最初のAIの使い方</h3>
+    <div class="acts" id="r-actions"></div>
+  </div>
+
+  <div class="rsec">
+    <p class="kicker">相性</p>
+    <h3>一緒に組むと強い相手</h3>
+    <div class="buddy" id="r-buddy"></div>
+  </div>
+
+  <div class="rsec">
+    <p class="kicker">その先にあるもの</p>
+    <h3>強みが商品になるとしたら</h3>
+    <p class="lead">AIで時間が生まれたあと、あなたの強みはこんな形に育てられます。</p>
+    <div class="biz" id="r-biz"></div>
+  </div>
+
+  <div class="gift">
+    <div class="ge">🎁 診断した方限定・無料</div>
+    <h3>あなた専用の<br>AI仕事術キットを<br>無料で受け取る</h3>
+    <p>コピーしてAIに貼るだけのプロンプト集です。<br>上の「明日からの3つ」を、そのまま実行できる形にしてあります。<br>公式LINEにあいことばを送ると届きます。</p>
+    <div class="aiko"><div class="l">あいことば</div><div class="w" id="r-kw"></div></div>
+    <button class="btn tinted" onclick="openLine()">LINEでキットをもらう</button>
+  </div>
+
+  <div class="rsec">
+    <p class="kicker">誰かに見せる</p>
+    <h3>あなたのカード</h3>
+    <p class="lead">スクリーンショットを撮って、そのまま投稿できます。</p>
+    <div class="sharecard" id="sc">
+      <div class="sc-ic" id="sc-ic"></div>
+      <div class="sc-l">お金のプロのAI相棒診断</div>
+      <div class="sc-n" id="sc-n"></div>
+      <div class="sc-c" id="sc-c"></div>
+      <div class="sc-f">金融AIカレッジ｜全5問・約1分・登録不要<br>#お金のプロのAI相棒診断</div>
+    </div>
+    <button class="ghost" style="margin-top:12px" onclick="copyShare(this)">投稿用のテキストをコピーする</button>
+  </div>
+
+  <button class="retry" onclick="resetQuiz()">もう一度診断する</button>
+
+  <div class="foot">
+    この診断は、お金のプロがAIを仕事に活かすヒントをお返しするものです。<br>
+    特定の成果を保証するものではありません。<br>
+    運営：金融AIカレッジ
+  </div>
+ </div>
+ <div class="sticky" id="sticky"><div class="in">
+   <button class="btn tinted" onclick="openLine()">「<span id="sk-kw"></span>」でキットをもらう</button>
+ </div></div>
+</div>
+
+<script>
+function svg(inner){
+  return '<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block" aria-hidden="true">'+inner+'</svg>';
+}
+const ART = {
+  zou:(c,d,l)=>svg(`
+    <ellipse cx="26" cy="56" rx="17" ry="21" fill="${d}"/>
+    <ellipse cx="94" cy="56" rx="17" ry="21" fill="${d}"/>
+    <ellipse cx="26" cy="57" rx="10" ry="13" fill="${l}"/>
+    <ellipse cx="94" cy="57" rx="10" ry="13" fill="${l}"/>
+    <ellipse cx="60" cy="56" rx="30" ry="28" fill="${c}"/>
+    <path d="M60 74 C52 86 56 100 60 106" stroke="${c}" stroke-width="15" stroke-linecap="round" fill="none"/>
+    <path d="M60 74 C52 86 56 100 60 106" stroke="${l}" stroke-width="5" stroke-linecap="round" fill="none" opacity=".55"/>
+    <circle cx="48" cy="52" r="4" fill="#2C3340"/>
+    <circle cx="72" cy="52" r="4" fill="#2C3340"/>
+    <circle cx="49.5" cy="50.5" r="1.4" fill="#fff"/>
+    <circle cx="73.5" cy="50.5" r="1.4" fill="#fff"/>`),
+  kirin:(c,d,l)=>svg(`
+    <rect x="51" y="62" width="18" height="46" rx="9" fill="${c}"/>
+    <circle cx="57" cy="76" r="4.5" fill="${d}"/><circle cx="65" cy="90" r="4" fill="${d}"/>
+    <line x1="49" y1="34" x2="46" y2="24" stroke="${d}" stroke-width="5" stroke-linecap="round"/>
+    <line x1="71" y1="34" x2="74" y2="24" stroke="${d}" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="45" cy="22" r="5.5" fill="${d}"/><circle cx="75" cy="22" r="5.5" fill="${d}"/>
+    <ellipse cx="34" cy="45" rx="10" ry="6.5" fill="${d}" transform="rotate(-18 34 45)"/>
+    <ellipse cx="86" cy="45" rx="10" ry="6.5" fill="${d}" transform="rotate(18 86 45)"/>
+    <ellipse cx="60" cy="48" rx="23" ry="20" fill="${c}"/>
+    <ellipse cx="60" cy="60" rx="15" ry="12" fill="${l}"/>
+    <ellipse cx="54" cy="58" rx="2.4" ry="3" fill="#2C3340"/>
+    <ellipse cx="66" cy="58" rx="2.4" ry="3" fill="#2C3340"/>
+    <circle cx="51" cy="44" r="3.8" fill="#2C3340"/>
+    <circle cx="69" cy="44" r="3.8" fill="#2C3340"/>
+    <circle cx="52.3" cy="42.7" r="1.3" fill="#fff"/>
+    <circle cx="70.3" cy="42.7" r="1.3" fill="#fff"/>`),
+  beaver:(c,d,l)=>svg(`
+    <circle cx="36" cy="34" r="9" fill="${d}"/>
+    <circle cx="84" cy="34" r="9" fill="${d}"/>
+    <ellipse cx="60" cy="56" rx="30" ry="27" fill="${c}"/>
+    <ellipse cx="60" cy="68" rx="18" ry="14" fill="${l}"/>
+    <ellipse cx="60" cy="62" rx="6" ry="4.6" fill="#2C3340"/>
+    <rect x="54.6" y="70" width="5" height="14" rx="2" fill="#fff" stroke="${d}" stroke-width="1.2"/>
+    <rect x="60.4" y="70" width="5" height="14" rx="2" fill="#fff" stroke="${d}" stroke-width="1.2"/>
+    <circle cx="47" cy="49" r="4" fill="#2C3340"/>
+    <circle cx="73" cy="49" r="4" fill="#2C3340"/>
+    <circle cx="48.3" cy="47.7" r="1.4" fill="#fff"/>
+    <circle cx="74.3" cy="47.7" r="1.4" fill="#fff"/>`),
+  penguin:(c,d,l)=>svg(`
+    <ellipse cx="24" cy="66" rx="9" ry="20" fill="${d}" transform="rotate(14 24 66)"/>
+    <ellipse cx="96" cy="66" rx="9" ry="20" fill="${d}" transform="rotate(-14 96 66)"/>
+    <ellipse cx="60" cy="62" rx="31" ry="36" fill="${c}"/>
+    <ellipse cx="60" cy="70" rx="21" ry="27" fill="${l}"/>
+    <path d="M53 62 L67 62 L60 71 Z" fill="#E8A03A"/>
+    <circle cx="50" cy="50" r="4.3" fill="#2C3340"/>
+    <circle cx="70" cy="50" r="4.3" fill="#2C3340"/>
+    <circle cx="51.4" cy="48.6" r="1.5" fill="#fff"/>
+    <circle cx="71.4" cy="48.6" r="1.5" fill="#fff"/>`),
+  inu:(c,d,l)=>svg(`
+    <ellipse cx="30" cy="58" rx="11" ry="23" fill="${d}"/>
+    <ellipse cx="90" cy="58" rx="11" ry="23" fill="${d}"/>
+    <ellipse cx="60" cy="56" rx="29" ry="26" fill="${c}"/>
+    <ellipse cx="60" cy="70" rx="17" ry="13" fill="${l}"/>
+    <ellipse cx="60" cy="64" rx="6" ry="4.6" fill="#2C3340"/>
+    <path d="M60 69 v5 M60 74 q-6 5 -10 0 M60 74 q6 5 10 0" stroke="#2C3340" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <circle cx="48" cy="50" r="4.2" fill="#2C3340"/>
+    <circle cx="72" cy="50" r="4.2" fill="#2C3340"/>
+    <circle cx="49.4" cy="48.6" r="1.5" fill="#fff"/>
+    <circle cx="73.4" cy="48.6" r="1.5" fill="#fff"/>`)
+};
+function art(k){ const t=TYPES[k]; return ART[k](t.c,t.d,t.l); }
+
+const TYPES = {
+  zou:{
+    name:"根拠のゾウ", short:"ゾウ", kw:"ゾウ",
+    c:"var(--zou)", d:"var(--zou-d)", l:"var(--zou-l)", cv:"#6C8AAE", dv:"#4E6B89",
+    role:"数字と根拠で信頼を積む、分析・提案タイプ",
+    catch:"「その根拠が、<br>お客様の迷いをほどく。」",
+    axis:[85,30,58,32],
+    storyTitle:"納得を積み上げる人",
+    story:"感覚ではなく、根拠で語ってきた人。<br>お客様の「なんとなく不安」を、数字と理屈で「なるほど」に変えてきました。<br>その分、提案の下ごしらえに時間を吸われがちです。<br>調べる・組み立てるの前半をAIに預ければ、あなたの本領である「判断と説明」に時間を戻せます。",
+    actions:[
+      "提案書のたたき台をAIに書かせて、自分は直しと判断に集中する",
+      "お客様の状況を渡して想定質問を10個出させ、面談前に備えておく",
+      "制度改正のニュースをAIに要約させ、自分の一言を添えてお客様に送る"
+    ],
+    partner:"kirin",
+    partnerWhy:"あなたが作った「わかる説明」は、キリンが遠くまで届けてくれます。分析が強い人ほど、発信が得意な人と組むと世界が広がります。",
+    biz:[
+      ["診断サービス","条件を入れると比較と「選ぶ理由」が返る、セカンドオピニオン型のレポート","根拠で語れるあなたなら、レポートそのものが商品になります。"],
+      ["法人向け顧問","経営者向け「お金の健康診断」を定期レポートで届ける顧問型サービス","単発の提案を、続く関係と報酬に変える形です。"]
+    ]
+  },
+  kirin:{
+    name:"発信のキリン", short:"キリン", kw:"キリン",
+    c:"var(--kirin)", d:"var(--kirin-d)", l:"var(--kirin-l)", cv:"#DFA23C", dv:"#A97516",
+    role:"言葉で会う前の信頼をつくる、発信タイプ",
+    catch:"「遠くからでも、<br>見つけてもらえる。」",
+    axis:[40,92,52,78],
+    storyTitle:"言葉で届ける人",
+    story:"会って話せば伝わるのに、発信となると手が止まる。<br>そんな時期があっても、あなたの持ち味は「伝える力」です。<br>ネタ出しと下書きをAIに任せれば、発信は「頑張る作業」から「話すことの延長」に変わります。<br>会う前から知られている状態は、営業を根本から楽にします。",
+    actions:[
+      "面談で話した内容を、そのままSNS投稿の下書きに変えてもらう",
+      "1つのネタを「投稿・ストーリー・メルマガ」の3形態に展開させる",
+      "過去の投稿をAIに分析させて、伸びた型を自分の勝ちパターンにする"
+    ],
+    partner:"beaver",
+    partnerWhy:"広げる力に、ビーバーの仕上げの丁寧さが加わると強いです。届いた人が中身を見たとき、がっかりさせない土台になります。",
+    biz:[
+      ["情報サブスク","月に一度、要点だけ届く有料ニュースレターやメンバーシップ","発信の積み重ねが、そのまま月額の商品に育ちます。"],
+      ["ミニ講座","発信から申し込みが入る「小さな講座→個別相談」の導線","売り込まずに、読んだ人から手が挙がる形です。"]
+    ]
+  },
+  beaver:{
+    name:"仕上げのビーバー", short:"ビーバー", kw:"ビーバー",
+    c:"var(--beaver)", d:"var(--beaver-d)", l:"var(--beaver-l)", cv:"#B87355", dv:"#8D5038",
+    role:"丁寧さがそのまま信頼になる、品質タイプ",
+    catch:"「その一手間を、<br>お客様は見ている。」",
+    axis:[72,28,26,26],
+    storyTitle:"細部で応える人",
+    story:"資料のひとつ、言葉づかいのひとつまで気を配ってきた人。<br>その丁寧さが、お客様の安心を支えてきました。<br>ただ、こだわるほど時間は足りなくなります。<br>チェックや清書といった「仕上げの手前」をAIに預ければ、こだわるべき最後のひと手間に力を残せます。",
+    actions:[
+      "誤字・表記ゆれ・数字の整合チェックをAIに任せ、最終の目視だけ自分でやる",
+      "難しい説明をAIで「中学生にもわかる版」に書き直し、資料に添える",
+      "よく使う説明資料をテンプレ化し、お客様ごとの差し替えだけにする"
+    ],
+    partner:"penguin",
+    partnerWhy:"丁寧さは、ペンギンの段取りと組むと回り出します。抱え込みがちなあなたに、進める仕組みを持ち込んでくれる相手です。",
+    biz:[
+      ["有料ガイド","迷いやすいテーマを「わかりやすさ」で選ばれる一冊にまとめて売る","丁寧に噛み砕く力は、それ自体が商品です。"],
+      ["型の販売","同業のプロ向けに、磨き上げた資料の型やひな形を提供する","あなたの当たり前が、他の人には喉から手が出る品質です。"]
+    ]
+  },
+  penguin:{
+    name:"段取りのペンギン", short:"ペンギン", kw:"ペンギン",
+    c:"var(--penguin)", d:"var(--penguin-d)", l:"var(--penguin-l)", cv:"#4E8A86", dv:"#356461",
+    role:"確実に回す力で選ばれる、仕組みタイプ",
+    catch:"「回る仕組みが、<br>時間を生む。」",
+    axis:[62,42,92,68],
+    storyTitle:"確実に回す人",
+    story:"頼まれたことが、確実に進む。<br>その安心感で選ばれてきた人です。<br>一方で、事務や調整ごとが自分に集まりやすく、一日が細切れになりがちです。<br>定型の文面や整理をAIに持たせると、あなたの「回す力」は、こなす力から仕組みを作る力に変わります。",
+    actions:[
+      "議事録・入力・日程調整の文面を、すべてAIの下書きから始める",
+      "顧客リストをAIに渡して「今月連絡すべき人」を洗い出させる",
+      "誕生日や更新前など、定型フォローの文面を先に1年分作っておく"
+    ],
+    partner:"inu",
+    partnerWhy:"仕組みに、イヌの体温が加わると続きます。効率だけでは冷たくなる場面を、あたたかい一言で埋めてくれる相手です。",
+    biz:[
+      ["仕組みの提供","顧客フォローの流れを仕組みごと渡す「事務所の型」コンサル","回し方そのものが、同業へ売れるノウハウです。"],
+      ["効率化講座","同業のプロ向けに、AIで事務を減らす実務講座を開く","自分の時短の記録が、そのまま教材になります。"]
+    ]
+  },
+  inu:{
+    name:"寄りそいのイヌ", short:"イヌ", kw:"イヌ",
+    c:"var(--inu)", d:"var(--inu-d)", l:"var(--inu-l)", cv:"#D8796B", dv:"#AC5245",
+    role:"隣に居続ける力で任される、伴走タイプ",
+    catch:"「隣に居続ける力は、<br>AIには真似できない。」",
+    axis:[50,22,32,28],
+    storyTitle:"長く隣にいる人",
+    story:"商品よりも先に、あなたに相談したい。<br>そう言われてきた人です。<br>だからこそ、お客様が増えるほどフォローが追いつかなくなります。<br>面談の準備と後追いをAIに支えさせれば、一人ひとりに向き合う濃さを保ったまま、隣にいられる人数を増やせます。",
+    actions:[
+      "面談メモをAIに渡して、フォローLINEの下書きまで一気に作る",
+      "面談前に「この人に今日聞くべきこと」をAIと10分で整理する",
+      "お客様からの質問に、AIの下書き＋自分のひと言で当日中に返す"
+    ],
+    partner:"zou",
+    partnerWhy:"あなたの信頼関係に、ゾウの根拠が乗ると提案が通ります。「あなたが言うなら」の先を、数字で後押ししてくれる相手です。",
+    biz:[
+      ["かかりつけ相談","月額で続く「お金のかかりつけ」伴走サービス","単発相談を、長く続く関係と収入に変える形です。"],
+      ["家族まるごと支援","家族会議に同席する、世帯単位のライフプラン伴走パッケージ","「家族ごと任される」を、そのまま商品名にできます。"]
+    ]
+  }
+};
+const ORDER=["zou","kirin","beaver","penguin","inu"];
+const AXIS_LABELS=[["ひらめき","積み上げ"],["一対一","広く発信"],["手ざわり","仕組み"],["深める","広げる"]];
+
+const QUESTIONS=[
+  { label:"Q1｜任せたい仕事", text:"AIにまず任せられたら、一番うれしいのは？", note:"", opts:[
+    ["提案書やシミュレーション資料の、たたき台づくり","zou"],
+    ["SNSやブログなど、発信のネタ出しと下書き","kirin"],
+    ["誤字チェックや体裁など、資料の仕上げの手間","beaver"],
+    ["日程調整・入力作業など、毎日の細かい事務","penguin"],
+    ["面談メモの整理と、お客様へのフォロー連絡","inu"]]},
+  { label:"Q2｜選ばれてきた理由", text:"お客様に選ばれてきた理由、一番近いのは？", note:"", opts:[
+    ["数字と根拠で、納得いくまで説明するから","zou"],
+    ["発信や紹介で、会う前から知ってもらえているから","kirin"],
+    ["資料も対応も丁寧で、安心してもらえるから","beaver"],
+    ["レスが速く、頼んだことが確実に進むから","penguin"],
+    ["何でも話せる相手として、ずっと隣にいたから","inu"]]},
+  { label:"Q3｜時間の悩み", text:"正直、一番時間を取られているのは？", note:"", opts:[
+    ["提案づくりの調べものと、シミュレーション","zou"],
+    ["発信を続けたいのに、ネタと文章が出てこない","kirin"],
+    ["資料の見た目や細部が気になって、手が止まる","beaver"],
+    ["事務・入力・調整ごとに追われて一日が終わる","penguin"],
+    ["お客様一人ひとりへのフォローが追いつかない","inu"]]},
+  { label:"Q4｜3年後の理想", text:"3年後、どうなっていたら最高？", note:"", opts:[
+    ["「この人の分析は別格」と紹介が絶えない専門家","zou"],
+    ["発信からお客様が来る、自分のメディアを持つ人","kirin"],
+    ["質の高い仕事を、適正な報酬で選んで受ける人","beaver"],
+    ["仕組みで回る事務所を持ち、自分は要所だけ見る人","penguin"],
+    ["世代を超えて家族ごと任される、かかりつけの存在","inu"]]},
+  { label:"Q5｜いまの現在地", text:"AIとの距離、いまはどのあたり？", note:"これはタイプの判定には入りません。", opts:[
+    ["まだ、ほとんど使っていない","s0"],
+    ["ChatGPTなどを、たまに触ってみている","s1"],
+    ["仕事でも、ときどき使っている","s2"],
+    ["毎日使っているが、営業の成果にはつながっていない","s3"]]}
+];
+const STAGE={
+  s0:"「まだ使っていない」は、遅れではなく伸びしろです。<br>効くところから入れば、最初の一週間で手応えが出ます。",
+  s1:"触ったことがあるなら、あとは仕事に組み込む「型」だけです。<br>下の3つから始めてみてください。",
+  s2:"一歩目はもう済んでいます。<br>次は「ときどき」を「毎日の型」に変える番です。",
+  s3:"使う力はもう十分です。足りないのは営業への「つなぎ方」だけ。<br>下の3つが、その最短ルートです。"
+};
+
+let answers=[], stage=null, current=null;
+
+function show(id){
+  ["view-lp","view-quiz","view-loading","view-result"].forEach(v=>{
+    document.getElementById(v).classList.toggle("hidden", v!==id);
+  });
+  document.getElementById("sticky").classList.remove("show");
+  window.scrollTo({top:0});
+}
+function buildLP(){
+  document.getElementById("parade").innerHTML=ORDER.map(k=>'<div class="p">'+art(k)+'</div>').join("");
+  document.getElementById("loadanim").innerHTML=ORDER.map(k=>'<div>'+art(k)+'</div>').join("");
+  document.getElementById("cast").innerHTML=ORDER.map(k=>{
+    const t=TYPES[k];
+    return '<div class="castrow"><div class="ic">'+art(k)+'</div><div>'+
+      '<div class="nm">'+t.name+'</div><div class="tg">'+t.role+'</div></div></div>';
+  }).join("");
+  document.getElementById("dots").innerHTML="<i></i><i></i><i></i><i></i><i></i>";
+}
+function startQuiz(){ answers=[]; stage=null; renderQ(0); show("view-quiz"); }
+function renderQ(i){
+  const q=QUESTIONS[i];
+  document.getElementById("p-now").textContent=i+1;
+  [...document.querySelectorAll("#dots i")].forEach((el,idx)=>el.classList.toggle("on", idx<=i));
+  document.getElementById("q-label").textContent=q.label;
+  document.getElementById("q-text").textContent=q.text;
+  document.getElementById("q-note").textContent=q.note;
+  const box=document.getElementById("q-opts"); box.innerHTML="";
+  q.opts.forEach((o,idx)=>{
+    const b=document.createElement("button");
+    b.className="opt";
+    b.innerHTML='<span class="kk">'+(idx+1)+'</span><span>'+o[0]+'</span>';
+    b.onclick=()=>choose(b,i,o[1]);
+    box.appendChild(b);
+  });
+  document.getElementById("q-back").classList.toggle("hidden", i===0);
+  const body=document.getElementById("qbody");
+  body.style.animation="none"; void body.offsetWidth; body.style.animation="";
+}
+function choose(btn,i,val){
+  const box=btn.parentElement;
+  if(box.dataset.lock) return;
+  box.dataset.lock="1"; btn.classList.add("on");
+  setTimeout(()=>{
+    box.dataset.lock="";
+    if(i<4){ answers[i]=val; renderQ(i+1); } else { stage=val; finish(); }
+  },250);
+}
+function goBack(){ const prev=Math.max(0,answers.length-1); answers.length=prev; stage=null; renderQ(prev); }
+document.addEventListener("keydown",e=>{
+  if(document.getElementById("view-quiz").classList.contains("hidden")) return;
+  const n=parseInt(e.key,10);
+  if(n>=1&&n<=5){ const b=document.querySelectorAll("#q-opts .opt")[n-1]; if(b) b.click(); }
+});
+function finish(){ show("view-loading"); setTimeout(()=>renderResult(computeType()),2200); }
+function computeType(){
+  const s={}; answers.forEach(t=>s[t]=(s[t]||0)+1);
+  let best=null,max=-1;
+  for(const t of Object.keys(s)) if(s[t]>max){max=s[t];best=t;}
+  const tied=Object.keys(s).filter(t=>s[t]===max);
+  if(tied.length>1) for(const p of [answers[3],answers[1],answers[2],answers[0]]) if(tied.includes(p)){best=p;break;}
+  return best;
+}
+function computeAxes(){
+  const out=[0,0,0,0];
+  answers.forEach(t=>TYPES[t].axis.forEach((v,i)=>out[i]+=v));
+  return out.map(v=>Math.round(v/answers.length));
+}
+function renderResult(key){
+  const t=TYPES[key]; current=t;
+  const root=document.getElementById("view-result");
+  ORDER.forEach(k=>root.classList.remove("t-"+k));
+  root.classList.add("t-"+key);
+  document.getElementById("r-ic").innerHTML=art(key);
+  document.getElementById("r-name").textContent=t.name;
+  document.getElementById("r-catch").innerHTML=t.catch;
+  document.getElementById("r-stage").innerHTML=STAGE[stage]||STAGE.s1;
+  document.getElementById("r-story-title").textContent=t.storyTitle;
+  document.getElementById("r-story").innerHTML=t.story;
+  const ax=computeAxes();
+  document.getElementById("r-axes").innerHTML=ax.map((v,i)=>{
+    const L=AXIS_LABELS[i], right=v>=50;
+    return '<div class="ax"><div class="lb">'+
+      '<span class="'+(right?'':'win')+'">'+L[0]+' '+(100-v)+'%</span>'+
+      '<span class="'+(right?'win':'')+'">'+v+'% '+L[1]+'</span>'+
+      '</div><div class="track"><i data-w="'+v+'"></i></div></div>';
+  }).join("");
+  document.getElementById("r-actions").innerHTML=t.actions.map((a,i)=>
+    '<div class="act"><div class="no">'+(i+1)+'</div><p>'+a+'</p></div>').join("");
+  const p=TYPES[t.partner];
+  document.getElementById("r-buddy").innerHTML=
+    '<div class="ic">'+art(t.partner)+'</div><div><div class="nm">'+p.name+'</div><p>'+t.partnerWhy+'</p></div>';
+  document.getElementById("r-biz").innerHTML=t.biz.map(b=>
+    '<div class="bcard"><div class="cat">'+b[0]+'</div><h4>'+b[1]+'</h4><p>'+b[2]+'</p></div>').join("");
+  document.getElementById("r-kw").textContent=t.kw;
+  document.getElementById("sk-kw").textContent=t.kw;
+  document.getElementById("sc-ic").innerHTML=art(key);
+  document.getElementById("sc-n").textContent=t.name;
+  document.getElementById("sc-c").innerHTML=t.catch;
+  show("view-result");
+  setTimeout(()=>{document.querySelectorAll(".ax .track i").forEach(el=>el.style.width=el.dataset.w+"%");},300);
+  setTimeout(()=>document.getElementById("sticky").classList.add("show"),2000);
+}
+function resetQuiz(){ answers=[]; stage=null; current=null; show("view-lp"); }
+function openLine(){
+  const kw=current?current.kw:"";
+  const key=current?Object.keys(TYPES).find(k=>TYPES[k]===current):"";
+  try{ navigator.clipboard.writeText(kw); }catch(e){}
+  location.href="go/?type="+encodeURIComponent(key);
+}
+function copyShare(btn){
+  const t=current;
+  const text="私は【"+(t?t.name:"")+"】タイプでした。\n"+(t?t.catch.replace(/<br>/g,""):"")+"\n\nお金のプロのAI相棒診断（無料・約1分）\n#お金のプロのAI相棒診断 #金融AIカレッジ\nhttps://mm738966m-boop.github.io/ai-aibou-shindan/";
+  const done=()=>{btn.textContent="コピーしました";setTimeout(()=>btn.textContent="投稿用のテキストをコピーする",2000);};
+  try{ navigator.clipboard.writeText(text).then(done,done); }catch(e){ done(); }
+}
+buildLP();
+</script>
+
+
+</body></html>

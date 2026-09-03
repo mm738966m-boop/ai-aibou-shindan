@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI仕事術キット｜お金のプロのAI相棒診断</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap">
+<style>
+:root{--bg:#FBF8F3;--card:#fff;--ink:#2C3340;--sub:#5B6480;--line:#E7E0D4;--soft:#F2EDE3;--tc:#4E6B89;--tcl:#AFC5D9}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#191C24;--card:#232733;--ink:#EFECE5;--sub:#AEB6C6;--line:#343A48;--soft:#2B3040}}
+:root[data-theme="dark"]{--bg:#191C24;--card:#232733;--ink:#EFECE5;--sub:#AEB6C6;--line:#343A48;--soft:#2B3040}
+.t-zou{--tc:#4E6B89;--tcl:#AFC5D9}.t-kirin{--tc:#A97516;--tcl:#F1D79A}.t-beaver{--tc:#8D5038;--tcl:#E2B7A1}.t-penguin{--tc:#356461;--tcl:#A6D0CC}.t-inu{--tc:#AC5245;--tcl:#F0B7AD}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;font-size:18px;font-weight:500;line-height:1.85}
+.wrap{max-width:640px;margin:0 auto;padding:24px 18px 80px}
+.hero{background:var(--tc);color:#fff;border-radius:22px;padding:28px 22px;margin-bottom:18px}
+.hero .k{font-size:14px;font-weight:700;opacity:.9;letter-spacing:.1em}
+.hero h1{font-size:26px;font-weight:900;line-height:1.45;margin:6px 0 10px}
+.hero p{margin:0;font-size:16px;opacity:.95}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 20px;margin-bottom:16px;box-shadow:0 2px 14px rgba(44,51,64,.07)}
+h2{font-size:21px;font-weight:900;margin:0 0 12px;line-height:1.5}
+h2 .n{display:inline-block;background:var(--tc);color:#fff;border-radius:8px;padding:0 10px;margin-right:8px;font-size:16px}
+h3{font-size:18px;font-weight:900;margin:18px 0 8px;color:var(--tc)}
+p{margin:0 0 12px}
+ol,ul{padding-left:1.3em;margin:0 0 12px}li{margin-bottom:6px}
+.pre{position:relative;background:var(--soft);border-radius:14px;padding:16px 16px 52px;white-space:pre-wrap;font-size:16.5px;line-height:1.75;font-family:inherit;margin:8px 0 14px;border:1px solid var(--line)}
+.pre .cp{position:absolute;right:12px;bottom:10px;border:0;background:var(--tc);color:#fff;font-weight:900;border-radius:999px;padding:8px 16px;font-size:15px;cursor:pointer;font-family:inherit}
+.tip{background:var(--soft);border-left:5px solid var(--tc);border-radius:10px;padding:12px 14px;font-size:16px;margin:10px 0}
+.fix{display:grid;grid-template-columns:1fr;gap:8px}
+.fix div{background:var(--soft);border-radius:12px;padding:12px 14px;font-size:16px}
+.fix b{display:block;color:var(--tc);font-weight:900;margin-bottom:2px}
+.btn{display:block;width:100%;border:0;border-radius:999px;padding:18px;font-size:19.5px;font-weight:900;background:var(--tc);color:#fff;text-align:center;text-decoration:none;font-family:inherit}
+.foot{font-size:14px;color:var(--sub);text-align:center;margin-top:24px;line-height:1.7}
+.hidden{display:none}
+a{color:var(--tc)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.tabs a{font-size:14px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:5px 12px;text-decoration:none;color:var(--sub);background:var(--card)}
+.tabs a.on{background:var(--tc);color:#fff;border-color:var(--tc)}
+</style>
+</head>
+<body>
+<div class="wrap" id="root">
+ <div class="tabs" id="tabs"></div>
+ <div class="hero"><div class="k">診断した方限定・無料</div><h1 id="h1"></h1><p id="lead"></p></div>
+
+ <div class="card">
+  <h2><span class="n">使い方</span>3ステップ</h2>
+  <ol>
+   <li>下の「相棒の設定文」をコピーして、AI（Claude・ChatGPT・Geminiのどれでも）の新しいチャットの最初に貼る。</li>
+   <li>「明日からの3つ」のプロンプトを、1日1つずつ貼って使う。【 】の中は自分の言葉に置き換える。</li>
+   <li>出てきた文章がイマイチなら、「直し方」の一言をそのまま返す。</li>
+  </ol>
+  <div class="tip">お客様の名前や口座番号などは貼らないでください。名前は「Aさん」、数字は丸めて渡すのがコツです。</div>
+ </div>
+
+ <div class="card">
+  <h2><span class="n">1</span>相棒の設定文（最初に1回だけ貼る）</h2>
+  <div class="pre" id="sys"></div>
+ </div>
+
+ <div class="card">
+  <h2><span class="n">2</span>明日からの3つ（プロンプト）</h2>
+  <div id="prompts"></div>
+ </div>
+
+ <div class="card">
+  <h2><span class="n">3</span>出力がイマイチなときの直し方</h2>
+  <p>そのまま返信欄に貼るだけで直ります。</p>
+  <div class="fix">
+   <div><b>長い</b>半分の長さにしてください。削るのは説明、残すのは結論です。</div>
+   <div><b>薄い・一般論</b>私が渡した情報だけを使って、具体例を1つ入れて言い直してください。</div>
+   <div><b>固い・AIっぽい</b>話し言葉にしてください。一文は40字以内、「〜ですね」「〜かなと思います」を混ぜて。</div>
+   <div><b>断定が強い</b>断定を「〜の可能性」「要確認」に変えて、根拠がない箇所に印をつけてください。</div>
+   <div><b>売り込み臭い</b>商品名と勧誘の言葉を全部消して、お客様の問いに戻してください。</div>
+   <div id="fixx"></div>
+  </div>
+ </div>
+
+ <div class="card">
+  <h2><span class="n">4</span>出す前に確かめる3つ</h2>
+  <ol>
+   <li>所属会社の規程が優先です。お客様に渡す文書や発信は、社内のルールで確認してから。</li>
+   <li>個人情報は貼らない。名前は仮名、数字は丸める。</li>
+   <li>数字と制度は、自分の目で確かめる。AIは要点の整理まで。</li>
+  </ol>
+  <p style="font-weight:900;color:var(--tc)">作るまでが、学び。出すかどうかは、本人と会社。</p>
+ </div>
+
+ <div class="card" id="next">
+  <h2><span class="n">次</span>一緒にやってみる場</h2>
+  <p>このキットを、実際の面談メモで動かすところをお見せする勉強会があります。<br>9月24日（木）20時から、Zoomで。参加は無料です。</p>
+  <a class="btn" id="seminar" href="#">勉強会の詳細を見る</a>
+  <p class="foot" id="seminar-note" style="margin-top:10px">申込ページは準備中です。公式LINEでお知らせします。</p>
+ </div>
+
+ <p class="foot">このキットは、お金のプロがAIを仕事に活かすための道具です。<br>特定の成果を保証するものではありません。<br>運営：金融AIカレッジ</p>
+</div>
+
+<script>
+const KITS={
+ zou:{name:"根拠のゾウ",role:"数字と根拠で信頼を積む、分析・提案タイプ",
+  lead:"提案の下ごしらえをAIに預けて、あなたの本領「判断と説明」に時間を戻すキットです。",
+  focus:"私の持ち味は、数字と根拠で組み立てること。だから、根拠の出どころと前提条件を必ず明示してください。比較は表にしてください。",
+  prompts:[
+   ["提案書のたたき台をつくる","以下のお客様の状況をもとに、提案書のたたき台を作ってください。\n構成は、①現状の整理 ②3年後と10年後の見通し ③選択肢を3つ（それぞれ利点・注意点・向く人）④次に決めること。\n数字は仮置きと明記してください。商品名は出さないでください。\n\n【お客様の状況：年齢層・家族構成・目標・年収帯など。名前は入れない】"],
+   ["面談前に想定質問を10個出す","このお客様が面談で聞きそうな質問を、鋭い順に10個出してください。\n各質問に「答えるときに押さえる根拠」を1行添えてください。\n\n【お客様の状況】"],
+   ["制度改正のニュースを3行で届ける","次のニュースを、お客様向けに3行で要約してください。専門用語は言い換えを添えてください。\n最後に「あなたにとっての意味」を1行。ただし断定せず「一緒に確認しましょう」の形にしてください。\n\n【ニュースの本文を貼る】"]],
+  fix:["根拠が見えない","どの数字がどこから来たか、出典と前提を各行の末尾に（）で添えてください。"]},
+ kirin:{name:"発信のキリン",role:"言葉で会う前の信頼をつくる、発信タイプ",
+  lead:"ネタ出しと下書きをAIに任せて、発信を「頑張る作業」から「話すことの延長」に変えるキットです。",
+  focus:"私の持ち味は、会って話せば伝わること。私の話し言葉を活かして、飾らない文章にしてください。1投稿に1メッセージ。売り込みは入れないでください。",
+  prompts:[
+   ["面談の内容を投稿の下書きに変える","以下は今日の面談で話した内容のメモです。個人が特定される情報は除いてあります。\nここから、同じ悩みを持つ人に向けたSNS投稿を3案作ってください。\n1案150字以内、一文ごとに改行、売り込みなし、最後は問いかけで終えてください。\n\n【面談メモ】"],
+   ["1つのネタを3つの形に広げる","次のネタを、①SNS投稿（150字）②ストーリー用の一言（30字）③メルマガ（400字）の3つに展開してください。\n話し言葉で、専門用語には言い換えを添えてください。\n\n【ネタ】"],
+   ["伸びた投稿の型を見つける","以下は私の過去の投稿と反応数です。\n伸びたものに共通する「型」を3つ抽出し、その型で次に書くべきテーマを5つ提案してください。\n\n【投稿と数字】"]],
+  fix:["私らしくない","私が書いた文章を渡します。この口調と語尾に寄せて書き直してください。\n【自分の過去の文章を1つ貼る】"]},
+ beaver:{name:"仕上げのビーバー",role:"丁寧さがそのまま信頼になる、品質タイプ",
+  lead:"チェックや清書といった「仕上げの手前」をAIに預けて、最後のひと手間に力を残すキットです。",
+  focus:"私の持ち味は、細部の丁寧さ。チェックの結果は「見つけた箇所・理由・直し案」の3列で返してください。中身の主張は勝手に変えないでください。",
+  prompts:[
+   ["資料の最終チェックを任せる","次の文章を、誤字脱字・表記ゆれ・数字の整合の3つの観点でチェックしてください。\n結果は「箇所／理由／直し案」の表にしてください。文章の中身は変えないでください。\n\n【文章】"],
+   ["難しい説明を中学生版にする","次の説明を、中学生にも伝わる言い方に書き直してください。\n正確さは落とさず、専門用語には（）で短い補足を添えてください。\n\n【説明文】"],
+   ["よく使う資料をテンプレにする","次の資料の文章から、お客様ごとに変わる部分を【 】の穴にしたテンプレートを作ってください。\n穴の横に「何を入れるか」を短く書いてください。\n\n【資料の文章】"]],
+  fix:["直しすぎ","私の文章のまま残す部分と、直した部分を分けて見せてください。直したのは最小限にしてください。"]},
+ penguin:{name:"段取りのペンギン",role:"確実に回す力で選ばれる、仕組みタイプ",
+  lead:"定型の文面と整理をAIに持たせて、「こなす力」を「仕組みを作る力」に変えるキットです。",
+  focus:"私の持ち味は、確実に回すこと。出力は「そのまま使える形」にしてください。件名・本文・次のアクションの3点セットで返してください。",
+  prompts:[
+   ["事務の文面を下書きから始める","次の用件を、そのまま送れる文面にしてください。\n件名・本文・締めの一言の3点セットで、丁寧だけれど短く。\n\n【用件（例：日程調整の依頼、資料送付のご連絡）】"],
+   ["今月連絡すべき人を洗い出す","以下は顧客リストです（名前は番号にしてあります）。最終接点日と状況を書いています。\n今月連絡すべき人を優先順に並べて、理由と「一言目の案」を添えてください。\n\n【リスト：番号／最終接点日／状況】"],
+   ["定型フォローを1年分つくる","誕生日・契約更新前・年末など、年間の定型フォロー12本の文面を作ってください。\nどれも3〜4行、売り込みなし、返信しやすい問いかけで終えてください。\n\n【自分の仕事の特徴、お客様の層】"]],
+  fix:["次に何をすればいいか分からない","この出力を受けて、私が次にやることを3つ、所要時間つきで並べてください。"]},
+ inu:{name:"寄りそいのイヌ",role:"隣に居続ける力で任される、伴走タイプ",
+  lead:"面談の準備と後追いをAIに支えさせて、一人ひとりの濃さを保ったまま隣にいられる人数を増やすキットです。",
+  focus:"私の持ち味は、隣に居続けること。文面は、相手の状況を一言受け止めてから本題に入ってください。温度を落とさないでください。",
+  prompts:[
+   ["面談メモからフォロー文を一気につくる","以下の面談メモから、今日中に送るフォローの文面を作ってください。\n冒頭で相手の気持ちを一言受け止め、話した要点を2つ、次に会うまでの小さな宿題を1つ。150字以内。\n\n【面談メモ（個人名は入れない）】"],
+   ["今日聞くべきことを10分で整える","このお客様との面談で、今日聞くべきことを5つ出してください。\n聞く順番と、その質問をする理由を添えてください。\n\n【お客様の状況】"],
+   ["質問に当日中に返す","お客様からの次の質問に、当日中に返せる下書きを作ってください。\n結論を先に、一般的な考え方を短く。個別の判断は「一緒に確認しましょう」の形にしてください。\n\n【お客様の質問】"]],
+  fix:["冷たい","相手の状況を受け止める一言を最初に足して、語尾をやわらかくしてください。"]}
+};
+const BASE_SYS=(k)=>`あなたは私の「AI相棒」です。
+私はお金のプロ（【業種を書く：保険代理店・IFA・FPなど】）として、お客様のライフプランを起点に相談を受けています。
+
+守ってほしいこと
+1. 私の代わりに判断しない。判断材料と選択肢を出し、決めるのは私。
+2. お客様の個人情報は扱わない前提。名前や口座情報が混ざっていたら、伏せるよう促す。
+3. 商品名を勧めない。制度や仕組みの説明と、お客様の目線での言い換えを優先する。
+4. 数字や制度の内容には「要確認」と添える。断定しない。
+5. 文章は短く。一文は40字以内。専門用語には言い換えを添える。
+
+${k.focus}
+
+ここまで読んだら「相棒の準備ができました。最初の仕事は何にしますか？」とだけ返してください。`;
+const ORDER=["zou","kirin","beaver","penguin","inu"];
+const q=new URLSearchParams(location.search); let t=q.get("t"); if(!KITS[t]) t="zou";
+const k=KITS[t];
+document.getElementById("root").classList.add("t-"+t);
+document.title=k.name+"のAI仕事術キット";
+document.getElementById("h1").textContent=k.name+"の\nAI仕事術キット";
+document.getElementById("lead").textContent=k.lead;
+document.getElementById("tabs").innerHTML=ORDER.map(x=>`<a href="?t=${x}" class="${x===t?'on':''}">${KITS[x].name}</a>`).join("");
+function pre(txt){return `<div class="pre">${txt.replace(/&/g,"&amp;").replace(/</g,"&lt;")}<button class="cp" onclick="cp(this)">コピー</button></div>`;}
+document.getElementById("sys").outerHTML=pre(BASE_SYS(k));
+document.getElementById("prompts").innerHTML=k.prompts.map((p,i)=>`<h3>${i+1}. ${p[0]}</h3>${pre(p[1])}`).join("");
+document.getElementById("fixx").innerHTML=`<b>${k.fix[0]}</b>${k.fix[1].replace(/\n/g,"<br>")}`;
+function cp(b){const txt=b.parentElement.innerText.replace(/コピー(しました)?$/,"").trim();try{navigator.clipboard.writeText(txt).then(()=>{b.textContent="コピーしました";setTimeout(()=>b.textContent="コピー",1800);});}catch(e){}}
+fetch("../go/targets.json",{cache:"no-store"}).then(r=>r.json()).then(tg=>{
+  if(tg.seminar){const u=new URL(tg.seminar);u.searchParams.set("ref","kit_"+t);document.getElementById("seminar").href=u.toString();document.getElementById("seminar-note").classList.add("hidden");}
+  else{document.getElementById("seminar").classList.add("hidden");}
+}).catch(()=>document.getElementById("seminar").classList.add("hidden"));
+</script>
+</body></html>

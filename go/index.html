@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>キットを受け取る｜お金のプロのAI相棒診断</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap">
+<style>
+:root{--bg:#FBF8F3;--card:#fff;--ink:#2C3340;--sub:#5B6480;--line:#E7E0D4;--soft:#F2EDE3;--tc:#4E6B89}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#191C24;--card:#232733;--ink:#EFECE5;--sub:#AEB6C6;--line:#343A48;--soft:#2B3040}}
+:root[data-theme="dark"]{--bg:#191C24;--card:#232733;--ink:#EFECE5;--sub:#AEB6C6;--line:#343A48;--soft:#2B3040}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;font-size:18px;font-weight:500;line-height:1.8}
+.wrap{max-width:560px;margin:0 auto;padding:28px 20px 60px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px 22px;box-shadow:0 2px 14px rgba(44,51,64,.08)}
+h1{font-size:24px;font-weight:900;line-height:1.5;margin:0 0 10px}
+p{margin:0 0 14px}
+.step{display:flex;gap:12px;align-items:flex-start;margin:16px 0}
+.step .no{flex:0 0 34px;height:34px;border-radius:50%;background:var(--tc);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:17px}
+.aiko{background:var(--soft);border-radius:16px;padding:16px;text-align:center;margin:18px 0}
+.aiko .l{font-size:14px;color:var(--sub);font-weight:700}
+.aiko .w{font-size:40px;font-weight:900;letter-spacing:.08em;color:var(--tc)}
+.btn{display:block;width:100%;border:0;border-radius:999px;padding:18px;font-size:19.5px;font-weight:900;background:#06C755;color:#fff;text-align:center;text-decoration:none;cursor:pointer;font-family:inherit}
+.ghost{display:block;width:100%;border:2px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:14px;font-size:17px;font-weight:700;margin-top:12px;cursor:pointer;font-family:inherit}
+.note{font-size:14px;color:var(--sub);margin-top:16px}
+.prep{background:var(--soft);border-radius:16px;padding:18px;margin-top:8px}
+.hidden{display:none}
+a{color:var(--tc)}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="card">
+  <h1 id="h">あなた専用のAI仕事術キット</h1>
+  <p>公式LINEに、あいことばを送ると届きます。<br>あいことばはコピー済みです（もう一度コピーもできます）。</p>
+  <div class="aiko"><div class="l">あいことば</div><div class="w" id="kw">—</div></div>
+  <div id="ready">
+   <div class="step"><div class="no">1</div><div>下のボタンで公式LINEを友だち追加します。</div></div>
+   <div class="step"><div class="no">2</div><div>トーク画面に、あいことばを貼って送ります。</div></div>
+   <div class="step"><div class="no">3</div><div>すぐにキットのページが届きます。</div></div>
+   <a class="btn" id="go" href="#">LINEで友だち追加してキットをもらう</a>
+   <button class="ghost" onclick="copyKw(this)">あいことばをもう一度コピー</button>
+  </div>
+  <div id="prep" class="prep hidden">
+   <p>キットの配布は、まもなく始まります。<br>あいことばを控えておいてください。<br>公式LINEが開いたら、そのまま送るだけで届きます。</p>
+   <button class="ghost" onclick="copyKw(this)">あいことばをコピーしておく</button>
+  </div>
+  <p class="note"><a href="../">← 診断にもどる</a></p>
+ </div>
+</div>
+<script>
+const NAMES={zou:["ゾウ","根拠のゾウ"],kirin:["キリン","発信のキリン"],beaver:["ビーバー","仕上げのビーバー"],penguin:["ペンギン","段取りのペンギン"],inu:["イヌ","寄りそいのイヌ"]};
+const q=new URLSearchParams(location.search); const type=NAMES[q.get("type")]?q.get("type"):"";
+const kw=type?NAMES[type][0]:"";
+document.getElementById("kw").textContent=kw||"診断ページで確認";
+if(type) document.getElementById("h").textContent=NAMES[type][1]+"のAI仕事術キット";
+function copyKw(b){try{navigator.clipboard.writeText(kw).then(()=>{b.textContent="コピーしました";setTimeout(()=>b.textContent="あいことばをもう一度コピー",1800);});}catch(e){}}
+fetch("targets.json",{cache:"no-store"}).then(r=>r.json()).then(t=>{
+  if(t.line_lp){
+    const u=new URL(t.line_lp); u.searchParams.set("ref","shindan_"+(type||"none"));
+    document.getElementById("go").href=u.toString();
+  }else{
+    document.getElementById("ready").classList.add("hidden");
+    document.getElementById("prep").classList.remove("hidden");
+  }
+}).catch(()=>{document.getElementById("ready").classList.add("hidden");document.getElementById("prep").classList.remove("hidden");});
+</script>
+</body></html>
