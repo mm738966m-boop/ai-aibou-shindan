@@ -57,9 +57,12 @@ document.getElementById("kw").textContent=kw||"診断ページで確認";
 if(type) document.getElementById("h").textContent=NAMES[type][1]+"のAI仕事術キット";
 function copyKw(b){try{navigator.clipboard.writeText(kw).then(()=>{b.textContent="コピーしました";setTimeout(()=>b.textContent="あいことばをもう一度コピー",1800);});}catch(e){}}
 fetch("targets.json",{cache:"no-store"}).then(r=>r.json()).then(t=>{
+  const direct=t.line_mtid&&t.line_mtid[type];
   if(t.line_lp){
     const u=new URL(t.line_lp); u.searchParams.set("ref","shindan_"+(type||"none"));
     document.getElementById("go").href=u.toString();
+  }else if(direct){
+    document.getElementById("go").href=direct;
   }else{
     document.getElementById("ready").classList.add("hidden");
     document.getElementById("prep").classList.remove("hidden");
