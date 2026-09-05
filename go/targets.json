@@ -7,6 +7,7 @@
     "inu": "https://utage-system.com/line/open/opbsv67O2rQi?mtid=2IQnaW9CYEra"
   },
   "line_lp": "",
-  "seminar": "",
-  "note": "line_mtid=タイプ別のUTAGE登録経路（シナリオ AI相棒診断_流入 opbsv67O2rQi・アカウント AI金融カレッジ uIpbLqb9S3gw）。line_lp を入れるとそちらを優先（ref=shindan_<type>付与）。seminar=9/24勉強会の申込LP（空なら非表示）"
+  "seminar": "https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/",
+  "note": "line_mtid=タイプ別のUTAGE登録経路（シナリオ AI相棒診断_流入 opbsv67O2rQi・アカウント AI金融カレッジ uIpbLqb9S3gw）。line_lp を入れるとそちらを優先（ref=shindan_<type>付与）。seminar=9/24勉強会の申込LP（空なら非表示）",
+  "seminar_line": "https://utage-system.com/line/open/opbsv67O2rQi?mtid=MxBmU899UbAC"
 }
