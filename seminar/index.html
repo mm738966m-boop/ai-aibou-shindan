@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/og.png">
 <meta property="og:site_name" content="金融AIカレッジ">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="build" content="v4">
+<meta name="build" content="v5">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,7 +56,7 @@ section.alt{background:var(--paper)}
 section.dark{background:var(--navy);color:#fff}
 .eyebrow{font-size:14px;font-weight:900;letter-spacing:.16em;color:var(--gold-d);margin-bottom:8px}
 .dark .eyebrow{color:var(--gold-l)}
-h2{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-size:clamp(24px,6.4vw,31px);line-height:1.45;font-weight:800;margin:0 0 22px}
+h2{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-size:clamp(23px,6.2vw,31px);line-height:1.45;font-weight:800;margin:0 0 22px}
 h3{font-size:20px;font-weight:900;margin:0 0 8px;line-height:1.5}
 .figure{border-radius:20px;overflow:hidden;margin:0 0 22px;box-shadow:0 10px 30px rgba(34,41,58,.15)}
 .figure img{width:100%;aspect-ratio:16/9;object-fit:cover}
@@ -144,7 +144,7 @@ footer{font-size:14px;color:var(--sub);text-align:center;padding:26px 20px 100px
 /* motion: resting state is visible; only animates after JS marks the page ready */
 @media (prefers-reduced-motion:reduce){.sticky{transition:none}html{scroll-behavior:auto}}
 @media (min-width:900px){.hero-grid{grid-template-columns:1.15fr .85fr;gap:40px}.hero{padding:56px 0}.hero-img{max-height:none}}
-@media (max-width:520px){.arms,.split,.cred{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat .n{font-size:34px}.spec{grid-template-columns:1fr;gap:2px}.spec dt{margin-top:10px}.me img{width:80px;height:80px}}
+@media (max-width:520px){.arms,.split,.cred{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.stat{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center}.stat .n{font-size:34px;min-width:96px}.stat .l{margin-top:0}.spec{grid-template-columns:1fr;gap:2px}.spec dt{margin-top:10px}.me img{width:80px;height:80px}}
 </style>
 </head>
 <body>
@@ -185,7 +185,7 @@ footer{font-size:14px;color:var(--sub);text-align:center;padding:26px 20px 100px
 <section class="dark rv">
  <div class="wrap">
   <div class="eyebrow">いま、業界で起きていること</div>
-  <h2>大手はもう、営業職員全員にAIを持たせ始めました。</h2>
+  <h2>大手はもう、<br>営業職員全員にAIを<br>持たせ始めました。</h2>
   <div class="stats">
    <div class="stat"><div class="n" data-count="36000">0</div><div class="l">明治安田生命が営業職員 約3万6,000人 全員にAIエージェントを導入</div></div>
    <div class="stat"><div class="n">72<small>%</small>→56<small>%</small></div><div class="l">生保の加入経路に占める「営業職員」の割合（2003→2021年度）</div></div>
@@ -200,7 +200,7 @@ footer{font-size:14px;color:var(--sub);text-align:center;padding:26px 20px 100px
 <section class="alt rv">
  <div class="wrap">
   <div class="eyebrow">先に、はっきり言っておきます</div>
-  <h2>AIは、あなたの仕事を奪いません。<br>面倒な部分を引き受けるだけです。</h2>
+  <h2>AIは、あなたの仕事を<br>奪いません。<br>面倒な部分を<br>引き受けるだけです。</h2>
   <p>お客様の話を聞く「間」の取り方、ここは笑っていい、ここは黙る、という感覚。<br>それは年齢と経験でしか育ちません。<br>AIにできるのは、その前後にある「調べる・書く・整える・送る」を代わりにやることです。</p>
   <div class="figure" style="max-width:520px;margin-left:auto;margin-right:auto"><img src="img/arms.jpg" alt="右腕と左腕のAIに囲まれた保険営業の男性" loading="lazy" style="aspect-ratio:1/1"></div>
   <div class="arms">
@@ -227,7 +227,7 @@ footer{font-size:14px;color:var(--sub);text-align:center;padding:26px 20px 100px
 <section class="rv">
  <div class="wrap">
   <div class="eyebrow">1日は、こう変わります</div>
-  <h2>移動をやめた分だけ、会える人が増える。</h2>
+  <h2>移動をやめた分だけ、<br>会える人が増える。</h2>
   <div class="figure"><img src="img/after.jpg" alt="自宅でお客様夫婦とオンライン面談する男性" loading="lazy"></div>
   <div class="days">
    <div class="day b"><div class="h">いままで（訪問営業の1日）</div>
@@ -245,7 +245,7 @@ footer{font-size:14px;color:var(--sub);text-align:center;padding:26px 20px 100px
 <section class="alt rv">
  <div class="wrap">
   <div class="eyebrow">当日の90分</div>
-  <h2>右腕と左腕を、その場で作ります。</h2>
+  <h2>右腕と左腕を、<br>その場で作ります。</h2>
   <div class="timeline">
    <div class="tl"><div class="min">15分</div><h3>なぜ「完全自動化」ができるのか</h3><p>移動をやめると何が空くのか。お客様がAIに相談してから来る時代に、営業側もAIを持つとどう変わるのか。自動化していい部分と、人がやるべき部分の線引きから話します。</p></div>
    <div class="tl"><div class="min">30分</div><h3>実演：右腕と左腕をその場で作る</h3><p>右腕＝AIに強みと客層を分析させ、発信ネタ、診断ページ、LINE自動応答まで組む。実際に動いている入口をお見せします。<br>左腕＝架空の面談メモを渡して、提案骨子、フォロー文、次回予約案内ができるまでを、その場で動かします。途中の指示の出し方まで、全部見せます。</p></div>
@@ -258,7 +258,7 @@ footer{font-size:14px;color:var(--sub);text-align:center;padding:26px 20px 100px
 <section class="rv">
  <div class="wrap">
   <div class="eyebrow">講師</div>
-  <h2>「ばあちゃんでもできる」から始まった人です。</h2>
+  <h2>「ばあちゃんでもできる」<br>から始まった人です。</h2>
   <div class="me"><img src="morikawa.jpg" alt="森川満章" loading="lazy"><div class="t"><b>森川満章</b>fulfull株式会社 代表取締役<br>お金のプロ・金融AIカレッジ主宰</div></div>
   <p>30歳まで投資を知らなかった、元ヤマト運輸のドライバーです。<br>投資を覚えたあと、母からLINEが来ました。<br>「私にもできる投資ある？」<br>それに答えるために作った最初のスクールの名前が、<strong>「ばあちゃんでもできるFX」</strong>でした。<br>難しいことを、その人の言葉に置き換えて渡す。それが僕の仕事の原点です。</p>
   <p>いま、面談も集客も、オンラインとAIでほぼ自動で回しています。<br>特別な才能があったわけではありません。<br>「何を、どの順番でAIに渡すか」を決めただけです。<br>今回は、その決め方を丸ごと持ち帰ってもらいます。</p>
@@ -275,7 +275,7 @@ footer{font-size:14px;color:var(--sub);text-align:center;padding:26px 20px 100px
 <section class="alt rv">
  <div class="wrap">
   <div class="eyebrow">持ち帰れるもの</div>
-  <h2>翌日から、自分のAIが動き出します。</h2>
+  <h2>翌日から、<br>自分のAIが動き出します。</h2>
   <div class="figure"><img src="img/kit.jpg" alt="スマートフォンでAIとやり取りする手元" loading="lazy"></div>
   <ul class="take">
    <li><strong>右腕の設定文・左腕の設定文</strong>。コピーしてAIに貼るだけで、あなた専用の相棒が動き出します</li>
@@ -289,7 +289,7 @@ footer{font-size:14px;color:var(--sub);text-align:center;padding:26px 20px 100px
 <section class="rv">
  <div class="wrap">
   <div class="eyebrow">よくあるご質問</div>
-  <h2>ここまで読んで、まだ迷っている方へ。</h2>
+  <h2>ここまで読んで、<br>まだ迷っている方へ。</h2>
   <details><summary>パソコンが苦手です。本当にできますか。</summary><p>スマホだけで始められます。当日お渡しする設定文は「コピーして貼る」だけです。難しい設定や、専門用語の説明会はしません。</p></details>
   <details><summary>50代・60代でも、いまから間に合いますか。</summary><p>間に合います。AIが代わりにやるのは「調べる・書く・整える」で、お客様との信頼関係はあなたのこれまでの経験がそのまま資産です。むしろ経験が長い人ほど、AIに渡せる材料が多いです。</p></details>
   <details><summary>AIを使うのは、会社のルール上問題ないですか。</summary><p>当日は「所属会社の規程が優先」を前提に、自動化していい範囲と、募集人本人がやるべき範囲の線引きから話します。会社に内緒で使う方法ではなく、堂々と説明できる使い方です。</p></details>
@@ -318,7 +318,7 @@ footer{font-size:14px;color:var(--sub);text-align:center;padding:26px 20px 100px
 
 <section class="cta rv">
  <div class="wrap">
-  <h2>移動をやめた分だけ、会える人が増える。<br>その回し方を、90分で。</h2>
+  <h2>移動をやめた分だけ、<br>会える人が増える。<br>その回し方を、90分で。</h2>
   <p class="lead">受付はLINEです。友だち追加で申込完了。<br>ZoomのURLは前日にお送りします。</p>
   <a class="btn cta-link" href="https://utage-system.com/line/open/opbsv67O2rQi?mtid=MxBmU899UbAC">自動化の実演を見る<small>参加費無料・LINEで受付・30秒で完了</small></a>
   <p class="btn-note">90分で終わります。カメラオフ・名前だけの参加で大丈夫です。</p>
