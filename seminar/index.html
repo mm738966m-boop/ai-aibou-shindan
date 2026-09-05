@@ -12,11 +12,11 @@
 <meta property="og:image" content="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/og.png">
 <meta property="og:site_name" content="金融AIカレッジ">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="build" content="v9">
+<meta name="build" content="v10">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Klee+One:wght@400;600&display=swap">
 <!-- Meta Pixel（fulfull_お金の勉強会_自社ピクセル） -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -145,6 +145,18 @@ section.alt .tl:before{border-color:var(--paper)}
 .letter{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:28px 22px;box-shadow:0 10px 30px rgba(34,41,58,.08)}
 .letter p{font-size:18px}
 .letter .sign{text-align:right;font-family:"Shippori Mincho",serif;font-weight:800;font-size:18px;margin:10px 0 0}
+/* letter: handwritten */
+.letter{position:relative;overflow:hidden;background:#FBF9F3;border-color:#E9E2D2}
+.letter p{font-family:"Klee One","Zen Kaku Gothic New","Hiragino Maru Gothic ProN",sans-serif;font-weight:600;font-size:19.5px;line-height:2;position:relative;z-index:1;color:#2A3040}
+.letter .sign{font-family:"Klee One",serif;font-size:22px}
+.letter .deco{position:absolute;pointer-events:none;mix-blend-mode:multiply;opacity:.95;z-index:0}
+.letter .deco.tl{top:-6px;left:-6px;width:150px}
+.letter .deco.br{bottom:-8px;right:-8px;width:190px}
+.zukai{border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(34,41,58,.12);margin:6px 0 20px;background:#F7F3EA}
+.zukai img{width:100%;height:auto;display:block}
+.stage{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 6px}
+.stage span{font-size:15px;font-weight:700;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+.stage-note{font-size:13.5px;color:var(--sub);margin:0 0 14px}
 /* take / not-for / steps */
 ul.take{list-style:none;padding:0;margin:0;display:grid;gap:10px}
 ul.take li{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 50px;position:relative}
@@ -269,6 +281,7 @@ footer{font-size:14px;color:var(--sub);text-align:center;padding:26px 20px 100px
     <ul><li>提案の骨子（たたき台）</li><li>その日のうちのフォロー文</li><li>次回の予約案内</li><li>3か月ごとの「思い出してもらう」連絡</li></ul>
    </div>
   </div>
+  <div class="zukai"><img src="zukai/arms.jpg" alt="右腕と左腕はこう回る。右腕は発信、1分診断、LINE、予約が入る。左腕は面談メモ、提案の骨子、フォロー文、次回予約。あなたはお客様と話す、決める。説明と契約は募集人本人が行う。" loading="lazy" width="1440" height="1800"></div>
   <div class="split">
    <div class="col ai"><h4>AIがやること</h4><ul><li>調べる・比べる・まとめる</li><li>下書きを書く（提案・フォロー・発信）</li><li>整える・チェックする</li><li>決まった連絡を決まった時に送る</li></ul></div>
    <div class="col"><h4>あなたがやること</h4><ul><li>お客様と話す</li><li>提案の最終判断</li><li>説明と契約の手続き（募集行為）</li><li>「この人に会いたい」と思ってもらうこと</li></ul></div>
@@ -350,14 +363,15 @@ footer{font-size:14px;color:var(--sub);text-align:center;padding:26px 20px 100px
   <div class="eyebrow">右腕と左腕の、最初の1週間</div>
   <h2>難しいことは、<br>1つもありません。</h2>
   <p>当日お渡しする設定文を貼ったあと、最初の1週間は、こう動きます。</p>
-  <div class="week">
+  <div class="zukai"><img src="zukai/week.jpg" alt="右腕と左腕の最初の1週間の図解。右腕は設定文を貼る、理由が3つ出る、ネタと下書き、診断ページ完成、LINEの応答、公開を決める。左腕は設定文を貼る、メモから骨子、フォロー文、直し方を覚える、本番で使う、3か月後の連絡。" loading="lazy" width="1440" height="1800"></div>
+  <details style="margin-bottom:10px"><summary>文字で読む（1週間の手順）</summary><div class="week" style="padding:0 16px 14px">
    <div class="wk"><div class="h">右腕（集客）</div>
     <dl><dt>1日目</dt><dd>設定文を貼る。あなたの強み・客層・得意な話をAIに渡す</dd><dt>2日目</dt><dd>AIが「あなたが選ばれる理由」を3つに整理して返す</dd><dt>3日目</dt><dd>発信のネタ10本と、1本目の下書きができる</dd><dt>4日目</dt><dd>1分で終わる診断ページの質問と結果文ができる</dd><dt>5日目</dt><dd>LINEの自動応答文（あいことば→プレゼント）ができる</dd><dt>6〜7日目</dt><dd>実物を確認し、公開するかどうかを決める</dd></dl>
    </div>
    <div class="wk"><div class="h">左腕（面談・提案）</div>
     <dl><dt>1日目</dt><dd>設定文を貼る。あなたの話し方・禁止事項・会社の規程をAIに渡す</dd><dt>2日目</dt><dd>過去の面談メモを1つ渡し、提案骨子を出させてみる</dd><dt>3日目</dt><dd>同じメモから、フォロー文と次回予約の案内文を出す</dd><dt>4日目</dt><dd>「長い・薄い・固い」を直す一言を覚える</dd><dt>5日目</dt><dd>実際の面談後に使ってみる（送るかは自分で判断）</dd><dt>6〜7日目</dt><dd>3か月ごとの連絡文を、お客様の層ごとに作り置く</dd></dl>
    </div>
-  </div>
+  </div></details>
   <p style="font-size:15.5px;color:var(--sub)">※すべて「作るまで」の手順です。お客様に出すかどうかは、所属会社の規程とご自身の判断で決めてください。</p>
  </div>
 </section>
@@ -401,8 +415,11 @@ footer{font-size:14px;color:var(--sub);text-align:center;padding:26px 20px 100px
    <div><b>2,000件<span style="font-size:15px">以上</span></b>累計相談件数</div>
    <div><b>200回<span style="font-size:15px">以上</span></b>セミナー開催・延べ6,500名・継続率92%</div>
    <div><b>25社<span style="font-size:15px">以上</span></b>企業研修の実績</div>
-   <div><b>登壇</b>東京海上日動あんしん生命・積水ハウス ほか。商工会議所ビジネスアドバイザー</div>
+   <div><b>12件<span style="font-size:15px">以上</span></b>行政・団体との連携</div>
   </div>
+  <p style="margin:0 0 4px;font-weight:900">登壇・研修の実績（順不同・敬称略）</p>
+  <div class="stage"><span>東京海上日動あんしん生命</span><span>積水ハウス</span><span>法人会</span><span>商工会議所（ビジネスアドバイザー）</span><span>信用金庫（創業塾）</span><span>小学校（お金の授業）</span><span>企業研修 25社以上</span><span>大手金融会社 認定講師</span></div>
+  <p class="stage-note">いずれも登壇・研修の実績であり、各社・各団体が本勉強会を推奨するものではありません。</p>
   <p style="font-size:15.5px;color:var(--sub);margin:0">岩手県出身。トヨタ整備士、佐川急便、ヤマト運輸を経て独立。2020年にfulfullを創業。3児の父。</p>
  </div>
 </section>
@@ -412,10 +429,12 @@ footer{font-size:14px;color:var(--sub);text-align:center;padding:26px 20px 100px
   <div class="eyebrow">ここまで読んでくださった方へ</div>
   <h2>正直に言います。<br>やった方がいいです。</h2>
   <div class="letter">
+   <img class="deco tl" src="img/deco_flowers.jpg" alt="" loading="lazy">
+   <img class="deco br" src="img/deco_butterfly.jpg" alt="" loading="lazy">
    <p>AIを、もう触っている方もいると思います。<br>ChatGPTに文章を直してもらったり、調べものに使ったり。<br>それでも「営業が変わった」とまでは言えない。<br>そういう方が、いちばん多いはずです。</p>
    <p>理由は簡単で、AIを「道具」として使っているからです。<br>右腕と左腕は、道具ではありません。<br>あなたの代わりに、集客の入口を作り、面談の前後を回す「人手」です。<br>一度組んでしまえば、あなたが寝ている間も、面談の合間も、勝手に動きます。</p>
    <p>ここに入れば、面倒な仕事は、もう要らなくなります。<br>提案書のたたき台も、フォローの文面も、次の予約の案内も、3か月後の連絡も。<br>集客の入口から面談の後ろまで、ここだけで完結します。<br>あなたに残るのは、お客様と話すことと、決めることだけです。</p>
-   <p>体力で押す営業を、あと何年続けられますか。<br>移動をやめて、右腕と左腕に任せれば、70歳になっても回ります。<br>むしろ、経験が長い人ほど、AIに渡せる材料が多い。<br>あなたのこれまでは、ぜんぶ資産です。</p>
+   <p>体力で押す営業を、あと何年続けられますか。<br>移動をやめて、右腕と左腕に任せれば、70歳になっても回せます。<br>むしろ、経験が長い人ほど、AIに渡せる材料が多い。<br>あなたのこれまでは、ぜんぶ資産です。</p>
    <p>90分、無料です。売り込みはしません。<br>使うかどうかは、見てから決めてください。<br>ただ、見ないまま「自分には無理」と決めるのは、もったいない。<br>何とかなります。何とかします。</p>
    <p class="sign">森川満章</p>
   </div>
@@ -462,6 +481,7 @@ footer{font-size:14px;color:var(--sub);text-align:center;padding:26px 20px 100px
  <div class="wrap">
   <div class="eyebrow">参加までの流れ</div>
   <h2>申し込みは、<br>30秒で終わります。</h2>
+  <div class="zukai"><img src="zukai/steps.jpg" alt="申し込みは30秒。1 ボタンを押すと公式LINEが開く。2 友だち追加で受付完了。3 前日にZoomのURLがLINEで届く。" loading="lazy" width="1440" height="1440"></div>
   <div class="steps">
    <div class="step"><div class="no">1</div><p><b>下のボタンを押す</b>公式LINEの友だち追加画面が開きます</p></div>
    <div class="step"><div class="no">2</div><p><b>友だち追加する</b>その場で「受付完了」のメッセージが届きます。これで申込完了です</p></div>
@@ -502,6 +522,8 @@ footer{font-size:14px;color:var(--sub);text-align:center;padding:26px 20px 100px
    <li>実際に使う際は、ご自身が所属する会社の規程が優先されます。</li>
    <li>本ページの業界数値は各出典の公表値、fulfullの実績は自社集計です。成果を保証するものではありません。</li>
    <li>当日は録画を行い、後日の教材として使用させていただく場合があります。参加者の映像・名前は使いません。</li>
+   <li>ページ内の人物写真・イラストはイメージです（講師写真を除く）。申込一覧の動画は個人情報を加工しています。</li>
+   <li>LINE登録でお預かりする情報は、勉強会のご案内と金融AIカレッジからの情報提供に使用します。<a href="https://fulfull.jp/privacy-policy/" target="_blank" rel="noopener" style="color:var(--sub)">プライバシーポリシー</a></li>
   </ul>
   <p class="motto">作るまでが、学び。<br>出すかどうかは、本人と会社。</p>
  </div>
