@@ -16,189 +16,324 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap">
+<!-- Meta Pixel（fulfull_お金の勉強会_自社ピクセル） -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1510200123755162');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1510200123755162&ev=PageView&noscript=1"></noscript>
 <style>
-:root{--navy:#2C3340;--navy-d:#1F2532;--ink:#2C3340;--sub:#5B6480;--bg:#FBF8F3;--paper:#FFFFFF;--soft:#F2EDE3;--line:#E7E0D4;--gold:#DFA23C;--gold-d:#B8862B;--gold-l:#F1D79A;--line-green:#06C755}
+:root{--navy:#22293A;--navy-d:#171C28;--ink:#22293A;--sub:#4F586B;--bg:#FBF8F3;--paper:#FFFFFF;--soft:#F3EEE4;--line:#E5DED2;--gold:#DFA23C;--gold-d:#A9771B;--gold-l:#F1D79A;--line-green:#06C755;--red:#B8473A}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Zen Kaku Gothic New","Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;font-size:18px;font-weight:500;line-height:1.9;-webkit-text-size-adjust:100%}
-.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Zen Kaku Gothic New","Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;font-size:18px;font-weight:500;line-height:1.9;-webkit-text-size-adjust:100%;overflow-x:hidden}
+img{max-width:100%;display:block}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
 p{margin:0 0 16px}
+strong{font-weight:900}
+.mincho{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif}
 /* hero */
-.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-d) 100%);color:#fff;padding:44px 0 40px;position:relative;overflow:hidden}
-.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 85% 10%,rgba(223,162,60,.22),transparent 70%)}
-.hero .wrap{position:relative}
-.date{display:inline-block;background:rgba(241,215,154,.14);border:1px solid rgba(241,215,154,.5);color:var(--gold-l);font-size:15px;font-weight:700;border-radius:999px;padding:6px 14px;letter-spacing:.04em;margin-bottom:18px}
-h1{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-size:36px;line-height:1.4;font-weight:800;margin:0 0 18px;text-wrap:balance}
+.hero{background:linear-gradient(165deg,#2A3245 0%,var(--navy-d) 100%);color:#fff;padding:36px 0 40px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(700px 320px at 90% 0%,rgba(223,162,60,.20),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;max-width:1040px}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:26px;align-items:center}
+.hero-img{border-radius:22px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.35);aspect-ratio:4/5;max-height:420px}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.date{display:inline-block;background:rgba(241,215,154,.14);border:1px solid rgba(241,215,154,.55);color:var(--gold-l);font-size:15px;font-weight:700;border-radius:999px;padding:6px 14px;letter-spacing:.04em;margin-bottom:16px}
+h1{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-size:clamp(30px,8vw,44px);line-height:1.38;font-weight:800;margin:0 0 16px}
 h1 .g{color:var(--gold-l)}
-.lead{font-size:18px;font-weight:500;color:#DCE3EE;margin-bottom:26px}
-.btn{display:block;width:100%;background:var(--line-green);color:#fff;text-decoration:none;text-align:center;font-size:19.5px;font-weight:900;border-radius:999px;padding:19px 18px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.lead{font-size:18px;color:#DCE3EE;margin-bottom:22px}
+.btn{display:block;width:100%;background:var(--line-green);color:#fff;text-decoration:none;text-align:center;font-size:19.5px;font-weight:900;border-radius:999px;padding:19px 18px;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .15s}
+.btn:active{transform:scale(.98)}
 .btn small{display:block;font-size:14px;font-weight:700;opacity:.92;margin-top:2px}
-.btn-note{font-size:14.5px;color:#C5CDDA;text-align:center;margin:12px 0 0}
+.btn-note{font-size:14.5px;color:#C9D1DE;text-align:center;margin:12px 0 0}
+.trust{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.trust span{font-size:14.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px}
 /* sections */
-section{padding:44px 0}
+section{padding:52px 0}
 section.alt{background:var(--paper)}
-.eyebrow{font-size:14px;font-weight:700;letter-spacing:.16em;color:var(--gold-d);margin-bottom:6px}
-h2{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-size:27px;line-height:1.45;font-weight:800;margin:0 0 20px;text-wrap:balance}
+section.dark{background:var(--navy);color:#fff}
+.eyebrow{font-size:14px;font-weight:900;letter-spacing:.16em;color:var(--gold-d);margin-bottom:8px}
+.dark .eyebrow{color:var(--gold-l)}
+h2{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-size:clamp(24px,6.4vw,31px);line-height:1.45;font-weight:800;margin:0 0 22px}
 h3{font-size:20px;font-weight:900;margin:0 0 8px;line-height:1.5}
-.story p{font-size:18px}
-.story .me{display:flex;gap:16px;align-items:center;margin:8px 0 18px}
-.story .me img{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:top;border:3px solid var(--gold-l)}
-.story .me div{font-size:15.5px;color:var(--sub);line-height:1.6}
-.story .me b{display:block;font-size:18px;color:var(--ink);font-weight:900}
-ul.who{list-style:none;padding:0;margin:0;display:grid;gap:10px}
-ul.who li{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 48px;position:relative}
-ul.who li:before{content:"✓";position:absolute;left:16px;top:13px;color:var(--gold-d);font-weight:900;font-size:20px}
+.figure{border-radius:20px;overflow:hidden;margin:0 0 22px;box-shadow:0 10px 30px rgba(34,41,58,.15)}
+.figure img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.cap{font-size:14px;color:var(--sub);margin:-12px 0 20px}
+/* pains */
+ul.pain{list-style:none;padding:0;margin:0 0 6px;display:grid;gap:10px}
+ul.pain li{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 50px;position:relative;font-weight:700}
+ul.pain li:before{content:"";position:absolute;left:18px;top:21px;width:14px;height:14px;border-radius:50%;background:var(--gold)}
+.dark ul.pain li{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#fff}
+/* stats */
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:6px 0 18px}
+.stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:18px 16px}
+.stat .n{font-family:"Shippori Mincho",serif;font-size:40px;font-weight:800;line-height:1.1;color:var(--gold-l);font-variant-numeric:tabular-nums}
+.stat .n small{font-size:18px;margin-left:2px}
+.stat .l{font-size:15px;font-weight:700;margin-top:6px;line-height:1.55}
+.src{font-size:13.5px;color:#AEB6C6;line-height:1.7}
+.src a{color:#C9D1DE}
+/* arms */
 .arms{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:6px 0 22px}
 .arm{background:var(--soft);border-radius:18px;padding:20px 18px;border-top:5px solid var(--gold)}
 .arm .k{font-size:13px;font-weight:900;letter-spacing:.14em;color:var(--gold-d)}
 .arm h3{font-size:21px;margin:4px 0 8px}
 .arm p{font-size:16px;color:var(--sub);margin:0}
-.arm svg{width:56px;height:56px;display:block;margin-bottom:8px}
-.timeline{display:grid;gap:0;border-left:3px solid var(--gold-l);padding-left:20px;margin:4px 0 0}
+.arm ul{margin:8px 0 0;padding-left:1.1em;font-size:15.5px;color:var(--sub)}
+.arm li{margin-bottom:4px}
+/* who does what */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0 6px}
+.col{border-radius:16px;padding:16px;border:1.5px solid var(--line);background:var(--paper)}
+.col.ai{border-color:var(--gold)}
+.col h4{margin:0 0 8px;font-size:16px;font-weight:900;letter-spacing:.06em}
+.col.ai h4{color:var(--gold-d)}
+.col ul{margin:0;padding-left:1.1em;font-size:15.5px}
+.col li{margin-bottom:5px}
+/* day compare */
+.days{display:grid;grid-template-columns:1fr;gap:14px;margin:8px 0 0}
+.day{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--paper)}
+.day .h{padding:12px 16px;font-weight:900;font-size:16px;letter-spacing:.04em}
+.day.b .h{background:#EAE4D8;color:var(--sub)}
+.day.a .h{background:var(--navy);color:var(--gold-l)}
+.day dl{margin:0;padding:12px 16px 6px;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:16px}
+.day dt{font-weight:900;color:var(--sub);font-variant-numeric:tabular-nums;white-space:nowrap}
+.day dd{margin:0}
+.day.a dd b{font-weight:900;color:var(--gold-d)}
+.pull{border-left:5px solid var(--gold);background:var(--soft);border-radius:0 14px 14px 0;padding:14px 18px;margin:18px 0;font-weight:700}
+.pull .big{font-family:"Shippori Mincho",serif;font-size:26px;font-weight:800;line-height:1.4}
+/* timeline */
+.timeline{border-left:3px solid var(--gold-l);padding-left:20px;margin:4px 0 0}
 .tl{position:relative;padding:0 0 22px}
 .tl:before{content:"";position:absolute;left:-28px;top:10px;width:13px;height:13px;border-radius:50%;background:var(--gold);border:3px solid var(--bg)}
 section.alt .tl:before{border-color:var(--paper)}
 .tl .min{font-size:14px;font-weight:900;color:var(--gold-d);letter-spacing:.06em}
 .tl p{margin:4px 0 0;font-size:17px;color:var(--sub)}
-ul.take{padding-left:1.2em;margin:0}
-ul.take li{margin-bottom:10px}
-.spec{display:grid;grid-template-columns:auto 1fr;gap:10px 22px;margin:0 0 6px;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px 22px}
+/* profile */
+.me{display:flex;gap:18px;align-items:center;margin:0 0 18px}
+.me img{width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:top;border:3px solid var(--gold-l);flex:0 0 auto}
+.me .t{font-size:15.5px;color:var(--sub);line-height:1.6}
+.me .t b{display:block;font-size:22px;color:var(--ink);font-weight:900;font-family:"Shippori Mincho",serif}
+.cred{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 18px}
+.cred div{background:var(--soft);border-radius:14px;padding:12px 14px;font-size:15px;font-weight:700;line-height:1.5}
+.cred div b{display:block;font-family:"Shippori Mincho",serif;font-size:24px;color:var(--navy);font-variant-numeric:tabular-nums}
+/* take */
+ul.take{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+ul.take li{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 50px;position:relative}
+ul.take li:before{content:"✓";position:absolute;left:17px;top:12px;color:var(--gold-d);font-weight:900;font-size:21px}
+/* faq */
+details{background:var(--paper);border:1px solid var(--line);border-radius:14px;margin-bottom:10px}
+summary{cursor:pointer;padding:14px 16px 14px 44px;font-weight:900;position:relative;list-style:none;line-height:1.55}
+summary::-webkit-details-marker{display:none}
+summary:before{content:"Q";position:absolute;left:16px;top:13px;color:var(--gold-d);font-family:"Shippori Mincho",serif;font-weight:800;font-size:19px}
+details p{padding:0 16px 16px 44px;margin:0;font-size:17px;color:var(--sub)}
+/* spec */
+.spec{display:grid;grid-template-columns:auto 1fr;gap:10px 22px;margin:0 0 6px;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px}
 .spec dt{color:var(--sub);font-weight:700;white-space:nowrap}
 .spec dd{margin:0;font-weight:700}
-.cta{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-d) 100%);color:#fff;padding:44px 0}
+.cta{background:linear-gradient(165deg,#2A3245 0%,var(--navy-d) 100%);color:#fff;padding:52px 0}
 .cta h2{color:#fff}
 .cta .lead{color:#DCE3EE}
 .notes{font-size:15px;color:var(--sub);padding-left:1.2em;margin:0}
 .notes li{margin-bottom:8px}
-.motto{font-family:"Shippori Mincho",serif;font-size:19px;font-weight:800;color:var(--navy);margin:18px 0 0}
-footer{font-size:14px;color:var(--sub);text-align:center;padding:26px 20px 40px;line-height:1.7}
-.sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(251,248,243,.94);backdrop-filter:blur(8px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s}
+.motto{font-family:"Shippori Mincho",serif;font-size:20px;font-weight:800;color:var(--navy);margin:18px 0 0}
+footer{font-size:14px;color:var(--sub);text-align:center;padding:26px 20px 100px;line-height:1.7}
+.sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(251,248,243,.94);backdrop-filter:blur(8px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s;z-index:9}
 .sticky.show{transform:none}
 .sticky .btn{max-width:640px;margin:0 auto;padding:15px 16px;font-size:18px;box-shadow:0 4px 16px rgba(0,0,0,.15)}
-@media (max-width:520px){h1{font-size:30px}h2{font-size:24px}.arms{grid-template-columns:1fr}.spec{grid-template-columns:1fr;gap:2px}.spec dt{margin-top:10px}}
-@media (prefers-reduced-motion:reduce){.sticky{transition:none}html{scroll-behavior:auto}}
+/* motion: resting state is visible; only animates after JS marks the page ready */
+.rv-ready .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rv-ready .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv-ready .rv{opacity:1;transform:none;transition:none}.sticky{transition:none}html{scroll-behavior:auto}}
+@media (min-width:900px){.hero-grid{grid-template-columns:1.15fr .85fr;gap:40px}.hero{padding:56px 0}.hero-img{max-height:none}}
+@media (max-width:520px){.arms,.split,.cred{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat .n{font-size:34px}.spec{grid-template-columns:1fr;gap:2px}.spec dt{margin-top:10px}.me img{width:80px;height:80px}}
 </style>
 </head>
 <body>
 
 <header class="hero">
  <div class="wrap">
-  <div class="date">9月24日（木）20:00〜21:30　Zoom・参加無料</div>
-  <h1>おじいちゃんでもできる、<br>保険営業の<span class="g">AI完全自動化。</span></h1>
-  <p class="lead">移動ゼロ。集客も、提案も、フォローも、AIの右腕と左腕が回す。<br>パソコンが苦手でも組み立てられる仕組みを、90分、目の前で動かして見せます。</p>
-  <a class="btn" href="https://utage-system.com/line/open/opbsv67O2rQi?mtid=MxBmU899UbAC" id="cta1">自動化の実演を見る<small>参加費無料・LINEで受付</small></a>
-  <p class="btn-note">90分で終わります。当日はカメラオフでの参加も大丈夫です。</p>
+  <div class="hero-grid">
+   <div>
+    <div class="date">9月24日（木）20:00〜21:30　Zoom・参加無料</div>
+    <h1>おじいちゃんでもできる、<br>保険営業の<span class="g">AI完全自動化。</span></h1>
+    <p class="lead">移動ゼロ。集客も、提案も、フォローも、AIの右腕と左腕が回す。<br>パソコンが苦手でも組み立てられる仕組みを、90分、目の前で動かして見せます。</p>
+    <a class="btn cta-link" href="https://utage-system.com/line/open/opbsv67O2rQi?mtid=MxBmU899UbAC">自動化の実演を見る<small>参加費無料・LINEで受付・30秒で完了</small></a>
+    <p class="btn-note">90分で終わります。カメラオフ・名前だけの参加で大丈夫です。</p>
+    <div class="trust"><span>AIに詳しくなくていい</span><span>売り込みなし</span><span>会社にも堂々と言える内容</span></div>
+   </div>
+   <div class="hero-img"><img src="img/hero.jpg" alt="自宅の書斎でノートパソコンを開く保険営業の男性" width="928" height="1152" fetchpriority="high"></div>
+  </div>
  </div>
 </header>
 
-<section class="story">
+<section class="rv">
  <div class="wrap">
-  <div class="eyebrow">はじめに</div>
-  <h2>1日に会えるのは、がんばって3人。<br>それが当たり前だと思っていました。</h2>
-  <p>朝、車で1件目へ。<br>昼は移動しながらコンビニ、夕方また1件、夜は提案書。<br>そんな毎日が、保険営業の当たり前だと、僕も思っていました。</p>
-  <div class="me"><img src="morikawa.jpg" alt="森川満章"><div><b>森川満章</b>fulfull株式会社 代表取締役<br>お金のプロ・金融AIカレッジ</div></div>
-  <p>相談2,000件、セミナー200回以上を重ねてきて、いちばん変わったのは「移動をやめたこと」でした。<br>オンラインにしたら、手が空きます。<br>空いた手に、AIを持たせました。<br>集客の分析、提案のたたき台、面談後のフォロー。<br>右腕と左腕ができたら、営業は1人でも回ります。</p>
-  <p style="margin:0">難しいことは何もしていません。<br>おじいちゃんでも組み立てられる形にしてあります。<br>今回は、その仕組みを目の前で動かしてお見せします。</p>
- </div>
-</section>
-
-<section class="alt">
- <div class="wrap">
-  <div class="eyebrow">こんな方へ</div>
-  <h2>ひとつでも当てはまれば、来てください。</h2>
-  <ul class="who">
-   <li>移動と提案書で1日が終わり、会える人数に限界を感じている保険営業の方</li>
-   <li>新規が紹介頼みで、自分から集客する仕組みを持っていない方</li>
-   <li>オンライン面談に切り替えたいけれど、何から始めればいいか分からない方</li>
-   <li>AIは気になっているが、パソコンは得意ではない方</li>
-   <li>会社の規程の中で、使っていい範囲を先に知っておきたい方</li>
+  <div class="eyebrow">こんな毎日、ありませんか</div>
+  <h2>がんばっているのに、<br>1日に会えるのは3人まで。</h2>
+  <div class="figure"><img src="img/before.jpg" alt="夜の車内で提案書を作る保険営業の男性" loading="lazy"></div>
+  <ul class="pain">
+   <li>朝から車で1件、昼に1件、夕方に1件。夜は駐車場で提案書。</li>
+   <li>知人・紹介のリストは、もう一周回った。「行くところがない」が口ぐせになりつつある。</li>
+   <li>面談後のフォロー連絡を、気持ちはあるのに後回しにしてしまう。</li>
+   <li>若い同僚はスマホで何かやっている。聞くのも少し気が引ける。</li>
+   <li>体力は正直、10年前と違う。それでも歩合だから、止まれない。</li>
+   <li>AIは気になる。でも、パソコンは得意じゃない。</li>
   </ul>
+  <p style="margin-top:18px">ひとつでも当てはまったなら、この先を読んでください。<br>これは「がんばり方」の話ではなく、「営業の回し方」を変える話です。</p>
  </div>
 </section>
 
-<section>
+<section class="dark rv">
  <div class="wrap">
-  <div class="eyebrow">当日の内容</div>
-  <h2>右腕と左腕を、その場で作ります。</h2>
+  <div class="eyebrow">いま、業界で起きていること</div>
+  <h2>大手はもう、営業職員全員にAIを持たせ始めました。</h2>
+  <div class="stats">
+   <div class="stat"><div class="n" data-count="36000">0</div><div class="l">明治安田生命が営業職員 約3万6,000人 全員にAIエージェントを導入</div></div>
+   <div class="stat"><div class="n">72<small>%</small>→56<small>%</small></div><div class="l">生保の加入経路に占める「営業職員」の割合（2003→2021年度）</div></div>
+   <div class="stat"><div class="n" data-count="25">0<small>%</small></div><div class="l">主要生保8社の入社5年目在籍率。4人に3人が現場を去る</div></div>
+   <div class="stat"><div class="n">約半減</div><div class="l">損保代理店数はこの20年で26.7万店→14.0万店に</div></div>
+  </div>
+  <p>営業職員の数は横ばいでも、「訪問と紹介だけで回す営業」は構造として縮んでいます。<br>一方で、お客様は先にネットやAIで調べてから会いに来ます。<br>会社がAIを配る前に、<strong>自分の右腕と左腕を自分で持った人</strong>から、面談と紹介が増え始めています。</p>
+  <p class="src">出典: 生命保険協会「2025年版 生命保険の動向」／生命保険協会・生命保険文化センター調査（金融庁提出資料 2022）／日本経済新聞 2025年報道／日本損害保険協会「2024年度損害保険代理店統計」／Impress Watch・アクセンチュア発表 2025</p>
+ </div>
+</section>
+
+<section class="alt rv">
+ <div class="wrap">
+  <div class="eyebrow">先に、はっきり言っておきます</div>
+  <h2>AIは、あなたの仕事を奪いません。<br>面倒な部分を引き受けるだけです。</h2>
+  <p>お客様の話を聞く「間」の取り方、ここは笑っていい、ここは黙る、という感覚。<br>それは年齢と経験でしか育ちません。<br>AIにできるのは、その前後にある「調べる・書く・整える・送る」を代わりにやることです。</p>
+  <div class="figure" style="max-width:520px;margin-left:auto;margin-right:auto"><img src="img/arms.jpg" alt="右腕と左腕のAIに囲まれた保険営業の男性" loading="lazy" style="aspect-ratio:1/1"></div>
   <div class="arms">
    <div class="arm">
-    <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#DFA23C" opacity=".18"/><path d="M14 40c6-2 10-8 12-16 1-4 6-4 6 0v10h14c3 0 5 2 5 5s-2 5-5 5H31c-6 0-10 3-17 4z" fill="#B8862B"/><circle cx="46" cy="18" r="6" fill="#2C3340"/><path d="M40 16h12" stroke="#FBF8F3" stroke-width="2" stroke-linecap="round"/></svg>
     <div class="k">右腕</div>
     <h3>集客の自動化</h3>
-    <p>AIに自分の強みと客層を分析させ、発信のネタ、診断ページ、LINEの自動応答までを組みます。予約が勝手に入る入口を、実物でお見せします。</p>
+    <p>AIにあなたの強みと客層を分析させ、入口を作ります。</p>
+    <ul><li>発信のネタと下書き</li><li>1分で終わる診断ページ</li><li>LINEの自動応答と配信</li><li>予約が勝手に入る仕組み</li></ul>
    </div>
    <div class="arm">
-    <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#4E8A86" opacity=".18"/><path d="M50 40c-6-2-10-8-12-16-1-4-6-4-6 0v10H18c-3 0-5 2-5 5s2 5 5 5h15c6 0 10 3 17 4z" fill="#356461"/><rect x="12" y="12" width="16" height="12" rx="2" fill="#2C3340"/><path d="M15 16h10M15 20h7" stroke="#FBF8F3" stroke-width="2" stroke-linecap="round"/></svg>
     <div class="k">左腕</div>
     <h3>面談と提案の自動化</h3>
-    <p>面談メモを渡すと、提案の骨子、フォロー文、次回の予約案内までAIが返します。オンライン面談の前後を、その場で動かします。</p>
+    <p>面談メモを渡すだけで、前後の仕事が終わります。</p>
+    <ul><li>提案の骨子（たたき台）</li><li>その日のうちのフォロー文</li><li>次回の予約案内</li><li>3か月ごとの「思い出してもらう」連絡</li></ul>
    </div>
   </div>
-  <div class="timeline">
-   <div class="tl"><div class="min">15分</div><h3>なぜ「完全自動化」ができるのか</h3><p>移動をやめると何が空くのか。お客様がAIに相談してから来る時代に、営業側もAIを持つとどう変わるのか。自動化できる部分と、人がやるべき部分の線引きから話します。</p></div>
-   <div class="tl"><div class="min">30分</div><h3>実演：右腕と左腕をその場で作る</h3><p>集客の入口と、面談の前後。2本のAIを、目の前で動かします。できあがったものだけでなく、途中の指示の出し方まで見ていただきます。</p></div>
-   <div class="tl"><div class="min">15分</div><h3>おじいちゃんでもできる組み立て方</h3><p>コピーして貼るだけの「右腕の設定文」「左腕の設定文」を配ります。毎日の回し方と、続ける仕組みまで。</p></div>
-   <div class="tl" style="padding-bottom:0"><div class="min">30分</div><h3>質疑応答</h3><p>自分の場合はどう組むか、その場で聞ける時間です。</p></div>
+  <div class="split">
+   <div class="col ai"><h4>AIがやること</h4><ul><li>調べる・比べる・まとめる</li><li>下書きを書く（提案・フォロー・発信）</li><li>整える・チェックする</li><li>決まった連絡を決まった時に送る</li></ul></div>
+   <div class="col"><h4>あなたがやること</h4><ul><li>お客様と話す</li><li>提案の最終判断</li><li>説明と契約の手続き（募集行為）</li><li>「この人に会いたい」と思ってもらうこと</li></ul></div>
   </div>
  </div>
 </section>
 
-<section class="alt">
+<section class="rv">
+ <div class="wrap">
+  <div class="eyebrow">1日は、こう変わります</div>
+  <h2>移動をやめた分だけ、会える人が増える。</h2>
+  <div class="figure"><img src="img/after.jpg" alt="自宅でお客様夫婦とオンライン面談する男性" loading="lazy"></div>
+  <div class="days">
+   <div class="day b"><div class="h">いままで（訪問営業の1日）</div>
+    <dl><dt>9:00</dt><dd>車で1件目へ移動</dd><dt>10:00</dt><dd>面談①</dd><dt>12:00</dt><dd>移動しながら昼食</dd><dt>14:00</dt><dd>面談②</dd><dt>16:00</dt><dd>移動・電話・雑務</dd><dt>18:00</dt><dd>面談③</dd><dt>20:00</dt><dd>帰宅、提案書づくり（約2時間）</dd><dt>23:00</dt><dd>フォロー連絡は明日に</dd></dl>
+   </div>
+   <div class="day a"><div class="h">これから（オンライン×AIの1日）</div>
+    <dl><dt>9:00</dt><dd><b>右腕</b>が朝までに用意した面談前メモを確認</dd><dt>10:00</dt><dd>オンライン面談①</dd><dt>10:45</dt><dd><b>左腕</b>にメモを渡す。フォロー文と提案骨子が2分で届く</dd><dt>11:00</dt><dd>オンライン面談②</dd><dt>13:00</dt><dd>オンライン面談③</dd><dt>15:00</dt><dd>オンライン面談④・⑤</dd><dt>17:00</dt><dd>診断ページから入った予約を確認して終了</dd><dt>夜</dt><dd>家族と食事。提案書はもう終わっている</dd></dl>
+   </div>
+  </div>
+  <div class="pull"><div class="big">提案書、2時間 → 2分。</div>森川自身の実測です。たたき台までAI、仕上げは本人。<br>約800名のお客様への3か月ごとの連絡も、AIが「その人向け」に言い換えて下書きします。</div>
+  <p style="font-size:15.5px;color:var(--sub)">※1日の例はモデルケースです。面談の本数はお客様の状況によります。時間が減るというより、同じ時間でできる量が増える、が実感に近いです。</p>
+ </div>
+</section>
+
+<section class="alt rv">
+ <div class="wrap">
+  <div class="eyebrow">当日の90分</div>
+  <h2>右腕と左腕を、その場で作ります。</h2>
+  <div class="timeline">
+   <div class="tl"><div class="min">15分</div><h3>なぜ「完全自動化」ができるのか</h3><p>移動をやめると何が空くのか。お客様がAIに相談してから来る時代に、営業側もAIを持つとどう変わるのか。自動化していい部分と、人がやるべき部分の線引きから話します。</p></div>
+   <div class="tl"><div class="min">30分</div><h3>実演：右腕と左腕をその場で作る</h3><p>右腕＝AIに強みと客層を分析させ、発信ネタ、診断ページ、LINE自動応答まで組む。実際に動いている入口をお見せします。<br>左腕＝架空の面談メモを渡して、提案骨子、フォロー文、次回予約案内ができるまでを、その場で動かします。途中の指示の出し方まで、全部見せます。</p></div>
+   <div class="tl"><div class="min">15分</div><h3>おじいちゃんでもできる組み立て方</h3><p>コピーして貼るだけの「右腕の設定文」「左腕の設定文」を配ります。毎日の回し方と、続ける仕組みまで。</p></div>
+   <div class="tl" style="padding-bottom:0"><div class="min">30分</div><h3>質疑応答</h3><p>自分の場合はどう組むか、その場で聞ける時間です。名前だけ・カメラオフで大丈夫です。</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="rv">
+ <div class="wrap">
+  <div class="eyebrow">講師</div>
+  <h2>「ばあちゃんでもできる」から始まった人です。</h2>
+  <div class="me"><img src="morikawa.jpg" alt="森川満章" loading="lazy"><div class="t"><b>森川満章</b>fulfull株式会社 代表取締役<br>お金のプロ・金融AIカレッジ主宰</div></div>
+  <p>30歳まで投資を知らなかった、元ヤマト運輸のドライバーです。<br>投資を覚えたあと、母からLINEが来ました。<br>「私にもできる投資ある？」<br>それに答えるために作った最初のスクールの名前が、<strong>「ばあちゃんでもできるFX」</strong>でした。<br>難しいことを、その人の言葉に置き換えて渡す。それが僕の仕事の原点です。</p>
+  <p>いま、面談も集客も、オンラインとAIでほぼ自動で回しています。<br>特別な才能があったわけではありません。<br>「何を、どの順番でAIに渡すか」を決めただけです。<br>今回は、その決め方を丸ごと持ち帰ってもらいます。</p>
+  <div class="cred">
+   <div><b>2,000件<span style="font-size:15px">以上</span></b>累計相談件数</div>
+   <div><b>200回<span style="font-size:15px">以上</span></b>セミナー開催・延べ6,500名・継続率92%</div>
+   <div><b>25社<span style="font-size:15px">以上</span></b>企業研修の実績</div>
+   <div><b>登壇</b>東京海上日動あんしん生命・積水ハウス ほか。商工会議所ビジネスアドバイザー</div>
+  </div>
+  <p style="font-size:15.5px;color:var(--sub);margin:0">岩手県出身。トヨタ整備士、佐川急便、ヤマト運輸を経て独立。2020年にfulfullを創業。3児の父。</p>
+ </div>
+</section>
+
+<section class="alt rv">
  <div class="wrap">
   <div class="eyebrow">持ち帰れるもの</div>
   <h2>翌日から、自分のAIが動き出します。</h2>
+  <div class="figure"><img src="img/kit.jpg" alt="スマートフォンでAIとやり取りする手元" loading="lazy"></div>
   <ul class="take">
-   <li>右腕（集客）と左腕（面談）の設定文。コピーして貼るだけで自分のAIが動き出します</li>
-   <li>移動ゼロで回す、オンライン保険営業の1日の型</li>
-   <li>自動化していい仕事と、自分がやるべき仕事の線引き</li>
-   <li>その場で疑問を解消できる質疑応答の時間</li>
+   <li><strong>右腕の設定文・左腕の設定文</strong>。コピーしてAIに貼るだけで、あなた専用の相棒が動き出します</li>
+   <li><strong>移動ゼロで回す1日の型</strong>。オンライン面談の前後をどう組むか</li>
+   <li><strong>自動化していい仕事と、自分がやる仕事の線引き</strong>。会社の規程の中で使える範囲の考え方</li>
+   <li><strong>質疑応答での、あなたのケースの答え</strong></li>
   </ul>
  </div>
 </section>
 
-<section>
+<section class="rv">
  <div class="wrap">
-  <div class="eyebrow">講師</div>
-  <h2>森川満章</h2>
-  <div class="story">
-  <div class="me"><img src="morikawa.jpg" alt="森川満章"><div><b>fulfull株式会社 代表取締役</b>お金のプロ・金融AIカレッジ主宰</div></div>
-  </div>
-  <p>岩手県出身。トヨタ整備士、佐川急便を経て、ヤマト運輸のドライバーとして働いていた30歳のとき、投資と出会いました。<br>その後独立し、2020年にfulfullを創業。<br>これまでの相談件数は2,000件以上、セミナーは200回を超え、企業研修は25社以上で行っています。<br>いまは面談も集客も、オンラインとAIでほぼ自動で回しています。</p>
-  <p style="margin:0">肩書きより、現場で実際に何を使っているかをお伝えするのが好きです。<br>今回の90分も、資料の説明ではなく、実際に動かしているところをお見せします。</p>
+  <div class="eyebrow">よくあるご質問</div>
+  <h2>ここまで読んで、まだ迷っている方へ。</h2>
+  <details><summary>パソコンが苦手です。本当にできますか。</summary><p>スマホだけで始められます。当日お渡しする設定文は「コピーして貼る」だけです。難しい設定や、専門用語の説明会はしません。</p></details>
+  <details><summary>50代・60代でも、いまから間に合いますか。</summary><p>間に合います。AIが代わりにやるのは「調べる・書く・整える」で、お客様との信頼関係はあなたのこれまでの経験がそのまま資産です。むしろ経験が長い人ほど、AIに渡せる材料が多いです。</p></details>
+  <details><summary>AIを使うのは、会社のルール上問題ないですか。</summary><p>当日は「所属会社の規程が優先」を前提に、自動化していい範囲と、募集人本人がやるべき範囲の線引きから話します。会社に内緒で使う方法ではなく、堂々と説明できる使い方です。</p></details>
+  <details><summary>「完全自動化」と言いますが、契約まで自動ですか。</summary><p>いいえ。自動化するのは集客・提案の準備・フォローの部分です。お客様への説明と契約の手続きは、募集人ご本人が行う前提です。</p></details>
+  <details><summary>何かを売り込まれますか。</summary><p>勉強会は無料で、売り込みはしません。最後に、希望する方だけに個別相談の案内を1枚お見せします。要らなければそのまま閉じていただいて大丈夫です。</p></details>
+  <details><summary>顔出しや発言は必要ですか。</summary><p>不要です。カメラオフ、表示名だけで参加できます。質問はチャットでも受け付けます。</p></details>
+  <details><summary>録画は残りますか。</summary><p>講師側の画面と音声を録画し、後日の教材に使う場合があります。参加者の映像・名前は使いません。</p></details>
+  <details><summary>当日参加できなくなったら。</summary><p>LINEに一言送ってください。次回の日程をご案内します。</p></details>
  </div>
 </section>
 
-<section class="alt">
+<section class="alt rv">
  <div class="wrap">
   <div class="eyebrow">開催概要</div>
   <h2>9月24日（木）夜8時、Zoomで。</h2>
   <dl class="spec">
    <dt>日時</dt><dd>2026年9月24日（木）20:00〜21:30<br><span style="font-weight:500;color:var(--sub)">本編60分＋質疑30分</span></dd>
-   <dt>形式</dt><dd>Zoom（オンライン）</dd>
+   <dt>形式</dt><dd>Zoom（オンライン・カメラオフ可）</dd>
    <dt>参加費</dt><dd>無料</dd>
    <dt>定員</dt><dd>少人数制</dd>
+   <dt>対象</dt><dd>保険営業（生保・損保・代理店）の個人の方</dd>
    <dt>受付</dt><dd>LINEで受け付けます。ZoomのURLは前日にLINEでお送りします</dd>
   </dl>
  </div>
 </section>
 
-<section class="cta">
+<section class="cta rv">
  <div class="wrap">
   <h2>移動をやめた分だけ、会える人が増える。<br>その回し方を、90分で。</h2>
   <p class="lead">受付はLINEです。友だち追加で申込完了。<br>ZoomのURLは前日にお送りします。</p>
-  <a class="btn" href="https://utage-system.com/line/open/opbsv67O2rQi?mtid=MxBmU899UbAC" id="cta2">自動化の実演を見る<small>参加費無料・LINEで受付</small></a>
-  <p class="btn-note">90分で終わります。当日はカメラオフでの参加も大丈夫です。</p>
+  <a class="btn cta-link" href="https://utage-system.com/line/open/opbsv67O2rQi?mtid=MxBmU899UbAC">自動化の実演を見る<small>参加費無料・LINEで受付・30秒で完了</small></a>
+  <p class="btn-note">90分で終わります。カメラオフ・名前だけの参加で大丈夫です。</p>
  </div>
 </section>
 
-<section>
+<section class="rv">
  <div class="wrap">
   <div class="eyebrow">ご注意</div>
   <ul class="notes">
    <li>「自動化」は集客・提案準備・フォローの部分を指します。お客様への説明や契約手続きは、募集人ご本人が行う前提です。</li>
    <li>実際に使う際は、ご自身が所属する会社の規程が優先されます。</li>
-   <li>当日は録画を行い、後日の教材として使用させていただく場合があります。</li>
-   <li>個別のご相談は、当日の最後にご希望の方へのご案内のみで行います。押し売りはしません。</li>
+   <li>本ページの業界数値は各出典の公表値です。成果を保証するものではありません。</li>
+   <li>当日は録画を行い、後日の教材として使用させていただく場合があります。参加者の映像・名前は使いません。</li>
   </ul>
   <p class="motto">作るまでが、学び。出すかどうかは、本人と会社。</p>
  </div>
@@ -206,14 +341,30 @@ footer{font-size:14px;color:var(--sub);text-align:center;padding:26px 20px 40px;
 
 <footer>金融AIカレッジ｜fulfull株式会社<br><a href="../" style="color:var(--sub)">お金のプロのAI相棒診断（無料・約1分）</a></footer>
 
-<div class="sticky" id="sticky"><a class="btn" href="https://utage-system.com/line/open/opbsv67O2rQi?mtid=MxBmU899UbAC" id="cta3">9/24の実演に申し込む（無料）</a></div>
+<div class="sticky" id="sticky"><a class="btn cta-link" href="https://utage-system.com/line/open/opbsv67O2rQi?mtid=MxBmU899UbAC">9/24の実演に申し込む（無料）</a></div>
 
 <script>
 (function(){
-  const s=document.getElementById('sticky'), hero=document.querySelector('.hero');
-  function tick(){ const past=window.scrollY>hero.offsetHeight; const nearEnd=(window.innerHeight+window.scrollY)>(document.body.scrollHeight-420); s.classList.toggle('show',past&&!nearEnd); }
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // sticky CTA
+  var s=document.getElementById('sticky'), hero=document.querySelector('.hero');
+  function tick(){ var past=window.scrollY>hero.offsetHeight-80; var nearEnd=(window.innerHeight+window.scrollY)>(document.body.scrollHeight-560); s.classList.toggle('show',past&&!nearEnd); }
   window.addEventListener('scroll',tick,{passive:true}); tick();
-  // ref をそのままLINE登録URLに引き継ぐ（?ref=◯ は計測用。UTAGE側はmtidで経路判別）
+  // reveal on scroll (resting state is visible; animation only once JS is ready)
+  if(!reduce && 'IntersectionObserver' in window){
+    document.documentElement.classList.add('rv-ready');
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+    // count-up numbers
+    var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target,end=+el.dataset.count,t0=null,sm=el.querySelector('small'),suffix=sm?sm.outerHTML:'';
+      function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1400);p=1-Math.pow(1-p,3);el.innerHTML=Math.round(end*p).toLocaleString()+suffix;if(p<1)requestAnimationFrame(step);}
+      requestAnimationFrame(step);co.unobserve(el);});},{threshold:.5});
+    document.querySelectorAll('[data-count]').forEach(function(el){co.observe(el);});
+  }else{
+    document.querySelectorAll('[data-count]').forEach(function(el){var sm=el.querySelector('small');el.innerHTML=(+el.dataset.count).toLocaleString()+(sm?sm.outerHTML:'');});
+  }
+  // Meta Pixel: Lead on CTA click
+  document.querySelectorAll('.cta-link').forEach(function(a){a.addEventListener('click',function(){try{fbq('track','Lead',{content_name:'seminar_0924'});}catch(e){}});});
 })();
 </script>
 </body>
