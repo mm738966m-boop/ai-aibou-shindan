@@ -12,6 +12,7 @@
 <meta property="og:image" content="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/og.png">
 <meta property="og:site_name" content="金融AIカレッジ">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="build" content="v3">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -141,9 +142,7 @@ footer{font-size:14px;color:var(--sub);text-align:center;padding:26px 20px 100px
 .sticky.show{transform:none}
 .sticky .btn{max-width:640px;margin:0 auto;padding:15px 16px;font-size:18px;box-shadow:0 4px 16px rgba(0,0,0,.15)}
 /* motion: resting state is visible; only animates after JS marks the page ready */
-.rv-ready .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
-.rv-ready .rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.rv-ready .rv{opacity:1;transform:none;transition:none}.sticky{transition:none}html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){.sticky{transition:none}html{scroll-behavior:auto}}
 @media (min-width:900px){.hero-grid{grid-template-columns:1.15fr .85fr;gap:40px}.hero{padding:56px 0}.hero-img{max-height:none}}
 @media (max-width:520px){.arms,.split,.cred{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat .n{font-size:34px}.spec{grid-template-columns:1fr;gap:2px}.spec dt{margin-top:10px}.me img{width:80px;height:80px}}
 </style>
@@ -352,9 +351,6 @@ footer{font-size:14px;color:var(--sub);text-align:center;padding:26px 20px 100px
   window.addEventListener('scroll',tick,{passive:true}); tick();
   // reveal on scroll (resting state is visible; animation only once JS is ready)
   if(!reduce && 'IntersectionObserver' in window){
-    document.documentElement.classList.add('rv-ready');
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px'});
-    document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
     // count-up numbers
     var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target,end=+el.dataset.count,t0=null,sm=el.querySelector('small'),suffix=sm?sm.outerHTML:'';
       function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1400);p=1-Math.pow(1-p,3);el.innerHTML=Math.round(end*p).toLocaleString()+suffix;if(p<1)requestAnimationFrame(step);}
