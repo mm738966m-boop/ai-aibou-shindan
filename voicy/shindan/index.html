@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>うちの会社、AIで何人分？｜会社のAI度診断</title>
+<meta name="description" content="4つの質問・約1分・登録なし。御社の事務仕事がAIで何人分になるか、会社のタイプがキャラクターでわかります。">
+<link rel="canonical" href="https://mm738966m-boop.github.io/ai-aibou-shindan/voicy/shindan/">
+<meta property="og:title" content="うちの会社、AIで何人分？｜会社のAI度診断">
+<meta property="og:description" content="4つの質問・約1分・登録なし。会社のタイプがキャラクターでわかります。">
+<meta property="og:url" content="https://mm738966m-boop.github.io/ai-aibou-shindan/voicy/shindan/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap">
+<style>
+:root{--green:#00A88F;--green-d:#0B7A69;--green-x:#0A5A4E;--green-l:#D5F0E8;--mint:#EEF8F4;--yellow:#F6E67A;--yellow-l:#FCF6CF;--orange:#F07A1C;--orange-d:#D9640A;--orange-l:#FDEBDB;--ink:#2B3138;--sub:#5A6470;--line:#DCE8E3;--paper:#fff;--lineg:#06C755;--lineg-d:#05B34C}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(170deg,#1BB79C 0%,#00A88F 55%,#049A84 100%);min-height:100vh;color:var(--ink);font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;font-size:17.5px;font-weight:500;line-height:1.8;-webkit-text-size-adjust:100%}
+.top{max-width:560px;margin:0 auto;padding:16px 18px 0;display:flex;justify-content:space-between;align-items:center;color:#fff;font-weight:900;font-size:14px;letter-spacing:.06em}
+.top .lg{font-size:18px;letter-spacing:.02em}
+.top .lg small{font-weight:700;font-size:12px;opacity:.9;margin-left:6px;letter-spacing:.08em}
+.wrap{max-width:560px;margin:0 auto;padding:14px 16px 40px}
+.card{background:var(--paper);border-radius:28px;padding:28px 22px 26px;box-shadow:0 18px 44px rgba(0,60,50,.25);position:relative;overflow:hidden}
+.card+.card{margin-top:14px}
+h1{font-size:clamp(26px,7.4vw,34px);font-weight:900;line-height:1.4;margin:0 0 10px;text-wrap:balance;color:var(--green-x)}
+h1 .y{color:var(--orange-d)}
+h2{font-size:clamp(21px,6vw,26px);font-weight:900;line-height:1.45;margin:0 0 14px;color:var(--green-x);text-wrap:balance}
+p{margin:0 0 14px}
+.sub{color:var(--sub);font-size:16px}
+.tag{display:inline-block;background:var(--yellow);color:var(--green-x);font-weight:900;font-size:13.5px;border-radius:999px;padding:5px 14px;margin-bottom:12px}
+.spec{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 18px}
+.spec span{font-size:14px;font-weight:900;color:var(--green-d);background:var(--mint);border-radius:999px;padding:5px 12px}
+.spec span:before{content:"✓ ";color:var(--green)}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:62px;padding:14px 20px;border-radius:999px;border:0;cursor:pointer;font-family:inherit;font-size:19px;font-weight:900;color:#fff;background:linear-gradient(180deg,#F98A2E,#EE6E10);box-shadow:0 8px 22px rgba(120,50,0,.28);text-decoration:none;line-height:1.35;text-align:center;transition:transform .12s}
+.btn:active{transform:scale(.98)}
+.btn small{display:block;font-size:13px;font-weight:700;opacity:.95}
+.btn.line{background:linear-gradient(180deg,#22D36A,#06C755);box-shadow:0 8px 22px rgba(6,199,85,.35)}
+.btn.line:before{content:"";width:26px;height:26px;border-radius:7px;background:#fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%2306C755" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.2 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6 1.1-.5 5.9-3.5 8-6 1.5-1.6 2.1-3.2 2.1-4.9C22 6.6 17.5 3 12 3z"/></svg>') center/20px no-repeat;flex:none}
+.btn.ghost{background:var(--paper);color:var(--green-d);border:2.5px solid var(--green);box-shadow:none;min-height:54px;font-size:16.5px}
+.note{font-size:13px;color:var(--sub);text-align:center;margin:10px 0 0;line-height:1.6}
+/* progress */
+.prog{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.prog .bar{flex:1;height:10px;background:var(--mint);border-radius:999px;overflow:hidden}
+.prog .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--green),#1BB79C);border-radius:999px;transition:width .35s}
+.prog b{font-size:13.5px;color:var(--green-d);white-space:nowrap;font-variant-numeric:tabular-nums}
+.q{font-size:14px;font-weight:900;color:var(--orange-d);letter-spacing:.1em;margin-bottom:4px}
+.opts{display:grid;gap:10px;margin:6px 0 16px}
+.opt{display:flex;align-items:center;gap:12px;background:var(--paper);border:2.5px solid var(--line);border-radius:18px;padding:13px 16px;font-size:17px;font-weight:700;cursor:pointer;text-align:left;font-family:inherit;color:var(--ink);transition:border-color .12s,background .12s,transform .12s;width:100%}
+.opt .ic{width:42px;height:42px;border-radius:12px;background:var(--mint);display:grid;place-content:center;font-size:22px;flex:none}
+.opt .t{flex:1;line-height:1.4}
+.opt .t small{display:block;font-size:13px;color:var(--sub);font-weight:700}
+.opt .ck{width:26px;height:26px;border-radius:50%;border:2.5px solid var(--line);flex:none;display:grid;place-content:center;color:#fff;font-size:14px;font-weight:900}
+.opt.on{border-color:var(--green);background:var(--mint)}
+.opt.on .ck{background:var(--green);border-color:var(--green)}
+.opt.on .ck:before{content:"✓"}
+.opt:active{transform:scale(.99)}
+.row{display:flex;gap:10px;align-items:center}
+.back{background:none;border:0;color:var(--sub);font-family:inherit;font-weight:700;font-size:15px;cursor:pointer;padding:10px 6px}
+.hint{font-size:13.5px;color:var(--sub);margin:-6px 0 12px}
+/* loading */
+.load{text-align:center;padding:30px 0 20px}
+.load .em{font-size:64px;animation:bob 1s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.load p{font-weight:900;color:var(--green-d);margin:8px 0 0}
+@media (prefers-reduced-motion:reduce){.load .em{animation:none}.prog .bar i{transition:none}}
+/* result */
+.res-head{text-align:center;padding:6px 0 4px}
+.res-head .em{width:150px;height:150px;border-radius:50%;background:var(--yellow);display:grid;place-content:center;font-size:88px;margin:0 auto 10px;box-shadow:0 10px 26px rgba(0,60,50,.18);line-height:1}
+.res-head .lab{font-size:13.5px;font-weight:900;color:var(--orange-d);letter-spacing:.14em}
+.res-head h2{margin:4px 0 6px;font-size:clamp(25px,7.2vw,32px)}
+.res-head .tl{font-size:16px;color:var(--sub);font-weight:700;margin:0 0 16px}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:6px 0 14px}
+.nums div{background:var(--mint);border-radius:16px;padding:12px 6px;text-align:center}
+.nums .n{font-size:clamp(20px,6vw,28px);font-weight:900;color:var(--green-d);line-height:1.1;font-variant-numeric:tabular-nums}
+.nums .n small{font-size:.5em}
+.nums .l{font-size:11.5px;color:var(--sub);font-weight:700;margin-top:4px;line-height:1.3}
+.first{background:var(--yellow-l);border:2.5px solid var(--yellow);border-radius:18px;padding:14px 16px;margin:0 0 14px}
+.first .k{font-size:13px;font-weight:900;color:var(--orange-d);letter-spacing:.1em}
+.first b{display:block;font-size:19px;color:var(--green-x);line-height:1.4}
+.first p{margin:4px 0 0;font-size:15px;color:var(--sub)}
+.traits{list-style:none;padding:0;margin:0 0 16px;display:grid;gap:8px}
+.traits li{background:var(--paper);border:2px solid var(--line);border-radius:14px;padding:11px 14px 11px 44px;position:relative;font-size:15.5px;line-height:1.6}
+.traits li:before{content:"✓";position:absolute;left:12px;top:12px;width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;font-size:13px;display:grid;place-content:center}
+.step1{background:var(--mint);border-radius:18px;padding:14px 16px;margin:0 0 18px}
+.step1 .k{font-size:13px;font-weight:900;color:var(--green-d);letter-spacing:.1em}
+.step1 p{margin:4px 0 0;font-size:16px}
+.ctabox{margin-top:18px}
+.ctabox .lead{text-align:center;font-weight:900;color:var(--green-x);margin:0 0 10px;font-size:17px}
+.mail{text-align:center;font-size:14px;color:var(--sub);margin:12px 0 0}
+.mail a{color:var(--green-d);font-weight:700}
+.share{margin-top:18px;border-top:2px dashed var(--line);padding-top:16px}
+.share .k{font-size:13px;font-weight:900;color:var(--sub);letter-spacing:.1em;margin-bottom:8px}
+.sharebox{background:var(--mint);border-radius:14px;padding:12px 14px;font-size:14.5px;color:var(--sub);white-space:pre-wrap;line-height:1.7;margin-bottom:8px}
+.copied{font-size:13.5px;color:var(--orange-d);font-weight:900;min-height:1.3em;margin:6px 0 0;text-align:center}
+.again{text-align:center;margin-top:14px}
+.again button{background:none;border:0;color:var(--sub);font-family:inherit;font-weight:700;font-size:14.5px;cursor:pointer;text-decoration:underline}
+.foot{color:#EAFBF6;font-size:12.5px;text-align:center;line-height:1.7;padding:18px 8px 0}
+.foot a{color:#fff}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="top"><div class="lg">fulfull<small>会社のAI度診断</small></div><div id="topnote">登録なし・約1分</div></div>
+<div class="wrap">
+
+<!-- intro -->
+<div class="card" id="s-intro">
+  <span class="tag">経営者の方も、会社員の方も</span>
+  <h1>うちの会社、<br>AIで<span class="y">何人分</span>になる？</h1>
+  <p class="sub">毎月くり返している事務仕事を3つ選ぶだけ。御社の「AI度」がキャラクターでわかり、年間いくら分をAIに任せられそうか、最初に任せるならどの仕事かまで出ます。</p>
+  <div class="spec"><span>4つの質問</span><span>約1分</span><span>登録不要</span><span>どこにも送信されません</span></div>
+  <button class="btn" id="start">1分で、うちの会社のタイプを見る<small>結果はその場で表示されます</small></button>
+  <p class="note">数字はこの画面の中だけで計算します。会社名や連絡先の入力はありません。</p>
+</div>
+
+<!-- questions -->
+<div class="card" id="s-q" hidden>
+  <div class="prog"><div class="bar"><i id="bar" style="width:0%"></i></div><b id="pn">1 / 4</b></div>
+  <div class="q" id="qk">Q1</div>
+  <h2 id="qt"></h2>
+  <p class="hint" id="qh"></p>
+  <div class="opts" id="opts"></div>
+  <div class="row"><button class="back" id="back">← ひとつ戻る</button><button class="btn" id="next" style="flex:1;min-height:54px;font-size:17px">次へ</button></div>
+</div>
+
+<!-- loading -->
+<div class="card" id="s-load" hidden>
+  <div class="load"><div class="em">🔍</div><p>御社の数字を計算しています…</p></div>
+</div>
+
+<!-- result -->
+<div class="card" id="s-res" hidden>
+  <div class="res-head">
+    <div class="em" id="r-em"></div>
+    <div class="lab">御社のタイプは</div>
+    <h2 id="r-name"></h2>
+    <p class="tl" id="r-tag"></p>
+  </div>
+  <div class="nums">
+    <div><div class="n" id="r-h"></div><div class="l">人がやっている時間／月</div></div>
+    <div><div class="n" id="r-cost"></div><div class="l">年間の人件費換算</div></div>
+    <div><div class="n" id="r-ai"></div><div class="l">AIに任せられる候補／年</div></div>
+  </div>
+  <div class="first"><div class="k">最初に任せるなら</div><b id="r-first"></b><p id="r-firstp"></p></div>
+  <ul class="traits" id="r-traits"></ul>
+  <div class="step1"><div class="k">このタイプの、最初の一手</div><p id="r-step"></p></div>
+
+  <div class="ctabox">
+    <p class="lead">詳しい結果と、御社向けの「最初の一手」の作り方を、LINEでお送りします。</p>
+    <a class="btn line" id="r-line" href="#" target="_blank" rel="noopener">LINEで、詳しい結果を受け取る<small>気になることは、そのままLINEで聞けます</small></a>
+    <p class="note" id="r-linenote">料金や進め方、うちの場合はどうか、も、LINEで聞いてください。返事は森川が書きます。</p>
+    <p class="mail">LINEを使わない方は <a id="r-mail" href="#">メールで聞く</a></p>
+  </div>
+
+  <div class="share">
+    <div class="k">結果をシェアする</div>
+    <div class="sharebox" id="sharetext"></div>
+    <button class="btn ghost" id="copy">投稿用の文章をコピー</button>
+    <p class="copied" id="copied" aria-live="polite"></p>
+  </div>
+  <div class="again"><button id="again">もう一度診断する</button></div>
+</div>
+
+<p class="foot">この診断は入力に基づく試算で、削減効果を保証するものではありません。「AIに任せられる候補」は、人の確認を残す前提の控えめな割合で計算しています。時給は月給30万円＋法定福利費を時給換算した2,500円で計算しています。<br>運営：fulfull株式会社　<a href="https://fulfull.jp/privacy-policy/" target="_blank" rel="noopener">プライバシーポリシー</a></p>
+</div>
+
+<script>
+(function(){
+/* ===== 設定（ここだけ直せば運用できます） ===== */
+var CONFIG={
+  // 新しいLINE公式アカウント（fulfull 会社用）の友だち追加URL。UTAGEの登録経路URLでも可。
+  // タイプ別に分けたい場合は LINE_BY_TYPE に入れる（空ならLINE_URLを使う）。
+  LINE_URL: "",
+  LINE_BY_TYPE: { tamago:"", risu:"", hachi:"", washi:"", zou:"" },
+  MAIL: "morikawa1223@fulfull.jp",
+  LP_URL: "https://mm738966m-boop.github.io/ai-aibou-shindan/voicy/",
+  PAGE_URL: "https://mm738966m-boop.github.io/ai-aibou-shindan/voicy/shindan/",
+  HOURLY: 2500
+};
+/* ===== 仕事の目安（1人あたり月の時間、AIに任せられる控えめな割合） ===== */
+var TASKS=[
+  {id:"minutes",ic:"📝",t:"議事録・社内の報告書",h:8,r:.5,first:"会議の録音を渡すと下書きが出ます。直して共有するだけに。"},
+  {id:"proposal",ic:"📄",t:"提案書・見積書のたたき台",h:10,r:.5,first:"条件を伝えるとたたき台が出ます。金額と表現だけ確認。"},
+  {id:"mail",ic:"✉️",t:"メール・案内文の作成",h:12,r:.6,first:"よくある問い合わせの返信案を並べておき、送るかを人が決めます。"},
+  {id:"sns",ic:"📣",t:"会社のSNS・ブログの発信",h:8,r:.6,first:"ネタ出しから下書きまで。投稿するかは人が決めます。"},
+  {id:"slide",ic:"📊",t:"スライド・チラシなど資料作成",h:10,r:.5,first:"構成と文章のたたき台まで。仕上げは人。"},
+  {id:"data",ic:"🔢",t:"データ入力・転記・集計",h:12,r:.6,first:"貼るだけで集計と文章まで出る形に。転記をなくします。"},
+  {id:"manual",ic:"📚",t:"マニュアル・手順書づくり",h:6,r:.5,first:"やり方を口で説明した録音から、手順書の下書きが出ます。"},
+  {id:"hiring",ic:"🧑‍💼",t:"求人票・採用まわりの文章",h:4,r:.6,first:"求人票と面接の質問リストのたたき台を先に作ります。"}
+];
+var Q=[
+  {k:"Q1",t:"毎月くり返している事務仕事は？",h:"3つまで選べます。近いものでOK。",multi:true,max:3,opts:TASKS.map(function(x){return {v:x.id,ic:x.ic,t:x.t}})},
+  {k:"Q2",t:"会社の人数は、どれくらい？",h:"パートやアルバイトも含めて、だいたいで。",opts:[
+    {v:1,ic:"🙋",t:"ひとり",s:"個人事業主・ひとり社長"},
+    {v:1.5,ic:"👥",t:"2〜5人"},
+    {v:3,ic:"🏢",t:"6〜20人"},
+    {v:5,ic:"🏬",t:"21人以上"}]},
+  {k:"Q3",t:"いま、会社でAIはどれくらい使っている？",h:"正直なところで。ここで結果が大きく変わります。",opts:[
+    {v:0,ic:"🥚",t:"まだ使っていない",s:"触ったことがある人はいるかも"},
+    {v:1,ic:"🐿️",t:"一部の人が、個人でたまに",s:"会社としては決めていない"},
+    {v:2,ic:"🐝",t:"数人が、日常的に使っている",s:"でも、やり方は人それぞれ"},
+    {v:3,ic:"🦅",t:"会社として、使い方を決めている",s:"ルールや手順がある"}]},
+  {k:"Q4",t:"いちばん近い悩みは？",h:"",opts:[
+    {v:"hito",ic:"😮‍💨",t:"人が足りない・採用がむずかしい"},
+    {v:"jikan",ic:"⏰",t:"できる人ほど事務に追われている"},
+    {v:"zokujin",ic:"🗝️",t:"その人しかできない仕事が多い"},
+    {v:"nani",ic:"🧭",t:"何から始めればいいか分からない"}]}
+];
+var TYPES={
+  tamago:{em:"🥚",name:"たまごタイプ",tag:"伸びしろが、いちばん大きい会社。",traits:["AIをまだ会社の仕事に使っていないので、最初の1つで一気に変わります","「何から始めるか」さえ決まれば、ここから先が早いタイプ","がんばっている人の時間が、そのまま事務に溶けているのがもったいない"],step:"3つ選んだ仕事のうち、いちばん時間を食っている1つだけをAIに渡すところから。全部をいっぺんにやらないのがコツです。"},
+  risu:{em:"🐿️",name:"リスタイプ",tag:"できる人が、こっそり貯め込んでいる会社。",traits:["一部の人が個人でAIを使えているが、会社としては決めていない","そのノウハウは、その人が異動・退職した日に消える","「使える人」と「使わない人」の差が、社内で静かに開いている"],step:"いま使えている人のやり方を1つ、会社の手順にするところから。「その人の道具」を「会社の右腕」に変えます。"},
+  hachi:{em:"🐝",name:"ハチタイプ",tag:"みんな働いているのに、巣の形がバラバラな会社。",traits:["数人が日常的にAIを使っていて、勢いはある","やり方が人それぞれで、成果物の質にばらつきが出る","「うまくいった型」が共有されず、同じ工夫を何人もが繰り返している"],step:"いちばん成果が出ている使い方を1つ選び、設定文と手順にして全員に配るところから。ばらつきが消えると、一気に会社の力になります。"},
+  washi:{em:"🦅",name:"ワシタイプ",tag:"高いところから全体が見えている会社。",traits:["会社としてAIの使い方を決めていて、土台はできている","次は「社内に広げる」と「手順として残す」の段階","外部に頼らず、自分たちで回し続けられる形が見えている"],step:"選抜した2〜4人が「社内で教えられる人」になる仕組みを作るところから。社長が同席すると、広がる速さが変わります。"},
+  zou:{em:"🐘",name:"ゾウタイプ",tag:"大きく動けば、大きく効く会社。",traits:["人数が多いぶん、同じ事務仕事が何人分も重なっている","「その人しかできない」仕事が多く、休みや退職のたびに止まる","1つの手順を変えるだけで、効き方が何倍にもなる"],step:"全員に受けさせず、経営者が選んだ2〜4人から。その人たちの仕事を手順にして、社内に広げる形がいちばん残ります。"}
+};
+
+var state={i:0,ans:[[],null,null,null]};
+var $=function(id){return document.getElementById(id)};
+var S={intro:$("s-intro"),q:$("s-q"),load:$("s-load"),res:$("s-res")};
+function show(k){for(var x in S){S[x].hidden=(x!==k)} window.scrollTo({top:0,behavior:"smooth"})}
+
+function renderQ(){
+  var q=Q[state.i];
+  $("bar").style.width=((state.i)/Q.length*100)+"%";
+  $("pn").textContent=(state.i+1)+" / "+Q.length;
+  $("qk").textContent=q.k; $("qt").textContent=q.t; $("qh").textContent=q.h; $("qh").hidden=!q.h;
+  var box=$("opts"); box.innerHTML="";
+  q.opts.forEach(function(o){
+    var b=document.createElement("button"); b.type="button"; b.className="opt";
+    b.innerHTML='<span class="ic">'+o.ic+'</span><span class="t">'+o.t+(o.s?'<small>'+o.s+'</small>':'')+'</span><span class="ck"></span>';
+    var sel=q.multi?state.ans[0].indexOf(o.v)>=0:state.ans[state.i]===o.v;
+    if(sel)b.classList.add("on");
+    b.addEventListener("click",function(){
+      if(q.multi){
+        var a=state.ans[0], k=a.indexOf(o.v);
+        if(k>=0){a.splice(k,1);b.classList.remove("on")}
+        else{ if(a.length>=q.max){ $("qh").textContent="3つまでです。ひとつ外してから選んでください。"; return;} a.push(o.v);b.classList.add("on") }
+        $("qh").textContent=a.length?a.length+"つ選択中（3つまで）":q.h;
+      }else{
+        state.ans[state.i]=o.v;
+        Array.prototype.forEach.call(box.children,function(c){c.classList.remove("on")});
+        b.classList.add("on");
+        setTimeout(next,220);
+      }
+    });
+    box.appendChild(b);
+  });
+  $("next").hidden=!q.multi;
+  $("back").style.visibility=state.i===0?"hidden":"visible";
+  $("next").textContent=q.multi?"次へ":"";
+}
+function next(){
+  var q=Q[state.i];
+  if(q.multi&&state.ans[0].length===0){$("qh").textContent="ひとつ以上、選んでください。";return}
+  if(!q.multi&&state.ans[state.i]==null)return;
+  if(state.i<Q.length-1){state.i++;renderQ();window.scrollTo({top:0,behavior:"smooth"})}
+  else{finish()}
+}
+function back(){if(state.i>0){state.i--;renderQ()}}
+
+function calc(){
+  var tasks=TASKS.filter(function(t){return state.ans[0].indexOf(t.id)>=0});
+  var f=state.ans[1]||1, stage=state.ans[2]||0, pain=state.ans[3];
+  var h=0, ai=0; tasks.forEach(function(t){h+=t.h; ai+=t.h*t.r});
+  var hm=Math.round(h*f), cost=hm*CONFIG.HOURLY*12, aiy=Math.round(ai*f)*CONFIG.HOURLY*12;
+  var first=tasks.slice().sort(function(a,b){return b.h*b.r-a.h*a.r})[0];
+  var type=["tamago","risu","hachi","washi"][stage];
+  if(f>=5&&stage<=1)type="zou";
+  if(pain==="zokujin"&&f>=3&&stage<=2)type="zou";
+  return {hm:hm,cost:cost,aiy:aiy,first:first,type:type};
+}
+function man(y){var m=Math.round(y/10000);return m>=100?(Math.round(m/10)*10).toLocaleString():m.toLocaleString()}
+function finish(){
+  show("load");
+  setTimeout(function(){
+    var r=calc(), T=TYPES[r.type];
+    $("r-em").textContent=T.em; $("r-name").textContent=T.name; $("r-tag").textContent=T.tag;
+    $("r-h").innerHTML=r.hm.toLocaleString()+"<small>時間</small>";
+    $("r-cost").innerHTML="約"+man(r.cost)+"<small>万円</small>";
+    $("r-ai").innerHTML="約"+man(r.aiy)+"<small>万円分</small>";
+    $("r-first").textContent=r.first.ic+" "+r.first.t; $("r-firstp").textContent=r.first.first;
+    var ul=$("r-traits"); ul.innerHTML=""; T.traits.forEach(function(t){var li=document.createElement("li");li.textContent=t;ul.appendChild(li)});
+    $("r-step").textContent=T.step;
+    var line=(CONFIG.LINE_BY_TYPE[r.type]||CONFIG.LINE_URL||"").trim();
+    var lb=$("r-line");
+    if(line){lb.href=line;lb.hidden=false;$("r-linenote").hidden=false}
+    else{lb.hidden=true;$("r-linenote").hidden=true}
+    var subj="AI研修について（会社のAI度診断："+T.name+"）";
+    var body="診断結果："+T.name+"\n人がやっている時間／月："+r.hm+"時間\n年間の人件費換算：約"+man(r.cost)+"万円\nAIに任せられる候補／年：約"+man(r.aiy)+"万円分\n最初に任せるなら："+r.first.t+"\n\n聞きたいこと：\n";
+    $("r-mail").href="mailto:"+CONFIG.MAIL+"?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(body);
+    $("sharetext").textContent="うちの会社は「"+T.name+"」でした "+T.em+"\n毎月の事務仕事のうち、年間 約"+man(r.aiy)+"万円分はAIに任せられる候補だそうです。\n4つの質問・1分・登録なし\n#会社のAI度診断 "+CONFIG.PAGE_URL;
+    $("copied").textContent="";
+    show("res");
+    $("topnote").textContent="結果";
+  },1200);
+}
+$("start").addEventListener("click",function(){state={i:0,ans:[[],null,null,null]};renderQ();show("q");$("topnote").textContent="登録なし・約1分"});
+$("next").addEventListener("click",next);
+$("back").addEventListener("click",back);
+$("again").addEventListener("click",function(){state={i:0,ans:[[],null,null,null]};renderQ();show("q")});
+$("copy").addEventListener("click",function(){
+  var t=$("sharetext").textContent, out=$("copied");
+  function ok(){out.textContent="コピーしました。SNSやLINEに貼って投稿できます。"} function ng(){out.textContent="コピーできませんでした。文章を長押しして選択してください。"}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,ng)}else{ng()}
+});
+document.addEventListener("keydown",function(e){ if(S.q.hidden)return; var n=parseInt(e.key,10); var q=Q[state.i]; if(n>=1&&n<=q.opts.length){var b=$("opts").children[n-1]; if(b)b.click()} });
+})();
+</script>
+</body>
+</html>
