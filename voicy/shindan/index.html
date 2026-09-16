@@ -148,7 +148,7 @@ p{margin:0 0 14px}
   <div class="step1"><div class="k">このタイプの、最初の一手</div><p id="r-step"></p></div>
 
   <div class="ctabox">
-    <p class="lead">詳しい結果と、御社向けの「最初の一手」の作り方を、LINEでお送りします。</p>
+    <p class="lead" id="r-linelead">詳しい結果と、御社向けの「最初の一手」の作り方を、LINEでお送りします。</p><p class="lead" id="r-maillead" hidden>気になることは、そのまま聞いてください。返事は森川が書きます。</p>
     <a class="btn line" id="r-line" href="#" target="_blank" rel="noopener">LINEで、詳しい結果を受け取る<small>気になることは、そのままLINEで聞けます</small></span></a>
     <p class="note" id="r-linenote">料金や進め方、うちの場合はどうか、も、LINEで聞いてください。返事は森川が書きます。</p>
     <p class="mail">LINEを使わない方は <a id="r-mail" href="#">メールで聞く</a></p>
@@ -285,8 +285,8 @@ function finish(){
     $("r-step").textContent=T.step;
     var line=(CONFIG.LINE_BY_TYPE[r.type]||CONFIG.LINE_URL||"").trim();
     var lb=$("r-line");
-    if(line){lb.href=line;lb.hidden=false;$("r-linenote").hidden=false}
-    else{lb.hidden=true;$("r-linenote").hidden=true}
+    if(line){lb.href=line;lb.hidden=false;$("r-linenote").hidden=false;$("r-linelead").hidden=false;$("r-maillead").hidden=true}
+    else{lb.hidden=true;$("r-linenote").hidden=true;$("r-linelead").hidden=true;$("r-maillead").hidden=false}
     var subj="AI研修について（会社のAI度診断："+T.name+"）";
     var body="診断結果："+T.name+"\n人がやっている時間／月："+r.hm+"時間\n年間の人件費換算：約"+man(r.cost)+"万円\nAIに任せられる候補／年：約"+man(r.aiy)+"万円分\n最初に任せるなら："+r.first.t+"\n\n聞きたいこと：\n";
     $("r-mail").href="mailto:"+CONFIG.MAIL+"?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(body);
