@@ -262,6 +262,30 @@ ul.pain{grid-template-columns:1fr 1fr;gap:16px}ul.pain li,ul.take li,ul.no li{bo
 .sticky .btn small{color:#EAFBF0!important}
 .sticky .btn:hover{background:#05B34C!important}
 </style>
+<!-- ===== 計測（Meta Pixel 1510200123755162）=====
+     全ページ共通。head の末尾に貼る。
+     window.fxTrack('EventName',{...}) でカスタムイベント。ref は ?ref=ig 等を自動で拾って全イベントに付与。 -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+(function(){
+  var KEY='fx_ref';
+  var q=new URLSearchParams(location.search);
+  var ref=q.get('ref')||q.get('utm_source')||'';
+  try{ if(ref){sessionStorage.setItem(KEY,ref)} else {ref=sessionStorage.getItem(KEY)||'direct'} }catch(e){ ref=ref||'direct' }
+  window.fxRef=ref;
+  window.fxTrack=function(name,params){
+    try{ fbq('trackCustom',name,Object.assign({ref:window.fxRef,page:document.title},params||{})) }catch(e){}
+  };
+  fbq('init','1510200123755162');
+  fbq('track','PageView',{ref:ref});
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1510200123755162&ev=PageView&noscript=1"></noscript>
+
 </head>
 <body>
 <div class="brandbar"><div class="brandbar-inner"><div class="brand"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyNC4yLjMsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i44Os44Kk44Ok44O8XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCINCgkgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNzY2LjggMjE3IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA3NjYuOCAyMTc7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+DQoJLnN0MHtmaWxsOiMyMzE4MTU7fQ0KCS5zdDF7ZmlsbDojNDQ3MjhFO30NCjwvc3R5bGU+DQo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTE1LjksMjE3QzUyLDIxNywwLDE2NSwwLDEwMWgyOC40YzAsNDguMywzOS4zLDg3LjUsODcuNSw4Ny41czg3LjUtMzkuMyw4Ny41LTg3LjVoMjguNA0KCUMyMzEuOSwxNjUsMTc5LjksMjE3LDExNS45LDIxNyIvPg0KPHBhdGggY2xhc3M9InN0MSIgZD0iTTE0My4yLDExNS4yYy0wLjMtMC41LTAuMS0wLjgsMC4yLTAuOWwzOC45LTEyYzEuMi0wLjQsMS4yLTIuMSwwLTIuNWwtMzguOS0xMmMtMC4zLTAuMS0wLjQtMC40LTAuMi0wLjkNCglsMTMuNS0yNC44YzAuNi0xLjEtMC42LTIuNC0xLjgtMS44TDEzMS42LDczYy0wLjcsMC40LTEuMSwwLjItMS40LTFsLTEzLTcwLjljLTAuMy0xLjQtMi4zLTEuNC0yLjYsMGwtMTMsNzAuOQ0KCWMtMC4yLDEuMS0wLjcsMS4zLTEuNCwxTDc3LDYwLjNjLTEuMS0wLjYtMi40LDAuNi0xLjgsMS44bDEzLjUsMjQuOGMwLjMsMC41LDAuMiwwLjgtMC4yLDAuOWwtMzguOSwxMmMtMS4yLDAuNC0xLjIsMi4xLDAsMi41DQoJbDM4LjksMTJjMC4zLDAuMSwwLjQsMC40LDAuMiwwLjlMNzUuMiwxNDBjLTAuNiwxLjEsMC42LDIuNCwxLjgsMS44bDI1LTEzLjZjMC4zLTAuMiwwLjctMC4yLDAuOCwwLjJsMTIsMzguOQ0KCWMwLjQsMS4yLDIuMSwxLjIsMi41LDBsMTItMzguOWMwLjEtMC40LDAuNC0wLjQsMC44LTAuMmwyNC45LDEzLjZjMS4xLDAuNiwyLjQtMC42LDEuOC0xLjhMMTQzLjIsMTE1LjJ6Ii8+DQo8cmVjdCB4PSI2OTEuMiIgeT0iNTUuOSIgY2xhc3M9InN0MCIgd2lkdGg9IjMwLjYiIGhlaWdodD0iMTE5LjQiLz4NCjxyZWN0IHg9IjczNi4yIiB5PSI1NS45IiBjbGFzcz0ic3QwIiB3aWR0aD0iMzAuNiIgaGVpZ2h0PSIxMTkuNCIvPg0KPHBhdGggY2xhc3M9InN0MCIgZD0iTTU1MS41LDEyNi4xdjQ5LjJoLTMwLjZ2LTQ5LjJoLTEwLjd2LTI1aDEwLjd2LTIuMmMwLTI3LjMsMjMuMi00Nyw1Mi4yLTQ3djI4LjRjLTE0LjEsMC0yMS42LDcuNC0yMS42LDIwLjkNCgloMjEuNHYyNUw1NTEuNSwxMjYuMUw1NTEuNSwxMjYuMXoiLz4NCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik02NDYuMiwxMzQuNWMwLDkuOS02LjgsMTUuMy0xNS4zLDE1LjNzLTE1LjMtNS40LTE1LjMtMTUuM3YtNy44VjEwMUg1ODV2MzEuMmMwLDMxLjMsMjAuNSw0NS45LDQ1LjksNDUuOQ0KCXM0NS45LTE0LjYsNDUuOS00NS45VjEwMWgtMzAuNnYyNS43TDY0Ni4yLDEzNC41TDY0Ni4yLDEzNC41eiIvPg0KPHJlY3QgeD0iNDY1LjIiIHk9IjU1LjkiIGNsYXNzPSJzdDAiIHdpZHRoPSIzMC42IiBoZWlnaHQ9IjExOS40Ii8+DQo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzI1LjQsMTI2LjF2NDkuMmgtMzAuNnYtNDkuMmgtMTAuN3YtMjVoMTAuN3YtMi4yYzAtMjcuMywyMy4yLTQ3LDUyLjItNDd2MjguNGMtMTQuMSwwLTIxLjYsNy40LTIxLjYsMjAuOQ0KCWgyMS40djI1TDMyNS40LDEyNi4xTDMyNS40LDEyNi4xeiIvPg0KPHBhdGggY2xhc3M9InN0MCIgZD0iTTQyMC4yLDEzNC41YzAsOS45LTYuOSwxNS4zLTE1LjMsMTUuM2MtOC41LDAtMTUuMy01LjQtMTUuMy0xNS4zdi03LjhWMTAxSDM1OXYzMS4yDQoJYzAsMzEuMywyMC41LDQ1LjksNDUuOSw0NS45czQ1LjktMTQuNiw0NS45LTQ1LjlWMTAxaC0zMC42djI1LjdMNDIwLjIsMTM0LjVMNDIwLjIsMTM0LjV6Ii8+DQo8L3N2Zz4NCg==" alt="fulfull"><span>企業向けAI研修</span></div><a href="#apply">無料の換算診断について</a></div></div>
@@ -688,5 +712,14 @@ ul.pain{grid-template-columns:1fr 1fr;gap:16px}ul.pain li,ul.take li,ul.no li{bo
 </script>
 
 <script>(function(){var LINE_URL="https://utage-system.com/line/open/pcbDzyLdH7k6?mtid=5g0ZCCfJ7c3d";var a=document.querySelectorAll(".lp-line");for(var i=0;i<a.length;i++){if(LINE_URL){a[i].href=LINE_URL;a[i].hidden=false}}})();</script>
+<script>
+document.addEventListener("click",function(e){
+ var a=e.target.closest&&e.target.closest("a"); if(!a||!window.fxTrack) return;
+ var href=a.getAttribute("href")||"";
+ if(/\/voicy\/shindan\//.test(href)) fxTrack("ToShindan",{from:"lp"});
+ else if(/utage-system\.com\/line\//.test(href)) fxTrack("LineTap",{from:"lp"});
+ else if(/^mailto:/.test(href)) fxTrack("MailTap",{from:"lp"});
+},true);
+</script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+<!-- ===== 計測（Meta Pixel 1510200123755162）=====
+     全ページ共通。head の末尾に貼る。
+     window.fxTrack('EventName',{...}) でカスタムイベント。ref は ?ref=ig 等を自動で拾って全イベントに付与。 -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+(function(){
+  var KEY='fx_ref';
+  var q=new URLSearchParams(location.search);
+  var ref=q.get('ref')||q.get('utm_source')||'';
+  try{ if(ref){sessionStorage.setItem(KEY,ref)} else {ref=sessionStorage.getItem(KEY)||'direct'} }catch(e){ ref=ref||'direct' }
+  window.fxRef=ref;
+  window.fxTrack=function(name,params){
+    try{ fbq('trackCustom',name,Object.assign({ref:window.fxRef,page:document.title},params||{})) }catch(e){}
+  };
+  fbq('init','1510200123755162');
+  fbq('track','PageView',{ref:ref});
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1510200123755162&ev=PageView&noscript=1"></noscript>

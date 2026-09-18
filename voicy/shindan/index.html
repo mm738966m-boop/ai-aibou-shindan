@@ -148,6 +148,30 @@ p{margin:0 0 14px}
 .foot a{color:var(--green-x)}
 [hidden]{display:none!important}
 </style>
+<!-- ===== 計測（Meta Pixel 1510200123755162）=====
+     全ページ共通。head の末尾に貼る。
+     window.fxTrack('EventName',{...}) でカスタムイベント。ref は ?ref=ig 等を自動で拾って全イベントに付与。 -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+(function(){
+  var KEY='fx_ref';
+  var q=new URLSearchParams(location.search);
+  var ref=q.get('ref')||q.get('utm_source')||'';
+  try{ if(ref){sessionStorage.setItem(KEY,ref)} else {ref=sessionStorage.getItem(KEY)||'direct'} }catch(e){ ref=ref||'direct' }
+  window.fxRef=ref;
+  window.fxTrack=function(name,params){
+    try{ fbq('trackCustom',name,Object.assign({ref:window.fxRef,page:document.title},params||{})) }catch(e){}
+  };
+  fbq('init','1510200123755162');
+  fbq('track','PageView',{ref:ref});
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1510200123755162&ev=PageView&noscript=1"></noscript>
+
 </head>
 <body>
 <div class="top"><div class="lg">fulfull<small>会社のAI度診断</small></div><div id="topnote">登録なし・約2分</div></div>
@@ -396,16 +420,18 @@ function finish(){
     $("r-mail").href="mailto:"+CONFIG.MAIL+"?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(body);
     $("sharetext").textContent="うちの会社は「"+T.name+"」でした "+T.em+"\n毎月の事務仕事は年間 約"+man(r.cost)+"万円分。そのうち約"+man(r.aiy)+"万円分はAIに任せられる候補だそうです。\n登録なし・約2分\n#会社のAI度診断 "+CONFIG.PAGE_URL;
     $("copied").textContent="";
+    if(window.fxTrack)fxTrack("ShindanResult",{type:r.type,name:T.name,cost_man:man(r.cost),ai_man:man(r.aiy)});
     show("res"); $("topnote").textContent="結果";
   },1200);
 }
-$("start").addEventListener("click",function(){reset();renderQ();show("q");$("topnote").textContent="登録なし・約2分"});
+$("start").addEventListener("click",function(){if(window.fxTrack)fxTrack("ShindanStart");reset();renderQ();show("q");$("topnote").textContent="登録なし・約2分"});
 $("next").addEventListener("click",next);
 $("back").addEventListener("click",back);
 $("again").addEventListener("click",function(){reset();renderQ();show("q")});
 $("copy").addEventListener("click",function(){var t=$("sharetext").textContent,out=$("copied");function ok(){out.textContent="コピーしました。SNSやLINEに貼って投稿できます。"}function ng(){out.textContent="コピーできませんでした。文章を長押しして選択してください。"} if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,ng)}else{ng()}});
 document.addEventListener("keydown",function(e){ if(S.q.hidden||e.target.tagName==="INPUT")return; var n=parseInt(e.key,10); var q=Q[state.i]; if(q.type==="detail")return; var box=$("qbody").querySelector(".opts"); if(n>=1&&box&&box.children[n-1])box.children[n-1].click(); });
 reset();
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a");if(!a||!window.fxTrack)return;if(a.id==="r-line")fxTrack("LineTap",{from:"shindan"});else if(a.id==="r-mail")fxTrack("MailTap",{from:"shindan"});},true);
 })();
 </script>
 </body>
