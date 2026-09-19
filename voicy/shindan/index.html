@@ -263,7 +263,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   <div class="again"><button id="again">もう一度診断する</button></div>
 </div>
 
-<p class="foot">この診断は入力に基づく試算で、削減効果を保証するものではありません。「AIに任せられる候補」は、人の確認を残す前提の控えめな割合で計算しています。時給の初期値は、月給30万円＋法定福利費を時給換算した2,500円です。<br>運営：fulfull株式会社　<a href="https://fulfull.jp/privacy-policy/" target="_blank" rel="noopener">プライバシーポリシー</a></p>
+<p class="foot">この診断は入力に基づく試算で、削減効果を保証するものではありません。「AIに任せられる候補」は、人の確認を残す前提の控えめな割合で計算しています。時給の初期値は、東京都の最低賃金1,280円（2026年10月〜）です。実際は社会保険料などが加わるので、いちばん低く見積もった数字になっています。<br>運営：fulfull株式会社　<a href="https://fulfull.jp/privacy-policy/" target="_blank" rel="noopener">プライバシーポリシー</a></p>
 </div>
 
 <script>
@@ -279,7 +279,7 @@ var CONFIG={
     zou:"https://utage-system.com/line/open/pcbDzyLdH7k6?mtid=xUPbrgfAopoZ" },
   MAIL: "morikawa1223@fulfull.jp",
   PAGE_URL: "https://mm738966m-boop.github.io/ai-aibou-shindan/voicy/shindan/",
-  HOURLY_DEFAULT: 2500,
+  HOURLY_DEFAULT: 1280,
   AI_FEE_MONTH: 40000,
   IMG: { tamago:"img/tamago.png", risu:"img/risu.png", hachi:"img/hachi.png", washi:"img/washi.png", zou:"img/zou.png" }
 };
@@ -296,7 +296,7 @@ var TASKS=[
   {id:"manual",ic:"📚",t:"マニュアル・手順書づくり",s:"新人向け、引き継ぎ用",h:6,r:.5,first:"やり方を口で説明した録音から、手順書の下書きが出ます。"},
   {id:"hiring",ic:"🧑‍💼",t:"求人票・採用まわりの文章",s:"求人票、面接の質問、お断りの連絡",h:4,r:.6,first:"求人票と面接の質問リストのたたき台を先に作ります。"}
 ];
-var RATES=[2000,2500,3000,4000,5000];
+var RATES=[1280,1500,2000,2500,3000];
 var TYPES={
   tamago:{em:"🥚",name:"たまごタイプ",tag:"伸びしろが、いちばん大きい会社。",traits:["AIをまだ会社の仕事に使っていないので、最初の1つで一気に変わります","「何から始めるか」さえ決まれば、ここから先が早いタイプ","がんばっている人の時間が、そのまま事務に溶けているのがもったいない"],step:"選んだ仕事のうち、いちばん金額が大きい1つだけをAIに渡すところから。全部をいっぺんにやらないのがコツです。"},
   risu:{em:"🐿️",name:"リスタイプ",tag:"できる人が、こっそり貯め込んでいる会社。",traits:["一部の人が個人でAIを使えているが、会社としては決めていない","そのノウハウは、その人が異動・退職した日に消える","「使える人」と「使わない人」の差が、社内で静かに開いている"],step:"いま使えている人のやり方を1つ、会社の手順にするところから。「その人の道具」を「会社の右腕」に変えます。"},
@@ -342,7 +342,7 @@ function renderQ(){
     body.appendChild(box); $("next").hidden=false; $("next").textContent="次へ";
   } else if(q.type==="detail"){
     var rate=document.createElement("div"); rate.className="rate";
-    rate.innerHTML='<div class="k">1時間あたりの人件費（時給換算）</div><p>月給30万円＋法定福利費なら約2,500円。御社の水準に合わせて選んでください。</p><div class="chips" id="chips"></div>';
+    rate.innerHTML='<div class="k">1時間あたりの人件費（時給換算）</div><p>東京都の最低賃金は1,280円（2026年10月〜）。実際は社会保険料などが加わります。御社の水準に合わせて選んでください。</p><div class="chips" id="chips"></div>';
     body.appendChild(rate);
     var chips=rate.querySelector("#chips");
     RATES.forEach(function(r){var c=document.createElement("button");c.type="button";c.className="chip"+(state.rate===r?" on":"");c.textContent=r.toLocaleString()+"円";c.addEventListener("click",function(){state.rate=r;renderQ()});chips.appendChild(c)});
