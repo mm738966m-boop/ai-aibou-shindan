@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://mm738966m-boop.github.io/ai-aibou-shindan/hojin/og.png">
 <meta property="og:site_name" content="fulfull株式会社">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="build" content="hojin-v3.8">
+<meta name="build" content="hojin-v3.9">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,6 +91,17 @@ h1 .g{color:var(--gold-l)}
   .hero-stats b{font-size:34px}
 }
 @media(min-width:1200px){h1{font-size:47px}.future .fq{font-size:32px}}
+
+/* solution blocks */
+.sol{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:22px 20px;margin:0 0 16px}
+.sol-h{display:flex;gap:14px;align-items:flex-start;margin-bottom:12px}
+.sol-h .num{flex:0 0 44px;width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--gold-l);font-family:"Shippori Mincho",serif;font-weight:800;font-size:21px;display:flex;align-items:center;justify-content:center}
+.sol-t{font-family:"Shippori Mincho",serif;font-size:22px;font-weight:800;line-height:1.4}
+.sol-p{font-size:15.5px;color:var(--gold-d);font-weight:700;margin-top:2px}
+.sol dl{margin:0;display:grid;grid-template-columns:1fr;gap:6px}
+.sol dt{font-size:13.5px;font-weight:900;letter-spacing:.12em;color:var(--sub);margin-top:8px}
+.sol dd{margin:0;font-size:17.5px;line-height:1.85;background:var(--soft);border-radius:12px;padding:12px 14px}
+@media(min-width:640px){.sol dl{grid-template-columns:120px 1fr;align-items:start}.sol dt{margin-top:14px}}
 /* sections */
 section{padding:52px 0}
 section.alt{background:var(--paper)}
@@ -346,20 +357,62 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <!-- 6 解決 -->
 <section class="light">
   <div class="wrap">
-    <div class="eyebrow">解決</div>
-    <h2>営業1人ひとりに、<br>AIの<span class="g">右腕と左腕</span>を持たせる。</h2>
-    <p>先に、はっきり言っておきます。<br><strong>AIは、営業を減らすためのものではありません。営業1人が回せる量を増やすためのものです。</strong><br>お客様の話を聞く「間」の取り方、ここは笑っていい、ここは黙る、という感覚。<br>それは年齢と経験でしか育ちません。<br>だから、ベテランほど価値が上がります。<br>AIがやるのは、その前後にある「調べる・書く・整える・送る」です。</p>
-    <div class="figure tall"><img src="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/zukai/arms.jpg" alt="右腕（集客）と左腕（面談・提案）の流れの図解" loading="lazy"></div>
-    <div class="cols">
-      <div class="card"><span class="tag">右腕｜集客</span><h3>入口を作り、予約が入る</h3>
-        <ul><li>営業ごとの強みと客層をAIが分析</li><li>発信のネタと下書き</li><li>1分で終わる診断ページ</li><li>LINEの自動応答と配信</li><li>向こうから予約が入る仕組み</li></ul></div>
-      <div class="card"><span class="tag">左腕｜提案・フォロー・事務</span><h3>面談メモを渡すだけ</h3>
-        <ul><li>提案の骨子（たたき台）</li><li>意向に沿った商品の比較表と、推奨理由の下書き（乗合）</li><li>その日のうちのフォロー文</li><li>更改案内・満期フォロー・見積の下書き</li><li>次回の予約案内</li><li>3か月ごとの「思い出してもらう」連絡</li></ul></div>
+    <div class="eyebrow">解決策</div>
+    <h2>営業1人ひとりに右腕と左腕を持たせて、<br><span class="g">その作り方を会社の型にする。</span></h2>
+    <p>大手のようにシステムを買うのではありません。<br>御社の営業が、自分の右腕と左腕を、御社の実際の案件で作ります。<br>やることは3つです。<br>上の3つの問題に、1つずつ対応しています。</p>
+
+    <div class="sol">
+      <div class="sol-h"><span class="num">1</span><div><div class="sol-t">入口を作る（右腕）</div><div class="sol-p">「行くところがない」「紹介が一周した」に対して</div></div></div>
+      <dl>
+        <dt>やること</dt><dd>営業ごとに、強みと得意な客層をAIに分析させ、「この人が選ばれる理由3つ」を出します。<br>それをもとに、5問で終わる診断ページと結果文、LINEの自動応答、週1本の発信の下書きを作ります。</dd>
+        <dt>できあがるもの</dt><dd>営業ごとの診断ページ・LINE・発信の型</dd>
+        <dt>御社での動き方</dt><dd>名刺、既存のお客様へのLINE、SNSに診断ページのURLを置きます。<br>返信と予約はLINEに自動で入ります。<br>営業は、入った予約に出るだけです。</dd>
+      </dl>
     </div>
+
+    <div class="sol">
+      <div class="sol-h"><span class="num">2</span><div><div class="sol-t">面談の前後を任せる（左腕）</div><div class="sol-p">「夜の提案書」「昼を食う事務」に対して</div></div></div>
+      <dl>
+        <dt>やること</dt><dd>御社の話し方・禁止事項・規程を入れた設定文を作り、営業のパソコンとスマホに貼ります。<br>面談が終わったらメモを渡すだけで、提案の骨子、その日のうちのフォロー文、次回案内、更改案内、意向に沿った比較表（乗合）が2分で出ます。<br>出てきたものは「半分に」「お客様の言葉を入れて」の一言で直します。</dd>
+        <dt>できあがるもの</dt><dd>左腕の設定文・文書の型・3か月ごとの連絡文の作り置き（客層別）</dd>
+        <dt>御社での動き方</dt><dd>面談のあと5分でメモを渡す。<br>出てきた文書は営業が直し、出す前に御社の規程で判断する。<br>更改や満期の事務は、朝に下書きが並んでいる状態から始まります。</dd>
+      </dl>
+    </div>
+
+    <div class="sol">
+      <div class="sol-h"><span class="num">3</span><div><div class="sol-t">会社の型にする</div><div class="sol-p">「辞めたら接点が消える」「若手任せで残らない」に対して</div></div></div>
+      <dl>
+        <dt>やること</dt><dd>AIに渡すもの・渡さないものを御社ルールとして文書にします。<br>個人のコツを、誰でも使える手順書にします。<br>受講した営業が講師役になる社内勉強会で、受けていない営業に広げます。</dd>
+        <dt>できあがるもの</dt><dd>線引き文書・手順書・社内勉強会の台本・修了後30日間の質問対応</dd>
+        <dt>御社での動き方</dt><dd>新人は、設定文を貼った日から先輩の型で動けます。<br>営業が辞めても、その人の設定文とお客様への連絡文は会社に残ります。</dd>
+      </dl>
+    </div>
+
+    <h3 style="margin-top:30px">導入の前後で、誰の何が変わるか</h3>
+    <div class="tablebox">
+    <table>
+      <thead><tr><th>誰</th><th>いま</th><th>3か月後</th></tr></thead>
+      <tbody>
+        <tr><td><strong>営業</strong></td><td>訪問3件。夜に提案書。フォローは明日</td><td>オンライン5件。提案書は2分。フォローはその日のうち。夜は空く</td></tr>
+        <tr><td><strong>事務・更改</strong></td><td>更改案内・満期フォロー・見積を手作業で</td><td>朝に下書きが並んでいる。確認して送る</td></tr>
+        <tr><td><strong>社長</strong></td><td>数字は営業の口頭報告。辞めたら接点が消える</td><td>日報に「提案済・フォロー済」。設定文と連絡文が会社に残る</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="src">モデルケースです。成果を保証するものではありません。</p>
+
+    <h3 style="margin-top:26px">誰が何をやるか</h3>
+    <div class="cols">
+      <div class="card"><span class="tag">森川がやること</span><ul><li>診断で「どの仕事を、誰に」を決める</li><li>4回の研修で、御社の案件を横で一緒に作る</li><li>設定文・線引き・手順書の形を整える</li><li>修了後30日間、質問に答える</li></ul></div>
+      <div class="card"><span class="tag">御社がやること</span><ul><li>社長：受講する2〜4名を選ぶ。できれば同席する（無料）</li><li>営業：1週間の仕事メモと、過去の面談メモ3件を持ち込む</li><li>営業：回のあいだに実務で1つ試す</li><li>出す前の判断は、御社の規程で</li></ul></div>
+    </div>
+
+    <div class="figure tall"><img src="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/zukai/arms.jpg" alt="右腕（集客）と左腕（面談・提案）の流れの図解" loading="lazy"></div>
     <div class="cols">
       <div class="card"><span class="tag">AIがやること</span><ul><li>調べる・比べる・まとめる</li><li>下書きを書く（提案・フォロー・事務・発信）</li><li>整える・チェックする</li><li>決まった連絡を決まった時に送る</li></ul></div>
       <div class="card"><span class="tag">募集人がやること</span><ul><li>お客様と話す</li><li>提案の最終判断</li><li>説明と契約の手続き（募集行為）</li><li>「この人に会いたい」と思ってもらうこと</li></ul></div>
     </div>
+    <p>お客様の話を聞く「間」の取り方、ここは笑っていい、ここは黙る、という感覚は、年齢と経験でしか育ちません。<br>AIは営業を減らすためのものではなく、営業1人が回せる量を増やすためのものです。<br>だから、ベテランほど価値が上がります。</p>
     <div class="note">お客様に出す文書は、御社の規程と保険会社の募集文書ルールが優先です。<br>研修の第1回で「AIに渡してよいもの・渡さないもの」を御社ルールとして文書にします。<br>契約者の個人情報は、学習に使われない設定の会社専用の場所でしか扱いません。<br>乗合代理店の商品比較は、比較表と推奨理由の下書きまでAI。どれを勧めるかの判断と説明は募集人本人、と線引きします。</div>
   </div>
 </section>
