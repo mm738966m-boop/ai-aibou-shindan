@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>おじいちゃんでもできる、保険営業＆事務作業のAI完全自動化｜保険代理店・営業組織向け（fulfull）</title>
-<meta name="description" content="御社の営業チーム全員に、AIの右腕（集客）と左腕（提案・フォロー・事務）を。移動ゼロで面談が増え、更改や見積の事務が朝には終わっている型を、御社の実際の案件で組み立てます。まずはLINEかメールで、実際の設定文を受け取ってください。">
+<meta name="description" content="社長が現場に出なくても、毎朝、予約と提案書と更改案内が揃っている代理店へ。訪問ゼロで年380件を回す型を、御社の営業1人ひとりの右腕と左腕として組み立てます。まずは代理店向けの導入資料を、LINEかメールで。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="おじいちゃんでもできる、保険営業＆事務作業のAI完全自動化。">
-<meta property="og:description" content="御社の営業チームに、AIの右腕と左腕を配る。訪問ゼロで年380件の相談を回す型を、御社の案件で組み立てます。保険代理店・営業組織の経営者の方へ。">
+<meta property="og:description" content="社長が現場に出なくても、毎朝、予約と提案書と更改案内が揃っている代理店へ。訪問ゼロで年380件を回す型を、御社の営業チームに。保険代理店・営業組織の経営者の方へ。">
 <meta property="og:url" content="https://mm738966m-boop.github.io/ai-aibou-shindan/hojin/">
 <meta property="og:image" content="https://mm738966m-boop.github.io/ai-aibou-shindan/hojin/og.png">
 <meta property="og:site_name" content="fulfull株式会社">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="build" content="hojin-v2.1">
+<meta name="build" content="hojin-v3">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,6 +53,29 @@ h1 .g{color:var(--gold-l)}
 .light .btn-note{color:var(--sub)}
 .trust{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
 .trust span{font-size:16px;font-weight:700;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px}
+
+/* hero future */
+.future{background:rgba(255,255,255,.06);border:1px solid rgba(241,215,154,.45);border-radius:20px;padding:22px 22px 14px;margin:6px 0 20px;position:relative}
+.future .fl{display:inline-block;font-size:13.5px;font-weight:900;letter-spacing:.14em;color:var(--gold-l);margin-bottom:8px}
+.future .fq{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-size:clamp(21px,5.6vw,30px);line-height:1.55;font-weight:800;margin:0 0 12px;color:#fff;text-wrap:balance}
+.future .fq .g{color:var(--gold-l)}
+.fpts{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.fpts li{position:relative;padding-left:26px;font-size:17.5px;font-weight:700;color:#E6EBF3;line-height:1.7}
+.fpts li:before{content:"";position:absolute;left:4px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--gold)}
+.hero .lead{font-size:18px;color:#C9D1DE;margin-bottom:16px}
+.hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:26px}
+@media(min-width:640px){.hero-stats{grid-template-columns:repeat(4,1fr)}}
+.hero-stats div{background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 14px}
+.hero-stats b{display:block;font-family:"Shippori Mincho",serif;font-size:30px;font-weight:800;color:var(--gold-l);line-height:1.15;font-variant-numeric:tabular-nums}
+.hero-stats b small{font-size:.5em;margin-left:1px}
+.hero-stats span{display:block;font-size:14px;color:#C9D1DE;line-height:1.5;margin-top:4px;font-weight:700}
+.scrollcue{text-align:center;color:#AEB6C6;font-size:15px;margin:22px 0 0}
+.ctabox{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:26px 22px;margin-top:22px}
+.dark .ctabox{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16)}
+.ctabox h3{font-family:"Shippori Mincho",serif;font-size:22px;margin-bottom:6px}
+.ctabox .what{font-size:16.5px;color:var(--sub);margin-bottom:16px;line-height:1.75}
+.dark .ctabox .what{color:#C9D1DE}
+.ctabox ul.ok{margin-bottom:18px}
 /* sections */
 section{padding:52px 0}
 section.alt{background:var(--paper)}
@@ -196,16 +219,29 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <span class="date">保険代理店・営業組織の経営者の方へ｜fulfull 企業向けAI研修</span>
+        <span class="date">保険代理店・営業組織の経営者の方へ</span>
         <h1>おじいちゃんでもできる、<br>保険営業＆事務作業の<br><span class="g">AI完全自動化。</span></h1>
-        <p class="lead">御社の営業チーム全員に、AIの<strong>右腕（集客）</strong>と<strong>左腕（提案・フォロー・事務）</strong>を。<br>移動ゼロで面談が増え、更改や見積の事務が朝には終わっている。<br>その型を、御社の実際の案件で組み立てます。</p>
-        <a class="btn cta-line" href="https://utage-system.com/line/open/3AguqHadI5TO?mtid=IpcLUtHC02JM" data-ev="LineTap">LINEで設定文を受け取る<small>実際に回っている8本・無料・売り込みなし</small></a>
-        <a class="btn mail cta-mail" href="https://utage-system.com/r/3AguqHadI5TO/register?mtid=T4pJS41WOT5n" data-ev="MailTap" target="_blank" rel="noopener">メールで受け取る<small>お名前とメールアドレスだけ</small></a>
-        <p class="btn-note">営業と事務をAIに任せる「型」を、そのまま貼れる設定文でお送りします。<br>御社の数字を出す無料診断も、LINEかメールから申し込めます。</p>
-        <div class="trust"><span>AIの知識ゼロの営業でも</span><span>生保も損保も</span><span>社長の同席は無料</span><span>オンライン・全国対応</span></div>
+        <div class="future">
+          <div class="fl">3か月後の御社</div>
+          <p class="fq">社長が現場に出なくても、<br>毎朝、<span class="g">予約と提案書と更改案内</span>が<br>揃っている代理店へ。</p>
+          <ul class="fpts">
+            <li>訪問ゼロで、面談は増える</li>
+            <li>夜の提案書づくりは、なくなる</li>
+            <li>ベテランが辞めても、お客様との接点は会社に残る</li>
+          </ul>
+        </div>
+        <p class="lead">訪問ゼロで年380件の相談を回し、保険事業だけで年1,000万円を超えた回し方を、<br>御社の営業1人ひとりの<strong>右腕（集客）</strong>と<strong>左腕（提案・フォロー・事務）</strong>として組み立てます。<br>AIの知識ゼロの営業でも。生保も損保も。</p>
+        <div class="trust"><span>営業の平均年齢が高い会社ほど効く</span><span>御社の実際の案件が教材</span><span>助成金の対象になることも</span></div>
       </div>
       <div class="hero-img"><img src="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/img/hero.jpg" alt="書斎でノートパソコンに向かう男性（イメージ）" loading="eager"></div>
     </div>
+    <div class="hero-stats">
+      <div><b>0<small>件</small></b><span>訪問。相談も面談もすべてオンライン</span></div>
+      <div><b>380<small>件</small></b><span>2025年の個別相談。保険・住宅・相続まで</span></div>
+      <div><b>2<small>時間</small>→2<small>分</small></b><span>提案書のたたき台。森川の実測</span></div>
+      <div><b>25<small>社</small></b><span>企業研修のご依頼実績</span></div>
+    </div>
+    <p class="scrollcue">↓ 読み進めると、御社で何が変わるかが分かります</p>
   </div>
 </header>
 
@@ -330,6 +366,21 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     <p>保険歴は、まだ3年です。<br>僕が保険を扱い始めたのは2023年。<br>ベテランではありません。<br>それでも、保険事業だけで年間1,000万円以上の売上が立っています。</p>
     <p>数字より大事なのは、<strong>誰がやっても回る形にしてあること</strong>です。<br>入口の勉強会はスタッフでも回せて、個別相談だけ募集人が入る。<br>「森川だからできる」を、できるだけ外して作りました。<br>だから、御社の営業チームに移せます。</p>
     <p class="src">fulfull株式会社 実績（2025年・自社集計）。個人・法人の成果を保証するものではありません。</p>
+  </div>
+</section>
+
+
+<!-- 7b 中間CTA -->
+<section class="alt light">
+  <div class="wrap">
+    <div class="ctabox">
+      <div class="eyebrow">まずは、資料だけ</div>
+      <h3>代理店向けの導入資料を、お送りします。</h3>
+      <p class="what">御社の営業部で何が変わるか、進め方、線引き、助成金の仕組み、ここからの流れ。<br>役員会や朝礼でそのまま使える形にまとめた資料です。<br>あわせて、営業1人あたり「年間いくら分」がAIに回せるかを自分で出せるセルフ換算シートも届きます。</p>
+      <a class="btn cta-line" href="https://utage-system.com/line/open/3AguqHadI5TO?mtid=IpcLUtHC02JM" data-ev="LineTap">LINEで導入資料を受け取る<small>友だち追加だけ・無料・売り込みなし</small></a>
+      <a class="btn mail cta-mail" href="https://utage-system.com/r/3AguqHadI5TO/register?mtid=T4pJS41WOT5n" data-ev="MailTap" target="_blank" rel="noopener">メールで受け取る<small>お名前とメールアドレスだけ</small></a>
+      <p class="btn-note">資料を読んで気になったら、その場で無料の換算診断（Zoom 30〜45分）を申し込めます。</p>
+    </div>
   </div>
 </section>
 
@@ -508,9 +559,9 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <section class="light">
   <div class="wrap">
     <div class="eyebrow">ここからの流れ</div>
-    <h2>まずは、<span class="g">設定文を受け取る</span>だけで大丈夫です。</h2>
+    <h2>まずは、<span class="g">導入資料を受け取る</span>だけで大丈夫です。</h2>
     <ol class="steps">
-      <li><i>1</i><b>LINEかメールで、実際の設定文を受け取る</b><span>営業と事務をAIに任せる「型」を、そのまま貼れる形でお送りします。<br>読むだけ、試すだけで構いません</span></li>
+      <li><i>1</i><b>LINEかメールで、導入資料を受け取る</b><span>御社の営業部で何が変わるか、進め方、線引き、助成金、流れをまとめた資料と、セルフ換算シートをお送りします。<br>読むだけで構いません</span></li>
       <li><i>2</i><b>気になったら、無料の換算診断（Zoom 30〜45分）</b><span>LINEなら「診断」と一言。<br>メールなら返信で。<br>営業の方の1週間の仕事を挙げていただき、年間いくら分がAIに回せるかを、その場で数字にします</span></li>
       <li><i>3</i><b>数字を見て、やるかどうかを決める</b><span>人数に応じた費用と、助成金を使った場合の目安を、このときにお伝えします。<br>断っていただいて構いません</span></li>
       <li><i>4</i><b>（助成金を使う場合）社労士との日程調整</b><span>計画届は研修開始の前に提出が必要です。<br>御社の顧問社労士か労働局にご相談ください</span></li>
@@ -540,10 +591,20 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <!-- 17 最終CTA -->
 <section class="dark" id="cta">
   <div class="wrap">
-    <h2>移動をやめた分だけ、<br>会える人が増える。<br><span class="g">その型を、御社の営業チームに。</span></h2>
-    <p>まずは、実際に回っている設定文を受け取ってください。<br>読んで、試して、気になったら「診断」と一言。<br>それだけで大丈夫です。</p>
-    <a class="btn cta-line" href="https://utage-system.com/line/open/3AguqHadI5TO?mtid=IpcLUtHC02JM" data-ev="LineTap">LINEで設定文を受け取る<small>実際に回っている8本・無料・売り込みなし</small></a>
-    <a class="btn mail cta-mail" href="https://utage-system.com/r/3AguqHadI5TO/register?mtid=T4pJS41WOT5n" data-ev="MailTap" target="_blank" rel="noopener">メールで受け取る<small>お名前とメールアドレスだけ</small></a>
+    <h2>社長が現場に出なくても、<br>毎朝、予約と提案書が揃っている。<br><span class="g">その代理店を、御社で。</span></h2>
+    <p>まずは、代理店向けの導入資料をお受け取りください。<br>読んで、社内で回して、気になったら「診断」と一言。<br>それだけで大丈夫です。</p>
+    <div class="ctabox">
+      <h3>導入資料（無料）に入っているもの</h3>
+      <ul class="ok">
+        <li>3か月後の営業部のモデル（社長から見える変化）</li>
+        <li>研修の進み方（4回・12時間）と持ち帰るもの</li>
+        <li>AIに渡すもの・渡さないものの線引きの例</li>
+        <li>人数別の形と、助成金の仕組み（支給の保証はしません）</li>
+        <li>営業1人あたり「年間いくら分」を自分で出せるセルフ換算シート</li>
+      </ul>
+      <a class="btn cta-line" href="https://utage-system.com/line/open/3AguqHadI5TO?mtid=IpcLUtHC02JM" data-ev="LineTap">LINEで導入資料を受け取る<small>友だち追加だけ・無料・売り込みなし</small></a>
+      <a class="btn mail cta-mail" href="https://utage-system.com/r/3AguqHadI5TO/register?mtid=T4pJS41WOT5n" data-ev="MailTap" target="_blank" rel="noopener">メールで受け取る<small>お名前とメールアドレスだけ</small></a>
+    </div>
     <p class="tel">お電話が早い方は、森川の直通へ<br><a href="tel:08066722604" data-ev="TelTap">080-6672-2604</a></p>
     <p class="btn-note">先に自分で目安を出したい方は、<a href="https://fulfull.jp/ai-shindan/?ref=hojin_lp" style="color:var(--gold-l)">セルフ換算診断（無料・送信なし）</a> もあります。</p>
   </div>
@@ -558,7 +619,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     ・助成金は対象になった場合の目安であり、支給を保証するものではありません。<br>申請は御社の顧問社労士か労働局へご相談ください。<br>
     ・お客様の声は個別相談を受けた方のレビュー（原文）で、研修受講企業の声ではありません。<br>
     ・人物写真の一部はイメージです（講師写真・動画を除く）。<br>申込一覧の動画は個人情報を加工しています。<br>
-    ・LINE・メールでお預かりする情報は、設定文のお届けとfulfullからの情報提供に使用します。<br>いつでも解除できます。</p>
+    ・LINE・メールでお預かりする情報は、導入資料のお届けとfulfullからの情報提供に使用します。<br>いつでも解除できます。</p>
     <div class="pl">
       <a href="https://fulfull.jp/">fulfull株式会社</a>
       <a href="https://fulfull.jp/ai-training/?ref=hojin_lp">企業向けAI研修</a>
@@ -569,7 +630,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   </div>
 </footer>
 
-<div id="sticky"><a class="btn cta-line" href="https://utage-system.com/line/open/3AguqHadI5TO?mtid=IpcLUtHC02JM" data-ev="LineTap">LINEで設定文を受け取る（無料）</a></div>
+<div id="sticky"><a class="btn cta-line" href="https://utage-system.com/line/open/3AguqHadI5TO?mtid=IpcLUtHC02JM" data-ev="LineTap">導入資料を受け取る（LINE・無料）</a></div>
 
 <script>
 (function(){
