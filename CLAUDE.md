@@ -41,4 +41,5 @@
 - `seminar/kit/` 参加者向け設定文の配布ページ
 - `voicy/` 企業向けAI研修LP（Voicyコラボ由来）
 - `voicy/shindan/` 会社のAI度診断（業務別に時間・単価を調整→年間金額と費用対効果）
+- `hojin/` 保険代理店・営業組織向けLP「おじいちゃんでもできる、保険営業のAI完全自動化」（法人・紺×金の勉強会LPと同系。CTA=fulfull.jpの換算診断フォーム ?ref=hojin_lp。イベント ToShindan/MailTap/BossCopy/ToSeminar・ボタン押下でLead）
 - `kiyaku/` 受講規約　`tokusho/` 特商法
