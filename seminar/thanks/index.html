@@ -3,31 +3,37 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>受付完了｜AI仕事術勉強会 9/24・25・27</title>
+<title>受付完了｜AI仕事術勉強会</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@800&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap">
 <script>
+/* Meta計測（登録完了）。event_idを付けて、あとでコンバージョンAPI（サーバー側）と重複排除できるようにしておく */
+window.SEM_EVENT_ID = 'seminar_reg_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8);
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','1510200123755162');fbq('track','PageView');fbq('track','CompleteRegistration',{content_name:'seminar_0924'});
+fbq('init','1510200123755162');fbq('track','PageView');
+fbq('track','CompleteRegistration',{content_name:'seminar_0924'},{eventID:window.SEM_EVENT_ID});
 </script>
 <style>
 :root{--navy:#22293A;--ink:#22293A;--sub:#4F586B;--bg:#FBF8F3;--paper:#fff;--soft:#F3EEE4;--line:#E5DED2;--gold:#DFA23C;--gold-d:#A9771B;--gold-l:#F1D79A;--green:#06C755}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif;font-size:19.5px;font-weight:500;line-height:1.9}
-.wrap{max-width:640px;margin:0 auto;padding:36px 20px 80px}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:28px 22px;box-shadow:0 10px 30px rgba(34,41,58,.08)}
+.wrap{max-width:640px;margin:0 auto;padding:28px 20px 80px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:26px 22px;box-shadow:0 10px 30px rgba(34,41,58,.08)}
 .ok{display:inline-block;background:var(--soft);color:var(--gold-d);font-weight:900;border-radius:999px;padding:6px 14px;font-size:16px;letter-spacing:.08em}
-h1{font-family:"Shippori Mincho",serif;font-size:clamp(26px,7vw,34px);line-height:1.4;margin:12px 0 14px}
+h1{font-family:"Shippori Mincho",serif;font-size:clamp(26px,7vw,34px);line-height:1.4;margin:12px 0 10px}
 p{margin:0 0 14px}
-.spec{background:var(--soft);border-radius:16px;padding:16px 18px;margin:14px 0 20px;font-weight:700}
-.spec div{display:flex;gap:14px}.spec dt{color:var(--sub);min-width:4.5em;font-weight:700}.spec dd{margin:0}
-.btn{display:block;width:100%;background:var(--green);color:#fff;text-decoration:none;text-align:center;font-size:21px;font-weight:900;border-radius:999px;padding:18px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.next{background:var(--soft);border-radius:16px;padding:16px 18px;margin:8px 0 14px;font-weight:700;font-size:18px}
+.next .t{margin:0}
+.btn{display:block;width:100%;background:var(--green);color:#fff;text-decoration:none;text-align:center;font-size:22px;font-weight:900;border-radius:999px;padding:20px 18px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
 .btn small{display:block;font-size:15.5px;font-weight:700;opacity:.92}
+.auto{font-size:16.5px;color:var(--sub);text-align:center;margin:10px 0 0}
+.spec{background:var(--soft);border-radius:16px;padding:16px 18px;margin:22px 0 14px;font-weight:700}
+.spec div{display:flex;gap:14px}.spec dt{color:var(--sub);min-width:4.5em;font-weight:700}.spec dd{margin:0}
 .note{font-size:17px;color:var(--sub)}
-h2{font-size:21px;font-weight:900;margin:26px 0 8px}
+h2{font-size:21px;font-weight:900;margin:22px 0 8px}
 ol{padding-left:1.3em;margin:0 0 10px}li{margin-bottom:6px}
-a.sub{color:var(--sub)}
+hr{border:0;border-top:1px solid var(--line);margin:24px 0 18px}
 </style>
 </head>
 <body>
@@ -35,22 +41,40 @@ a.sub{color:var(--sub)}
  <div class="card">
   <span class="ok">受付完了</span>
   <h1>お申し込み、<br>ありがとうございます。</h1>
+
+  <div class="next"><p class="t">当日のご案内と、勉強会で配る「右腕・左腕の設定文」は、公式LINEでお届けします。<br>まもなくLINEの追加画面が開きます。</p></div>
+
+  <a class="btn" id="line-btn" href="https://utage-system.com/line/open/A1w0HrtvIZD4?mtid=bRhfqnm1GS0M">LINEを追加して、お席を確保する<small>金融AIカレッジ 公式LINE・30秒</small></a>
+  <p class="auto" id="auto-msg">自動で開かない場合は、上のボタンをタップしてください。</p>
+
+  <hr>
   <p>ご登録のメールアドレスに、受付のメールをお送りしました。<br>届いていない場合は、迷惑メールフォルダをご確認ください。</p>
   <div class="spec">
    <div><dt>日時</dt><dd>お選びいただいた日程（受付メールに記載）</dd></div>
    <div><dt>形式</dt><dd>Zoom（カメラオンでご参加ください）</dd></div>
   </div>
-  <h2 style="margin-top:22px">あと1つだけ、お願いがあります。</h2>
-  <p>当日のご連絡と、勉強会で配る「右腕・左腕の設定文」は、<strong>公式LINE</strong>でお届けします。<br>下のボタンで友だち追加をして、トークに<strong>「届きました」</strong>と送ってください。<br>それで、お席の確保が完了します。</p>
-  <a class="btn" href="https://utage-system.com/line/open/opbsv67O2rQi?mtid=MxBmU899UbAC">LINEを追加して「届きました」と送る<small>金融AIカレッジ 公式LINE・30秒</small></a>
-  <ol style="margin-top:18px">
-   <li>上のボタンを押して、友だち追加</li>
-   <li>トークに「届きました」と送る</li>
-   <li>「お席を確保しました」の返信が届いたら完了です</li>
+  <h2>LINEを追加したあと</h2>
+  <ol>
+   <li>トークに「届きました」と、ひと言送ってください</li>
+   <li>「受付完了」の返信が届いたら、お席の確保は完了です</li>
   </ol>
   <p class="note">ZoomのURLは、前日にLINEとメールの両方でお送りします。<br>LINEをお使いでない方は、メールだけでも参加できます。</p>
   <p class="note" style="margin-top:14px">ご都合が悪くなった場合は、LINEか受付メールの返信で一言お知らせください。別の日程に振り替えます。</p>
  </div>
 </div>
+<script>
+/* 計測を送り終えてからLINEへ。ボタンは主動線、自動遷移は保険（アプリ内ブラウザで止められることがある） */
+(function(){
+  var btn = document.getElementById('line-btn'), msg = document.getElementById('auto-msg');
+  var q = new URLSearchParams(location.search); if (q.get('noauto') === '1') return; // 表示確認用
+  var left = 3, tapped = false;
+  btn.addEventListener('click', function(){ tapped = true; });
+  var tick = setInterval(function(){
+    left--;
+    if (tapped) { clearInterval(tick); return; }
+    if (left <= 0) { clearInterval(tick); location.href = btn.href; return; }
+  }, 1000);
+})();
+</script>
 </body>
 </html>
