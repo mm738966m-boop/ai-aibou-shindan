@@ -49,6 +49,8 @@
 - `seminar/kit/` 参加者向け設定文の配布ページ
 - `voicy/` 企業向けAI研修LP（Voicyコラボ由来）
 - `voicy/shindan/` 会社のAI度診断（業務別に時間・単価を調整→年間金額と費用対効果）
+- `shigyo/` 士業事務所向けLP「おじいちゃん先生でもできる、士業事務所の集客＆書類作業のAI完全自動化」（2026-09-26 下書き・noindex・**受け皿未接続**＝本文末尾JSの CTA{line,mail} と GADS{line,mail} が空。空のあいだボタンは #cta へ移動するだけ）。期限の帯＝2027-01-20 23:59 JST までの残り日数を自動表示し、0日で帯を隠す。孤立文字対策に text-wrap:pretty と word-break:auto-phrase
+- `shigyo/shiryo/` 士業事務所向け 導入資料（noindex）
 - `hojin/thanks/` 法人のメール登録 受付完了（Google・Metaの登録完了計測）
 - `hojin/` 保険代理店・営業組織向けLP「おじいちゃんでもできる、保険営業のAI完全自動化」（法人・紺×金の勉強会LPと同系。CTA=fulfull.jpの換算診断フォーム ?ref=hojin_lp。イベント ToShindan/MailTap/BossCopy/ToSeminar・ボタン押下でLead）
 - `kiyaku/` 受講規約　`tokusho/` 特商法
