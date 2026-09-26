@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://mm738966m-boop.github.io/ai-aibou-shindan/hojin/og.png">
 <meta property="og:site_name" content="fulfull株式会社">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="build" content="shigyo-v0.4">
+<meta name="build" content="shigyo-v0.5">
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -259,7 +259,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 })();
 </script>
 <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1510200123755162&ev=PageView&noscript=1"></noscript>
-<!-- Google広告（fulfull AW-763380159）: 士業LPの成果ラベルは受け皿（UTAGE）ができてから本文末尾のGADSに入れる -->
+<!-- Google広告（fulfull AW-763380159）: 成果=士業LP_LINEボタン押下（このページ）／士業LP_メール登録完了（shigyo/thanks/） -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-763380159"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-763380159');</script>
 </head>
@@ -804,9 +804,9 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 
 <script>
 (function(){
-  /* 受け皿（UTAGE 士業用シナリオ）。公開前にURLを入れる。空のあいだは最終CTAへ移動するだけ */
-  var CTA={line:'', mail:''};
-  var GADS={line:'', mail:''}; /* Google広告の成果ラベル（士業LP_LINEボタン押下 など）。作成後に入れる */
+  /* 受け皿＝UTAGE「士業LP_事務所の集客と書類のAI自動化」（YfafSXqWYPnf）。登録経路 shigyo_lp / shigyo_lp_mail */
+  var CTA={line:'https://utage-system.com/line/open/YfafSXqWYPnf?mtid=FuSK2yuWEQZ4', mail:'https://utage-system.com/r/YfafSXqWYPnf/register?mtid=ZmUzyMdysymy'};
+  var GADS={line:'AW-763380159/4wHqCKeSz4YdEL-DgewC'}; /* 士業LP_LINEボタン押下。メール登録完了は shigyo/thanks/ で送る */
   document.querySelectorAll('[data-cta]').forEach(function(a){
     var u=CTA[a.getAttribute('data-cta')];
     if(u){a.href=u;}else{a.href='#cta';a.removeAttribute('target');}

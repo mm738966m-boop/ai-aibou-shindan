@@ -49,7 +49,8 @@
 - `seminar/kit/` 参加者向け設定文の配布ページ
 - `voicy/` 企業向けAI研修LP（Voicyコラボ由来）
 - `voicy/shindan/` 会社のAI度診断（業務別に時間・単価を調整→年間金額と費用対効果）
-- `shigyo/` 士業事務所向けLP「おじいちゃん先生でもできる、士業事務所の集客＆書類作業のAI完全自動化」（2026-09-26 下書き・noindex・**受け皿未接続**＝本文末尾JSの CTA{line,mail} と GADS{line,mail} が空。空のあいだボタンは #cta へ移動するだけ）。期限の帯＝2027-01-20 23:59 JST までの残り日数を自動表示し、0日で帯を隠す。孤立文字対策に text-wrap:pretty と word-break:auto-phrase
+- `shigyo/` 士業事務所向けLP「おじいちゃん先生でもできる、士業事務所の集客＆書類作業のAI完全自動化」（noindex）。受け皿=UTAGE法人アカウント（fNAounFisaQD）のシナリオ「士業LP_事務所の集客と書類のAI自動化」（YfafSXqWYPnf）・登録経路 shigyo_lp（LINE）/ shigyo_lp_mail（メール）。Google広告の成果＝士業LP_LINEボタン押下（`AW-763380159/4wHqCKeSz4YdEL-DgewC`・LPで送信）／士業LP_メール登録完了（`AW-763380159/qeoPCKSSz4YdEL-DgewC`・shigyo/thanks/で送信）。期限の帯＝2027-01-20 23:59 JSTまでの残り日数を自動表示し、0日で帯を隠す。孤立文字対策に text-wrap:pretty と word-break:auto-phrase
+- `shigyo/thanks/` 士業のメール登録 受付完了（UTAGEの登録後URL。表示確認は ?test=1）
 - `shigyo/shiryo/` 士業事務所向け 導入資料（noindex）
 - `hojin/thanks/` 法人のメール登録 受付完了（Google・Metaの登録完了計測）
 - `hojin/` 保険代理店・営業組織向けLP「おじいちゃんでもできる、保険営業のAI完全自動化」（法人・紺×金の勉強会LPと同系。CTA=fulfull.jpの換算診断フォーム ?ref=hojin_lp。イベント ToShindan/MailTap/BossCopy/ToSeminar・ボタン押下でLead）
