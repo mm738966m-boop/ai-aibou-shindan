@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>おじいちゃん先生でもできる、士業事務所の集客＆書類作業のAI完全自動化｜行政書士・社労士・税理士・診断士の事務所向け（fulfull）</title>
+<meta name="description" content="先生が夜に書類を作らなくても、毎朝、相談予約と書類の下書きが揃っている事務所へ。訪問ゼロで年380件の相談を回す型を、事務所の実際の案件で組み立てる研修です。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="おじいちゃん先生でもできる、士業事務所の集客＆書類作業のAI完全自動化。">
+<meta property="og:description" content="先生が夜に書類を作らなくても、毎朝、相談予約と書類の下書きが揃っている事務所へ。訪問ゼロで年380件の相談を回す型を、事務所の実際の案件で組み立てる研修です。">
+<meta property="og:url" content="https://mm738966m-boop.github.io/ai-aibou-shindan/shigyo/">
+<meta property="og:image" content="https://mm738966m-boop.github.io/ai-aibou-shindan/hojin/og.png">
+<meta property="og:site_name" content="fulfull株式会社">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="build" content="shigyo-v0.1">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Klee+One:wght@400;600&display=swap">
+<style>
+:root{--navy:#22293A;--navy-d:#171C28;--ink:#22293A;--sub:#4F586B;--bg:#FBF8F3;--paper:#FFFFFF;--soft:#F3EEE4;--line:#E5DED2;--gold:#DFA23C;--gold-d:#A9771B;--gold-l:#F1D79A;--line-green:#06C755;--line-green-d:#05A847;--ok:#2E7D5B;--ng:#B4552D}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Zen Kaku Gothic New","Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;font-size:19.5px;font-weight:500;line-height:1.95;-webkit-text-size-adjust:100%;overflow-x:hidden}
+img,video{max-width:100%;display:block}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+p{margin:0 0 18px}
+strong{font-weight:900}
+a{color:var(--gold-d)}
+/* hero */
+.hero{background:linear-gradient(165deg,#2A3245 0%,var(--navy-d) 100%);color:#fff;padding:34px 0 40px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(700px 320px at 90% 0%,rgba(223,162,60,.20),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;max-width:1040px;padding:0 18px}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:26px;align-items:center}
+.hero-img{border-radius:22px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.35);aspect-ratio:4/5;max-height:420px}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.date{display:inline-block;background:rgba(241,215,154,.14);border:1px solid rgba(241,215,154,.55);color:var(--gold-l);font-size:15px;font-weight:700;border-radius:999px;padding:6px 14px;letter-spacing:.04em;margin-bottom:16px;line-height:1.6}
+h1{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-size:clamp(26px,7.1vw,44px);line-height:1.4;font-weight:800;margin:0 0 16px;letter-spacing:-.01em;text-wrap:balance}
+h1 .g{color:var(--gold-l)}
+.lead{font-size:19.5px;color:#DCE3EE;margin-bottom:22px}
+/* buttons */
+.btn{display:block;width:100%;background:var(--line-green);color:#fff;text-decoration:none;text-align:center;font-size:21px;font-weight:900;border-radius:999px;padding:19px 18px;box-shadow:0 8px 24px rgba(0,0,0,.22);transition:transform .15s,background .15s;border:0;cursor:pointer;font-family:inherit;line-height:1.4}
+.btn:hover{background:var(--line-green-d)}
+.btn:active{transform:scale(.98)}
+.btn:focus-visible{outline:3px solid var(--gold-l);outline-offset:3px}
+.btn small{display:block;font-size:15.5px;font-weight:700;opacity:.92;margin-top:4px}
+.btn.mail{background:var(--paper);color:var(--navy);border:2px solid var(--navy);box-shadow:none;margin-top:12px;font-size:19px;padding:16px 18px}
+.btn.mail:hover{background:var(--soft)}
+.dark .btn.mail,.hero .btn.mail{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}
+.dark .btn.mail:hover,.hero .btn.mail:hover{background:rgba(255,255,255,.08)}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--navy);box-shadow:none;font-size:18px;padding:15px 18px;margin-top:12px}
+.btn-note{font-size:16px;color:#C9D1DE;text-align:center;margin:12px 0 0;line-height:1.7}
+.light .btn-note{color:var(--sub)}
+.trust{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.trust span{font-size:16px;font-weight:700;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px}
+
+/* hero future */
+.future{background:rgba(255,255,255,.06);border:1px solid rgba(241,215,154,.45);border-radius:20px;padding:22px 22px 14px;margin:6px 0 20px;position:relative}
+.future .fl{display:inline-block;font-size:13.5px;font-weight:900;letter-spacing:.14em;color:var(--gold-l);margin-bottom:8px}
+.future .fq{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-size:clamp(21px,5.6vw,30px);line-height:1.55;font-weight:800;margin:0 0 12px;color:#fff;text-wrap:balance}
+.future .fq .g{color:var(--gold-l)}
+.fpts{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.fpts li{position:relative;padding-left:26px;font-size:17.5px;font-weight:700;color:#E6EBF3;line-height:1.7}
+.fpts li:before{content:"";position:absolute;left:4px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--gold)}
+.hero .lead{font-size:18px;color:#C9D1DE;margin-bottom:16px}
+.hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:26px}
+@media(min-width:640px){.hero-stats{grid-template-columns:repeat(4,1fr)}}
+.hero-stats div{background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 14px}
+.hero-stats b{display:block;font-family:"Shippori Mincho",serif;font-size:30px;font-weight:800;color:var(--gold-l);line-height:1.15;font-variant-numeric:tabular-nums}
+.hero-stats b small{font-size:.5em;margin-left:1px}
+.hero-stats span{display:block;font-size:14px;color:#C9D1DE;line-height:1.5;margin-top:4px;font-weight:700}
+.scrollcue{text-align:center;color:#AEB6C6;font-size:15px;margin:22px 0 0}
+.ctabox{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:26px 22px;margin-top:22px}
+.dark .ctabox{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16)}
+.ctabox h3{font-family:"Shippori Mincho",serif;font-size:22px;margin-bottom:6px}
+.ctabox .what{font-size:16.5px;color:var(--sub);margin-bottom:16px;line-height:1.75}
+.dark .ctabox .what{color:#C9D1DE}
+.ctabox ul.ok{margin-bottom:18px}
+
+/* PC: ヒーローは文章＋写真の2カラム */
+@media(min-width:900px){
+  .hero{padding:56px 0 48px}
+  .hero .wrap{max-width:1160px;padding:0 28px}
+  .hero-grid{grid-template-columns:1.1fr .9fr;gap:44px;align-items:stretch}
+  .hero-img{aspect-ratio:auto;max-height:none;height:100%;min-height:560px;border-radius:26px}
+  .hero-img img{object-position:center 30%}
+  h1{font-size:42px;letter-spacing:-.02em}
+  .future .fq{font-size:29px}
+  .hero .lead{font-size:18.5px}
+  .hero-stats{margin-top:34px}
+  .hero-stats b{font-size:34px}
+}
+@media(min-width:1200px){h1{font-size:47px}.future .fq{font-size:32px}}
+
+/* solution blocks */
+.sol{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:22px 20px;margin:0 0 16px}
+.sol-h{display:flex;gap:14px;align-items:flex-start;margin-bottom:12px}
+.sol-h .num{flex:0 0 44px;width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--gold-l);font-family:"Shippori Mincho",serif;font-weight:800;font-size:21px;display:flex;align-items:center;justify-content:center}
+.sol-t{font-family:"Shippori Mincho",serif;font-size:22px;font-weight:800;line-height:1.4}
+.sol-p{font-size:15.5px;color:var(--gold-d);font-weight:700;margin-top:2px}
+.sol dl{margin:0;display:grid;grid-template-columns:1fr;gap:6px}
+.sol dt{font-size:13.5px;font-weight:900;letter-spacing:.12em;color:var(--sub);margin-top:8px}
+.sol dd{margin:0;font-size:17.5px;line-height:1.85;background:var(--soft);border-radius:12px;padding:12px 14px}
+@media(min-width:640px){.sol dl{grid-template-columns:120px 1fr;align-items:start}.sol dt{margin-top:14px}}
+/* sections */
+section{padding:52px 0}
+section.alt{background:var(--paper)}
+section.dark{background:var(--navy);color:#fff}
+.eyebrow{font-size:14px;font-weight:900;letter-spacing:.16em;color:var(--gold-d);margin-bottom:8px}
+.dark .eyebrow{color:var(--gold-l)}
+h2{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-size:clamp(23px,6.2vw,31px);line-height:1.45;font-weight:800;margin:0 0 22px;text-wrap:balance}
+h2 .g{color:var(--gold-d)}
+.dark h2 .g{color:var(--gold-l)}
+h3{font-size:20px;font-weight:900;margin:0 0 8px;line-height:1.5}
+.figure{border-radius:20px;overflow:hidden;margin:0 0 22px;box-shadow:0 10px 30px rgba(34,41,58,.15)}
+.figure img,.figure video{width:100%;aspect-ratio:16/9;object-fit:cover}
+.figure.tall img{aspect-ratio:auto}
+.figure video.own{aspect-ratio:auto;height:auto;object-fit:contain;background:#000}
+.cap{font-size:16.5px;color:var(--sub);margin:-10px 0 20px;line-height:1.7}
+.dark .cap{color:#AEB6C6}
+.src{font-size:14.5px;color:var(--sub);line-height:1.7;margin-top:14px}
+.dark .src{color:#AEB6C6}
+/* pains */
+ul.pain{list-style:none;padding:0;margin:0 0 6px;display:grid;gap:10px}
+ul.pain li{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 50px;position:relative;font-weight:700;line-height:1.75}
+ul.pain li:before{content:"";position:absolute;left:18px;top:21px;width:14px;height:14px;border-radius:50%;background:var(--gold)}
+/* stats */
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:6px 0 18px}
+.stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:18px 16px}
+.light .stat,.alt .stat{background:var(--soft);border-color:var(--line)}
+.stat .n{font-family:"Shippori Mincho",serif;font-size:clamp(30px,8vw,40px);font-weight:800;color:var(--gold-l);line-height:1.15;font-variant-numeric:tabular-nums}
+.light .stat .n,.alt .stat .n{color:var(--gold-d)}
+.stat .n small{font-size:.5em;font-weight:700;margin-left:2px}
+.stat .l{font-size:15px;line-height:1.6;margin-top:6px;color:#DCE3EE;font-weight:700}
+.light .stat .l,.alt .stat .l{color:var(--sub)}
+/* numbered */
+ol.num{list-style:none;padding:0;margin:0 0 10px;counter-reset:n;display:grid;gap:16px}
+ol.num li{position:relative;padding-left:54px;counter-increment:n}
+ol.num li:before{content:counter(n);position:absolute;left:0;top:2px;width:40px;height:40px;border-radius:50%;background:var(--navy);color:var(--gold-l);font-weight:900;font-size:19px;display:flex;align-items:center;justify-content:center;font-family:"Shippori Mincho",serif}
+.dark ol.num li:before{background:var(--gold);color:var(--navy-d)}
+/* two columns */
+.cols{display:grid;grid-template-columns:1fr;gap:16px;margin:0 0 20px}
+@media(min-width:640px){.cols{grid-template-columns:1fr 1fr}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px 20px}
+.dark .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16)}
+.card .tag{display:inline-block;font-size:14px;font-weight:900;letter-spacing:.1em;color:var(--gold-d);margin-bottom:6px}
+.dark .card .tag{color:var(--gold-l)}
+.card ul{margin:8px 0 0;padding-left:22px}
+.card li{margin:5px 0}
+/* day timeline */
+.day{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px 18px;margin-bottom:14px}
+.day.now{background:var(--soft)}
+.day h3{font-size:17px;letter-spacing:.06em;color:var(--sub);margin-bottom:10px}
+.day.next h3{color:var(--gold-d)}
+.tl{list-style:none;padding:0;margin:0}
+.tl li{display:grid;grid-template-columns:62px 1fr;gap:10px;padding:7px 0;border-top:1px dashed var(--line);font-size:17.5px;line-height:1.7}
+.tl li:first-child{border-top:0}
+.tl b{color:var(--sub);font-variant-numeric:tabular-nums;font-weight:700}
+.tl .r{color:var(--gold-d);font-weight:900}
+/* table */
+.tablebox{overflow-x:auto;margin:0 0 14px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:16.5px;background:var(--paper);border-radius:14px;overflow:hidden}
+th,td{border-bottom:1px solid var(--line);padding:13px 12px;text-align:left;vertical-align:top;line-height:1.6}
+th{background:var(--soft);font-size:14.5px;letter-spacing:.06em;color:var(--sub)}
+td.num{white-space:nowrap;font-weight:900;font-variant-numeric:tabular-nums}
+/* note */
+.note{background:var(--soft);border-left:5px solid var(--gold);border-radius:12px;padding:16px 18px;margin:18px 0;font-size:17px;line-height:1.85}
+.note.warn{border-left-color:var(--ng)}
+.dark .note{background:rgba(255,255,255,.06);border-left-color:var(--gold-l)}
+/* faq */
+details{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:0 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:900;padding:16px 0;list-style:none;position:relative;padding-right:34px;line-height:1.6}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"＋";position:absolute;right:0;top:14px;color:var(--gold-d);font-weight:900;font-size:22px}
+details[open] summary:after{content:"－"}
+details p{padding-bottom:16px;color:var(--sub);font-size:17.5px}
+/* checks */
+ul.ok,ul.ng{list-style:none;padding:0;margin:0 0 14px;display:grid;gap:9px}
+ul.ok li,ul.ng li{position:relative;padding-left:36px;font-weight:700;line-height:1.75}
+ul.ok li:before{content:"✓";position:absolute;left:0;top:0;width:26px;height:26px;border-radius:50%;background:var(--ok);color:#fff;font-size:15px;display:flex;align-items:center;justify-content:center;margin-top:5px}
+ul.ng li:before{content:"×";position:absolute;left:0;top:0;width:26px;height:26px;border-radius:50%;background:var(--ng);color:#fff;font-size:17px;display:flex;align-items:center;justify-content:center;margin-top:5px}
+/* letter */
+.letter{position:relative;background:#FFFDF8;border:1px solid var(--line);border-radius:22px;padding:34px 24px;font-family:"Klee One","Zen Kaku Gothic New",serif;font-size:19.5px;line-height:2.05;font-weight:400;overflow:hidden}
+.letter strong{font-weight:600}
+.letter .deco{position:absolute;pointer-events:none;mix-blend-mode:multiply;opacity:.9}
+.letter .d1{right:-30px;top:-20px;width:170px}
+.letter .d2{left:-20px;bottom:-30px;width:160px}
+.letter .sign{text-align:right;margin-top:18px;font-weight:600}
+/* steps */
+.steps{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.steps li{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px 18px 16px 66px;position:relative}
+.steps li b{display:block;font-size:18.5px;line-height:1.6}
+.steps li span{color:var(--sub);font-size:16.5px;line-height:1.75}
+.steps li i{position:absolute;left:16px;top:16px;width:36px;height:36px;border-radius:50%;background:var(--navy);color:var(--gold-l);font-style:normal;font-weight:900;display:flex;align-items:center;justify-content:center;font-family:"Shippori Mincho",serif}
+/* profile */
+.prof{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:start;margin-bottom:22px}
+.prof img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid var(--paper);box-shadow:0 6px 18px rgba(34,41,58,.2)}
+.prof .nm{font-family:"Shippori Mincho",serif;font-size:24px;font-weight:800;line-height:1.3}
+.prof .rl{font-size:15.5px;color:var(--sub);margin-bottom:8px;line-height:1.6}
+.story{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px 20px;margin:0 0 20px}
+.story p{margin-bottom:14px}
+/* review */
+.rev{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px 18px 12px;margin-bottom:12px;font-size:17.5px;line-height:1.85}
+.rev .who{font-size:15px;color:var(--sub);text-align:right}
+.star{color:var(--gold);letter-spacing:.06em;font-size:24px}
+/* boss copy */
+.copybox{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px;font-size:17px;white-space:pre-wrap;line-height:1.8;margin:0 0 12px}
+/* sticky */
+#sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(251,248,243,.94);backdrop-filter:blur(8px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .25s;z-index:20}
+#sticky.show{transform:none}
+#sticky .btn{max-width:720px;margin:0 auto;padding:14px 16px;font-size:18px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+@media(prefers-reduced-motion:reduce){#sticky{transition:none}html{scroll-behavior:auto}}
+footer{background:var(--navy-d);color:#C9D1DE;padding:40px 0 100px;font-size:15px;line-height:1.8}
+footer a{color:var(--gold-l)}
+.pl{display:flex;flex-wrap:wrap;gap:10px 18px;margin:12px 0}
+.tel{font-size:17px;text-align:center;margin-top:14px;color:#C9D1DE}
+.tel a{color:#fff;font-weight:900;text-decoration:none;font-size:20px;font-variant-numeric:tabular-nums}
+
+/* 期限の帯（士業版） */
+.band{background:linear-gradient(180deg,#FFF6E3,#FBEFD3);border-top:3px solid var(--gold);border-bottom:1px solid var(--gold-l);padding:26px 0 22px}
+.band-in{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+.band-k{font-size:14px;font-weight:900;letter-spacing:.14em;color:var(--gold-d)}
+.band-t{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-size:clamp(22px,5.6vw,30px);font-weight:800;line-height:1.45;margin:4px 0 10px;text-wrap:balance}
+.band-t strong{color:var(--ng)}
+.band-d{font-size:17px;line-height:1.85;margin:0}
+.band-r{background:var(--navy);color:#fff;border-radius:18px;padding:14px 16px;text-align:center;min-width:112px}
+.band-n{display:block;font-family:"Shippori Mincho",serif;font-size:44px;font-weight:800;color:var(--gold-l);line-height:1.1;font-variant-numeric:tabular-nums}
+.band-u{display:block;font-size:13.5px;font-weight:700;line-height:1.5;color:#DCE3EE;margin-top:4px}
+.band-s{font-size:15px;color:var(--sub);margin:12px 0 0;line-height:1.75}
+@media(max-width:520px){.band-in{grid-template-columns:1fr}.band-r{display:flex;align-items:center;gap:12px;justify-content:center}.band-u{margin-top:0;text-align:left}}
+.band-mini{background:rgba(241,215,154,.14);border:1px solid rgba(241,215,154,.55);color:var(--gold-l);border-radius:14px;padding:12px 16px;font-weight:700;font-size:17px;margin:4px 0 6px;text-align:center;line-height:1.7}
+.band-mini strong{color:#fff}
+table.wide{min-width:680px}
+</style>
+<!-- ===== 計測（Meta Pixel 1510200123755162）===== -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+(function(){
+  var KEY='fx_ref';
+  var q=new URLSearchParams(location.search);
+  var ref=q.get('ref')||q.get('utm_source')||'';
+  try{ if(ref){sessionStorage.setItem(KEY,ref)} else {ref=sessionStorage.getItem(KEY)||'direct'} }catch(e){ ref=ref||'direct' }
+  window.fxRef=ref;
+  window.fxTrack=function(name,params){
+    try{ fbq('trackCustom',name,Object.assign({ref:window.fxRef,page:document.title},params||{})) }catch(e){}
+  };
+  fbq('init','1510200123755162');
+  fbq('track','PageView',{ref:ref});
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1510200123755162&ev=PageView&noscript=1"></noscript>
+<!-- Google広告（fulfull AW-763380159）: 士業LPの成果ラベルは受け皿（UTAGE）ができてから本文末尾のGADSに入れる -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-763380159"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-763380159');</script>
+</head>
+<body>
+
+<!-- 1 ファーストビュー -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="date">行政書士・社労士・税理士・中小企業診断士の事務所へ</span>
+        <h1>おじいちゃん先生でもできる、<br>士業事務所の集客＆書類作業の<br><span class="g">AI完全自動化。</span></h1>
+        <div class="future">
+          <div class="fl">3か月後の事務所</div>
+          <p class="fq">先生が夜に書類を作らなくても、<br>毎朝、<span class="g" style="white-space:nowrap">相談予約と書類の下書き</span>が揃っている事務所へ。</p>
+          <ul class="fpts">
+            <li>紹介を待たなくても、相談が向こうから入る</li>
+            <li>夜と週末の書類づくりが、朝の確認に変わる</li>
+            <li>職員が辞めても、先生の型は事務所に残る</li>
+          </ul>
+        </div>
+        <p class="lead">訪問ゼロ・オンラインだけで、年380件の相談を回している実務家が教えます。<br>集客の<strong>右腕</strong>と、面談・書類・顧問先連絡の<strong>左腕</strong>を、事務所の実際の案件で組み立てます。<br>AIの知識ゼロの先生でも、パートの職員さんでも。</p>
+        <div class="trust"><span>パソコンが苦手でも</span><span>事務所の実際の案件が教材</span><span>職員の受講分は助成金の対象になることも</span></div>
+      </div>
+      <div class="hero-img"><img src="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/img/hero.jpg" alt="書斎でノートパソコンに向かう男性（イメージ）" loading="eager"></div>
+    </div>
+    <div class="hero-stats">
+      <div><b>0<small>件</small></b><span>訪問。相談も面談もすべてオンライン</span></div>
+      <div><b>380<small>件</small></b><span>2025年の個別相談。お金・住宅・相続・経営まで</span></div>
+      <div><b>2<small>時間</small>→2<small>分</small></b><span>提案書のたたき台。森川の実測</span></div>
+      <div><b>25<small>社</small></b><span>企業研修のご依頼実績</span></div>
+    </div>
+    <p class="scrollcue">↓ 読み進めると、事務所で何が変わるかが分かります</p>
+  </div>
+</header>
+
+<!-- 1a 期限の帯 -->
+<section class="band" aria-label="今年度の助成金の期限">
+  <div class="wrap">
+    <div class="band-in">
+      <div class="band-l">
+        <div class="band-k">今年度の助成金に間に合わせるなら</div>
+        <p class="band-t">無料の換算診断は、<strong>2027年1月20日まで</strong>。</p>
+        <p class="band-d">国の助成金（経費75%）は、今年度が最後の年です。<br>計画届の締切は2月末で、診断から計画届までは5週間ほどかかります。<br>だから、今年度に間に合わせやすいのは1月20日までに診断を受けた事務所です。</p>
+      </div>
+      <div class="band-r"><span class="band-n" id="daysLeft">—</span><span class="band-u">締切まで<br>残り日数</span></div>
+    </div>
+    <p class="band-s">東京都内の事務所は、来年度も東京都の助成金（経費の3/4）が使える見込みです。<br>どの制度も支給を保証するものではありません。</p>
+  </div>
+</section>
+
+<!-- 1b 動画 -->
+<section class="alt light" style="padding:40px 0 36px">
+  <div class="wrap">
+    <div class="eyebrow">まず、1分だけ</div>
+    <h2>fulfullが、どんな会社か。<br><span class="g">1分の動画</span>で先に見てください。</h2>
+    <div class="figure"><video class="own" src="https://fulfull.jp/wp-content/uploads/2026/08/seminar-op.mp4" poster="https://fulfull.jp/wp-content/uploads/2026/08/seminar-op-poster.jpg" controls playsinline preload="metadata"></video></div>
+    <p class="cap">音が出ます。訪問ゼロで年380件の相談を回している会社の、話し方と雰囲気です。</p>
+  </div>
+</section>
+
+<!-- 2 未来 -->
+<section class="alt light">
+  <div class="wrap">
+    <div class="eyebrow">3か月後の、先生の1日</div>
+    <h2>移動と催促の電話で終わる日が、<br><span class="g">相談4件＋書類の下書き済み</span>に変わる。</h2>
+    <div class="figure"><img src="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/img/after.jpg" alt="オンラインで面談する男性（イメージ）" loading="lazy"></div>
+    <p class="cap">写真はイメージです。</p>
+    <div class="day now"><h3>いま（よくある1日）</h3>
+      <ul class="tl">
+        <li><b>9:00</b><span>顧問先へ移動</span></li>
+        <li><b>10:00</b><span>顧問先で面談</span></li>
+        <li><b>13:00</b><span>役所へ書類を提出</span></li>
+        <li><b>15:00</b><span>事務所で、資料が届かない顧問先へ催促の電話</span></li>
+        <li><b>17:00</b><span>初回相談</span></li>
+        <li><b>19:00</b><span>見積と提案書づくり</span></li>
+        <li><b>21:00</b><span>申請書・規程の下書き。発信は今週もできず</span></li>
+      </ul></div>
+    <div class="day next"><h3>3か月後（オンライン×AIの1日）</h3>
+      <ul class="tl">
+        <li><b>9:00</b><span><span class="r">右腕</span>が用意した相談前メモと、<span class="r">左腕</span>が下書きした期限の案内・資料の催促文を確認</span></li>
+        <li><b>10:00</b><span>オンラインで初回相談</span></li>
+        <li><b>10:45</b><span><span class="r">左腕</span>にメモを渡す。必要書類の一覧・見積・フォロー文が2分で届く</span></li>
+        <li><b>11:00</b><span>顧問先とオンライン面談</span></li>
+        <li><b>13:00</b><span><span class="r">左腕</span>が様式に沿って下書きした申請書・規程案を、先生が確認して直す</span></li>
+        <li><b>15:00</b><span>職員さんが、朝の下書きを確認して顧問先へ一斉に案内</span></li>
+        <li><b>17:00</b><span>診断ページから入った相談予約を確認して終了。夜は空く</span></li>
+      </ul></div>
+    <p>所長の側から見ると、こう変わります。<br>先生1人が受けられる相談の数が、移動と下書きの時間ぶん増えます。<br>資料回収の催促や期限の案内を、職員さん任せにしても抜けなくなります。<br>そして、先生の説明の勘所が<strong>設定文という事務所の資産</strong>として残ります。</p>
+    <p class="src">1日の例はモデルケースです。業務の内容は士業と事務所によって違います。時間が減るというより、同じ時間でできる量が増える、が実感に近いです。</p>
+  </div>
+</section>
+
+<!-- 3 業界 -->
+<section class="dark">
+  <div class="wrap">
+    <div class="eyebrow">いま、先生の周りで起きていること</div>
+    <h2>同業の先生は、毎年増えています。<br>顧問先は、<span class="g">先にAIで調べてから</span>来ます。</h2>
+    <div class="stats">
+      <div class="stat"><div class="n">約1<small>万人</small></div><div class="l">行政書士の登録者は、2012年の42,177人から2023年の53,248人へ</div></div>
+      <div class="stat"><div class="n" data-count="82343">82,343</div><div class="l">税理士の登録者数（2026年8月末）</div></div>
+      <div class="stat"><div class="n" data-count="47923">47,923</div><div class="l">社会保険労務士の登録者数（2025年12月）</div></div>
+      <div class="stat"><div class="n">最後<small>の年</small></div><div class="l">研修費の75%が戻る国の助成金のコースは、今年度で終わる予定です</div></div>
+    </div>
+    <p>顧問先は、制度のことも手続きのことも、先にAIで調べてから相談に来るようになりました。<br>書類を作れる、制度を知っている、だけでは選ばれにくくなっています。</p>
+    <p>だから、書類の下書きはAIに任せて、<strong>先生にしかできない判断と相談</strong>に時間を移す。<br>そして、選ばれる理由を、先生が発信しなくても届く形にする。<br><strong>これは、職員数人の事務所のほうが先に終わります。</strong></p>
+    <p class="src">出典: 日本税理士会連合会「税理士登録者数」（令和8年8月末日現在）／全国社会保険労務士会連合会の公表値（2025年12月）／日本行政書士会連合会の公表値（2012年・2023年10月）／厚生労働省「令和9年度概算要求の概要」（人材開発統括官・2026年8月）</p>
+  </div>
+</section>
+
+<!-- 4 原因 -->
+<section class="light">
+  <div class="wrap">
+    <div class="eyebrow">なのに、なぜ事務所で定着しないのか</div>
+    <h2>AIを「調べものの道具」で<br><span class="g">止めているから。</span></h2>
+    <p>ChatGPTを試した先生は、もう珍しくありません。<br>それでも3か月後に、事務所の仕事の回し方が変わったところは少ない。<br>理由は3つです。</p>
+    <ol class="num">
+      <li><h3>先生個人の使い方で止まっている</h3>先生が調べものに使っている。<br>職員さんは触っていない。<br>事務所の型になっていないので、先生が忙しくなるとまた手作業に戻ります。</li>
+      <li><h3>汎用のAI講座を受けている</h3>「プロンプトの書き方」を学んでも、明日の申請書の下書きは誰も作ってくれません。<br>効くのは「この顧問先の、この案件」をAIに渡す型を作ったときだけです。</li>
+      <li><h3>守秘義務との線引きが決まっていない</h3>顧問先の情報のどこまでをAIに渡してよいのか。<br>ここが曖昧なままだと、真面目な先生ほど怖くて使えません。</li>
+    </ol>
+    <p>足りないのは、先生のやる気でも、AIの性能でもありません。<br><strong>事務所の案件で、線引きを決めて、順番どおりに覚える機会</strong>がなかっただけです。</p>
+  </div>
+</section>
+
+<!-- 5 問題 -->
+<section class="alt light">
+  <div class="wrap">
+    <div class="eyebrow">このまま放っておくと</div>
+    <h2>職員さんが辞めた日に、<br><span class="g">顧問先とのやりとりの型</span>も一緒に消える。</h2>
+    <div class="figure"><img src="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/img/before.jpg" alt="夜、パソコンに向かう男性（イメージ）" loading="lazy"></div>
+    <p class="cap">写真はイメージです。</p>
+    <ul class="pain">
+      <li>新しい相談は、紹介頼み。<br>紹介が止まった月は、売上も止まる</li>
+      <li>申請書・規程・提案書の下書きが、先生の夜と週末で支えられている</li>
+      <li>資料が届かない顧問先への催促、期限の案内、年に一度の手続きの連絡。<br>毎年同じことを、毎年手で書いている</li>
+      <li>職員さんが辞めるたびに、顧問先ごとの「いつもの連絡」がゼロに戻る</li>
+      <li>発信したほうがいいのは分かっているが、書く時間がない</li>
+      <li>顧問料の値下げを言われても、断れる理由を言葉にできていない</li>
+    </ul>
+    <p>ひとつでも当てはまったなら、この先を読んでください。<br>これは「がんばり方」の話ではなく、<strong>集客と書類と顧問先連絡の回し方を事務所の型にする</strong>話です。</p>
+  </div>
+</section>
+
+<!-- 6 解決 -->
+<section class="light">
+  <div class="wrap">
+    <div class="eyebrow">解決策</div>
+    <h2>先生と職員さんに右腕と左腕を持たせて、<br><span class="g">その作り方を事務所の型にする。</span></h2>
+    <p>高いシステムを買うのではありません。<br>先生と職員さんが、自分の右腕と左腕を、事務所の実際の案件で作ります。<br>やることは3つです。<br>上の問題に、1つずつ対応しています。</p>
+
+    <div class="sol">
+      <div class="sol-h"><span class="num">1</span><div><div class="sol-t">入口を作る（右腕）</div><div class="sol-p">「紹介頼み」「発信する時間がない」に対して</div></div></div>
+      <dl>
+        <dt>やること</dt><dd>事務所の強みと得意な相談の種類をAIに分析させ、「この事務所が選ばれる理由3つ」を出します。<br>それをもとに、5問で終わる診断ページと結果文、LINEの自動応答、法改正や締切に合わせた週1本の発信の下書きを作ります。</dd>
+        <dt>できあがるもの</dt><dd>事務所の診断ページ・LINE・発信の型</dd>
+        <dt>事務所での動き方</dt><dd>名刺、顧問先へのお知らせ、ホームページに診断ページのURLを置きます。<br>返信と相談予約はLINEに自動で入ります。<br>先生は、入った予約に出るだけです。</dd>
+      </dl>
+    </div>
+
+    <div class="sol">
+      <div class="sol-h"><span class="num">2</span><div><div class="sol-t">面談の前後と書類を任せる（左腕）</div><div class="sol-p">「夜と週末の下書き」「毎年手で書く連絡」に対して</div></div></div>
+      <dl>
+        <dt>やること</dt><dd>事務所の話し方・書式・禁止事項を入れた設定文を作り、先生と職員さんのパソコンとスマホに貼ります。<br>相談のメモを渡すだけで、必要書類の一覧、見積、フォロー文、次回の案内が2分で出ます。<br>申請書・規程・報告書は、様式に沿った下書きまで。<br>期限の案内と資料の催促は、顧問先ごとに作り置きします。</dd>
+        <dt>できあがるもの</dt><dd>左腕の設定文・書類の型・年間の連絡文の作り置き（手続きの時期別）</dd>
+        <dt>事務所での動き方</dt><dd>相談のあと5分でメモを渡す。<br>出てきた下書きを先生が確認し、判断と署名は先生が行う。<br>期限の案内は、朝に下書きが並んでいる状態から職員さんが送ります。</dd>
+      </dl>
+    </div>
+
+    <div class="sol">
+      <div class="sol-h"><span class="num">3</span><div><div class="sol-t">事務所の型にする</div><div class="sol-p">「職員が辞めたら消える」「先生1人で止まる」に対して</div></div></div>
+      <dl>
+        <dt>やること</dt><dd>顧問先の情報のうち、AIに渡すもの・渡さないものを事務所のルールとして文書にします。<br>先生のコツを、職員さんでも使える手順書にします。<br>受講した人が教える側になる所内勉強会で、受けていない人に広げます。</dd>
+        <dt>できあがるもの</dt><dd>線引き文書・手順書・所内勉強会の台本・修了後30日間の質問対応</dd>
+        <dt>事務所での動き方</dt><dd>新しい職員さんは、設定文を貼った日から先生の型で動けます。<br>職員さんが辞めても、顧問先ごとの連絡文は事務所に残ります。</dd>
+      </dl>
+    </div>
+
+    <h3 style="margin-top:30px">士業ごとの、右腕と左腕の例</h3>
+    <p class="cap" style="margin:0 0 10px">どの3業務から始めるかは、無料の換算診断で事務所ごとに決めます。</p>
+    <div class="tablebox">
+    <table class="wide">
+      <thead><tr><th>事務所</th><th>右腕（集客）</th><th>左腕（面談・連絡）</th><th>書類の下書き</th></tr></thead>
+      <tbody>
+        <tr><td><strong>行政書士</strong></td><td>許可の要件に当てはまりそうかを確かめる1分診断<br>補助金や更新の締切に合わせた発信</td><td>初回相談のメモから、必要書類の一覧・見積・次回の案内</td><td>申請理由書・事業計画の骨子<br>許可の更新期限の案内</td></tr>
+        <tr><td><strong>社会保険労務士</strong></td><td>使える助成金がありそうかを確かめる1分診断<br>法改正のお知らせ</td><td>顧問先のヒアリングから、論点の整理と見積</td><td>就業規則・規程の改定案<br>算定基礎・年度更新の案内と資料の催促</td></tr>
+        <tr><td><strong>税理士</strong></td><td>インボイス・電子帳簿保存の対応チェック<br>決算や年末に合わせた発信</td><td>月次面談のメモから、試算表へのコメントと次回までの宿題</td><td>決算前の打ち合わせ資料<br>年末調整の資料回収の案内</td></tr>
+        <tr><td><strong>中小企業診断士・経営コンサル</strong></td><td>補助金に向いているかを確かめる1分診断<br>支援事例の発信</td><td>経営者のヒアリングから、課題の整理と提案書の骨子</td><td>事業計画書・経営改善計画の骨子<br>支援報告書</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="src">例です。どれも「下書きまで」で、内容の判断・署名・提出は資格者ご本人が行います。</p>
+
+    <h3 style="margin-top:26px">導入の前後で、誰の何が変わるか</h3>
+    <div class="tablebox">
+    <table>
+      <thead><tr><th>誰</th><th>いま</th><th>3か月後</th></tr></thead>
+      <tbody>
+        <tr><td><strong>先生</strong></td><td>移動と下書きで1日が終わる。相談は紹介頼み</td><td>相談はオンライン。下書きは確認して直すだけ。予約は診断ページから入る</td></tr>
+        <tr><td><strong>職員さん</strong></td><td>催促と期限の案内を、毎回手で書く</td><td>朝に下書きが並んでいる。確認して送る</td></tr>
+        <tr><td><strong>所長</strong></td><td>辞めたら、顧問先ごとのやりとりが消える</td><td>設定文と連絡文が事務所に残る。新人は初日から先生の型で動く</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="src">モデルケースです。成果を保証するものではありません。</p>
+
+    <h3 style="margin-top:26px">誰が何をやるか</h3>
+    <div class="cols">
+      <div class="card"><span class="tag">森川がやること</span><ul><li>診断で「どの仕事を、誰に」を決める</li><li>4回の研修で、事務所の案件を横で一緒に作る</li><li>設定文・線引き・手順書の形を整える</li><li>修了後30日間、質問に答える</li></ul></div>
+      <div class="card"><span class="tag">事務所がやること</span><ul><li>所長：受講する2〜4名を選ぶ（先生でも職員さんでも）</li><li>受講者：1週間の仕事メモと、過去の相談メモ3件を持ち込む</li><li>受講者：回のあいだに実務で1つ試す</li><li>出す前の判断は、先生が</li></ul></div>
+    </div>
+    <div class="cols">
+      <div class="card"><span class="tag">AIがやること</span><ul><li>調べる・比べる・まとめる</li><li>下書きを書く（書類・連絡・提案・発信）</li><li>整える・抜けをチェックする</li><li>決まった連絡を決まった時に送る</li></ul></div>
+      <div class="card"><span class="tag">先生がやること</span><ul><li>顧問先と話す</li><li>専門家としての判断</li><li>書類の確認・署名・提出</li><li>「この先生に頼みたい」と思ってもらうこと</li></ul></div>
+    </div>
+    <p>顧問先の話を聞いて、制度の話より先に社長の不安をほどく。<br>その感覚は、経験でしか育ちません。<br>AIは先生を減らすためのものではなく、先生1人が受けられる相談の数を増やすためのものです。<br>だから、経験の長い先生ほど価値が上がります。</p>
+    <div class="note">顧問先の情報の扱いは、各士業法の守秘義務と事務所の規程が優先です。<br>研修の第1回で「AIに渡してよいもの・渡さないもの」を事務所のルールとして文書にします。<br>顧問先の情報は、学習に使われない設定の事務所専用の場所でしか扱いません。<br>書類はAIが下書きまで。<br>内容の判断・署名・提出は資格者ご本人、と線引きします。</div>
+  </div>
+</section>
+
+<!-- 7 実物 -->
+<section class="dark">
+  <div class="wrap">
+    <div class="eyebrow">実際の画面</div>
+    <h2>相談の予約は、<span class="g">こうやって入ってきます。</span></h2>
+    <p>「オンラインで予約が入る」と言われても、イメージが湧かないと思います。<br>これが、fulfullのお金の勉強会（オンライン）の申込一覧です。</p>
+    <div class="figure"><video src="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/img/yoyaku.mp4" poster="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/img/yoyaku_poster.jpg" muted loop playsinline autoplay></video></div>
+    <p class="cap">電話も訪問もしていません。広告→ページ→LINE→予約、の順に自動で入ってきます。氏名・メールアドレスは加工しています。</p>
+    <div class="stats">
+      <div class="stat"><div class="n">380<small>件</small></div><div class="l">2025年の個別相談件数。お金・住宅・相続・資産形成・経営相談、すべてオンライン</div></div>
+      <div class="stat"><div class="n">83<small>%</small></div><div class="l">入口（オンライン勉強会）から個別相談に進んだ割合</div></div>
+      <div class="stat"><div class="n">4.8<small>★</small></div><div class="l">個別相談の予約サイト・63件のレビュー</div></div>
+      <div class="stat"><div class="n">2.7<small>人分</small></div><div class="l">月4万円のAI利用料で回している、社員換算の仕事量</div></div>
+    </div>
+    <p>相談を仕事にしているという点で、fulfullは士業の事務所と同じ形をしています。<br>入口で見つけてもらい、面談で話を聞き、書類と連絡で形にして、次の相談につなげる。<br>その全部を、オンラインとAIで回しています。</p>
+    <p>数字より大事なのは、<strong>誰がやっても回る形にしてあること</strong>です。<br>入口の勉強会はスタッフでも回せて、個別相談だけ森川が入る。<br>「森川だからできる」を、できるだけ外して作りました。<br>だから、先生の事務所に移せます。</p>
+    <p class="src">fulfull株式会社 実績（2025年・自社集計）。個人・法人の成果を保証するものではありません。</p>
+  </div>
+</section>
+
+<!-- 7b 中間CTA -->
+<section class="alt light">
+  <div class="wrap">
+    <div class="ctabox">
+      <div class="eyebrow">まずは、資料だけ</div>
+      <h3>士業事務所向けの導入資料を、お送りします。</h3>
+      <p class="what">事務所で何が変わるか、士業ごとの例、進め方、守秘義務との線引き、助成金の仕組み、ここからの流れ。<br>所内の打ち合わせでそのまま使える形にまとめた資料です。<br>あわせて、職員さん1人あたり「年間いくら分」がAIに回せるかを自分で出せるセルフ換算シートも届きます。</p>
+      <a class="btn cta-line" href="#" data-cta="line" data-ev="LineTap">LINEで導入資料を受け取る<small>友だち追加だけ・無料・売り込みなし</small></a>
+      <a class="btn mail cta-mail" href="#" data-cta="mail" data-ev="MailTap" target="_blank" rel="noopener">メールで受け取る<small>お名前とメールアドレスだけ</small></a>
+      <p class="btn-note">資料を読んで気になったら、その場で無料の換算診断（Zoom 30〜45分）を申し込めます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8 なぜfulfullか -->
+<section class="light">
+  <div class="wrap">
+    <div class="eyebrow">なぜ、fulfullなのか</div>
+    <h2>教える側が、<span class="g">相談を仕事にしている実務家</span>です。<br>自分の相談業務を、AIで回しています。</h2>
+    <p>AIの研修会社は、顧問先とのやりとりの実際を知りません。<br>士業向けのソフトは、事務所の型までは作ってくれません。<br>システム会社は、高くて職員さんが使いません。<br>fulfullは、訪問ゼロで年380件の相談を回している、その型をそのまま渡します。</p>
+
+    <div class="tablebox">
+    <table>
+      <thead><tr><th></th><th>AI研修会社</th><th>士業向けソフト</th><th>システム導入</th><th>fulfull</th></tr></thead>
+      <tbody>
+        <tr><td>相談業の実務をAIで毎日回している</td><td>△</td><td>△</td><td>△</td><td><strong>○ 実物を見せられる</strong></td></tr>
+        <tr><td>事務所の実際の案件を教材にする</td><td>△ 汎用講座が多い</td><td>×</td><td>×</td><td><strong>○ 助成金の改正要件にも沿う</strong></td></tr>
+        <tr><td>守秘義務を前提に線引きを文書にする</td><td>△</td><td>○ ソフトの範囲で</td><td>△</td><td><strong>○ 事務所のルールとして</strong></td></tr>
+        <tr><td>集客（入口）まで作る</td><td>×</td><td>×</td><td>△</td><td><strong>○ 診断ページ・LINE・発信</strong></td></tr>
+        <tr><td>費用感</td><td>数十万〜</td><td>月額</td><td>数百万〜</td><td><strong>人数で段階。助成金の対象になることも</strong></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="src">一般的な傾向を整理したものです。個別の会社・サービスを評価するものではありません。</p>
+
+    <h3 style="margin-top:26px">fulfullに頼む理由、5つ</h3>
+    <ol class="num">
+      <li><h3>理論ではなく、実物</h3>fulfullのお金の勉強会の申込一覧、提案書が2分で出る画面、3か月ごとの連絡が自動で下書きされる仕組み。<br>研修で見せるのは、いま実際に回っているものだけです。</li>
+      <li><h3>守秘義務との線引きを、事務所のルールとして文書にする</h3>顧問先の情報のどこまでを、どこで扱うのか。<br>何は先生が判断して、何をAIの下書きに回すのか。<br>第1回で事務所のルールとして文書にします。<br>顧問先から「AIを使っているんですか」と聞かれたときに、そのまま説明できる形です。</li>
+      <li><h3>事務所の案件が教材だから、助成金の改正要件に沿う</h3>2026年8月3日の改正で、汎用的なプロンプト講座は人材開発支援助成金の対象外になりました。<br>この研修は、事務所の実際の相談メモ・書類を教材にします。<br>成果のためであると同時に、この要件に沿うためでもあります。<br>支給を保証するものではありません。</li>
+      <li><h3>作ったものは、全部事務所のもの</h3>設定文、線引き文書、手順書、所内勉強会の台本。<br>研修で作ったものの権利は事務所にあります。<br>fulfullは顧問先の情報に触れません。<br>ご希望があれば、秘密保持契約を結んでから始めます。</li>
+      <li><h3>所長がやるのは「誰に受けさせるか」を決めるだけ</h3>先生でも職員さんでも構いません。<br>診断で仕事の棚卸しをし、日程を組み、環境を用意します。<br>4回のあいだも、修了後30日間も、質問はチャットで受けます。</li>
+    </ol>
+
+    <h3 style="margin-top:26px">所長の1問。職員さんの催促と下書きは、年間いくらか</h3>
+    <div class="note">職員さん3名が、資料の催促・期限の案内・書類の下書き・見積に<strong>週8時間</strong>使っているとします。<br>3名×8時間×48週＝年1,152時間。<br>時給2,500円で換算すると、<strong>年288万円分</strong>の仕事です。<br>このうち何割がAIの下書きに回るかを、無料の換算診断で事務所の実数から出します。<br>モデル計算です。事務所の数字は診断で出します。</div>
+  </div>
+</section>
+
+<!-- 9 研修の進み方 -->
+<section class="light">
+  <div class="wrap">
+    <div class="eyebrow">研修で、実際にやること</div>
+    <h2>講義は最初の30分だけ。<br>あとは<span class="g">事務所の案件で、その場で作ります。</span></h2>
+    <p>決まったテキストは使いません。<br>所長が選んだ<strong>2〜4名</strong>（先生でも職員さんでも）と、計12時間（3時間×4回・Zoomまたは訪問）。<br>森川が全員の画面を見ながら、その場で直します。</p>
+
+    <h3>1回（3時間）の流れ</h3>
+    <div class="day next" style="margin-top:8px">
+      <ul class="tl">
+        <li><b>0:00</b><span>前回からの実務で、うまくいった・止まったところを共有（20分）</span></li>
+        <li><b>0:20</b><span>その回のテーマの講義（30分）。ここだけが「聞く時間」です</span></li>
+        <li><b>0:50</b><span><span class="r">実作業</span>。事務所の案件をAIに渡し、出てきたものを森川と一緒に直す（90分）</span></li>
+        <li><b>2:20</b><span>全員の成果物をレビュー。「これは顧問先に出せるか」を先生が判断（25分）</span></li>
+        <li><b>2:45</b><span>次回までに実務で試すことを1つ決めて終了（15分）</span></li>
+      </ul>
+    </div>
+
+    <h3>各回に持ち込むもの、その回で作るもの</h3>
+    <div class="tablebox">
+    <table>
+      <thead><tr><th>回</th><th>持ち込むもの（事務所側）</th><th>その回で作るもの</th></tr></thead>
+      <tbody>
+        <tr><td><strong>第1回</strong><br>棚卸しと線引き</td><td>受講者の1週間の仕事メモ<br>事務所の規程・よく使う書式</td><td>業務の棚卸し表（AIに回せる順）<br>AIに渡すもの・渡さないものの線引き文書<br>事務所専用のAI環境（学習に使われない設定）</td></tr>
+        <tr><td><strong>第2回</strong><br>右腕（集客）</td><td>得意な相談の種類と、過去に選ばれた理由<br>いまの発信・ホームページ（あれば）</td><td>事務所の強み分析と「選ばれる理由3つ」<br>発信のネタ10本と下書き1本<br>1分で終わる診断ページの質問と結果文<br>LINEの自動応答文</td></tr>
+        <tr><td><strong>第3回</strong><br>左腕（面談・書類・連絡）</td><td>過去の相談メモ3件（お名前は伏せる）<br>よく作る書類の様式<br>年間の手続きの予定表</td><td>必要書類の一覧・見積・フォロー文・次回案内<br>申請書・規程・報告書の下書きの型<br>期限の案内と資料の催促の作り置き（時期別）</td></tr>
+        <tr><td><strong>第4回</strong><br>型にして広げる</td><td>3回分の成果物<br>受けていない職員さんの名簿</td><td>誰でも使える手順書と、1日の型<br>所内勉強会の台本（受講者が講師役）<br>30日の運用計画</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3>第3回で、実際に起きること（例）</h3>
+    <p class="cap" style="margin:0 0 10px">行政書士事務所の、架空の初回相談です。実際の研修では、事務所の相談メモを使います。</p>
+    <div class="cols">
+      <div class="card"><span class="tag">先生が渡すもの｜相談メモ（そのまま）</span>
+        <p style="font-size:16.5px;margin:6px 0 0">内装工事の会社。社長と従業員5名。<br>元請から「来年から、許可がないと大きな工事は出せない」と言われた。<br>社長は10年前に独立。<br>決算書は3期分ある。<br>経営の経験を何で証明するかが不安。<br>次回までに、過去の請負契約書を探してもらう約束。</p></div>
+      <div class="card"><span class="tag">左腕が2分で返すもの｜論点と案内（抜粋）</span>
+        <p style="font-size:16.5px;margin:6px 0 0">1. 許可の種類と業種を、元請の話と工事内容から確認する<br>2. 経営の経験は、10年分の何で示せるか（確定申告書・契約書・請求書）を一覧にする<br>3. 財産の要件は、決算書3期分で見られる<br>4. 次回までにお願いする書類の一覧と、見積の目安<br>フォロー文（案）：「本日はありがとうございました。次回までに、過去の請負契約書を…」</p></div>
+    </div>
+    <p>出てきたものを、先生が<strong>一言で直します</strong>。<br>長い→「半分に」。<br>固い→「社長に話す言葉で」。<br>足りない→「この顧問先の事情を入れて」。<br>この直し方を覚えることが、研修の中身です。<br>要件に当てはまるかどうかの判断は、先生が行います。</p>
+
+    <h3>持ち帰れるもの</h3>
+    <ul class="ok">
+      <li>右腕・左腕の設定文（事務所仕様・受講者ごと）</li>
+      <li>AIに渡すもの・渡さないものの線引き（事務所のルールとして文書化）</li>
+      <li>オンライン相談の1日の型と、最初の1週間の手順書</li>
+      <li>受講者が他の職員さんに教えるための手順書と、所内勉強会の台本</li>
+      <li>修了後30日間の質問対応（回のあいだもチャットで質問できます）</li>
+    </ul>
+    <div class="note">オンラインは必ずZoomの同時双方向のライブ形式で行います。<br>録画視聴やeラーニング型にすると、助成金の扱いが変わるためです。<br>人数が多い事務所は、4名までの班に分けて同じ型を回します。</div>
+  </div>
+</section>
+
+<!-- 10 費用の考え方 -->
+<section class="alt light">
+  <div class="wrap">
+    <div class="eyebrow">費用の考え方</div>
+    <h2>人数で段階を分けています。<br><span class="g">事務所の数字を見てから</span>お伝えします。</h2>
+    <p>費用は、受ける方の人数で段階を分けています（先生でも職員さんでも）。<br>このページには載せていません。<br>先に無料の換算診断で「事務所の職員さん1人あたり、年間いくら分がAIに回せるか」を出し、その数字と並べてお伝えするのが、いちばん判断しやすいからです。</p>
+    <p>診断は30〜45分。<br>診断だけで終わっても構いません。<br>その場で研修の売り込みはしません。</p>
+
+    <h3 style="margin-top:28px">助成金を使うと、どうなるか</h3>
+    <p>雇用保険に入っている職員さんが受ける研修は、人材開発支援助成金（事業展開等リスキリング支援コース）の対象になる可能性があります。<br>中小企業の場合、対象になれば次の2つが戻ります。</p>
+    <div class="tablebox">
+    <table>
+      <thead><tr><th>戻るもの</th><th>目安</th></tr></thead>
+      <tbody>
+        <tr><td><strong>経費助成</strong></td><td class="num">研修費の75%</td></tr>
+        <tr><td><strong>賃金助成</strong></td><td class="num">受講者1人・1時間あたり1,000円</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>研修が計12時間なのは、この制度の「10時間以上」の要件に合わせているためです。<br>対象になった場合の実質のご負担は、<strong>研修費のおよそ4分の1から、賃金助成を引いた額</strong>が目安です。<br>具体的な金額は、診断のあとに人数と一緒にお伝えします。</p>
+    <div class="note warn">
+      <strong>「助成金が出るから安い研修」は、やりません。</strong><br>
+      ・支給を保証するものではありません。<br>対象になった場合の目安です。<br>
+      ・対象は雇用保険の被保険者の受講分だけです。<br>所長ご本人・役員・業務委託の方の分は対象外です。<br>
+      ・申請の手続きは、事務所の顧問社労士か労働局へ（社労士事務所はご自身で）。<br>fulfullは代行しません。<br>
+      ・助成金とひもづけた値引きはしません。<br>
+      ・このコースは今年度が最後の年とされています。<br>計画届は研修開始の1か月前までに必要で、今年度の受付は2月末までです。<br>
+      ・東京都内の事務所は、東京都の助成金（経費の3/4）という選択肢もあります。<br>国と都の両方を同じ研修に使うことはできません。
+    </div>
+    <p class="src">制度の一次情報と注意点は <a href="https://fulfull.jp/2026/09/03/ai-training-subsidy-2026/">解説記事</a> にまとめています。2026年8月3日の改正で「汎用的なプロンプトの作り方を学ぶ講義」は対象外になりました。</p>
+  </div>
+</section>
+
+<!-- 11 講師 -->
+<section class="light">
+  <div class="wrap">
+    <div class="eyebrow">講師</div>
+    <h2>普通の会社員でした。<br><span class="g">気づいたら、こうなっていました。</span></h2>
+    <div class="prof">
+      <img src="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/morikawa.jpg" alt="森川満章" loading="lazy">
+      <div><div class="nm">森川 満章</div><div class="rl">fulfull株式会社 代表取締役／お金のプロ・金融AIカレッジ主宰<br>1986年 岩手県出身・横浜在住</div></div>
+    </div>
+    <div class="story">
+      <p>30歳まで、ヤマト運輸のドライバーでした。<br>投資のことも、保険のことも、何も知らない普通の会社員です。</p>
+      <p>きっかけは、長男でした。<br>小学3年か4年のころ、「将来、バスケで海外に行きたい」と言ったんです。<br>僕の最初の反応は「マジか」で、次に「お金がかかるな」でした。<br>子どもの夢を聞いた瞬間に、頭にまずお金の心配が浮かぶ。<br>それが、父親としての僕のリアルでした。</p>
+      <p>そこから、こっそり投資を始めました。<br>クレジットカードで6万円分のドルを買うところからです。<br>最初の利益は150円。<br>「ちゃんと勉強すれば、再現できる」<br>そう思って学び直し、気づけば全国2,000人に投資を教える先生になっていました。</p>
+      <p>教えているうちに、相談は投資だけで終わらなくなりました。<br>住宅、教育費、老後、相続、そして事業のこと。<br>相談に乗る仕事を、訪問ゼロ・オンラインだけで回すようになり、2025年は380件の相談を受けました。</p>
+      <p>いまは、fulfullという小さな会社で、月4万円のAIに社員2.7人分の仕事を任せています。<br>記事122本、自動化システム6本、Webサイト8本。<br>1年間でAIと一緒に作ったものは、すべて実物でお見せできます。</p>
+      <p>僕は士業ではありません。<br>だから、専門の判断は教えません。<br>教えるのは、相談を受けて、書類と連絡で形にして、次の相談につなげる「回し方」です。<br>そこは、士業の事務所とまったく同じ形をしています。</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">2,000<small>件超</small></div><div class="l">累計の個別相談</div></div>
+      <div class="stat"><div class="n">25<small>社</small></div><div class="l">企業研修のご依頼実績</div></div>
+      <div class="stat"><div class="n">200<small>回超</small></div><div class="l">セミナー・研修の登壇。延べ6,500名</div></div>
+      <div class="stat"><div class="n">2.7<small>人分</small></div><div class="l">月4万円のAI利用料で回している、社員換算の仕事量</div></div>
+    </div>
+    <p class="src">登壇・研修実績（順不同・敬称略）：東京海上日動あんしん生命／積水ハウス／法人会／商工会議所（ビジネスアドバイザー）／信用金庫（創業塾）／小学校（お金の授業）。いずれも登壇・研修の実績であり、各社・各団体が本研修を推奨するものではありません。fulfull自社集計（2026年9月）。</p>
+  </div>
+</section>
+
+<!-- 12 手紙 -->
+<section class="alt light">
+  <div class="wrap">
+    <div class="eyebrow">ここまで読んでくださった先生へ</div>
+    <h2>正直に言います。<br><span class="g">やった方がいいです。</span></h2>
+    <div class="letter">
+      <img class="deco d1" src="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/img/deco_flowers.jpg" alt="" aria-hidden="true">
+      <img class="deco d2" src="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/img/deco_butterfly.jpg" alt="" aria-hidden="true">
+      <p>僕は、AIを道具だと思っていません。<br><strong>人手</strong>だと思っています。</p>
+      <p>fulfullは小さな会社です。<br>それでも月4万円のAIで、社員2.7人分の仕事が回っています。<br>採用しなくても手が増えて、しかも辞めない。<br>担当が替わっても回り続ける。<br>これは予想ではなく、いま実際に起きていることです。</p>
+      <p>書類を作る時間が減ると、相談に使える時間が増えます。<br>相談の時間が増えると、先生にしか言えない一言が増えます。<br>顧問先が先生に払っているのは、本当はその一言の分です。<br><strong>下書きをAIに任せるほど、先生の値打ちは上がる</strong>と、僕は思っています。</p>
+      <p>すでにAIを触っている先生にも言いたいことがあります。<br>先生個人の工夫で止めないでください。<br>線引きを決めて、型にして、事務所のものにしてください。<br>それをやった事務所と、やらなかった事務所の差は、時間ではなく、<strong>受けられる相談の数</strong>で開きます。</p>
+      <p>決める前に、事務所の職員さん1人の仕事が年間いくらの仕事なのか、数字を見てください。<br>そこから先を決めるのは、所長です。</p>
+      <p class="sign">森川 満章</p>
+    </div>
+  </div>
+</section>
+
+<!-- 13 向いていない・約束 -->
+<section class="light">
+  <div class="wrap">
+    <div class="eyebrow">正直に</div>
+    <h2>こんな事務所には、<span class="g">向いていません。</span></h2>
+    <ul class="ng">
+      <li>専門家としての判断や書類の署名まで、AIに任せたいと考えている事務所</li>
+      <li>守秘義務や事務所の規程を、後回しにしてよいと考えている事務所</li>
+      <li>「誰に受けさせるか」を決められない事務所</li>
+      <li>助成金が出ることを前提に、研修を決めたい事務所</li>
+    </ul>
+    <h3 style="margin-top:26px">6つの約束</h3>
+    <ul class="ok">
+      <li>診断の場で、研修や他の商品の売り込みはしません。<br>数字を出して終わりです</li>
+      <li>研修で作ったものの権利は事務所にあります。<br>fulfullは顧問先の情報に触れません</li>
+      <li>段取りはこちらでやります。<br>所長がやるのは、誰に受けさせるかを決めることだけです</li>
+      <li>特定のAI製品やソフトを売りません。<br>お使いのものがあれば、それに合わせます</li>
+      <li>成果や削減額を保証する言い方はしません。<br>目安は目安として伝えます</li>
+      <li>顧問先に出す書類は、先生の判断と事務所の規程が優先。<br>そこは一切曲げません</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 14 FAQ -->
+<section class="alt light">
+  <div class="wrap">
+    <div class="eyebrow">よくあるご質問</div>
+    <h2>ここまで読んで、<br><span class="g">まだ迷っている先生へ。</span></h2>
+    <details><summary>顧問先の情報をAIに入れて、守秘義務は大丈夫ですか。</summary><p>学習に使われない設定の、事務所専用の場所でしか扱いません。<br>それでも入れないもの（マイナンバー等の要配慮情報・他社との守秘義務があるもの）は、初日に3行で決めます。<br>研修で使う相談メモは、お名前を伏せたものを事務所が用意します。<br>各士業法の守秘義務と事務所の規程が優先で、迷ったら所長に聞く、をルールにします。</p></details>
+    <details><summary>AIが作った申請書や規程を、そのまま出して大丈夫ですか。</summary><p>研修で作るのは「下書きまで」です。<br>要件に当てはまるかの判断、内容の確認、署名と提出は、資格者ご本人が行います。<br>AIが出した制度の条件は、官公庁の正式な情報と突き合わせる手順を事務所のルールに入れます。</p></details>
+    <details><summary>森川さんは士業ではないですよね。</summary><p>はい、士業ではありません。<br>だから、専門の判断は教えません。<br>教えるのは、相談を受けて、書類と連絡で形にして、次の相談につなげる回し方と、そこへのAIの組み込み方です。<br>専門の中身は先生が一番よく知っています。<br>研修では、その中身をAIに渡す型を一緒に作ります。</p></details>
+    <details><summary>職員のいない一人事務所です。</summary><p>先生お一人向けの「所長のAI相棒コース」（計6時間・マンツーマン）があります。<br>事業主ご本人は助成金の対象外なので、助成金を前提にしない形でご案内します。</p></details>
+    <details><summary>職員はパートさんだけです。対象になりますか。</summary><p>研修は受けられます。<br>雇用保険に入っている方の受講分は、助成金の対象になる可能性があります。<br>入っているかどうかは、診断のときに一緒に確認します。</p></details>
+    <details><summary>士業ごとに、やることは違いますか。</summary><p>進め方の型は同じで、中身が違います。<br>行政書士なら申請書と許可の更新、社労士なら規程と年に一度の手続き、税理士なら月次の面談と資料回収、診断士なら計画書と報告書。<br>診断のときに、事務所で毎月くり返している仕事を挙げていただき、どの3業務から始めるかを決めます。</p></details>
+    <details><summary>パソコンが苦手な先生でも大丈夫ですか。</summary><p>初日に環境の準備から一緒にやります。<br>AIへの指示は話し言葉で、スマホからでも出せます。<br>自己流の癖がない方のほうが、型どおりに覚えて早く回り始めることが多いです。</p></details>
+    <details><summary>すでに士業向けのソフトを使っています。</summary><p>そのまま使ってください。<br>研修で作るのは、ソフトの外側にある相談・連絡・下書きの部分です。<br>特定のAI製品やソフトを売ることはありません。</p></details>
+    <details><summary>顧問先にも、この研修を紹介したいのですが。</summary><p>顧問先へのご紹介の形は、診断のときにご相談ください。<br>先に事務所で使って、顧問先に話せる実感を持ってからのほうが、伝わりやすいと思います。</p></details>
+    <details><summary>効果を数字で保証してもらえますか。</summary><p>削減額や売上の保証はできません。<br>仕事の内容で差が大きいためです。<br>だからこそ、先に無料の診断で「事務所の場合はいくら分か」を出してから決めていただいています。</p></details>
+    <details><summary>全国どこでも対応できますか。</summary><p>オンラインは全国対応です。<br>訪問は交通費を別途いただきます。</p></details>
+  </div>
+</section>
+
+<!-- 15 流れ -->
+<section class="light">
+  <div class="wrap">
+    <div class="eyebrow">ここからの流れ</div>
+    <h2>まずは、<span class="g">導入資料を受け取る</span>だけで大丈夫です。</h2>
+    <ol class="steps">
+      <li><i>1</i><b>LINEかメールで、導入資料を受け取る</b><span>事務所で何が変わるか、士業ごとの例、進め方、線引き、助成金、流れをまとめた資料と、セルフ換算シートをお送りします。<br>読むだけで構いません</span></li>
+      <li><i>2</i><b>気になったら、無料の換算診断（Zoom 30〜45分）</b><span>LINEなら「診断」と一言。<br>メールなら返信で。<br>最初の15分で、右腕と左腕をその場で動かしてお見せします。<br>そのあと、職員さんの1週間の仕事を挙げていただき、年間いくら分がAIに回せるかを数字にします</span></li>
+      <li><i>3</i><b>数字を見て、やるかどうかを決める</b><span>人数に応じた費用と、助成金を使った場合の目安を、このときにお伝えします。<br>断っていただいて構いません</span></li>
+      <li><i>4</i><b>（助成金を使う場合）計画届の準備</b><span>計画届は研修開始の1か月前までに必要です。<br>顧問社労士か労働局にご相談ください</span></li>
+      <li><i>5</i><b>研修（3時間×4回）→ 修了後30日間の質問対応</b><span>あいだに実務を挟みながら進めます</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 16 職員の方へ -->
+<section class="alt light">
+  <div class="wrap">
+    <div class="eyebrow">職員の方が読んでいる場合</div>
+    <h2>このページを、<span class="g">所長に送ってください。</span></h2>
+    <p>事務所で導入するかどうかは所長が決めることですが、「うちでもやってほしい」と伝えることはできます。<br>下の文面をそのまま送れます。</p>
+    <div class="copybox" id="bossText">お疲れさまです。相談の集客と、書類の下書き・顧問先への連絡をAIに任せて、訪問ゼロで年380件の相談を回している会社の話を読みました。
+うちの事務所も、資料の催促や期限の案内、申請書の下書きをAIに任せる型を作れば、相談に使える時間を増やせそうです。
+事務所の実際の案件を教材にする研修で、まず無料の診断で「職員1人あたり年間いくら分か」が数字で出るそうです。雇用保険に入っている職員の受講分は、助成金の対象になることもあるとのこと。今年度の助成金に間に合わせるなら、診断は1月20日までだそうです。
+一度、数字だけでも見てみませんか。
+（ページ）__URL__</div>
+    <button class="btn ghost" id="copyBtn" type="button" style="margin-top:0">この文面をコピーする</button>
+    <p class="btn-note" id="copyNote">コピーすると、末尾にこのページのURLが入ります。</p>
+  </div>
+</section>
+
+<!-- 17 最終CTA -->
+<section class="dark" id="cta">
+  <div class="wrap">
+    <h2>先生が夜に書類を作らなくても、<br>毎朝、相談予約と下書きが揃っている。<br><span class="g">その事務所を、先生の手で。</span></h2>
+    <p>教える側は、相談を仕事にしている実務家です。<br>作ったものは全部事務所のもの。<br>所長がやるのは、誰に受けさせるかを決めるだけ。<br>まずは、士業事務所向けの導入資料をお受け取りください。<br>読んで、気になったら「診断」と一言。</p>
+    <div class="band-mini">今年度の助成金に間に合わせるなら、診断は<strong>2027年1月20日まで</strong>（残り<span class="js-days">—</span>日）</div>
+    <div class="ctabox">
+      <h3>導入資料（無料）に入っているもの</h3>
+      <ul class="ok">
+        <li>3か月後の事務所のモデル（所長から見える変化）</li>
+        <li>士業ごとの右腕・左腕・書類の下書きの例</li>
+        <li>研修の進み方（4回・12時間）と持ち帰るもの</li>
+        <li>AIに渡すもの・渡さないものの線引きの例（守秘義務を前提に）</li>
+        <li>人数別の形と、助成金の仕組みと期限（支給の保証はしません）</li>
+        <li>職員さん1人あたり「年間いくら分」を自分で出せるセルフ換算シート</li>
+      </ul>
+      <a class="btn cta-line" href="#" data-cta="line" data-ev="LineTap">LINEで導入資料を受け取る<small>友だち追加だけ・無料・売り込みなし</small></a>
+      <a class="btn mail cta-mail" href="#" data-cta="mail" data-ev="MailTap" target="_blank" rel="noopener">メールで受け取る<small>お名前とメールアドレスだけ</small></a>
+    </div>
+    <p class="btn-note">先に自分で目安を出したい方は、<a href="https://fulfull.jp/ai-shindan/?ref=shigyo_lp" style="color:var(--gold-l)">セルフ換算診断（無料・送信なし）</a> もあります。</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>ご注意</strong></p>
+    <p>・「自動化」は集客・相談の準備・フォロー・書類と連絡の下書きの部分を指します。<br>専門家としての判断、書類の確認・署名・提出は、資格者ご本人が行う前提です。<br>
+    ・顧問先の情報の扱いは、各士業法の守秘義務と事務所の規程が優先されます。<br>
+    ・本ページの登録者数は各連合会の公表値、fulfullの実績は自社集計です。<br>成果を保証するものではありません。<br>
+    ・助成金は対象になった場合の目安であり、支給を保証するものではありません。<br>申請は顧問社労士か労働局へご相談ください。<br>
+    ・レビューの数値は個別相談の予約サイトのもので、研修受講者の評価ではありません。<br>
+    ・人物写真の一部はイメージです（講師写真・動画を除く）。<br>申込一覧の動画は個人情報を加工しています。<br>
+    ・LINE・メールでお預かりする情報は、導入資料のお届けとfulfullからの情報提供に使用します。<br>いつでも解除できます。</p>
+    <div class="pl">
+      <a href="https://fulfull.jp/">fulfull株式会社</a>
+      <a href="https://fulfull.jp/ai-training/?ref=shigyo_lp">企業向けAI研修</a>
+      <a href="https://fulfull.jp/contact/">お問い合わせ</a>
+      <a href="https://fulfull.jp/privacy-policy/">プライバシーポリシー</a>
+    </div>
+    <p>作るまでが、研修。<br>出すかどうかは、先生の判断。<br>fulfull株式会社</p>
+  </div>
+</footer>
+
+<div id="sticky"><a class="btn cta-line" href="#" data-cta="line" data-ev="LineTap">導入資料を受け取る（LINE・無料）</a></div>
+
+<script>
+(function(){
+  /* 受け皿（UTAGE 士業用シナリオ）。公開前にURLを入れる。空のあいだは最終CTAへ移動するだけ */
+  var CTA={line:'', mail:''};
+  var GADS={line:'', mail:''}; /* Google広告の成果ラベル（士業LP_LINEボタン押下 など）。作成後に入れる */
+  document.querySelectorAll('[data-cta]').forEach(function(a){
+    var u=CTA[a.getAttribute('data-cta')];
+    if(u){a.href=u;}else{a.href='#cta';a.removeAttribute('target');}
+  });
+  /* 締切までの日数（2027-01-20 23:59 JST） */
+  var end=Date.UTC(2027,0,20,14,59,59), now=Date.now();
+  var d=Math.max(0,Math.ceil((end-now)/86400000));
+  var el=document.getElementById('daysLeft'); if(el){el.textContent=d;}
+  document.querySelectorAll('.js-days').forEach(function(s){s.textContent=d;});
+  if(d===0){document.querySelectorAll('.band,.band-mini').forEach(function(b){b.hidden=true;});}
+
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var s=document.getElementById('sticky'), hero=document.querySelector('.hero'), cta=document.getElementById('cta');
+  function tick(){ var past=window.scrollY>hero.offsetHeight-80; var r=cta.getBoundingClientRect(); var inCta=r.top<window.innerHeight-120; s.classList.toggle('show',past&&!inCta); }
+  window.addEventListener('scroll',tick,{passive:true}); tick();
+  if(!reduce && 'IntersectionObserver' in window){
+    var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target,end=+el.dataset.count,t0=null;
+      function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1400);p=1-Math.pow(1-p,3);el.textContent=Math.round(end*p).toLocaleString();if(p<1)requestAnimationFrame(step);}
+      requestAnimationFrame(step);co.unobserve(el);});},{threshold:.5});
+    document.querySelectorAll('[data-count]').forEach(function(el){co.observe(el);});
+  }
+  var v=document.querySelector('video[autoplay]'); if(v){ var p=v.play(); if(p&&p.catch){p.catch(function(){});} }
+  // 計測
+  document.querySelectorAll('[data-ev]').forEach(function(a){a.addEventListener('click',function(){
+    var ev=a.getAttribute('data-ev'); try{fxTrack(ev,{lp:'shigyo'});}catch(e){}
+    if(!CTA[a.getAttribute('data-cta')])return;
+    if(ev==='LineTap'||ev==='MailTap'){try{fbq('track','Lead',{content_name:'shigyo_'+ev.toLowerCase()});}catch(e){}}
+    if(ev==='LineTap'&&GADS.line){try{gtag('event','conversion',{send_to:GADS.line,transport_type:'beacon'});}catch(e){}}
+  });});
+  // 所長に送る文面
+  var box=document.getElementById('bossText'), btn=document.getElementById('copyBtn'), note=document.getElementById('copyNote');
+  var url=location.origin+location.pathname+'?ref=boss';
+  box.textContent=box.textContent.replace('__URL__',url);
+  btn.addEventListener('click',function(){
+    var t=box.textContent;
+    function done(){btn.textContent='コピーしました';note.textContent='LINEやメールに貼り付けて送ってください。';try{fxTrack('BossCopy',{lp:'shigyo'});}catch(e){}}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){fallback();});}else{fallback();}
+    function fallback(){var r=document.createRange();r.selectNodeContents(box);var sel=window.getSelection();sel.removeAllRanges();sel.addRange(r);try{document.execCommand('copy');done();}catch(e){note.textContent='選択した文面を、長押しまたは右クリックでコピーしてください。';}}
+  });
+})();
+</script>
+</body>
+</html>
