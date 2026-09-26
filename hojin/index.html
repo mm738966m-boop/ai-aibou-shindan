@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://mm738966m-boop.github.io/ai-aibou-shindan/hojin/og.png">
 <meta property="og:site_name" content="fulfull株式会社">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="build" content="hojin-v4.3">
+<meta name="build" content="hojin-v4.4">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -237,6 +237,9 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 })();
 </script>
 <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1510200123755162&ev=PageView&noscript=1"></noscript>
+<!-- Google広告（fulfull AW-763380159）: 成果=法人LP_LINEボタン押下（このページ）／法人LP_メール登録完了（hojin/thanks/） -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-763380159"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-763380159');</script>
 </head>
 <body>
 
@@ -777,6 +780,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   document.querySelectorAll('[data-ev]').forEach(function(a){a.addEventListener('click',function(){
     var ev=a.getAttribute('data-ev'); try{fxTrack(ev,{lp:'hojin'});}catch(e){}
     if(ev==='LineTap'||ev==='MailTap'){try{fbq('track','Lead',{content_name:'hojin_'+ev.toLowerCase()});}catch(e){}}
+    if(ev==='LineTap'){try{gtag('event','conversion',{send_to:'AW-763380159/JCbaCJaK6IUdEL-DgewC',transport_type:'beacon'});}catch(e){}}
   });});
   // 社長に送る文面
   var box=document.getElementById('bossText'), btn=document.getElementById('copyBtn'), note=document.getElementById('copyNote');
