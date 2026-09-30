@@ -148,12 +148,21 @@ footer .links{display:flex;flex-wrap:wrap;gap:8px 18px;margin-bottom:12px}
 .ctarow .bub{background:var(--paper);border:1.5px solid var(--line);border-radius:18px;padding:14px 16px;font-size:17.5px;font-weight:700;position:relative;line-height:1.7}
 .ctarow .bub:before{content:"";position:absolute;left:-10px;top:50%;width:16px;height:16px;background:var(--paper);border-left:1.5px solid var(--line);border-bottom:1.5px solid var(--line);transform:translateY(-50%) rotate(45deg)}
 @media(max-width:380px){.hero-row{grid-template-columns:1fr 104px}.hero-row .masc{width:104px}}
-.sched{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;font-size:17px}
-@media(min-width:560px){.sched{grid-template-columns:1fr 1fr 1fr}}
-.sched li{padding:6px 0;border-bottom:1px dashed var(--line);display:flex;justify-content:space-between;gap:6px}
-.sched li b{font-weight:900}
-.sched li .w{color:var(--gold-d);font-weight:900}
-.sched li .w.n{color:var(--sub);font-weight:700}
+.smonths{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:640px){.smonths{grid-template-columns:1fr 1fr 1fr}}
+.smonth{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:16px 16px 6px;border-top:5px solid var(--navy)}
+.smonth .mh{display:flex;align-items:baseline;gap:8px;font-size:22px;font-weight:900;color:var(--navy-d);padding-bottom:8px;border-bottom:2px solid var(--soft);margin-bottom:4px}
+.smonth .mh small{font-size:14px;color:var(--sub);font-weight:700}
+.smonth ul{list-style:none;margin:0;padding:0}
+.smonth li{display:grid;grid-template-columns:64px 1fr 44px;gap:8px;align-items:center;padding:12px 4px;border-bottom:1px dashed var(--line)}
+.smonth li:last-child{border-bottom:none}
+.smonth .no{font-size:15px;font-weight:700;color:var(--sub)}
+.smonth .dt{font-size:22px;font-weight:900;color:var(--ink);font-variant-numeric:tabular-nums}
+.smonth .dt small{display:block;font-size:13px;font-weight:700;color:var(--gold-d);line-height:1.2}
+.smonth .dow{width:44px;height:44px;border-radius:12px;background:var(--soft);color:var(--navy-d);font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.smonth li.chg .dow{background:var(--gold);color:#fff}
+.slegend{display:flex;align-items:center;gap:10px;font-size:16px;color:var(--sub);margin-top:14px}
+.slegend .dow{width:36px;height:36px;border-radius:10px;background:var(--gold);color:#fff;font-size:17px;font-weight:900;display:flex;align-items:center;justify-content:center}
 </style>
 <!-- ===== 計測（Meta Pixel 1510200123755162）=====
      全ページ共通。head の末尾に貼る。
@@ -263,22 +272,29 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <section class="alt">
   <div class="wrap">
     <div class="eyebrow">SCHEDULE</div>
-    <h2>全12回の日程。<br>毎回 20:00〜21:30。</h2>
-    <p class="cap">原則は木曜。4回だけ、曜日が変わります（金・金・金・火）。</p>
-    <ul class="sched">
-      <li><b>第1回</b><span>10/8 <span class="w n">木</span></span></li>
-      <li><b>第2回</b><span>10/15 <span class="w n">木</span></span></li>
-      <li><b>第3回</b><span>10/23 <span class="w">金</span></span></li>
-      <li><b>第4回</b><span>10/29 <span class="w n">木</span></span></li>
-      <li><b>第5回</b><span>11/5 <span class="w n">木</span></span></li>
-      <li><b>第6回</b><span>11/13 <span class="w">金</span></span></li>
-      <li><b>第7回</b><span>11/19 <span class="w n">木</span></span></li>
-      <li><b>第8回</b><span>11/26 <span class="w n">木</span></span></li>
-      <li><b>第9回</b><span>12/4 <span class="w">金</span></span></li>
-      <li><b>第10回</b><span>12/10 <span class="w n">木</span></span></li>
-      <li><b>第11回</b><span>12/17 <span class="w n">木</span></span></li>
-      <li><b>第12回<small style="display:block;font-size:13px;color:var(--gold-d);line-height:1.2">卒業発表</small></b><span>12/22 <span class="w">火</span></span></li>
-    </ul>
+    <h2>全12回の日程。<br>10月8日（木）から、毎週1回。</h2>
+    <p class="cap">毎回 20:00〜21:30・Zoom。原則は木曜で、4回だけ曜日が変わります。</p>
+    <div class="smonths">
+      <div class="smonth"><div class="mh">10月<small>右腕をつくる</small></div><ul>
+        <li><span class="no">第1回</span><span class="dt">10月8日</span><span class="dow">木</span></li>
+        <li><span class="no">第2回</span><span class="dt">10月15日</span><span class="dow">木</span></li>
+        <li class="chg"><span class="no">第3回</span><span class="dt">10月23日</span><span class="dow">金</span></li>
+        <li><span class="no">第4回</span><span class="dt">10月29日</span><span class="dow">木</span></li>
+      </ul></div>
+      <div class="smonth"><div class="mh">11月<small>左腕をつくる</small></div><ul>
+        <li><span class="no">第5回</span><span class="dt">11月5日</span><span class="dow">木</span></li>
+        <li class="chg"><span class="no">第6回</span><span class="dt">11月13日</span><span class="dow">金</span></li>
+        <li><span class="no">第7回</span><span class="dt">11月19日</span><span class="dow">木</span></li>
+        <li><span class="no">第8回</span><span class="dt">11月26日</span><span class="dow">木</span></li>
+      </ul></div>
+      <div class="smonth"><div class="mh">12月<small>回す・公開する</small></div><ul>
+        <li class="chg"><span class="no">第9回</span><span class="dt">12月4日</span><span class="dow">金</span></li>
+        <li><span class="no">第10回</span><span class="dt">12月10日</span><span class="dow">木</span></li>
+        <li><span class="no">第11回</span><span class="dt">12月17日</span><span class="dow">木</span></li>
+        <li class="chg"><span class="no">第12回</span><span class="dt">12月22日<small>卒業発表</small></span><span class="dow">火</span></li>
+      </ul></div>
+    </div>
+    <div class="slegend"><span class="dow">金</span><span>＝ 木曜から変わった回（4回だけ）</span></div>
     <div class="photo frame" style="margin-top:20px"><img src="img/schedule.png" alt="作業会 全12回の日程" loading="lazy"></div>
     <p class="cap">個別セッション2回は、開講後に日程を個別に調整します。</p>
   </div>
