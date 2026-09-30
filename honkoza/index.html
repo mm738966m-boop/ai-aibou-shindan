@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#22293A;--navy-d:#171C28;--ink:#22293A;--sub:#4F586B;--bg:#FBF8F3;--paper:#FFFFFF;--soft:#F3EEE4;--line:#E5DED2;--gold:#DFA23C;--gold-d:#A9771B;--gold-l:#F1D79A;--green:#06C755}
+:root{--navy:#2C4A6B;--navy-d:#1E3A5F;--ink:#2A3B52;--sub:#5F6E82;--bg:#F7F3EA;--paper:#FFFFFF;--soft:#F3EBD9;--line:#E3DCCB;--gold:#C9A227;--gold-d:#9E7E1E;--gold-l:#E4CC86;--calm:#E9EFF3;--green:#06C755}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Zen Kaku Gothic New","Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;font-size:19px;font-weight:500;line-height:1.9;-webkit-text-size-adjust:100%;overflow-x:hidden;text-wrap:pretty;word-break:auto-phrase}
@@ -26,43 +26,41 @@ img{max-width:100%;height:auto;display:block}
 .wrap{max-width:680px;margin:0 auto;padding:0 16px}
 section{padding:56px 0}
 section.alt{background:var(--paper)}
-section.dark{background:var(--navy);color:#fff}
+section.dark{background:var(--calm);color:var(--ink)}
 section.gold{background:var(--soft)}
 .eyebrow{font-size:14px;font-weight:900;letter-spacing:.16em;color:var(--gold-d);margin-bottom:8px}
-.dark .eyebrow{color:var(--gold-l)}
+.dark .eyebrow{color:var(--gold-d)}
 h1{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-size:clamp(27px,7.2vw,44px);line-height:1.42;font-weight:800;margin:0 0 18px;letter-spacing:-.01em}
-h1 .g{color:var(--gold-l)}
+h1 .g{color:var(--gold-d)}
 h2{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-size:clamp(23px,6.2vw,31px);line-height:1.45;font-weight:800;margin:0 0 20px}
 h2 .g{color:var(--gold-d)}
-.dark h2 .g{color:var(--gold-l)}
+.dark h2 .g{color:var(--gold-d)}
 h3{font-size:20px;font-weight:900;margin:0 0 8px;line-height:1.5}
 p{margin:0 0 18px}
 .one{font-size:21px;font-weight:700;line-height:1.75;margin:0 0 22px}
 .cap{font-size:16.5px;color:var(--sub);margin:-8px 0 20px;line-height:1.7}
-.dark .cap{color:#C9D1DE}
-.hero{background:linear-gradient(165deg,#2A3245 0%,var(--navy-d) 100%);color:#fff;padding:40px 0 44px;position:relative;overflow:hidden}
-.hero .tag{display:inline-block;line-height:1.6;background:rgba(241,215,154,.14);border:1px solid rgba(241,215,154,.55);color:var(--gold-l);font-size:15px;font-weight:700;border-radius:999px;padding:6px 14px;letter-spacing:.04em;margin-bottom:16px}
-.hero .lead{font-size:19px;color:#DCE3EE;margin-bottom:22px}
+.dark .cap{color:var(--sub)}
+.hero{background:linear-gradient(170deg,#F7F3EA 0%,#F1E5C8 100%);color:var(--ink);padding:40px 0 44px;position:relative;overflow:hidden}
+.hero .tag{display:inline-block;line-height:1.6;background:rgba(201,162,39,.10);border:1px solid rgba(201,162,39,.55);color:var(--gold-d);font-size:15px;font-weight:700;border-radius:999px;padding:6px 14px;letter-spacing:.04em;margin-bottom:16px}
+.hero .lead{font-size:19px;color:var(--sub);margin-bottom:22px}
 .facts{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px;padding:0;list-style:none}
-.facts li{font-size:15.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px}
-.facts li.hot{background:rgba(223,162,60,.22);border-color:var(--gold)}
-.btn{display:block;width:100%;background:var(--gold);color:var(--navy-d);text-decoration:none;text-align:center;font-size:20px;font-weight:900;border-radius:999px;padding:18px 18px;box-shadow:0 8px 24px rgba(0,0,0,.22);transition:transform .15s}
+.facts li{font-size:15.5px;font-weight:700;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+.facts li.hot{background:#F5E9C8;border-color:var(--gold)}
+.btn{display:block;width:100%;background:var(--gold);color:#fff;text-decoration:none;text-align:center;font-size:20px;font-weight:900;border-radius:999px;padding:18px 18px;box-shadow:0 8px 22px rgba(201,162,39,.32);transition:transform .15s}
 .btn:active{transform:scale(.98)}
 .btn small{display:block;font-size:15px;font-weight:700;opacity:.9;margin-top:2px}
-.btn.sub{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6);box-shadow:none;margin-top:12px}
-section:not(.dark) .btn.sub{color:var(--navy);border-color:var(--navy)}
-.btn-note{font-size:16px;color:#C9D1DE;text-align:center;margin:12px 0 0}
-section:not(.dark) .btn-note{color:var(--sub)}
-.photo{border-radius:18px;overflow:hidden;margin:0 0 20px;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+.btn.sub{background:var(--paper);color:var(--navy);border:2px solid var(--navy);box-shadow:none;margin-top:12px}
+.btn-note{font-size:16px;color:var(--sub);text-align:center;margin:12px 0 0}
+.photo{border-radius:18px;overflow:hidden;margin:0 0 20px;box-shadow:0 10px 28px rgba(30,58,95,.10)}
 .photo img{width:100%}
 .photo.frame{background:var(--paper);border:1px solid var(--line);box-shadow:none;padding:6px}
 .grid2{display:grid;grid-template-columns:1fr;gap:14px}
 @media(min-width:560px){.grid2{grid-template-columns:1fr 1fr}}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px 18px}
-.dark .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18)}
+.dark .card{background:var(--paper);border-color:var(--line)}
 .card h3{font-size:19px}
 .card p{margin:0;font-size:17.5px;color:var(--sub)}
-.dark .card p{color:#C9D1DE}
+.dark .card p{color:var(--sub)}
 .num{font-family:"Shippori Mincho",serif;font-size:30px;font-weight:800;color:var(--gold);line-height:1;margin-bottom:6px}
 .reason{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px 18px;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;align-items:start;margin-bottom:12px}
 .reason .no{font-family:"Shippori Mincho",serif;font-size:30px;font-weight:800;color:var(--gold);line-height:1;padding-top:4px}
@@ -81,13 +79,13 @@ section:not(.dark) .btn-note{color:var(--sub)}
 .stack .t{font-weight:900;font-size:18.5px;line-height:1.5}
 .stack .d{font-size:16px;color:var(--sub);display:block;font-weight:500;margin-top:2px}
 .stack .y{font-family:"Shippori Mincho",serif;font-size:20px;font-weight:800;color:var(--gold-d);white-space:nowrap;padding-top:2px}
-.total{background:var(--navy);color:#fff;border-radius:16px;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;margin:14px 0 8px}
-.total .n{font-family:"Shippori Mincho",serif;font-size:34px;font-weight:800;color:var(--gold-l);white-space:nowrap}
+.total{background:var(--soft);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;margin:14px 0 8px}
+.total .n{font-family:"Shippori Mincho",serif;font-size:34px;font-weight:800;color:var(--gold-d);white-space:nowrap}
 .src{font-size:15px;color:var(--sub);line-height:1.7}
 .plans{display:grid;grid-template-columns:1fr;gap:14px}
 .plan{background:var(--paper);border:1.5px solid var(--line);border-radius:18px;padding:20px 18px;position:relative}
 .plan.rec{border:3px solid var(--gold);box-shadow:0 12px 32px rgba(223,162,60,.18)}
-.plan .badge{position:absolute;top:-14px;left:16px;background:var(--gold);color:var(--navy-d);font-size:14px;font-weight:900;border-radius:999px;padding:4px 12px;letter-spacing:.04em}
+.plan .badge{position:absolute;top:-14px;left:16px;background:var(--gold);color:#fff;font-size:14px;font-weight:900;border-radius:999px;padding:4px 12px;letter-spacing:.04em}
 .plan .nm{font-size:22px;font-weight:900;margin:4px 0 2px}
 .plan .for{font-size:16px;color:var(--sub);margin:0 0 8px}
 .plan .pr{font-family:"Shippori Mincho",serif;font-size:36px;font-weight:800;line-height:1.1;color:var(--navy)}
@@ -96,10 +94,10 @@ section:not(.dark) .btn-note{color:var(--sub)}
 .plan li{padding:6px 0 6px 28px;position:relative;font-size:17px;border-top:1px dashed var(--line)}
 .plan li:before{content:"✓";position:absolute;left:4px;top:6px;color:var(--gold-d);font-weight:900}
 .plan .left{font-size:15px;font-weight:900;color:var(--gold-d);margin-top:10px}
-.big{font-family:"Shippori Mincho",serif;font-size:clamp(34px,9vw,52px);font-weight:800;color:var(--gold-l);line-height:1.15;margin:6px 0 4px}
-.big small{font-size:18px;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;color:#fff;margin-left:6px}
-.stat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:16px 18px}
-.stat .n{font-family:"Shippori Mincho",serif;font-size:34px;font-weight:800;line-height:1.1;color:var(--gold-l)}
+.big{font-family:"Shippori Mincho",serif;font-size:clamp(34px,9vw,52px);font-weight:800;color:var(--navy-d);line-height:1.15;margin:6px 0 4px}
+.big small{font-size:18px;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;color:var(--ink);margin-left:6px}
+.stat{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.stat .n{font-family:"Shippori Mincho",serif;font-size:34px;font-weight:800;line-height:1.1;color:var(--navy-d)}
 .stat .n small{font-size:17px;margin-left:2px}
 .stat .l{font-size:16.5px;font-weight:700;margin-top:6px;line-height:1.55}
 .bonus{background:var(--paper);border:1px solid var(--line);border-left:6px solid var(--gold);border-radius:14px;padding:16px 18px;margin-bottom:12px}
@@ -107,7 +105,7 @@ section:not(.dark) .btn-note{color:var(--sub)}
 .bonus p{margin:0;font-size:17px;color:var(--sub)}
 .cond{background:var(--soft);border-radius:14px;padding:14px 16px;font-size:16.5px;line-height:1.75;margin-top:14px}
 .quote{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px 20px;margin-bottom:14px}
-.quote .q{font-family:"Shippori Mincho",serif;font-size:21px;font-weight:800;line-height:1.6;margin:0 0 10px}
+.quote .q{font-family:"Shippori Mincho",serif;font-size:21px;font-weight:800;line-height:1.6;margin:0 0 10px;color:var(--navy-d)}
 .quote p{font-size:17.5px;margin:0 0 8px}
 .quote .who{font-size:15px;color:var(--sub);margin:0}
 details{background:var(--paper);border:1px solid var(--line);border-radius:14px;margin-bottom:10px;padding:0 18px}
@@ -119,7 +117,7 @@ details p{font-size:17.5px;color:var(--sub);margin:0 0 16px}
 .flow{list-style:none;margin:0;padding:0}
 .flow li{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;padding:14px 0;border-bottom:1px solid var(--line)}
 .flow li:last-child{border-bottom:none}
-.flow .c{width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--gold-l);font-family:"Shippori Mincho",serif;font-weight:800;font-size:20px;display:flex;align-items:center;justify-content:center}
+.flow .c{width:44px;height:44px;border-radius:50%;background:var(--soft);border:2px solid var(--gold-l);color:var(--navy-d);font-family:"Shippori Mincho",serif;font-weight:800;font-size:20px;display:flex;align-items:center;justify-content:center}
 .flow h3{font-size:18.5px;margin:6px 0 2px}
 .flow p{font-size:17px;color:var(--sub);margin:0}
 .prof{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:start}
@@ -135,7 +133,7 @@ details p{font-size:17.5px;color:var(--sub);margin:0 0 16px}
 .sticky.on{transform:none}
 .sticky .in{max-width:680px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .sticky a{display:block;text-align:center;text-decoration:none;font-weight:900;border-radius:999px;padding:13px 8px;font-size:16px;line-height:1.3}
-.sticky .a1{background:var(--gold);color:var(--navy-d)}
+.sticky .a1{background:var(--gold);color:#fff}
 .sticky .a2{background:var(--paper);color:var(--navy);border:2px solid var(--navy)}
 footer{padding:36px 0 120px;font-size:15px;color:var(--sub)}
 footer a{color:var(--sub)}
@@ -342,7 +340,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
       <div class="stat"><div class="n">1日 1,364<small>円</small></div><div class="l">498,000円÷365日。1期生は2期以降の作業会にも無料で参加できるので、1年で割っています。</div></div>
       <div class="stat"><div class="n">約 6<small>分の1</small></div><div class="l">外注の試算 約300万円と比べて。判断基準は、外注先には作れません。</div></div>
     </div>
-    <h3 style="margin-top:26px;color:var(--gold-l)">1期だけに、あるもの。</h3>
+    <h3 style="margin-top:26px;color:var(--gold-d)">1期だけに、あるもの。</h3>
     <div class="card" style="margin-bottom:10px"><h3>2期以降の作業会に、無料で参加し続けられる</h3><p>卒業しても「回し続ける場」がある。開催が続く限り。</p></div>
     <div class="card" style="margin-bottom:10px"><h3>1期の右腕・左腕が、カレッジの事例になる</h3><p>先に回した人の実績が、先に立つ。同業がまだ持っていないうちに、自分の入口を持つ。</p></div>
     <div class="card"><h3>1期の録画と事例が、2期の教材になる</h3><p>だから1期は、この費用です。</p></div>
