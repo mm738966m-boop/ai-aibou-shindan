@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://mm738966m-boop.github.io/ai-aibou-shindan/hojin/og.png">
 <meta property="og:site_name" content="fulfull株式会社">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="build" content="hojin-gpt-v1.3">
+<meta name="build" content="hojin-gpt-v2.0">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://mm738966m-boop.github.io/ai-aibou-shindan/hojin/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
@@ -153,6 +153,32 @@ ol.num li:before{content:counter(n);position:absolute;left:0;top:2px;width:40px;
 .dark .card .tag{color:var(--gold-l)}
 .card ul{margin:8px 0 0;padding-left:22px}
 .card li{margin:5px 0}
+/* キャラクター（AIの相棒） */
+.masc{display:block;height:auto;max-width:100%}
+.mrow{display:grid;grid-template-columns:92px 1fr;gap:12px;align-items:center;margin-top:16px}
+.mrow .masc{width:92px;background:#fff;border-radius:50%;padding:6px;box-shadow:0 6px 18px rgba(0,0,0,.14)}
+.bub{position:relative;background:var(--paper);border:1.5px solid var(--line);border-radius:18px;padding:12px 16px;font-size:17px;font-weight:700;line-height:1.7;color:var(--ink);min-width:0}
+.bub:before{content:"";position:absolute;left:-9px;top:50%;width:14px;height:14px;background:var(--paper);border-left:1.5px solid var(--line);border-bottom:1.5px solid var(--line);transform:translateY(-50%) rotate(45deg)}
+.hero .bub,.dark .bub{background:#2A3245;border-color:rgba(241,215,154,.5);color:#fff}
+.hero .bub:before,.dark .bub:before{background:#2A3245;border-color:rgba(241,215,154,.5)}
+.namebox{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:10px}
+.namebox input{font:inherit;font-size:17px;font-weight:700;padding:10px 14px;border-radius:12px;border:1.5px solid rgba(241,215,154,.5);background:rgba(255,255,255,.08);color:#fff;min-width:0}
+.namebox input::placeholder{color:#AEB6C6;font-weight:500}
+.namebox button{font:inherit;font-weight:900;font-size:16px;padding:10px 16px;border-radius:12px;border:0;background:var(--gold);color:var(--navy-d);cursor:pointer;white-space:nowrap}
+.namebox button:focus-visible,.chip:focus-visible,.namebox input:focus-visible{outline:3px solid var(--gold-l);outline-offset:2px}
+.namenote{font-size:14.5px;color:#C9D1DE;margin:6px 0 0;line-height:1.6}
+/* 当てはまるものを押す */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 4px}
+.chip{font:inherit;font-size:17px;font-weight:700;padding:10px 16px;border-radius:999px;border:2px solid var(--navy);background:var(--paper);color:var(--navy);cursor:pointer;text-align:left;line-height:1.5;transition:transform .12s}
+.chip:active{transform:scale(.97)}
+.chip[aria-pressed="true"]{background:var(--navy);color:#fff}
+.chip[aria-pressed="true"].r{background:var(--gold-d);border-color:var(--gold-d)}
+.answers{display:grid;gap:8px;margin-top:12px}
+.ans{background:var(--soft);border-radius:14px;padding:12px 16px;font-size:17px;line-height:1.7}
+.ans b{color:var(--gold-d)}
+.chipsum{margin-top:14px;font-weight:900;font-size:18.5px;line-height:1.6}
+.chipsum a{color:var(--gold-d)}
+@media(max-width:380px){.mrow{grid-template-columns:76px 1fr}.mrow .masc{width:76px}}
 /* day timeline */
 .day{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px 18px;margin-bottom:14px}
 .day.now{background:var(--soft)}
@@ -258,13 +284,16 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
         <h1>おじいちゃんでもできる、<br>保険営業＆事務作業の<br><span class="g">AI完全自動化。</span></h1>
         <p class="scope"><span>自動化するのは、</span><span>集客・提案の準備・</span><span>フォロー・</span><span>事務の下書きまで。</span><br><span>お客様への説明と契約は、</span><span>募集人ご本人が行います。</span></p>
         <div class="future">
-          <div class="fl">3か月後の御社</div>
+          <div class="fl">3か月後の<span class="co">御社</span></div>
           <p class="fq">社長が現場に出なくても、<br>毎朝、<span class="g" style="white-space:nowrap">予約と提案書と更改案内</span>が揃っている代理店へ。</p>
           <ul class="fpts">
             <li>訪問ゼロで、面談は増える</li>
             <li>夜の提案書づくりは、なくなる</li>
             <li>ベテランが辞めても、お客様との接点は会社に残る</li>
           </ul>
+          <div class="mrow"><img class="masc" src="img/mascot_base.webp" alt="そろばんを持った小さなロボット（fulfullのAI相棒）" width="92" height="92" loading="eager"><div class="bub" id="heroBub">はじめまして。<br>御社の営業の、右腕と左腕になるAIです。</div></div>
+          <form class="namebox" id="nameForm" autocomplete="off"><input type="text" id="coName" maxlength="20" placeholder="御社名（例：〇〇保険事務所）" aria-label="御社名"><button type="submit">この先を御社の話にする</button></form>
+          <p class="namenote">入れた名前は、この画面の中だけで使います。送信はされません。</p>
         </div>
         <p class="lead">教える側は、訪問ゼロ・オンラインだけで年380件の相談を回している、現役の募集人です。<br>その回し方を、御社の営業1人ひとりの<strong>右腕（集客）</strong>と<strong>左腕（提案・フォロー・事務）</strong>として組み立てます。<br>AIの知識ゼロの営業でも。生保も損保も。</p>
         <div class="trust"><span>パソコンが苦手な営業でも</span><span>御社の実際の案件が教材</span><span>助成金の対象になることも</span></div>
@@ -294,7 +323,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <!-- 2 未来 -->
 <section class="alt light">
   <div class="wrap">
-    <div class="eyebrow">3か月後の、御社の営業部</div>
+    <div class="eyebrow">3か月後の、<span class="co">御社</span>の営業部</div>
     <h2>訪問3件の日報が、<br><span class="g">オンライン5件＋提案書済み</span>に変わる。</h2>
     <div class="figure"><img src="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/img/after.jpg" alt="オンラインで面談する男性（イメージ）" loading="lazy"></div>
     <p class="cap">写真はイメージです。</p>
@@ -308,6 +337,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
         <li><b>20:00</b><span>提案書づくり約2時間</span></li>
         <li><b>23:00</b><span>フォロー連絡は明日に。日報は「3件訪問」</span></li>
       </ul></div>
+    <div class="mrow" style="margin:0 0 14px"><img class="masc" src="img/mascot_point.webp" alt="" width="92" height="92" loading="lazy"><div class="bub">この1日の下書きは、わたしの担当です。<br>送るかどうかは、人が決めます。</div></div>
     <div class="day next"><h3>3か月後（オンライン×AIの1日）</h3>
       <ul class="tl">
         <li><b>9:00</b><span><span class="r">右腕</span>が朝までに用意した面談前メモと、<span class="r">左腕</span>が下書きした更改案内を確認</span></li>
@@ -373,6 +403,25 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
       <li>お客様は先にネットとAIで調べてから来る。<br>浅い説明では選ばれなくなった</li>
     </ul>
     <p>ひとつでも当てはまったなら、この先を読んでください。<br>これは「がんばり方」の話ではなく、<strong>営業と事務の回し方を会社の型にする</strong>話です。</p>
+  </div>
+</section>
+
+<!-- 5.5 どっちの腕 -->
+<section class="light">
+  <div class="wrap">
+    <div class="eyebrow">押してみてください</div>
+    <h2>それ、<span class="g">右腕と左腕</span>の<br>どっちの仕事？</h2>
+    <div class="mrow" style="margin-top:4px"><img class="masc" src="img/mascot_think.webp" alt="" width="92" height="92" loading="lazy"><div class="bub"><span class="co">御社</span>の営業部で、当てはまるものを押してください。<br>どちらの腕が引き受けるか、お答えします。</div></div>
+    <div class="chips" id="chips" role="group" aria-label="当てはまるもの">
+      <button type="button" class="chip" aria-pressed="false" data-arm="左腕" data-ans="面談メモを渡すと、提案の骨子とたたき台が2分で出ます。仕上げは本人が、話し言葉で直すだけ。">提案書に、毎回2時間</button>
+      <button type="button" class="chip" aria-pressed="false" data-arm="左腕" data-ans="更改リストから、お客様ごとの案内文を作り置きします。確認して送るだけになります。">更改案内は、手作業</button>
+      <button type="button" class="chip" aria-pressed="false" data-arm="左腕" data-ans="面談が終わった日のうちに、お礼とフォローの下書きが届きます。翌日に回りません。">面談のお礼が、翌日になる</button>
+      <button type="button" class="chip r" aria-pressed="false" data-arm="右腕" data-ans="診断ページとLINEの自動応答で、向こうから予約が入る入口を作ります。移動はゼロです。">紹介が、一巡した</button>
+      <button type="button" class="chip r" aria-pressed="false" data-arm="右腕と左腕" data-ans="提案の勘所を設定文にして会社に残します。新人が初日から、先輩と同じ型で動けます。">ベテランの勘が、本人の頭の中だけ</button>
+      <button type="button" class="chip" aria-pressed="false" data-arm="左腕" data-ans="満期フォロー・見積・事故受付の連絡文を、下書きまで引き受けます。人は確認と判断に回れます。">事務の人手が、足りない</button>
+    </div>
+    <div class="answers" id="answers" aria-live="polite"></div>
+    <p class="chipsum" id="chipsum" hidden>3つ以上あてはまるなら、年間でいくら分の仕事かを数字にできます。<br><a href="https://fulfull.jp/ai-shindan/?ref=chatgpt_lp">セルフ換算診断（無料・送信なし）</a>で、その場で出ます。</p>
   </div>
 </section>
 
@@ -687,6 +736,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   <div class="wrap">
     <div class="eyebrow">よくあるご質問</div>
     <h2>ここまで読んで、<br><span class="g">まだ迷っている方へ。</span></h2>
+    <div class="mrow" style="margin:0 0 18px"><img class="masc" src="img/mascot_think.webp" alt="" width="92" height="92" loading="lazy"><div class="bub">迷うのは、普通です。<br>社長からよく聞かれる順に並べました。</div></div>
     <details><summary>営業の平均年齢が高く、パソコンが苦手な人ばかりです。</summary><p>初日に環境の準備から一緒にやります。<br>AIへの指示は話し言葉で、スマホからでも出せます。<br>自己流の癖がない方のほうが、型どおりに覚えて早く回り始めることが多いです。</p></details>
     <details><summary>損保代理店です。営業より事務のほうが多いのですが。</summary><p>左腕の型は、更改案内・満期フォロー・見積の下書き・事故受付の連絡文にそのまま使えます。<br>診断のときに、御社で毎月くり返している事務を挙げていただければ、どれがAIに回るかをその場で数字にします。</p></details>
     <details><summary>委託型の募集人（個人事業主）が中心です。対象になりますか。</summary><p>研修は受けられます。<br>ただし助成金の対象は雇用保険の被保険者の分だけなので、委託型の方の分は助成の対象外です。<br>少人数なら、社長と右腕の方から始める形をおすすめすることもあります。</p></details>
@@ -707,6 +757,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   <div class="wrap">
     <div class="eyebrow">ここからの流れ</div>
     <h2>まずは、<span class="g">導入資料を受け取る</span>だけで大丈夫です。</h2>
+    <div class="mrow" style="margin:0 0 18px"><img class="masc" src="img/mascot_invite.webp" alt="" width="92" height="92" loading="lazy"><div class="bub">まずは資料だけ。<br>売り込みは、しません。</div></div>
     <ol class="steps">
       <li><i>1</i><b>LINEかメールで、導入資料を受け取る</b><span>御社の営業部で何が変わるか、進め方、線引き、助成金、流れをまとめた資料と、セルフ換算シートをお送りします。<br>読むだけで構いません</span></li>
       <li><i>2</i><b>気になったら、無料の換算診断（Zoom 30〜45分）</b><span>LINEなら「診断」と一言。<br>メールなら返信で。<br>最初の15分で、右腕と左腕をその場で動かしてお見せします。<br>そのあと、営業の方の1週間の仕事を挙げていただき、年間いくら分がAIに回せるかを数字にします</span></li>
@@ -798,6 +849,24 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
       n.data=t.slice(0,-5); el.insertBefore(tail,nx||null);
     });
   });
+  // 御社名を入れると、この先が御社の話になる（画面内だけ・送信なし）
+  (function(){
+    var f=document.getElementById('nameForm'), inp=document.getElementById('coName'), bub=document.getElementById('heroBub');
+    function apply(n){ n=(n||'').trim().slice(0,20); if(!n) return;
+      document.querySelectorAll('.co').forEach(function(e){e.textContent=n+'さま';});
+      bub.innerHTML='はじめまして。<br>'+n.replace(/[<>&]/g,'')+'さまの右腕と左腕、お任せください。';
+      try{sessionStorage.setItem('co_name',n);}catch(e){} try{fxTrack('NameSet',{lp:'hojin_gpt'});}catch(e){} }
+    f.addEventListener('submit',function(ev){ev.preventDefault();apply(inp.value);inp.blur();});
+    try{var saved=sessionStorage.getItem('co_name'); if(saved){inp.value=saved;apply(saved);}}catch(e){}
+  })();
+  // 当てはまるものを押す
+  (function(){
+    var chips=document.querySelectorAll('#chips .chip'), out=document.getElementById('answers'), sum=document.getElementById('chipsum');
+    function render(){ var on=[]; chips.forEach(function(c){ if(c.getAttribute('aria-pressed')==='true') on.push(c); });
+      out.innerHTML=on.map(function(c){ return '<div class="ans"><b>'+c.dataset.arm+'</b>　'+c.dataset.ans+'</div>'; }).join('');
+      sum.hidden=on.length<3; }
+    chips.forEach(function(c){ c.addEventListener('click',function(){ var v=c.getAttribute('aria-pressed')==='true'; c.setAttribute('aria-pressed',v?'false':'true'); render(); try{fxTrack('ChipTap',{lp:'hojin_gpt',chip:c.textContent});}catch(e){} }); });
+  })();
   // 計測
   document.querySelectorAll('[data-ev]').forEach(function(a){a.addEventListener('click',function(){
     var ev=a.getAttribute('data-ev'); try{fxTrack(ev,{lp:'hojin_gpt'});}catch(e){}
