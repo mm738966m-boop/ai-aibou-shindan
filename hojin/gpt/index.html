@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://mm738966m-boop.github.io/ai-aibou-shindan/hojin/og.png">
 <meta property="og:site_name" content="fulfull株式会社">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="build" content="hojin-gpt-v3.0">
+<meta name="build" content="hojin-gpt-v3.1">
 <meta name="robots" content="noindex">
 <script>document.documentElement.className+=(/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)?" is-sp":" is-pc");</script>
 <link rel="canonical" href="https://mm738966m-boop.github.io/ai-aibou-shindan/hojin/">
@@ -185,6 +185,7 @@ ol.num li:before{content:counter(n);position:absolute;left:0;top:2px;width:40px;
 .whybox h2{margin-bottom:10px}
 .whynext{margin:14px 0 0;font-weight:900;font-size:17.5px;line-height:1.7}
 .whynext a{color:var(--gold-d)}
+.ph span{display:inline-block}
 .peek{margin:14px 0 0;font-size:17px;font-weight:700}
 .peek a{color:var(--gold-l)}
 .h3big{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-size:clamp(22px,5.8vw,28px);line-height:1.45;font-weight:800;margin:6px 0 12px}
@@ -310,11 +311,11 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
         <h1>おじいちゃんでもできる、<br>保険営業＆事務作業の<br><span class="g">AI完全自動化。</span></h1>
         <div class="future">
           <div class="fl">3か月後の<span class="co">御社</span></div>
-          <p class="fq">月曜の朝、パソコンを開くと、<br>今週の下書きが<span class="g" style="white-space:nowrap">もう並んでいる。</span></p>
-          <ul class="fpts">
-            <li>昨日の面談のお礼と、次回のご案内。<br>読んで、直して、送るだけ。</li>
-            <li>来月満期のお客様への更改案内が、<br>客層ごとに用意されている。</li>
-            <li>LINEには、紹介でも知人でもない方からの<br>面談の予約。</li>
+          <p class="fq ph"><span>月曜の朝、</span><span>パソコンを開くと、</span><br><span>今週の下書きが</span><span class="g">もう並んでいる。</span></p>
+          <ul class="fpts ph">
+            <li><span>昨日の面談のお礼と、</span><span>次回のご案内。</span><br><span>読んで、直して、</span><span>送るだけ。</span></li>
+            <li><span>来月満期のお客様への</span><span>更改案内が、</span><br><span>客層ごとに</span><span>用意されている。</span></li>
+            <li><span>LINEには、</span><span>紹介でも知人でもない方からの</span><span>面談の予約。</span></li>
           </ul>
           <div class="mrow"><img class="masc" src="img/mascot_base.webp" alt="そろばんを持った小さなロボット（fulfullのAI相棒）" width="92" height="92" loading="eager"><div class="bub" id="heroBub">毎回、一から説明しなくて大丈夫です。<br>御社のやり方は、研修の最初に一緒に決めますから。</div></div>
           <form class="namebox" id="nameForm" autocomplete="off"><input type="text" id="coName" maxlength="20" placeholder="御社名（例：〇〇保険事務所）" aria-label="御社名"><button type="submit">この先を御社の話にする</button></form>
@@ -941,15 +942,6 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     document.querySelectorAll('[data-count]').forEach(function(el){co.observe(el);});
   }
   var v=document.querySelector('video[autoplay]'); if(v){ var p=v.play(); if(p&&p.catch){p.catch(function(){});} }
-  // 行末に1〜2文字だけ落ちるのを防ぐ（<br>で区切った各文の末尾5文字を1かたまりにする）
-  document.querySelectorAll('.story p, .hero .lead, .stat .l').forEach(function(el){
-    Array.prototype.slice.call(el.childNodes).forEach(function(n){
-      if(n.nodeType!==3) return; var nx=n.nextSibling; if(nx && nx.nodeName!=='BR') return;
-      var t=n.data.replace(/\s+$/,''); if(t.length<8) return;
-      var tail=document.createElement('span'); tail.style.whiteSpace='nowrap'; tail.textContent=t.slice(-5);
-      n.data=t.slice(0,-5); el.insertBefore(tail,nx||null);
-    });
-  });
   // 御社名を入れると、この先が御社の話になる（画面内だけ・送信なし）
   (function(){
     var f=document.getElementById('nameForm'), inp=document.getElementById('coName'), bub=document.getElementById('heroBub');
@@ -1002,6 +994,16 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
       var st=document.querySelector('#sticky a'); if(st){ st.href=document.querySelector('.cta-mail').href; st.setAttribute('data-ev','MailTap'); st.textContent='メールで導入資料を受け取る（無料）'; }
     }
   })();
+  // 行末に1〜2文字だけ落ちるのを防ぐ（各文の末尾5文字を1かたまりにする。出し分けのあとに実行）
+  document.querySelectorAll('p, li, summary, dd, .bub, h2, h2 .g, h3, h3 .g, .btn, .btn small, #whyN, .stat .l').forEach(function(el){
+    if(el.closest('.ph')||el.closest('.copybox')) return;
+    Array.prototype.slice.call(el.childNodes).forEach(function(n){
+      if(n.nodeType!==3) return; var nx=n.nextSibling; if(nx && nx.nodeName!=='BR' && nx.nodeName!=='SMALL') return;
+      var t=n.data.replace(/\s+$/,''); if(t.replace(/^\s+/,'').length<8) return;
+      var tail=document.createElement('span'); tail.style.whiteSpace='nowrap'; tail.textContent=t.slice(-5);
+      n.data=t.slice(0,-5); el.insertBefore(tail,nx||null);
+    });
+  });
   // 計測
   document.querySelectorAll('[data-ev]').forEach(function(a){a.addEventListener('click',function(){
     var ev=a.getAttribute('data-ev'); try{fxTrack(ev,{lp:'hojin_gpt'});}catch(e){}
