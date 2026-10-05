@@ -12,13 +12,14 @@
 <meta property="og:image" content="https://mm738966m-boop.github.io/ai-aibou-shindan/hojin/og.png">
 <meta property="og:site_name" content="fulfull株式会社">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="build" content="hojin-gpt-v2.0">
+<meta name="build" content="hojin-gpt-v3.0">
 <meta name="robots" content="noindex">
+<script>document.documentElement.className+=(/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)?" is-sp":" is-pc");</script>
 <link rel="canonical" href="https://mm738966m-boop.github.io/ai-aibou-shindan/hojin/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Klee+One:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap">
 <style>
 :root{--navy:#22293A;--navy-d:#171C28;--ink:#22293A;--sub:#4F586B;--bg:#FBF8F3;--paper:#FFFFFF;--soft:#F3EEE4;--line:#E5DED2;--gold:#DFA23C;--gold-d:#A9771B;--gold-l:#F1D79A;--line-green:#06C755;--line-green-d:#05A847;--ok:#2E7D5B;--ng:#B4552D}
 *{box-sizing:border-box}
@@ -179,6 +180,31 @@ ol.num li:before{content:counter(n);position:absolute;left:0;top:2px;width:40px;
 .chipsum{margin-top:14px;font-weight:900;font-size:18.5px;line-height:1.6}
 .chipsum a{color:var(--gold-d)}
 @media(max-width:380px){.mrow{grid-template-columns:76px 1fr}.mrow .masc{width:76px}}
+/* v3：着いた理由・資料の箱・任せる範囲・残るもの */
+.whybox{background:var(--paper);border:2px solid var(--gold);border-radius:20px;padding:22px 20px}
+.whybox h2{margin-bottom:10px}
+.whynext{margin:14px 0 0;font-weight:900;font-size:17.5px;line-height:1.7}
+.whynext a{color:var(--gold-d)}
+.peek{margin:14px 0 0;font-size:17px;font-weight:700}
+.peek a{color:var(--gold-l)}
+.h3big{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-size:clamp(22px,5.8vw,28px);line-height:1.45;font-weight:800;margin:6px 0 12px}
+.h3big .g{color:var(--gold-d)}
+.split{display:grid;grid-template-columns:1fr;gap:12px;margin:14px 0}
+.split .card{margin:0}
+.split .card.ai{border:2px solid var(--gold)}
+.split .card.hito{border:2px solid var(--navy)}
+.gots{display:grid;grid-template-columns:1fr;gap:12px;margin:14px 0}
+.got{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:18px 18px 12px}
+.got h4{font-size:17px;letter-spacing:.04em;color:var(--gold-d);margin:0 0 8px}
+.got ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.got li{font-size:17px;line-height:1.7;color:var(--sub);padding-left:18px;position:relative}
+.got li:before{content:"";position:absolute;left:0;top:11px;width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.got li strong{color:var(--ink);display:block}
+.btn.pcmain{background:var(--gold);color:var(--navy-d);margin-top:0}
+.btn.pcmain:hover{filter:brightness(1.05)}
+.is-pc #sticky{left:auto;right:18px;bottom:18px;padding:0;background:none;border:0;backdrop-filter:none}
+.is-pc #sticky .btn{width:auto;padding:13px 22px;font-size:17px;background:var(--gold);color:var(--navy-d)}
+@media(min-width:760px){.split,.gots{grid-template-columns:1fr 1fr}}
 /* day timeline */
 .day{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px 18px;margin-bottom:14px}
 .day.now{background:var(--soft)}
@@ -280,23 +306,23 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <span class="date">保険代理店・営業組織の経営者の方へ</span>
+        <span class="date">保険代理店向け｜御社の案件で作るAI研修</span>
         <h1>おじいちゃんでもできる、<br>保険営業＆事務作業の<br><span class="g">AI完全自動化。</span></h1>
-        <p class="scope"><span>自動化するのは、</span><span>集客・提案の準備・</span><span>フォロー・</span><span>事務の下書きまで。</span><br><span>お客様への説明と契約は、</span><span>募集人ご本人が行います。</span></p>
         <div class="future">
           <div class="fl">3か月後の<span class="co">御社</span></div>
-          <p class="fq">社長が現場に出なくても、<br>毎朝、<span class="g" style="white-space:nowrap">予約と提案書と更改案内</span>が揃っている代理店へ。</p>
+          <p class="fq">月曜の朝、パソコンを開くと、<br>今週の下書きが<span class="g" style="white-space:nowrap">もう並んでいる。</span></p>
           <ul class="fpts">
-            <li>訪問ゼロで、面談は増える</li>
-            <li>夜の提案書づくりは、なくなる</li>
-            <li>ベテランが辞めても、お客様との接点は会社に残る</li>
+            <li>昨日の面談のお礼と、次回のご案内。<br>読んで、直して、送るだけ。</li>
+            <li>来月満期のお客様への更改案内が、<br>客層ごとに用意されている。</li>
+            <li>LINEには、紹介でも知人でもない方からの<br>面談の予約。</li>
           </ul>
-          <div class="mrow"><img class="masc" src="img/mascot_base.webp" alt="そろばんを持った小さなロボット（fulfullのAI相棒）" width="92" height="92" loading="eager"><div class="bub" id="heroBub">はじめまして。<br>御社の営業の、右腕と左腕になるAIです。</div></div>
+          <div class="mrow"><img class="masc" src="img/mascot_base.webp" alt="そろばんを持った小さなロボット（fulfullのAI相棒）" width="92" height="92" loading="eager"><div class="bub" id="heroBub">毎回、一から説明しなくて大丈夫です。<br>御社のやり方は、研修の最初に一緒に決めますから。</div></div>
           <form class="namebox" id="nameForm" autocomplete="off"><input type="text" id="coName" maxlength="20" placeholder="御社名（例：〇〇保険事務所）" aria-label="御社名"><button type="submit">この先を御社の話にする</button></form>
           <p class="namenote">入れた名前は、この画面の中だけで使います。送信はされません。</p>
         </div>
-        <p class="lead">教える側は、訪問ゼロ・オンラインだけで年380件の相談を回している、現役の募集人です。<br>その回し方を、御社の営業1人ひとりの<strong>右腕（集客）</strong>と<strong>左腕（提案・フォロー・事務）</strong>として組み立てます。<br>AIの知識ゼロの営業でも。生保も損保も。</p>
+        <p class="lead">ChatGPTに1本ずつ頼む使い方から、<br>御社の型で、毎回同じ質の下書きが出る使い方へ。<br>教えるのは、訪問ゼロ・オンラインだけで2025年に<strong>380件</strong>の相談を受けた、現役の募集人です。<br>御社の実際の案件を教材に、営業1人ひとりの<strong>右腕（集客）</strong>と<strong>左腕（提案・フォロー・事務）</strong>を作ります。</p>
         <div class="trust"><span>パソコンが苦手な営業でも</span><span>御社の実際の案件が教材</span><span>助成金の対象になることも</span></div>
+        <p class="peek"><a href="#shiryo" data-ev="PeekShiryo">導入資料に入っていること（目次）を先に見る ↓</a></p>
       </div>
       <div class="hero-img"><img src="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/img/hero.jpg" alt="書斎でノートパソコンに向かう男性（イメージ）" loading="eager"></div>
     </div>
@@ -304,19 +330,41 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
       <div><b>0<small>件</small></b><span>訪問。相談も面談もすべてオンライン</span></div>
       <div><b>380<small>件</small></b><span>2025年の個別相談。保険・住宅・相続まで</span></div>
       <div><b>2<small>時間</small>→2<small>分</small></b><span>提案書のたたき台。森川の実測</span></div>
-      <div><b>25<small>社</small></b><span>企業研修のご依頼実績</span></div>
+      <div><b>12<small>時間</small></b><span>御社の案件を教材にする研修。3時間×4回</span></div>
     </div>
     <p class="scrollcue">↓ 読み進めると、御社で何が変わるかが分かります</p>
   </div>
 </header>
 
-<!-- 1b 動画 -->
-<section class="alt light" style="padding:40px 0 36px">
+<!-- 1a 着いた理由への答え（refで出し分け・素の状態は既定） -->
+<section class="light" id="why" style="padding:34px 0 8px">
   <div class="wrap">
-    <div class="eyebrow">まず、1分だけ</div>
-    <h2>fulfullが、どんな会社か。<br><span class="g">1分の動画</span>で先に見てください。</h2>
-    <div class="figure"><video class="own" src="https://fulfull.jp/wp-content/uploads/2026/08/seminar-op.mp4" poster="https://fulfull.jp/wp-content/uploads/2026/08/seminar-op-poster.jpg" controls playsinline preload="metadata"></video></div>
-    <p class="cap">音が出ます。訪問ゼロで年380件の相談を回している会社の、話し方と雰囲気です。</p>
+    <div class="whybox">
+      <div class="eyebrow" id="whyE">この研修で、変わること</div>
+      <h2 id="whyH">パソコンが苦手でも、<span class="g">回る理由</span></h2>
+      <p id="whyP" style="margin:0">営業がやるのは、面談のあとにメモを渡すことだけ。<br>提案の骨子も、お礼の文も、更改案内の下書きも、御社の話し方を入れたAIが用意します。<br>指示は話し言葉で、スマホからでも出せます。</p>
+      <p class="whynext"><a id="whyA" href="#split" data-ev="WhyNext">この先で分かること ↓<br><span id="whyN">どこまでをAIに任せて、どこからを人が決めるか。</span></a></p>
+    </div>
+  </div>
+</section>
+
+<!-- 1c 資料の中身（最初のCTA） -->
+<section class="light" id="shiryo" style="padding:22px 0 44px">
+  <div class="wrap">
+    <div class="ctabox">
+      <div class="eyebrow">まずは、資料だけ</div>
+      <h3>導入資料（無料）に入っていること</h3>
+      <ul class="ok">
+        <li>3か月後の営業部の姿と、4回の研修で出来上がるもの</li>
+        <li>AIに任せることと、人が決めることの線引きの例（保険会社への説明にも使える形）</li>
+        <li>受ける人数ごとの形と、助成金の仕組み</li>
+        <li>営業1人あたり「年間いくら分」かを自分で出せる、セルフ換算診断の入口</li>
+      </ul>
+      <div class="mrow" style="margin:6px 0 16px"><img class="masc" src="img/mascot_invite.webp" alt="" width="92" height="92" loading="lazy"><div class="bub">役員会や朝礼で、そのまま回せる形です。<br>人数別の表は、この資料にだけ載せています。</div></div>
+      <a class="btn cta-line" href="https://utage-system.com/line/open/3AguqHadI5TO?mtid=RzR5gzoCXlgw" data-ev="LineTap">LINEで導入資料を受け取る<small>友だち追加だけ・無料</small></a>
+      <a class="btn mail cta-mail" href="https://utage-system.com/r/3AguqHadI5TO/register?mtid=7OmgaU9KI0iz" data-ev="MailTap">メールで導入資料を受け取る<small>お名前とメールアドレスだけ・いつでも解除できます</small></a>
+      <p class="btn-note">届くのは資料です。<br>続きをどうするかは、読んでから決めてください。</p>
+    </div>
   </div>
 </section>
 
@@ -367,7 +415,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
       <div class="stat"><div class="n">約半減</div><div class="l">損保代理店数はこの20年で26.7万店→14.0万店に</div></div>
     </div>
     <p>大手は「配る」段階に入りました。<br>一方で、中小の代理店が同じものを買おうとすると、システム会社の見積もりは桁が違います。</p>
-    <p>だから、買うのではなく<strong>作る</strong>。<br>営業1人ひとりが自分の右腕と左腕を持ち、その作り方を会社の型として残す。<br><strong>これは、社員数人の代理店のほうが先に終わります。</strong></p>
+    <p>だから、買うのではなく<strong>作る</strong>。<br>営業1人ひとりが自分の右腕と左腕を持ち、その作り方を会社の型として残す。<br><strong>これは、社員数人の代理店のほうが早く形になります。</strong></p>
     <p class="src">出典: 生命保険協会「2025年版 生命保険の動向」／生命保険協会・生命保険文化センター調査（金融庁提出資料 2022）／日本経済新聞 2025年報道／日本損害保険協会「2024年度損害保険代理店統計」</p>
   </div>
 </section>
@@ -377,10 +425,10 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   <div class="wrap">
     <div class="eyebrow">なのに、なぜ代理店で定着しないのか</div>
     <h2>AIを「若手の便利な道具」で<br><span class="g">止めているから。</span></h2>
-    <p>ChatGPTを入れた代理店は、もう珍しくありません。<br>それでも3か月後に営業の数字が変わった会社は少ない。<br>理由は3つです。</p>
+    <p>ChatGPTを使う営業は、もう珍しくありません。<br>ただ、使い方が人ごとに違うままだと、会社には何も残りません。<br>理由は3つです。</p>
     <ol class="num">
       <li><h3>個人任せで、会社の型になっていない</h3>若手が個人のスマホで使っている。<br>ベテランは遠ざけている。<br>その差は広がる一方で、会社としては何も残りません。</li>
-      <li><h3>汎用のAI講座を受けている</h3>「プロンプトの書き方」を学んでも、翌日の提案書は誰も作ってくれません。<br>効くのは「御社の、この案件」をAIに渡す型を作ったときだけです。</li>
+      <li><h3>1本ずつ頼む使い方のまま</h3>毎回一から説明すると、出てくる下書きの質が、人と日によって変わります。<br>効くのは、御社の型を先にAIに渡しておく使い方です。</li>
       <li><h3>募集のルールとの線引きが決まっていない</h3>何をAIに渡してよくて、何は募集人本人がやるのか。<br>ここが曖昧なままだと、真面目な人ほど怖くて使えません。</li>
     </ol>
     <p>足りないのは、社員のやる気でも、AIの性能でもありません。<br><strong>御社の案件で、線引きを決めて、順番どおりに覚える機会</strong>がなかっただけです。</p>
@@ -462,6 +510,37 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
       </dl>
     </div>
 
+    <div id="got" style="margin-top:34px">
+      <div class="eyebrow">4回が終わると</div>
+      <h3 class="h3big">御社の手元に、<span class="g">これが残ります。</span></h3>
+      <p>講義のノートではありません。<br>月曜の朝から、そのまま使う物です。</p>
+      <div class="gots">
+        <div class="got"><h4>第1回　線を引く</h4><ul>
+          <li><strong>「AIに渡すもの・渡さないもの」の線引き文書</strong>「これ、入れていいのかな」で手が止まらない。</li>
+          <li><strong>どの仕事からAIに回すかの順番表</strong>何から手をつけるかで、朝を使わない。</li>
+          <li><strong>会社専用のAIの場所（学習に使われない設定）</strong>お客様の話を、個人のスマホに入れなくて済む。</li>
+        </ul></div>
+        <div class="got"><h4>第2回　右腕をつくる（集客）</h4><ul>
+          <li><strong>営業ごとの「選ばれる理由」</strong>名刺やプロフィールに書く一文が、もう決まっている。</li>
+          <li><strong>5問で終わる診断ページ</strong>週末のあいだに入った予約の確認から、月曜が始まる。</li>
+          <li><strong>LINEの自動応答文と、発信の下書き</strong>夜に届いた問い合わせにも、最初の返事は済んでいる。</li>
+        </ul></div>
+        <div class="got"><h4>第3回　左腕をつくる（提案・フォロー・事務）</h4><ul>
+          <li><strong>左腕の設定文（御社の話し方・使わない表現入り）</strong>面談のあと、メモを渡せば提案の骨子とお礼の文が出る。</li>
+          <li><strong>更改案内・満期フォローの型</strong>来月の対象のお客様の分が、下書きの状態で待っている。</li>
+          <li><strong>比較表と推奨理由の下書きの型（乗合）</strong>比べる作業はAI、どれを勧めるかを考える時間は人に残る。</li>
+          <li><strong>客層ごとの連絡文の作り置き</strong>「そろそろ連絡しないと」を、思い出さなくていい。</li>
+        </ul></div>
+        <div class="got"><h4>第4回　会社の型にする</h4><ul>
+          <li><strong>誰でも使える手順書と、1日の型</strong>入ったばかりの人も、先輩と同じ順番で月曜を始められる。</li>
+          <li><strong>社内勉強会の台本</strong>受けていない営業にも、受けた人が教えられる。</li>
+          <li><strong>研修後30日の運用計画</strong>研修が終わった翌週も、止まらない。</li>
+        </ul></div>
+      </div>
+      <p>どれも御社の案件から作るので、全部御社のものです。<br>担当が替わっても、会社に残ります。</p>
+      <div class="mrow" style="margin:6px 0 0"><img class="masc" src="img/mascot_base.webp" alt="" width="92" height="92" loading="lazy"><div class="bub">全部そろうと、わたしは御社の右腕と左腕として働けるようになります。</div></div>
+    </div>
+
     <h3 style="margin-top:30px">導入の前後で、誰の何が変わるか</h3>
     <div class="tablebox">
     <table>
@@ -473,7 +552,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
       </tbody>
     </table>
     </div>
-    <p class="src">モデルケースです。成果を保証するものではありません。</p>
+    <p class="src">モデルケースです。<br>御社の数字は、換算診断で実数から出します。</p>
 
     <h3 style="margin-top:26px">誰が何をやるか</h3>
     <div class="cols">
@@ -481,13 +560,31 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
       <div class="card"><span class="tag">御社がやること</span><ul><li>社長：受講する2〜4名を選ぶ（営業でも事務でも）。できれば同席する（無料）</li><li>営業：1週間の仕事メモと、過去の面談メモ3件を持ち込む</li><li>営業：回のあいだに実務で1つ試す</li><li>出す前の判断は、御社の規程で</li></ul></div>
     </div>
 
-    <div class="figure tall"><img src="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/zukai/arms.jpg" alt="右腕（集客）と左腕（面談・提案）の流れの図解" loading="lazy"></div>
-    <div class="cols">
-      <div class="card"><span class="tag">AIがやること</span><ul><li>調べる・比べる・まとめる</li><li>下書きを書く（提案・フォロー・事務・発信）</li><li>整える・チェックする</li><li>決まった連絡を決まった時に送る</li></ul></div>
-      <div class="card"><span class="tag">募集人がやること</span><ul><li>お客様と話す</li><li>提案の最終判断</li><li>説明と契約の手続き（募集行為）</li><li>「この人に会いたい」と思ってもらうこと</li></ul></div>
-    </div>
+    <div id="split" style="margin-top:34px">
+      <div class="eyebrow">任せる範囲</div>
+      <h3 class="h3big">AIが下書きして、<span class="g">人が決める。</span></h3>
+      <p>任せる範囲が決まっていないと、真面目な人ほどAIを使えません。<br>この研修では最初に、AIが引き受けることと、人が決めることを分けます。<br>線が引いてあるから、AIにはどんどん任せられます。</p>
+      <div class="split">
+        <div class="card ai"><span class="tag">AIが引き受けること</span><ul>
+          <li>面談の前に読むメモ（前回の話・今日確かめたいこと）</li>
+          <li>提案の骨子と、意向に沿った比較表の下書き（乗合）</li>
+          <li>面談のお礼・次回のご案内・フォローの文</li>
+          <li>更改案内・満期フォロー・見積の連絡文の下書き</li>
+          <li>診断ページ・LINEの自動応答・発信の下書き</li>
+          <li>出す前のチェック（抜け漏れ・言い回し・御社で使わない表現）</li>
+        </ul></div>
+        <div class="card hito"><span class="tag">人が決めること</span><ul>
+          <li>お客様と話し、意向を聞くこと</li>
+          <li>どの商品を勧めるかの判断と、その説明</li>
+          <li>お客様に出すかどうか（御社の規程と保険会社のルールで）</li>
+          <li>契約の手続き</li>
+        </ul></div>
+      </div>
+      <p>保険会社に「AIの利用ルールは？」と聞かれたら、この表がそのまま答えになります。<br>社長は、どこまで任せているかを1枚で確かめられます。</p>
+      <div class="mrow" style="margin:6px 0 18px"><img class="masc" src="img/mascot_point.webp" alt="" width="92" height="92" loading="lazy"><div class="bub">わたしが書いて、あなたが決める。<br>この順番だから、たくさん頼んでもらえます。</div></div>
     <p>お客様の話を聞く「間」の取り方、ここは笑っていい、ここは黙る、という感覚は、年齢と経験でしか育ちません。<br>AIは営業を減らすためのものではなく、営業1人が回せる量を増やすためのものです。<br>だから、ベテランほど価値が上がります。</p>
-    <div class="note">お客様に出す文書は、御社の規程と保険会社の募集文書ルールが優先です。<br>研修の第1回で「AIに渡してよいもの・渡さないもの」を御社ルールとして文書にします。<br>契約者の個人情報は、学習に使われない設定の会社専用の場所でしか扱いません。<br>乗合代理店の商品比較は、比較表と推奨理由の下書きまでAI。どれを勧めるかの判断と説明は募集人本人、と線引きします。</div>
+    <div class="figure tall"><img src="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/zukai/arms.jpg" alt="右腕（集客）と左腕（面談・提案）の流れの図解" loading="lazy"></div>
+    </div>
     <div class="figure" style="margin-top:20px"><video class="own" src="../../media/seminar0924_hikaku_heya.mp4" poster="../../media/seminar0924_hikaku_heya.jpg" controls playsinline preload="metadata"></video></div>
     <p class="cap">勉強会での説明（1分42秒・音が出ます）。乗合の比較のたたき台と、AIに作業させる場所をフォルダで区切る話です。フォルダで区切るのは、AIが読める範囲を決める設定です。読ませた内容はAIの提供会社で処理されるので、学習に使われない設定とあわせて使います。相談者のお名前が入った1行には、ぼかしを入れています。</p>
   </div>
@@ -498,7 +595,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   <div class="wrap">
     <div class="eyebrow">実際の画面</div>
     <h2>予約は、<span class="g">こうやって入ってきます。</span></h2>
-    <p>「オンラインで予約が入る」と言われても、イメージが湧かないと思います。<br>これが、fulfullのお金の勉強会（オンライン）の申込一覧です。</p>
+    <p>言葉だけでは伝わりにくいので、実物をお見せします。<br>これが、fulfullのお金の勉強会（オンライン）の申込一覧です。</p>
     <div class="figure"><video src="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/img/yoyaku.mp4" poster="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/img/yoyaku_poster.jpg" muted loop playsinline autoplay></video></div>
     <p class="cap">電話も訪問もしていません。広告→ページ→LINE→予約、の順に自動で入ってきます。氏名・メールアドレスは加工しています。</p>
     <div class="stats">
@@ -507,7 +604,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
       <div class="stat"><div class="n">4.8<small>★</small></div><div class="l">お金の個別相談の予約サイト・63件のレビュー（研修の評価ではありません）</div></div>
     </div>
     <p>お客様側の反応は、面談の予約サイトのレビュー（4.8★・63件）に出ています。<br>「押し売りされない」「落ち着いて話せる」。<br>画面越しのほうが、むしろそう感じてもらいやすい。<br>これが、オンラインに切り替えて分かったことです。</p>
-    <p>保険歴は、まだ3年です。<br>僕が保険を扱い始めたのは2023年。<br>ベテランではありません。<br>それでも、保険事業だけで年間1,000万円以上の売上が立っています。</p>
+    <p>保険歴は、まだ3年です。<br>僕が保険を扱い始めたのは2023年。<br>ベテランではありません。<br>それでも、訪問ゼロで2025年に380件の相談を受けました。</p>
     <p>数字より大事なのは、<strong>誰がやっても回る形にしてあること</strong>です。<br>入口の勉強会はスタッフでも回せて、個別相談だけ募集人が入る。<br>「森川だからできる」を、できるだけ外して作りました。<br>だから、御社の営業チームに移せます。</p>
     <p class="src">fulfull株式会社 実績（2025年・自社集計）。個人・法人の成果を保証するものではありません。</p>
   </div>
@@ -520,11 +617,28 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     <div class="ctabox">
       <div class="eyebrow">まずは、資料だけ</div>
       <h3>代理店向けの導入資料を、お送りします。</h3>
-      <p class="what">御社の営業部で何が変わるか、進め方、線引き、助成金の仕組み、ここからの流れ。<br>役員会や朝礼でそのまま使える形にまとめた資料です。<br>あわせて、営業1人あたり「年間いくら分」がAIに回せるかを自分で出せるセルフ換算シートも届きます。</p>
-      <a class="btn cta-line" href="https://utage-system.com/line/open/3AguqHadI5TO?mtid=RzR5gzoCXlgw" data-ev="LineTap">LINEで導入資料を受け取る<small>友だち追加だけ・無料・売り込みなし</small></a>
-      <a class="btn mail cta-mail" href="https://utage-system.com/r/3AguqHadI5TO/register?mtid=7OmgaU9KI0iz" data-ev="MailTap" target="_blank" rel="noopener">メールで受け取る<small>お名前とメールアドレスだけ</small></a>
+      <p class="what">御社の営業部で何が変わるか、進め方、線引き、助成金の仕組み、ここからの流れ。<br>役員会や朝礼でそのまま使える形にまとめた資料です。<br>あわせて、営業1人あたり「年間いくら分」がAIに回せるかを自分で出せるセルフ換算診断（Web・送信なし）の入口も届きます。</p>
+      <a class="btn cta-line" href="https://utage-system.com/line/open/3AguqHadI5TO?mtid=RzR5gzoCXlgw" data-ev="LineTap">LINEで導入資料を受け取る<small>友だち追加だけ・無料</small></a>
+      <a class="btn mail cta-mail" href="https://utage-system.com/r/3AguqHadI5TO/register?mtid=7OmgaU9KI0iz" data-ev="MailTap">メールで導入資料を受け取る<small>お名前とメールアドレスだけ・いつでも解除できます</small></a>
       <p class="btn-note">資料を読んで気になったら、その場で無料の換算診断（Zoom 30〜45分）を申し込めます。</p>
     </div>
+  </div>
+</section>
+
+<!-- 7c 社長に送る（社員・事務の方へ） -->
+<section class="light" id="boss">
+  <div class="wrap">
+    <div class="eyebrow">社員・事務の方が読んでいる場合</div>
+    <h2>決めるのは社長。<br><span class="g">きっかけは、現場からの一通で。</span></h2>
+    <p>研修を入れるかどうかは、社長が決めることです。<br>でも、提案書や更改案内にかかる手間を毎日見ているのは、現場の方です。<br>下の文面は、そのまま社長にLINEやメールで送れます。<br>ご自分の言葉に直して使ってください。</p>
+    <div class="copybox" id="bossText">社長、少しだけお時間ください。
+保険の営業と事務をAIで回すための、代理店向けの研修ページを見つけました。
+教える人は現役の募集人で、訪問ゼロ・オンラインだけで2025年に380件の相談を受けているそうです。
+うちの実際の案件を教材に、提案書や更改案内の下書きをAIに任せる型を作る研修です。
+無料の導入資料だけでも、一緒に見てもらえませんか。
+（ページ）__URL__</div>
+    <button class="btn ghost" id="copyBtn" type="button" style="margin-top:0">この文面をコピーする</button>
+    <p class="btn-note" id="copyNote">コピーすると、末尾にこのページのURLが入ります。</p>
   </div>
 </section>
 
@@ -533,7 +647,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   <div class="wrap">
     <div class="eyebrow">なぜ、fulfullなのか</div>
     <h2>教える側が、<span class="g">現役の募集人</span>です。<br>自分の代理店業務を、AIで回しています。</h2>
-    <p>AIの研修会社は、保険の募集ルールを知りません。<br>保険業界のコンサルタントは、AIを実務で回していません。<br>システム会社は、高くて現場が使いません。<br>fulfullは、募集人1人・訪問ゼロで年380件の相談を回している、その型をそのまま渡します。</p>
+    <p>AIに詳しい人と、保険の募集に詳しい人は、たいてい別の人です。<br>fulfullは、その両方を毎日の自分の仕事で回しています。<br>fulfullは、募集人1人・訪問ゼロで年380件の相談を回している、その型をそのまま渡します。</p>
 
     <div class="tablebox">
     <table>
@@ -564,7 +678,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 </section>
 
 <!-- 9 研修の進み方 -->
-<section class="light">
+<section class="light" id="kenshu">
   <div class="wrap">
     <div class="eyebrow">研修で、実際にやること</div>
     <h2>講義は最初の30分だけ。<br>あとは<span class="g">御社の案件で、その場で作ります。</span></h2>
@@ -607,20 +721,13 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     <div class="figure tall"><img src="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/zukai/week.jpg" alt="右腕と左腕の最初の1週間の図解" loading="lazy"></div>
     <p class="cap">研修のあいだ、営業の方の1週間はこう動きます。すべて「作るまで」の手順で、お客様に出すかどうかは御社の規程で決めます。</p>
 
-    <h3>持ち帰れるもの</h3>
-    <ul class="ok">
-      <li>右腕・左腕の設定文（御社仕様・営業ごと）</li>
-      <li>AIに渡すもの・渡さないものの線引き（御社ルールとして文書化）</li>
-      <li>オンライン営業の1日の型と、最初の1週間の手順書</li>
-      <li>受講者が他の営業に教えるための手順書と、社内勉強会の台本</li>
-      <li>修了後30日間の質問対応（回のあいだもチャットで質問できます）</li>
-    </ul>
+    <p>4回で手元に残るものは、<a href="#got">「御社の手元に、これが残ります。」</a>にまとめました。<br>修了後30日間は、質問に答えます（回のあいだもチャットで質問できます）。</p>
     <div class="note">オンラインは必ずZoomの同時双方向のライブ形式で行います。<br>録画視聴やeラーニング型にすると、助成金の扱いが変わるためです。<br>営業が多い会社は、4名までの班に分けて同じ型を回します。</div>
   </div>
 </section>
 
 <!-- 10 費用の考え方 -->
-<section class="alt light">
+<section class="alt light" id="hiyou">
   <div class="wrap">
     <div class="eyebrow">費用の考え方</div>
     <h2>人数で段階を分けています。<br><span class="g">御社の数字を見てから</span>お伝えします。</h2>
@@ -676,7 +783,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
       <p>きっかけは、長男でした。<br>小学3年か4年のころ、「将来、バスケで海外に行きたい」と言ったんです。<br>軽く、子どもが言ったくらいの感じで。<br>僕の最初の反応は「マジか」で、次に「お金がかかるな」でした。<br>子どもの夢を聞いた瞬間に、頭にまずお金の心配が浮かぶ。<br>それが、父親としての僕のリアルでした。</p>
       <p>そこから、こっそり投資を始めました。<br>クレジットカードで6万円分のドルを買うところからです。<br>最初の利益は150円。<br>スマホの中で数字が増えていくのが、お金というよりゲームでした。</p>
       <p>「ちゃんと勉強すれば、再現できる」<br>そう思って、一から学び直しました。<br>そのころ、母からLINEが来ました。<br>「私にもできる投資ある？」<br>それに答えるために作った最初のスクールが、「おばあちゃんでもできる投資」です。<br>気づけば、全国2,000人に投資を教える先生になっていました。</p>
-      <p>教えているうちに、相談は投資だけで終わらなくなりました。<br>住宅、教育費、老後、そして「入りっぱなしの保険」。<br>ライフプランの相談に乗っているうちに、生徒さんたちから「保険も森川さんに見てほしい」と言われ、2023年に生命保険の取り扱いを始めました。<br>訪問はゼロ。<br>相談も面談も、すべてオンライン。<br>気づいたら、保険事業だけで年間1,000万円を超えていました。</p>
+      <p>教えているうちに、相談は投資だけで終わらなくなりました。<br>住宅、教育費、老後、そして「入りっぱなしの保険」。<br>ライフプランの相談に乗っているうちに、生徒さんたちから「保険も森川さんに見てほしい」と言われ、2023年に生命保険の取り扱いを始めました。<br>訪問はゼロ。<br>相談も面談も、すべてオンライン。<br>気づいたら、オンラインだけで年に380件の相談を受けるようになっていました。</p>
       <p>いまは、fulfullという小さな会社で、月4万円のAIに社員2.7人分の仕事を任せています。<br>記事122本、自動化システム6本、Webサイト8本。<br>1年間でAIと一緒に作ったものは、すべて実物でお見せできます。</p>
       <p>ドライバーだった僕が、投資を教え、保険を扱い、AIで会社を回している。<br>才能でも人脈でもなく、「回し方」を変えただけです。<br>だから、御社の営業チームにも移せると思っています。</p>
     </div>
@@ -687,6 +794,16 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
       <div class="stat"><div class="n">2.7<small>人分</small></div><div class="l">月4万円のAI利用料で回している、社員換算の仕事量</div></div>
     </div>
     <p class="src">登壇・研修実績（順不同・敬称略）：東京海上日動あんしん生命／積水ハウス／法人会／商工会議所（ビジネスアドバイザー）／信用金庫（創業塾）／小学校（お金の授業）。いずれも登壇・研修の実績であり、各社・各団体が本研修を推奨するものではありません。fulfull自社集計（2026年9月）。</p>
+  </div>
+</section>
+
+<!-- 11b 動画（講師のあとへ移動） -->
+<section class="alt light" style="padding:40px 0 36px">
+  <div class="wrap">
+    <div class="eyebrow">まず、1分だけ</div>
+    <h2>fulfullが、どんな会社か。<br><span class="g">1分の動画</span>で先に見てください。</h2>
+    <div class="figure"><video class="own" src="https://fulfull.jp/wp-content/uploads/2026/08/seminar-op.mp4" poster="https://fulfull.jp/wp-content/uploads/2026/08/seminar-op-poster.jpg" controls playsinline preload="metadata"></video></div>
+    <p class="cap">音が出ます。訪問ゼロで年380件の相談を回している会社の、話し方と雰囲気です。</p>
   </div>
 </section>
 
@@ -735,8 +852,9 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <section class="alt light">
   <div class="wrap">
     <div class="eyebrow">よくあるご質問</div>
-    <h2>ここまで読んで、<br><span class="g">まだ迷っている方へ。</span></h2>
-    <div class="mrow" style="margin:0 0 18px"><img class="masc" src="img/mascot_think.webp" alt="" width="92" height="92" loading="lazy"><div class="bub">迷うのは、普通です。<br>社長からよく聞かれる順に並べました。</div></div>
+    <h2>社長によく聞かれることを、<br><span class="g">聞かれる順に並べました。</span></h2>
+    <details><summary>ChatGPTを自分で使えば、足りるのでは？</summary><p>1人で使うなら、それで足りる場面も多いと思います。<br>僕も毎日使っています。<br>ただ会社で使うと、頼み方が人ごとに違い、下書きの質も日によって変わります。<br>辞めた人の工夫は、その人と一緒に消えます。<br>研修でやるのは、御社の話し方と線引きを先にAIに渡しておき、誰が頼んでも同じ質の下書きが出る形にすることです。</p></details>
+    <details><summary>無料のChatGPTしか使っていません。研修は受けられますか？</summary><p>受けられます。<br>最初は、いまお使いのもので始めて大丈夫です。<br>ただ、お客様の情報を扱うところからは、学習に使われない設定の会社専用の場所を使います。<br>どれにするかは、第1回で一緒に決めます。<br>特定の製品を売ることはありません。</p></details>
     <details><summary>営業の平均年齢が高く、パソコンが苦手な人ばかりです。</summary><p>初日に環境の準備から一緒にやります。<br>AIへの指示は話し言葉で、スマホからでも出せます。<br>自己流の癖がない方のほうが、型どおりに覚えて早く回り始めることが多いです。</p></details>
     <details><summary>損保代理店です。営業より事務のほうが多いのですが。</summary><p>左腕の型は、更改案内・満期フォロー・見積の下書き・事故受付の連絡文にそのまま使えます。<br>診断のときに、御社で毎月くり返している事務を挙げていただければ、どれがAIに回るかをその場で数字にします。</p></details>
     <details><summary>委託型の募集人（個人事業主）が中心です。対象になりますか。</summary><p>研修は受けられます。<br>ただし助成金の対象は雇用保険の被保険者の分だけなので、委託型の方の分は助成の対象外です。<br>少人数なら、社長と右腕の方から始める形をおすすめすることもあります。</p></details>
@@ -757,7 +875,6 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   <div class="wrap">
     <div class="eyebrow">ここからの流れ</div>
     <h2>まずは、<span class="g">導入資料を受け取る</span>だけで大丈夫です。</h2>
-    <div class="mrow" style="margin:0 0 18px"><img class="masc" src="img/mascot_invite.webp" alt="" width="92" height="92" loading="lazy"><div class="bub">まずは資料だけ。<br>売り込みは、しません。</div></div>
     <ol class="steps">
       <li><i>1</i><b>LINEかメールで、導入資料を受け取る</b><span>御社の営業部で何が変わるか、進め方、線引き、助成金、流れをまとめた資料と、セルフ換算シートをお送りします。<br>読むだけで構いません</span></li>
       <li><i>2</i><b>気になったら、無料の換算診断（Zoom 30〜45分）</b><span>LINEなら「診断」と一言。<br>メールなら返信で。<br>最初の15分で、右腕と左腕をその場で動かしてお見せします。<br>そのあと、営業の方の1週間の仕事を挙げていただき、年間いくら分がAIに回せるかを数字にします</span></li>
@@ -765,22 +882,6 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
       <li><i>4</i><b>（助成金を使う場合）社労士との日程調整</b><span>計画届は研修開始の前に提出が必要です。<br>御社の顧問社労士か労働局にご相談ください</span></li>
       <li><i>5</i><b>研修（3時間×4回）→ 修了後30日間の質問対応</b><span>あいだに実務を挟みながら進めます</span></li>
     </ol>
-  </div>
-</section>
-
-<!-- 16 営業の方へ -->
-<section class="alt light">
-  <div class="wrap">
-    <div class="eyebrow">営業の方が読んでいる場合</div>
-    <h2>このページを、<span class="g">社長に送ってください。</span></h2>
-    <p>会社で導入するかどうかは社長が決めることですが、「うちでもやってほしい」と伝えることはできます。<br>下の文面をそのまま送れます。</p>
-    <div class="copybox" id="bossText">お疲れさまです。保険営業の集客・提案・フォローと事務をAIに任せて、訪問ゼロで年380件の相談を回している会社の話を読みました。
-うちの営業も、提案書と更改案内とフォロー連絡をAIに任せる型を作れば、面談の数を増やせそうです。
-自社の実際の案件を教材にする研修で、まず無料の診断で「営業1人あたり年間いくら分か」が数字で出るそうです。従業員が受ける分は助成金の対象になることもあるとのこと。
-一度、数字だけでも見てみませんか。
-（ページ）__URL__</div>
-    <button class="btn ghost" id="copyBtn" type="button" style="margin-top:0">この文面をコピーする</button>
-    <p class="btn-note" id="copyNote">コピーすると、末尾にこのページのURLが入ります。</p>
   </div>
 </section>
 
@@ -796,10 +897,10 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
         <li>研修の進み方（4回・12時間）と持ち帰るもの</li>
         <li>AIに渡すもの・渡さないものの線引きの例（保険会社への説明にも使える形）</li>
         <li>人数別の形と、助成金の仕組み（支給の保証はしません）</li>
-        <li>営業1人あたり「年間いくら分」を自分で出せるセルフ換算シート</li>
+        <li>営業1人あたり「年間いくら分」を自分で出せる、セルフ換算診断の入口</li>
       </ul>
-      <a class="btn cta-line" href="https://utage-system.com/line/open/3AguqHadI5TO?mtid=RzR5gzoCXlgw" data-ev="LineTap">LINEで導入資料を受け取る<small>友だち追加だけ・無料・売り込みなし</small></a>
-      <a class="btn mail cta-mail" href="https://utage-system.com/r/3AguqHadI5TO/register?mtid=7OmgaU9KI0iz" data-ev="MailTap" target="_blank" rel="noopener">メールで受け取る<small>お名前とメールアドレスだけ</small></a>
+      <a class="btn cta-line" href="https://utage-system.com/line/open/3AguqHadI5TO?mtid=RzR5gzoCXlgw" data-ev="LineTap">LINEで導入資料を受け取る<small>友だち追加だけ・無料</small></a>
+      <a class="btn mail cta-mail" href="https://utage-system.com/r/3AguqHadI5TO/register?mtid=7OmgaU9KI0iz" data-ev="MailTap">メールで導入資料を受け取る<small>お名前とメールアドレスだけ・いつでも解除できます</small></a>
     </div>
     <p class="btn-note">先に自分で目安を出したい方は、<a href="https://fulfull.jp/ai-shindan/?ref=chatgpt_lp" style="color:var(--gold-l)">セルフ換算診断（無料・送信なし）</a> もあります。</p>
   </div>
@@ -821,7 +922,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
       <a href="https://fulfull.jp/contact/">お問い合わせ</a>
       <a href="https://fulfull.jp/privacy-policy/">プライバシーポリシー</a>
     </div>
-    <p>作るまでが、研修。<br>出すかどうかは、御社と保険会社のルール。<br>fulfull株式会社</p>
+    <p>AIが下書きして、人が決める。<br>その型を、御社に。<br>fulfull株式会社</p>
   </div>
 </footer>
 
@@ -854,7 +955,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     var f=document.getElementById('nameForm'), inp=document.getElementById('coName'), bub=document.getElementById('heroBub');
     function apply(n){ n=(n||'').trim().slice(0,20); if(!n) return;
       document.querySelectorAll('.co').forEach(function(e){e.textContent=n+'さま';});
-      bub.innerHTML='はじめまして。<br>'+n.replace(/[<>&]/g,'')+'さまの右腕と左腕、お任せください。';
+      bub.innerHTML=n.replace(/[<>&]/g,'')+'さまのやり方は、<br>研修の最初に一緒に決めますから。';
       try{sessionStorage.setItem('co_name',n);}catch(e){} try{fxTrack('NameSet',{lp:'hojin_gpt'});}catch(e){} }
     f.addEventListener('submit',function(ev){ev.preventDefault();apply(inp.value);inp.blur();});
     try{var saved=sessionStorage.getItem('co_name'); if(saved){inp.value=saved;apply(saved);}}catch(e){}
@@ -867,6 +968,40 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
       sum.hidden=on.length<3; }
     chips.forEach(function(c){ c.addEventListener('click',function(){ var v=c.getAttribute('aria-pressed')==='true'; c.setAttribute('aria-pressed',v?'false':'true'); render(); try{fxTrack('ChipTap',{lp:'hojin_gpt',chip:c.textContent});}catch(e){} }); });
   })();
+  // refごとに「着いた理由への答え」と社長に送る文面を出し分ける（素のHTMLは既定）
+  (function(){
+    var k=(String(window.fxRef||'').match(/a[1-4]/)||[''])[0];
+    var W={
+      a1:['提案書を作っている方へ','提案書の下書きを、<span class="g">毎回同じ質で</span>','ChatGPTに提案書を書かせると、お客様の前提や御社の言い回しを、毎回打ち直すことになります。<br>研修では、その前提を先にAIに渡しておきます。<br>あとは面談メモを渡すだけで、御社の型の下書きが出ます。','面談メモから提案の骨子が出るまでを、実例で。','#kenshu'],
+      a2:['事務を担当している方へ','更改案内と満期フォローを、<span class="g">朝の下書きに</span>','更改案内、満期のフォロー、問い合わせへの返信。<br>1通ずつAIに頼んでいると、頼む手間が残ります。<br>文面の型と対象リストを最初に決めておけば、朝には下書きが並び、人は確認して送るところから始められます。','事務のどの仕事がAIに回るか、手順書になるまで。','#got'],
+      a3:['社内のルールを考えている方へ','「AIに渡していいもの」を、<span class="g">文書に</span>','社員にAIを使ってもらう前に決めたいのは、道具より先に線引きです。<br>お客様の情報は、どこまで渡してよいか。<br>研修の第1回で、それを御社の規程として文書にします。<br>保険会社にAIの利用ルールを聞かれたときも、そのまま出せる形です。','AIが引き受けることと、人が決めることの分け方。','#split'],
+      a4:['研修の費用を調べている方へ','御社の案件が教材の、<span class="g">12時間の研修</span>','2026年8月の改正で、汎用的なプロンプト講座は人材開発支援助成金の対象外になりました。<br>この研修は、御社の面談メモや更改リストを教材にする12時間なので、対象になることもあります。<br>稟議や役員会に回せる形の導入資料も、お送りしています。','助成金の仕組みと、対象になった場合の目安。','#hiyou']
+    };
+    var B={
+      a1:'お疲れさまです。\n提案書をChatGPTで作っているのですが、お客様の前提を毎回打ち直していて、なかなか思った形になりません。\n面談メモを渡すだけで、うちの型で提案の下書きが出るようにする研修があるそうです。\n教材はうちの実際の案件とのこと。\n資料が無料で取れるので、一度見てもらえますか。',
+      a2:'社長、ご相談です。\n更改案内と満期フォローの文面づくりに、毎月かなり時間を取られています。\n代理店向けのAI研修で、文面の型を作っておき、朝には下書きが並んでいる状態にできるそうです。\nこちらは確認して送るだけ。\nうちの更改リストを教材にするそうなので、無料の資料だけでも見ていただけませんか。',
+      a3:'AIを使う社員が増えてきたので、お客様の情報をどこまで入れていいか、会社として決めておいた方がよさそうです。\n保険代理店向けのAI研修で、初回に「AIに渡していいもの・渡さないもの」をうちの規程として文書にしてくれるそうです。\n保険会社に聞かれたときにも使える形とのこと。\n資料だけ取り寄せてみてもいいですか。',
+      a4:'社長、研修の件で1つ共有です。\nうちの実際の案件を教材にする12時間の代理店向けAI研修で、人材開発支援助成金の対象になることもあるそうです。\n2026年8月の改正で汎用的なAI講座は対象外になったので、そこが違いのようです。\n仕組みをまとめた導入資料が無料で取れます。\n稟議を書く前に、一度見てもらえますか。'
+    };
+    window.__gptKey=k;
+    if(W[k]){ var w=W[k];
+      document.getElementById('whyE').textContent=w[0];
+      document.getElementById('whyH').innerHTML=w[1];
+      document.getElementById('whyP').innerHTML=w[2];
+      document.getElementById('whyN').textContent=w[3];
+      document.getElementById('whyA').setAttribute('href',w[4]);
+      document.getElementById('bossText').textContent=B[k]+'\n（ページ）__URL__';
+    }
+    // 換算診断へのリンクにも、来たときのrefを引き継ぐ
+    document.querySelectorAll('a[href*="fulfull.jp/ai-shindan/"]').forEach(function(a){ a.href='https://fulfull.jp/ai-shindan/?ref='+encodeURIComponent(k?('chatgpt_'+k):'chatgpt_lp'); });
+    // PCではメールを主ボタンに（PCのLINEボタンはQR画面になるため）
+    if(document.documentElement.className.indexOf('is-pc')>=0){
+      document.querySelectorAll('.ctabox').forEach(function(b){ var l=b.querySelector('.cta-line'), m=b.querySelector('.cta-mail'); if(!l||!m) return;
+        b.insertBefore(m,l); m.classList.remove('mail'); m.classList.add('pcmain'); l.classList.add('mail');
+        l.firstChild.textContent='スマホのLINEで受け取る'; var sm=l.querySelector('small'); if(sm) sm.textContent='QRコードが開きます・無料'; });
+      var st=document.querySelector('#sticky a'); if(st){ st.href=document.querySelector('.cta-mail').href; st.setAttribute('data-ev','MailTap'); st.textContent='メールで導入資料を受け取る（無料）'; }
+    }
+  })();
   // 計測
   document.querySelectorAll('[data-ev]').forEach(function(a){a.addEventListener('click',function(){
     var ev=a.getAttribute('data-ev'); try{fxTrack(ev,{lp:'hojin_gpt'});}catch(e){}
@@ -874,11 +1009,11 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   });});
   // 社長に送る文面
   var box=document.getElementById('bossText'), btn=document.getElementById('copyBtn'), note=document.getElementById('copyNote');
-  var url=location.origin+location.pathname+'?ref=boss';
+  var url=location.origin+location.pathname+'?ref=boss_'+(window.__gptKey||'gpt');
   box.textContent=box.textContent.replace('__URL__',url);
   btn.addEventListener('click',function(){
     var t=box.textContent;
-    function done(){btn.textContent='コピーしました';note.textContent='LINEやメールに貼り付けて送ってください。';try{fxTrack('BossCopy',{lp:'hojin'});}catch(e){}}
+    function done(){btn.textContent='コピーしました';note.textContent='LINEやメールに貼り付けて送ってください。';try{fxTrack('BossCopy',{lp:'hojin_gpt'});}catch(e){}}
     if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){fallback();});}else{fallback();}
     function fallback(){var r=document.createRange();r.selectNodeContents(box);var sel=window.getSelection();sel.removeAllRanges();sel.addRange(r);try{document.execCommand('copy');done();}catch(e){note.textContent='選択した文面を、長押しまたは右クリックでコピーしてください。';}}
   });
