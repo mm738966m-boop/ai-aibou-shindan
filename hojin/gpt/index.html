@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://mm738966m-boop.github.io/ai-aibou-shindan/hojin/og.png">
 <meta property="og:site_name" content="fulfull株式会社">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="build" content="hojin-gpt-v3.2">
+<meta name="build" content="hojin-gpt-v3.3">
 <meta name="robots" content="noindex">
 <script>document.documentElement.className+=(/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)?" is-sp":" is-pc");</script>
 <link rel="canonical" href="https://mm738966m-boop.github.io/ai-aibou-shindan/hojin/">
@@ -186,6 +186,13 @@ ol.num li:before{content:counter(n);position:absolute;left:0;top:2px;width:40px;
 .whynext{margin:14px 0 0;font-weight:900;font-size:17.5px;line-height:1.7}
 .whynext a{color:var(--gold-d)}
 .ph span{display:inline-block}
+.fold{margin-top:10px}
+.foldbtn{cursor:pointer;font:inherit;font-weight:900;font-size:17.5px;padding:11px 20px;border-radius:999px;border:2px solid currentColor;background:none;color:inherit}
+.foldbtn:after{content:"　＋"}
+.foldbtn[aria-expanded="true"]:after{content:"　−"}
+.foldbtn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.foldbody{margin-top:18px}
+.tablebox td,.tablebox th,.got li strong{word-break:auto-phrase}
 .peek{margin:14px 0 0;font-size:17px;font-weight:700}
 .peek a{color:var(--gold-l)}
 .h3big{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-size:clamp(22px,5.8vw,28px);line-height:1.45;font-weight:800;margin:6px 0 12px}
@@ -410,6 +417,8 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   <div class="wrap">
     <div class="eyebrow">いま、業界で起きていること</div>
     <h2>大手はもう、<br>営業職員全員に<span class="g">AIを配り始めました。</span></h2>
+    <div class="fold"><button type="button" class="foldbtn" aria-expanded="false">業界の数字を見る（出典つき）</button><div class="foldbody" hidden>
+
     <div class="stats">
       <div class="stat"><div class="n" data-count="36000">36,000</div><div class="l">明治安田生命が営業職員 約3万6,000人 全員にAIエージェントを導入</div></div>
       <div class="stat"><div class="n">72<small>%</small>→56<small>%</small></div><div class="l">生保の加入経路に占める「営業職員」の割合（2003→2021年度）</div></div>
@@ -419,6 +428,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     <p>大手は「配る」段階に入りました。<br>一方で、中小の代理店が同じものを買おうとすると、システム会社の見積もりは桁が違います。</p>
     <p>だから、買うのではなく<strong>作る</strong>。<br>営業1人ひとりが自分の右腕と左腕を持ち、その作り方を会社の型として残す。<br><strong>これは、社員数人の代理店のほうが早く形になります。</strong></p>
     <p class="src">出典: 生命保険協会「2025年版 生命保険の動向」／生命保険協会・生命保険文化センター調査（金融庁提出資料 2022）／日本経済新聞 2025年報道／日本損害保険協会「2024年度損害保険代理店統計」</p>
+    </div></div>
   </div>
 </section>
 
@@ -776,6 +786,8 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   <div class="wrap">
     <div class="eyebrow">講師</div>
     <h2>普通の会社員でした。<br><span class="g">気づいたら、こうなっていました。</span></h2>
+    <div class="fold"><button type="button" class="foldbtn" aria-expanded="false">講師の経歴と、ここまでの話を読む</button><div class="foldbody" hidden>
+
     <div class="prof">
       <img src="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/morikawa.jpg" alt="森川満章" loading="lazy">
       <div><div class="nm">森川 満章</div><div class="rl">fulfull株式会社 代表取締役／お金のプロ・金融AIカレッジ主宰<br>1986年 岩手県出身・横浜在住</div></div>
@@ -796,6 +808,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
       <div class="stat"><div class="n">2.7<small>人分</small></div><div class="l">月4万円のAI利用料で回している、社員換算の仕事量</div></div>
     </div>
     <p class="src">登壇・研修実績（順不同・敬称略）：東京海上日動あんしん生命／積水ハウス／法人会／商工会議所（ビジネスアドバイザー）／信用金庫（創業塾）／小学校（お金の授業）。いずれも登壇・研修の実績であり、各社・各団体が本研修を推奨するものではありません。fulfull自社集計（2026年9月）。</p>
+    </div></div>
   </div>
 </section>
 
@@ -804,8 +817,11 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   <div class="wrap">
     <div class="eyebrow">まず、1分だけ</div>
     <h2>fulfullが、どんな会社か。<br><span class="g">1分の動画</span>で先に見てください。</h2>
+    <div class="fold"><button type="button" class="foldbtn" aria-expanded="false">会社紹介の動画を見る（1分・音が出ます）</button><div class="foldbody" hidden>
+
     <div class="figure"><video class="own" src="https://fulfull.jp/wp-content/uploads/2026/08/seminar-op.mp4" poster="https://fulfull.jp/wp-content/uploads/2026/08/seminar-op-poster.jpg" controls playsinline preload="metadata"></video></div>
     <p class="cap">音が出ます。訪問ゼロで年380件の相談を回している会社の、話し方と雰囲気です。</p>
+    </div></div>
   </div>
 </section>
 
@@ -832,6 +848,8 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   <div class="wrap">
     <div class="eyebrow">正直に</div>
     <h2>こんな会社には、<span class="g">向いていません。</span></h2>
+    <div class="fold"><button type="button" class="foldbtn" aria-expanded="false">向いていない会社と、6つの約束を読む</button><div class="foldbody" hidden>
+
     <ul class="ng">
       <li>お客様への説明や契約の手続きまで、AIに任せたいと考えている会社</li>
       <li>保険会社の募集規程や社内ルールを、後回しにしてよいと考えている会社</li>
@@ -847,6 +865,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
       <li>成果や削減額を保証する言い方はしません。<br>目安は目安として伝えます</li>
       <li>お客様に出す文書は、御社の規程と保険会社のルールが優先。<br>そこは一切曲げません</li>
     </ul>
+    </div></div>
   </div>
 </section>
 
@@ -996,7 +1015,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     }
   })();
   // 行末に1〜2文字だけ落ちるのを防ぐ（各文の末尾5文字を1かたまりにする。出し分けのあとに実行）
-  document.querySelectorAll('p, li, li > span, summary, dd, td, .bub, h2, h2 .g, h3, h3 .g, .btn, .btn small, #whyN, .stat .l').forEach(function(el){
+  document.querySelectorAll('p, li, li > span, li > strong, summary, dd, td, .bub, h2, h2 .g, h3, h3 .g, .btn, .btn small, #whyN, .stat .l').forEach(function(el){
     if(el.closest('.ph')||el.closest('.copybox')) return;
     Array.prototype.slice.call(el.childNodes).forEach(function(n){
       if(n.nodeType!==3) return; var nx=n.nextSibling; if(nx && nx.nodeName!=='BR' && nx.nodeName!=='SMALL') return;
@@ -1005,6 +1024,8 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
       n.data=t.slice(0,-5); el.insertBefore(tail,nx||null);
     });
   });
+  // 畳んだ章を開く
+  document.querySelectorAll('.foldbtn').forEach(function(b){ b.addEventListener('click',function(){ var body=b.nextElementSibling, open=b.getAttribute('aria-expanded')==='true'; b.setAttribute('aria-expanded',open?'false':'true'); body.hidden=open; try{fxTrack('FoldOpen',{lp:'hojin_gpt',label:b.textContent});}catch(e){} }); });
   // 計測
   document.querySelectorAll('[data-ev]').forEach(function(a){a.addEventListener('click',function(){
     var ev=a.getAttribute('data-ev'); try{fxTrack(ev,{lp:'hojin_gpt'});}catch(e){}
