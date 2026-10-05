@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://mm738966m-boop.github.io/ai-aibou-shindan/hojin/og.png">
 <meta property="og:site_name" content="fulfull株式会社">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="build" content="hojin-gpt-v3.1">
+<meta name="build" content="hojin-gpt-v3.2">
 <meta name="robots" content="noindex">
 <script>document.documentElement.className+=(/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)?" is-sp":" is-pc");</script>
 <link rel="canonical" href="https://mm738966m-boop.github.io/ai-aibou-shindan/hojin/">
@@ -203,7 +203,8 @@ ol.num li:before{content:counter(n);position:absolute;left:0;top:2px;width:40px;
 .got li strong{color:var(--ink);display:block}
 .btn.pcmain{background:var(--gold);color:var(--navy-d);margin-top:0}
 .btn.pcmain:hover{filter:brightness(1.05)}
-.is-pc #sticky{left:auto;right:18px;bottom:18px;padding:0;background:none;border:0;backdrop-filter:none}
+.is-pc #sticky{left:auto;right:18px;bottom:18px;padding:0;background:none;border:0;backdrop-filter:none;transform:translateY(260%)}
+.is-pc #sticky.show{transform:none}
 .is-pc #sticky .btn{width:auto;padding:13px 22px;font-size:17px;background:var(--gold);color:var(--navy-d)}
 @media(min-width:760px){.split,.gots{grid-template-columns:1fr 1fr}}
 /* day timeline */
@@ -995,11 +996,11 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     }
   })();
   // 行末に1〜2文字だけ落ちるのを防ぐ（各文の末尾5文字を1かたまりにする。出し分けのあとに実行）
-  document.querySelectorAll('p, li, summary, dd, .bub, h2, h2 .g, h3, h3 .g, .btn, .btn small, #whyN, .stat .l').forEach(function(el){
+  document.querySelectorAll('p, li, li > span, summary, dd, td, .bub, h2, h2 .g, h3, h3 .g, .btn, .btn small, #whyN, .stat .l').forEach(function(el){
     if(el.closest('.ph')||el.closest('.copybox')) return;
     Array.prototype.slice.call(el.childNodes).forEach(function(n){
       if(n.nodeType!==3) return; var nx=n.nextSibling; if(nx && nx.nodeName!=='BR' && nx.nodeName!=='SMALL') return;
-      var t=n.data.replace(/\s+$/,''); if(t.replace(/^\s+/,'').length<8) return;
+      var t=n.data.replace(/\s+$/,''); if(t.replace(/^\s+/,'').length<6) return;
       var tail=document.createElement('span'); tail.style.whiteSpace='nowrap'; tail.textContent=t.slice(-5);
       n.data=t.slice(0,-5); el.insertBefore(tail,nx||null);
     });
