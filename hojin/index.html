@@ -228,6 +228,8 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   var q=new URLSearchParams(location.search);
   var ref=q.get('ref')||q.get('utm_source')||'';
   try{ if(ref){sessionStorage.setItem(KEY,ref)} else {ref=sessionStorage.getItem(KEY)||'direct'} }catch(e){ ref=ref||'direct' }
+  /* 完了ページ（別タブ）の経路分け用。最後に見たLPで上書きする */
+  try{ localStorage.setItem('hojin_src', JSON.stringify({ref:ref,lp:'hojin',t:Date.now()})) }catch(e){}
   window.fxRef=ref;
   window.fxTrack=function(name,params){
     try{ fbq('trackCustom',name,Object.assign({ref:window.fxRef,page:document.title},params||{})) }catch(e){}

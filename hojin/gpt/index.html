@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://mm738966m-boop.github.io/ai-aibou-shindan/hojin/og.png">
 <meta property="og:site_name" content="fulfull株式会社">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="build" content="hojin-gpt-v3.4">
+<meta name="build" content="hojin-gpt-v3.5">
 <meta name="robots" content="noindex">
 <script>document.documentElement.className+=(/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)?" is-sp":" is-pc");</script>
 <link rel="canonical" href="https://mm738966m-boop.github.io/ai-aibou-shindan/hojin/">
@@ -295,6 +295,8 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   var q=new URLSearchParams(location.search);
   var ref=q.get('ref')||q.get('utm_source')||'';
   try{ if(ref){sessionStorage.setItem(KEY,ref)} else {ref=sessionStorage.getItem(KEY)||'direct'} }catch(e){ ref=ref||'direct' }
+  /* 完了ページ（別タブ）が経路を読めるように localStorage にも残す。GPT経路ならMeta/Googleの成果を送らない判定に使う */
+  try{ localStorage.setItem('hojin_src', JSON.stringify({ref:ref,lp:'hojin_gpt',t:Date.now()})) }catch(e){}
   window.fxRef=ref;
   window.fxTrack=function(name,params){
     try{ fbq('trackCustom',name,Object.assign({ref:window.fxRef,page:document.title},params||{})) }catch(e){}

@@ -14,18 +14,23 @@
 (function(){
   var q=new URLSearchParams(location.search);
   window.HOJIN_TEST = q.get('test')==='1'; /* 表示確認用：?test=1 のときは成果を送らない */
+  /* 経路分け：GPT広告用LP（hojin/gpt/）から来た登録は Meta/Google に送らない（広告ごとの成果を混ぜない）。
+     LP側が localStorage.hojin_src に {ref,lp,t} を残す。7日より古いものは無視 */
+  window.HOJIN_SRC={};
+  try{ var src=JSON.parse(localStorage.getItem('hojin_src')||'null'); if(src&&src.t&&Date.now()-src.t<7*24*3600*1000){ window.HOJIN_SRC=src; } }catch(e){}
+  window.HOJIN_IS_GPT = (window.HOJIN_SRC.lp==='hojin_gpt') || /^chatgpt/.test(String(window.HOJIN_SRC.ref||''));
   window.HOJIN_EVENT_ID='hojin_reg_'+Date.now()+'_'+Math.random().toString(36).slice(2,8);
 })();
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','1510200123755162');fbq('track','PageView');
-if(!window.HOJIN_TEST){fbq('track','CompleteRegistration',{content_name:'hojin_mail'},{eventID:window.HOJIN_EVENT_ID});}
+if(!window.HOJIN_TEST&&!window.HOJIN_IS_GPT){fbq('track','CompleteRegistration',{content_name:'hojin_mail'},{eventID:window.HOJIN_EVENT_ID});}
 </script>
 <!-- Google広告（fulfull AW-763380159）: 成果=法人LP_メール登録完了 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-763380159"></script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());gtag('config','AW-763380159');
-if(!window.HOJIN_TEST){gtag('event','conversion',{send_to:'AW-763380159/rJgGCJOK6IUdEL-DgewC',transaction_id:window.HOJIN_EVENT_ID});}
+if(!window.HOJIN_TEST&&!window.HOJIN_IS_GPT){gtag('event','conversion',{send_to:'AW-763380159/rJgGCJOK6IUdEL-DgewC',transaction_id:window.HOJIN_EVENT_ID});}
 </script>
 <style>
 :root{--navy:#22293A;--ink:#22293A;--sub:#4F586B;--bg:#FBF8F3;--paper:#FFFFFF;--soft:#F3EEE4;--line:#E5DED2;--gold:#DFA23C;--gold-d:#A9771B;--green:#06C755}
