@@ -579,7 +579,9 @@ var SEMINAR = {
   var $ = function(id){ return document.getElementById(id); };
   var links = document.querySelectorAll('.cta-link');
   window.SEMINAR_OPEN = open.length > 0;
-  links.forEach(function(a){ a.href = open.length ? S.register : S.waitlist.url; });
+  var fxr = ''; try { fxr = window.fxRef || sessionStorage.getItem('fx_ref') || ''; } catch(e) {}
+  var regUrl = S.register + (fxr && fxr !== 'direct' ? '?ref=' + encodeURIComponent(fxr) : '');
+  links.forEach(function(a){ a.href = open.length ? regUrl : S.waitlist.url; });
   if (open.length === S.sessions.length && !t) return;           // 全回が受付中なら、書かれたままでよい
   if (open.length) {
     var n = open.length;

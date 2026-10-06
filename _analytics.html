@@ -10,7 +10,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 (function(){
   var KEY='fx_ref';
   var q=new URLSearchParams(location.search);
-  var ref=q.get('ref')||q.get('utm_source')||'';
+  var ref=q.get('ref')||(q.get('utm_source')?(q.get('utm_source')+(q.get('utm_content')?'_'+q.get('utm_content'):'')):'')||'';
   try{ if(ref){sessionStorage.setItem(KEY,ref)} else {ref=sessionStorage.getItem(KEY)||'direct'} }catch(e){ ref=ref||'direct' }
   window.fxRef=ref;
   window.fxTrack=function(name,params){
