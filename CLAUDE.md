@@ -55,4 +55,5 @@
 - `hojin/thanks/` 法人のメール登録 受付完了（Google・Metaの登録完了計測）
 - `hojin/` 保険代理店・営業組織向けLP「おじいちゃんでもできる、保険営業のAI完全自動化」（法人・紺×金の勉強会LPと同系。CTA=fulfull.jpの換算診断フォーム ?ref=hojin_lp。イベント ToShindan/MailTap/BossCopy/ToSeminar・ボタン押下でLead）
 - `honkoza/` 本講座1期の案内ページ（勉強会参加者で迷っている人向け・noindex）。未来→原因→解決→日程→手に入るもの→3プラン（真ん中推し）→費用の理由→特典→向いていない人→声→FAQ→講師→次の一歩。CTA=UTAGE申込ページ p/4NqBcs0FdiAx と個別相談 event/wQvZacCdkROE（?ref=honkoza_◯◯ を自動付与）。イベント ToApply/ToConsult/PlansView。残席・決定人数はHTML直書き＝入金が増えたら手で更新。画像は honkoza/img/（日程表は 本科/E_1期運営/図解/日程表_1期.png が正本）
+- `radio/` Voicy限定10本「保険屋じゃない保険営業の話」のまとめページ（noindex）。各回の概要欄から ?ref=voicy_mind で来る。放送を公開したら index.html の EPISODES のその回の url に限定公開リンクを入れる（空のあいだは「準備中」表示）。日付のある告知は置かない。CTA=診断ページ経由でLINE（ToShindan）・再生は RadioPlay
 - `kiyaku/` 受講規約　`tokusho/` 特商法
