@@ -45,7 +45,7 @@
 ## 3. ディレクトリ
 
 - `index.html` お金のプロのAI相棒診断（5タイプ・5問）
-- `seminar/` AI仕事術勉強会LP（常設・日程はJSのSEMINAR設定）
+- `seminar/` AI仕事術勉強会LP（常設・日程はJSのSEMINAR設定）。v21（2026-10-13）＝いつもの緑系ティール×金・丸ゴシック極太・そろばんロボが案内役（img/ro_*.webp＝Geminiで同タッチ生成・img/mascot_*.webp）。動き＝上の進みバーをロボが歩く・出てくる順のアニメ・数字カウント・2時間→2分の横バー・約束スタンプ。初心者向け＝点線の用語（class yg・data-yg）をタップでロボが言い換える下パネル（用語辞書はJSの Y）・「当てはまる」をタップで数える。孤立文字は fixOrphans()（文末4〜8文字をnowrap）で全幅自動対策。イベント ToRegister/YogoOpen/PainTap＋Lead。OG=og_v4.png。旧v20（紺×金×明朝）は git 履歴 e41ccf9 以前
 - `seminar/kit/` 参加者向け設定文の配布ページ
 - `voicy/` 企業向けAI研修LP（Voicyコラボ由来）
 - `voicy/shindan/` 会社のAI度診断（業務別に時間・単価を調整→年間金額と費用対効果）

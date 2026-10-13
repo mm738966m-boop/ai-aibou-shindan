@@ -3,455 +3,590 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>おじいちゃんでもできる、保険営業のAI完全自動化｜AI仕事術勉強会（無料・Zoom）</title>
 <meta name="description" content="移動ゼロ。集客も、提案も、フォローも、AIの右腕と左腕が回す。パソコンが苦手でも組み立てられる仕組みを、90分、目の前で動かして見せます。Zoom・無料。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="おじいちゃんでもできる、保険営業のAI完全自動化。">
 <meta property="og:description" content="Zoom・無料。移動ゼロ。集客も提案もフォローも、AIの右腕と左腕が回す。90分の実演。">
 <meta property="og:url" content="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/">
-<meta property="og:image" content="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/og_v3.png">
+<meta property="og:image" content="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/og_v4.png">
 <meta property="og:site_name" content="金融AIカレッジ">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="build" content="v20">
+<meta name="build" content="v21">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Klee+One:wght@400;600&display=swap">
-<!-- Meta Pixel（fulfull_お金の勉強会_自社ピクセル） -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@800;900&family=Zen+Maru+Gothic:wght@500;700;900&family=Klee+One:wght@400;600&display=swap">
+<!-- ===== 計測（Meta Pixel 1510200123755162）===== -->
 <script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','1510200123755162');fbq('track','PageView');
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+(function(){
+  var KEY='fx_ref';
+  var q=new URLSearchParams(location.search);
+  var ref=q.get('ref')||(q.get('utm_source')?(q.get('utm_source')+(q.get('utm_content')?'_'+q.get('utm_content'):'')):'')||'';
+  try{ if(ref){sessionStorage.setItem(KEY,ref)} else {ref=sessionStorage.getItem(KEY)||'direct'} }catch(e){ ref=ref||'direct' }
+  window.fxRef=ref;
+  window.fxTrack=function(name,params){
+    try{ fbq('trackCustom',name,Object.assign({ref:window.fxRef,page:document.title},params||{})) }catch(e){}
+  };
+  fbq('init','1510200123755162');
+  fbq('track','PageView',{ref:ref});
+})();
 </script>
 <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1510200123755162&ev=PageView&noscript=1"></noscript>
 <style>
-:root{--navy:#22293A;--navy-d:#171C28;--ink:#22293A;--sub:#4F586B;--bg:#FBF8F3;--paper:#FFFFFF;--soft:#F3EEE4;--line:#E5DED2;--gold:#DFA23C;--gold-d:#A9771B;--gold-l:#F1D79A;--line-green:#06C755}
+:root{--teal:#0E7C86;--deep:#0A5A62;--ink:#1C3236;--ink2:#4A6468;--soft:#EEF6F7;--line:#D5E4E6;--gold:#A87A1F;--goldfill:#D9A441;--goldbg:#FBF4E3;--bg:#fff;--dot:#D7E6E8;--mint:#CDEBEE;--cream:#FFFBF2;--paper:#F6F3E8}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Zen Kaku Gothic New","Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;font-size:19.5px;font-weight:500;line-height:1.9;-webkit-text-size-adjust:100%;overflow-x:hidden}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;font-size:19px;font-weight:500;line-height:1.9;-webkit-text-size-adjust:100%;overflow-x:hidden;font-feature-settings:"palt";letter-spacing:.01em}
 img,video{max-width:100%;display:block}
 .wrap{max-width:720px;margin:0 auto;padding:0 20px}
-p{margin:0 0 16px}
+p{margin:0 0 16px;text-wrap:pretty;word-break:auto-phrase}
 strong{font-weight:900}
+.hd,h1,h2,h3{font-family:"M PLUS Rounded 1c","Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;font-weight:900}
+.dots{background-image:radial-gradient(var(--dot) 1.6px,transparent 1.6px);background-size:28px 28px}
+.mk{background:linear-gradient(transparent 60%,var(--goldbg) 60%);padding:0 3px}
+.em{color:var(--teal)}
+/* progress walker */
+#prog{position:fixed;left:0;right:0;top:0;height:7px;background:rgba(213,228,230,.6);z-index:40}
+#prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),#5DB7BF);transition:width .25s linear}
+#walker{position:absolute;top:-2px;width:42px;height:42px;transform:translate(-50%,-70%);transition:left .25s linear;left:0;filter:drop-shadow(0 2px 3px rgba(0,0,0,.18));pointer-events:none}
 /* hero */
-.hero{background:linear-gradient(165deg,#2A3245 0%,var(--navy-d) 100%);color:#fff;padding:36px 0 40px;position:relative;overflow:hidden}
-.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(700px 320px at 90% 0%,rgba(223,162,60,.20),transparent 70%);pointer-events:none}
-.hero .wrap{position:relative;max-width:1040px;padding:0 18px}
-.hero-grid{display:grid;grid-template-columns:1fr;gap:26px;align-items:center}
-.hero-img{border-radius:22px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.35);aspect-ratio:4/5;max-height:420px}
-.hero-img img{width:100%;height:100%;object-fit:cover}
-.date{display:inline-block;background:rgba(241,215,154,.14);border:1px solid rgba(241,215,154,.55);color:var(--gold-l);font-size:15px;font-weight:700;border-radius:999px;padding:6px 14px;letter-spacing:.04em;margin-bottom:16px}
-h1{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-size:clamp(26px,7.1vw,44px);line-height:1.4;font-weight:800;margin:0 0 16px;letter-spacing:-.01em}
-h1 .g{color:var(--gold-l)}
-.lead{font-size:19.5px;color:#DCE3EE;margin-bottom:22px}
-.btn{display:block;width:100%;background:var(--line-green);color:#fff;text-decoration:none;text-align:center;font-size:21px;font-weight:900;border-radius:999px;padding:19px 18px;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .15s}
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#EAF5F6 0%,#fff 100%);padding:48px 0 34px}
+.hero .wrap{position:relative;max-width:1040px;padding:0 20px}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:24px;align-items:center}
+.date{display:inline-block;position:relative;background:#fff;border:2px solid var(--line);color:var(--deep);font-size:15.5px;font-weight:700;border-radius:20px;padding:7px 14px 7px 30px;margin-bottom:14px;line-height:1.5;text-align:left}
+.date:before{content:"";position:absolute;left:12px;top:13px;width:12px;height:12px;border-radius:50%;background:var(--goldfill)}
+h1{font-size:clamp(26px,7.1vw,40px);line-height:1.38;margin:0 0 14px;letter-spacing:0}
+h1 .g{color:var(--teal);background:linear-gradient(transparent 62%,#F6E7B9 62%);padding:0 2px}
+.lead{font-size:19px;color:var(--ink2);margin-bottom:22px;font-weight:700}
+.btn{position:relative;display:block;width:100%;background:var(--teal);color:#fff;text-decoration:none;text-align:center;font-size:21px;font-weight:900;border-radius:999px;padding:19px 18px;box-shadow:0 10px 26px rgba(14,124,134,.32);transition:transform .15s,box-shadow .15s;font-family:"M PLUS Rounded 1c","Zen Maru Gothic",sans-serif}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(14,124,134,.38)}
 .btn:active{transform:scale(.98)}
-.btn small{display:block;font-size:15.5px;font-weight:700;opacity:.92;margin-top:2px}
-.btn-note{font-size:16px;color:#C9D1DE;text-align:center;margin:12px 0 0}
-.light .btn-note{color:var(--sub)}
+.btn small{display:block;font-size:15.5px;font-weight:700;opacity:.95;margin-top:3px;font-family:"Zen Maru Gothic",sans-serif}
+.btn.ring:after{content:"";position:absolute;inset:-4px;border-radius:999px;border:3px solid rgba(217,164,65,.85);animation:ring 2.4s ease-out infinite;pointer-events:none}
+.btn-note{font-size:16px;color:var(--ink2);text-align:center;margin:12px 0 0}
 .trust{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.trust span{font-size:16px;font-weight:700;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px}
+.trust span{font-size:15.5px;font-weight:700;color:var(--deep);background:#fff;border:2px solid var(--line);border-radius:999px;padding:6px 12px 6px 10px;display:inline-flex;align-items:center;gap:6px}
+.trust span:before{content:"✓";color:var(--teal);font-weight:900}
+.hero-vis{position:relative;padding:10px 0 20px}
+.hero-img{border-radius:24px;overflow:hidden;box-shadow:0 20px 50px rgba(10,90,98,.22);aspect-ratio:4/5;max-height:420px;transform:rotate(-1.5deg);border:6px solid #fff}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.hero-robo{position:absolute;left:-6px;bottom:-4px;width:150px;height:auto;animation:float 3.6s ease-in-out infinite;filter:drop-shadow(0 8px 10px rgba(0,0,0,.14))}
+.hero-bub{position:absolute;right:-4px;top:-6px;max-width:240px;background:#fff;border:2.5px solid var(--teal);border-radius:20px;padding:10px 14px;font-size:16px;font-weight:700;line-height:1.55;box-shadow:0 8px 22px rgba(10,90,98,.14);animation:pop .7s cubic-bezier(.2,1.5,.4,1) .4s both}
+.hero-bub:after{content:"";position:absolute;left:28px;bottom:-14px;width:22px;height:22px;background:#fff;border-right:2.5px solid var(--teal);border-bottom:2.5px solid var(--teal);transform:rotate(45deg)}
+.spark{position:absolute;width:14px;height:14px;color:var(--goldfill);animation:tw 2.2s ease-in-out infinite;pointer-events:none}
 /* sections */
-section{padding:52px 0}
-section.alt{background:var(--paper)}
-section.dark{background:var(--navy);color:#fff}
+section{padding:56px 0;position:relative}
+section.alt{background:var(--soft)}
+section.dark{background:linear-gradient(170deg,var(--deep),#0E6E78);color:#fff}
 section.mid{padding:34px 0}
-.eyebrow{font-size:14px;font-weight:900;letter-spacing:.16em;color:var(--gold-d);margin-bottom:8px}
-.dark .eyebrow{color:var(--gold-l)}
-h2{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-size:clamp(23px,6.2vw,31px);line-height:1.45;font-weight:800;margin:0 0 22px}
-h3{font-size:20px;font-weight:900;margin:0 0 8px;line-height:1.5}
-.figure{border-radius:20px;overflow:hidden;margin:0 0 22px;box-shadow:0 10px 30px rgba(34,41,58,.15)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--goldbg);color:var(--ink);font-size:15px;font-weight:700;border-radius:999px;padding:5px 14px 5px 10px;margin-bottom:12px}
+.eyebrow:before{content:"";width:10px;height:10px;border-radius:50%;background:var(--goldfill)}
+.dark .eyebrow{background:rgba(255,255,255,.14);color:#fff}
+.dark .eyebrow:before{background:var(--goldfill)}
+h2{font-size:clamp(25px,6.6vw,34px);line-height:1.42;margin:0 0 20px;letter-spacing:0}
+h3{font-size:20px;margin:0 0 8px;line-height:1.5}
+.figure{border-radius:22px;overflow:hidden;margin:0 0 22px;box-shadow:0 12px 30px rgba(10,90,98,.14);border:5px solid #fff;background:#fff}
 .figure img,.figure video{width:100%;aspect-ratio:16/9;object-fit:cover}
-.cap{font-size:16.5px;color:var(--sub);margin:-10px 0 20px;line-height:1.7}
-.dark .cap{color:#AEB6C6}
+.cap{font-size:16px;color:var(--ink2);margin:-8px 0 20px;line-height:1.7}
+.dark .cap{color:#D6E9EB}
+.ill{display:block;margin:0 auto 18px;width:min(100%,420px);height:auto}
+.ill.sm{width:min(100%,300px)}
+.row{display:grid;grid-template-columns:1fr;gap:14px;align-items:center}
+@media (min-width:640px){.row{grid-template-columns:1.1fr .9fr}.row.rev{grid-template-columns:.9fr 1.1fr}.row.rev>:first-child{order:2}}
+/* robo bubble */
+.robo{display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:end;margin:18px 0 6px}
+.robo img{width:96px;height:96px;object-fit:contain}
+.robo .bub{position:relative;background:#fff;border:2.5px solid var(--teal);border-radius:20px;padding:12px 16px;font-size:17px;font-weight:700;line-height:1.6;margin-bottom:10px}
+.robo .bub:before{content:"";position:absolute;left:-13px;bottom:16px;width:20px;height:20px;background:#fff;border-left:2.5px solid var(--teal);border-bottom:2.5px solid var(--teal);transform:rotate(45deg)}
+.dark .robo .bub{color:var(--ink)}
+/* 用語 */
+.yg{display:inline;border-bottom:2px dotted var(--teal);color:var(--deep);font-weight:900;cursor:pointer;padding:0 1px;background:none;border-top:0;border-left:0;border-right:0;font:inherit;font-weight:900;white-space:nowrap}
+.yg:after{content:"?";display:inline-grid;place-items:center;width:17px;height:17px;border-radius:50%;background:var(--teal);color:#fff;font-size:12px;font-weight:900;margin-left:3px;vertical-align:2px;line-height:1}
+.dark .yg{color:#fff;border-color:#fff}
+.dark .yg:after{background:var(--goldfill);color:var(--ink)}
+#yogo{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:0 12px calc(12px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .35s cubic-bezier(.2,1.2,.4,1);pointer-events:none}
+#yogo.show{transform:none;pointer-events:auto}
+#yogo .in{max-width:640px;margin:0 auto;background:#fff;border:3px solid var(--teal);border-radius:24px;padding:16px 18px 16px 16px;box-shadow:0 -6px 30px rgba(10,90,98,.22);display:grid;grid-template-columns:84px 1fr;gap:12px;align-items:start;position:relative}
+#yogo img{width:84px;height:84px;object-fit:contain}
+#yogo b{display:block;font-size:19px;margin-bottom:4px;color:var(--deep);font-family:"M PLUS Rounded 1c",sans-serif;font-weight:900}
+#yogo p{margin:0;font-size:17px;line-height:1.7;word-break:normal;text-wrap:pretty}
+#yogo button{position:absolute;top:-14px;right:-6px;width:38px;height:38px;border-radius:50%;border:2.5px solid var(--teal);background:#fff;color:var(--teal);font-size:22px;font-weight:900;cursor:pointer;line-height:1}
+#yogo-shade{position:fixed;inset:0;background:rgba(28,50,54,.25);z-index:49;opacity:0;pointer-events:none;transition:opacity .3s}
+#yogo-shade.show{opacity:1;pointer-events:auto}
+/* beginner strip */
+.beg{background:var(--cream);border:2.5px dashed var(--goldfill);border-radius:24px;padding:18px 18px 12px;margin:0}
+.beg .chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 6px}
+.beg .chips .yg{background:#fff;border:2px solid var(--line);border-radius:999px;padding:6px 12px;font-size:16px}
 /* pains */
 ul.pain{list-style:none;padding:0;margin:0 0 6px;display:grid;gap:10px}
-ul.pain li{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 50px;position:relative;font-weight:700}
-ul.pain li:before{content:"";position:absolute;left:18px;top:21px;width:14px;height:14px;border-radius:50%;background:var(--gold)}
+ul.pain li{background:#fff;border:2px solid var(--line);border-radius:16px;padding:14px 16px 14px 54px;position:relative;font-weight:700;cursor:pointer;transition:border-color .2s,background .2s,transform .2s;user-select:none}
+ul.pain li:before{content:"";position:absolute;left:16px;top:17px;width:24px;height:24px;border-radius:8px;border:2.5px solid var(--line);background:#fff;transition:all .2s}
+ul.pain li:after{content:"";position:absolute;left:24px;top:20px;width:7px;height:13px;border-right:3px solid #fff;border-bottom:3px solid #fff;transform:rotate(45deg) scale(0);transition:transform .25s cubic-bezier(.2,1.6,.4,1)}
+ul.pain li.on{border-color:var(--teal);background:var(--soft)}
+ul.pain li.on:before{background:var(--teal);border-color:var(--teal)}
+ul.pain li.on:after{transform:rotate(45deg) scale(1)}
+ul.pain li:active{transform:scale(.985)}
+.pain-note{font-size:15px;color:var(--ink2);margin:0 0 8px}
 /* stats */
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:6px 0 18px}
-.stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:18px 16px}
-.light .stat{background:var(--paper);border-color:var(--line)}
-.stat .n{font-family:"Shippori Mincho",serif;font-size:40px;font-weight:800;line-height:1.1;color:var(--gold-l);font-variant-numeric:tabular-nums}
-.light .stat .n{color:var(--navy)}
+.stat{background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.18);border-radius:20px;padding:18px 16px}
+.light .stat{background:#fff;border-color:var(--line)}
+.stat .n{font-family:"M PLUS Rounded 1c",sans-serif;font-size:40px;font-weight:900;line-height:1.1;color:var(--goldfill);font-variant-numeric:tabular-nums}
+.light .stat .n{color:var(--teal)}
 .stat .n small{font-size:18px;margin-left:2px}
-.stat .l{font-size:17px;font-weight:700;margin-top:6px;line-height:1.55}
-.src{font-size:15px;color:#AEB6C6;line-height:1.7}
-.light .src, section:not(.dark) .src{color:var(--sub)}
-/* reasons */
+.stat .l{font-size:16.5px;font-weight:700;margin-top:6px;line-height:1.55}
+.src{font-size:14.5px;color:#D6E9EB;line-height:1.7}
+.light .src, section:not(.dark) .src{color:var(--ink2)}
+/* reasons / numbered cards */
 .reasons{display:grid;gap:12px;margin:6px 0 10px}
-.reason{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px 18px;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;align-items:start}
-.reason .no{font-family:"Shippori Mincho",serif;font-size:30px;font-weight:800;color:var(--gold);line-height:1;padding-top:4px}
-.reason h3{margin:0 0 4px;font-size:18.5px}
-.reason p{margin:0;font-size:18px;color:var(--sub)}
+.reason{background:#fff;border:2px solid var(--line);border-radius:18px;padding:16px 18px;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;align-items:start}
+.no{width:44px;height:44px;border-radius:50%;background:var(--teal);color:#fff;font-family:"M PLUS Rounded 1c",sans-serif;font-weight:900;font-size:22px;display:flex;align-items:center;justify-content:center;flex:none}
+.reason h3{margin:4px 0 4px;font-size:19px}
+.reason p{margin:0;font-size:17.5px;color:var(--ink2)}
 /* arms */
-.arms{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:6px 0 22px}
-.arm{background:var(--soft);border-radius:18px;padding:20px 18px;border-top:5px solid var(--gold)}
-.arm .k{font-size:13px;font-weight:900;letter-spacing:.14em;color:var(--gold-d)}
-.arm h3{font-size:21px;margin:4px 0 8px}
-.arm p{font-size:17.5px;color:var(--sub);margin:0}
-.arm ul{margin:8px 0 0;padding-left:1.1em;font-size:17px;color:var(--sub)}
-.arm li{margin-bottom:4px}
+.arms{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:6px 0 18px}
+.arm{background:#fff;border:2.5px solid var(--line);border-radius:22px;padding:18px 16px 16px;position:relative;overflow:hidden}
+.arm.r{border-color:var(--teal)}
+.arm.l{border-color:var(--goldfill)}
+.arm .k{display:inline-block;font-size:14px;font-weight:900;letter-spacing:.08em;color:#fff;background:var(--teal);border-radius:999px;padding:3px 12px}
+.arm.l .k{background:var(--gold)}
+.arm img{width:100%;max-width:220px;height:auto;margin:6px auto 4px}
+.arm h3{font-size:21px;margin:4px 0 6px}
+.arm p{font-size:17px;color:var(--ink2);margin:0 0 6px}
+.arm ul{margin:0;padding-left:1.1em;font-size:16.5px;color:var(--ink2)}
+.arm li{margin-bottom:3px}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0 6px}
-.col{border-radius:16px;padding:16px;border:1.5px solid var(--line);background:var(--paper)}
-.col.ai{border-color:var(--gold)}
-.col h4{margin:0 0 8px;font-size:16px;font-weight:900;letter-spacing:.06em}
-.col.ai h4{color:var(--gold-d)}
-.col ul{margin:0;padding-left:1.1em;font-size:17px}
+.col{border-radius:18px;padding:16px;border:2px solid var(--line);background:#fff}
+.col.ai{border-color:var(--teal);background:var(--soft)}
+.col h4{margin:0 0 8px;font-size:16.5px;font-weight:900;letter-spacing:.04em;display:flex;align-items:center;gap:8px}
+.col.ai h4{color:var(--deep)}
+.col h4 i{width:12px;height:12px;border-radius:50%;background:var(--teal);display:inline-block}
+.col:not(.ai) h4 i{background:var(--goldfill)}
+.col ul{margin:0;padding-left:1.1em;font-size:16.5px}
 .col li{margin-bottom:5px}
 /* day compare */
 .days{display:grid;grid-template-columns:1fr;gap:14px;margin:8px 0 0}
-.day{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--paper)}
-.day .h{padding:12px 16px;font-weight:900;font-size:16px;letter-spacing:.04em}
-.day.b .h{background:#EAE4D8;color:var(--sub)}
-.day.a .h{background:var(--navy);color:var(--gold-l)}
-.day dl{margin:0;padding:12px 16px 6px;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:17.5px}
-.day dt{font-weight:900;color:var(--sub);font-variant-numeric:tabular-nums;white-space:nowrap}
+.day{border-radius:20px;overflow:hidden;border:2px solid var(--line);background:#fff}
+.day .h{padding:12px 16px;font-weight:900;font-size:16.5px;letter-spacing:.02em;font-family:"M PLUS Rounded 1c",sans-serif}
+.day.b .h{background:#ECEAE3;color:var(--ink2)}
+.day.a .h{background:var(--teal);color:#fff}
+.day dl{margin:0;padding:12px 16px 6px;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:17px}
+.day dt{font-weight:900;color:var(--ink2);font-variant-numeric:tabular-nums;white-space:nowrap}
 .day dd{margin:0}
-.day.a dd b{font-weight:900;color:var(--gold-d)}
-.pull{border-left:5px solid var(--gold);background:var(--soft);border-radius:0 14px 14px 0;padding:14px 18px;margin:18px 0;font-weight:700}
-.pull .big{font-family:"Shippori Mincho",serif;font-size:26px;font-weight:800;line-height:1.4}
+.day.b dd{color:var(--ink2)}
+.day.a dd b{font-weight:900;color:#fff;background:var(--teal);border-radius:999px;padding:1px 9px;font-size:14.5px;margin-right:4px;white-space:nowrap}
+.day.a dd b.lf{background:var(--gold)}
+.pull{border-left:6px solid var(--goldfill);background:var(--goldbg);border-radius:0 18px 18px 0;padding:16px 18px;margin:18px 0;font-weight:700}
+.pull .big{font-family:"M PLUS Rounded 1c",sans-serif;font-size:25px;font-weight:900;line-height:1.4;color:var(--deep)}
+.bars{display:grid;gap:10px;margin:14px 0 6px}
+.bar{display:grid;grid-template-columns:72px 1fr auto;gap:10px;align-items:center;font-size:16px;font-weight:700}
+.bar .t{height:30px;border-radius:999px;background:#E9E5D8;position:relative;overflow:hidden}
+.bar .t i{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:999px;background:var(--ink2)}
+.bar.a .t i{background:var(--teal)}
+.in .bar .t i{animation:grow 1.3s cubic-bezier(.2,.9,.3,1) forwards}
+.bar .v{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:900;font-size:18px;white-space:nowrap}
+.bar.a .v{color:var(--teal)}
 /* week */
 .week{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:6px 0 8px}
-.wk{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.wk .h{background:var(--soft);padding:10px 14px;font-weight:900;font-size:15px;letter-spacing:.06em;color:var(--gold-d)}
-.wk dl{margin:0;padding:10px 14px 4px;display:grid;grid-template-columns:auto 1fr;gap:5px 10px;font-size:17px}
-.wk dt{font-weight:900;color:var(--sub);white-space:nowrap}
+.wk{background:#fff;border:2px solid var(--line);border-radius:18px;overflow:hidden}
+.wk .h{background:var(--teal);color:#fff;padding:10px 14px;font-weight:900;font-size:15.5px;letter-spacing:.04em;font-family:"M PLUS Rounded 1c",sans-serif}
+.wk.l .h{background:var(--gold)}
+.wk dl{margin:0;padding:10px 14px 4px;display:grid;grid-template-columns:auto 1fr;gap:6px 10px;font-size:16px}
+.wk dt{font-weight:900;color:var(--teal);white-space:nowrap}
+.wk.l dt{color:var(--gold)}
 .wk dd{margin:0}
 /* timeline */
-.timeline{border-left:3px solid var(--gold-l);padding-left:20px;margin:4px 0 0}
-.tl{position:relative;padding:0 0 22px}
-.tl:before{content:"";position:absolute;left:-28px;top:10px;width:13px;height:13px;border-radius:50%;background:var(--gold);border:3px solid var(--bg)}
-section.alt .tl:before{border-color:var(--paper)}
-.tl .min{font-size:14px;font-weight:900;color:var(--gold-d);letter-spacing:.06em}
-.tl h3{font-size:18.5px}
-.tl p{margin:4px 0 0;font-size:18px;color:var(--sub)}
+.timeline{position:relative;padding-left:0;margin:4px 0 0;display:grid;gap:10px}
+.tl{background:#fff;border:2px solid var(--line);border-radius:18px;padding:14px 16px;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:start}
+.tl .min{width:64px;height:64px;border-radius:50%;background:var(--soft);border:2.5px solid var(--teal);color:var(--deep);font-family:"M PLUS Rounded 1c",sans-serif;font-weight:900;font-size:17px;display:flex;align-items:center;justify-content:center;line-height:1.1;text-align:center;flex:none}
+.tl .min small{display:block;font-size:13.5px}
+.tl h3{font-size:19px;margin:6px 0 4px}
+.tl p{margin:0;font-size:17px;color:var(--ink2)}
+.tl.dem{border-color:var(--goldfill);background:var(--cream)}
+.tl.dem .min{background:var(--goldbg);border-color:var(--goldfill);color:var(--gold)}
 /* profile */
 .me{display:flex;gap:18px;align-items:center;margin:0 0 18px}
-.me img{width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:top;border:3px solid var(--gold-l);flex:0 0 auto}
-.me .t{font-size:17px;color:var(--sub);line-height:1.6}
-.me .t b{display:block;font-size:22px;color:var(--ink);font-weight:900;font-family:"Shippori Mincho",serif}
+.me img{width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:top;border:4px solid #fff;box-shadow:0 6px 18px rgba(10,90,98,.18);flex:0 0 auto}
+.me .t{font-size:16.5px;color:var(--ink2);line-height:1.6}
+.me .t b{display:block;font-size:23px;color:var(--ink);font-weight:900;font-family:"M PLUS Rounded 1c",sans-serif}
 .cred{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 18px}
-.cred div{background:var(--soft);border-radius:14px;padding:12px 14px;font-size:16.5px;font-weight:700;line-height:1.5}
-.cred div b{display:block;font-family:"Shippori Mincho",serif;font-size:24px;color:var(--navy);font-variant-numeric:tabular-nums}
+.cred div{background:#fff;border:2px solid var(--line);border-radius:16px;padding:12px 14px;font-size:16px;font-weight:700;line-height:1.5}
+.cred div b{display:block;font-family:"M PLUS Rounded 1c",sans-serif;font-size:25px;color:var(--teal);font-variant-numeric:tabular-nums}
+.stage{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 6px}
+.stage span{font-size:16px;font-weight:700;background:#fff;border:2px solid var(--line);border-radius:999px;padding:6px 12px}
+.stage-note{font-size:14.5px;color:var(--ink2);margin:0 0 14px}
 /* reviews */
 .rating{display:flex;align-items:baseline;gap:10px;margin:0 0 14px;flex-wrap:wrap}
-.rating .n{font-family:"Shippori Mincho",serif;font-size:44px;font-weight:800;color:var(--navy);line-height:1}
-.rating .s{color:var(--gold);font-size:22px;letter-spacing:.05em}
-.rating .c{font-size:16.5px;color:var(--sub);font-weight:700}
+.rating .n{font-family:"M PLUS Rounded 1c",sans-serif;font-size:44px;font-weight:900;color:var(--teal);line-height:1}
+.rating .s{color:var(--goldfill);font-size:22px;letter-spacing:.05em}
+.rating .c{font-size:16px;color:var(--ink2);font-weight:700}
 .reviews{display:grid;gap:12px}
-.rev{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px 18px;font-size:18px}
-.rev .d{font-size:15px;color:var(--sub);margin-top:6px;font-weight:700}
+.rev{background:#fff;border:2px solid var(--line);border-radius:20px;padding:16px 18px;font-size:17.5px;position:relative}
+.rev:before{content:"“";position:absolute;left:12px;top:-4px;font-size:44px;color:var(--mint);font-family:serif;line-height:1}
+.rev .d{font-size:15px;color:var(--ink2);margin-top:6px;font-weight:700}
 /* letter */
-.letter{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:28px 22px;box-shadow:0 10px 30px rgba(34,41,58,.08)}
-.letter p{font-size:18px}
-.letter .sign{text-align:right;font-family:"Shippori Mincho",serif;font-weight:800;font-size:18px;margin:10px 0 0}
-/* letter: handwritten */
-.letter{position:relative;overflow:hidden;background:#F3F1E4;border-color:#E6DFCF;padding:120px 22px 40px}
-.letter .sign{position:relative;z-index:1;padding-bottom:150px}
-.letter .sign{margin-top:14px}
-@media (min-width:600px){.letter{padding:70px 40px 40px}.letter .sign{padding-bottom:120px}.letter .deco.tl{width:200px}.letter .deco.br{width:230px}}
-.letter p{font-family:"Klee One","Zen Kaku Gothic New","Hiragino Maru Gothic ProN",sans-serif;font-weight:600;font-size:21px;line-height:2;position:relative;z-index:1;color:#2A3040}
-.letter .sign{font-family:"Klee One",serif;font-size:22px}
-.letter .deco{position:absolute;pointer-events:none;mix-blend-mode:darken;opacity:1;z-index:0}
+.letter{position:relative;overflow:hidden;background:var(--paper);border:2px solid #E6DFCF;border-radius:24px;padding:120px 22px 40px;box-shadow:0 10px 30px rgba(10,90,98,.08)}
+.letter p{font-family:"Klee One","Zen Maru Gothic",sans-serif;font-weight:600;font-size:20.5px;line-height:2;position:relative;z-index:1;color:#2A3040}
+.letter .sign{text-align:right;font-family:"Klee One",serif;font-weight:800;font-size:22px;margin:14px 0 0;position:relative;z-index:1;padding-bottom:150px}
+.letter .deco{position:absolute;pointer-events:none;mix-blend-mode:darken;z-index:0}
 .letter .deco.tl{top:-6px;left:-6px;width:150px}
 .letter .deco.br{bottom:-8px;left:-8px;width:190px}
-.zukai{border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(34,41,58,.12);margin:6px 0 20px;background:#F7F3EA}
-.zukai img{width:100%;height:auto;display:block}
-.stage{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 6px}
-.stage span{font-size:16.5px;font-weight:700;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
-.stage-note{font-size:15px;color:var(--sub);margin:0 0 14px}
+.letter .night{position:absolute;right:-10px;bottom:-6px;width:210px;z-index:0;opacity:.95;mix-blend-mode:multiply}
+@media (min-width:600px){.letter{padding:70px 40px 40px}.letter .sign{padding-bottom:120px}.letter .deco.tl{width:200px}.letter .deco.br{width:230px}.letter .night{width:260px}}
 /* take / not-for / steps */
 ul.take{list-style:none;padding:0;margin:0;display:grid;gap:10px}
-ul.take li{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 50px;position:relative}
-ul.take li:before{content:"✓";position:absolute;left:17px;top:12px;color:var(--gold-d);font-weight:900;font-size:21px}
-ul.no{list-style:none;padding:0;margin:0 0 18px;display:grid;gap:10px}
-ul.no li{background:var(--soft);border-radius:14px;padding:14px 16px 14px 50px;position:relative}
-ul.no li:before{content:"×";position:absolute;left:17px;top:11px;color:var(--sub);font-weight:900;font-size:22px}
-.promise{display:grid;gap:10px}
-.promise div{background:var(--paper);border:1.5px solid var(--gold);border-radius:14px;padding:14px 16px}
-.promise b{display:block;font-family:"Shippori Mincho",serif;font-size:19px;color:var(--navy);margin-bottom:2px}
+ul.take li{background:#fff;border:2px solid var(--line);border-radius:16px;padding:14px 16px 14px 54px;position:relative}
+ul.take li:before{content:"";position:absolute;left:15px;top:15px;width:26px;height:26px;border-radius:50%;background:var(--teal)}
+ul.take li:after{content:"";position:absolute;left:24px;top:19px;width:7px;height:13px;border-right:3px solid #fff;border-bottom:3px solid #fff;transform:rotate(45deg)}
+ul.notfor{list-style:none;padding:0;margin:0 0 18px;display:grid;gap:10px}
+ul.notfor li{background:#fff;border:2px solid var(--line);border-radius:16px;padding:14px 16px 14px 50px;position:relative;color:var(--ink2)}
+ul.notfor li:before{content:"×";position:absolute;left:17px;top:11px;color:#B5533E;font-weight:900;font-size:22px}
+.promise{display:grid;gap:12px}
+.promise div{background:#fff;border:2.5px solid var(--teal);border-radius:18px;padding:14px 86px 14px 16px;position:relative;overflow:hidden}
+.promise b{display:block;font-family:"M PLUS Rounded 1c",sans-serif;font-size:19.5px;color:var(--deep);margin-bottom:2px}
+.promise .st{position:absolute;right:10px;top:50%;width:66px;height:66px;margin-top:-33px;border-radius:50%;border:3px solid var(--goldfill);color:var(--gold);display:grid;place-items:center;font-family:"M PLUS Rounded 1c",sans-serif;font-weight:900;font-size:15px;line-height:1.1;text-align:center;transform:scale(0) rotate(-20deg);opacity:0;background:var(--goldbg)}
+.promise .st:after{content:"";position:absolute;inset:5px;border:2px dashed var(--goldfill);border-radius:50%}
+.in .promise .st{animation:stamp .55s cubic-bezier(.2,1.6,.4,1) forwards}
+.in .promise div:nth-child(2) .st{animation-delay:.25s}
+.in .promise div:nth-child(3) .st{animation-delay:.5s}
 .steps{display:grid;gap:10px;margin:6px 0 0}
-.step{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
-.step .no{width:40px;height:40px;border-radius:50%;background:var(--navy);color:var(--gold-l);font-family:"Shippori Mincho",serif;font-weight:800;font-size:20px;display:flex;align-items:center;justify-content:center}
-.step p{margin:0;font-size:18px}
+.step{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;background:#fff;border:2px solid var(--line);border-radius:16px;padding:14px 16px}
+.step p{margin:0;font-size:17.5px}
 .step b{display:block;font-weight:900;font-size:17.5px}
 /* faq */
-details{background:var(--paper);border:1px solid var(--line);border-radius:14px;margin-bottom:10px}
-summary{cursor:pointer;padding:14px 16px 14px 44px;font-weight:900;position:relative;list-style:none;line-height:1.55}
+details{background:#fff;border:2px solid var(--line);border-radius:16px;margin-bottom:10px;transition:border-color .2s}
+details[open]{border-color:var(--teal)}
+summary{cursor:pointer;padding:14px 44px 14px 48px;font-weight:900;position:relative;list-style:none;line-height:1.55}
 summary::-webkit-details-marker{display:none}
-summary:before{content:"Q";position:absolute;left:16px;top:13px;color:var(--gold-d);font-family:"Shippori Mincho",serif;font-weight:800;font-size:19px}
-details p{padding:0 16px 16px 44px;margin:0;font-size:18.5px;color:var(--sub)}
+summary:before{content:"Q";position:absolute;left:14px;top:13px;width:26px;height:26px;border-radius:50%;background:var(--teal);color:#fff;font-family:"M PLUS Rounded 1c",sans-serif;font-weight:900;font-size:15px;display:grid;place-items:center}
+summary:after{content:"";position:absolute;right:18px;top:20px;width:10px;height:10px;border-right:3px solid var(--teal);border-bottom:3px solid var(--teal);transform:rotate(45deg);transition:transform .25s}
+details[open] summary:after{transform:rotate(225deg);top:26px}
+details p{padding:0 16px 16px 48px;margin:0;font-size:17.5px;color:var(--ink2)}
 /* spec */
-.spec{display:grid;grid-template-columns:auto 1fr;gap:10px 22px;margin:0 0 6px;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px}
-.spec dt{color:var(--sub);font-weight:700;white-space:nowrap}
+.spec{display:grid;grid-template-columns:auto 1fr;gap:10px 22px;margin:0 0 6px;background:#fff;border:2px solid var(--line);border-radius:20px;padding:22px}
+.spec dt{color:var(--teal);font-weight:900;white-space:nowrap}
 .spec dd{margin:0;font-weight:700}
-.cta{background:linear-gradient(165deg,#2A3245 0%,var(--navy-d) 100%);color:#fff;padding:52px 0}
-.cta h2{color:#fff}
-.cta .lead{color:#DCE3EE}
-.notes{font-size:16.5px;color:var(--sub);padding-left:1.2em;margin:0}
+.cta{background:linear-gradient(180deg,#EAF5F6,#fff);padding:56px 0 48px;overflow:hidden}
+.cta .wrap{position:relative}
+.notes{font-size:15.5px;color:var(--ink2);padding-left:1.2em;margin:0}
 .notes li{margin-bottom:8px}
-.motto{font-family:"Shippori Mincho",serif;font-size:20px;font-weight:800;color:var(--navy);margin:18px 0 0}
-footer{font-size:17px;color:var(--sub);text-align:center;padding:26px 20px 100px;line-height:1.7}
-.sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(251,248,243,.94);backdrop-filter:blur(8px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s;z-index:9}
+.motto{font-family:"M PLUS Rounded 1c",sans-serif;font-size:21px;font-weight:900;color:var(--deep);margin:18px 0 0}
+footer{font-size:16px;color:var(--ink2);text-align:center;padding:26px 20px 110px;line-height:1.7}
+.sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-top:2px solid var(--line);transform:translateY(110%);transition:transform .3s;z-index:9}
 .sticky.show{transform:none}
 .sticky .btn{max-width:640px;margin:0 auto;padding:15px 16px;font-size:19.5px;box-shadow:0 4px 16px rgba(0,0,0,.15)}
-@media (prefers-reduced-motion:reduce){.sticky{transition:none}html{scroll-behavior:auto}}
-@media (min-width:900px){.hero-grid{grid-template-columns:1.15fr .85fr;gap:40px}.hero{padding:56px 0}.hero-img{max-height:none}}
-@media (max-width:520px){.arms,.split,.cred,.week{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.stat{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center}.stat .n{font-size:34px;min-width:96px}.stat .l{margin-top:0}.spec{grid-template-columns:1fr;gap:2px}.spec dt{margin-top:10px}.me img{width:80px;height:80px}}
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.9,.3,1);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.rv-l{opacity:0;transform:translateX(-30px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.9,.3,1)}
+.rv-r{opacity:0;transform:translateX(30px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.9,.3,1)}
+.rv-l.in,.rv-r.in{opacity:1;transform:none}
+.wig{animation:wig 3.2s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+@keyframes pop{0%{opacity:0;transform:scale(.6) rotate(-4deg)}70%{opacity:1;transform:scale(1.05) rotate(1deg)}100%{opacity:1;transform:none}}
+@keyframes tw{0%,100%{opacity:.2;transform:scale(.7) rotate(0)}50%{opacity:1;transform:scale(1.15) rotate(20deg)}}
+@keyframes ring{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(1.12)}}
+@keyframes grow{from{width:0}to{width:var(--w)}}
+@keyframes stamp{0%{transform:scale(0) rotate(-20deg);opacity:0}70%{transform:scale(1.15) rotate(-12deg);opacity:1}100%{transform:scale(1) rotate(-12deg);opacity:1}}
+@keyframes wig{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg) translateY(-4px)}}
+@media (prefers-reduced-motion:reduce){.sticky,.rv,.rv-l,.rv-r{transition:none}html{scroll-behavior:auto}.rv,.rv-l,.rv-r{opacity:1;transform:none}*{animation:none!important}.in .bar .t i{width:var(--w)}.promise .st{transform:rotate(-12deg);opacity:1}}
+@media (min-width:900px){.hero-grid{grid-template-columns:1.15fr .85fr;gap:40px}.hero{padding:64px 0 40px}.hero-img{max-height:none}.hero-robo{width:180px;left:-8px;bottom:-10px}.hero-bub{right:-30px;top:-10px;max-width:260px;font-size:17px}}
+@media (max-width:560px){.arms,.split,.cred,.week{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.stat{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center}.stat .n{font-size:34px;min-width:96px}.stat .l{margin-top:0}.spec{grid-template-columns:1fr;gap:2px}.spec dt{margin-top:10px}.me img{width:80px;height:80px}.robo{grid-template-columns:80px 1fr}.robo img{width:80px;height:80px}.hero-bub{max-width:210px;font-size:15.5px;right:0}.hero-robo{width:130px;left:-10px}}
 </style>
 </head>
-<body>
+<body class="dots">
+
+<div id="prog" aria-hidden="true"><i id="pfill"></i><img id="walker" src="img/mascot_point.webp" alt=""></div>
 
 <header class="hero">
+ <svg class="spark" style="left:6%;top:14%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+ <svg class="spark" style="left:88%;top:8%;animation-delay:.7s" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+ <svg class="spark" style="left:70%;top:60%;animation-delay:1.3s" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
  <div class="wrap">
   <div class="hero-grid">
    <div>
-    <div class="date" id="sem-hero-date">10/21（水）夜・10/23（金）昼・10/25（日）昼　Zoom・参加無料</div>
+    <div class="date rv in" id="sem-hero-date">10/21（水）夜・10/23（金）昼・10/25（日）昼　Zoom・参加無料</div>
     <h1>おじいちゃんでもできる<br>保険営業の<span class="g">AI完全自動化。</span></h1>
     <p class="lead">移動ゼロ。集客も、提案も、フォローも、AIの右腕と左腕が回す。<br>パソコンが苦手でも組み立てられる仕組みを、90分、目の前で動かして見せます。</p>
-    <a class="btn cta-link" href="https://utage-system.com/event/dihhvu6t6jSO/register">自動化の実演を見る<small>参加費無料・お名前とメールだけ・30秒で完了</small></a>
+    <a class="btn ring cta-link" href="https://utage-system.com/event/dihhvu6t6jSO/register">自動化の実演を見る<small>参加費無料・お名前とメールだけ・30秒で完了</small></a>
     <p class="btn-note">90分で終わります。お名前とメールだけで申し込めます。</p>
     <div class="trust"><span>AIに詳しくなくていい</span><span>売り込みなし</span><span>会社にも堂々と言える内容</span></div>
    </div>
-   <div class="hero-img"><img src="img/hero.jpg" alt="自宅の書斎でノートパソコンを開く保険営業の男性" width="928" height="1152" fetchpriority="high"></div>
+   <div class="hero-vis">
+    <div class="hero-img"><img src="img/hero.jpg" alt="自宅の書斎でノートパソコンを開く保険営業の男性" width="928" height="1152" fetchpriority="high"></div>
+    <div class="hero-bub">はじめてでも、だいじょうぶ。<br>むずかしい言葉は、<br>ぼくが横で説明します。</div>
+    <img class="hero-robo" src="img/mascot_invite.webp" alt="案内役のAIロボット" width="190" height="190">
+   </div>
   </div>
  </div>
 </header>
 
+<section class="mid" style="padding-top:28px">
+ <div class="wrap">
+  <div class="beg rv">
+   <div class="robo" style="margin:0 0 4px"><img src="img/mascot_think.webp" alt="" width="96" height="96" loading="lazy"><div class="bub">AIはこれから、という方へ。<br>このページで、点線のついた言葉が出てきたら、タップしてみてください。<br>その場で、やさしく言い換えます。</div></div>
+   <div class="chips"><button class="yg" data-yg="ai">AI（ChatGPTなど）</button><button class="yg" data-yg="arms">右腕と左腕</button><button class="yg" data-yg="settei">設定文</button><button class="yg" data-yg="zoom">Zoom</button></div>
+   <p style="font-size:15px;color:var(--ink2);margin:0 0 6px">試しに、ひとつ押してみてください。</p>
+  </div>
+ </div>
+</section>
+
 <section>
  <div class="wrap">
-  <div class="eyebrow">こんな毎日、ありませんか</div>
-  <h2>がんばっているのに、<br>1日に会えるのは3人まで。</h2>
-  <div class="figure"><img src="img/before.jpg" alt="夜の車内で提案書を作る保険営業の男性" loading="lazy"></div>
-  <ul class="pain">
-   <li>朝から車で1件、昼に1件、夕方に1件。夜は駐車場で提案書。</li>
-   <li>家に帰っても、提案書が残っている。子どもが寝てから、もう一度パソコンを開く。</li>
-   <li>知人・紹介のリストは、もう一周回った。「行くところがない」が口ぐせになりつつある。</li>
-   <li>面談後のフォロー連絡を、気持ちはあるのに後回しにしてしまう。</li>
-   <li>周りはAIを使い始めている。でも、自分の営業にどう入れるかは、誰も教えてくれない。</li>
-   <li>体力は正直、10年前と違う。それでも歩合だから、止まれない。</li>
-   <li>AIは気になる。でも、パソコンは得意じゃない。</li>
+  <div class="eyebrow rv">こんな毎日、ありませんか</div>
+  <h2 class="rv">がんばっているのに、<br>1日に会えるのは3人まで。</h2>
+  <div class="figure rv"><img src="img/before.jpg" alt="夜の車内で提案書を作る保険営業の男性" loading="lazy"></div>
+  <p class="pain-note rv">当てはまるものを、タップしてみてください。</p>
+  <ul class="pain" id="pain">
+   <li class="rv" style="--d:.05s">朝から車で1件、昼に1件、夕方に1件。夜は駐車場で提案書。</li>
+   <li class="rv" style="--d:.1s">家に帰っても、提案書が残っている。子どもが寝てから、もう一度パソコンを開く。</li>
+   <li class="rv" style="--d:.15s">知人・紹介のリストは、もう一周回った。「行くところがない」が口ぐせになりつつある。</li>
+   <li class="rv" style="--d:.2s">面談後のフォロー連絡を、気持ちはあるのに後回しにしてしまう。</li>
+   <li class="rv" style="--d:.25s">周りはAIを使い始めている。でも、自分の営業にどう入れるかは、誰も教えてくれない。</li>
+   <li class="rv" style="--d:.3s">体力は正直、10年前と違う。それでも歩合だから、止まれない。</li>
+   <li class="rv" style="--d:.35s">AIは気になる。でも、パソコンは得意じゃない。</li>
   </ul>
-  <p style="margin-top:18px">ひとつでも当てはまったなら、この先を読んでください。<br>これは「がんばり方」の話ではなく、「営業の回し方」を変える話です。</p>
+  <div class="robo rv"><img src="img/mascot_base.webp" alt="" width="96" height="96" loading="lazy"><div class="bub" id="pain-bub">ひとつでも当てはまったなら、この先を読んでください。<br>これは「がんばり方」の話ではなく、「営業の回し方」を変える話です。</div></div>
  </div>
 </section>
 
 <section class="dark">
  <div class="wrap">
-  <div class="eyebrow">いま、業界で起きていること</div>
-  <h2>大手はもう、<br>営業職員全員にAIを<br>持たせ始めました。</h2>
+  <div class="eyebrow rv">いま、業界で起きていること</div>
+  <h2 class="rv">大手はもう、<br>営業職員全員にAIを<br>持たせ始めました。</h2>
   <div class="stats">
-   <div class="stat"><div class="n" data-count="36000">36,000</div><div class="l">明治安田生命が営業職員 約3万6,000人 全員にAIエージェントを導入</div></div>
-   <div class="stat"><div class="n">72<small>%</small>→56<small>%</small></div><div class="l">生保の加入経路に占める「営業職員」の割合（2003→2021年度）</div></div>
-   <div class="stat"><div class="n" data-count="25">25<small>%</small></div><div class="l">主要生保8社の入社5年目在籍率。4人に3人が現場を去る</div></div>
-   <div class="stat"><div class="n">約半減</div><div class="l">損保代理店数はこの20年で26.7万店→14.0万店に</div></div>
+   <div class="stat rv" style="--d:.05s"><div class="n" data-count="36000">36,000</div><div class="l">明治安田生命が営業職員 約3万6,000人 全員にAIエージェントを導入</div></div>
+   <div class="stat rv" style="--d:.1s"><div class="n">72<small>%</small>→56<small>%</small></div><div class="l">生保の加入経路に占める「営業職員」の割合（2003→2021年度）</div></div>
+   <div class="stat rv" style="--d:.15s"><div class="n" data-count="25">25<small>%</small></div><div class="l">主要生保8社の入社5年目在籍率。4人に3人が現場を去る</div></div>
+   <div class="stat rv" style="--d:.2s"><div class="n">約半減</div><div class="l">損保代理店数はこの20年で26.7万店→14.0万店に</div></div>
   </div>
-  <p>営業職員の数は横ばいでも、「訪問と紹介だけで回す営業」は構造として縮んでいます。<br>一方で、お客様は先にネットやAIで調べてから会いに来ます。<br>会社がAIを配る前に、<strong>自分の右腕と左腕を自分で持った人</strong>から、面談と紹介が増え始めています。</p>
-  <p class="src">出典: 生命保険協会「2025年版 生命保険の動向」／生命保険協会・生命保険文化センター調査（金融庁提出資料 2022）／日本経済新聞 2025年報道／日本損害保険協会「2024年度損害保険代理店統計」／Impress Watch・アクセンチュア発表 2025</p>
+  <p class="rv">営業職員の数は横ばいでも、「訪問と紹介だけで回す営業」は構造として縮んでいます。<br>一方で、お客様は先にネットやAIで調べてから会いに来ます。<br>会社がAIを配る前に、<strong>自分の<button class="yg" data-yg="arms">右腕と左腕</button>を自分で持った人</strong>から、面談と紹介が増え始めています。</p>
+  <p class="src rv">出典: 生命保険協会「2025年版 生命保険の動向」／生命保険協会・生命保険文化センター調査（金融庁提出資料 2022）／日本経済新聞 2025年報道／日本損害保険協会「2024年度損害保険代理店統計」／Impress Watch・アクセンチュア発表 2025</p>
  </div>
 </section>
 
 <section class="alt">
  <div class="wrap">
-  <div class="eyebrow">なぜ、いまオンライン×AIなのか</div>
-  <h2>変わったのは、あなたではなく<br>お客様のほうです。</h2>
+  <div class="eyebrow rv">なぜ、いまオンライン×AIなのか</div>
+  <h2 class="rv">変わったのは、あなたではなく<br>お客様のほうです。</h2>
   <div class="reasons">
-   <div class="reason"><div class="no">1</div><div><h3>先に、ネットとAIで調べてから来る</h3><p>死亡保険の情報源として「ネットの比較サイト」を使った人は24.1%。営業職員の話（29.3%）に迫っています。AIより浅い説明では、選ばれにくくなりました。</p></div></div>
-   <div class="reason"><div class="no">2</div><div><h3>長い説明を、求めていない</h3><p>損保協会の調査では、商談・説明時間は「30分以内で十分」が6割超。50〜60代ほど「追加の説明は要らない」と答えます。求めているのは短く的確な提案と、その後のフォローです。</p></div></div>
-   <div class="reason"><div class="no">3</div><div><h3>オンラインの方が、満足度が高い</h3><p>生保の面談満足度調査で、オンライン型は訪問型・来店型を上回りました。LINEやSMSでの連絡も、対面や電話より満足度が高いという結果が出ています。</p></div></div>
+   <div class="reason rv" style="--d:.05s"><div class="no">1</div><div><h3>先に、ネットとAIで調べてから来る</h3><p>死亡保険の情報源として「ネットの比較サイト」を使った人は24.1%。営業職員の話（29.3%）に迫っています。AIより浅い説明では、選ばれにくくなりました。</p></div></div>
+   <div class="reason rv" style="--d:.15s"><div class="no">2</div><div><h3>長い説明を、求めていない</h3><p>損保協会の調査では、商談・説明時間は「30分以内で十分」が6割超。50〜60代ほど「追加の説明は要らない」と答えます。求めているのは短く的確な提案と、その後のフォローです。</p></div></div>
+   <div class="reason rv" style="--d:.25s"><div class="no">3</div><div><h3>オンラインの方が、満足度が高い</h3><p>生保の面談満足度調査で、オンライン型は訪問型・来店型を上回りました。LINEやSMSでの連絡も、対面や電話より満足度が高いという結果が出ています。</p></div></div>
   </div>
-  <p class="src">出典: 第一生命経済研究所（オリックス生命調査）／日本損害保険協会「保険加入に関する消費者アンケート」2025／J.D.パワー 生命保険満足度調査（ITmedia 2021）／2024年生命保険保全手続満足度調査</p>
-  <p style="margin-top:14px">つまり、<strong>「会いに行く回数」で勝負する営業から、「先に見つけてもらい、短く深く会う」営業へ</strong>。<br>その回し方を実現するのが、オンラインとAIです。</p>
+  <p class="src rv">出典: 第一生命経済研究所（オリックス生命調査）／日本損害保険協会「保険加入に関する消費者アンケート」2025／J.D.パワー 生命保険満足度調査（ITmedia 2021）／2024年生命保険保全手続満足度調査</p>
+  <p class="rv" style="margin-top:14px">つまり、<strong>「会いに行く回数」で勝負する営業から、「先に見つけてもらい、短く深く会う」営業へ</strong>。<br>その回し方を実現するのが、オンラインとAIです。</p>
  </div>
 </section>
 
 <section>
  <div class="wrap">
-  <div class="eyebrow">先に、はっきり言っておきます</div>
-  <h2>AIは、あなたの仕事を<br>奪いません。<br>面倒な部分を<br>引き受けるだけです。</h2>
-  <p>お客様の話を聞く「間」の取り方、ここは笑っていい、ここは黙る、という感覚。<br>それは年齢と経験でしか育ちません。<br>AIにできるのは、その前後にある「調べる・書く・整える・送る」を代わりにやることです。</p>
-  <div class="figure" style="max-width:520px;margin-left:auto;margin-right:auto"><img src="img/arms.jpg" alt="右腕と左腕のAIに囲まれた保険営業の男性" loading="lazy" style="aspect-ratio:1/1"></div>
+  <div class="eyebrow rv">先に、はっきり言っておきます</div>
+  <h2 class="rv">AIは、あなたの仕事を<br>奪いません。<br>面倒な部分を<br>引き受けるだけです。</h2>
+  <p class="rv">お客様の話を聞く「間」の取り方、ここは笑っていい、ここは黙る、という感覚。<br>それは年齢と経験でしか育ちません。<br>AIにできるのは、その前後にある「調べる・書く・整える・送る」を代わりにやることです。</p>
+  <img class="ill rv" src="img/ro_hands.webp" alt="右腕のロボと左腕のロボが、真ん中の案内ロボの上でハイタッチしている" width="960" height="720" loading="lazy">
   <div class="arms">
-   <div class="arm">
-    <div class="k">右腕</div>
+   <div class="arm r rv-l">
+    <span class="k">右腕</span>
+    <img src="img/ro_migiude.webp" alt="スマホを掲げて、お客様からの連絡を集める右腕ロボ" width="960" height="720" loading="lazy">
     <h3>集客の自動化</h3>
     <p>AIにあなたの強みと客層を分析させ、入口を作ります。</p>
-    <ul><li>発信のネタと下書き</li><li>1分で終わる診断ページ</li><li>LINEの自動応答と配信</li><li>予約が勝手に入る仕組み</li></ul>
+    <ul><li><button class="yg" data-yg="hasshin">発信</button>のネタと下書き</li><li>1分で終わる<button class="yg" data-yg="shindan">診断ページ</button></li><li><button class="yg" data-yg="line">LINEの自動応答</button>と配信</li><li>予約が勝手に入る仕組み</li></ul>
    </div>
-   <div class="arm">
-    <div class="k">左腕</div>
+   <div class="arm l rv-r">
+    <span class="k">左腕</span>
+    <img src="img/ro_hidariude.webp" alt="机でペンを持ち、提案書とフォロー文を書く左腕ロボ" width="960" height="720" loading="lazy">
     <h3>面談と提案の自動化</h3>
-    <p>面談メモを渡すだけで、前後の仕事が終わります。</p>
-    <ul><li>提案の骨子（たたき台）</li><li>その日のうちのフォロー文</li><li>次回の予約案内</li><li>3か月ごとの「思い出してもらう」連絡</li></ul>
+    <p><button class="yg" data-yg="memo">面談メモ</button>を渡すだけで、前後の仕事が終わります。</p>
+    <ul><li>提案の骨子（<button class="yg" data-yg="tataki">たたき台</button>）</li><li>その日のうちの<button class="yg" data-yg="follow">フォロー文</button></li><li>次回の予約案内</li><li>3か月ごとの「思い出してもらう」連絡</li></ul>
    </div>
   </div>
-  <div class="zukai"><img src="zukai/arms.jpg" alt="右腕と左腕はこう回る。右腕は発信、1分診断、LINE、予約が入る。左腕は面談メモ、提案の骨子、フォロー文、次回予約。あなたはお客様と話す、決める。説明と契約は募集人本人が行う。" loading="lazy" width="1440" height="1800"></div>
   <div class="split">
-   <div class="col ai"><h4>AIがやること</h4><ul><li>調べる・比べる・まとめる</li><li>下書きを書く（提案・フォロー・発信）</li><li>整える・チェックする</li><li>決まった連絡を決まった時に送る</li></ul></div>
-   <div class="col"><h4>あなたがやること</h4><ul><li>お客様と話す</li><li>提案の最終判断</li><li>説明と契約の手続き（募集行為）</li><li>「この人に会いたい」と思ってもらうこと</li></ul></div>
+   <div class="col ai rv" style="--d:.05s"><h4><i></i>AIがやること</h4><ul><li>調べる・比べる・まとめる</li><li>下書きを書く（提案・フォロー・発信）</li><li>整える・チェックする</li><li>決まった連絡を決まった時に送る</li></ul></div>
+   <div class="col rv" style="--d:.15s"><h4><i></i>あなたがやること</h4><ul><li>お客様と話す</li><li>提案の最終判断</li><li>説明と契約の手続き（募集行為）</li><li>「この人に会いたい」と思ってもらうこと</li></ul></div>
   </div>
+  <div class="robo rv"><img src="img/mascot_point.webp" alt="" width="96" height="96" loading="lazy"><div class="bub">説明と契約は、募集人のあなたの仕事。<br>その手前と後ろを、ぼくたちが回します。</div></div>
  </div>
 </section>
 
 <section class="alt">
  <div class="wrap">
-  <div class="eyebrow">1日は、こう変わります</div>
-  <h2>移動をやめた分だけ<br>会える人が増える。</h2>
-  <div class="figure"><img src="img/after.jpg" alt="自宅でお客様夫婦とオンライン面談する男性" loading="lazy"></div>
+  <div class="eyebrow rv">1日は、こう変わります</div>
+  <h2 class="rv">移動をやめた分だけ<br>会える人が増える。</h2>
+  <div class="figure rv"><img src="img/after.jpg" alt="自宅でお客様夫婦とオンライン面談する男性" loading="lazy"></div>
   <div class="days">
-   <div class="day b"><div class="h">いままで（訪問営業の1日）</div>
+   <div class="day b rv-l"><div class="h">いままで（訪問営業の1日）</div>
     <dl><dt>9:00</dt><dd>車で1件目へ移動</dd><dt>10:00</dt><dd>面談①</dd><dt>12:00</dt><dd>移動しながら昼食</dd><dt>14:00</dt><dd>面談②</dd><dt>16:00</dt><dd>移動・電話・雑務</dd><dt>18:00</dt><dd>面談③</dd><dt>20:00</dt><dd>帰宅、提案書づくり（約2時間）</dd><dt>23:00</dt><dd>フォロー連絡は明日に</dd></dl>
    </div>
-   <div class="day a"><div class="h">これから（オンライン×AIの1日）</div>
-    <dl><dt>9:00</dt><dd><b>右腕</b>が朝までに用意した面談前メモを確認</dd><dt>10:00</dt><dd>オンライン面談①</dd><dt>10:45</dt><dd><b>左腕</b>にメモを渡す。フォロー文と提案骨子が2分で届く</dd><dt>11:00</dt><dd>オンライン面談②</dd><dt>13:00</dt><dd>オンライン面談③</dd><dt>15:00</dt><dd>オンライン面談④・⑤</dd><dt>17:00</dt><dd>診断ページから入った予約を確認して終了</dd><dt>夜</dt><dd>家族と食事。提案書はもう終わっている</dd></dl>
+   <div class="day a rv-r"><div class="h">これから（オンライン×AIの1日）</div>
+    <dl><dt>9:00</dt><dd><b>右腕</b>が朝までに用意した面談前メモを確認</dd><dt>10:00</dt><dd>オンライン面談①</dd><dt>10:45</dt><dd><b class="lf">左腕</b>にメモを渡す。フォロー文と提案骨子が2分で届く</dd><dt>11:00</dt><dd>オンライン面談②</dd><dt>13:00</dt><dd>オンライン面談③</dd><dt>15:00</dt><dd>オンライン面談④・⑤</dd><dt>17:00</dt><dd>診断ページから入った予約を確認して終了</dd><dt>夜</dt><dd>家族と食事。提案書はもう終わっている</dd></dl>
    </div>
   </div>
-  <div class="pull"><div class="big">提案書、2時間 → 2分。</div>森川自身の実測です。たたき台までAI、仕上げは本人。<br>約800名のお客様への3か月ごとの連絡も、AIが「その人向け」に言い換えて下書きします。</div>
-  <p style="font-size:17px;color:var(--sub)">※1日の例はモデルケースです。面談の本数はお客様の状況によります。時間が減るというより、同じ時間でできる量が増える、が実感に近いです。</p>
+  <div class="row rv" style="margin-top:18px">
+   <div class="pull" style="margin:0"><div class="big">提案書、2時間 → 2分。</div>
+    <div class="bars"><div class="bar"><span>いままで</span><div class="t"><i style="--w:100%"></i></div><span class="v">2時間</span></div><div class="bar a"><span>これから</span><div class="t"><i style="--w:4%"></i></div><span class="v">2分</span></div></div>
+    森川自身の実測です。たたき台までAI、仕上げは本人。<br>約800名のお客様への3か月ごとの連絡も、AIが「その人向け」に言い換えて下書きします。</div>
+   <img class="ill sm" src="img/ro_clock.webp" alt="ストップウォッチを持って、書類の山が1枚になったことを喜ぶロボ" width="960" height="720" loading="lazy" style="margin:0 auto">
+  </div>
+  <p class="rv" style="font-size:16px;color:var(--ink2);margin-top:14px">※1日の例はモデルケースです。面談の本数はお客様の状況によります。時間が減るというより、同じ時間でできる量が増える、が実感に近いです。</p>
  </div>
 </section>
 
 <section>
  <div class="wrap">
-  <div class="eyebrow">時間の節約で、終わりません</div>
-  <h2>空いた時間より、<br>広がった幅。</h2>
-  <p>AIの一番の価値は、提案書が2時間から2分になることではありません。<br>「無理だ」「外注すると高い」と見送っていた仕事が、自分の手でできるようになることです。</p>
+  <div class="eyebrow rv">時間の節約で、終わりません</div>
+  <h2 class="rv">空いた時間より、<br>広がった幅。</h2>
+  <p class="rv">AIの一番の価値は、提案書が2時間から2分になることではありません。<br>「無理だ」「外注すると高い」と見送っていた仕事が、自分の手でできるようになることです。</p>
   <div class="steps">
-   <div class="step"><div class="no">1</div><p><b>自分の仕事に、値段がつく</b>提案書1本、フォロー1通、記事1本。外注ならいくらか。勉強会の最初に、これを1行書きます。AIを入れる費用対効果が、自分の数字で見えます。</p></div>
-   <div class="step"><div class="no">2</div><p><b>諦めていた仕事が、自分の手でできる</b>診断ページ、動画、記事、自動で届く連絡。森川の場合、月4万円のAIで、外注相場なら月100万円分の仕事が回っています。</p></div>
-   <div class="step"><div class="no">3</div><p><b>できると分かると、発想が増える</b>新しい入口、新しい客層、新しい商品。「やってみよう」と言える幅が広がります。</p></div>
-   <div class="step"><div class="no">4</div><p><b>発想が、売上と時間に変わる</b>増えた売上で人と時間を確保し、また幅が広がる。この循環が始まると、事業の大きさが変わります。</p></div>
+   <div class="step rv" style="--d:.05s"><div class="no">1</div><p><b>自分の仕事に、値段がつく</b>提案書1本、フォロー1通、記事1本。外注ならいくらか。勉強会の最初に、これを1行書きます。AIを入れる費用対効果が、自分の数字で見えます。</p></div>
+   <div class="step rv" style="--d:.15s"><div class="no">2</div><p><b>諦めていた仕事が、自分の手でできる</b>診断ページ、動画、記事、自動で届く連絡。森川の場合、月4万円のAIで、外注相場なら月100万円分の仕事が回っています。</p></div>
+   <div class="step rv" style="--d:.25s"><div class="no">3</div><p><b>できると分かると、発想が増える</b>新しい入口、新しい客層、新しい商品。「やってみよう」と言える幅が広がります。</p></div>
+   <div class="step rv" style="--d:.35s"><div class="no">4</div><p><b>発想が、売上と時間に変わる</b>増えた売上で人と時間を確保し、また幅が広がる。この循環が始まると、事業の大きさが変わります。</p></div>
   </div>
-  <div class="pull"><div class="big">AIを入れた会社と、入れていない会社。<br>差がつくのは時間ではなく、事業の幅と規模です。</div>成果を保証するものではありません。差がつく方向は使い方で決まります。だから勉強会では、道具ではなく使い方（3つの姿勢）を話します。</div>
-  <p style="font-size:17px;color:var(--sub)">※月100万円分は外注相場による試算です。同じ結果を約束するものではありません。</p>
+  <div class="pull rv"><div class="big">AIを入れた会社と、入れていない会社。<br>差がつくのは時間ではなく、事業の幅と規模です。</div>成果を保証するものではありません。差がつく方向は使い方で決まります。だから勉強会では、道具ではなく使い方（3つの姿勢）を話します。</div>
+  <p class="rv" style="font-size:16px;color:var(--ink2)">※月100万円分は外注相場による試算です。同じ結果を約束するものではありません。</p>
  </div>
 </section>
 
 <section class="dark">
  <div class="wrap">
-  <div class="eyebrow">実際の画面</div>
-  <h2>予約は、<br>こうやって入ってきます。</h2>
-  <p>「オンラインで予約が入る」と言われても、イメージが湧かないと思います。<br>これが、fulfullのお金の勉強会（オンライン）の申込一覧です。</p>
-  <div class="figure"><video src="img/yoyaku.mp4" poster="img/yoyaku_poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="オンライン勉強会の申込一覧が並んでいる管理画面の動画"></video></div>
-  <p class="cap">電話も訪問もしていません。広告→ページ→LINE→予約、の順に自動で入ってきます。氏名・メールアドレスは加工しています。</p>
-  <p>一覧に並んでいるのは、「会いに行った人」ではなく「向こうから予約してきた人」です。<br>この入口を作るのが、右腕の仕事です。</p>
+  <div class="eyebrow rv">実際の画面</div>
+  <h2 class="rv">予約は、<br>こうやって入ってきます。</h2>
+  <p class="rv">「オンラインで予約が入る」と言われても、イメージが湧かないと思います。<br>これが、fulfullのお金の勉強会（オンライン）の申込一覧です。</p>
+  <div class="figure rv"><video src="img/yoyaku.mp4" poster="img/yoyaku_poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="オンライン勉強会の申込一覧が並んでいる管理画面の動画"></video></div>
+  <p class="cap rv">電話も訪問もしていません。広告→ページ→LINE→予約、の順に自動で入ってきます。氏名・メールアドレスは加工しています。</p>
+  <p class="rv">一覧に並んでいるのは、「会いに行った人」ではなく「向こうから予約してきた人」です。<br>この入口を作るのが、右腕の仕事です。</p>
  </div>
 </section>
 
 <section class="mid light">
  <div class="wrap">
-  <a class="btn cta-link" href="https://utage-system.com/event/dihhvu6t6jSO/register">この入口の作り方を、実演で見る<small data-sem="count-small">3日程から選べます・無料・メールで受付</small></a>
-  <p class="btn-note">この先には、実績と、お客様の声と、当日の内容が続きます。</p>
+  <a class="btn cta-link rv" href="https://utage-system.com/event/dihhvu6t6jSO/register">この入口の作り方を、実演で見る<small data-sem="count-small">3日程から選べます・無料・メールで受付</small></a>
+  <p class="btn-note rv">この先には、実績と、お客様の声と、当日の内容が続きます。</p>
  </div>
 </section>
 
 <section class="alt">
  <div class="wrap">
-  <div class="eyebrow">訪問ゼロで、本当に回るのか</div>
-  <h2>相談も、面談も、<br>全部オンラインです。</h2>
-  <p>fulfullの個別相談は、2025年の1年間で380件。<br>保険だけでなく、住宅、相続、資産形成、経営の相談まで、すべてオンラインでこなしています。<br>個人のお客様はオンライン100%。法人も、お手続き以外は100%オンラインです。<br>その中に、保険の数字も入っています。</p>
+  <div class="eyebrow rv">訪問ゼロで、本当に回るのか</div>
+  <h2 class="rv">相談も、面談も、<br>全部オンラインです。</h2>
+  <p class="rv">fulfullの個別相談は、2025年の1年間で380件。<br>保険だけでなく、住宅、相続、資産形成、経営の相談まで、すべてオンラインでこなしています。<br>個人のお客様はオンライン100%。法人も、お手続き以外は100%オンラインです。<br>その中に、保険の数字も入っています。</p>
   <div class="stats light">
-   <div class="stat"><div class="n" data-count="380">380<small>件</small></div><div class="l">2025年の個別相談件数。保険・住宅・相続・資産形成・経営相談、すべてオンライン</div></div>
-   <div class="stat"><div class="n">1,000<small>万円超</small></div><div class="l">保険事業だけの年間売上（2025年）。取り扱い3年目・訪問ゼロで</div></div>
-   <div class="stat"><div class="n" data-count="83">83<small>%</small></div><div class="l">勉強会に参加した人のうち、個別相談に進んだ割合</div></div>
-   <div class="stat"><div class="n">最大3名</div><div class="l">勉強会はあえて少人数。個別相談への移行率と、熱量を高めるため</div></div>
+   <div class="stat rv" style="--d:.05s"><div class="n" data-count="380">380<small>件</small></div><div class="l">2025年の個別相談件数。保険・住宅・相続・資産形成・経営相談、すべてオンライン</div></div>
+   <div class="stat rv" style="--d:.1s"><div class="n">1,000<small>万円超</small></div><div class="l">保険事業だけの年間売上（2025年）。取り扱い3年目・訪問ゼロで</div></div>
+   <div class="stat rv" style="--d:.15s"><div class="n" data-count="83">83<small>%</small></div><div class="l">勉強会に参加した人のうち、個別相談に進んだ割合</div></div>
+   <div class="stat rv" style="--d:.2s"><div class="n">最大3名</div><div class="l">勉強会はあえて少人数。個別相談への移行率と、熱量を高めるため</div></div>
   </div>
-  <div class="pull"><div class="big">保険歴は、まだ3年です。</div>僕が保険を扱い始めたのは2023年。ベテランではありません。<br>それでも、保険事業だけで年間1,000万円以上の売上が立っています。<br>才能でも、人脈でもなく、オンラインと右腕・左腕の「回し方」でそうなっています。</div>
-  <p>数字より大事なのは、<strong>誰がやっても回る形にしてあること</strong>です。<br>入口の勉強会はスタッフでも回せて、個別相談だけ募集人が入る。<br>「森川だからできる」を、できるだけ外して作りました。<br>経験年数が短い人ほど、古いやり方に縛られない分、早く回り始めます。</p>
-  <p class="src">fulfull株式会社 実績（2025年・自社集計）。個人の成果を保証するものではありません。</p>
+  <div class="pull rv"><div class="big">保険歴は、まだ3年です。</div>僕が保険を扱い始めたのは2023年。ベテランではありません。<br>それでも、保険事業だけで年間1,000万円以上の売上が立っています。<br>才能でも、人脈でもなく、オンラインと右腕・左腕の「回し方」でそうなっています。</div>
+  <p class="rv">数字より大事なのは、<strong>誰がやっても回る形にしてあること</strong>です。<br>入口の勉強会はスタッフでも回せて、個別相談だけ募集人が入る。<br>「森川だからできる」を、できるだけ外して作りました。<br>経験年数が短い人ほど、古いやり方に縛られない分、早く回り始めます。</p>
+  <p class="src rv">fulfull株式会社 実績（2025年・自社集計）。個人の成果を保証するものではありません。</p>
  </div>
 </section>
 
 <section>
  <div class="wrap">
-  <div class="eyebrow">お客様側は、どう感じているのか</div>
-  <h2>オンライン相談を受けた<br>お客様の声。</h2>
-  <div class="rating"><div class="n">4.8</div><div class="s">★★★★★</div><div class="c">個別相談の予約サイト・63件のレビュー</div></div>
+  <div class="eyebrow rv">お客様側は、どう感じているのか</div>
+  <h2 class="rv">オンライン相談を受けた<br>お客様の声。</h2>
+  <div class="rating rv"><div class="n">4.8</div><div class="s">★★★★★</div><div class="c">個別相談の予約サイト・63件のレビュー</div></div>
   <div class="reviews">
-   <div class="rev">入りっぱなしの保険について内容と問題点を丁寧に説明いただき、今後どのような保証が必要となるか考えるきっかけになりました。<div class="d">ご相談者 A様</div></div>
-   <div class="rev">とても丁寧に無料とは思えないカウンセリングをしていただきました。無料でありがちな最終的には何かを勧められるということもありませんでしたので、安心して相談していただけると思います。<div class="d">ご相談者 B様</div></div>
-   <div class="rev">落ち着いた感じで話していただき、こちらも安心して話すことができました。<div class="d">ご相談者 C様</div></div>
-   <div class="rev">森川さんはわかりやすく説明してくださるので、相談してみて良かったです。<div class="d">K.S.様</div></div>
-   <div class="rev">森川さんが、「自分なら」ということで経験談交えて話していただいたので、非常に参考になりました。<div class="d">ご相談者 D様</div></div>
+   <div class="rev rv" style="--d:.05s">入りっぱなしの保険について内容と問題点を丁寧に説明いただき、今後どのような保証が必要となるか考えるきっかけになりました。<div class="d">ご相談者 A様</div></div>
+   <div class="rev rv" style="--d:.1s">とても丁寧に無料とは思えないカウンセリングをしていただきました。無料でありがちな最終的には何かを勧められるということもありませんでしたので、安心して相談していただけると思います。<div class="d">ご相談者 B様</div></div>
+   <div class="rev rv" style="--d:.15s">落ち着いた感じで話していただき、こちらも安心して話すことができました。<div class="d">ご相談者 C様</div></div>
+   <div class="rev rv" style="--d:.2s">森川さんはわかりやすく説明してくださるので、相談してみて良かったです。<div class="d">K.S.様</div></div>
+   <div class="rev rv" style="--d:.25s">森川さんが、「自分なら」ということで経験談交えて話していただいたので、非常に参考になりました。<div class="d">ご相談者 D様</div></div>
   </div>
-  <p class="src" style="margin-top:12px">出典: fulfull株式会社 お金の相談・予約フォーム（STORES予約）のレビュー。原文のまま。お名前は伏せています。</p>
-  <p style="margin-top:14px">画面越しでも、信頼は作れます。<br>むしろ「押し売りされない」「落ち着いて話せる」と感じてもらいやすい。<br>これが、オンラインに切り替えて分かったことです。</p>
+  <p class="src rv" style="margin-top:12px">出典: fulfull株式会社 お金の相談・予約フォーム（STORES予約）のレビュー。原文のまま。お名前は伏せています。</p>
+  <p class="rv" style="margin-top:14px">画面越しでも、信頼は作れます。<br>むしろ「押し売りされない」「落ち着いて話せる」と感じてもらいやすい。<br>これが、オンラインに切り替えて分かったことです。</p>
  </div>
 </section>
 
 <section class="alt">
  <div class="wrap">
-  <div class="eyebrow">右腕と左腕の、最初の1週間</div>
-  <h2>難しいことは、<br>1つもありません。</h2>
-  <p>当日お渡しする設定文を貼ったあと、最初の1週間は、こう動きます。</p>
-  <div class="zukai"><img src="zukai/week.jpg" alt="右腕と左腕の最初の1週間の図解。右腕は設定文を貼る、理由が3つ出る、ネタと下書き、診断ページ完成、LINEの応答、公開を決める。左腕は設定文を貼る、メモから骨子、フォロー文、直し方を覚える、本番で使う、3か月後の連絡。" loading="lazy" width="1440" height="1573"></div>
-  <details style="margin-bottom:10px"><summary>文字で読む（1週間の手順）</summary><div class="week" style="padding:0 16px 14px">
-   <div class="wk"><div class="h">右腕（集客）</div>
+  <div class="eyebrow rv">右腕と左腕の、最初の1週間</div>
+  <h2 class="rv">難しいことは、<br>1つもありません。</h2>
+  <div class="row rv">
+   <p style="margin:0">当日お渡しする<button class="yg" data-yg="settei">設定文</button>を貼ったあと、最初の1週間は、こう動きます。<br>毎日、少しずつ育っていきます。</p>
+   <img class="ill sm" src="img/ro_sprout.webp" alt="小さな鉢植えに水をやるロボ。芽が育って金色の実がひとつ" width="960" height="720" loading="lazy" style="margin:0 auto">
+  </div>
+  <div class="week">
+   <div class="wk rv-l"><div class="h">右腕（集客）</div>
     <dl><dt>1日目</dt><dd>設定文を貼る。あなたの強み・客層・得意な話をAIに渡す</dd><dt>2日目</dt><dd>AIが「あなたが選ばれる理由」を3つに整理して返す</dd><dt>3日目</dt><dd>発信のネタ10本と、1本目の下書きができる</dd><dt>4日目</dt><dd>1分で終わる診断ページの質問と結果文ができる</dd><dt>5日目</dt><dd>LINEの自動応答文（あいことば→プレゼント）ができる</dd><dt>6〜7日目</dt><dd>実物を確認し、公開するかどうかを決める</dd></dl>
    </div>
-   <div class="wk"><div class="h">左腕（面談・提案）</div>
+   <div class="wk l rv-r"><div class="h">左腕（面談・提案）</div>
     <dl><dt>1日目</dt><dd>設定文を貼る。あなたの話し方・禁止事項・会社の規程をAIに渡す</dd><dt>2日目</dt><dd>過去の面談メモを1つ渡し、提案骨子を出させてみる</dd><dt>3日目</dt><dd>同じメモから、フォロー文と次回予約の案内文を出す</dd><dt>4日目</dt><dd>「長い・薄い・固い」を直す一言を覚える</dd><dt>5日目</dt><dd>実際の面談後に使ってみる（送るかは自分で判断）</dd><dt>6〜7日目</dt><dd>3か月ごとの連絡文を、お客様の層ごとに作り置く</dd></dl>
    </div>
-  </div></details>
-  <p style="font-size:17px;color:var(--sub)">※すべて「作るまで」の手順です。お客様に出すかどうかは、所属会社の規程とご自身の判断で決めてください。</p>
+  </div>
+  <p class="rv" style="font-size:16px;color:var(--ink2)">※すべて「作るまで」の手順です。お客様に出すかどうかは、所属会社の規程とご自身の判断で決めてください。</p>
  </div>
 </section>
 
 <section>
  <div class="wrap">
-  <div class="eyebrow">当日の90分</div>
-  <h2>右腕と左腕を、<br>その場で作ります。</h2>
+  <div class="eyebrow rv">当日の90分</div>
+  <h2 class="rv">右腕と左腕を、<br>その場で作ります。</h2>
+  <img class="ill sm rv" src="img/ro_zoom.webp" alt="机の上のノートパソコンの画面から、ロボが手を振っている" width="960" height="720" loading="lazy">
   <div class="timeline">
-   <div class="tl"><div class="min">15分</div><h3>なぜ「完全自動化」ができるのか</h3><p>移動をやめると何が空くのか。お客様がAIに相談してから来る時代に、営業側もAIを持つとどう変わるのか。自動化していい部分と、人がやるべき部分の線引きから話します。</p></div>
-   <div class="tl"><div class="min">30分</div><h3>実演：右腕と左腕をその場で作る</h3><p>右腕＝AIに強みと客層を分析させ、発信ネタ、診断ページ、LINE自動応答まで組む。実際に動いている入口をお見せします。<br>左腕＝架空の面談メモを渡して、提案骨子、フォロー文、次回予約案内ができるまでを、その場で動かします。途中の指示の出し方まで、全部見せます。</p></div>
-   <div class="tl"><div class="min">15分</div><h3>コピーして貼るだけの、組み立て方</h3><p>「右腕の設定文」「左腕の設定文」を配ります。毎日の回し方と、続ける仕組みまで。</p></div>
-   <div class="tl" style="padding-bottom:0"><div class="min">30分</div><h3>質疑応答</h3><p>自分の場合はどう組むか、その場で聞ける時間です。質問はチャットでも受け付けます。</p></div>
+   <div class="tl rv" style="--d:.05s"><div class="min">15<small>分</small></div><div><h3>なぜ「完全自動化」ができるのか</h3><p>移動をやめると何が空くのか。お客様がAIに相談してから来る時代に、営業側もAIを持つとどう変わるのか。自動化していい部分と、人がやるべき部分の線引きから話します。</p></div></div>
+   <div class="tl dem rv" style="--d:.15s"><div class="min">30<small>分</small></div><div><h3>実演：右腕と左腕をその場で作る</h3><p>右腕＝AIに強みと客層を分析させ、発信ネタ、診断ページ、LINE自動応答まで組む。実際に動いている入口をお見せします。<br>左腕＝架空の面談メモを渡して、提案骨子、フォロー文、次回予約案内ができるまでを、その場で動かします。途中の指示の出し方まで、全部見せます。</p></div></div>
+   <div class="tl rv" style="--d:.25s"><div class="min">15<small>分</small></div><div><h3>コピーして貼るだけの、組み立て方</h3><p>「右腕の設定文」「左腕の設定文」を配ります。毎日の回し方と、続ける仕組みまで。</p></div></div>
+   <div class="tl rv" style="--d:.35s"><div class="min">30<small>分</small></div><div><h3>質疑応答</h3><p>自分の場合はどう組むか、その場で聞ける時間です。質問はチャットでも受け付けます。</p></div></div>
   </div>
  </div>
 </section>
 
 <section class="alt">
  <div class="wrap">
-  <div class="eyebrow">持ち帰れるもの</div>
-  <h2>翌日から、<br>自分のAIが動き出します。</h2>
-  <div class="figure"><img src="img/kit.jpg" alt="スマートフォンでAIとやり取りする手元" loading="lazy"></div>
-  <ul class="take">
-   <li><strong>右腕の設定文・左腕の設定文</strong>。コピーしてAIに貼るだけで、あなた専用の相棒が動き出します</li>
-   <li><strong>移動ゼロで回す1日の型</strong>。オンライン面談の前後をどう組むか</li>
-   <li><strong>自動化していい仕事と、自分がやる仕事の線引き</strong>。会社の規程の中で使える範囲の考え方</li>
-   <li><strong>最初の1週間の手順書</strong>。上の表を、そのまま印刷できる形で</li>
-   <li><strong>質疑応答での、あなたのケースの答え</strong></li>
+  <div class="eyebrow rv">持ち帰れるもの</div>
+  <h2 class="rv">翌日から、<br>自分のAIが動き出します。</h2>
+  <div class="row rv">
+   <div class="figure" style="margin:0"><img src="img/kit.jpg" alt="スマートフォンでAIとやり取りする手元" loading="lazy"></div>
+   <img class="ill sm" src="img/ro_gift.webp" alt="金色のリボンの箱から、2本の巻物が顔を出している。それを差し出すロボ" width="960" height="720" loading="lazy" style="margin:0 auto">
+  </div>
+  <ul class="take" style="margin-top:16px">
+   <li class="rv" style="--d:.05s"><strong>右腕の設定文・左腕の設定文</strong>。コピーしてAIに貼るだけで、あなた専用の相棒が動き出します</li>
+   <li class="rv" style="--d:.1s"><strong>移動ゼロで回す1日の型</strong>。オンライン面談の前後をどう組むか</li>
+   <li class="rv" style="--d:.15s"><strong>自動化していい仕事と、自分がやる仕事の線引き</strong>。会社の規程の中で使える範囲の考え方</li>
+   <li class="rv" style="--d:.2s"><strong>最初の1週間の手順書</strong>。上の表を、そのまま印刷できる形で</li>
+   <li class="rv" style="--d:.25s"><strong>質疑応答での、あなたのケースの答え</strong></li>
   </ul>
  </div>
 </section>
 
 <section>
  <div class="wrap">
-  <div class="eyebrow">講師</div>
-  <h2>「おばあちゃんでもできる」<br>から始まった人です。</h2>
-  <div class="me"><img src="morikawa.jpg" alt="森川満章" loading="lazy"><div class="t"><b>森川満章</b>fulfull株式会社 代表取締役<br>お金のプロ・金融AIカレッジ主宰</div></div>
-  <p>30歳まで投資を知らなかった、元ヤマト運輸のドライバーです。<br>投資を覚えたあと、母からLINEが来ました。<br>「私にもできる投資ある？」<br>それに答えるために作った最初のスクールの名前が、<strong>「おばあちゃんでもできる投資」</strong>でした。<br>難しいことを、その人の言葉に置き換えて渡す。それが僕の仕事の原点です。</p>
-  <p>いま、面談も集客も、オンラインとAIでほぼ自動で回しています。<br>特別な才能があったわけではありません。<br>「何を、どの順番でAIに渡すか」を決めただけです。<br>今回は、その決め方を丸ごと持ち帰ってもらいます。</p>
+  <div class="eyebrow rv">講師</div>
+  <h2 class="rv">「おばあちゃんでもできる」<br>から始まった人です。</h2>
+  <div class="me rv"><img src="morikawa.jpg" alt="森川満章" loading="lazy"><div class="t"><b>森川満章</b>fulfull株式会社 代表取締役<br>お金のプロ・金融AIカレッジ主宰</div></div>
+  <p class="rv">30歳まで投資を知らなかった、元ヤマト運輸のドライバーです。<br>投資を覚えたあと、母からLINEが来ました。<br>「私にもできる投資ある？」<br>それに答えるために作った最初のスクールの名前が、<strong>「おばあちゃんでもできる投資」</strong>でした。<br>難しいことを、その人の言葉に置き換えて渡す。それが僕の仕事の原点です。</p>
+  <p class="rv">いま、面談も集客も、オンラインとAIでほぼ自動で回しています。<br>特別な才能があったわけではありません。<br>「何を、どの順番でAIに渡すか」を決めただけです。<br>今回は、その決め方を丸ごと持ち帰ってもらいます。</p>
   <div class="cred">
-   <div><b>2,000件<span style="font-size:15px">以上</span></b>累計相談件数</div>
-   <div><b>200回<span style="font-size:15px">以上</span></b>セミナー開催・延べ6,500名・継続率92%</div>
-   <div><b>25社<span style="font-size:15px">以上</span></b>企業研修の実績</div>
-   <div><b>12件<span style="font-size:15px">以上</span></b>行政・団体との連携</div>
+   <div class="rv" style="--d:.05s"><b>2,000件<span style="font-size:15px">以上</span></b>累計相談件数</div>
+   <div class="rv" style="--d:.1s"><b>200回<span style="font-size:15px">以上</span></b>セミナー開催・延べ6,500名・継続率92%</div>
+   <div class="rv" style="--d:.15s"><b>25社<span style="font-size:15px">以上</span></b>企業研修の実績</div>
+   <div class="rv" style="--d:.2s"><b>12件<span style="font-size:15px">以上</span></b>行政・団体との連携</div>
   </div>
-  <p style="margin:0 0 4px;font-weight:900">登壇・研修の実績（順不同・敬称略）</p>
-  <div class="stage"><span>東京海上日動あんしん生命</span><span>積水ハウス</span><span>法人会</span><span>商工会議所（ビジネスアドバイザー）</span><span>信用金庫（創業塾）</span><span>小学校（お金の授業）</span><span>企業研修 25社以上</span><span>大手金融会社 講師</span></div>
-  <p class="stage-note">いずれも登壇・研修の実績であり、各社・各団体が本勉強会を推奨するものではありません。</p>
-  <p style="font-size:17px;color:var(--sub);margin:0">岩手県出身。トヨタ整備士、佐川急便、ヤマト運輸を経て独立。2020年にfulfullを創業。3児の父。</p>
+  <p class="rv" style="margin:0 0 4px;font-weight:900">登壇・研修の実績（順不同・敬称略）</p>
+  <div class="stage rv"><span>東京海上日動あんしん生命</span><span>積水ハウス</span><span>法人会</span><span>商工会議所（ビジネスアドバイザー）</span><span>信用金庫（創業塾）</span><span>小学校（お金の授業）</span><span>企業研修 25社以上</span><span>大手金融会社 講師</span></div>
+  <p class="stage-note rv">いずれも登壇・研修の実績であり、各社・各団体が本勉強会を推奨するものではありません。</p>
+  <p class="rv" style="font-size:16px;color:var(--ink2);margin:0">岩手県出身。トヨタ整備士、佐川急便、ヤマト運輸を経て独立。2020年にfulfullを創業。3児の父。</p>
  </div>
 </section>
 
 <section class="alt">
  <div class="wrap">
-  <div class="eyebrow">ここまで読んでくださった方へ</div>
-  <h2>正直に言います。<br>やった方がいいです。</h2>
-  <div class="letter">
+  <div class="eyebrow rv">ここまで読んでくださった方へ</div>
+  <h2 class="rv">正直に言います。<br>やった方がいいです。</h2>
+  <div class="letter rv">
    <img class="deco tl" src="img/deco_flowers.jpg" alt="" loading="lazy">
    <img class="deco br" src="img/deco_butterfly.jpg" alt="" loading="lazy">
+   <img class="night" src="img/ro_night.webp" alt="" loading="lazy">
    <p>AIを、もう触っている方もいると思います。<br>ChatGPTに文章を直してもらったり、調べものに使ったり。<br>それでも「営業が変わった」とまでは言えない。<br>そういう方が、いちばん多いはずです。</p>
    <p>理由は簡単で、AIを「道具」として使っているからです。<br>右腕と左腕は、道具ではありません。<br>あなたの代わりに、集客の入口を作り、面談の前後を回す「人手」です。<br>一度組んでしまえば、あなたが寝ている間も、面談の合間も、勝手に動きます。</p>
    <p>ここに入れば、面倒な仕事は、もう要らなくなります。<br>提案書のたたき台も、フォローの文面も、次の予約の案内も、3か月後の連絡も。<br>集客の入口から面談の後ろまで、ここだけで完結します。<br>あなたに残るのは、お客様と話すことと、決めることだけです。</p>
@@ -464,60 +599,61 @@ footer{font-size:17px;color:var(--sub);text-align:center;padding:26px 20px 100px
 
 <section>
  <div class="wrap">
-  <div class="eyebrow">正直に</div>
-  <h2>こんな方には、<br>向いていません。</h2>
-  <ul class="no">
-   <li>お客様と話すことまでAIに任せて、楽に契約だけ取りたい方。説明と契約は、募集人ご本人の仕事です</li>
-   <li>所属会社の規程より、自分のやり方を優先したい方。当日は「規程が優先」を前提に話します</li>
-   <li>「決めるのはあなた」と言われるのが嫌な方。AIは材料を出しますが、判断は代わりません</li>
+  <div class="eyebrow rv">正直に</div>
+  <h2 class="rv">こんな方には、<br>向いていません。</h2>
+  <ul class="notfor">
+   <li class="rv" style="--d:.05s">お客様と話すことまでAIに任せて、楽に契約だけ取りたい方。説明と契約は、募集人ご本人の仕事です</li>
+   <li class="rv" style="--d:.1s">所属会社の規程より、自分のやり方を優先したい方。当日は「規程が優先」を前提に話します</li>
+   <li class="rv" style="--d:.15s">「決めるのはあなた」と言われるのが嫌な方。AIは材料を出しますが、判断は代わりません</li>
   </ul>
-  <div class="eyebrow">3つの約束</div>
-  <div class="promise">
-   <div><b>売り込みません。</b>最後に、希望する方だけに個別相談の案内を1枚お見せします。要らなければ、そのまま閉じて大丈夫です。</div>
-   <div><b>会社に堂々と言える内容だけを話します。</b>内緒で使う方法ではなく、規程の中で使える範囲の考え方です。</div>
-   <div><b>使わなくても、損はしません。</b>設定文と1週間の手順書は、参加した方全員にお渡しします。</div>
+  <div class="eyebrow rv">3つの約束</div>
+  <div class="promise rv">
+   <div><b>売り込みません。</b>最後に、希望する方だけに個別相談の案内を1枚お見せします。要らなければ、そのまま閉じて大丈夫です。<span class="st">約束<br>1</span></div>
+   <div><b>会社に堂々と言える内容だけを話します。</b>内緒で使う方法ではなく、規程の中で使える範囲の考え方です。<span class="st">約束<br>2</span></div>
+   <div><b>使わなくても、損はしません。</b>設定文と1週間の手順書は、参加した方全員にお渡しします。<span class="st">約束<br>3</span></div>
   </div>
  </div>
 </section>
 
 <section class="alt">
  <div class="wrap">
-  <div class="eyebrow">よくあるご質問</div>
-  <h2>ここまで読んで、<br>まだ迷っている方へ。</h2>
-  <details><summary>パソコンが苦手です。本当にできますか。</summary><p>スマホだけで始められます。当日お渡しする設定文は「コピーして貼る」だけです。難しい設定や、専門用語の説明会はしません。</p></details>
-  <details><summary>50代・60代でも、いまから間に合いますか。</summary><p>間に合います。AIが代わりにやるのは「調べる・書く・整える」で、お客様との信頼関係はあなたのこれまでの経験がそのまま資産です。むしろ経験が長い人ほど、AIに渡せる材料が多いです。</p></details>
-  <details><summary>すでにChatGPTを使っています。それでも参加する意味はありますか。</summary><p>あります。当日は「文章を直す道具」としてではなく、集客の入口と面談の前後を丸ごと任せる「右腕・左腕」として組む手順を見せます。使っている方ほど、違いがはっきり分かります。</p></details>
-  <details><summary>AIを使うのは、会社のルール上問題ないですか。</summary><p>当日は「所属会社の規程が優先」を前提に、自動化していい範囲と、募集人本人がやるべき範囲の線引きから話します。会社に内緒で使う方法ではなく、堂々と説明できる使い方です。</p></details>
-  <details><summary>「完全自動化」と言いますが、契約まで自動ですか。</summary><p>いいえ。自動化するのは集客・提案の準備・フォローの部分です。お客様への説明と契約の手続きは、募集人ご本人が行う前提です。</p></details>
-  <details><summary>お客様の個人情報をAIに入れることになりませんか。</summary><p>名前や口座情報は入れない前提で組みます。面談メモは「Aさん・50代・ご夫婦」のように置き換えて渡す型を、当日そのままお見せします。</p></details>
-  <details><summary>費用はかかりますか。AIの利用料は。</summary><p>勉強会は無料です。AIは無料プランから始められます。有料プランに上げるかどうかは、使ってみてから決めれば十分です。</p></details>
-  <details><summary>何かを売り込まれますか。</summary><p>勉強会は無料で、売り込みはしません。最後に、希望する方だけに個別相談の案内を1枚お見せします。要らなければそのまま閉じていただいて大丈夫です。</p></details>
-  <details><summary>発言は必要ですか。</summary><p>必須ではありません。質問はチャットでも受け付けます。カメラはオンでのご参加をお願いしています。表情が見えると、実演をその方に合わせて進められます。</p></details>
-  <details><summary>録画は残りますか。</summary><p>講師側の画面と音声を録画し、後日の教材に使う場合があります。参加者の映像・名前は使いません。</p></details>
-  <details><summary>LINEをやっていなくても参加できますか。</summary><p>できます。受付はお名前とメールアドレスだけで、ZoomのURLもメールでお送りします。LINEは、設定文などを受け取りたい方向けの任意の窓口です。</p></details>
-  <details id="sem-resched"><summary>当日参加できなくなったら。</summary><p>受付メールに返信するか、LINEに一言送ってください。ほかの日程に振り替えます。</p></details>
+  <div class="eyebrow rv">よくあるご質問</div>
+  <h2 class="rv">ここまで読んで、<br>まだ迷っている方へ。</h2>
+  <div class="robo rv" style="margin:0 0 18px"><img src="img/mascot_think.webp" alt="" width="96" height="96" loading="lazy"><div class="bub">気になるところを、タップして開いてください。<br>ここに無いことは、申込後のメールに返信で聞けます。</div></div>
+  <details class="rv"><summary>パソコンが苦手です。本当にできますか。</summary><p>スマホだけで始められます。当日お渡しする設定文は「コピーして貼る」だけです。難しい設定や、専門用語の説明会はしません。</p></details>
+  <details class="rv"><summary>50代・60代でも、いまから間に合いますか。</summary><p>間に合います。AIが代わりにやるのは「調べる・書く・整える」で、お客様との信頼関係はあなたのこれまでの経験がそのまま資産です。むしろ経験が長い人ほど、AIに渡せる材料が多いです。</p></details>
+  <details class="rv"><summary>すでにChatGPTを使っています。それでも参加する意味はありますか。</summary><p>あります。当日は「文章を直す道具」としてではなく、集客の入口と面談の前後を丸ごと任せる「右腕・左腕」として組む手順を見せます。使っている方ほど、違いがはっきり分かります。</p></details>
+  <details class="rv"><summary>AIを使うのは、会社のルール上問題ないですか。</summary><p>当日は「所属会社の規程が優先」を前提に、自動化していい範囲と、募集人本人がやるべき範囲の線引きから話します。会社に内緒で使う方法ではなく、堂々と説明できる使い方です。</p></details>
+  <details class="rv"><summary>「完全自動化」と言いますが、契約まで自動ですか。</summary><p>いいえ。自動化するのは集客・提案の準備・フォローの部分です。お客様への説明と契約の手続きは、募集人ご本人が行う前提です。</p></details>
+  <details class="rv"><summary>お客様の個人情報をAIに入れることになりませんか。</summary><p>名前や口座情報は入れない前提で組みます。面談メモは「Aさん・50代・ご夫婦」のように置き換えて渡す型を、当日そのままお見せします。</p></details>
+  <details class="rv"><summary>費用はかかりますか。AIの利用料は。</summary><p>勉強会は無料です。AIは無料プランから始められます。有料プランに上げるかどうかは、使ってみてから決めれば十分です。</p></details>
+  <details class="rv"><summary>何かを売り込まれますか。</summary><p>勉強会は無料で、売り込みはしません。最後に、希望する方だけに個別相談の案内を1枚お見せします。要らなければそのまま閉じていただいて大丈夫です。</p></details>
+  <details class="rv"><summary>発言は必要ですか。</summary><p>必須ではありません。質問はチャットでも受け付けます。カメラはオンでのご参加をお願いしています。表情が見えると、実演をその方に合わせて進められます。</p></details>
+  <details class="rv"><summary>録画は残りますか。</summary><p>講師側の画面と音声を録画し、後日の教材に使う場合があります。参加者の映像・名前は使いません。</p></details>
+  <details class="rv"><summary>LINEをやっていなくても参加できますか。</summary><p>できます。受付はお名前とメールアドレスだけで、ZoomのURLもメールでお送りします。LINEは、設定文などを受け取りたい方向けの任意の窓口です。</p></details>
+  <details class="rv"><summary>Zoomを使ったことがありません。</summary><p>大丈夫です。前日に届くメールのURLを、時間になったら押すだけで入れます。アプリが無ければ、押したときに案内が出ます。心配な方は、受付メールに返信してください。前もって一緒に確かめます。</p></details>
+  <details class="rv" id="sem-resched"><summary>当日参加できなくなったら。</summary><p>受付メールに返信するか、LINEに一言送ってください。ほかの日程に振り替えます。</p></details>
  </div>
 </section>
 
 <section id="sem-flow">
  <div class="wrap">
-  <div class="eyebrow">参加までの流れ</div>
-  <h2>申し込みは、<br>30秒で終わります。</h2>
-  <div class="zukai"><img src="zukai/steps.jpg" alt="申し込みは30秒。1 ボタンを押すと申込フォームが開く。2 日程を選び、お名前とメールで受付完了。3 前日にZoomのURLがメールで届く。" loading="lazy" width="1440" height="1440"></div>
+  <div class="eyebrow rv">参加までの流れ</div>
+  <h2 class="rv">申し込みは、<br>30秒で終わります。</h2>
   <div class="steps">
-   <div class="step"><div class="no">1</div><p><b>下のボタンを押す</b>申込フォームが開きます</p></div>
-   <div class="step"><div class="no">2</div><p><b>日程を選んで、お名前とメールを入れる</b>その場で受付メールが届きます。これで申込完了です。LINEでの受け取りは任意です</p></div>
-   <div class="step"><div class="no">3</div><p><b>前日にZoomのURLが届く</b>選んだ日程の前日に、メール（希望者はLINEにも）でお送りします。当日は時間になったら開くだけ</p></div>
+   <div class="step rv" style="--d:.05s"><div class="no">1</div><p><b>下のボタンを押す</b>申込フォームが開きます</p></div>
+   <div class="step rv" style="--d:.15s"><div class="no">2</div><p><b>日程を選んで、お名前とメールを入れる</b>その場で受付メールが届きます。これで申込完了です。LINEでの受け取りは任意です</p></div>
+   <div class="step rv" style="--d:.25s"><div class="no">3</div><p><b>前日に<button class="yg" data-yg="zoom">Zoom</button>のURLが届く</b>選んだ日程の前日に、メール（希望者はLINEにも）でお送りします。当日は時間になったら開くだけ</p></div>
   </div>
  </div>
 </section>
 
 <section class="alt">
  <div class="wrap">
-  <div class="eyebrow">開催概要</div>
-  <h2 id="sem-sch-h2">3つの日程から、<br>選べます。</h2>
-  <dl class="spec">
-   <dt>日時</dt><dd id="sem-sch-dd">① 10月21日（水）20:00〜21:30<br>② 10月23日（金）15:00〜16:30<br>③ 10月25日（日）14:00〜15:30<br><span style="font-weight:500;color:var(--sub);font-size:17px">内容は同じです。本編60分＋質疑30分</span></dd>
+  <div class="eyebrow rv">開催概要</div>
+  <h2 class="rv" id="sem-sch-h2">3つの日程から、<br>選べます。</h2>
+  <dl class="spec rv">
+   <dt>日時</dt><dd id="sem-sch-dd">① 10月21日（水）20:00〜21:30<br>② 10月23日（金）15:00〜16:30<br>③ 10月25日（日）14:00〜15:30<br><span style="font-weight:500;color:var(--ink2);font-size:16.5px">内容は同じです。本編60分＋質疑30分</span></dd>
    <dt>形式</dt><dd>Zoom（オンライン・カメラオン推奨）</dd>
    <dt>参加費</dt><dd>無料</dd>
    <dt>定員</dt><dd>各回、定員になり次第締め切ります</dd>
@@ -529,32 +665,35 @@ footer{font-size:17px;color:var(--sub);text-align:center;padding:26px 20px 100px
 
 <section class="cta">
  <div class="wrap">
-  <h2>移動をやめた分だけ<br>会える人が増える。<br>その回し方を、90分で。</h2>
-  <p class="lead" id="sem-cta-lead">3つの日程から選んで、お名前とメールアドレスだけで申込完了。<br>ZoomのURLは前日にメールでお送りします。</p>
-  <a class="btn cta-link" href="https://utage-system.com/event/dihhvu6t6jSO/register">自動化の実演を見る<small>参加費無料・お名前とメールだけ・30秒で完了</small></a>
-  <p class="btn-note">90分で終わります。お名前とメールだけで申し込めます。</p>
+  <img class="ill rv" src="img/ro_heroside.webp" alt="ノートパソコンの横で、そろばんを持って手を振るロボ" width="960" height="720" loading="lazy" style="width:min(100%,360px)">
+  <h2 class="rv" style="text-align:center">移動をやめた分だけ<br>会える人が増える。<br>その回し方を、90分で。</h2>
+  <p class="lead rv" id="sem-cta-lead" style="text-align:center">3つの日程から選んで、お名前とメールアドレスだけで申込完了。<br>ZoomのURLは前日にメールでお送りします。</p>
+  <a class="btn ring cta-link rv" href="https://utage-system.com/event/dihhvu6t6jSO/register">自動化の実演を見る<small>参加費無料・お名前とメールだけ・30秒で完了</small></a>
+  <p class="btn-note rv">90分で終わります。お名前とメールだけで申し込めます。</p>
  </div>
 </section>
 
-<section>
+<section style="padding-top:20px">
  <div class="wrap">
-  <div class="eyebrow">ご注意</div>
-  <ul class="notes">
+  <div class="eyebrow rv">ご注意</div>
+  <ul class="notes rv">
    <li>「自動化」は集客・提案準備・フォローの部分を指します。お客様への説明や契約手続きは、募集人ご本人が行う前提です。</li>
    <li>実際に使う際は、ご自身が所属する会社の規程が優先されます。</li>
    <li>本ページの業界数値は各出典の公表値、fulfullの実績は自社集計です。成果を保証するものではありません。</li>
    <li>当日は録画を行い、後日の教材として使用させていただく場合があります。参加者の映像・名前は使いません。</li>
    <li>ページ内の人物写真・イラストはイメージです（講師写真を除く）。申込一覧の動画は個人情報を加工しています。</li>
-   <li>お申し込みでお預かりする情報は、勉強会のご案内と金融AIカレッジからの情報提供に使用します。<a href="https://fulfull.jp/privacy-policy/" target="_blank" rel="noopener" style="color:var(--sub)">プライバシーポリシー</a></li>
+   <li>お申し込みでお預かりする情報は、勉強会のご案内と金融AIカレッジからの情報提供に使用します。<a href="https://fulfull.jp/privacy-policy/" target="_blank" rel="noopener" style="color:var(--ink2)">プライバシーポリシー</a></li>
   </ul>
-  <p class="motto">作るまでが、学び。<br>出すかどうかは、本人と会社。</p>
+  <p class="motto rv">作るまでが、学び。<br>出すかどうかは、本人と会社。</p>
  </div>
 </section>
 
-<footer>金融AIカレッジ｜fulfull株式会社<br><a href="../" style="color:var(--sub)">お金のプロのAI相棒診断（無料・約1分）</a></footer>
-
+<footer>金融AIカレッジ｜fulfull株式会社<br><a href="../" style="color:var(--ink2)">お金のプロのAI相棒診断（無料・約1分）</a></footer>
 
 <div class="sticky" id="sticky"><a class="btn cta-link" data-sem="sticky" href="https://utage-system.com/event/dihhvu6t6jSO/register">実演に申し込む（無料・3日程）</a></div>
+
+<div id="yogo-shade"></div>
+<div id="yogo" role="dialog" aria-live="polite"><div class="in"><img src="img/mascot_point.webp" alt=""><div><b id="yogo-t"></b><p id="yogo-p"></p></div><button type="button" id="yogo-x" aria-label="閉じる">×</button></div></div>
 
 <script>
 /* ===== 開催日程（ここだけ書き換えれば、ページ全体の日程表示が変わる） =====
@@ -580,11 +719,7 @@ var SEMINAR = {
   var links = document.querySelectorAll('.cta-link');
   window.SEMINAR_OPEN = open.length > 0;
   var fxr = '';
-  try {
-    var qr = q.get('ref') || (q.get('utm_source') ? (q.get('utm_source') + (q.get('utm_content') ? '_' + q.get('utm_content') : '')) : '');
-    if (qr) { sessionStorage.setItem('fx_ref', qr); }
-    fxr = qr || window.fxRef || sessionStorage.getItem('fx_ref') || '';
-  } catch(e) {}
+  try { fxr = window.fxRef || sessionStorage.getItem('fx_ref') || ''; } catch(e) {}
   var regUrl = S.register + (fxr && fxr !== 'direct' ? '?ref=' + encodeURIComponent(fxr) : '');
   links.forEach(function(a){ a.href = open.length ? regUrl : S.waitlist.url; });
   if (open.length === S.sessions.length && !t) return;           // 全回が受付中なら、書かれたままでよい
@@ -593,7 +728,7 @@ var SEMINAR = {
     $('sem-hero-date').textContent = open.map(function(x){ return x.short; }).join('・') + '　Zoom・参加無料';
     $('sem-sch-h2').innerHTML = n > 1 ? (n + 'つの日程から、<br>選べます。') : '次回の日程は、<br>こちらです。';
     $('sem-sch-dd').innerHTML = open.map(function(x,i){ return (n > 1 ? marks[i] + ' ' : '') + x.day; }).join('<br>') +
-      '<br><span style="font-weight:500;color:var(--sub);font-size:17px">内容は毎回同じです。本編60分＋質疑30分</span>';
+      '<br><span style="font-weight:500;color:var(--ink2);font-size:16.5px">内容は毎回同じです。本編60分＋質疑30分</span>';
     document.querySelectorAll('[data-sem="count-small"]').forEach(function(el){
       el.textContent = (n > 1 ? n + '日程から選べます' : open[0].short + 'に開催') + '・無料・メールで受付'; });
     $('sem-cta-lead').innerHTML = (n > 1 ? n + 'つの日程から選んで、' : '') + 'お名前とメールアドレスだけで申込完了。<br>ZoomのURLは前日にメールでお送りします。';
@@ -604,7 +739,7 @@ var SEMINAR = {
   document.title = 'おじいちゃんでもできる、保険営業のAI完全自動化｜AI仕事術勉強会（次回準備中）';
   $('sem-hero-date').textContent = '次回の日程は、決まりしだいこのページでご案内します';
   $('sem-sch-h2').innerHTML = '次回の日程は、<br>準備中です。';
-  $('sem-sch-dd').innerHTML = '決まりしだい、このページでご案内します。<br><span style="font-weight:500;color:var(--sub);font-size:17px">内容は毎回同じです。本編60分＋質疑30分</span>';
+  $('sem-sch-dd').innerHTML = '決まりしだい、このページでご案内します。<br><span style="font-weight:500;color:var(--ink2);font-size:16.5px">内容は毎回同じです。本編60分＋質疑30分</span>';
   $('sem-cta-lead').innerHTML = '次回の日程が決まるまでの間に、<br>あなたに合うAIの使い方を、5問の診断で先に確かめられます。';
   links.forEach(function(a){ a.innerHTML = S.waitlist.label + '<small>' + S.waitlist.small + '</small>'; });
   document.querySelector('[data-sem="sticky"]').textContent = S.waitlist.label + '（無料）';
@@ -616,17 +751,60 @@ var SEMINAR = {
 <script>
 (function(){
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var s=document.getElementById('sticky'), hero=document.querySelector('.hero');
-  function tick(){ var past=window.scrollY>hero.offsetHeight-80; var nearEnd=(window.innerHeight+window.scrollY)>(document.body.scrollHeight-560); s.classList.toggle('show',past&&!nearEnd); }
-  window.addEventListener('scroll',tick,{passive:true}); tick();
+  var $=function(id){return document.getElementById(id);};
+  /* 追従ボタン＋上の進みバー（ロボが歩く） */
+  var s=$('sticky'), hero=document.querySelector('.hero'), pf=$('pfill'), wk=$('walker');
+  function tick(){
+    var past=window.scrollY>hero.offsetHeight-80; var nearEnd=(window.innerHeight+window.scrollY)>(document.body.scrollHeight-560); s.classList.toggle('show',past&&!nearEnd);
+    var max=document.documentElement.scrollHeight-window.innerHeight; var p=max>0?Math.min(100,Math.max(0,window.scrollY/max*100)):0;
+    pf.style.width=p+'%'; wk.style.left=Math.max(3,Math.min(97,p))+'%';
+  }
+  window.addEventListener('scroll',tick,{passive:true}); window.addEventListener('resize',tick); tick();
+  /* 出てくる順のアニメ */
+  var rvs=document.querySelectorAll('.rv,.rv-l,.rv-r');
   if(!reduce && 'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    rvs.forEach(function(el){io.observe(el);});
     var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target,end=+el.dataset.count,t0=null,sm=el.querySelector('small'),suffix=sm?sm.outerHTML:'';
       function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1400);p=1-Math.pow(1-p,3);el.innerHTML=Math.round(end*p).toLocaleString()+suffix;if(p<1)requestAnimationFrame(step);}
       requestAnimationFrame(step);co.unobserve(el);});},{threshold:.5});
     document.querySelectorAll('[data-count]').forEach(function(el){co.observe(el);});
-  }
+  } else { rvs.forEach(function(el){el.classList.add('in');}); }
+  /* 当てはまるをタップ */
+  var pain=$('pain'), pb=$('pain-bub');
+  if(pain){ pain.addEventListener('click',function(ev){ var li=ev.target.closest('li'); if(!li)return; li.classList.toggle('on');
+    var n=pain.querySelectorAll('li.on').length;
+    pb.innerHTML = n===0 ? 'ひとつでも当てはまったなら、この先を読んでください。<br>これは「がんばり方」の話ではなく、「営業の回し方」を変える話です。'
+      : n<3 ? n+'個、当てはまりました。<br>この先は「がんばり方」ではなく、「営業の回し方」を変える話です。'
+      : n+'個、当てはまりました。<br>がんばりが足りないのではなく、回し方の問題です。この先で、その回し方を見せます。';
+    try{ fixOrphans(pb.parentNode); }catch(e){} try{ fxTrack('PainTap',{count:n}); }catch(e){} }); }
+  /* 用語のやさしい説明 */
+  var Y={
+    ai:['AI（ChatGPTなど）','スマホやパソコンで、文章で話しかけると、文章で返してくれる相手です。調べる・書く・まとめるが得意で、無料で始められます。'],
+    arms:['右腕と左腕','この勉強会での呼び方です。右腕＝お客様を連れてくるAI。左腕＝面談のあとの書きものをするAI。どちらも、AIに設定文を貼るだけで作れます。'],
+    settei:['設定文','AIに最初に読ませる、自己紹介のような文章です。「あなたはこういう人の相棒です。こういう話し方で」と書いてあります。コピーして貼るだけで、AIがあなた用になります。'],
+    zoom:['Zoom','パソコンやスマホで、顔を見ながら話せる無料のテレビ電話です。前日に届くURLを、時間になったら押すだけで入れます。'],
+    shindan:['診断ページ','お客様がスマホで5つくらいの質問に答えると「あなたはこのタイプ」と結果が出るページです。楽しいので、お客様の方から入ってきてくれます。'],
+    line:['LINEの自動応答','お客様がLINEで「あいことば」を送ると、決めておいた返事が自動で返る仕組みです。夜中でも、あなたが寝ていても返事が届きます。'],
+    hasshin:['発信','SNSやブログに、役立つ話を書いて出すことです。「この人に聞いてみたい」と見つけてもらう入口になります。ネタと下書きはAIが出します。'],
+    memo:['面談メモ','お客様と話したあとに書く、短いメモです。「Aさん・50代・ご夫婦・教育費が心配」くらいで十分。名前や口座は入れません。'],
+    tataki:['たたき台','最初の下書きのことです。ゼロから書くより、直す方が早い。AIはこの下書きを出すのが得意です。'],
+    follow:['フォロー文','面談のあとにお客様へ送る、お礼と次の案内のメッセージです。その日のうちに届くと、印象が変わります。']
+  };
+  var box=$('yogo'), shade=$('yogo-shade');
+  function openY(k){ if(!Y[k])return; $('yogo-t').textContent=Y[k][0]; $('yogo-p').textContent=Y[k][1]; box.classList.add('show'); shade.classList.add('show'); try{ fxTrack('YogoOpen',{term:k}); }catch(e){} }
+  function closeY(){ box.classList.remove('show'); shade.classList.remove('show'); }
+  document.querySelectorAll('.yg').forEach(function(b){ b.addEventListener('click',function(ev){ ev.preventDefault(); ev.stopPropagation(); openY(b.dataset.yg); }); });
+  $('yogo-x').addEventListener('click',closeY); shade.addEventListener('click',closeY);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeY(); });
+  /* 孤立文字の防止：文末の4〜5文字をひとかたまりにして、最終行が1〜2文字にならないようにする */
+  window.fixOrphans=function(root){ var NG='。、）」！？!?,.・：:；;'; var sel='p,li,dd,dt,h1,h2,h3,summary,.btn small,.btn,.hero-bub,.l,.bub,.step b,.promise b,.cred b,.rev,.cap,.src,.lead,.btn-note,.pain-note,.motto,.sign,.date';
+    (root||document).querySelectorAll(sel).forEach(function(el){ if(el.closest('#yogo'))return; var last=null; (function walk(n){ for(var i=n.childNodes.length-1;i>=0&&!last;i--){var c=n.childNodes[i]; if(c.nodeType===3){ if(c.textContent.trim().length>=6)last=c; else if(c.textContent.trim().length)return; } else if(c.nodeType===1){ if(c.tagName==='BR'||c.tagName==='BUTTON'||c.tagName==='SMALL'||c.tagName==='A'||c.classList.contains('st'))continue; if(getComputedStyle(c).display==='none')continue; walk(c);} } })(el);
+      if(!last)return; var t=last.textContent.replace(/\s+$/,''); if(t.length<7)return; var n=null,alt=null; for(var k=4;k<=8&&k<t.length-1;k++){ var prev=t.charAt(t.length-k-1), first=t.charAt(t.length-k); if(NG.indexOf(first)>=0)continue; if('、。」）・ 　'.indexOf(prev)>=0){n=k;break;} if(alt===null && /[\u3041-\u309f]/.test(prev) && /[\u4e00-\u9faf\u30a0-\u30ff0-9A-Za-z]/.test(first)) alt=k; } n=n||alt||5; if(n>=t.length)return;
+      var head=t.slice(0,t.length-n), tail=t.slice(t.length-n); var sp=document.createElement('span'); sp.style.whiteSpace='nowrap'; sp.textContent=tail; last.textContent=head; last.parentNode.insertBefore(sp,last.nextSibling); });
+  }; fixOrphans();
   var v=document.querySelector('video'); if(v){ var p=v.play(); if(p&&p.catch){p.catch(function(){});} }
-  document.querySelectorAll('.cta-link').forEach(function(a){a.addEventListener('click',function(){if(window.SEMINAR_OPEN===false)return;try{fbq('track','Lead',{content_name:'seminar_0924'});}catch(e){}});});
+  document.querySelectorAll('.cta-link').forEach(function(a){a.addEventListener('click',function(){if(window.SEMINAR_OPEN===false)return;try{fbq('track','Lead',{content_name:'seminar_0924'});}catch(e){}try{fxTrack('ToRegister');}catch(e){}});});
 })();
 </script>
 </body>
