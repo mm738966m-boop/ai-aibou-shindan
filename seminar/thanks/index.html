@@ -13,8 +13,10 @@ window.SEM_EVENT_ID = 'seminar_reg_' + Date.now() + '_' + Math.random().toString
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','1510200123755162');fbq('track','PageView');
 /* 経路分け：ChatGPT広告経由（LPが localStorage.sem_src に ref=chatgpt_* を残す・7日以内）は CompleteRegistration を送らず、GPT_Registered で別に数える */
-window.SEM_SRC='';try{var _s=JSON.parse(localStorage.getItem('sem_src')||'null');if(_s&&_s.t&&Date.now()-_s.t<7*24*3600*1000){window.SEM_SRC=String(_s.ref||'');}}catch(e){}
+/* sem_src が無い＝このドメインの勉強会LPを通っていない（fulfull.jp/ai-benkyokai/ 経由＝ChatGPT広告、またはUTAGE直リンク）。その場合も標準イベントは送らない */
+window.SEM_SRC='';window.SEM_HAS_SRC=false;try{var _s=JSON.parse(localStorage.getItem('sem_src')||'null');if(_s&&_s.t&&Date.now()-_s.t<7*24*3600*1000){window.SEM_SRC=String(_s.ref||'');window.SEM_HAS_SRC=true;}}catch(e){}
 if(/^chatgpt/.test(window.SEM_SRC)){fbq('trackCustom','GPT_Registered',{ref:window.SEM_SRC});}
+else if(!window.SEM_HAS_SRC){fbq('trackCustom','Registered_other',{ref:'no_lp_visit'});}
 else{fbq('track','CompleteRegistration',{content_name:'seminar_0924'},{eventID:window.SEM_EVENT_ID});}
 </script>
 <style>
