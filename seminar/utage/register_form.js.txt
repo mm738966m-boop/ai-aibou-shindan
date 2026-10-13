@@ -1,70 +1,71 @@
 <script>
-/* AI仕事術勉強会 申込フォーム（2026-10-13版）：LP v22 と同じ上質デザイン（UTAGE イベント > 申込フォーム設定 > 登録フォーム > bodyタグの最後に挿入するJavaScript） */
+/* AI仕事術勉強会 申込フォーム（2026-10-13 v23版）：LP v23（紺×金・艶）と同じ上質デザイン（UTAGE イベント > 申込フォーム設定 > 登録フォーム > bodyタグの最後に挿入するJavaScript） */
 (function(){
 var ROBO='https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/img/mascot_point.webp';
 var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Zen+Maru+Gothic:wght@700&display=swap';document.head.appendChild(l);
 var css=''
-+'body{background:#F2F7F8!important;font-family:"Zen Kaku Gothic New","Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif!important;font-size:17px;font-weight:500;color:#1C3236;line-height:1.8;letter-spacing:.02em}'
-+'.fx-root .card{border:0!important;border-radius:20px;box-shadow:0 12px 36px rgba(10,90,98,.12);overflow:hidden;background:#fff}'
-+'.fx-root .card-header{position:relative;background:linear-gradient(165deg,#0C6B74 0%,#0A5A62 60%,#083F46 100%)!important;border-bottom:3px solid #D9A441!important;padding:26px 96px 24px 22px!important;text-align:left!important}'
++'body{background:#F4F1EA!important;font-family:"Zen Kaku Gothic New","Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif!important;font-size:17px;font-weight:500;color:#1F2433;line-height:1.8;letter-spacing:.02em}'
++'.fx-root .card{border:0!important;border-radius:20px;box-shadow:0 12px 36px rgba(27,34,56,.12);overflow:hidden;background:#fff}'
++'.fx-root .card-header{position:relative;background:linear-gradient(165deg,#2A3450 0%,#1B2238 60%,#10152A 100%)!important;border-bottom:3px solid #D9A441!important;padding:26px 96px 24px 22px!important;text-align:left!important}'
 +'.fx-root .card-header:before{content:"";position:absolute;inset:0;background:radial-gradient(420px 220px at 95% 0%,rgba(217,164,65,.22),transparent 70%);pointer-events:none}'
 +'.fx-root .card-header .fx-kicker{position:relative;display:inline-flex;align-items:center;gap:8px;color:#F1D79A;font-size:13.5px;font-weight:900;letter-spacing:.14em;margin:0 0 8px}'
 +'.fx-root .card-header .fx-kicker:before{content:"";width:22px;height:2px;background:#D9A441;border-radius:2px}'
 +'.fx-root .card-header h2{position:relative;font-size:clamp(20px,5.4vw,25px);font-weight:900;color:#fff;line-height:1.5;margin:0;letter-spacing:.01em;word-break:auto-phrase;text-wrap:balance}'
-+'.fx-root .card-header .fx-sub{position:relative;margin:6px 0 0;font-size:14.5px;color:#C9DCDE;font-weight:500}'
++'.fx-root .card-header .fx-sub{position:relative;margin:6px 0 0;font-size:14.5px;color:#C9CEDC;font-weight:500}'
 +'#fx-robo{position:absolute;right:14px;bottom:-2px;width:76px;height:auto;pointer-events:none;filter:drop-shadow(0 6px 10px rgba(0,0,0,.25));z-index:1}'
 +'.fx-root .card-body{padding:22px 18px 26px!important}'
 +'.fx-root h4{display:flex;align-items:center;gap:10px;font-size:14.5px;font-weight:900;color:#A87A1F;letter-spacing:.14em;margin:0 0 10px!important}'
 +'.fx-root h4:before{content:"";width:24px;height:2px;background:#D9A441;border-radius:2px}'
 +'.fx-root h4.mt-4{margin-top:30px!important}'
-+'.fx-root .fx-h{font-size:21px;font-weight:900;color:#1C3236;margin:0 0 6px;line-height:1.45}'
-+'.fx-root .card-body>p{font-size:15.5px;color:#4A6468;margin:0 0 12px}'
-+'.fx-root hr{border-top:1px solid #D9E4E6}'
++'.fx-root .fx-h{font-size:21px;font-weight:900;color:#1F2433;margin:0 0 6px;line-height:1.45}'
++'.fx-root .card-body>p{font-size:15.5px;color:#555E72;margin:0 0 12px}'
++'.fx-root hr{border-top:1px solid #E2DDD1}'
 /* 日程：カード型の選択肢 */
 +'.fx-root table.table-borderless{display:none!important}'
 +'#fx-dates{display:grid;gap:10px;margin:4px 0 16px}'
-+'.fx-date{display:grid;grid-template-columns:28px 1fr auto;align-items:center;gap:12px;width:100%;text-align:left;background:#fff;border:1.5px solid #D9E4E6;border-radius:14px;padding:13px 14px;font:inherit;font-size:17.5px;font-weight:700;color:#1C3236;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s;font-variant-numeric:tabular-nums}'
++'.fx-date{display:grid;grid-template-columns:28px 1fr auto;align-items:center;gap:12px;width:100%;text-align:left;background:#fff;border:1.5px solid #E2DDD1;border-radius:14px;padding:13px 14px;font:inherit;font-size:17.5px;font-weight:700;color:#1F2433;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s;font-variant-numeric:tabular-nums}'
 +'.fx-date>span{min-width:0}'
 +'.fx-date .fx-d,.fx-date .fx-t{white-space:nowrap;font-weight:700}'
 +'.fx-date i{width:22px;height:22px;border-radius:50%;border:2px solid #B9C9CB;background:#fff;position:relative;display:block}'
-+'.fx-date.on{border-color:#0E7C86;background:#F2F7F8;box-shadow:0 0 0 3px rgba(14,124,134,.14)}'
-+'.fx-date.on i{border-color:#0E7C86}.fx-date.on i:after{content:"";position:absolute;inset:4px;border-radius:50%;background:#0E7C86}'
-+'.fx-date small{display:block;font-size:13.5px;font-weight:500;color:#4A6468;margin-top:2px}'
-+'.fx-date em{font-style:normal;font-size:13px;font-weight:700;color:#0A5A62;background:#EAF3F4;border:1px solid #CFE3E5;border-radius:999px;padding:4px 10px;white-space:nowrap}'
++'.fx-date.on{border-color:#2B3553;background:#F4F1EA;box-shadow:0 0 0 3px rgba(43,53,83,.14)}'
++'.fx-date.on i{border-color:#2B3553}.fx-date.on i:after{content:"";position:absolute;inset:4px;border-radius:50%;background:#2B3553}'
++'.fx-date small{display:block;font-size:13.5px;font-weight:500;color:#555E72;margin-top:2px}'
++'.fx-date em{font-style:normal;font-size:13px;font-weight:700;color:#1B2238;background:#F4F1EA;border:1px solid #E2DDD1;border-radius:999px;padding:4px 10px;white-space:nowrap}'
 +'.fx-date.full{opacity:.55;cursor:default}.fx-date.full em{color:#6F8386;background:#F1F5F5;border-color:#E3EAEB}'
-+'.fx-date:hover:not(.full){border-color:#0E7C86}'
++'.fx-date:hover:not(.full){border-color:#2B3553}'
 /* 選んだ内容の表 */
 +'.fx-root table.table-bordered{border:0;margin:0 0 6px;border-radius:14px;overflow:hidden;background:#FBF4E3;font-size:16px}'
 +'.fx-root table.table-bordered th,.fx-root table.table-bordered td{border:0!important;border-bottom:1px solid rgba(168,122,31,.18)!important;padding:11px 14px;vertical-align:middle}'
 +'.fx-root table.table-bordered tr:last-child th,.fx-root table.table-bordered tr:last-child td{border-bottom:0!important}'
 +'.fx-root table.table-bordered th{color:#A87A1F;font-weight:900;width:72px;white-space:nowrap;background:transparent}'
-+'.fx-root table.table-bordered td{font-weight:700;color:#1C3236}'
-+'#fx-pick{font-size:14.5px;color:#4A6468;margin:0 0 6px}'
++'.fx-root table.table-bordered td{font-weight:700;color:#1F2433}'
++'#fx-pick{font-size:14.5px;color:#555E72;margin:0 0 6px}'
 /* 入力欄 */
-+'.fx-root label{font-weight:900;font-size:16.5px;color:#1C3236;margin-bottom:6px}'
++'.fx-root label{font-weight:900;font-size:16.5px;color:#1F2433;margin-bottom:6px}'
 +'.fx-root .badge-danger{background:#D9A441!important;color:#1C2A2C;font-weight:900;font-size:11.5px;border-radius:999px;padding:4px 9px;vertical-align:2px;letter-spacing:.06em}'
-+'.fx-root .form-control{font-size:17.5px;font-weight:500;border:1.5px solid #D9E4E6;border-radius:12px;min-height:52px;font-family:inherit;color:#1C3236;background:#fff;box-shadow:none}'
-+'.fx-root .form-control:focus{border-color:#0E7C86;box-shadow:0 0 0 3px rgba(14,124,134,.16)}'
++'.fx-root .form-control{font-size:17.5px;font-weight:500;border:1.5px solid #E2DDD1;border-radius:12px;min-height:52px;font-family:inherit;color:#1F2433;background:#fff;box-shadow:none}'
++'.fx-root .form-control:focus{border-color:#2B3553;box-shadow:0 0 0 3px rgba(43,53,83,.16)}'
 +'.fx-root .form-control::placeholder{color:#9DB0B3}'
 +'.fx-root .form-group{margin-bottom:18px}'
-+'.fx-root .fx-note{font-size:14.5px;color:#4A6468;background:#F7FBFB;border:1px solid #D9E4E6;border-radius:12px;padding:10px 13px;line-height:1.7;margin:0 0 14px}'
++'.fx-root .fx-note{font-size:14.5px;color:#555E72;background:#FBF9F4;border:1px solid #E2DDD1;border-radius:12px;padding:10px 13px;line-height:1.7;margin:0 0 14px}'
 /* ボタン */
-+'.fx-root button[type=submit].btn-success{background:linear-gradient(180deg,#128A95,#0E7C86)!important;border:0!important;border-radius:999px!important;font-weight:900;font-size:19.5px;min-height:62px;box-shadow:0 10px 26px rgba(10,90,98,.28),0 0 0 5px #fff,0 0 0 7px rgba(217,164,65,.7);font-family:inherit;letter-spacing:.03em;margin-top:8px!important;color:#fff}'
++'.fx-root button[type=submit].btn-success{position:relative;overflow:hidden;background:linear-gradient(180deg,#F5D982 0%,#E2B452 48%,#C6922C 100%)!important;border:0!important;border-radius:999px!important;font-weight:900;font-size:19.5px;min-height:62px;box-shadow:0 12px 28px rgba(27,34,56,.22),inset 0 1px 0 rgba(255,255,255,.75),inset 0 -2px 0 rgba(0,0,0,.12);font-family:inherit;letter-spacing:.03em;margin-top:8px!important;color:#1C2333!important;text-shadow:0 1px 0 rgba(255,255,255,.35)}'
++'.fx-root button[type=submit].btn-success:before{content:"";position:absolute;top:-10%;bottom:-10%;left:-70%;width:36%;background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.65) 50%,transparent 100%);transform:skewX(-22deg);animation:fxshine 4.6s ease-in-out infinite;pointer-events:none}@keyframes fxshine{0%,55%{left:-70%}85%,100%{left:130%}}'
 +'.fx-root button[type=submit].btn-success:active{transform:scale(.985)}'
-+'#fx-foot{text-align:center;font-size:13.5px;color:#4A6468;margin:14px 0 0;line-height:1.7}'
-+'#fx-foot a{color:#0A5A62;font-weight:700}'
++'#fx-foot{text-align:center;font-size:13.5px;color:#555E72;margin:14px 0 0;line-height:1.7}'
++'#fx-foot a{color:#1B2238;font-weight:700}'
 +'#fx-trust{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}'
-+'#fx-trust span{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:#0A5A62;background:#fff;border:1.5px solid #D9E4E6;border-radius:999px;padding:5px 11px 5px 9px}'
-+'#fx-trust span:before{content:"✓";color:#0E7C86;font-weight:900}'
++'#fx-trust span{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:#1B2238;background:#fff;border:1.5px solid #E2DDD1;border-radius:999px;padding:5px 11px 5px 9px}'
++'#fx-trust span:before{content:"✓";color:#2B3553;font-weight:900}'
 /* 確認画面（このページの中に同じデザインで出す） */
-+'#fx-confirm{position:fixed;inset:0;background:#F2F7F8;z-index:9999;overflow:auto;padding:20px 14px 40px;font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif}'
-+'#fx-confirm .fxc{max-width:640px;margin:0 auto;background:#fff;border-radius:20px;border-top:4px solid #D9A441;box-shadow:0 12px 36px rgba(10,90,98,.12);padding:26px 18px 28px}'
-+'#fx-confirm h2{font-size:24px;font-weight:900;color:#0A5A62;margin:0 0 6px;line-height:1.4}#fx-confirm p{margin:0 0 16px;font-size:16px;color:#4A6468}'
-+'#fx-confirm dl{margin:0 0 20px}#fx-confirm dt{font-size:14px;font-weight:900;color:#A87A1F;letter-spacing:.1em;margin-top:14px}#fx-confirm dd{margin:2px 0 0;font-size:19px;font-weight:700;border-bottom:1px solid #D9E4E6;padding-bottom:10px;white-space:pre-wrap;word-break:break-word}'
-+'#fx-confirm .fx-when{background:#FBF4E3;border:1.5px solid #D9A441;border-radius:14px;padding:12px 14px;font-size:21px;font-weight:900;color:#0A5A62;margin-bottom:6px;line-height:1.45}'
++'#fx-confirm{position:fixed;inset:0;background:#F4F1EA;z-index:9999;overflow:auto;padding:20px 14px 40px;font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif}'
++'#fx-confirm .fxc{max-width:640px;margin:0 auto;background:#fff;border-radius:20px;border-top:4px solid #D9A441;box-shadow:0 12px 36px rgba(27,34,56,.12);padding:26px 18px 28px}'
++'#fx-confirm h2{font-size:24px;font-weight:900;color:#1B2238;margin:0 0 6px;line-height:1.4}#fx-confirm p{margin:0 0 16px;font-size:16px;color:#555E72}'
++'#fx-confirm dl{margin:0 0 20px}#fx-confirm dt{font-size:14px;font-weight:900;color:#A87A1F;letter-spacing:.1em;margin-top:14px}#fx-confirm dd{margin:2px 0 0;font-size:19px;font-weight:700;border-bottom:1px solid #E2DDD1;padding-bottom:10px;white-space:pre-wrap;word-break:break-word}'
++'#fx-confirm .fx-when{background:#FBF4E3;border:1.5px solid #D9A441;border-radius:14px;padding:12px 14px;font-size:21px;font-weight:900;color:#1B2238;margin-bottom:6px;line-height:1.45}'
 +'#fx-confirm button{display:block;width:100%;font:inherit;border-radius:999px;cursor:pointer;font-family:inherit}'
-+'#fx-confirm .fx-go{background:linear-gradient(180deg,#128A95,#0E7C86);color:#fff;border:0;font-weight:900;font-size:21px;min-height:62px;box-shadow:0 10px 26px rgba(10,90,98,.28)}'
-+'#fx-confirm .fx-back{background:#fff;color:#0E7C86;border:1.5px solid #0E7C86;font-weight:700;font-size:17px;min-height:50px;margin-top:14px}'
++'#fx-confirm .fx-go{background:linear-gradient(180deg,#F5D982 0%,#E2B452 48%,#C6922C 100%);color:#1C2333;border:0;font-weight:900;font-size:21px;min-height:62px;box-shadow:0 10px 26px rgba(27,34,56,.28)}'
++'#fx-confirm .fx-back{background:#fff;color:#1B2238;border:1.5px solid #1B2238;font-weight:700;font-size:17px;min-height:50px;margin-top:14px}'
 +'#fx-confirm .fx-go[disabled]{opacity:.6}'
 +'@media (max-width:767px){.fx-root .row{margin:0!important;width:100%!important}.fx-root .col-md-11{flex:0 0 100%;max-width:100%;width:100%;padding:0!important}}'
 +'@media (max-width:480px){.fx-root .card-header{padding:22px 86px 20px 18px!important}#fx-robo{width:66px}.fx-root .col-md-11{padding:0!important}.fx-root .card{border-radius:0;box-shadow:none}.fx-root .card-body{padding:20px 16px 24px!important}}';
@@ -112,7 +113,7 @@ function boot(){
   var fm=document.querySelector('.fx-root .card-body')||document.querySelector('form#form');if(fm){[].slice.call(fm.childNodes).forEach(function(n){if(n.nodeType===3&&/(<|&lt;)\/?p(>|&gt;)/.test(n.textContent))n.parentNode.removeChild(n)});[].forEach.call(fm.querySelectorAll(':scope > p'),function(p){if(/(<|&lt;)\/?p(>|&gt;)/.test(p.textContent)||/携帯番号は任意/.test(p.textContent))p.parentNode.removeChild(p)})}
   var tel=document.getElementById('event_item01');if(tel&&!document.querySelector('.fx-note')){var g=tel.closest('.form-group')||tel;g.insertAdjacentHTML('afterend','<p class="fx-note">※携帯番号は任意です。メールやLINEで連絡がつかない場合のみ、当日のご案内に使用します。営業の電話はいたしません。</p>')}
   /* 携帯番号のラベル */
-  [].forEach.call(document.querySelectorAll('.fx-root label'),function(lb){if(/携帯番号/.test(lb.textContent)&&!/任意/.test(lb.textContent))lb.insertAdjacentHTML('beforeend','<span style="font-size:13px;font-weight:700;color:#4A6468;margin-left:6px">任意</span>')});
+  [].forEach.call(document.querySelectorAll('.fx-root label'),function(lb){if(/携帯番号/.test(lb.textContent)&&!/任意/.test(lb.textContent))lb.insertAdjacentHTML('beforeend','<span style="font-size:13px;font-weight:700;color:#555E72;margin-left:6px">任意</span>')});
   /* ボタン */
   var sb=document.querySelector('.fx-root button[type=submit]');if(sb&&!sb.__fx){sb.__fx=true;sb.textContent='申し込み内容を確認する';
     if(!document.getElementById('fx-foot'))sb.insertAdjacentHTML('afterend','<p id="fx-foot">まだ申し込みは完了しません。次の画面で内容を確かめてから送れます。<br>金融AIカレッジ｜fulfull株式会社</p>')}
