@@ -1,5 +1,5 @@
 <script>
-/* AI仕事術勉強会 申込フォーム（2026-10-13 v23版）：LP v23（紺×金・艶）と同じ上質デザイン（UTAGE イベント > 申込フォーム設定 > 登録フォーム > bodyタグの最後に挿入するJavaScript） */
+/* AI仕事術勉強会 申込フォーム（2026-10-13 v24版・ボタンはLINE緑）：LP v23（紺×金・艶）と同じ上質デザイン（UTAGE イベント > 申込フォーム設定 > 登録フォーム > bodyタグの最後に挿入するJavaScript） */
 (function(){
 var ROBO='https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/img/mascot_point.webp';
 var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Zen+Maru+Gothic:wght@700&display=swap';document.head.appendChild(l);
@@ -49,7 +49,7 @@ var css=''
 +'.fx-root .form-group{margin-bottom:18px}'
 +'.fx-root .fx-note{font-size:14.5px;color:#555E72;background:#FBF9F4;border:1px solid #E2DDD1;border-radius:12px;padding:10px 13px;line-height:1.7;margin:0 0 14px}'
 /* ボタン */
-+'.fx-root button[type=submit].btn-success{position:relative;overflow:hidden;background:linear-gradient(180deg,#F5D982 0%,#E2B452 48%,#C6922C 100%)!important;border:0!important;border-radius:999px!important;font-weight:900;font-size:19.5px;min-height:62px;box-shadow:0 12px 28px rgba(27,34,56,.22),inset 0 1px 0 rgba(255,255,255,.75),inset 0 -2px 0 rgba(0,0,0,.12);font-family:inherit;letter-spacing:.03em;margin-top:8px!important;color:#1C2333!important;text-shadow:0 1px 0 rgba(255,255,255,.35)}'
++'.fx-root button[type=submit].btn-success{position:relative;overflow:hidden;background:linear-gradient(180deg,#2FD66F 0%,#06C755 52%,#04A648 100%)!important;border:0!important;border-radius:999px!important;font-weight:900;font-size:19.5px;min-height:62px;box-shadow:0 12px 28px rgba(4,166,72,.32),inset 0 1px 0 rgba(255,255,255,.45),inset 0 -2px 0 rgba(0,0,0,.14);font-family:inherit;letter-spacing:.03em;margin-top:8px!important;color:#fff!important;text-shadow:0 1px 1px rgba(0,0,0,.18)}'
 +'.fx-root button[type=submit].btn-success:before{content:"";position:absolute;top:-10%;bottom:-10%;left:-70%;width:36%;background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.65) 50%,transparent 100%);transform:skewX(-22deg);animation:fxshine 4.6s ease-in-out infinite;pointer-events:none}@keyframes fxshine{0%,55%{left:-70%}85%,100%{left:130%}}'
 +'.fx-root button[type=submit].btn-success:active{transform:scale(.985)}'
 +'#fx-foot{text-align:center;font-size:13.5px;color:#555E72;margin:14px 0 0;line-height:1.7}'
@@ -64,7 +64,7 @@ var css=''
 +'#fx-confirm dl{margin:0 0 20px}#fx-confirm dt{font-size:14px;font-weight:900;color:#A87A1F;letter-spacing:.1em;margin-top:14px}#fx-confirm dd{margin:2px 0 0;font-size:19px;font-weight:700;border-bottom:1px solid #E2DDD1;padding-bottom:10px;white-space:pre-wrap;word-break:break-word}'
 +'#fx-confirm .fx-when{background:#FBF4E3;border:1.5px solid #D9A441;border-radius:14px;padding:12px 14px;font-size:21px;font-weight:900;color:#1B2238;margin-bottom:6px;line-height:1.45}'
 +'#fx-confirm button{display:block;width:100%;font:inherit;border-radius:999px;cursor:pointer;font-family:inherit}'
-+'#fx-confirm .fx-go{background:linear-gradient(180deg,#F5D982 0%,#E2B452 48%,#C6922C 100%);color:#1C2333;border:0;font-weight:900;font-size:21px;min-height:62px;box-shadow:0 10px 26px rgba(27,34,56,.28)}'
++'#fx-confirm .fx-go{background:linear-gradient(180deg,#2FD66F 0%,#06C755 52%,#04A648 100%);color:#fff;border:0;font-weight:900;font-size:21px;min-height:62px;box-shadow:0 10px 26px rgba(27,34,56,.28)}'
 +'#fx-confirm .fx-back{background:#fff;color:#1B2238;border:1.5px solid #1B2238;font-weight:700;font-size:17px;min-height:50px;margin-top:14px}'
 +'#fx-confirm .fx-go[disabled]{opacity:.6}'
 +'@media (max-width:767px){.fx-root .row{margin:0!important;width:100%!important}.fx-root .col-md-11{flex:0 0 100%;max-width:100%;width:100%;padding:0!important}}'
