@@ -6,7 +6,7 @@
 <title>受付完了｜AI仕事術勉強会</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@800&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Zen+Maru+Gothic:wght@700&display=swap">
 <script>
 /* Meta計測（登録完了）。event_idを付けて、あとでコンバージョンAPI（サーバー側）と重複排除できるようにしておく */
 window.SEM_EVENT_ID = 'seminar_reg_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8);
@@ -15,32 +15,39 @@ fbq('init','1510200123755162');fbq('track','PageView');
 fbq('track','CompleteRegistration',{content_name:'seminar_0924'},{eventID:window.SEM_EVENT_ID});
 </script>
 <style>
-:root{--navy:#22293A;--ink:#22293A;--sub:#4F586B;--bg:#FBF8F3;--paper:#fff;--soft:#F3EEE4;--line:#E5DED2;--gold:#DFA23C;--gold-d:#A9771B;--gold-l:#F1D79A;--green:#06C755}
+:root{--teal:#0E7C86;--deep:#0A5A62;--ink:#1C3236;--sub:#4A6468;--bg:#F2F7F8;--paper:#fff;--soft:#FBF4E3;--line:#D9E4E6;--gold:#D9A441;--gold-d:#A87A1F;--gold-l:#F1D79A;--green:#06C755}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif;font-size:19.5px;font-weight:500;line-height:1.9}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif;font-size:19px;font-weight:500;line-height:1.9;letter-spacing:.02em}
 .wrap{max-width:640px;margin:0 auto;padding:28px 20px 80px}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:26px 22px;box-shadow:0 10px 30px rgba(34,41,58,.08)}
-.ok{display:inline-block;background:var(--soft);color:var(--gold-d);font-weight:900;border-radius:999px;padding:6px 14px;font-size:16px;letter-spacing:.08em}
-h1{font-family:"Shippori Mincho",serif;font-size:clamp(26px,7vw,34px);line-height:1.4;margin:12px 0 10px}
+.card{background:var(--paper);border:0;border-radius:20px;padding:0 0 26px;box-shadow:0 12px 36px rgba(10,90,98,.12);overflow:hidden}
+.head{position:relative;background:linear-gradient(165deg,#0C6B74 0%,var(--deep) 60%,#083F46 100%);border-bottom:3px solid var(--gold);padding:26px 100px 24px 22px;color:#fff}
+.head:before{content:"";position:absolute;inset:0;background:radial-gradient(420px 220px at 95% 0%,rgba(217,164,65,.22),transparent 70%);pointer-events:none}
+.head img{position:absolute;right:12px;bottom:-4px;width:86px;height:auto;filter:drop-shadow(0 6px 10px rgba(0,0,0,.25))}
+.body{padding:22px 22px 0}
+.ok{position:relative;display:inline-flex;align-items:center;gap:8px;color:var(--gold-l);font-weight:900;font-size:13.5px;letter-spacing:.14em}
+.ok:before{content:"";width:22px;height:2px;background:var(--gold);border-radius:2px}
+h1{position:relative;font-size:clamp(23px,6.2vw,30px);line-height:1.45;margin:8px 0 0;font-weight:900;letter-spacing:.01em}
 p{margin:0 0 14px}
-.next{background:var(--soft);border-radius:16px;padding:16px 18px;margin:8px 0 14px;font-weight:700;font-size:18px}
+.next{background:var(--soft);border:1.5px solid var(--gold);border-radius:14px;padding:14px 16px;margin:0 0 14px;font-weight:700;font-size:17.5px;line-height:1.75}
 .next .t{margin:0}
-.btn{display:block;width:100%;background:var(--green);color:#fff;text-decoration:none;text-align:center;font-size:22px;font-weight:900;border-radius:999px;padding:20px 18px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.btn{display:block;width:100%;background:var(--green);color:#fff;text-decoration:none;text-align:center;font-size:21px;font-weight:900;border-radius:999px;padding:19px 18px;box-shadow:0 10px 26px rgba(6,199,85,.3),0 0 0 5px #fff,0 0 0 7px rgba(217,164,65,.7)}
 .btn small{display:block;font-size:15.5px;font-weight:700;opacity:.92}
-.auto{font-size:16.5px;color:var(--sub);text-align:center;margin:10px 0 0}
-.spec{background:var(--soft);border-radius:16px;padding:16px 18px;margin:22px 0 14px;font-weight:700}
-.spec div{display:flex;gap:14px}.spec dt{color:var(--sub);min-width:4.5em;font-weight:700}.spec dd{margin:0}
-.note{font-size:17px;color:var(--sub)}
-h2{font-size:21px;font-weight:900;margin:22px 0 8px}
+.auto{font-size:15.5px;color:var(--sub);text-align:center;margin:14px 0 0}
+.spec{background:#F7FBFB;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:18px 0 14px;font-weight:700;font-size:17px}
+.spec div{display:flex;gap:14px}.spec dt{color:var(--gold-d);min-width:3.5em;font-weight:900}.spec dd{margin:0}
+.note{font-size:16px;color:var(--sub)}
+h2{display:flex;align-items:center;gap:10px;font-size:14.5px;font-weight:900;color:var(--gold-d);letter-spacing:.14em;margin:22px 0 8px}h2:before{content:"";width:24px;height:2px;background:var(--gold);border-radius:2px}
 ol{padding-left:1.3em;margin:0 0 10px}li{margin-bottom:6px}
 hr{border:0;border-top:1px solid var(--line);margin:24px 0 18px}
+.foot{text-align:center;font-size:13.5px;color:var(--sub);margin:22px 0 0}
+@media (max-width:480px){.wrap{padding:0 0 60px}.card{border-radius:0;box-shadow:none}.head{padding:22px 90px 20px 18px}.head img{width:76px}.body{padding:20px 16px 0}}
 </style>
 </head>
 <body>
 <div class="wrap">
  <div class="card">
-  <span class="ok">受付完了</span>
-  <h1>お申し込み、<br>ありがとうございます。</h1>
+  <div class="head"><span class="ok">受付完了</span><h1>お申し込み、<br>ありがとうございます。</h1><img src="../img/ro_gift.webp" alt="" width="86" height="65"></div>
+  <div class="body">
 
   <div class="next"><p class="t">当日のご案内と、勉強会で配る「右腕・左腕の設定文」は、公式LINEでお届けします。<br>まもなくLINEの追加画面が開きます。</p></div>
 
@@ -60,6 +67,8 @@ hr{border:0;border-top:1px solid var(--line);margin:24px 0 18px}
   </ol>
   <p class="note">ZoomのURLは、前日にLINEとメールの両方でお送りします。<br>LINEをお使いでない方は、メールだけでも参加できます。</p>
   <p class="note" style="margin-top:14px">ご都合が悪くなった場合は、LINEか受付メールの返信で一言お知らせください。別の日程に振り替えます。</p>
+  <p class="foot">金融AIカレッジ｜fulfull株式会社</p>
+  </div>
  </div>
 </div>
 <script>
