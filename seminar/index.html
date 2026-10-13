@@ -31,6 +31,10 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   var ref=q.get('ref')||(q.get('utm_source')?(q.get('utm_source')+(q.get('utm_content')?'_'+q.get('utm_content'):'')):'')||'';
   try{ if(ref){sessionStorage.setItem(KEY,ref)} else {ref=sessionStorage.getItem(KEY)||'direct'} }catch(e){ ref=ref||'direct' }
   window.fxRef=ref;
+  /* 経路分け：ChatGPT広告（ref=chatgpt_*）から来た人は、Metaの標準イベント（Lead/CompleteRegistration）を送らない。
+     Metaの最適化データを混ぜないため。数は trackCustom（GPT_*）で別に数える。完了ページ（別遷移）が読めるよう localStorage にも残す */
+  window.fxIsGPT=/^chatgpt/.test(ref);
+  try{ localStorage.setItem('sem_src', JSON.stringify({ref:ref,t:Date.now()})) }catch(e){}
   window.fxTrack=function(name,params){
     try{ fbq('trackCustom',name,Object.assign({ref:window.fxRef,page:document.title},params||{})) }catch(e){}
   };
@@ -809,7 +813,7 @@ var SEMINAR = {
       var head=t.slice(0,t.length-n), tail=t.slice(t.length-n); var sp=document.createElement('span'); sp.style.whiteSpace='nowrap'; sp.textContent=tail; last.textContent=head; last.parentNode.insertBefore(sp,last.nextSibling); });
   }; fixOrphans();
   var v=document.querySelector('video'); if(v){ var p=v.play(); if(p&&p.catch){p.catch(function(){});} }
-  document.querySelectorAll('.cta-link').forEach(function(a){a.addEventListener('click',function(){if(window.SEMINAR_OPEN===false)return;try{fbq('track','Lead',{content_name:'seminar_0924'});}catch(e){}try{fxTrack('ToRegister');}catch(e){}});});
+  document.querySelectorAll('.cta-link').forEach(function(a){a.addEventListener('click',function(){if(window.SEMINAR_OPEN===false)return;if(window.fxIsGPT){try{fxTrack('GPT_ToRegister');}catch(e){}return;}try{fbq('track','Lead',{content_name:'seminar_0924'});}catch(e){}try{fxTrack('ToRegister');}catch(e){}});});
 })();
 </script>
 </body>
