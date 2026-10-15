@@ -1,7 +1,7 @@
 <script>
 /* 本講座1期 追加の個別セッション（60分・5,500円） 申込フォーム（2026-10-15版・経営者の個別相談と同じデザイン）・有料のため確認画面フックなし（UTAGE フォーム設定 > bodyタグの最後に挿入するJavaScript） */
 (function(){
-var WINDOW_DAYS=75;
+var WINDOW_DAYS=14;
 var IS_PHONE=/iPhone|iPod|Android|Mobile/i.test(navigator.userAgent)||(navigator.maxTouchPoints>1&&/Macintosh/.test(navigator.userAgent));
 var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap';document.head.appendChild(l);
 var css=''
@@ -91,7 +91,7 @@ function render(){
     var fh=document.createElement('div');fh.id='fx-head';sch.insertBefore(fh,box);
 box.addEventListener('click',function(e){var t=e.target.closest('.fx-ok');if(!t)return;var r=document.querySelector('#app .schedule').querySelectorAll('button.calendar-time');[].forEach.call(r,function(b){if(b.textContent.trim().slice(0,5)===t.getAttribute('data-k'))b.click()});setTimeout(render,200)});sig=''}
   if(s!==sig){sig=s;box.innerHTML=parts.join('');var fhd=document.getElementById('fx-head');if(fhd){if(selected&&m){var dn=parseInt((selDay.firstElementChild||selDay).textContent,10),dd=new Date(+m[1],+m[2]-1,dn);fhd.textContent=(+m[2])+'月'+dn+'日（'+'日月火水木金土'.charAt(dd.getDay())+'）の時間';fhd.style.display=''}else fhd.style.display='none'}}
-  var nt=document.getElementById('fx-note');if(nt){var e0=new Date();e0.setHours(0,0,0,0);var e1=new Date(e0.getTime()+(WINDOW_DAYS-1)*864e5);var ntx='12月22日まで予約できます。\nお支払いは、予約のときにカードで行います💳';if(nt.textContent!==ntx){nt.textContent=ntx;nt.style.whiteSpace='pre-line'}}
+  var nt=document.getElementById('fx-note');if(nt){var e0=new Date();e0.setHours(0,0,0,0);var e1=new Date(e0.getTime()+(WINDOW_DAYS-1)*864e5);var ntx='予約は、2週間先の日まで受け付けています。\nそれより先の日は、順番に受付を始めます📅\nお支払いは、予約のときにカードで行います💳';if(nt.textContent!==ntx){nt.textContent=ntx;nt.style.whiteSpace='pre-line'}}
   /* 予約できる14日間の日付だけ、押せる形にする（印はつけない） */
   if(!m)return;
   var t0=new Date();t0.setHours(0,0,0,0);var t1=new Date(t0.getTime()+WINDOW_DAYS*864e5);
