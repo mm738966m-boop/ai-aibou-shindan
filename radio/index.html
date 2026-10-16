@@ -451,13 +451,13 @@ var EPISODES = [
   document.getElementById('mtxt').textContent='公開中 '+live+' / 10';
   var mfill=document.getElementById('mfill');
   /* スタンプカード：この端末に記録（消えても聴き直せば戻る） */
-  var KEY='hokenya_radio_v1', st={s:[],p:[],all:false};
-  try{ var raw=JSON.parse(localStorage.getItem(KEY)||'null'); if(raw&&raw.s) st=raw; }catch(e){}
-  function save(){ try{ localStorage.setItem(KEY,JSON.stringify(st)); }catch(e){} }
+  var KEY='hokenya_radio_v1', rs={s:[],p:[],all:false};
+  try{ var raw=JSON.parse(localStorage.getItem(KEY)||'null'); if(raw&&raw.s) rs=raw; }catch(e){}
+  function save(){ try{ localStorage.setItem(KEY,JSON.stringify(rs)); }catch(e){} }
   var q=new URLSearchParams(location.search), pick=parseInt(q.get('pick')||'0',10)||0;
-  function done(n){ return st.s.indexOf(n)>-1; }
-  function played(n){ return st.p.indexOf(n)>-1; }
-  function isOpen(e){ if(!e.url) return false; if(st.all||e.n===1||e.n===pick) return true; return done(e.n-1)||done(e.n); }
+  function done(n){ return rs.s.indexOf(n)>-1; }
+  function played(n){ return rs.p.indexOf(n)>-1; }
+  function isOpen(e){ if(!e.url) return false; if(rs.all||e.n===1||e.n===pick) return true; return done(e.n-1)||done(e.n); }
   function nextN(){ for(var i=0;i<EPISODES.length;i++){ var e=EPISODES[i]; if(e.url&&isOpen(e)&&!done(e.n)) return e.n; } return 0; }
   var firstRender=true, justStamped=0;
   function render(){
@@ -477,12 +477,12 @@ var EPISODES = [
     /* カード */
     var sl=document.getElementById('slots'); sl.innerHTML='';
     for(var n=1;n<=10;n++){ var d=document.createElement('div'); d.className='slot'+(done(n)?' on':'')+(n===justStamped?' new':''); d.textContent=done(n)?'聴':n; d.setAttribute('aria-label','第'+n+'回'+(done(n)?' 聴いた':'')); sl.appendChild(d); }
-    var cnt=st.s.length; document.getElementById('scount').textContent=cnt+' / 10';
+    var cnt=rs.s.length; document.getElementById('scount').textContent=cnt+' / 10';
     var msg=document.getElementById('smsg'), nx=nextN();
     if(cnt>=10) msg.innerHTML='<b>完走です。</b>10回、ありがとうございました。LINEに「完走」と一言ください。森川から返します。';
     else if(nx) msg.innerHTML=cnt===0?'まずは<b>第'+nx+'回</b>から。聴いたらスタンプを押すと、次の回がひらきます。':'次は<b>第'+nx+'回</b>です。';
     else msg.innerHTML='公開中の回は、ぜんぶ聴きました。<b>次の回は、公開したらLINEでお知らせします。</b>';
-    document.getElementById('openAll').hidden=st.all||cnt>0;
+    document.getElementById('openAll').hidden=rs.all||cnt>0;
     /* 上のボタンと追従ボタンの文言 */
     var lb=cnt===0?'第1回から聴く':(nx?'続きを聴く（第'+nx+'回）':'スタンプカードを見る');
     ['heroPlay','stickyBtn'].forEach(function(id){ var a=document.getElementById(id); a.innerHTML='<span class="tri"></span>'+lb+(id==='stickyBtn'&&cnt===0?'（6分）':''); });
@@ -492,14 +492,14 @@ var EPISODES = [
   ['heroPlay','stickyBtn'].forEach(function(id){ var a=document.getElementById(id); a.href='#eps-h'; a.addEventListener('click',function(ev){ var nx=nextN(); var t=document.getElementById(nx?'ep'+nx:'scard'); if(t){ ev.preventDefault(); t.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'}); } if(window.fxTrack) fxTrack('ToEpisodes',{from:id}); }); });
   ol.addEventListener('click',function(ev){
     var a=ev.target.closest('.play,.play2');
-    if(a){ var n=+a.dataset.n; if(!played(n)){ st.p.push(n); save(); } if(window.fxTrack) fxTrack('RadioPlay',{episode:String(n)}); setTimeout(render,400); return; }
+    if(a){ var n=+a.dataset.n; if(!played(n)){ rs.p.push(n); save(); } if(window.fxTrack) fxTrack('RadioPlay',{episode:String(n)}); setTimeout(render,400); return; }
     var b=ev.target.closest('.stampbtn');
-    if(b&&!b.disabled){ var n2=+b.dataset.n; if(!done(n2)){ st.s.push(n2); save(); justStamped=n2; if(window.fxTrack) fxTrack('RadioStamp',{episode:String(n2),total:st.s.length}); }
+    if(b&&!b.disabled){ var n2=+b.dataset.n; if(!done(n2)){ rs.s.push(n2); save(); justStamped=n2; if(window.fxTrack) fxTrack('RadioStamp',{episode:String(n2),total:rs.s.length}); }
       render(); justStamped=0; var c=document.getElementById('scard'); if(c) c.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'}); }
   });
   /* 別のタブから戻ってきたら、スタンプボタンを押せる状態にする */
   document.addEventListener('visibilitychange',function(){ if(!document.hidden) render(); });
-  document.getElementById('openAll').addEventListener('click',function(){ st.all=true; save(); render(); if(window.fxTrack) fxTrack('RadioOpenAll',{}); });
+  document.getElementById('openAll').addEventListener('click',function(){ rs.all=true; save(); render(); if(window.fxTrack) fxTrack('RadioOpenAll',{}); });
   /* 出てくる順 */
   var rvs=document.querySelectorAll('.rv');
   if(!reduce && 'IntersectionObserver' in window){
