@@ -63,10 +63,10 @@ var css=''
 +'#fx-confirm dl{margin:0 0 20px}#fx-confirm dt{font-size:14.5px;font-weight:700;color:#0E7C86;margin-top:14px}#fx-confirm dd{margin:2px 0 0;font-size:19px;font-weight:700;border-bottom:2px solid #D5E4E6;padding-bottom:10px;white-space:pre-wrap;word-break:break-word}'
 +'#fx-confirm .fx-when{background:#FBF4E3;border:2px solid #D9A441;border-radius:14px;padding:12px 14px;font-size:22px;font-weight:900;color:#0A5A62;margin-bottom:6px}'
 +'#fx-confirm button{display:block;width:100%;font:inherit;border-radius:999px;cursor:pointer}'
-+'#fx-confirm .fx-go{background:#0E7C86;color:#fff;border:0;font-weight:900;font-size:21px;min-height:62px;box-shadow:0 5px 0 #0A5A62}'
++'#fx-confirm .fx-go{background:linear-gradient(180deg,#2FD66F,#06C755 52%,#04A648);color:#fff;border:0;font-weight:900;font-size:21px;min-height:62px;box-shadow:0 5px 0 #03823A}'
 +'#fx-confirm .fx-back{background:#fff;color:#0E7C86;border:2px solid #0E7C86;font-weight:700;font-size:17px;min-height:50px;margin-top:16px}'
 +'#fx-confirm .fx-go[disabled]{opacity:.6}'
-+'#app button[type=submit],#app .btn-success,#app .btn-primary{background:#0E7C86!important;border:0!important;border-radius:999px!important;font-weight:900;font-size:20px;min-height:60px;box-shadow:0 5px 0 #0A5A62;font-family:inherit}';
++'#app button[type=submit],#app .btn-success,#app .btn-primary{background:linear-gradient(180deg,#2FD66F,#06C755 52%,#04A648)!important;color:#fff!important;border:0!important;border-radius:999px!important;font-weight:900;font-size:20px;min-height:60px;box-shadow:0 5px 0 #03823A;font-family:inherit}';
 var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
 
 var sig='';
@@ -143,4 +143,10 @@ function boot(){var app=document.getElementById('app');if(!app)return;try{hookCo
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
 
+</script>
+
+<script>
+/* 同業向けの例文に差し替え（2026-10-17） */
+(function(){function ph(){document.querySelectorAll('textarea').forEach(function(t){if(/保険の見直し|家計/.test(t.placeholder||''))t.placeholder='例：新規が苦しい、発信と会社の規程、AIの使い方、独立のことなど（任意）'})}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ph);else ph();setTimeout(ph,800);setTimeout(ph,2500)})();
 </script>
