@@ -162,6 +162,34 @@ ol.eps{list-style:none;margin:0;padding:0;display:grid;gap:12px}
 .word b{font-size:20px;font-weight:900;color:var(--navy)}
 .word button{font:inherit;font-size:15px;font-weight:900;color:#fff;background:var(--navy);border:0;border-radius:999px;padding:8px 16px;cursor:pointer}
 
+
+/* スタンプカード（聴いたら押す→次の回がひらく） */
+.scard{background:radial-gradient(420px 220px at 100% 0%,rgba(217,164,65,.22),transparent 70%),linear-gradient(165deg,var(--navy2),var(--navy3));color:#fff;border-radius:24px;padding:22px 20px 18px;margin:0 0 22px;box-shadow:0 18px 40px rgba(16,21,42,.25)}
+.scard .hd{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin:0 0 14px}
+.scard .hd b{font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:20px;color:var(--goldl);letter-spacing:.06em}
+.scard .hd span{font-size:15px;font-weight:900;font-variant-numeric:tabular-nums;color:#fff}
+.slots{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:0 0 14px}
+.slot{aspect-ratio:1;max-width:64px;justify-self:center;width:100%;border-radius:50%;border:2px dashed rgba(241,215,154,.45);display:grid;place-items:center;font-family:"Shippori Mincho B1",serif;font-weight:800;color:rgba(241,215,154,.55);font-size:18px}
+.slot.on{border:0;background:var(--goldmetal);color:var(--navy3);box-shadow:0 4px 10px rgba(0,0,0,.3),inset 0 0 0 3px rgba(255,255,255,.35);transform:rotate(-8deg)}
+.slot.new{animation:stamp .7s cubic-bezier(.2,.9,.3,1.3)}
+.scard .msg{font-size:15px;color:#D6DCE8;margin:0;line-height:1.75}
+.scard .msg b{color:var(--goldl)}
+.scard .alt{display:inline-block;margin-top:10px;background:none;border:0;padding:0;color:#9AA3BC;font:inherit;font-size:13px;text-decoration:underline;cursor:pointer}
+.ep.lock{background:transparent;box-shadow:none;border-style:dashed}
+.ep.lock .num{background:#EFEBE1;color:#9A9384;box-shadow:none}
+.ep.lock .et{color:#8A8474}
+.lockt{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:#8A8474;background:#EFEBE1;border-radius:999px;padding:4px 14px}
+.ep.open{border:1.5px solid var(--goldfill);box-shadow:0 14px 32px rgba(169,123,31,.18)}
+.ep.done .num{background:var(--goldmetal);color:var(--navy3);box-shadow:none}
+.acts{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.stampbtn{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--gold);background:var(--goldbg);color:var(--navy);font:inherit;font-size:15px;font-weight:900;border-radius:999px;padding:8px 16px;cursor:pointer}
+.stampbtn[disabled]{opacity:.45;cursor:default}
+.stampbtn:not([disabled]){animation:nudge 1.8s ease-in-out infinite}
+.donebadge{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:900;color:var(--gold);background:var(--goldbg);border-radius:999px;padding:4px 14px}
+.replay{font-size:14px;color:var(--ink2)}
+.pickr{display:inline-block;font-size:12px;font-weight:900;letter-spacing:.08em;color:var(--navy3);background:var(--goldmetal);border-radius:999px;padding:2px 10px;margin-bottom:6px}
+@keyframes stamp{0%{transform:scale(2.4) rotate(-24deg);opacity:0}60%{transform:scale(.88) rotate(-6deg);opacity:1}100%{transform:scale(1) rotate(-8deg)}}
+@keyframes nudge{0%,100%{transform:none}50%{transform:translateY(-2px)}}
 /* LINE */
 .next{background:var(--goldbg)}
 .robo{width:118px;margin:0 auto 6px;animation:float 4s ease-in-out infinite}
@@ -289,7 +317,8 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   <div class="wrap">
     <p class="eyebrow rv" id="eps-h">10 EPISODES</p>
     <h2 class="min rv">その手前を、<br>10回に分けて<br>話しています。</h2>
-    <p class="rv">通勤や移動のあいだに、1本ずつ。順番に聴くと、入る順番が変わる理由がつながります。</p>
+    <p class="rv">1本聴いたらスタンプを押してください。次の回がひらきます。通勤や移動のあいだに、1本ずつどうぞ。</p>
+    <div class="scard rv" id="scard"><div class="hd"><b>スタンプカード</b><span id="scount">0 / 10</span></div><div class="slots" id="slots"></div><p class="msg" id="smsg"></p><button type="button" class="alt" id="openAll">別のスマホで続きから聴く方は、公開中の回をすべてひらく</button></div>
     <div class="meter rv"><div class="bar"><i id="mfill"></i></div><b id="mtxt">公開中 0 / 10</b></div>
     <ol class="eps" id="eps"></ol>
   </div>
@@ -417,20 +446,60 @@ var EPISODES = [
 ];
 (function(){
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var ol=document.getElementById('eps'), live=0, first=null;
-  EPISODES.forEach(function(e,i){
-    var li=document.createElement('li'); li.className='ep rv'+(e.url?'':' wait'); li.style.setProperty('--d',(Math.min(i,4)*.06)+'s');
-    if(e.url){live++; if(!first) first=e.url;}
-    var act=e.url?'<a class="play" href="'+e.url+'" target="_blank" rel="noopener" data-n="'+e.n+'">この回を聴く</a>':'<span class="soon">準備中</span>';
-    li.innerHTML='<div class="num">'+e.n+'</div><div class="body"><p class="et"></p><p class="ed"></p>'+act+'</div>';
-    li.querySelector('.et').textContent=e.t; li.querySelector('.ed').textContent=e.d;
-    ol.appendChild(li);
-  });
+  var ol=document.getElementById('eps'), live=0;
+  EPISODES.forEach(function(e){ if(e.url) live++; });
   document.getElementById('mtxt').textContent='公開中 '+live+' / 10';
   var mfill=document.getElementById('mfill');
-  /* 第1回のボタン：公開済みなら直接その回へ */
-  ['heroPlay','stickyBtn'].forEach(function(id){ var a=document.getElementById(id); if(first){a.href=first;a.target='_blank';a.rel='noopener';} a.addEventListener('click',function(){ if(window.fxTrack) fxTrack('RadioPlay',{episode:'1',from:id}); }); });
-  ol.addEventListener('click',function(ev){ var a=ev.target.closest('.play'); if(a&&window.fxTrack) fxTrack('RadioPlay',{episode:a.dataset.n}); });
+  /* スタンプカード：この端末に記録（消えても聴き直せば戻る） */
+  var KEY='hokenya_radio_v1', st={s:[],p:[],all:false};
+  try{ var raw=JSON.parse(localStorage.getItem(KEY)||'null'); if(raw&&raw.s) st=raw; }catch(e){}
+  function save(){ try{ localStorage.setItem(KEY,JSON.stringify(st)); }catch(e){} }
+  var q=new URLSearchParams(location.search), pick=parseInt(q.get('pick')||'0',10)||0;
+  function done(n){ return st.s.indexOf(n)>-1; }
+  function played(n){ return st.p.indexOf(n)>-1; }
+  function isOpen(e){ if(!e.url) return false; if(st.all||e.n===1||e.n===pick) return true; return done(e.n-1)||done(e.n); }
+  function nextN(){ for(var i=0;i<EPISODES.length;i++){ var e=EPISODES[i]; if(e.url&&isOpen(e)&&!done(e.n)) return e.n; } return 0; }
+  var firstRender=true, justStamped=0;
+  function render(){
+    ol.innerHTML='';
+    EPISODES.forEach(function(e,i){
+      var li=document.createElement('li'), stt=!e.url?'wait':done(e.n)?'done':isOpen(e)?'open':'lock';
+      li.className='ep '+stt+(firstRender?' rv':' rv on'); li.style.setProperty('--d',(Math.min(i,4)*.06)+'s'); li.id='ep'+e.n;
+      var act='';
+      if(stt==='wait') act='<span class="soon">準備中</span>';
+      else if(stt==='lock') act='<span class="lockt">🔒 第'+(e.n-1)+'回を聴くとひらきます</span>';
+      else if(stt==='done') act='<div class="acts"><span class="donebadge">✓ 聴きました</span><a class="replay play2" href="'+e.url+'" target="_blank" rel="noopener" data-n="'+e.n+'">もう一度聴く</a></div>';
+      else act='<div class="acts"><a class="play" href="'+e.url+'" target="_blank" rel="noopener" data-n="'+e.n+'">この回を聴く</a><button type="button" class="stampbtn" data-n="'+e.n+'"'+(played(e.n)?'':' disabled')+'>'+(played(e.n)?'聴き終わった！スタンプを押す':'聴いたら押せます')+'</button></div>';
+      li.innerHTML='<div class="num">'+e.n+'</div><div class="body">'+(e.n===pick&&stt!=='done'?'<span class="pickr">あなたへのおすすめの1本</span>':'')+'<p class="et"></p><p class="ed"></p>'+act+'</div>';
+      li.querySelector('.et').textContent=e.t; li.querySelector('.ed').textContent=e.d;
+      ol.appendChild(li);
+    });
+    /* カード */
+    var sl=document.getElementById('slots'); sl.innerHTML='';
+    for(var n=1;n<=10;n++){ var d=document.createElement('div'); d.className='slot'+(done(n)?' on':'')+(n===justStamped?' new':''); d.textContent=done(n)?'聴':n; d.setAttribute('aria-label','第'+n+'回'+(done(n)?' 聴いた':'')); sl.appendChild(d); }
+    var cnt=st.s.length; document.getElementById('scount').textContent=cnt+' / 10';
+    var msg=document.getElementById('smsg'), nx=nextN();
+    if(cnt>=10) msg.innerHTML='<b>完走です。</b>10回、ありがとうございました。LINEに「完走」と一言ください。森川から返します。';
+    else if(nx) msg.innerHTML=cnt===0?'まずは<b>第'+nx+'回</b>から。聴いたらスタンプを押すと、次の回がひらきます。':'次は<b>第'+nx+'回</b>です。';
+    else msg.innerHTML='公開中の回は、ぜんぶ聴きました。<b>次の回は、公開したらLINEでお知らせします。</b>';
+    document.getElementById('openAll').hidden=st.all||cnt>0;
+    /* 上のボタンと追従ボタンの文言 */
+    var lb=cnt===0?'第1回から聴く':(nx?'続きを聴く（第'+nx+'回）':'スタンプカードを見る');
+    ['heroPlay','stickyBtn'].forEach(function(id){ var a=document.getElementById(id); a.innerHTML='<span class="tri"></span>'+lb+(id==='stickyBtn'&&cnt===0?'（6分）':''); });
+    firstRender=false;
+  }
+  render();
+  ['heroPlay','stickyBtn'].forEach(function(id){ var a=document.getElementById(id); a.href='#eps-h'; a.addEventListener('click',function(ev){ var nx=nextN(); var t=document.getElementById(nx?'ep'+nx:'scard'); if(t){ ev.preventDefault(); t.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'}); } if(window.fxTrack) fxTrack('ToEpisodes',{from:id}); }); });
+  ol.addEventListener('click',function(ev){
+    var a=ev.target.closest('.play,.play2');
+    if(a){ var n=+a.dataset.n; if(!played(n)){ st.p.push(n); save(); } if(window.fxTrack) fxTrack('RadioPlay',{episode:String(n)}); setTimeout(render,400); return; }
+    var b=ev.target.closest('.stampbtn');
+    if(b&&!b.disabled){ var n2=+b.dataset.n; if(!done(n2)){ st.s.push(n2); save(); justStamped=n2; if(window.fxTrack) fxTrack('RadioStamp',{episode:String(n2),total:st.s.length}); }
+      render(); justStamped=0; var c=document.getElementById('scard'); if(c) c.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'}); }
+  });
+  /* 別のタブから戻ってきたら、スタンプボタンを押せる状態にする */
+  document.addEventListener('visibilitychange',function(){ if(!document.hidden) render(); });
+  document.getElementById('openAll').addEventListener('click',function(){ st.all=true; save(); render(); if(window.fxTrack) fxTrack('RadioOpenAll',{}); });
   /* 出てくる順 */
   var rvs=document.querySelectorAll('.rv');
   if(!reduce && 'IntersectionObserver' in window){
