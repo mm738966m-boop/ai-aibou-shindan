@@ -191,6 +191,11 @@ ol.eps{list-style:none;margin:0;padding:0;display:grid;gap:12px}
 .pickr{display:inline-block;font-size:12px;font-weight:900;letter-spacing:.08em;color:var(--navy3);background:var(--goldmetal);border-radius:999px;padding:2px 10px;margin-bottom:6px}
 @keyframes stamp{0%{transform:scale(2.4) rotate(-24deg);opacity:0}60%{transform:scale(.88) rotate(-6deg);opacity:1}100%{transform:scale(1) rotate(-8deg)}}
 @keyframes nudge{0%,100%{transform:none}50%{transform:translateY(-2px)}}
+.price{position:relative;background:var(--cream);color:var(--navy);border:1.5px solid var(--goldfill);border-radius:22px;padding:20px 20px 18px;margin:0 0 14px;box-shadow:0 14px 30px rgba(0,0,0,.3)}
+.price .k{display:block;font-size:14px;font-weight:900;color:var(--ink2);letter-spacing:.08em}
+.price .v{display:block;font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:clamp(34px,9vw,44px);line-height:1.2;background:var(--goldmetal);-webkit-background-clip:text;background-clip:text;color:transparent;filter:saturate(1.3) brightness(.85)}
+.price .v small{font-size:.4em;margin-left:4px}
+.price .s{display:block;font-size:14px;color:var(--ink2);margin-top:4px}
 /* LINE */
 .next{background:var(--goldbg)}
 .robo{width:118px;margin:0 auto 6px;animation:float 4s ease-in-out infinite}
@@ -262,7 +267,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     <p class="lead">売らなくても、「何かあればこの人に」と呼ばれる。<br>その手前にある考え方を、10回に分けて話しています。</p>
     <ul class="facts"><li><b>全10回</b></li><li>1回 <b>6〜7分</b></li><li>Voicy 限定公開</li><li>無料</li></ul>
     <a class="btn" id="heroPlay" href="#eps-h"><span class="tri"></span>第1回から聴く</a>
-    <a class="ghost" href="#soudan">森川と30分話す（初回無料）</a>
+    <a class="ghost" href="#soudan">森川と30分話す（個別相談）</a>
     <p class="note">写真はイメージです。</p>
   </div>
 </header>
@@ -345,22 +350,12 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     <div class="cphoto rv"><img src="img/consult.jpg" alt="" width="935" height="781" loading="lazy"></div>
     <p class="rv">森川と1対1で話す、30分の個別相談です。Zoomで行います。放送の感想でも、いま止まっていることでも、テーマは自由です。</p>
     <ul class="topics rv"><li>新規が苦しい</li><li>収入の出口を増やしたい</li><li>発信と会社の規程</li><li>AIを仕事にどう乗せるか</li><li>独立を考えている</li></ul>
-    <fieldset class="opts rv">
-      <legend>どちらかを選んでください</legend>
-      <label class="opt"><input type="radio" name="plan" id="plan-first" value="first" checked><span class="ck"></span><span class="k">はじめての方</span><span class="v">無料</span><span class="s">30分・Zoom</span></label>
-      <label class="opt"><input type="radio" name="plan" id="plan-again" value="again"><span class="ck"></span><span class="k">2回目からの方</span><span class="v">10,000<small>円</small></span><span class="s">1回30分・Zoom</span></label>
-    </fieldset>
+    <div class="price rv"><span class="k">個別相談</span><span class="v">5,500<small>円（税込）</small></span><span class="s">1回30分・Zoom・何回目でも同じ料金</span></div>
     <div class="panel" id="p-first">
-      <h3>初回は無料です。<br>空いている日時を<br>選んでください。</h3>
-      <p style="margin:0;font-size:16px">カレンダーから日時を選ぶと、Zoomのご案内がメールで届きます。</p>
+      <h3>空いている日時を<br>選んでください。</h3>
+      <p style="margin:0;font-size:16px">カレンダーから日時を選び、カードでお支払いいただくと、Zoomのご案内がメールで届きます。3週間先まで予約できます。</p>
       <a class="btn" id="toBook" href="https://utage-system.com/event/d2dXyJMqCSP7/register" target="_blank" rel="noopener">空いている日時を選ぶ</a>
-      <ol class="steps"><li>日時を選んで、お名前とメールを入力</li><li>届いたメールのZoomリンクから、当日入室</li><li>30分、話す。顔出しは不要です</li></ol>
-    </div>
-    <div class="panel" id="p-again" hidden>
-      <h3>2回目からは、<br>1回 10,000円です。</h3>
-      <p style="margin:0;font-size:16px">金融AIカレッジのLINEに、下の言葉を送ってください。日程とお支払い方法を、森川からお返しします。</p>
-      <div class="word"><b>相談2回目</b><button type="button" id="copyKw">コピーする</button></div>
-      <ol class="steps"><li>LINEを開いて「相談2回目」と入れ、送信を押す</li><li>森川から、日程の候補とお支払い方法が届く</li><li>当日、Zoomで30分</li></ol>
+      <ol class="steps"><li>日時を選んで、お名前とメールを入力</li><li>カードで相談料をお支払い</li><li>届いたメールのZoomリンクから、当日入室。顔出しは不要です</li></ol>
     </div>
   </div>
 </section>
@@ -520,13 +515,7 @@ var EPISODES = [
   var c=document.getElementById('toLine');
   c.href='../?ref='+encodeURIComponent((window.fxRef&&window.fxRef!=='direct')?window.fxRef:'radio');
   c.addEventListener('click',function(){ if(window.fxTrack) fxTrack('ToShindan',{from:'radio'}); });
-  /* 相談の2択 */
-  var pfst=document.getElementById('p-first'), pa=document.getElementById('p-again');
-  document.querySelectorAll('input[name=plan]').forEach(function(r){ r.addEventListener('change',function(){ var again=document.getElementById('plan-again').checked; pfst.hidden=again; pa.hidden=!again; if(window.fxTrack) fxTrack('ConsultPlan',{plan:again?'again':'first'}); }); });
-  document.getElementById('toBook').addEventListener('click',function(){ if(window.fxTrack) fxTrack('ToConsult',{plan:'first'}); });
-  var b=document.getElementById('copyKw');
-  b.addEventListener('click',function(){ var t='相談2回目', done=function(){ b.textContent='コピーしました'; setTimeout(function(){ b.textContent='コピーする'; },1600); };
-    if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(done,done); } else { done(); } });
+  document.getElementById('toBook').addEventListener('click',function(){ if(window.fxTrack) fxTrack('ToConsult',{plan:'paid5500'}); });
 })();
 </script>
 </body>
