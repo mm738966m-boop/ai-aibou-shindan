@@ -214,9 +214,9 @@ ol.eps{list-style:none;margin:0;padding:0;display:grid;gap:12px}
 .ck{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;width:100%;text-align:left;background:var(--paper);border:1.5px solid var(--line);border-radius:16px;padding:14px 16px;font:inherit;font-size:17px;font-weight:700;color:var(--navy);cursor:pointer;transition:border-color .2s,background .2s,transform .15s;line-height:1.6}
 .ck:active{transform:scale(.99)}
 .ck i{width:26px;height:26px;border-radius:8px;border:2px solid #C9C2B2;display:grid;place-items:center;transition:all .2s}
-.ck.on{border-color:var(--goldfill);background:var(--goldbg)}
-.ck.on i{background:var(--goldmetal);border-color:transparent}
-.ck.on i::after{content:"";width:7px;height:13px;border:solid var(--navy3);border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-2px)}
+.ck.checked{border-color:var(--goldfill);background:var(--goldbg)}
+.ck.checked i{background:var(--goldmetal);border-color:transparent}
+.ck.checked i::after{content:"";width:7px;height:13px;border:solid var(--navy3);border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-2px)}
 .ckcount{min-height:1.6em;font-weight:900;color:var(--gold);margin:10px 0 0;text-align:right}
 .relief{margin-top:30px;background:linear-gradient(170deg,var(--navy),var(--navy2));color:#fff;border-radius:24px;padding:26px 22px;box-shadow:0 18px 40px rgba(16,21,42,.22)}
 .relief .rq{font-size:clamp(21px,5.6vw,26px);line-height:1.6;color:var(--goldl);margin:0 0 12px}
@@ -344,12 +344,12 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     <h2 class="min rv">相談の場で、<br>よく聞く言葉があります。</h2>
     <p class="rv" style="margin-bottom:10px">ひとつずつ、当てはまるものを押してみてください。</p>
     <ul class="checks" id="checks">
-      <li><button type="button" class="ck rv"><i></i>紹介が止まると、新規の予定が空いてしまう</button></li>
-      <li><button type="button" class="ck rv"><i></i>相談のつもりが、いつのまにか商品の説明になっている</button></li>
-      <li><button type="button" class="ck rv"><i></i>契約のあと、何を送ればいいか分からず連絡が空いている</button></li>
-      <li><button type="button" class="ck rv"><i></i>会社の名前がなかったら、誰が会ってくれるだろうと考える</button></li>
-      <li><button type="button" class="ck rv"><i></i>発信したいけれど、会社の規程が気になって手が止まる</button></li>
-      <li><button type="button" class="ck rv"><i></i>保険以外のことを聞かれると、答えに詰まる</button></li>
+      <li><button type="button" class="ck rv" aria-pressed="false"><i></i>紹介が止まると、新規の予定が空いてしまう</button></li>
+      <li><button type="button" class="ck rv" aria-pressed="false"><i></i>相談のつもりが、いつのまにか商品の説明になっている</button></li>
+      <li><button type="button" class="ck rv" aria-pressed="false"><i></i>契約のあと、何を送ればいいか分からず連絡が空いている</button></li>
+      <li><button type="button" class="ck rv" aria-pressed="false"><i></i>会社の名前がなかったら、誰が会ってくれるだろうと考える</button></li>
+      <li><button type="button" class="ck rv" aria-pressed="false"><i></i>発信したいけれど、会社の規程が気になって手が止まる</button></li>
+      <li><button type="button" class="ck rv" aria-pressed="false"><i></i>保険以外のことを聞かれると、答えに詰まる</button></li>
     </ul>
     <p class="ckcount" id="ckcount" aria-live="polite"></p>
     <p class="rv" style="margin-top:30px">相談の場でも、こんな言葉をよく聞きます。</p>
@@ -360,7 +360,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
       <div class="voice rv" style="--d:.24s">「入る時だけ来る、と言われたことがある」</div>
     </div>
     <div class="relief rv">
-      <p class="rq min">ひとつでも当てはまったら、<br>それは、あなたの腕のせいでは<br>ありません。</p>
+      <p class="rq min">ひとつでも当てはまったら、<br>それは、あなたの腕の<br>せいではありません。</p>
       <p>やり方を変えても、同じところで止まる。止まっているのは、やり方の手前、入る順番です。順番は、今日から変えられます。ひとりで悩まなくて大丈夫です。</p>
     </div>
   </div>
@@ -605,7 +605,7 @@ var EPISODES = [
   if(isMember){ var sd=document.getElementById('soudan'); if(sd) sd.hidden=true; document.querySelectorAll('a[href="#soudan"]').forEach(function(x){x.hidden=true;}); }
   /* チェックリスト */
   var cks=document.querySelectorAll('.ck'), ckc=document.getElementById('ckcount');
-  cks.forEach(function(b){ b.addEventListener('click',function(){ b.classList.toggle('on'); var n=document.querySelectorAll('.ck.on').length; ckc.textContent=n?n+'つ、当てはまりました':''; if(window.fxTrack&&n===1) fxTrack('CheckStart',{}); }); });
+  cks.forEach(function(b){ b.addEventListener('click',function(){ b.classList.toggle('checked'); b.setAttribute('aria-pressed',b.classList.contains('checked')); var n=document.querySelectorAll('.ck.checked').length; ckc.textContent=n?n+'つ、当てはまりました':''; if(window.fxTrack&&n===1) fxTrack('CheckStart',{}); }); });
   /* LINE登録済み（?ref=line_ / member_）の人には、LINE登録の欄を出さない */
   if(onLine){ var nxs=document.querySelector('section.next'); if(nxs) nxs.hidden=true; }
   /* LINE */
