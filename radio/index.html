@@ -17,7 +17,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎙</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Zen+Maru+Gothic:wght@700;900&family=Klee+One:wght@600&display=swap" rel="stylesheet">
 <style>
 /* 紺×金の艶。未来→原因→問題→解決の順に章を置き、各章は出てくる順に動く */
 :root{--navy:#1B2238;--navy2:#2A3450;--navy3:#10152A;--ink:#1F2433;--ink2:#555E72;--bg:#FBF9F4;--cream:#FFFBF2;--paper:#FFFFFF;--line:#E2DDD1;--gold:#A97B1F;--goldfill:#D9A441;--goldl:#F1D79A;--goldbg:#FBF4E3;--teal:#0E7C86;--green:#06C755;
@@ -207,6 +207,28 @@ ol.eps{list-style:none;margin:0;padding:0;display:grid;gap:12px}
 .small2{font-size:14px;color:var(--ink2);margin:10px 0 0;line-height:1.7}
 .unlocked{animation:unlock .9s cubic-bezier(.2,.9,.3,1.2)}
 @keyframes unlock{0%{transform:scale(.92);opacity:0}100%{transform:none;opacity:1}}
+.ill{margin:6px 0 26px;border-radius:22px;overflow:hidden;box-shadow:0 16px 36px rgba(27,34,56,.10);background:#FBF9F4}
+.ill img{width:100%;height:auto}
+.dark .ill{box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.checks{list-style:none;margin:0 0 6px;padding:0;display:grid;gap:10px}
+.ck{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;width:100%;text-align:left;background:var(--paper);border:1.5px solid var(--line);border-radius:16px;padding:14px 16px;font:inherit;font-size:17px;font-weight:700;color:var(--navy);cursor:pointer;transition:border-color .2s,background .2s,transform .15s;line-height:1.6}
+.ck:active{transform:scale(.99)}
+.ck i{width:26px;height:26px;border-radius:8px;border:2px solid #C9C2B2;display:grid;place-items:center;transition:all .2s}
+.ck.on{border-color:var(--goldfill);background:var(--goldbg)}
+.ck.on i{background:var(--goldmetal);border-color:transparent}
+.ck.on i::after{content:"";width:7px;height:13px;border:solid var(--navy3);border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-2px)}
+.ckcount{min-height:1.6em;font-weight:900;color:var(--gold);margin:10px 0 0;text-align:right}
+.relief{margin-top:30px;background:linear-gradient(170deg,var(--navy),var(--navy2));color:#fff;border-radius:24px;padding:26px 22px;box-shadow:0 18px 40px rgba(16,21,42,.22)}
+.relief .rq{font-size:clamp(21px,5.6vw,26px);line-height:1.6;color:var(--goldl);margin:0 0 12px}
+.relief p{color:#D6DCE8;margin:0}
+.learn{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.learn li{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--goldfill);border-radius:14px;padding:14px 16px;box-shadow:0 8px 20px rgba(27,34,56,.05)}
+.learn .tg{display:inline-block;font-size:12px;font-weight:900;letter-spacing:.06em;color:var(--navy3);background:var(--goldmetal);border-radius:999px;padding:2px 10px;margin-bottom:6px}
+.learn b{display:block;font-size:17px;line-height:1.65;color:var(--navy)}
+.lettersec{background:var(--cream)}
+.letter{position:relative;background:#FFFEFA;border:1px solid var(--line);border-radius:6px;padding:30px 24px 26px;box-shadow:0 18px 40px rgba(27,34,56,.08);font-family:"Klee One","Hiragino Mincho ProN",serif;font-weight:600;font-size:18px;line-height:2.1;color:#2A2F3D;background-image:repeating-linear-gradient(transparent,transparent 37px,rgba(169,123,31,.13) 38px)}
+.letter p{margin:0 0 14px}
+.letter .sign{text-align:right;font-size:22px;margin:22px 0 0;color:var(--navy)}
 /* LINE */
 .next{background:var(--goldbg)}
 .robo{width:118px;margin:0 auto 6px;animation:float 4s ease-in-out infinite}
@@ -302,6 +324,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   <div class="wrap">
     <p class="eyebrow rv">WHY</p>
     <h2 class="min rv">そうならないのは、<br>腕のせいではなく、<br>入る順番のせいでした。</h2>
+    <figure class="ill rv"><img src="img/ill_lanes.jpg" alt="商品を押し出す営業と、お客様の隣で同じ地図を見る営業の対比" width="1376" height="768" loading="lazy"></figure>
     <div class="lanes">
       <div class="lane a rv"><h3>商品から入る</h3><div class="flow"><span>商品</span><i>→</i><span>合う人を探す</span><i>→</i><span>説明</span></div><p>「やっぱり売りに来た」と身構えられ、話が入らない。</p></div>
       <div class="lane b rv" style="--d:.12s"><h3>ゴールから入る</h3><div class="flow"><span>ゴール</span><i>→</i><span>計画</span><i>→</i><span>道具</span></div><p>保険は道具の一つ。合わなければ、別の道具を出せばいい。</p></div>
@@ -319,25 +342,68 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   <div class="wrap">
     <p class="eyebrow rv">VOICES</p>
     <h2 class="min rv">相談の場で、<br>よく聞く言葉があります。</h2>
+    <p class="rv" style="margin-bottom:10px">ひとつずつ、当てはまるものを押してみてください。</p>
+    <ul class="checks" id="checks">
+      <li><button type="button" class="ck rv"><i></i>紹介が止まると、新規の予定が空いてしまう</button></li>
+      <li><button type="button" class="ck rv"><i></i>相談のつもりが、いつのまにか商品の説明になっている</button></li>
+      <li><button type="button" class="ck rv"><i></i>契約のあと、何を送ればいいか分からず連絡が空いている</button></li>
+      <li><button type="button" class="ck rv"><i></i>会社の名前がなかったら、誰が会ってくれるだろうと考える</button></li>
+      <li><button type="button" class="ck rv"><i></i>発信したいけれど、会社の規程が気になって手が止まる</button></li>
+      <li><button type="button" class="ck rv"><i></i>保険以外のことを聞かれると、答えに詰まる</button></li>
+    </ul>
+    <p class="ckcount" id="ckcount" aria-live="polite"></p>
+    <p class="rv" style="margin-top:30px">相談の場でも、こんな言葉をよく聞きます。</p>
     <div class="voices">
       <div class="voice rv">「新規が、ずっと苦しい」<small>60代・独立系の代理店の方</small></div>
       <div class="voice rv" style="--d:.08s">「セミナーもLINEも、やってはみたんだけど」</div>
       <div class="voice rv" style="--d:.16s">「発信したいけど、会社の規程が怖くて書けない」</div>
       <div class="voice rv" style="--d:.24s">「入る時だけ来る、と言われたことがある」</div>
     </div>
-    <p class="rv">やり方を変えても、同じところで止まる。止まっているのは、やり方の手前でした。</p>
+    <div class="relief rv">
+      <p class="rq min">ひとつでも当てはまったら、<br>それは、あなたの腕のせいでは<br>ありません。</p>
+      <p>やり方を変えても、同じところで止まる。止まっているのは、やり方の手前、入る順番です。順番は、今日から変えられます。ひとりで悩まなくて大丈夫です。</p>
+    </div>
   </div>
 </section>
 
 <!-- 解決 -->
 <section style="padding-top:20px">
   <div class="wrap">
+    <p class="eyebrow rv">WHAT YOU HEAR</p>
+    <h2 class="min rv">この放送で、<br>聞けること。</h2>
+    <figure class="ill rv"><img src="img/ill_thread.jpg" alt="お金の悩みを一本の金色の糸でつなぐ人の後ろ姿" width="1376" height="768" loading="lazy"></figure>
+    <ol class="learn">
+      <li class="rv"><span class="tg">第1回</span><b>初対面の「マイナス」を、保険の話をせずに埋める入り方</b></li>
+      <li class="rv"><span class="tg">第2・3回</span><b>「保険の人」から「何かあればこの人」に変わる順番</b></li>
+      <li class="rv"><span class="tg">第4回</span><b>会社の看板がなくても語れることの見つけ方</b></li>
+      <li class="rv"><span class="tg">第5回</span><b>売らなくてよくなる「二本目の出口」の考え方</b></li>
+      <li class="rv"><span class="tg">第6〜10回</span><b>「必要ないです」と言える日、視野の広げ方、思い出してもらうフォロー、道具の置き場所</b></li>
+    </ol>
+    <div style="height:64px"></div>
     <p class="eyebrow rv" id="eps-h">10 EPISODES</p>
     <h2 class="min rv">その手前を、<br>10回に分けて<br>話しています。</h2>
     <p class="rv">1本聴いたらスタンプを押してください。次の回がひらきます。通勤や移動のあいだに、1本ずつどうぞ。</p>
     <div class="scard rv" id="scard"><div class="hd"><b>スタンプカード</b><span id="scount">0 / 10</span></div><div class="slots" id="slots"></div><p class="msg" id="smsg"></p><button type="button" class="alt" id="openAll">別のスマホで続きから聴く方は、公開中の回をすべてひらく</button></div>
     <div class="meter rv"><div class="bar"><i id="mfill"></i></div><b id="mtxt">公開中 0 / 10</b></div>
     <ol class="eps" id="eps"></ol>
+  </div>
+</section>
+
+<section class="lettersec">
+  <div class="wrap">
+    <p class="eyebrow rv">A LETTER</p>
+    <h2 class="min rv">同じ仕事をしている、<br>あなたへ。</h2>
+    <figure class="ill rv"><img src="img/ill_mikata.jpg" alt="夕暮れの道を、肩に手を添えて並んで歩く二人の後ろ姿" width="1200" height="896" loading="lazy"></figure>
+    <div class="letter rv">
+      <p>森川です。</p>
+      <p>僕も、看板に助けられて売っていた側でした。ヤマトの制服を着ていれば、玄関は開いた。母の日のカーネーションも、梅干しも売れました。</p>
+      <p>だから、新規のことで考え込んでいる人に、上から何かを言うつもりはありません。保険を扱い始めたのは2023年の秋。まだ3年目で、知らないことはたくさんあります。</p>
+      <p>それでも、ひとつだけ先に気づいたことがあります。保険の話から入らなくていい、ということです。</p>
+      <p>この放送は、その気づきを、同じ仕事をしている人に手渡すためのものです。答えを教える場ではなく、一緒に考える場にしたいと思っています。</p>
+      <p>聴いて浮かんだことがあれば、LINEで一言ください。ぜんぶ、僕が読みます。</p>
+      <p>何とかなるし、何とかしましょう。</p>
+      <p class="sign">森川 満章</p>
+    </div>
   </div>
 </section>
 
@@ -537,6 +603,9 @@ var EPISODES = [
   /* 受講生向けリンク（?ref=member_◯◯）では個別相談の枠を出さない＝買った直後に売られている感じを作らない */
   var isMember=/^member/.test(window.fxRef||'')||/[?&]ref=member/.test(location.search);
   if(isMember){ var sd=document.getElementById('soudan'); if(sd) sd.hidden=true; document.querySelectorAll('a[href="#soudan"]').forEach(function(x){x.hidden=true;}); }
+  /* チェックリスト */
+  var cks=document.querySelectorAll('.ck'), ckc=document.getElementById('ckcount');
+  cks.forEach(function(b){ b.addEventListener('click',function(){ b.classList.toggle('on'); var n=document.querySelectorAll('.ck.on').length; ckc.textContent=n?n+'つ、当てはまりました':''; if(window.fxTrack&&n===1) fxTrack('CheckStart',{}); }); });
   /* LINE登録済み（?ref=line_ / member_）の人には、LINE登録の欄を出さない */
   if(onLine){ var nxs=document.querySelector('section.next'); if(nxs) nxs.hidden=true; }
   /* LINE */
