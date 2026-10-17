@@ -197,6 +197,16 @@ ol.eps{list-style:none;margin:0;padding:0;display:grid;gap:12px}
 .price .v{display:block;font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:clamp(34px,9vw,44px);line-height:1.2;background:var(--goldmetal);-webkit-background-clip:text;background-clip:text;color:transparent;filter:saturate(1.3) brightness(.85)}
 .price .v small{font-size:.4em;margin-left:4px}
 .price .s{display:block;font-size:14px;color:var(--ink2);margin-top:4px}
+.lockp{text-align:center}
+.lockp .lk{font-size:34px;margin:0 0 4px}
+.lbar{height:10px;border-radius:99px;background:var(--line);overflow:hidden;margin:16px auto 8px;max-width:320px}
+.lbar i{display:block;height:100%;width:0;background:var(--goldmetal);transition:width 1s cubic-bezier(.2,.9,.3,1)}
+.lnow{font-weight:900;color:var(--navy);font-variant-numeric:tabular-nums;margin:0 0 6px}
+.ghostbtn{background:var(--navy)!important;box-shadow:0 8px 20px rgba(16,21,42,.25)!important}
+.ghostbtn::after{display:none}
+.small2{font-size:14px;color:var(--ink2);margin:10px 0 0;line-height:1.7}
+.unlocked{animation:unlock .9s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes unlock{0%{transform:scale(.92);opacity:0}100%{transform:none;opacity:1}}
 /* LINE */
 .next{background:var(--goldbg)}
 .robo{width:118px;margin:0 auto 6px;animation:float 4s ease-in-out infinite}
@@ -352,7 +362,15 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     <p class="rv">森川と1対1で話す、30分の個別相談です。Zoomで行います。放送の感想でも、いま止まっていることでも、テーマは自由です。</p>
     <ul class="topics rv"><li>新規が苦しい</li><li>収入の出口を増やしたい</li><li>発信と会社の規程</li><li>AIを仕事にどう乗せるか</li><li>独立を考えている</li></ul>
     <div class="price rv"><span class="k">個別相談</span><span class="v">5,500<small>円（税込）</small></span><span class="s">1回30分・Zoom・何回目でも同じ料金</span></div>
-    <div class="panel" id="p-first">
+    <div class="panel lockp" id="p-lock">
+      <p class="lk">🔒</p>
+      <h3>5本聴くと、<br>相談の枠がひらきます。</h3>
+      <div class="lbar"><i id="lfill"></i></div>
+      <p class="lnow" id="lnow">いま 0 / 5 本</p>
+      <a class="btn ghostbtn" href="#eps-h">放送の一覧へ</a>
+      <p class="small2">先に話したい方は、LINEで「相談したい」と一言ください。森川から返します。</p>
+    </div>
+    <div class="panel" id="p-first" hidden>
       <h3>空いている日時を<br>選んでください。</h3>
       <p style="margin:0;font-size:16px">カレンダーから日時を選び、カードでお支払いいただくと、Zoomのご案内がメールで届きます。3週間先まで予約できます。</p>
       <a class="btn" id="toBook" href="https://utage-system.com/event/d2dXyJMqCSP7/register" target="_blank" rel="noopener">空いている日時を選ぶ</a>
@@ -449,7 +467,8 @@ var EPISODES = [
   var mfill=document.getElementById('mfill');
   /* スタンプカード：この端末に記録（消えても聴き直せば戻る） */
   var REFX=(window.fxRef||'')+'|'+location.search, onLine=/(^|[=|])line_/.test(REFX)||/(^|[=|])member/.test(REFX), memberX=/(^|[=|])member/.test(REFX);
-  var CONSULT=memberX?'':' <a href="#soudan" class="tosoudan">聴いて、自分の場合を話したくなったら → 森川と30分（個別相談）</a>';
+  var NEED=5, wasOpen=null;
+  function consultLink(c){ if(memberX) return ''; return c>=NEED?' <a href="#soudan" class="tosoudan">相談の枠がひらいています → 森川と30分（個別相談）</a>':' <span class="tosoudan" style="border:0;color:#B9C1D3">あと'+(NEED-c)+'本で、森川との個別相談の枠がひらきます</span>'; }
   var KEY='hokenya_radio_v1', rs={s:[],p:[],all:false};
   try{ var raw=JSON.parse(localStorage.getItem(KEY)||'null'); if(raw&&raw.s) rs=raw; }catch(e){}
   function save(){ try{ localStorage.setItem(KEY,JSON.stringify(rs)); }catch(e){} }
@@ -478,13 +497,17 @@ var EPISODES = [
     for(var n=1;n<=10;n++){ var d=document.createElement('div'); d.className='slot'+(done(n)?' on':'')+(n===justStamped?' new':''); d.textContent=done(n)?'聴':n; d.setAttribute('aria-label','第'+n+'回'+(done(n)?' 聴いた':'')); sl.appendChild(d); }
     var cnt=rs.s.length; document.getElementById('scount').textContent=cnt+' / 10';
     var msg=document.getElementById('smsg'), nx=nextN();
-    if(cnt>=10) msg.innerHTML='<b>完走です。</b>10回、ありがとうございました。LINEに「完走」と一言ください。森川から返します。'+(cnt?CONSULT:'');
-    else if(nx) msg.innerHTML=(cnt===0?'まずは<b>第'+nx+'回</b>から。聴いたらスタンプを押すと、次の回がひらきます。':'次は<b>第'+nx+'回</b>です。')+(cnt?CONSULT:'');
-    else msg.innerHTML='公開中の回は、ぜんぶ聴きました。<b>次の回は、公開したらLINEでお知らせします。</b>'+(cnt?CONSULT:'');
+    if(cnt>=10) msg.innerHTML='<b>完走です。</b>10回、ありがとうございました。LINEに「完走」と一言ください。森川から返します。'+(cnt?consultLink(cnt):'');
+    else if(nx) msg.innerHTML=(cnt===0?'まずは<b>第'+nx+'回</b>から。聴いたらスタンプを押すと、次の回がひらきます。':'次は<b>第'+nx+'回</b>です。')+(cnt?consultLink(cnt):'');
+    else msg.innerHTML='公開中の回は、ぜんぶ聴きました。<b>次の回は、公開したらLINEでお知らせします。</b>'+(cnt?consultLink(cnt):'');
     document.getElementById('openAll').hidden=rs.all||cnt>0;
     /* 上のボタンと追従ボタンの文言 */
     var lb=cnt===0?'第1回から聴く':(nx?'続きを聴く（第'+nx+'回）':'スタンプカードを見る');
     ['heroPlay','stickyBtn'].forEach(function(id){ var a=document.getElementById(id); a.innerHTML='<span class="tri"></span>'+lb+(id==='stickyBtn'&&cnt===0?'（6分）':''); });
+    var op=cnt>=NEED, pl=document.getElementById('p-lock'), pf2=document.getElementById('p-first');
+    pl.hidden=op; pf2.hidden=!op; document.getElementById('lnow').textContent='いま '+Math.min(cnt,NEED)+' / '+NEED+' 本'; document.getElementById('lfill').style.width=(Math.min(cnt,NEED)/NEED*100)+'%';
+    if(op&&wasOpen===false){ pf2.classList.add('unlocked'); if(window.fxTrack) fxTrack('ConsultUnlocked',{}); }
+    wasOpen=op;
     firstRender=false;
   }
   render();
