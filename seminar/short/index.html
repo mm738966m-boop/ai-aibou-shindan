@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>おじいちゃんでもできる、保険営業のAI完全自動化｜AI仕事術勉強会（無料・Zoom）</title>
+<meta name="description" content="移動ゼロ。集客も、提案も、フォローも、AIの右腕と左腕が回す。パソコンが苦手でも組み立てられる仕組みを、90分、目の前で動かして見せます。Zoom・無料。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="おじいちゃんでもできる、保険営業のAI完全自動化。">
+<meta property="og:description" content="Zoom・無料。移動ゼロ。集客も提案もフォローも、AIの右腕と左腕が回す。90分の実演。">
+<meta property="og:url" content="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/">
+<meta property="og:image" content="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/og_v5.png">
+<meta property="og:site_name" content="金融AIカレッジ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="noindex">
+<meta name="build" content="v25-short">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Zen+Maru+Gothic:wght@500;700;900&family=Klee+One:wght@400;600&display=swap">
+<!-- ===== 計測（Meta Pixel 1510200123755162）===== -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+(function(){
+  var KEY='fx_ref';
+  var q=new URLSearchParams(location.search);
+  var ref=q.get('ref')||(q.get('utm_source')?(q.get('utm_source')+(q.get('utm_content')?'_'+q.get('utm_content'):'')):'')||'';
+  try{ if(ref){sessionStorage.setItem(KEY,ref)} else {ref=sessionStorage.getItem(KEY)||'direct'} }catch(e){ ref=ref||'direct' }
+  window.fxRef=ref;
+  /* 経路分け：ChatGPT広告（ref=chatgpt_*）から来た人は、Metaの標準イベント（Lead/CompleteRegistration）を送らない。
+     Metaの最適化データを混ぜないため。数は trackCustom（GPT_*）で別に数える。完了ページ（別遷移）が読めるよう localStorage にも残す */
+  window.fxIsGPT=/^chatgpt/.test(ref);
+  try{ localStorage.setItem('sem_src', JSON.stringify({ref:ref,t:Date.now()})) }catch(e){}
+  window.fxTrack=function(name,params){
+    try{ fbq('trackCustom',name,Object.assign({ref:window.fxRef,page:document.title},params||{})) }catch(e){}
+  };
+  fbq('init','1510200123755162');
+  fbq('track','PageView',{ref:ref});
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1510200123755162&ev=PageView&noscript=1"></noscript>
+<style>
+:root{--teal:#2B3553;--deep:#1B2238;--accent:#0E7C86;--ink:#1F2433;--ink2:#555E72;--soft:#F4F1EA;--line:#E2DDD1;--gold:#A97B1F;--goldfill:#D9A441;--goldl:#F1D79A;--goldbg:#FBF4E3;--bg:#FBF9F4;--dot:#E6E1D5;--mint:#E9E3D3;--cream:#FFFBF2;--paper:#F6F3E8;--navy2:#2A3450;--navy3:#10152A;--goldmetal:linear-gradient(135deg,#F6E3A8 0%,#D9A441 45%,#B8862B 70%,#F1D79A 100%)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Zen Kaku Gothic New","Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;font-size:19px;font-weight:500;line-height:1.95;-webkit-text-size-adjust:100%;overflow-x:hidden;font-feature-settings:"palt";letter-spacing:.02em}
+img,video{max-width:100%;display:block}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+p{margin:0 0 16px;text-wrap:pretty;word-break:auto-phrase}
+strong{font-weight:900}
+.hd,h1,h2,h3{font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif;font-weight:900;letter-spacing:.01em}
+.maru{font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif}
+.dots{background-image:none}
+.mk{background:linear-gradient(transparent 60%,var(--goldbg) 60%);padding:0 3px}
+.em{color:var(--teal)}
+/* progress walker */
+#prog{position:fixed;left:0;right:0;top:0;height:5px;background:rgba(213,228,230,.5);z-index:40}
+#prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--goldfill),var(--teal));transition:width .25s linear}
+#walker{position:absolute;top:-2px;width:42px;height:42px;transform:translate(-50%,-70%);transition:left .25s linear;left:0;filter:drop-shadow(0 2px 3px rgba(0,0,0,.18));pointer-events:none}
+/* hero */
+.hero{position:relative;overflow:hidden;background:linear-gradient(165deg,var(--navy2) 0%,var(--deep) 55%,var(--navy3) 100%);color:#fff;padding:48px 0 40px}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(640px 320px at 92% 0%,rgba(217,164,65,.22),transparent 70%),radial-gradient(500px 260px at 0% 100%,rgba(255,255,255,.06),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;max-width:1040px;padding:0 20px}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:24px;align-items:center}
+.date{display:inline-block;position:relative;background:rgba(255,255,255,.08);border:1px solid rgba(241,215,154,.6);color:var(--goldl);font-size:15.5px;font-weight:700;border-radius:20px;padding:7px 14px 7px 30px;margin-bottom:16px;line-height:1.5;text-align:left;letter-spacing:.04em}
+.date:before{content:"";position:absolute;left:12px;top:14px;width:10px;height:10px;border-radius:50%;background:var(--goldfill)}
+h1{font-size:clamp(26px,7.1vw,40px);line-height:1.38;margin:0 0 14px;letter-spacing:0}
+h1 .g{color:var(--goldl)}
+.lead{font-size:19px;color:#DCEBEC;margin-bottom:22px;font-weight:500}
+.cta .lead{color:#DCEBEC}
+.btn{position:relative;display:block;width:100%;background:linear-gradient(180deg,#128A95,var(--teal));color:#fff;text-decoration:none;text-align:center;font-size:21px;font-weight:900;border-radius:999px;padding:19px 18px;box-shadow:0 10px 26px rgba(10,90,98,.28);transition:transform .15s,box-shadow .15s;font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif;letter-spacing:.03em}
+.hero .btn,.cta .btn{background:linear-gradient(180deg,#E6B85A,#C8932F);color:#1C2A2C;box-shadow:0 12px 30px rgba(0,0,0,.28)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(14,124,134,.38)}
+.btn:active{transform:scale(.98)}
+.btn small{display:block;font-size:15px;font-weight:700;opacity:.9;margin-top:3px}
+.btn.ring:after{content:"";position:absolute;inset:-5px;border-radius:999px;border:2px solid rgba(241,215,154,.9);animation:ring 2.6s ease-out infinite;pointer-events:none}
+.btn-note{font-size:16px;color:var(--ink2);text-align:center;margin:12px 0 0}
+.hero .btn-note,.cta .btn-note{color:#C9DCDE}
+.trust{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.trust span{font-size:15px;font-weight:700;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:6px 12px 6px 10px;display:inline-flex;align-items:center;gap:6px}
+.trust span:before{content:"✓";color:var(--goldl);font-weight:900}
+.hero-vis{position:relative;padding:10px 0 20px}
+.hero-img{border-radius:22px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.35);aspect-ratio:4/5;max-height:420px;transform:rotate(-1.2deg);border:1px solid rgba(241,215,154,.55);outline:6px solid rgba(255,255,255,.08)}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.hero-robo{position:absolute;left:-6px;bottom:-4px;width:150px;height:auto;animation:float 3.6s ease-in-out infinite;filter:drop-shadow(0 8px 10px rgba(0,0,0,.14))}
+.hero-bub{position:absolute;right:-4px;top:-6px;max-width:240px;background:#fff;color:var(--ink);border:1.5px solid var(--goldfill);border-radius:18px;padding:10px 14px;font-size:16px;font-weight:700;line-height:1.55;box-shadow:0 10px 26px rgba(0,0,0,.22);animation:pop .7s cubic-bezier(.2,1.5,.4,1) .4s both;font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif}
+.hero-bub:after{content:"";position:absolute;left:28px;bottom:-11px;width:18px;height:18px;background:#fff;border-right:1.5px solid var(--goldfill);border-bottom:1.5px solid var(--goldfill);transform:rotate(45deg)}
+.spark{position:absolute;width:14px;height:14px;color:var(--goldl);animation:tw 2.2s ease-in-out infinite;pointer-events:none}
+/* sections */
+section{padding:64px 0;position:relative}
+section.alt{background:var(--soft)}
+section.dark{background:linear-gradient(170deg,var(--deep),var(--navy2));color:#fff}
+section.mid{padding:34px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold);font-size:14.5px;font-weight:900;letter-spacing:.14em;margin-bottom:12px}
+.eyebrow:before{content:"";width:26px;height:2px;background:var(--goldfill);border-radius:2px}
+.dark .eyebrow{color:var(--goldl)}
+h2{font-size:clamp(25px,6.6vw,34px);line-height:1.45;margin:0 0 22px}
+h3{font-size:20px;margin:0 0 8px;line-height:1.5}
+.figure{border-radius:18px;overflow:hidden;margin:0 0 22px;box-shadow:0 14px 34px rgba(10,90,98,.16);background:#fff}
+.figure img,.figure video{width:100%;aspect-ratio:16/9;object-fit:cover}
+.cap{font-size:16px;color:var(--ink2);margin:-8px 0 20px;line-height:1.7}
+.dark .cap{color:#D6E9EB}
+.ill{display:block;margin:0 auto 18px;width:min(100%,420px);height:auto}
+.ill.sm{width:min(100%,300px)}
+.row{display:grid;grid-template-columns:1fr;gap:14px;align-items:center}
+@media (min-width:640px){.row{grid-template-columns:1.1fr .9fr}.row.rev{grid-template-columns:.9fr 1.1fr}.row.rev>:first-child{order:2}}
+/* robo bubble */
+.robo{display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:end;margin:18px 0 6px}
+.robo img{width:96px;height:96px;object-fit:contain}
+.robo .bub{position:relative;background:#fff;border:1.5px solid var(--teal);border-radius:18px;padding:12px 16px;font-size:17px;font-weight:700;line-height:1.6;margin-bottom:10px;font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;box-shadow:0 6px 18px rgba(10,90,98,.08)}
+.robo .bub:before{content:"";position:absolute;left:-10px;bottom:16px;width:16px;height:16px;background:#fff;border-left:1.5px solid var(--teal);border-bottom:1.5px solid var(--teal);transform:rotate(45deg)}
+.dark .robo .bub{color:var(--ink)}
+/* 用語 */
+.yg{display:inline;border-bottom:2px dotted var(--teal);color:var(--deep);font-weight:900;cursor:pointer;padding:0 1px;background:none;border-top:0;border-left:0;border-right:0;font:inherit;font-weight:900;white-space:nowrap}
+.yg:after{content:"?";display:inline-grid;place-items:center;width:17px;height:17px;border-radius:50%;background:var(--teal);color:#fff;font-size:12px;font-weight:900;margin-left:3px;vertical-align:2px;line-height:1}
+.dark .yg{color:#fff;border-color:#fff}
+.dark .yg:after{background:var(--goldfill);color:var(--ink)}
+#yogo{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:0 12px calc(12px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .35s cubic-bezier(.2,1.2,.4,1);pointer-events:none}
+#yogo.show{transform:none;pointer-events:auto}
+#yogo .in{max-width:640px;margin:0 auto;background:#fff;border:1.5px solid var(--goldfill);border-radius:22px;font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;padding:16px 18px 16px 16px;box-shadow:0 -6px 30px rgba(10,90,98,.22);display:grid;grid-template-columns:84px 1fr;gap:12px;align-items:start;position:relative}
+#yogo img{width:84px;height:84px;object-fit:contain}
+#yogo b{display:block;font-size:19px;margin-bottom:4px;color:var(--deep);font-weight:900}
+#yogo p{margin:0;font-size:17px;line-height:1.7;word-break:normal;text-wrap:pretty}
+#yogo button{position:absolute;top:-14px;right:-6px;width:38px;height:38px;border-radius:50%;border:2.5px solid var(--teal);background:#fff;color:var(--teal);font-size:22px;font-weight:900;cursor:pointer;line-height:1}
+#yogo-shade{position:fixed;inset:0;background:rgba(28,50,54,.25);z-index:49;opacity:0;pointer-events:none;transition:opacity .3s}
+#yogo-shade.show{opacity:1;pointer-events:auto}
+/* beginner strip */
+.beg{background:var(--cream);border:1.5px solid var(--goldfill);border-radius:20px;padding:18px 18px 12px;margin:0;background-image:radial-gradient(var(--dot) 1.4px,transparent 1.4px);background-size:24px 24px}
+.beg .chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 6px}
+.beg .chips .yg{background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:6px 12px;font-size:16px}
+/* pains */
+ul.pain{list-style:none;padding:0;margin:0 0 6px;display:grid;gap:10px}
+ul.pain li{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:14px 16px 14px 54px;position:relative;font-weight:700;cursor:pointer;transition:border-color .2s,background .2s,transform .2s;user-select:none}
+ul.pain li:before{content:"";position:absolute;left:16px;top:17px;width:24px;height:24px;border-radius:8px;border:2.5px solid var(--line);background:#fff;transition:all .2s}
+ul.pain li:after{content:"";position:absolute;left:24px;top:20px;width:7px;height:13px;border-right:3px solid #fff;border-bottom:3px solid #fff;transform:rotate(45deg) scale(0);transition:transform .25s cubic-bezier(.2,1.6,.4,1)}
+ul.pain li.on{border-color:var(--teal);background:var(--soft)}
+ul.pain li.on:before{background:var(--teal);border-color:var(--teal)}
+ul.pain li.on:after{transform:rotate(45deg) scale(1)}
+ul.pain li:active{transform:scale(.985)}
+.pain-note{font-size:15px;color:var(--ink2);margin:0 0 8px}
+/* stats */
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:6px 0 18px}
+.stat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);border-top:3px solid var(--goldfill);border-radius:16px;padding:18px 16px}
+.light .stat{background:#fff;border-color:var(--line);border-top-color:var(--goldfill)}
+.stat .n{font-family:"Zen Kaku Gothic New",sans-serif;font-size:40px;font-weight:900;line-height:1.1;color:var(--goldl);font-variant-numeric:tabular-nums;letter-spacing:0}
+.light .stat .n{color:var(--teal)}
+.stat .n small{font-size:18px;margin-left:2px}
+.stat .l{font-size:16.5px;font-weight:700;margin-top:6px;line-height:1.55}
+.src{font-size:14.5px;color:#D6E9EB;line-height:1.7}
+.light .src, section:not(.dark) .src{color:var(--ink2)}
+/* reasons / numbered cards */
+.reasons{display:grid;gap:12px;margin:6px 0 10px}
+.reason{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:16px 18px;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;align-items:start}
+.no{width:44px;height:44px;border-radius:50%;background:var(--teal);color:#fff;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;font-size:22px;display:flex;align-items:center;justify-content:center;flex:none}
+.reason h3{margin:4px 0 4px;font-size:19px}
+.reason p{margin:0;font-size:17.5px;color:var(--ink2)}
+/* arms */
+.arms{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:6px 0 18px}
+.arm{background:#fff;border:1.5px solid var(--line);border-radius:20px;box-shadow:0 10px 28px rgba(10,90,98,.08);padding:18px 16px 16px;position:relative;overflow:hidden}
+.arm.r{border-color:var(--teal)}
+.arm.l{border-color:var(--goldfill)}
+.arm .k{display:inline-block;font-size:14px;font-weight:900;letter-spacing:.08em;color:#fff;background:var(--teal);border-radius:999px;padding:3px 12px}
+.arm.l .k{background:var(--gold)}
+.arm img{width:100%;max-width:220px;height:auto;margin:6px auto 4px}
+.arm h3{font-size:21px;margin:4px 0 6px}
+.arm p{font-size:17px;color:var(--ink2);margin:0 0 6px}
+.arm ul{margin:0;padding-left:1.1em;font-size:16.5px;color:var(--ink2)}
+.arm li{margin-bottom:3px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0 6px}
+.col{border-radius:16px;padding:16px;border:1.5px solid var(--line);background:#fff}
+.col.ai{border-color:var(--teal);background:var(--soft)}
+.col h4{margin:0 0 8px;font-size:16.5px;font-weight:900;letter-spacing:.04em;display:flex;align-items:center;gap:8px}
+.col.ai h4{color:var(--deep)}
+.col h4 i{width:12px;height:12px;border-radius:50%;background:var(--teal);display:inline-block}
+.col:not(.ai) h4 i{background:var(--goldfill)}
+.col ul{margin:0;padding-left:1.1em;font-size:16.5px}
+.col li{margin-bottom:5px}
+/* day compare */
+.days{display:grid;grid-template-columns:1fr;gap:14px;margin:8px 0 0}
+.day{border-radius:18px;overflow:hidden;border:1.5px solid var(--line);background:#fff}
+.day .h{padding:12px 16px;font-weight:900;font-size:16.5px;letter-spacing:.04em}
+.day.b .h{background:#ECEAE3;color:var(--ink2)}
+.day.a .h{background:var(--teal);color:#fff}
+.day dl{margin:0;padding:12px 16px 6px;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:17px}
+.day dt{font-weight:900;color:var(--ink2);font-variant-numeric:tabular-nums;white-space:nowrap}
+.day dd{margin:0}
+.day.b dd{color:var(--ink2)}
+.day.a dd b{font-weight:900;color:#fff;background:var(--teal);border-radius:999px;padding:1px 9px;font-size:14.5px;margin-right:4px;white-space:nowrap}
+.day.a dd b.lf{background:var(--gold)}
+.pull{border-left:6px solid var(--goldfill);background:var(--goldbg);border-radius:0 18px 18px 0;padding:16px 18px;margin:18px 0;font-weight:700}
+.pull .big{font-family:"Zen Kaku Gothic New",sans-serif;font-size:25px;font-weight:900;line-height:1.4;color:var(--deep)}
+.bars{display:grid;gap:10px;margin:14px 0 6px}
+.bar{display:grid;grid-template-columns:72px 1fr auto;gap:10px;align-items:center;font-size:16px;font-weight:700}
+.bar .t{height:30px;border-radius:999px;background:#E9E5D8;position:relative;overflow:hidden}
+.bar .t i{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:999px;background:var(--ink2)}
+.bar.a .t i{background:var(--teal)}
+.in .bar .t i{animation:grow 1.3s cubic-bezier(.2,.9,.3,1) forwards}
+.bar .v{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;font-size:18px;white-space:nowrap}
+.bar.a .v{color:var(--teal)}
+/* week */
+.week{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:6px 0 8px}
+.wk{background:#fff;border:1.5px solid var(--line);border-radius:16px;overflow:hidden}
+.wk .h{background:var(--teal);color:#fff;padding:10px 14px;font-weight:900;font-size:15.5px;letter-spacing:.06em}
+.wk.l .h{background:var(--gold)}
+.wk dl{margin:0;padding:10px 14px 4px;display:grid;grid-template-columns:auto 1fr;gap:6px 10px;font-size:16px}
+.wk dt{font-weight:900;color:var(--teal);white-space:nowrap}
+.wk.l dt{color:var(--gold)}
+.wk dd{margin:0}
+/* timeline */
+.timeline{position:relative;padding-left:0;margin:4px 0 0;display:grid;gap:10px}
+.tl{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:14px 16px;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:start}
+.tl .min{width:64px;height:64px;border-radius:50%;background:var(--soft);border:1.5px solid var(--teal);color:var(--deep);font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;font-size:17px;display:flex;align-items:center;justify-content:center;line-height:1.1;text-align:center;flex:none}
+.tl .min small{display:block;font-size:13.5px}
+.tl h3{font-size:19px;margin:6px 0 4px}
+.tl p{margin:0;font-size:17px;color:var(--ink2)}
+.tl.dem{border-color:var(--goldfill);background:var(--cream)}
+.tl.dem .min{background:var(--goldbg);border-color:var(--goldfill);color:var(--gold)}
+/* profile */
+.me{display:flex;gap:18px;align-items:center;margin:0 0 18px}
+.me img{width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:top;border:4px solid #fff;box-shadow:0 6px 18px rgba(10,90,98,.18);flex:0 0 auto}
+.me .t{font-size:16.5px;color:var(--ink2);line-height:1.6}
+.me .t b{display:block;font-size:23px;color:var(--ink);font-weight:900}
+.cred{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 18px}
+.cred div{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:12px 14px;font-size:16px;font-weight:700;line-height:1.5}
+.cred div b{display:block;font-family:"Zen Kaku Gothic New",sans-serif;font-size:25px;color:var(--teal);font-variant-numeric:tabular-nums}
+.stage{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 6px}
+.stage span{font-size:16px;font-weight:700;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:6px 12px}
+.stage-note{font-size:14.5px;color:var(--ink2);margin:0 0 14px}
+/* reviews */
+.rating{display:flex;align-items:baseline;gap:10px;margin:0 0 14px;flex-wrap:wrap}
+.rating .n{font-family:"Zen Kaku Gothic New",sans-serif;font-size:44px;font-weight:900;color:var(--teal);line-height:1}
+.rating .s{color:var(--goldfill);font-size:22px;letter-spacing:.05em}
+.rating .c{font-size:16px;color:var(--ink2);font-weight:700}
+.reviews{display:grid;gap:12px}
+.rev{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:16px 18px;font-size:17.5px;position:relative}
+.rev:before{content:"“";position:absolute;left:12px;top:-4px;font-size:44px;color:var(--mint);font-family:serif;line-height:1}
+.rev .d{font-size:15px;color:var(--ink2);margin-top:6px;font-weight:700}
+/* letter */
+.letter{position:relative;overflow:hidden;background:var(--paper);border:2px solid #E6DFCF;border-radius:24px;padding:120px 22px 40px;box-shadow:0 10px 30px rgba(10,90,98,.08)}
+.letter p{font-family:"Klee One","Zen Maru Gothic",sans-serif;font-weight:600;font-size:20.5px;line-height:2;position:relative;z-index:1;color:#2A3040}
+.letter .sign{text-align:right;font-family:"Klee One",serif;font-weight:800;font-size:22px;margin:14px 0 0;position:relative;z-index:1;padding-bottom:150px}
+.letter .deco{position:absolute;pointer-events:none;mix-blend-mode:darken;z-index:0}
+.letter .deco.tl{top:-6px;left:-6px;width:150px}
+.letter .deco.br{bottom:-8px;left:-8px;width:190px}
+.letter .night{position:absolute;right:-10px;bottom:-6px;width:210px;z-index:0;opacity:.95;mix-blend-mode:multiply}
+@media (min-width:600px){.letter{padding:70px 40px 40px}.letter .sign{padding-bottom:120px}.letter .deco.tl{width:200px}.letter .deco.br{width:230px}.letter .night{width:260px}}
+/* take / not-for / steps */
+ul.take{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+ul.take li{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:14px 16px 14px 54px;position:relative}
+ul.take li:before{content:"";position:absolute;left:15px;top:15px;width:26px;height:26px;border-radius:50%;background:var(--teal)}
+ul.take li:after{content:"";position:absolute;left:24px;top:19px;width:7px;height:13px;border-right:3px solid #fff;border-bottom:3px solid #fff;transform:rotate(45deg)}
+ul.notfor{list-style:none;padding:0;margin:0 0 18px;display:grid;gap:10px}
+ul.notfor li{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:14px 16px 14px 50px;position:relative;color:var(--ink2)}
+ul.notfor li:before{content:"×";position:absolute;left:17px;top:11px;color:#B5533E;font-weight:900;font-size:22px}
+.promise{display:grid;gap:12px}
+.promise div{background:#fff;border:1.5px solid var(--teal);border-radius:16px;padding:14px 86px 14px 16px;position:relative;overflow:hidden}
+.promise b{display:block;font-size:19.5px;color:var(--deep);margin-bottom:2px}
+.promise .st{position:absolute;right:10px;top:50%;width:66px;height:66px;margin-top:-33px;border-radius:50%;border:2px solid var(--goldfill);color:var(--gold);display:grid;place-items:center;font-weight:900;font-size:15px;line-height:1.1;text-align:center;transform:scale(0) rotate(-20deg);opacity:0;background:var(--goldbg)}
+.promise .st:after{content:"";position:absolute;inset:5px;border:2px dashed var(--goldfill);border-radius:50%}
+.in .promise .st{animation:stamp .55s cubic-bezier(.2,1.6,.4,1) forwards}
+.in .promise div:nth-child(2) .st{animation-delay:.25s}
+.in .promise div:nth-child(3) .st{animation-delay:.5s}
+.steps{display:grid;gap:10px;margin:6px 0 0}
+.step{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:14px 16px}
+.step p{margin:0;font-size:17.5px}
+.step b{display:block;font-weight:900;font-size:17.5px}
+/* faq */
+details{background:#fff;border:1.5px solid var(--line);border-radius:14px;margin-bottom:10px;transition:border-color .2s}
+details[open]{border-color:var(--teal)}
+summary{cursor:pointer;padding:14px 44px 14px 48px;font-weight:900;position:relative;list-style:none;line-height:1.55}
+summary::-webkit-details-marker{display:none}
+summary:before{content:"Q";position:absolute;left:14px;top:13px;width:26px;height:26px;border-radius:50%;background:var(--teal);color:#fff;font-weight:900;font-size:15px;display:grid;place-items:center}
+summary:after{content:"";position:absolute;right:18px;top:20px;width:10px;height:10px;border-right:3px solid var(--teal);border-bottom:3px solid var(--teal);transform:rotate(45deg);transition:transform .25s}
+details[open] summary:after{transform:rotate(225deg);top:26px}
+details p{padding:0 16px 16px 48px;margin:0;font-size:17.5px;color:var(--ink2)}
+/* spec */
+.spec{display:grid;grid-template-columns:auto 1fr;gap:10px 22px;margin:0 0 6px;background:#fff;border:1.5px solid var(--line);border-top:3px solid var(--goldfill);border-radius:16px;padding:22px}
+.spec dt{color:var(--teal);font-weight:900;white-space:nowrap}
+.spec dd{margin:0;font-weight:700}
+.cta{background:linear-gradient(165deg,var(--navy2) 0%,var(--deep) 55%,var(--navy3) 100%);color:#fff;padding:64px 0 56px;overflow:hidden}
+.cta h2{color:#fff}
+.cta .wrap{position:relative}
+.notes{font-size:15.5px;color:var(--ink2);padding-left:1.2em;margin:0}
+.notes li{margin-bottom:8px}
+.motto{font-size:21px;font-weight:900;color:var(--deep);margin:18px 0 0}
+footer{font-size:16px;color:var(--ink2);text-align:center;padding:26px 20px 110px;line-height:1.7}
+.sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s;z-index:9}
+.sticky.show{transform:none}
+.sticky .btn{max-width:640px;margin:0 auto;padding:15px 16px;font-size:19.5px;box-shadow:0 4px 16px rgba(0,0,0,.15)}
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.9,.3,1);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.rv-l{opacity:0;transform:translateX(-30px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.9,.3,1)}
+.rv-r{opacity:0;transform:translateX(30px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.9,.3,1)}
+.rv-l.in,.rv-r.in{opacity:1;transform:none}
+.wig{animation:wig 3.2s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+@keyframes pop{0%{opacity:0;transform:scale(.6) rotate(-4deg)}70%{opacity:1;transform:scale(1.05) rotate(1deg)}100%{opacity:1;transform:none}}
+@keyframes tw{0%,100%{opacity:.2;transform:scale(.7) rotate(0)}50%{opacity:1;transform:scale(1.15) rotate(20deg)}}
+@keyframes ring{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(1.12)}}
+@keyframes grow{from{width:0}to{width:var(--w)}}
+@keyframes stamp{0%{transform:scale(0) rotate(-20deg);opacity:0}70%{transform:scale(1.15) rotate(-12deg);opacity:1}100%{transform:scale(1) rotate(-12deg);opacity:1}}
+@keyframes wig{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg) translateY(-4px)}}
+@media (prefers-reduced-motion:reduce){.sticky,.rv,.rv-l,.rv-r{transition:none}html{scroll-behavior:auto}.rv,.rv-l,.rv-r{opacity:1;transform:none}*{animation:none!important}.in .bar .t i{width:var(--w)}.promise .st{transform:rotate(-12deg);opacity:1}}
+@media (min-width:900px){.hero-grid{grid-template-columns:1.15fr .85fr;gap:40px}.hero{padding:64px 0 40px}.hero-img{max-height:none}.hero-robo{width:180px;left:-8px;bottom:-10px}.hero-bub{right:-30px;top:-10px;max-width:260px;font-size:17px}}
+@media (max-width:560px){.arms,.split,.cred,.week{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.stat{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center}.stat .n{font-size:34px;min-width:96px}.stat .l{margin-top:0}.spec{grid-template-columns:1fr;gap:2px}.spec dt{margin-top:10px}.me img{width:80px;height:80px}.robo{grid-template-columns:80px 1fr}.robo img{width:80px;height:80px}.hero-bub{max-width:210px;font-size:15.5px;right:0}.hero-robo{width:130px;left:-10px}}
+
+/* ===== v23: 紺多め・艶感 ===== */
+body{background:var(--bg)}
+.hero,.cta{background:linear-gradient(165deg,var(--navy2) 0%,var(--deep) 55%,var(--navy3) 100%)}
+.hero:before{background:radial-gradient(640px 320px at 92% 0%,rgba(217,164,65,.26),transparent 70%),linear-gradient(115deg,rgba(255,255,255,.07) 0%,transparent 38%)}
+.cta:before{content:"";position:absolute;inset:0;background:radial-gradient(640px 320px at 8% 0%,rgba(217,164,65,.22),transparent 70%),linear-gradient(115deg,rgba(255,255,255,.06) 0%,transparent 40%);pointer-events:none}
+section.dark{background:linear-gradient(170deg,var(--deep),var(--navy2))}
+h1 .g,.cta h2 .g{background:linear-gradient(180deg,#F8E7B0 0%,#E3B74E 50%,#B8862B 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.date{background:rgba(255,255,255,.07);border-color:rgba(241,215,154,.55)}
+.btn{overflow:hidden;background:linear-gradient(180deg,#2FD66F 0%,#06C755 52%,#04A648 100%);color:#fff;box-shadow:0 12px 28px rgba(4,166,72,.32),inset 0 1px 0 rgba(255,255,255,.45),inset 0 -2px 0 rgba(0,0,0,.14);text-shadow:0 1px 1px rgba(0,0,0,.18)}
+.hero .btn,.cta .btn{background:linear-gradient(180deg,#2FD66F 0%,#06C755 52%,#04A648 100%);color:#fff;box-shadow:0 14px 32px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.45),inset 0 -2px 0 rgba(0,0,0,.14)}
+.btn:before{content:"";position:absolute;top:-10%;bottom:-10%;left:-70%;width:36%;background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.65) 50%,transparent 100%);transform:skewX(-22deg);animation:shine 4.6s ease-in-out infinite;pointer-events:none}
+.btn small{opacity:.95;text-shadow:none}
+.btn.ring:after{border-color:rgba(241,215,154,.75)}
+.btn-note{color:var(--ink2)}
+.hero .btn-note,.cta .btn-note{color:#C9CEDC}
+.lead{color:#D6DAE6}
+.trust span{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.24)}
+.trust span:before{color:var(--goldl)}
+.hero-img{border:3px solid transparent;background:linear-gradient(var(--deep),var(--deep)) padding-box,var(--goldmetal) border-box;outline:0;box-shadow:0 26px 60px rgba(0,0,0,.45)}
+.hero-bub{border-color:var(--goldfill)}
+.hero-bub:after{border-color:var(--goldfill)}
+.eyebrow{color:var(--gold)}
+.eyebrow:before{background:linear-gradient(90deg,#B8862B,#F1D79A);height:2px}
+.dark .eyebrow,.cta .eyebrow{color:var(--goldl)}
+.no{background:radial-gradient(circle at 30% 25%,#3E4A6E,var(--deep) 72%);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 4px 10px rgba(27,34,56,.25)}
+.reason,.step,.tl,.arm,.rev,.col,.day,.wk,.spec,.promise>div,ul.pain li,ul.take li,ul.notfor li,details,.cred div,.stage span,.beg .chips .yg{box-shadow:inset 0 1px 0 #fff,0 8px 22px rgba(31,36,51,.06)}
+.arm.r{border-color:var(--accent)}.arm .k{background:var(--accent)}.arm.l .k{background:var(--gold)}
+.col.ai{border-color:var(--deep);background:#F3F1EA}.col.ai h4{color:var(--deep)}.col h4 i{background:var(--deep)}.col:not(.ai) h4 i{background:var(--goldfill)}
+.stat{background:linear-gradient(180deg,rgba(255,255,255,.11),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.18);border-top:3px solid var(--goldfill);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 10px 26px rgba(0,0,0,.18)}
+.light .stat{background:#fff;border-color:var(--line);border-top-color:var(--goldfill);box-shadow:inset 0 1px 0 #fff,0 8px 22px rgba(31,36,51,.06)}
+.stat .n{color:var(--goldl)}
+.light .stat .n,.rating .n,.cred div b{color:var(--deep)}
+.src{color:#BFC5D6}
+.day.a .h{background:linear-gradient(180deg,#303B5C,var(--deep))}
+.day.a dd b{background:var(--deep)}.day.a dd b.lf{background:var(--gold)}
+.wk .h{background:linear-gradient(180deg,#303B5C,var(--deep))}.wk.l .h{background:linear-gradient(180deg,#C8932F,var(--gold))}
+.wk dt{color:var(--deep)}.wk.l dt{color:var(--gold)}
+.bar.a .t i{background:linear-gradient(180deg,#F5D982,#C6922C)}.bar .t i{background:#8E95A8}.bar.a .v{color:var(--gold)}
+.pull{border-left-color:var(--goldfill)}.pull .big{color:var(--deep)}
+.tl .min{background:var(--soft);border-color:var(--deep);color:var(--deep)}
+.tl.dem{border-color:var(--goldfill)}.tl.dem .min{background:var(--goldbg);border-color:var(--goldfill);color:var(--gold)}
+ul.pain li.on{border-color:var(--deep);background:#F3F1EA}ul.pain li.on:before{background:var(--deep);border-color:var(--deep)}
+ul.take li:before{background:var(--deep)}
+.promise>div{border-color:var(--deep)}.promise b{color:var(--deep)}
+summary:before{background:var(--deep)}summary:after{border-color:var(--deep)}details[open]{border-color:var(--deep)}
+.spec dt{color:var(--gold)}.spec{border-top-color:var(--goldfill)}
+.robo .bub{border-color:var(--accent)}.robo .bub:before{border-color:var(--accent)}
+.yg{color:var(--deep);border-bottom-color:var(--accent)}.yg:after{background:var(--accent)}
+#yogo .in{border-color:var(--goldfill)}#yogo b{color:var(--deep)}#yogo button{border-color:var(--goldfill);color:var(--gold)}
+.me .t b{color:var(--deep)}
+.motto{color:var(--deep)}
+#prog i{background:linear-gradient(90deg,#B8862B,#F1D79A)}
+.sticky{background:rgba(251,249,244,.94)}
+.spark{color:var(--goldl)}
+.cta h2{color:#fff}
+.cta .ill{border-color:rgba(241,215,154,.55)}
+@keyframes shine{0%,55%{left:-70%}85%,100%{left:130%}}
+@media (prefers-reduced-motion:reduce){.btn:before{display:none}}
+</style>
+</head>
+<body class="dots">
+
+<div id="prog" aria-hidden="true"><i id="pfill"></i><img id="walker" src="../img/mascot_point.webp" alt="" style="display:none"></div>
+
+<header class="hero">
+ <div class="wrap">
+  <div class="hero-grid">
+   <div>
+    <div class="date rv in" id="sem-hero-date">10/21（水）夜・10/23（金）昼・10/25（日）昼　Zoom・参加無料</div>
+    <h1>おじいちゃんでもできる<br>保険営業の<span class="g">AI完全自動化。</span></h1>
+    <p class="lead">提案書は、2分。フォローは、面談のあとすぐ。お客様も、向こうから。<br>移動ゼロで回っている営業を、90分、画面の向こうで動かして見せます。</p>
+    <a class="btn ring cta-link" href="https://utage-system.com/event/dihhvu6t6jSO/register">勉強会に参加する<small>申込は30秒・お名前とメールだけ・無料</small></a>
+    <p class="btn-note">見ているだけで大丈夫です。使うかどうかは、見てから決めてください。</p>
+    <div class="trust"><span>パソコンが苦手でも</span><span>売り込みなし</span><span>会社にも堂々と言える</span></div>
+   </div>
+   <div class="hero-vis">
+    <div class="hero-img"><img src="../img/hero.jpg" alt="自宅の書斎でノートパソコンを開く保険営業の男性" width="928" height="1152" fetchpriority="high"></div>
+   </div>
+  </div>
+ </div>
+</header>
+
+<section class="dark">
+ <div class="wrap">
+  <div class="eyebrow rv">いま、業界で起きていること</div>
+  <h2 class="rv">大手はもう、<br>営業職員全員にAIを<br>持たせ始めました。</h2>
+  <div class="stats">
+   <div class="stat rv" style="--d:.05s"><div class="n" data-count="36000">36,000</div><div class="l">明治安田生命が営業職員 約3万6,000人 全員にAIエージェントを導入</div></div>
+   <div class="stat rv" style="--d:.1s"><div class="n" data-count="25">25<small>%</small></div><div class="l">主要生保8社の入社5年目在籍率。4人に3人が現場を去る</div></div>
+  </div>
+  <p class="rv">会社がAIを配る前に、自分のAIを自分で持った人から、面談と紹介が増え始めています。</p>
+  <p class="src rv">出典: 日本経済新聞 2025年報道／生命保険協会・生命保険文化センター調査（金融庁提出資料 2022）</p>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="eyebrow rv">こんな毎日、ありませんか</div>
+  <h2 class="rv">がんばっているのに、<br>1日に会えるのは3人まで。</h2>
+  <div class="figure rv"><img src="../img/before.jpg" alt="夜の車内で提案書を作る保険営業の男性" loading="lazy"></div>
+  <ul class="pain" id="pain">
+   <li class="rv" style="--d:.05s">朝から車で1件、昼に1件、夕方に1件。夜は駐車場で提案書。</li>
+   <li class="rv" style="--d:.1s">知人・紹介のリストは、もう一周回った。</li>
+   <li class="rv" style="--d:.15s">AIは気になる。でも、パソコンは得意じゃない。</li>
+  </ul>
+  <p class="rv" style="margin-top:14px">これは「がんばり方」の話ではありません。<br><strong>営業の回し方</strong>を変える話です。</p>
+ </div>
+</section>
+
+<section class="alt">
+ <div class="wrap">
+  <div class="eyebrow rv">なぜ、いまなのか</div>
+  <h2 class="rv">変わったのは、あなたではなく<br>お客様のほうです。</h2>
+  <p class="rv">お客様は先に、ネットとAIで調べてから会いに来ます。<br>長い説明は求めていません。短く的確な提案と、そのあとのフォローを求めています。</p>
+  <h2 class="rv" style="margin-top:34px">AIは、あなたの仕事を<br>奪いません。</h2>
+  <p class="rv">お客様と話すこと、決めること。そこはあなたのままです。<br>その前後にある「調べる・書く・整える・送る」を、AIが代わりにやります。</p>
+ </div>
+</section>
+
+<section class="dark">
+ <div class="wrap">
+  <div class="eyebrow rv">1日は、こう変わります</div>
+  <h2 class="rv">移動をやめた分だけ<br>会える人が増える。</h2>
+  <div class="figure rv"><img src="../img/after.jpg" alt="自宅でお客様夫婦とオンライン面談する男性" loading="lazy"></div>
+  <div class="pull rv" style="margin-top:4px"><div class="big">提案書、2時間 → 2分。</div>
+   <div class="bars"><div class="bar"><span>いままで</span><div class="t"><i style="--w:100%"></i></div><span class="v">2時間</span></div><div class="bar a"><span>これから</span><div class="t"><i style="--w:4%"></i></div><span class="v">2分</span></div></div>
+   森川自身の実測です。<br>どうやっているかは、当日、目の前で動かします。</div>
+  <a class="btn ring cta-link rv" href="https://utage-system.com/event/dihhvu6t6jSO/register">勉強会に参加する<small>申込は30秒・お名前とメールだけ・無料</small></a>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="eyebrow rv">当日の90分で、分かること</div>
+  <h2 class="rv">見ているだけで、<br>自分の明日が変わります。</h2>
+  <div class="steps">
+   <div class="step rv" style="--d:.05s"><div class="no">1</div><p><b>お客様探しを、AIにどう任せるか</b>向こうから予約が入る入口の、実物</p></div>
+   <div class="step rv" style="--d:.15s"><div class="no">2</div><p><b>提案書とフォロー文が、面談のあと2分で届く仕組み</b>その場で動かします</p></div>
+   <div class="step rv" style="--d:.25s"><div class="no">3</div><p><b>自分の仕事の、どこから任せるか</b>質問の時間で、あなたの場合を一緒に見ます</p></div>
+  </div>
+  <p class="rv" style="margin-top:16px">売り込みはしません。<br>勉強会のあと、希望する方だけ、個別相談（無料・オンライン）で自分の場合を相談できます。</p>
+ </div>
+</section>
+
+<section class="alt" id="sem-flow">
+ <div class="wrap">
+  <div class="eyebrow rv">参加までの流れ</div>
+  <h2 class="rv">申し込みは、<br>30秒で終わります。</h2>
+  <div class="steps">
+   <div class="step rv" style="--d:.05s"><div class="no">1</div><p><b>下のボタンを押す</b>申込フォームが開きます</p></div>
+   <div class="step rv" style="--d:.15s"><div class="no">2</div><p><b>日程を選んで、お名前とメールを入れる</b>その場で受付メールが届きます</p></div>
+   <div class="step rv" style="--d:.25s"><div class="no">3</div><p><b>前日にZoomのURLが届く</b>当日は時間になったら開くだけ</p></div>
+  </div>
+  <h2 class="rv" id="sem-sch-h2" style="margin-top:34px">3つの日程から、<br>選べます。</h2>
+  <dl class="spec rv">
+   <dt>日時</dt><dd id="sem-sch-dd">① 10月21日（水）20:00〜21:30<br>② 10月23日（金）15:00〜16:30<br>③ 10月25日（日）14:00〜15:30<br><span style="font-weight:500;color:var(--ink2);font-size:16.5px">内容は同じです。本編60分＋質疑30分</span></dd>
+   <dt>形式</dt><dd>Zoom（オンライン）</dd>
+   <dt>参加費</dt><dd>無料</dd>
+   <dt>対象</dt><dd>保険営業（生保・損保・代理店）の個人の方</dd>
+  </dl>
+ </div>
+</section>
+
+<section class="cta">
+ <div class="wrap">
+  <h2 class="rv" style="text-align:center">移動をやめた分だけ<br>会える人が増える。<br>その回し方を、90分で。</h2>
+  <p class="lead rv" id="sem-cta-lead" style="text-align:center">3つの日程から選んで、お名前とメールアドレスだけで申込完了。<br>ZoomのURLは前日にメールでお送りします。</p>
+  <a class="btn ring cta-link rv" href="https://utage-system.com/event/dihhvu6t6jSO/register">勉強会に参加する<small>申込は30秒・お名前とメールだけ・無料</small></a>
+  <p class="btn-note rv">見ているだけで大丈夫です。使うかどうかは、見てから決めてください。</p>
+ </div>
+</section>
+
+<section class="alt">
+ <div class="wrap">
+  <div class="eyebrow rv">講師</div>
+  <div class="me rv"><img src="../morikawa.jpg" alt="森川満章" loading="lazy"><div class="t"><b>森川満章</b>fulfull株式会社 代表取締役<br>お金のプロ・金融AIカレッジ主宰</div></div>
+  <p class="rv">保険は、まだ3年目です。訪問ゼロ、面談も集客もオンラインとAIで回しています。<br>特別な才能ではなく、「何を、どの順番でAIに渡すか」を決めただけです。その決め方を、当日お見せします。</p>
+  <div class="eyebrow rv" style="margin-top:22px">よくあるご質問</div>
+  <details class="rv"><summary>パソコンが苦手です。本当にできますか。</summary><p>スマホだけで始められます。当日お渡しする設定文は「コピーして貼る」だけです。難しい設定や、専門用語の説明会はしません。</p></details>
+  <details class="rv"><summary>何かを売り込まれますか。</summary><p>勉強会は無料で、売り込みはしません。最後に、希望する方だけに個別相談の案内を1枚お見せします。要らなければそのまま閉じていただいて大丈夫です。</p></details>
+  <details class="rv"><summary>発言は必要ですか。</summary><p>必須ではありません。質問はチャットでも受け付けます。カメラはオンでのご参加をお願いしています。</p></details>
+  <details class="rv" id="sem-resched"><summary>当日参加できなくなったら。</summary><p>受付メールに返信するか、LINEに一言送ってください。ほかの日程に振り替えます。</p></details>
+ </div>
+</section>
+
+<section style="padding-top:20px">
+ <div class="wrap">
+  <div class="eyebrow rv">ご注意</div>
+  <ul class="notes rv">
+   <li>「自動化」は集客・提案準備・フォローの部分を指します。お客様への説明や契約手続きは、募集人ご本人が行う前提です。</li>
+   <li>実際に使う際は、ご自身が所属する会社の規程が優先されます。</li>
+   <li>本ページの業界数値は各出典の公表値、fulfullの実績は自社集計です。成果を保証するものではありません。</li>
+   <li>当日は録画を行い、後日の教材として使用させていただく場合があります。参加者の映像・名前は使いません。</li>
+   <li>ページ内の人物写真はイメージです（講師写真を除く）。</li>
+   <li>お申し込みでお預かりする情報は、勉強会のご案内と金融AIカレッジからの情報提供に使用します。<a href="https://fulfull.jp/privacy-policy/" target="_blank" rel="noopener" style="color:var(--ink2)">プライバシーポリシー</a></li>
+  </ul>
+ </div>
+</section>
+
+<footer>金融AIカレッジ｜fulfull株式会社<br><a href="../../" style="color:var(--ink2)">お金のプロのAI相棒診断（無料・約1分）</a></footer>
+
+<div class="sticky" id="sticky"><a class="btn cta-link" data-sem="sticky" href="https://utage-system.com/event/dihhvu6t6jSO/register">勉強会に参加する（無料・3日程）</a></div>
+
+<div id="yogo-shade"></div>
+<div id="yogo" role="dialog" aria-live="polite"><div class="in"><img src="../img/mascot_point.webp" alt=""><div><b id="yogo-t"></b><p id="yogo-p"></p></div><button type="button" id="yogo-x" aria-label="閉じる">×</button></div></div>
+
+<script>
+/* ===== 開催日程（ここだけ書き換えれば、ページ全体の日程表示が変わる） =====
+   close = 申込の締切（UTAGEのイベント締切＝各回の当日12:00）。締切を過ぎた回は自動で消える。
+   すべての回が締切を過ぎると「次回の日程は準備中」表示に切り替わり、ボタンは waitlist に向く。
+   次回を開くときは sessions を新しい回に差し替え、register を新イベントのURLにする。
+   URLは変わらないので、広告・fulfull.jpの記事・診断サイトからのリンクはそのまま使える。 */
+var SEMINAR = {
+  register: 'https://utage-system.com/event/dihhvu6t6jSO/register',
+  sessions: [
+    { day: '10月21日（水）20:00〜21:30', short: '10/21（水）夜', close: '2026-10-21T12:00:00+09:00' },
+    { day: '10月23日（金）15:00〜16:30', short: '10/23（金）昼', close: '2026-10-23T12:00:00+09:00' },
+    { day: '10月25日（日）14:00〜15:30', short: '10/25（日）昼', close: '2026-10-25T12:00:00+09:00' }
+  ],
+  waitlist: { url: '../', label: 'AI相棒診断を受けてみる', small: '無料・5問・約1分' }
+};
+(function(){
+  var S = SEMINAR, now = Date.now();
+  var q = new URLSearchParams(location.search); var t = q.get('sem_now'); if (t) now = Date.parse(t); // 表示確認用
+  var open = S.sessions.filter(function(x){ return Date.parse(x.close) > now; });
+  var marks = ['①','②','③','④','⑤','⑥'];
+  var $ = function(id){ return document.getElementById(id); };
+  var links = document.querySelectorAll('.cta-link');
+  window.SEMINAR_OPEN = open.length > 0;
+  var fxr = '';
+  try { fxr = window.fxRef || sessionStorage.getItem('fx_ref') || ''; } catch(e) {}
+  var regUrl = S.register + (fxr && fxr !== 'direct' ? '?ref=' + encodeURIComponent(fxr) : '');
+  links.forEach(function(a){ a.href = open.length ? regUrl : S.waitlist.url; });
+  if (open.length === S.sessions.length && !t) return;           // 全回が受付中なら、書かれたままでよい
+  if (open.length) {
+    var n = open.length;
+    $('sem-hero-date').textContent = open.map(function(x){ return x.short; }).join('・') + '　Zoom・参加無料';
+    $('sem-sch-h2').innerHTML = n > 1 ? (n + 'つの日程から、<br>選べます。') : '次回の日程は、<br>こちらです。';
+    $('sem-sch-dd').innerHTML = open.map(function(x,i){ return (n > 1 ? marks[i] + ' ' : '') + x.day; }).join('<br>') +
+      '<br><span style="font-weight:500;color:var(--ink2);font-size:16.5px">内容は毎回同じです。本編60分＋質疑30分</span>';
+    document.querySelectorAll('[data-sem="count-small"]').forEach(function(el){
+      el.textContent = (n > 1 ? n + '日程から選べます' : open[0].short + 'に開催') + '・無料・メールで受付'; });
+    $('sem-cta-lead').innerHTML = (n > 1 ? n + 'つの日程から選んで、' : '') + 'お名前とメールアドレスだけで申込完了。<br>ZoomのURLは前日にメールでお送りします。';
+    document.querySelector('[data-sem="sticky"]').textContent = '実演に申し込む（無料' + (n > 1 ? '・' + n + '日程' : '') + '）';
+    return;
+  }
+  // すべての回が終わった：次回待ちの表示に切り替える
+  document.title = 'おじいちゃんでもできる、保険営業のAI完全自動化｜AI仕事術勉強会（次回準備中）';
+  $('sem-hero-date').textContent = '次回の日程は、決まりしだいこのページでご案内します';
+  $('sem-sch-h2').innerHTML = '次回の日程は、<br>準備中です。';
+  $('sem-sch-dd').innerHTML = '決まりしだい、このページでご案内します。<br><span style="font-weight:500;color:var(--ink2);font-size:16.5px">内容は毎回同じです。本編60分＋質疑30分</span>';
+  $('sem-cta-lead').innerHTML = '次回の日程が決まるまでの間に、<br>あなたに合うAIの使い方を、5問の診断で先に確かめられます。';
+  links.forEach(function(a){ a.innerHTML = S.waitlist.label + '<small>' + S.waitlist.small + '</small>'; });
+  document.querySelector('[data-sem="sticky"]').textContent = S.waitlist.label + '（無料）';
+  document.querySelectorAll('.btn-note').forEach(function(el){ el.textContent = '勉強会の次回日程は、このページでお知らせします。'; });
+  ['sem-flow','sem-resched'].forEach(function(id){ var el = $(id); if (el) el.style.display = 'none'; });
+})();
+</script>
+
+<script>
+(function(){
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $=function(id){return document.getElementById(id);};
+  /* 追従ボタン＋上の進みバー（ロボが歩く） */
+  var s=$('sticky'), hero=document.querySelector('.hero'), pf=$('pfill'), wk=$('walker');
+  function tick(){
+    var past=window.scrollY>hero.offsetHeight-80; var nearEnd=(window.innerHeight+window.scrollY)>(document.body.scrollHeight-560); s.classList.toggle('show',past&&!nearEnd);
+    var max=document.documentElement.scrollHeight-window.innerHeight; var p=max>0?Math.min(100,Math.max(0,window.scrollY/max*100)):0;
+    pf.style.width=p+'%'; wk.style.left=Math.max(3,Math.min(97,p))+'%';
+  }
+  window.addEventListener('scroll',tick,{passive:true}); window.addEventListener('resize',tick); tick();
+  /* 出てくる順のアニメ */
+  var rvs=document.querySelectorAll('.rv,.rv-l,.rv-r');
+  if(!reduce && 'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    rvs.forEach(function(el){io.observe(el);});
+    var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target,end=+el.dataset.count,t0=null,sm=el.querySelector('small'),suffix=sm?sm.outerHTML:'';
+      function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1400);p=1-Math.pow(1-p,3);el.innerHTML=Math.round(end*p).toLocaleString()+suffix;if(p<1)requestAnimationFrame(step);}
+      requestAnimationFrame(step);co.unobserve(el);});},{threshold:.5});
+    document.querySelectorAll('[data-count]').forEach(function(el){co.observe(el);});
+  } else { rvs.forEach(function(el){el.classList.add('in');}); }
+  /* 当てはまるをタップ */
+  var pain=$('pain'), pb=$('pain-bub');
+  if(pain){ pain.addEventListener('click',function(ev){ var li=ev.target.closest('li'); if(!li)return; li.classList.toggle('on');
+    var n=pain.querySelectorAll('li.on').length;
+    pb.innerHTML = n===0 ? 'ひとつでも当てはまったなら、この先を読んでください。<br>これは「がんばり方」の話ではなく、「営業の回し方」を変える話です。'
+      : n<3 ? n+'個、当てはまりました。<br>この先は「がんばり方」ではなく、「営業の回し方」を変える話です。'
+      : n+'個、当てはまりました。<br>がんばりが足りないのではなく、回し方の問題です。この先で、その回し方を見せます。';
+    try{ fixOrphans(pb.parentNode); }catch(e){} try{ fxTrack('PainTap',{count:n}); }catch(e){} }); }
+  /* 用語のやさしい説明 */
+  var Y={
+    ai:['AI（ChatGPTなど）','スマホやパソコンで、文章で話しかけると、文章で返してくれる相手です。調べる・書く・まとめるが得意で、無料で始められます。'],
+    arms:['右腕と左腕','この勉強会での呼び方です。右腕＝お客様を連れてくるAI。左腕＝面談のあとの書きものをするAI。どちらも、AIに設定文を貼るだけで作れます。'],
+    settei:['設定文','AIに最初に読ませる、自己紹介のような文章です。「あなたはこういう人の相棒です。こういう話し方で」と書いてあります。コピーして貼るだけで、AIがあなた用になります。'],
+    zoom:['Zoom','パソコンやスマホで、顔を見ながら話せる無料のテレビ電話です。前日に届くURLを、時間になったら押すだけで入れます。'],
+    shindan:['診断ページ','お客様がスマホで5つくらいの質問に答えると「あなたはこのタイプ」と結果が出るページです。楽しいので、お客様の方から入ってきてくれます。'],
+    line:['LINEの自動応答','お客様がLINEで「あいことば」を送ると、決めておいた返事が自動で返る仕組みです。夜中でも、あなたが寝ていても返事が届きます。'],
+    hasshin:['発信','SNSやブログに、役立つ話を書いて出すことです。「この人に聞いてみたい」と見つけてもらう入口になります。ネタと下書きはAIが出します。'],
+    memo:['面談メモ','お客様と話したあとに書く、短いメモです。「Aさん・50代・ご夫婦・教育費が心配」くらいで十分。名前や口座は入れません。'],
+    tataki:['たたき台','最初の下書きのことです。ゼロから書くより、直す方が早い。AIはこの下書きを出すのが得意です。'],
+    follow:['フォロー文','面談のあとにお客様へ送る、お礼と次の案内のメッセージです。その日のうちに届くと、印象が変わります。']
+  };
+  var box=$('yogo'), shade=$('yogo-shade');
+  function openY(k){ if(!Y[k])return; $('yogo-t').textContent=Y[k][0]; $('yogo-p').textContent=Y[k][1]; box.classList.add('show'); shade.classList.add('show'); try{ fxTrack('YogoOpen',{term:k}); }catch(e){} }
+  function closeY(){ box.classList.remove('show'); shade.classList.remove('show'); }
+  document.querySelectorAll('.yg').forEach(function(b){ b.addEventListener('click',function(ev){ ev.preventDefault(); ev.stopPropagation(); openY(b.dataset.yg); }); });
+  $('yogo-x').addEventListener('click',closeY); shade.addEventListener('click',closeY);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeY(); });
+  /* 孤立文字の防止：文末の4〜5文字をひとかたまりにして、最終行が1〜2文字にならないようにする */
+  window.fixOrphans=function(root){ var NG='。、）」！？!?,.・：:；;'; var sel='p,li,dd,dt,h1,h2,h3,summary,.btn small,.btn,.hero-bub,.l,.bub,.step b,.promise b,.cred b,.rev,.cap,.src,.lead,.btn-note,.pain-note,.motto,.sign,.date';
+    (root||document).querySelectorAll(sel).forEach(function(el){ if(el.closest('#yogo'))return; var last=null; (function walk(n){ for(var i=n.childNodes.length-1;i>=0&&!last;i--){var c=n.childNodes[i]; if(c.nodeType===3){ if(c.textContent.trim().length>=6)last=c; else if(c.textContent.trim().length)return; } else if(c.nodeType===1){ if(c.tagName==='BR'||c.tagName==='BUTTON'||c.tagName==='SMALL'||c.tagName==='A'||c.classList.contains('st'))continue; if(getComputedStyle(c).display==='none')continue; walk(c);} } })(el);
+      if(!last)return; var t=last.textContent.replace(/\s+$/,''); if(t.length<7)return; var n=null,alt=null; for(var k=4;k<=8&&k<t.length-1;k++){ var prev=t.charAt(t.length-k-1), first=t.charAt(t.length-k); if(NG.indexOf(first)>=0)continue; if('、。」）・ 　'.indexOf(prev)>=0){n=k;break;} if(alt===null && /[\u3041-\u309f]/.test(prev) && /[\u4e00-\u9faf\u30a0-\u30ff0-9A-Za-z]/.test(first)) alt=k; } n=n||alt||5; if(n>=t.length)return;
+      var head=t.slice(0,t.length-n), tail=t.slice(t.length-n); var sp=document.createElement('span'); sp.style.whiteSpace='nowrap'; sp.textContent=tail; last.textContent=head; last.parentNode.insertBefore(sp,last.nextSibling); });
+  }; fixOrphans();
+  var v=document.querySelector('video'); if(v){ var p=v.play(); if(p&&p.catch){p.catch(function(){});} }
+  document.querySelectorAll('.cta-link').forEach(function(a){a.addEventListener('click',function(){if(window.SEMINAR_OPEN===false)return;if(window.fxIsGPT){try{fxTrack('GPT_ToRegister');}catch(e){}return;}try{fbq('track','Lead',{content_name:'seminar_0924'});}catch(e){}try{fxTrack('ToRegister');}catch(e){}});});
+})();
+</script>
+</body>
+</html>
