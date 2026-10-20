@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>診断ページのひな形｜本講座 構築キット</title>
+<style>
+:root{--paper:#F5FBF8;--white:#fff;--soft:#E3F3EE;--line:#C4E0D8;--navy:#0F4A40;--ink:#17332D;--sub:#44605A;--green:#008E78;--gold:#F07A1C}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#10201C;--white:#17302A;--soft:#1D3A33;--line:#2C5249;--navy:#CFEDE5;--ink:#E4F3EF;--sub:#A9C7BF}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Maru Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;font-weight:500;font-size:18px;line-height:1.8}
+.wrap{max-width:620px;margin:0 auto;padding:36px 16px 60px}
+.tag{display:inline-block;font-size:15px;font-weight:700;color:var(--sub);background:var(--soft);border-radius:999px;padding:4px 14px}
+h1{font-size:28px;line-height:1.4;color:var(--navy);margin:14px 0 10px;font-weight:900}
+.card{background:var(--white);border:2px solid var(--line);border-radius:18px;padding:24px 20px;margin:20px 0}
+.dl{display:block;text-align:center;font:inherit;font-size:21px;font-weight:900;color:#fff;background:#06C755;border-radius:14px;padding:18px 16px;text-decoration:none}
+.dl:hover{filter:brightness(1.05)}
+ol{padding-left:1.4em;margin:8px 0 0}
+li{margin:6px 0}
+.sub{color:var(--sub);font-size:16px}
+a.plain{color:var(--green);font-weight:700}
+</style>
+<!-- ===== 計測（Meta Pixel 1510200123755162）=====
+     全ページ共通。head の末尾に貼る。
+     window.fxTrack('EventName',{...}) でカスタムイベント。ref は ?ref=ig 等を自動で拾って全イベントに付与。 -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+(function(){
+  var KEY='fx_ref';
+  var q=new URLSearchParams(location.search);
+  var ref=q.get('ref')||(q.get('utm_source')?(q.get('utm_source')+(q.get('utm_content')?'_'+q.get('utm_content'):'')):'')||'';
+  try{ if(ref){sessionStorage.setItem(KEY,ref)} else {ref=sessionStorage.getItem(KEY)||'direct'} }catch(e){ ref=ref||'direct' }
+  window.fxRef=ref;
+  window.fxTrack=function(name,params){
+    try{ fbq('trackCustom',name,Object.assign({ref:window.fxRef,page:document.title},params||{})) }catch(e){}
+  };
+  fbq('init','1510200123755162');
+  fbq('track','PageView',{ref:ref});
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1510200123755162&ev=PageView&noscript=1"></noscript>
+</head>
+<body>
+<div class="wrap">
+  <span class="tag">本講座 構築キット</span>
+  <h1>診断ページのひな形</h1>
+  <p>下の緑のボタンを押すと、ひな形のファイル（shindan.html）がパソコンに保存されます。</p>
+  <div class="card">
+    <a class="dl" href="shindan.html" download="shindan.html" onclick="window.fxTrack&&fxTrack('KitDownload',{file:'shindan'})">ひな形をダウンロード</a>
+    <p class="sub" style="margin:14px 0 0">保存先は、ふだんの「ダウンロード」フォルダです。</p>
+  </div>
+  <div class="card">
+    <p style="margin:0;font-weight:700;color:var(--navy)">保存したら、次は Claude へ</p>
+    <ol>
+      <li>このファイルは開かなくて大丈夫です</li>
+      <li>構築キットの章に戻って、Claude に渡す手順へ進んでください</li>
+    </ol>
+  </div>
+  <p class="sub">できあがりの見本は、こちらです。<br><a class="plain" href="https://mm738966m-boop.github.io/shindan-mihon/">見本の診断ページを開く</a></p>
+  <p class="sub">ボタンを押しても保存されないときは、本講座の公式LINEに「ひな形がほしい」と送ってください。</p>
+</div>
+</body>
+</html>
