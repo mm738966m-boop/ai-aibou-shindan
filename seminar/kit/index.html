@@ -59,16 +59,50 @@ td:first-child{width:34%;font-weight:700;color:var(--navy)}
 .btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;text-decoration:none;padding:14px 22px;border-radius:10px;font-size:18px}
 .foot{margin-top:40px;font-size:14px;color:var(--sub);line-height:1.8}
 @media (max-width:640px){body{font-size:17px;padding:0 16px 70px}h1{font-size:28px}.steps,.io,.toc{grid-template-columns:1fr}.kit{padding:20px 16px}.kit h2{font-size:22px}pre{font-size:14px}}
+.cl{margin:28px 0 8px;background:var(--white);border:2px solid var(--gold);border-radius:16px;padding:24px 24px 20px}
+.cl-tag{display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;font-size:14px;letter-spacing:.06em;border-radius:999px;padding:4px 14px}
+.cl h2{font-family:"Shippori Mincho",serif;color:var(--navy);font-size:26px;margin:12px 0 6px}
+.cl-lead{margin:0 0 14px;color:var(--sub)}
+.cl-steps{margin:0;padding:0;list-style:none;counter-reset:c}
+.cl-steps li{counter-increment:c;position:relative;padding:14px 0 14px 46px;border-top:1px solid var(--line)}
+.cl-steps li:before{content:counter(c);position:absolute;left:0;top:14px;width:32px;height:32px;border-radius:50%;background:var(--navy);color:#F5F2EB;font-weight:700;display:flex;align-items:center;justify-content:center}
+.cl-steps b{display:block;font-size:19px;color:var(--navy);margin-bottom:4px}
+.cl-steps span{display:block;line-height:1.8}
+.cl-url{display:inline-block;margin:6px 0;font-weight:700;font-size:19px;color:var(--navy);word-break:break-all}
+.cl-steps img{display:block;width:100%;max-width:640px;margin-top:10px;border:1px solid var(--line);border-radius:10px}
+.cl-plan{margin-top:12px;background:var(--paper);border-radius:12px;padding:14px 16px;line-height:1.8}
+.cl-plan b{display:inline-block;font-size:13px;letter-spacing:.12em;color:var(--gold);margin-right:10px}
+@media (max-width:640px){.cl{padding:18px 16px}.cl h2{font-size:22px}}
 </style></head><body><main>
 <header>
 <div class="eyebrow">AI仕事術勉強会　参加者配布</div>
 <h1>設定文8本<small>右腕5本（集客）・左腕3本（面談・提案）。コピーしてAIに貼ると、たたき台が出ます。</small></h1>
-<p class="intro">勉強会でお見せしたのと同じ「型」の設定文です。自分の情報を足すほど、自分の仕事に合ってきます。Claude（クロード）に貼って使います。無料プランから始められます。出来は問わないので、今日中に1本貼ってみてください。</p>
+<p class="intro">勉強会でお見せしたのと同じ「型」の設定文です。自分の情報を足すほど、自分の仕事に合ってきます。Claude（クロード）に貼って使います。はじめての方は、すぐ下の<a href="#claude">「はじめてのClaude」</a>からどうぞ。出来は問わないので、今日中に1本貼ってみてください。</p>
 <div class="steps">
 <div><b>1</b>下の「コピー」を押す</div>
 <div><b>2</b>お使いのAIの入力欄に貼る</div>
 <div><b>3</b>【 】の中を自分の内容に書き換えて送る</div>
 </div>
+<section class="cl" id="claude">
+<div class="cl-tag">はじめてClaudeを使う方へ（3分）</div>
+<h2>はじめてのClaude（クロード）</h2>
+<p class="cl-lead">設定文はChatGPTやGeminiにも貼れますが、勉強会でお見せしたのはClaudeです。はじめての方は、この順番でどうぞ。</p>
+<ol class="cl-steps">
+<li><b>開いて、登録する（無料）</b>
+<span>パソコンは、下のURLを開いて「Googleで続ける」かメールアドレスで登録します。</span>
+<a class="cl-url" href="https://claude.ai" target="_blank" rel="noopener">https://claude.ai</a>
+<span>スマホは、App Store／Google Playで「Claude」を入れます。</span></li>
+<li><b>最初に1つだけ設定する（学習に使わせない）</b>
+<span>左下の自分の名前 →「設定」→「プライバシー」→「Help improve our AI models」をオフ（灰色）にします。入れた内容が、AIの学習に使われなくなります。</span>
+<img src="img/claude_privacy.jpg" alt="Claudeの設定画面。プライバシーの中の Help improve our AI models のスイッチをオフにする" loading="lazy"></li>
+<li><b>設定文を貼って、送る</b>
+<span>このページの「コピー」を押す → 入力欄に貼る →【 】の中を自分の内容に書き換えて送ります。</span>
+<img src="img/claude_input.jpg" alt="Claudeの入力欄。ここに設定文を貼る" loading="lazy"></li>
+<li><b>入れないもの</b>
+<span>お客さまの名前・住所・口座・病気のことは入れません。所属会社の規程が、いちばん優先です。</span></li>
+</ol>
+<div class="cl-plan"><b>無料と有料</b>設定文を試すのは、無料プランで大丈夫です。使う日が増えたら、有料のProプラン（月20ドル・税別）へ。勉強会でお見せした「全部自動」（Claude Code）は、Pro以上のプランで使えます。</div>
+</section>
 <div class="toc">
 <div><h3>右腕＝集客</h3><a href="#k1"><span>1</span>強みと客層の分析</a><a href="#k2"><span>2</span>発信ネタ10本</a><a href="#k3"><span>3</span>発信の下書き</a><a href="#k4"><span>4</span>診断ページの質問と結果文</a><a href="#k5"><span>5</span>LINEの自動応答文</a></div>
 <div><h3>左腕＝面談・提案</h3><a href="#k6"><span>6</span>面談の記録 → 提案の下書き</a><a href="#k7"><span>7</span>フォロー文</a><a href="#k8"><span>8</span>次回予約の案内</a></div>
