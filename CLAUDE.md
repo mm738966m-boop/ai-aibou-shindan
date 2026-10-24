@@ -56,6 +56,6 @@
 - `shigyo/shiryo/` 士業事務所向け 導入資料（noindex）
 - `hojin/thanks/` 法人のメール登録 受付完了（Google・Metaの登録完了計測）
 - `hojin/` 保険代理店・営業組織向けLP「おじいちゃんでもできる、保険営業のAI完全自動化」（法人・紺×金の勉強会LPと同系。CTA=fulfull.jpの換算診断フォーム ?ref=hojin_lp。イベント ToShindan/MailTap/BossCopy/ToSeminar・ボタン押下でLead）
-- `honkoza/` 本講座1期の案内ページ（勉強会参加者で迷っている人向け・noindex）。未来→原因→解決→日程→手に入るもの→3プラン（真ん中推し）→費用の理由→特典→向いていない人→声→FAQ→講師→次の一歩。CTA=UTAGE申込ページ p/4NqBcs0FdiAx と個別相談 event/wQvZacCdkROE（?ref=honkoza_◯◯ を自動付与）。イベント ToApply/ToConsult/PlansView。残席・決定人数はHTML直書き＝入金が増えたら手で更新。画像は honkoza/img/（日程表は 本科/E_1期運営/図解/日程表_1期.png が正本）
+- `honkoza/` 本講座の案内ページ（2026-10-24に2期へ更新＝2027/1/14開講・598,000円・主ボタン＝参加審査 event/oBQLPTad8XgC。勉強会参加者で迷っている人向け・noindex。1期版は git 履歴）。OG画像の元＝honkoza/_og/og_2ki.html（headless Chromeで2倍撮影）。未来→原因→解決→日程→手に入るもの→3プラン（真ん中推し）→費用の理由→特典→向いていない人→声→FAQ→講師→次の一歩。CTA=UTAGE申込ページ p/4NqBcs0FdiAx と個別相談 event/wQvZacCdkROE（?ref=honkoza_◯◯ を自動付与）。イベント ToApply/ToConsult/PlansView。残席・決定人数はHTML直書き＝入金が増えたら手で更新。画像は honkoza/img/（日程表は 本科/E_1期運営/図解/日程表_1期.png が正本）
 - `radio/` Voicy限定10本「保険屋じゃない保険営業の話」のまとめページ（noindex）。各回の概要欄から ?ref=voicy_mind で来る。放送を公開したら index.html の EPISODES のその回の url に限定公開リンクを入れる（空のあいだは「準備中」表示）。日付のある告知は置かない。CTA=診断ページ経由でLINE（ToShindan）・再生は RadioPlay。個別相談＝30分5,500円（税込・カード・3週間先まで）のUTAGEイベント d2dXyJMqCSP7 1本（ToConsult）＝表に出す唯一の相談窓口。勉強会参加者の無料相談 wQvZacCdkROE（10日）は表に出さない。スタンプカード式（localStorage hokenya_radio_v1・?pick=N・?ref=member_で相談欄を隠す）。ヘッダー写真は生成画像（img/hero.jpg）
 - `kiyaku/` 受講規約　`tokusho/` 特商法
