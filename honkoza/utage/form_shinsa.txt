@@ -34,8 +34,8 @@ var css=''
 +'body .custom-control-input:checked~.custom-control-label::before{background:#0E7C86;border-color:#0E7C86}'
 +'.card-body > .mt-2{font-size:14.5px;color:#4A6468;line-height:1.7;margin-top:22px!important}'
 +'.card-body > .mt-2 a{color:#0E7C86;font-weight:700}'
-+'body button[type=submit],body .btn-success,body .btn-primary{background:#0E7C86!important;border:0!important;border-radius:999px!important;font-weight:900;font-size:20px;min-height:60px;box-shadow:0 5px 0 #0A5A62;font-family:inherit;margin-top:18px!important}'
-+'body button[type=submit]:hover{background:#0A5A62!important}'
++'body button[type=submit],body .btn-success,body .btn-primary{background:#06C755!important;color:#fff!important;border:0!important;border-radius:999px!important;font-weight:900;font-size:20px;min-height:60px;box-shadow:0 5px 0 #04994A;font-family:inherit;margin-top:18px!important}'
++'body button[type=submit]:hover{background:#05B34C!important}'
 +'@media (max-width:420px){body .card-header{padding-right:84px}#fx-robo{width:66px}}';
 var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
 
