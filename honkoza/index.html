@@ -247,6 +247,19 @@ footer a{color:#C9CCD8}
 .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.btn:after{animation:none}}
+
+/* 点検反映（2026-10-24 夜） */
+.eyebrow{letter-spacing:.08em;font-size:15px}
+.btn:after{display:none}
+.hero .facts li.hot{background:transparent;border:1px solid #E8C774;color:#F1D79A}
+.btn.sub.js-consult,.sticky .a2{background:#fff;color:#06A84A;border:2px solid #06C755}
+.hero .btn.sub.js-consult,.dark .btn.sub.js-consult{background:#fff;color:#06A84A;border-color:#06C755}
+.dark h3[style]{color:#F1D79A!important}
+.dark .masc,.hero .masc{aspect-ratio:1/1;object-fit:contain;height:auto}
+.dark .card p,.plan li,.cond,.ng small,.stack .d,.dark .stat .l,.bonus p{font-size:18px}
+.smonth .no{font-size:15px;color:var(--ink)}
+.total{flex-direction:column;align-items:flex-start;gap:2px}
+@media(max-width:480px){.hero-row{grid-template-columns:1fr 92px}.hero-row .masc{width:92px}}
 </style>
 <!-- ===== 計測（Meta Pixel 1510200123755162）=====
      全ページ共通。head の末尾に貼る。
@@ -295,7 +308,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <!-- 未来 -->
 <section>
   <div class="wrap">
-    <div class="eyebrow">GOAL</div>
+    <div class="eyebrow">卒業のとき</div>
     <h2>卒業のとき、<br>この2つが揃っています。</h2>
     <div class="grid2" style="margin-bottom:22px">
       <div class="card"><div class="num">1</div><h3>右腕と左腕が、毎日回っている</h3><p>朝5分・面談後2分の型が、あなたの判断基準で動いている。「調べる・書く・整える・送る」はAI。話す・決めるは、あなた。</p></div>
@@ -310,7 +323,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <!-- 原因 -->
 <section class="alt">
   <div class="wrap">
-    <div class="eyebrow">WHY IT STOPS</div>
+    <div class="eyebrow">止まる理由</div>
     <h2>設定文を貼ってみて、<br>「なんか薄いな」と感じた方へ。</h2>
     <div class="with"><p class="one" style="margin:0">それ、正常です。<br><span style="font-size:18px;font-weight:500;color:var(--sub)">最初はみんな、ここで首をかしげます。</span></p><img class="masc" src="img/mascot_think.webp" alt="" width="120" height="120" loading="lazy"></div>
     <p>勉強会でお渡しした設定文は「型」です。<br>型に、自分の言葉が入っていないうちは、出てくる文も他人の文に見えます。</p>
@@ -325,7 +338,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <!-- 解決 -->
 <section>
   <div class="wrap">
-    <div class="eyebrow">ROADMAP</div>
+    <div class="eyebrow">3か月の道のり</div>
     <div class="with" style="margin-bottom:8px"><h2 style="margin:0">3か月で、<span class="g">1か月に1本ずつ</span>作ります。</h2><img class="masc" src="img/mascot_point.webp" alt="" width="120" height="120" loading="lazy"></div>
     <div class="photo frame"><img src="img/arms.jpg" alt="右腕と左腕は、こう回る" loading="lazy"></div>
     <div class="month"><div class="k">1か月目</div><h3>右腕。入口を、自分の名前で持つ。</h3>
@@ -340,7 +353,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <!-- 形式 -->
 <section class="dark">
   <div class="wrap">
-    <div class="eyebrow">HOW WE WORK</div>
+    <div class="eyebrow">進め方</div>
     <h2>週に1回、<br>全員の画面で作ります。</h2>
     <div class="grid2">
       <div class="stat"><div class="n">週1回<small>90分</small></div><div class="l">作業会（Zoom）。講義は最初の15分だけ。残りは各自の画面で作る。録画あり。</div></div>
@@ -355,7 +368,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <!-- 日程 -->
 <section class="alt">
   <div class="wrap">
-    <div class="eyebrow">SCHEDULE</div>
+    <div class="eyebrow">日程</div>
     <h2>全12回の日程。<br>2027年1月14日（木）から、毎週1回。</h2>
     <p class="cap">毎週木曜 20:00〜21:30・Zoom。祝日などで曜日が変わる回は、開講前にお知らせします。</p>
     <div class="smonths">
@@ -386,7 +399,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <!-- 手に入るもの -->
 <section>
   <div class="wrap">
-    <div class="eyebrow">WHAT YOU GET</div>
+    <div class="eyebrow">手に入るもの</div>
     <h2>手に入るもの、9つ。</h2>
     <ul class="stack">
       <li><div><span class="t">週1回の作業会 ×12回</span><span class="d">録画付き。講義15分＋各自の画面で作る75分</span></div><span class="y">120万円</span></li>
@@ -407,7 +420,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <!-- 3つの形 -->
 <section class="alt" id="plans">
   <div class="wrap">
-    <div class="eyebrow">PLANS</div>
+    <div class="eyebrow">プラン</div>
     <h2>合う形を、選べます。</h2>
     <p class="cap">中心は本講座。自分で回す方にはキット、個別で見てほしい方には本講座＋。</p>
     <div class="plans">
@@ -441,7 +454,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <!-- なぜこの費用か -->
 <section class="dark">
   <div class="wrap">
-    <div class="eyebrow">WHY THIS PRICE</div>
+    <div class="eyebrow">費用について</div>
     <h2>2期は、今の費用のまま。<br>3期から改定します。</h2>
     <div class="big">598,000<small>円（税込）</small></div>
     <p class="cap">3期からは全プラン5万円の改定（キット248,000円／本講座648,000円／本講座＋948,000円・いずれも税込）。予告どおりに実行します。</p>
@@ -458,12 +471,12 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <!-- 特典 -->
 <section class="gold">
   <div class="wrap">
-    <div class="eyebrow">BONUS</div>
+    <div class="eyebrow">特典</div>
     <h2>勉強会に参加された方だけの、<br>3つの特典。</h2>
     <div class="bonus"><h3>① 診断ページの初期構築を、こちらで行います</h3><p>公開までの最短ルート。自分で作る時間がない人ほど効きます。</p></div>
     <div class="bonus"><h3>② 「判断基準」の聞き取り 60分を追加</h3><p>あなたの面談から、勧める基準・断る基準を一緒に起こします。</p></div>
     <div class="bonus"><h3>③ 卒業後の場（月額1,980円）を、3か月無料</h3><p>回し続ける仲間と、質問できる場所。</p></div>
-    <div class="cond"><b>対象：</b>勉強会から7日以内に個別相談を受けた方。<br>相談から3日以内に参加審査へお申し込みいただくことが条件です（費用は変わりません）。<br>10/21参加→10/28（水）まで／10/23参加→10/30（金）まで／10/25参加→11/1（日）まで（相談を受ける期限）。<br>すでに参加審査にお申し込みの方も対象です。</div>
+    <div class="cond"><b>対象：</b>勉強会から7日以内に個別相談を受けた方。<br>相談から3日以内に参加審査へお申し込みいただくことが条件です（費用は変わりません）。<br>10/21参加→10/28（水）まで／10/23参加→10/30（金）まで／10/25参加→11/1（日）まで（相談を受ける期限）。<br>すでに参加審査にお申し込みの方も対象です。期限を過ぎた方には、相談のときにご案内します。</div>
     <a class="btn sub js-consult" href="https://utage-system.com/event/wQvZacCdkROE/register" style="margin-top:18px">個別相談を予約する<small>30分・無料・Zoom</small></a>
   </div>
 </section>
@@ -471,7 +484,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <!-- 向いていない -->
 <section class="alt">
   <div class="wrap">
-    <div class="eyebrow">HONESTLY</div>
+    <div class="eyebrow">正直に</div>
     <h2>正直に。<br>こんな方には、向いていません。</h2>
     <div class="ng">お客様と話すことまでAIに任せて、楽に契約だけ取りたい方<small>説明と契約は、募集人本人の仕事です。</small></div>
     <div class="ng">所属会社の規程より、自分のやり方を優先したい方<small>本講座は「規程が優先」を前提に進めます。</small></div>
@@ -482,7 +495,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <!-- 声 -->
 <section>
   <div class="wrap">
-    <div class="eyebrow">VOICES</div>
+    <div class="eyebrow">先に決めた人</div>
     <h2>先に決めた人の、言葉。</h2>
     <div class="quote">
       <p class="q">「家族との時間を削る毎日から、抜け出したい。」</p>
@@ -504,7 +517,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <!-- 不安 -->
 <section class="alt">
   <div class="wrap">
-    <div class="eyebrow">FAQ</div>
+    <div class="eyebrow">よくある不安</div>
     <h2>よくある不安に、<br>先に答えておきます。</h2>
     <details><summary>パソコンが苦手です。</summary><p>スマホだけでも始められます。設定文は「コピーして貼る」だけ。作業会は画面を見ながら一緒に進めます。画面共有ができるので、パソコンがあると進みは早いです。</p></details>
     <details><summary>50代、60代でも間に合いますか。</summary><p>AIが代わりにやるのは「調べる・書く・整える」です。お客様との信頼は、これまでの経験がそのまま資産。経験が長い人ほど、AIに渡せる材料が多いです。</p></details>
@@ -519,7 +532,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <!-- 講師 -->
 <section>
   <div class="wrap">
-    <div class="eyebrow">WHO</div>
+    <div class="eyebrow">講師</div>
     <h2>一緒に回すのは、この人です。</h2>
     <div class="prof">
       <img src="img/morikawa.jpg" alt="森川満章" width="120" height="129" loading="lazy">
@@ -539,14 +552,14 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <!-- 流れ -->
 <section class="alt" id="flow">
   <div class="wrap">
-    <div class="eyebrow">NEXT STEP</div>
+    <div class="eyebrow">次の一歩</div>
     <h2>ここからの進み方は、3つ。</h2>
     <ul class="flow">
       <li><div class="c">A</div><div><h3>もう決めている方</h3><p>参加審査（無料）にお申し込みください。2営業日以内に結果をメールでお送りし、通過した方に申込ページをご案内します。ご入金の確認後、教材の場所と1/14までの準備をお送りします。</p></div></li>
       <li><div class="c">B</div><div><h3>迷っている方</h3><p>個別相談（30分・無料・Zoom）で、自分の場合どこから始めるか、本講座が合うかを率直に確かめてください。申し込むかどうかは、そのあとで。</p></div></li>
       <li><div class="c">C</div><div><h3>質問だけしたい方</h3><p>このページが届いたLINEに、そのまま返信してください。森川が読みます。</p></div></li>
     </ul>
-    <div class="cond" style="margin-top:20px"><b>2期は20名で締め切ります。</b>日付で急かすことはしません。埋まったら、正直に「満席」とご案内します。開講は2027年1月14日（木）です。</div>
+    <div class="cond" style="margin-top:20px"><b>2期は、定員の20名で締め切ります。</b>埋まったら、正直に「満席」とご案内します。受講費用は2期のあいだ変わりません（特典には相談の期限があります）。開講は2027年1月14日（木）です。</div>
   </div>
 </section>
 
