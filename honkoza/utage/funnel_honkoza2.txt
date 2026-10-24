@@ -40,7 +40,7 @@ var css=''
 +'#main .btn-amazing:hover{background:#05B34C!important}'
 +'#main .fn-el-footer,#main .fn-el-footer *{font-size:13.5px!important;color:#6F8386!important}'
 +'#main .fn-el-footer a{color:#4A6468!important}'
-+'@media (max-width:600px){#body{padding:10px 8px 28px}#main > section.fn-section:first-child .section-wrap{padding-right:88px!important}#fx-robo{width:66px;right:10px}#main table.payment-method tbody td{padding:10px 10px;font-size:16px}}';
++'@media (max-width:600px){#body{padding:10px 8px 28px}#main > section.fn-section:first-child .section-wrap{padding-right:88px!important}#fx-robo{width:66px;right:10px}#main table.payment-method tbody td{padding:10px 10px;font-size:16px}#main table.payment-method tbody td:last-child{white-space:normal;width:6.6em;font-size:15px;line-height:1.45}#main table:not(.payment-method) td:last-child{white-space:nowrap}}';
 var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
 function run(){
   var sec=document.querySelector('#main > section.fn-section');
