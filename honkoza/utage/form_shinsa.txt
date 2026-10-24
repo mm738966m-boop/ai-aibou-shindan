@@ -37,7 +37,17 @@ var css=''
 +'.card-body > .mt-2 a{color:#0E7C86;font-weight:700}'
 +'body button[type=submit],body .btn-success,body .btn-primary{background:#06C755!important;color:#fff!important;border:0!important;border-radius:999px!important;font-weight:900;font-size:20px;min-height:60px;box-shadow:0 5px 0 #04994A;font-family:inherit;margin-top:18px!important}'
 +'body button[type=submit]:hover{background:#05B34C!important}'
-+'@media (max-width:420px){body .card-header{padding-right:84px}#fx-robo{width:66px}}';
++'@media (max-width:420px){body .card-header{padding-right:84px}#fx-robo{width:66px}}'
++'#fx-confirm{position:fixed;inset:0;background:#EEF6F7;z-index:9999;overflow:auto;padding:20px 14px 40px}'
++'#fx-confirm .fxc{position:relative;max-width:640px;margin:0 auto;background:#fff;border-radius:22px;border-top:6px solid #D9A441;box-shadow:0 6px 24px rgba(10,90,98,.10);padding:24px 18px 28px}'
++'#fx-confirm .fxk{display:block;font-size:15px;font-weight:700;color:#B07D1E;letter-spacing:.06em;margin-bottom:2px}'
++'#fx-confirm h2{font-size:24px;font-weight:900;color:#0A5A62;margin:0 84px 8px 0;line-height:1.5;word-break:auto-phrase}#fx-confirm p{margin:0 0 16px;font-size:16.5px;color:#4A6468;word-break:auto-phrase}'
++'#fx-confirm .fxr{position:absolute;right:14px;top:16px;width:70px;height:auto}'
++'#fx-confirm dl{margin:0 0 22px}#fx-confirm dt{font-size:15px;font-weight:700;color:#0E7C86;margin-top:14px}#fx-confirm dd{margin:2px 0 0;font-size:18px;font-weight:700;border-bottom:2px solid #D5E4E6;padding-bottom:10px;white-space:pre-wrap;word-break:break-word}'
++'#fx-confirm button{display:block;width:100%;font:inherit;border-radius:999px;cursor:pointer}'
++'#fx-confirm .fx-go{background:#06C755;color:#fff;border:0;font-weight:900;font-size:21px;min-height:62px;box-shadow:0 5px 0 #04994A}'
++'#fx-confirm .fx-back{background:#fff;color:#0E7C86;border:2px solid #0E7C86;font-weight:700;font-size:17px;min-height:50px;margin-top:16px}'
++'#fx-confirm .fx-go[disabled]{opacity:.6}';
 var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
 
 function run(){
@@ -64,6 +74,44 @@ function run(){
       p.innerHTML=p.innerHTML.replace(/(2期は[^。<]*開始予定です。)/,'<span class="fx-start">$1</span>')});
   }
 }
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
+
+/* 確認画面を、このページの中に同じデザインで出す（うまくいかないときは標準の確認画面へ進む） */
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function hookConfirm(){
+  var form=document.querySelector('form#form');if(!form||form.__fx)return;form.__fx=true;
+  form.addEventListener('submit',function(ev){
+    if(form.__native)return;
+    if(form.checkValidity&&!form.checkValidity())return;
+    ev.preventDefault();ev.stopImmediatePropagation();
+    var btn=form.querySelector('button[type=submit]');if(btn)btn.disabled=true;
+    var fr=document.createElement('iframe');fr.name='fxcf';fr.setAttribute('aria-hidden','true');fr.style.cssText='position:absolute;width:1px;height:1px;border:0;opacity:0;pointer-events:none;left:-9999px';
+    document.body.appendChild(fr);
+    var settled=false,oldTarget=form.getAttribute('target');
+    function restore(){if(oldTarget===null)form.removeAttribute('target');else form.setAttribute('target',oldTarget);if(btn)btn.disabled=false}
+    function nativeGo(){if(settled)return;settled=true;try{fr.remove()}catch(e){}restore();form.__native=true;HTMLFormElement.prototype.submit.call(form)}
+    var timer=setTimeout(nativeGo,9000);
+    fr.addEventListener('load',function(){
+      if(settled)return;
+      var doc,cf,go;
+      try{doc=fr.contentDocument;if(!doc||!/\/confirm$/.test(fr.contentWindow.location.pathname))throw 0;cf=doc.querySelector('form#form');go=cf&&cf.querySelector('button[value=submit]');if(!go)throw 0}catch(e){clearTimeout(timer);nativeGo();return}
+      var rows=[];[].forEach.call(doc.querySelectorAll('table.d-md-table tr'),function(tr){var th=tr.querySelector('th'),td=tr.querySelector('td');if(th&&td)rows.push([th.textContent.trim(),td.textContent.replace(/[ \t]+/g,' ').replace(/\s*\n\s*/g,'\n').trim()])});
+      rows=rows.filter(function(r){return r[0]!=='日程'&&r[0]!=='会場'});
+      if(!rows.length){clearTimeout(timer);nativeGo();return}
+      clearTimeout(timer);settled=true;restore();
+      var ov=document.createElement('div');ov.id='fx-confirm';
+      ov.innerHTML='<div class="fxc"><img class="fxr" src="https://mm738966m-boop.github.io/okane-benkyokai/kiku/mascot.webp" alt="" width="70" height="70"><span class="fxk">参加審査（無料）</span><h2>この内容で申し込みますか？</h2><p>まだ申し込みは終わっていません。下のボタンを押すと完了します。</p><dl>'+rows.map(function(r){return '<dt>'+esc(r[0])+'</dt><dd>'+(esc(r[1])||'（なし）')+'</dd>'}).join('')+'</dl><button type="button" class="fx-go">この内容で申し込む</button><button type="button" class="fx-back">戻って直す</button></div>';
+      document.body.appendChild(ov);window.scrollTo(0,0);
+      ov.querySelector('.fx-back').addEventListener('click',function(){ov.remove();try{fr.remove()}catch(e){}});
+      ov.querySelector('.fx-go').addEventListener('click',function(){
+        this.disabled=true;this.textContent='送信しています…';
+        try{cf.setAttribute('target','_top');go.click()}catch(e){form.__native=true;HTMLFormElement.prototype.submit.call(form)}
+      });
+    });
+    form.setAttribute('target','fxcf');
+    HTMLFormElement.prototype.submit.call(form);
+  },true);
+}
+function boot(){run();try{hookConfirm()}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
 </script>
