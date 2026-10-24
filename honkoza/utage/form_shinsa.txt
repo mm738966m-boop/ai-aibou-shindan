@@ -1,0 +1,67 @@
+<script>
+/* 本講座2期 参加審査の申込フォーム（2026-10-24版・個別相談の予約ページと同じティール×金・丸ゴ・ロボ）。日程は1つだけなので「参加日程」の欄は隠す（UTAGE フォーム設定 > bodyタグの最後に挿入するJavaScript） */
+(function(){
+var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap';document.head.appendChild(l);
+var css=''
++'body{background:#EEF6F7!important;font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif!important;font-size:17px;font-weight:500;color:#1C3236;line-height:1.8}'
++'body .card{border:0;border-radius:22px;box-shadow:0 6px 24px rgba(10,90,98,.10);overflow:hidden}'
++'body .card-header{position:relative;border-bottom:4px solid #D9A441;padding:22px 96px 22px 20px;background:#fff!important}'
++'body .card-header h2{font-size:clamp(20px,5.4vw,26px);font-weight:900;color:#0A5A62;line-height:1.5;word-break:auto-phrase;text-wrap:balance}'
++'#fx-kicker{display:block;font-size:14px;font-weight:700;color:#B07D1E;letter-spacing:.06em;margin-bottom:4px}'
++'#fx-robo{position:absolute;right:14px;bottom:-4px;width:76px;height:auto;pointer-events:none;filter:drop-shadow(0 4px 8px rgba(10,90,98,.18))}'
++'body .card-body{padding:22px 18px 28px}'
++'#fx-intro{margin:0 0 6px}'
++'#fx-intro p{margin:0 0 14px;font-size:17px;line-height:1.85}'
++'#fx-intro p:first-child{background:#FBF4E3;border-radius:16px;padding:14px 16px}'
++'#fx-intro p:first-child strong{display:block;font-size:20px;font-weight:900;color:#0A5A62;margin-bottom:2px}'
++'#fx-intro p.fx-kijun{background:#fff;border:2px solid #CFE3E5;border-radius:16px;padding:14px 16px}'
++'#fx-intro p.fx-kijun strong{display:inline-block;font-size:15px;font-weight:900;color:#fff;background:#0E7C86;border-radius:999px;padding:3px 14px;margin-bottom:6px}'
++'#fx-intro p:last-child{font-size:16px;color:#4A6468}'
++'#fx-intro .fx-start{display:inline-block;margin-top:4px;font-weight:900;color:#0A5A62;background:#EEF6F7;border-radius:999px;padding:4px 14px}'
++'body h4{font-size:21px;font-weight:900;color:#1C3236;margin-top:26px}'
++'body hr{border-top:2px solid #D5E4E6}'
++'body .form-group{margin-bottom:22px}'
++'body label{font-weight:900;font-size:17px}'
++'body .badge-danger{background:#C0392B;border-radius:999px;font-size:12.5px;padding:3px 9px;vertical-align:2px}'
++'body .form-control{font-size:18px;font-weight:500;border:2px solid #D5E4E6;border-radius:12px;min-height:52px;font-family:inherit;color:#1C3236}'
++'body textarea.form-control{min-height:120px}'
++'body .form-control:focus{border-color:#0E7C86;box-shadow:0 0 0 3px rgba(14,124,134,.18)}'
++'body .custom-control{padding:12px 12px 12px 48px;border:2px solid #D5E4E6;border-radius:12px;margin-bottom:8px;background:#fff;transition:border-color .15s,background .15s}'
++'body .custom-control:has(.custom-control-input:checked){border-color:#0E7C86;background:#F2FAFA}'
++'body .custom-control-label{font-weight:700;font-size:17px;display:block;cursor:pointer;line-height:1.6}'
++'body .custom-control-label::before,body .custom-control-label::after{width:22px;height:22px;left:-34px;top:2px}'
++'body .custom-control-input:checked~.custom-control-label::before{background:#0E7C86;border-color:#0E7C86}'
++'.card-body > .mt-2{font-size:14.5px;color:#4A6468;line-height:1.7;margin-top:22px!important}'
++'.card-body > .mt-2 a{color:#0E7C86;font-weight:700}'
++'body button[type=submit],body .btn-success,body .btn-primary{background:#0E7C86!important;border:0!important;border-radius:999px!important;font-weight:900;font-size:20px;min-height:60px;box-shadow:0 5px 0 #0A5A62;font-family:inherit;margin-top:18px!important}'
++'body button[type=submit]:hover{background:#0A5A62!important}'
++'@media (max-width:420px){body .card-header{padding-right:84px}#fx-robo{width:66px}}';
+var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
+
+function run(){
+  /* 日程は1つだけ＝「参加日程」から「お客様情報の入力」の手前までを隠す */
+  var hs=[].slice.call(document.querySelectorAll('h4'));
+  var a=hs.filter(function(e){return e.textContent.trim()==='参加日程'})[0];
+  var b=hs.filter(function(e){return e.textContent.trim()==='お客様情報の入力'})[0];
+  if(a&&b&&a.parentElement===b.parentElement){var n=a;while(n&&n!==b){var nx=n.nextElementSibling;n.style.display='none';n=nx}}
+  [].slice.call(document.querySelectorAll('table')).forEach(function(t){if(/会場/.test(t.textContent)&&/日程/.test(t.textContent))t.style.display='none'});
+
+  var ch=document.querySelector('body .card-header');
+  if(ch&&!document.getElementById('fx-robo')){
+    var h2=ch.querySelector('h2');if(h2&&!document.getElementById('fx-kicker'))h2.insertAdjacentHTML('afterbegin','<span id="fx-kicker">参加審査（無料）</span>');
+    var ri=document.createElement('img');ri.id='fx-robo';ri.src='https://mm738966m-boop.github.io/okane-benkyokai/kiku/mascot.webp';ri.alt='';ri.width=76;ri.height=76;ch.appendChild(ri)}
+
+  /* 説明文（「参加日程」より前にある段落）を1つの箱にまとめる */
+  var body=document.querySelector('body .card-body');
+  if(body&&!document.getElementById('fx-intro')){
+    var box=document.createElement('div');box.id='fx-intro';
+    var first=body.firstChild,stop=a||b;
+    while(first&&first!==stop){var nx2=first.nextSibling;box.appendChild(first);first=nx2}
+    body.insertBefore(box,stop||body.firstChild);
+    [].forEach.call(box.querySelectorAll('p'),function(p){if(/審査の基準/.test(p.textContent))p.className='fx-kijun';
+      p.innerHTML=p.innerHTML.replace(/(2期は[^。<]*開始予定です。)/,'<span class="fx-start">$1</span>')});
+  }
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
+})();
+</script>
