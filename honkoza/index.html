@@ -166,6 +166,87 @@ footer .links{display:flex;flex-wrap:wrap;gap:8px 18px;margin-bottom:12px}
 .smonth li{grid-template-columns:56px 1fr 44px}
 .slegend{display:flex;align-items:center;gap:10px;font-size:16px;color:var(--sub);margin-top:14px}
 .slegend .dow{width:36px;height:36px;border-radius:10px;background:var(--gold);color:#fff;font-size:17px;font-weight:900;display:flex;align-items:center;justify-content:center}
+
+/* ===== 2期・高級感テーマ（紺×金・勉強会LP v23と同系）2026-10-24 ===== */
+:root{--navy:#1B2238;--navy-d:#10152A;--navy2:#2A3450;--ink:#1F2433;--sub:#555E72;--bg:#FBF9F4;--paper:#FFFFFF;--soft:#F4F1EA;--line:#E2DDD1;--gold:#C9962E;--gold-d:#8A6212;--gold-l:#F1D79A;--goldbg:#FBF4E3;--calm:#1B2238;--goldmetal:linear-gradient(135deg,#F6E3A8 0%,#D9A441 42%,#B8862B 68%,#F1D79A 100%)}
+body{background:var(--bg)}
+h1,h2,.num,.reason .no,.stack .y,.total .n,.plan .pr,.big,.stat .n,.quote .q,.flow .c{font-weight:700}
+h2{letter-spacing:.01em}
+.eyebrow{display:flex;align-items:center;gap:10px;color:var(--gold-d);letter-spacing:.22em}
+.eyebrow:before{content:"";width:28px;height:1px;background:var(--gold)}
+/* ヒーロー */
+.hero{background:radial-gradient(120% 80% at 85% 0%,rgba(217,164,65,.22) 0%,rgba(217,164,65,0) 55%),linear-gradient(165deg,var(--navy2) 0%,var(--navy) 55%,var(--navy-d) 100%);color:#fff;padding:46px 0 50px;border-bottom:1px solid rgba(241,215,154,.45)}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--goldmetal)}
+.hero .tag{background:rgba(255,255,255,.04);border:1px solid rgba(241,215,154,.7);color:var(--gold-l)}
+.hero h1{color:#fff}
+.hero h1 .g,.dark h2 .g,.gm{background:var(--goldmetal);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{color:#D6D9E3}
+.hero .facts li{background:rgba(255,255,255,.06);border:1px solid rgba(241,215,154,.45);color:#F4EFE3}
+.hero .facts li.hot{background:var(--goldmetal);border:0;color:#1F2433}
+.hero .masc,.dark .masc{mix-blend-mode:normal;background:#fff;border-radius:50%;padding:8px;box-shadow:0 0 0 2px #E8C774,0 0 0 6px rgba(241,215,154,.18),0 14px 30px rgba(0,0,0,.35)}
+.hero .btn-note,.dark .btn-note{color:#C9CCD8}
+/* ボタン：申込はLINE緑（ルール）・サブは金の線 */
+.btn{background:linear-gradient(180deg,#2FD66F,#06C755 52%,#04A648);color:#fff;box-shadow:0 10px 26px rgba(4,166,72,.32),inset 0 1px 0 rgba(255,255,255,.35);position:relative;overflow:hidden}
+.btn:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,.35),rgba(255,255,255,0));transform:skewX(-20deg);animation:shine 4.5s ease-in-out infinite}
+@keyframes shine{0%,70%{left:-60%}100%{left:130%}}
+.btn.sub{background:var(--paper);color:var(--navy);border:1.5px solid var(--gold);box-shadow:none}
+.btn.sub:after{display:none}
+.hero .btn.sub,.dark .btn.sub{background:transparent;color:var(--gold-l);border-color:rgba(241,215,154,.75)}
+/* 濃紺の章 */
+section.dark{background:linear-gradient(170deg,var(--navy2) 0%,var(--navy) 60%,var(--navy-d) 100%);color:#EDEFF5;border-top:1px solid rgba(241,215,154,.35);border-bottom:1px solid rgba(241,215,154,.35)}
+.dark h2,.dark h3{color:#fff}
+.dark .eyebrow{color:var(--gold-l)}
+.dark .eyebrow:before{background:var(--gold-l)}
+.dark .cap,.dark p{color:#C9CCD8}
+.dark .card,.dark .stat{background:rgba(255,255,255,.05);border:1px solid rgba(241,215,154,.35)}
+.dark .card p,.dark .stat .l{color:#D6D9E3}
+.dark .stat .n,.dark .big{background:var(--goldmetal);-webkit-background-clip:text;background-clip:text;color:transparent}
+.dark .big small,.dark .stat .n small{-webkit-text-fill-color:#EDEFF5}
+.dark .ctarow .bub{background:#fff;color:var(--ink)}
+/* カード・数字 */
+.card,.reason,.stat,.month,.plan,.quote,details,.bonus,.ng,.smonth{border-color:var(--line)}
+.num,.reason .no{color:var(--gold-d)}
+.month{border-top:3px solid var(--gold)}
+.month .k{color:var(--gold-d)}
+.month li:before{background:var(--goldmetal)}
+.stack .y{color:var(--gold-d)}
+.total{background:linear-gradient(165deg,var(--navy2),var(--navy-d));border:1px solid rgba(241,215,154,.5);color:#fff}
+.total .n{background:var(--goldmetal);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* プラン：おすすめは濃紺×金 */
+.plan .pr{color:var(--navy)}
+.plan.rec{background:linear-gradient(165deg,var(--navy2) 0%,var(--navy) 60%,var(--navy-d) 100%);border:1.5px solid #E8C774;box-shadow:0 18px 44px rgba(16,21,42,.35),0 0 0 4px rgba(241,215,154,.18);color:#F4EFE3}
+.plan.rec .nm{color:#fff}
+.plan.rec .for,.plan.rec li{color:#D6D9E3;border-top-color:rgba(241,215,154,.25)}
+.plan.rec .pr{background:var(--goldmetal);-webkit-background-clip:text;background-clip:text;color:transparent;font-size:42px}
+.plan.rec .pr small{-webkit-text-fill-color:#C9CCD8}
+.plan.rec li:before{color:var(--gold-l)}
+.plan .badge{background:var(--goldmetal);color:#1F2433;box-shadow:0 4px 12px rgba(184,134,43,.35)}
+.plan li:before{color:var(--gold-d)}
+/* 特典 */
+section.gold{background:linear-gradient(180deg,#FBF4E3,#F6EBD0)}
+.bonus{border-left:4px solid var(--gold);box-shadow:0 6px 18px rgba(138,98,18,.08)}
+.cond{background:#fff;border:1px solid var(--gold-l)}
+.quote{position:relative;padding-top:28px}
+.quote:before{content:"“";position:absolute;left:16px;top:-6px;font-family:"Shippori Mincho",serif;font-size:64px;line-height:1;background:var(--goldmetal);-webkit-background-clip:text;background-clip:text;color:transparent}
+.quote .q{color:var(--navy)}
+.flow .c{background:var(--goldmetal);color:#1F2433}
+.ng:before{color:var(--gold-d)}
+summary:after{color:var(--gold-d)}
+.smonth{border-top:3px solid var(--gold)}
+.smonth .mh{color:var(--navy)}
+.smonth .dow{background:var(--soft);color:var(--navy)}
+.photo.frame{border-color:var(--line)}
+.prof img{box-shadow:0 0 0 1px var(--gold-l),0 10px 24px rgba(16,21,42,.18)}
+/* 追従ボタン */
+.sticky{background:rgba(16,21,42,.94);border-top:1px solid rgba(241,215,154,.5)}
+.sticky .a1{background:linear-gradient(180deg,#2FD66F,#06C755 52%,#04A648);color:#fff}
+.sticky .a2{background:transparent;color:var(--gold-l);border:1.5px solid rgba(241,215,154,.75)}
+footer{background:var(--navy-d);color:#A9AFC2}
+footer a{color:#C9CCD8}
+/* 出てくる動き（控えめ） */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.btn:after{animation:none}}
 </style>
 <!-- ===== 計測（Meta Pixel 1510200123755162）=====
      全ページ共通。head の末尾に貼る。
@@ -508,6 +589,9 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   window.addEventListener('scroll',tick,{passive:true});tick();
   var seen={};window.addEventListener('scroll',function(){var p=document.getElementById('plans');if(p&&!seen.p&&window.scrollY+window.innerHeight>p.offsetTop+200){seen.p=1;window.fxTrack&&fxTrack('PlansView',{from:'honkoza'})}},{passive:true});
 })();
+</script>
+<script>
+(function(){if(!('IntersectionObserver' in window))return;var els=document.querySelectorAll('section h2,.card,.reason,.month,.stat,.plan,.bonus,.quote,.smonth,.stack li,.photo');var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});els.forEach(function(el){if(el.getBoundingClientRect().top>window.innerHeight){el.classList.add('rv');io.observe(el)}})})();
 </script>
 </body>
 </html>
