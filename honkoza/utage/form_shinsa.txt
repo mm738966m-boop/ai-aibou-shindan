@@ -4,6 +4,7 @@
 var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap';document.head.appendChild(l);
 var css=''
 +'body{background:#EEF6F7!important;font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif!important;font-size:17px;font-weight:500;color:#1C3236;line-height:1.8}'
++'body .card-body,body .card-body p,body label{word-break:auto-phrase;line-break:strict}'
 +'body .card{border:0;border-radius:22px;box-shadow:0 6px 24px rgba(10,90,98,.10);overflow:hidden}'
 +'body .card-header{position:relative;border-bottom:4px solid #D9A441;padding:22px 96px 22px 20px;background:#fff!important}'
 +'body .card-header h2{font-size:clamp(20px,5.4vw,26px);font-weight:900;color:#0A5A62;line-height:1.5;word-break:auto-phrase;text-wrap:balance}'
