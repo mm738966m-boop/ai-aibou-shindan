@@ -1,0 +1,53 @@
+<script>
+/* 本講座2期の申込・決済・お礼ページ（ファネルの builder ページ）共通デザイン（2026-10-24版・参加審査ページと同じティール×金・丸ゴ・ロボ・決定ボタンはLINE緑）。ページ設定 > bodyタグの最後に挿入するJavaScript */
+(function(){
+var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap';document.head.appendChild(l);
+var css=''
++'html,body,#body{background:#EEF6F7!important}'
++'#body,#body p,#body span,#body label,#body td,#body th,#body input,#body textarea,#body button{font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif!important}'
++'#body{color:#1C3236;padding:20px 12px 36px}'
++'#main{max-width:720px!important;margin:0 auto!important;background:#fff!important;border-radius:22px;overflow:hidden;box-shadow:0 6px 24px rgba(10,90,98,.10)!important}'
++'#main > section.fn-section:first-child{position:relative;background:#fff!important;background-image:none!important;border-bottom:4px solid #D9A441}'
++'#main > section.fn-section:first-child .section-wrap{padding-right:104px!important}'
++'#main > section.fn-section:first-child .fn-el-subhead .el-wrap{padding:24px 0 22px!important}'
++'#main > section.fn-section:first-child .fn-el-subhead,#main > section.fn-section:first-child .fn-el-subhead *{color:#0A5A62!important;font-weight:900!important;text-align:left!important;font-size:clamp(20px,5.4vw,27px)!important;line-height:1.5!important;text-shadow:none!important;word-break:auto-phrase;text-wrap:balance}'
++'#fx-kicker{display:block;font-size:15px!important;font-weight:700!important;color:#B07D1E!important;letter-spacing:.06em;margin-bottom:2px}'
++'#fx-robo{position:absolute;right:16px;bottom:-4px;width:78px;height:auto;pointer-events:none;filter:drop-shadow(0 4px 8px rgba(10,90,98,.18));z-index:2}'
++'#main .fn-el-subhead{color:#0A5A62}'
++'#main .fn-el-text,#main .fn-el-text p,#main .fn-el-text span{font-size:16.5px!important;line-height:1.85!important;color:#1C3236;word-break:auto-phrase;line-break:strict}'
++'#main .fn-el-text a{color:#0E7C86;font-weight:700}'
++'#main .fn-el-text p:has(> strong:only-child),#main .fn-el-text p:has(> b:only-child){margin-top:18px}'
++'#main .fn-el-text strong,#main .fn-el-text b{color:#0A5A62}'
++'#main .fn-el-image img{border-radius:16px}'
++'#main .fn-el-payment label{font-weight:900;font-size:17px;color:#1C3236}'
++'#main .badge-danger{background:#C0392B!important;border-radius:999px;font-size:12.5px;padding:3px 9px;vertical-align:2px}'
++'#main .form-control{font-size:18px!important;font-weight:500;border:2px solid #D5E4E6!important;border-radius:12px!important;min-height:52px;color:#1C3236;box-shadow:none}'
++'#main .form-control:focus{border-color:#0E7C86!important;box-shadow:0 0 0 3px rgba(14,124,134,.18)!important}'
++'#main textarea.form-control{font-size:14.5px!important;line-height:1.7;background:#F7FBFB}'
++'#main table.payment-method{width:100%;border-collapse:separate;border-spacing:0 8px}'
++'#main table.payment-method thead th{font-size:14.5px;color:#4A6468;font-weight:700;border:0;padding:0 14px}'
++'#main table.payment-method tbody td{background:#fff;border-top:2px solid #D5E4E6!important;border-bottom:2px solid #D5E4E6!important;padding:12px 14px;vertical-align:middle;font-size:17px;font-weight:700}'
++'#main table.payment-method tbody td:first-child{border-left:2px solid #D5E4E6!important;border-radius:12px 0 0 12px}'
++'#main table.payment-method tbody td:last-child{border-right:2px solid #D5E4E6!important;border-radius:0 12px 12px 0;text-align:right;white-space:nowrap;color:#0A5A62;font-weight:900}'
++'#main table.payment-method tbody tr:has(input:checked) td{background:#F2FAFA;border-color:#0E7C86!important}'
++'#main table.payment-method tbody tr:empty{display:none}'
++'#main table.payment-method td span{display:inline-block;margin-top:2px;font-size:12.5px;font-weight:700;color:#B07D1E;background:#FBF4E3;border-radius:999px;padding:1px 9px}'
++'#main .form-check-input{accent-color:#0E7C86;width:20px;height:20px;margin-top:4px}'
++'#main .form-check-label{font-weight:700;font-size:17px;line-height:1.6;padding-left:8px;cursor:pointer}'
++'#main table:not(.payment-method){font-size:16px}'
++'#main table:not(.payment-method) th{background:#EEF6F7;color:#0A5A62;font-weight:900}'
++'#main .btn-amazing,#main .fn-el-payment button[type=submit],#main .fn-el-button a,#main .fn-el-button button{display:block;width:100%;background:#06C755!important;background-image:none!important;color:#fff!important;border:0!important;border-radius:999px!important;font-weight:900!important;font-size:20px!important;min-height:62px;box-shadow:0 5px 0 #04994A!important;animation:none!important;text-shadow:none!important}'
++'#main .btn-amazing:hover{background:#05B34C!important}'
++'#main .fn-el-footer,#main .fn-el-footer *{font-size:13.5px!important;color:#6F8386!important}'
++'#main .fn-el-footer a{color:#4A6468!important}'
++'@media (max-width:600px){#body{padding:10px 8px 28px}#main > section.fn-section:first-child .section-wrap{padding-right:88px!important}#fx-robo{width:66px;right:10px}#main table.payment-method tbody td{padding:10px 10px;font-size:16px}}';
+var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
+function run(){
+  var sec=document.querySelector('#main > section.fn-section');
+  if(sec&&!document.getElementById('fx-robo')){
+    var ri=document.createElement('img');ri.id='fx-robo';ri.src='https://mm738966m-boop.github.io/okane-benkyokai/kiku/mascot.webp';ri.alt='';ri.width=78;ri.height=78;sec.appendChild(ri);
+  }
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
+})();
+</script>
