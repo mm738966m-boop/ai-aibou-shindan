@@ -44,7 +44,7 @@ function boot(){
       +'<li>週1回の作業会（Zoom）に参加できる</li>'
       +'<li>週3時間ほど、作業の時間を取れる</li>'
       +'</ul></div>'
-      +'<p class="fx-note">2期は<b>11月5日（木）20:00</b>開始予定です。結果のメールをお待ちください。</p>';
+      +'<p class="fx-note">2期は<b>2027年1月14日（木）20:00</b>開始予定です。結果のメールをお待ちください。</p>';
     FOOT='fulfull株式会社　金融AIカレッジ';
   }else if(KIND==='ai_soudan'){
     html+='<div class="fx-box"><h3>当日までに（できれば）</h3><ul>'
