@@ -4,28 +4,27 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
-<title>発信のはじめかた｜本講座 週4の事前課題</title>
-<meta property="og:title" content="発信のはじめかた｜本講座 週4の事前課題">
-<meta property="og:description" content="なぜ発信の場所がいるのか、7つの媒体の違い、Threadsの作り方とプロフィールの整え方。準備は20分。">
+<title>発信のはじめかた｜本講座 週4の事前の準備</title>
+<meta property="og:title" content="発信のはじめかた｜本講座 週4の事前の準備">
+<meta property="og:description" content="29日の作業会で、あなたのThreadsができあがります。前もってやるのは20分の準備だけ。">
 <meta property="og:image" content="https://mm738966m-boop.github.io/ai-aibou-shindan/honkoza/sns/img/hero.jpg">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#F4FAF8;--white:#fff;--soft:#E3F3EE;--line:#C9E2DB;--navy:#0F4A40;--ink:#17332D;--sub:#44605A;--green:#0E7C86;--teal:#0E7C86;--gold:#D9A441;--gold-l:#FBF4E3;--orange:#F07A1C;--dot:#D5E8E3;--line-g:#06C755}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#0F2320;--white:#16302B;--soft:#1C3A34;--line:#2B5049;--navy:#D5F0E8;--ink:#E6F3EF;--sub:#A8C6BF;--gold-l:#3A3220;--dot:#1E3833}}
+:root{--paper:#F4FAF8;--white:#fff;--soft:#E3F3EE;--line:#C9E2DB;--navy:#0F4A40;--ink:#17332D;--sub:#44605A;--teal:#0E7C86;--num:#0E7C86;--gold:#D9A441;--gold-d:#8A6414;--gold-l:#FBF4E3;--orange:#F07A1C;--dot:#D5E8E3;--line-g:#06C755;--ngbg:#FFF1EC}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#0F2320;--white:#16302B;--soft:#1C3A34;--line:#2B5049;--navy:#D5F0E8;--ink:#E6F3EF;--sub:#A8C6BF;--num:#5FD0D6;--gold-l:#3A3220;--gold-d:#F0C870;--dot:#1E3833;--ngbg:#3A2620}}
+:root[data-theme="dark"]{--paper:#0F2320;--white:#16302B;--soft:#1C3A34;--line:#2B5049;--navy:#D5F0E8;--ink:#E6F3EF;--sub:#A8C6BF;--num:#5FD0D6;--gold-l:#3A3220;--gold-d:#F0C870;--dot:#1E3833;--ngbg:#3A2620}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);background-image:radial-gradient(var(--dot) 1.6px,transparent 1.6px);background-size:28px 28px;color:var(--ink);font-family:"M PLUS Rounded 1c","Hiragino Maru Gothic ProN",sans-serif;font-weight:500;font-size:18px;line-height:1.85;text-wrap:pretty}
 .wrap{max-width:760px;margin:0 auto;padding:0 16px 80px}
 h1,h2,h3{font-weight:900;color:var(--navy);line-height:1.4;word-break:auto-phrase}
 .hero{text-align:center;padding:28px 0 8px}
-.hero img{width:100%;max-width:560px;border-radius:24px}
+.hero img{width:100%;max-width:560px;height:auto;border-radius:24px}
 .kicker{display:inline-block;background:var(--gold-l);color:var(--ink);border-radius:999px;padding:4px 16px;font-weight:800;font-size:15px}
 .hero h1{font-size:34px;margin:12px 0 6px}
 .hero p{color:var(--sub);margin:0}
-.toc{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px 0 6px}
-.toc a{background:var(--white);border:2px solid var(--line);border-radius:999px;padding:4px 14px;font-size:15px;font-weight:700;color:var(--navy);text-decoration:none}
 section{background:var(--white);border:2px solid var(--line);border-radius:26px;padding:26px 22px;margin:24px 0;box-shadow:0 10px 28px rgba(14,124,134,.07)}
 section>h2{font-size:26px;margin:0 0 12px;display:flex;gap:12px;align-items:center}
 .no{flex:none;width:44px;height:44px;border-radius:50%;background:var(--teal);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px}
@@ -33,71 +32,91 @@ h3{font-size:21px;margin:22px 0 8px}
 p{margin:.6em 0}
 .lead{font-size:19px;font-weight:700}
 figure{margin:16px 0}
-figure img{width:100%;border-radius:16px;border:2px solid var(--line);background:#fff}
+figure img{width:100%;height:auto;border-radius:16px;border:2px solid var(--line);background:#fff}
 figcaption{font-size:15px;color:var(--sub);margin-top:6px}
 .robo{display:flex;gap:14px;align-items:flex-start;background:var(--soft);border-radius:20px;padding:14px 16px;margin:14px 0}
-.robo img{width:64px;flex:none}
+.robo img{width:64px;height:64px;flex:none}
 .robo p{margin:0;font-weight:700}
-/* チェックリスト */
+.future{background:linear-gradient(135deg,var(--soft),var(--gold-l));border:none}
+.future .when{font-weight:900;color:var(--teal);font-size:17px}
+.future .big{font-size:24px;font-weight:900;color:var(--navy);line-height:1.5;margin:4px 0 10px}
+.future ul{margin:0;padding-left:1.2em}
+.future li{margin:4px 0;font-weight:700}
+.minipro{display:flex;gap:14px;align-items:center;background:var(--white);border-radius:18px;padding:12px;margin-top:14px}
+.minipro img{width:44%;max-width:240px;height:auto;border-radius:12px;border:2px solid var(--line)}
+.minipro p{margin:0;font-size:16px;font-weight:700}
+.okline{background:var(--gold-l);border-radius:14px;padding:8px 14px;font-weight:800;margin:8px 0}
 .check{list-style:none;padding:0;margin:10px 0}
 .check li{display:flex;gap:12px;align-items:flex-start;padding:12px 4px;border-bottom:1px dashed var(--line);cursor:pointer}
 .check li:last-child{border-bottom:0}
-.box{flex:none;width:30px;height:30px;border-radius:9px;border:3px solid var(--teal);margin-top:3px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;transition:.2s}
-.check li.on .box{background:var(--teal)}
-.check li.on .t{color:var(--sub);text-decoration:line-through}
-.min{flex:none;margin-left:auto;font-size:14px;color:var(--sub);font-weight:800;background:var(--soft);border-radius:999px;padding:2px 10px;margin-top:4px}
+.box{flex:none;width:30px;height:30px;border-radius:9px;border:3px solid var(--teal);margin-top:3px;display:flex;align-items:center;justify-content:center;color:transparent;font-weight:900;transition:.2s}
+.check li.on .box{background:var(--teal);color:#fff}
+.check li.on .t>span:first-child{color:var(--sub);text-decoration:line-through}
+.t small{display:block;font-size:15px;color:var(--sub);font-weight:600;margin-top:2px}
+.t a{color:var(--teal);font-weight:800}
+.min{flex:none;margin-left:auto;font-size:14px;color:var(--sub);font-weight:800;background:var(--soft);border-radius:999px;padding:2px 10px;margin-top:4px;white-space:nowrap}
 .bar{height:14px;background:var(--soft);border-radius:999px;overflow:hidden;margin:6px 0 2px}
 .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--gold));transition:width .5s}
 .done{display:none;text-align:center;font-weight:900;color:var(--teal);font-size:20px;margin-top:10px}
 .done.show{display:block;animation:pop .5s}
 @keyframes pop{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
-/* 流れの図 */
+.bring{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.bring span{background:var(--soft);border-radius:999px;padding:4px 14px;font-weight:800;font-size:16px}
+.q{background:var(--soft);border-radius:16px;padding:12px 14px;margin:8px 0}
+.q span{display:block;font-weight:700}
+.q button,.copyall{font:inherit;font-size:15px;font-weight:900;border:0;border-radius:12px;padding:8px 14px;background:var(--teal);color:#fff;cursor:pointer;margin-top:8px}
+.q button.ok,.copyall.ok{background:var(--gold)}
+.copyall{display:block;width:100%;font-size:17px;padding:12px}
 .flow{display:grid;grid-template-columns:1fr;gap:10px;margin:16px 0}
 .step{display:flex;align-items:center;gap:14px;background:var(--soft);border-radius:18px;padding:14px 16px}
 .step b{flex:none;min-width:116px;text-align:center;background:var(--white);border:2px solid var(--line);border-radius:14px;padding:6px 8px;color:var(--navy);font-weight:900}
 .step.main b{border-color:var(--teal);color:var(--teal)}
 .step.goal b{background:var(--line-g);color:#fff;border-color:var(--line-g)}
 .arrow{text-align:center;color:var(--gold);font-size:22px;line-height:1;margin:-4px 0}
-/* 数字 */
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
-.stat{background:var(--soft);border-radius:18px;padding:14px 8px;text-align:center}
-.stat strong{display:block;font-size:30px;font-weight:900;color:var(--teal);line-height:1.2}
-.stat span{font-size:14px;color:var(--sub);font-weight:700}
+.stat{background:var(--soft);border-radius:18px;padding:14px 6px;text-align:center}
+.stat strong{display:block;font-size:28px;font-weight:900;color:var(--num);line-height:1.2;white-space:nowrap}
+.stat span.l{display:block;font-size:14px;color:var(--sub);font-weight:700;line-height:1.5;word-break:keep-all}
 .four{counter-reset:f;list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .four li{counter-increment:f;background:var(--gold-l);border-radius:16px;padding:12px 14px;font-weight:800}
 .four li::before{content:counter(f);display:inline-flex;width:28px;height:28px;border-radius:50%;background:var(--gold);color:#fff;align-items:center;justify-content:center;margin-right:8px;font-size:15px}
-/* 媒体カード */
 .media{display:grid;grid-template-columns:1fr;gap:12px;margin:14px 0}
 .m{border:2px solid var(--line);border-radius:20px;padding:14px 16px;background:var(--white)}
 .m h3{margin:0 0 4px;font-size:20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.tag{font-size:13px;font-weight:900;border-radius:999px;padding:2px 12px;color:#fff}
-.t-main{background:var(--teal)}.t-sub{background:var(--gold)}.t-later{background:#8AA6A0}.t-no{background:#B7C4C1}
+.tag{font-size:14px;font-weight:900;border-radius:999px;padding:2px 12px;border:2px solid}
+.t-main{background:var(--teal);color:#fff;border-color:var(--teal)}
+.t-sub{background:var(--gold-l);color:var(--gold-d);border-color:var(--gold)}
+.t-later{background:var(--soft);color:var(--navy);border-color:var(--line)}
+.t-no{background:var(--white);color:var(--sub);border-color:var(--line)}
 .m.main{border-color:var(--teal);box-shadow:0 0 0 4px rgba(14,124,134,.12)}
 .m p{margin:4px 0;font-size:17px}
+details{border:2px solid var(--line);border-radius:20px;margin:14px 0;background:var(--white)}
+details>summary{cursor:pointer;list-style:none;padding:14px 16px;font-weight:900;color:var(--navy);font-size:18px;display:flex;align-items:center;gap:10px}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"＋";flex:none;width:30px;height:30px;border-radius:50%;background:var(--soft);display:inline-flex;align-items:center;justify-content:center;color:var(--teal)}
+details[open]>summary::before{content:"－"}
+details>summary small{display:block;font-size:14px;color:var(--sub);font-weight:700}
+details .in{padding:0 16px 14px}
+details.day{border-color:var(--gold)}
 table{width:100%;border-collapse:collapse;font-size:16px;margin:10px 0}
 th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:center}
 th:first-child,td:first-child{text-align:left}
 .src{font-size:14px;color:var(--sub)}
-/* 手順 */
 ol.steps{counter-reset:s;list-style:none;padding:0;margin:10px 0}
 ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 46px}
 ol.steps li::before{content:counter(s);position:absolute;left:0;top:8px;width:32px;height:32px;border-radius:50%;background:var(--orange);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:16px}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .sample{background:var(--soft);border-radius:18px;padding:14px 16px;font-weight:700;white-space:pre-line}
-.ng{background:#FFF1EC;border-radius:18px;padding:12px 16px;margin:12px 0}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .ng{background:#3A2620}}
+.ng{background:var(--ngbg);border-radius:18px;padding:12px 16px;margin:12px 0}
 .ng b{color:var(--orange)}
-.q{display:flex;gap:10px;align-items:flex-start;background:var(--soft);border-radius:16px;padding:12px 14px;margin:8px 0}
-.q span{flex:1;font-weight:700}
-.q button,.copyall{flex:none;font:inherit;font-size:15px;font-weight:900;border:0;border-radius:12px;padding:8px 12px;background:var(--teal);color:#fff;cursor:pointer}
-.q button.ok,.copyall.ok{background:var(--gold)}
 .next{text-align:center;background:linear-gradient(135deg,var(--soft),var(--gold-l))}
 .next .big{font-size:24px;font-weight:900;color:var(--navy);margin:6px 0}
 footer{font-size:14px;color:var(--sub);text-align:center;margin-top:30px}
 .fade.in{animation:rise .6s ease-out}
 @keyframes rise{from{opacity:.2;transform:translateY(14px)}to{opacity:1;transform:none}}
-@media (max-width:560px){.hero h1{font-size:28px}section{padding:22px 16px}.stats{grid-template-columns:1fr 1fr 1fr}.stat strong{font-size:24px}.two,.four{grid-template-columns:1fr}.step b{min-width:96px;font-size:15px}}
-@media print{body{background:#fff}.toc{display:none}}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) figure img,:root:not([data-theme="light"]) .hero img,:root:not([data-theme="light"]) .minipro img{filter:brightness(.88)}}
+@media (max-width:560px){.hero h1{font-size:28px}section{padding:22px 16px}.stat strong{font-size:22px}.two,.four{grid-template-columns:1fr}.step b{min-width:96px;font-size:15px}.minipro{flex-direction:column;align-items:stretch}.minipro img{width:100%;max-width:none}}
+@media print{body{background:#fff}details{break-inside:avoid}}
 </style>
 <!-- ===== 計測（Meta Pixel 1510200123755162）=====
      全ページ共通。head の末尾に貼る。
@@ -127,157 +146,178 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <div class="wrap">
 
 <header class="hero">
-  <img src="img/hero.jpg" alt="そろばんロボがスマホを持ち、まわりに反応のハートが浮かんでいる絵">
-  <div><span class="kicker">本講座 1期 ｜ 週4の事前課題</span></div>
+  <img src="img/hero.jpg" width="1200" height="800" alt="そろばんロボがスマホを持ち、まわりに反応のハートが浮かんでいる絵">
+  <div><span class="kicker">本講座 1期 ｜ 週4の事前の準備</span></div>
   <h1>発信のはじめかた</h1>
   <p>先週までに作った「記事」と「画像」を、外に出す場所をつくります。</p>
-  <nav class="toc">
-    <a href="#todo">準備20分</a><a href="#why">なぜ発信？</a><a href="#real">森川の数字</a><a href="#media">7つの媒体</a><a href="#make">作り方</a><a href="#profile">プロフィール</a><a href="#rule">会社のルール</a>
-  </nav>
 </header>
 
+<section class="future fade">
+  <div class="when">10月29日（木）21:30、作業会が終わるころには</div>
+  <div class="big">あなたのThreadsが、できあがっています。</div>
+  <ul>
+    <li>自分の名前と役割が入ったプロフィール</li>
+    <li>プロフィール画像</li>
+    <li>そのまま出せる投稿案が3本</li>
+  </ul>
+  <div class="minipro">
+    <img src="img/f_th_profile.jpg" width="1100" height="795" alt="完成したThreadsのプロフィールの見本（森川）">
+    <p>見本は森川のThreadsです。直近30日で、78万人に読まれました。もともとのフォロワーは、そのうち413人だけ。<br>フォロワーがいなくても、知らない人に届くのがThreadsです。</p>
+  </div>
+</section>
+
 <section id="todo" class="fade">
-  <h2><span class="no">✓</span>当日までの準備（20分）</h2>
+  <h2><span class="no">✓</span>前もってやる準備（20分）</h2>
   <p class="lead">アカウント作りとプロフィール文は、作業会で一緒にやります。前もってやるのは、この7つだけです。</p>
+  <div class="okline">全部できなくても、29日は参加できます。</div>
   <div class="bar"><i id="bar"></i></div>
   <div class="src" id="cnt">0 / 7</div>
   <ul class="check" id="check">
-    <li data-k="1"><span class="box">✓</span><span class="t">このページの「なぜ発信？」と「7つの媒体」をざっと読む</span><span class="min">5分</span></li>
-    <li data-k="2"><span class="box">✓</span><span class="t">Instagramのアカウントがあるか確かめる（あるなら、私用か仕事用か）</span><span class="min">1分</span></li>
-    <li data-k="3"><span class="box">✓</span><span class="t">スマホに「Threads」「Instagram」「Zoom」のアプリを入れる</span><span class="min">5分</span></li>
-    <li data-k="4"><span class="box">✓</span><span class="t">会社のルールを「誰に聞くか」だけ決めて、下の質問を送っておく（返事は待たなくてOK）</span><span class="min">3分</span></li>
-    <li data-k="5"><span class="box">✓</span><span class="t">プロフィール画像の候補を1枚、スマホに保存する（自分の写真か、週3の画像）</span><span class="min">3分</span></li>
-    <li data-k="6"><span class="box">✓</span><span class="t">週1の「選ばれる理由」3つを、スマホのメモに入れる</span><span class="min">2分</span></li>
-    <li data-k="7"><span class="box">✓</span><span class="t">私用と分けたい人だけ：仕事用のメールアドレスを控えておく</span><span class="min">1分</span></li>
+    <li data-k="1"><span class="box">✓</span><span class="t"><span>このページの「1」〜「3」をざっと読む</span><small>「当日やること」は29日に一緒に見ます。今は開かなくてOK</small></span><span class="min">5分</span></li>
+    <li data-k="2"><span class="box">✓</span><span class="t"><span>Instagramのアカウントがあるか確かめる</span><small>あるなら、私用か仕事用か</small></span><span class="min">1分</span></li>
+    <li data-k="3"><span class="box">✓</span><span class="t"><span>スマホに「Threads」「Instagram」「Zoom」のアプリを入れる</span><small>アプリを入れるパスワードが分からなければ、当日でOK</small></span><span class="min">5分</span></li>
+    <li data-k="4"><span class="box">✓</span><span class="t"><span>会社のルールを確かめる相手に、すぐ下の質問を送っておく</span><small>会社員の方は会社に、代理店の方は保険会社か代理店の管理者に。返事は待たなくてOK</small></span><span class="min">3分</span></li>
+    <li data-k="5"><span class="box">✓</span><span class="t"><span>プロフィール画像の候補を1枚、スマホに保存する</span><small>自分の写真か、週3の画像</small></span><span class="min">3分</span></li>
+    <li data-k="6"><span class="box">✓</span><span class="t"><span>週1の「選ばれる理由」3つを、スマホのメモに入れる</span><small><a href="https://kinyu-ai-college.vibely.site/courses/f894dc91-b003-45f0-9ce8-123ff4a66792/chapters/bfac9e69-cbfa-487b-a86f-be50befdae18" onclick="event.stopPropagation()">週1の章を開く</a></small></span><span class="min">2分</span></li>
+    <li data-k="7"><span class="box">✓</span><span class="t"><span>私用と分けたい人だけ：仕事用のメールアドレスを控えておく</span></span><span class="min">1分</span></li>
   </ul>
   <div class="done" id="done">準備ばっちりです。29日、一緒に作りましょう！</div>
+  <h3>当日の持ち物</h3>
+  <div class="bring"><span>📱 スマホ（充電しておく）</span><span>🔑 Instagramのパスワード（ある人）</span><span>💻 Zoomに入るパソコン</span></div>
   <p class="src">チェックは、このスマホ（パソコン）の中だけに残ります。</p>
+</section>
+
+<section id="rule" class="fade">
+  <h2><span class="no">Q</span>準備の4番：会社に送る質問</h2>
+  <p>お金のしくみや考え方の話は、多くの会社で発信できます。ただ、商品を勧めたり比べたりすると「募集」になり、承認が要ります。代理店の方も、委託先の保険会社のルールに従います。</p>
+  <p>下のボタンで、5つの質問をまとめてコピーして、そのまま送れます。</p>
+  <button class="copyall" id="all">5つの質問をまとめてコピー</button>
+  <div id="qs">
+    <div class="q"><span>個人のSNS（Threads・note）で、お金や保険の一般的なしくみを発信してもよいですか。届け出や事前の確認は要りますか。</span><button>この1問だけコピー</button></div>
+    <div class="q"><span>プロフィールに、会社名・募集人であること・資格を書いてもよいですか。書いてはいけない言い方はありますか。</span><button>この1問だけコピー</button></div>
+    <div class="q"><span>商品名や保険料に触れたい場合、事前承認（募集文書の番号）の手続きはどうなっていますか。</span><button>この1問だけコピー</button></div>
+    <div class="q"><span>プロフィールに相談の窓口（診断ページ・LINE公式）を置いてもよいですか。お客様とのやりとりに、記録や保存のルールはありますか。</span><button>この1問だけコピー</button></div>
+    <div class="q"><span>SNS運用の社内規程やマニュアルがあれば、いただけますか。</span><button>この1問だけコピー</button></div>
+  </div>
+  <div class="robo"><img src="img/mascot_invite.webp" width="64" height="64" alt=""><p>返事が来る前でも、29日はアカウント作りとプロフィールまで進められます。投稿は、確かめてからで大丈夫です。</p></div>
 </section>
 
 <section id="why" class="fade">
   <h2><span class="no">1</span>なぜ、発信の場所がいるの？</h2>
   <p class="lead">この講座では広告を使いません。だから、お客様と出会う「無料の入口」が必要です。</p>
-  <p>強み（週1）→ 記事（週2）→ 画像（週3）と作ってきました。でも、外に出さないと、誰の目にも触れません。発信の場所は、その「出し先」です。</p>
+  <p>強み（週1）→ 記事（週2）→ 画像（週3）と作ってきました。外に出して、はじめて誰かに届きます。</p>
   <div class="flow">
-    <div class="step main"><b>Threads</b><span>投稿を読んでもらう。反応で手応えをつかむ</span></div>
+    <div class="step main"><b>Threads</b><span>投稿を読んでもらう。反応で手応えをつかむ（週4）</span></div>
     <div class="arrow">▼</div>
-    <div class="step"><b>プロフィール</b><span>「この人は何の人か」が3行で分かる</span></div>
+    <div class="step"><b>プロフィール</b><span>「この人は何の人か」が3行で分かる（週4）</span></div>
     <div class="arrow">▼</div>
-    <div class="step"><b>診断ページ</b><span>5問に答えて、自分のタイプが分かる（週5で作ります）</span></div>
+    <div class="step"><b>診断ページ</b><span>5問で自分のタイプが分かる（週5で作り、週6で公開）</span></div>
     <div class="arrow">▼</div>
-    <div class="step goal"><b>LINE</b><span>「もう少し聞きたい」人だけが来る。相談はここから</span></div>
+    <div class="step goal"><b>LINE</b><span>「もう少し聞きたい」人だけが来る。相談はここから（週6）</span></div>
   </div>
-  <div class="robo"><img src="img/mascot_point.webp" alt=""><p>Threadsは「反応を見る場所」。相談の入口は、週6で公開する診断ページとLINEです。役割を分けておくと、がっかりしません。</p></div>
+  <p>Threadsは「反応を見る場所」。相談の入口は、週6で公開する診断ページとLINEです。役割を分けておくと、がっかりしません。</p>
 </section>
 
 <section id="real" class="fade">
   <h2><span class="no">2</span>森川のThreadsの、本当の数字</h2>
   <p>ふるふる（森川）のThreadsの、直近30日の実際の数字です（2026年10月26日時点）。</p>
   <div class="stats">
-    <div class="stat"><strong data-n="161">0</strong><span>万回 読まれた</span></div>
-    <div class="stat"><strong data-n="78">0</strong><span>万人に届いた</span></div>
-    <div class="stat"><strong data-n="8">0</strong><span>割が35〜64歳</span></div>
+    <div class="stat"><strong><span data-n="161">161</span>万回</strong><span class="l">読まれた</span></div>
+    <div class="stat"><strong><span data-n="78">78</span>万人</strong><span class="l">に届いた</span></div>
+    <div class="stat"><strong>約<span data-n="8">8</span>割</strong><span class="l">が35〜64歳</span></div>
   </div>
-  <figure><img src="img/f_th_age.jpg" alt="Threadsのインサイト。読んだ人の年齢は35〜64歳が約8割" loading="lazy"><figcaption>読んだ人の年齢。保険・お金の相談をする年代と、ほぼ重なります。</figcaption></figure>
-  <p>78万人のうち、フォロワーは413人だけ。つまり、<b>フォロワーがいなくても、知らない人に届く</b>のがThreadsのいちばんの強みです。</p>
-  <figure><img src="img/f_th_insights.jpg" alt="Threadsのインサイト。閲覧数161万、閲覧者78万" loading="lazy"></figure>
+  <figure><img src="img/f_th_age.jpg" width="1100" height="921" alt="Threadsのインサイト。読んだ人の年齢は35〜64歳が約8割"><figcaption>読んだ人の年齢。保険・お金の相談をする年代と、ほぼ重なります。</figcaption></figure>
+  <p>読んだ78万人のうち、もともとのフォロワーは413人。<b>ほとんどが、まだ森川を知らない人</b>です。</p>
   <h3>でも、弱みもあります</h3>
   <p>読まれる数のわりに、フォロワーは30日で11人しか増えていません。投稿の中のリンクも、ほとんど押されていません。Threadsは「読んで、反応して、流れていく」場所だからです。</p>
+  <figure><img src="img/f_th_insights.jpg" width="1100" height="704" alt="Threadsのインサイト。閲覧数161万、閲覧者78万、純フォロワー+11"><figcaption>読まれた数（左）は大きく、増えたフォロワー（右）は11人。</figcaption></figure>
   <p>だから、この講座では「読まれた数」より、この4つを数えます。</p>
   <ol class="four"><li>プロフィールを見た</li><li>リンクを押した</li><li>診断を最後までやった</li><li>LINEに登録した</li></ol>
-  <div class="robo"><img src="img/mascot_think.webp" alt=""><p>森川もまだ、この4つを伸ばしている途中です。1期のみなさんと一緒に、数字で確かめていきます。</p></div>
+  <div class="robo"><img src="img/mascot_think.webp" width="64" height="64" alt=""><p>森川もまだ、この4つを伸ばしている途中です。1期のみなさんと一緒に、数字で確かめていきます。</p></div>
 </section>
 
 <section id="media" class="fade">
-  <h2><span class="no">3</span>7つの媒体、どう違う？</h2>
-  <p class="lead">最初は、Threadsひとつで十分です。全部やろうとすると、続きません。</p>
+  <h2><span class="no">3</span>媒体は、まずThreadsひとつ</h2>
+  <p class="lead">全部やろうとすると、続きません。最初はThreadsだけ。ほかは講座の後半か、卒業してからで大丈夫です。</p>
   <div class="media">
     <div class="m main"><h3>Threads <span class="tag t-main">最初の主役</span></h3><p>文章が中心の、会話の場。日本で伸びています。フォロワーがいなくても届きやすく、反応が早い。毎日1〜3投稿と、返信が大事。リンクは押されにくいので、プロフィールで道をつくります。</p></div>
     <div class="m"><h3>note <span class="tag t-sub">あとで：記事の置き場</span></h3><p>長い記事で信頼をつくる場所。検索やAIからも人が来ます。週2の記事を置く倉庫として、2週に1本で十分。週8〜週10でやります。</p></div>
-    <div class="m"><h3>Instagram <span class="tag t-later">Threadsのあとで</span></h3><p>40代の約7割が使っています。女性に強い。ただ写真や画像づくりが要り、投稿の文中のリンクは押せません。Threadsを作るのにアカウントは使います。</p></div>
-    <div class="m"><h3>Facebook <span class="tag t-later">今の人脈向け</span></h3><p>40〜50代の3〜4割。実名の知り合いや、紹介とのつながりに向きます。新しい人には届きにくいので、近況報告くらいで。</p></div>
-    <div class="m"><h3>YouTube <span class="tag t-later">講座のあとで</span></h3><p>40代の9割が見ています。信頼はいちばん強い。でも撮影と編集が重いので、卒業してからの宿題に。</p></div>
-    <div class="m"><h3>X（旧Twitter） <span class="tag t-no">今はやらない</span></h3><p>広がるのは速いけれど、言い合いになりやすく、お金の話は荒れがち。最初はやらなくて大丈夫です。</p></div>
-    <div class="m"><h3>TikTok <span class="tag t-no">今はやらない</span></h3><p>10〜20代が中心。保険・お金の相談をする客層とずれるので、最初はやらなくて大丈夫です。</p></div>
   </div>
-  <h3>年代別の利用率（参考）</h3>
-  <table>
-    <tr><th>媒体</th><th>全年代</th><th>40代</th><th>50代</th></tr>
-    <tr><td>YouTube</td><td>81.5%</td><td>91.6%</td><td>84.9%</td></tr>
-    <tr><td>Instagram</td><td>54.8%</td><td>67.1%</td><td>54.4%</td></tr>
-    <tr><td>X</td><td>44.7%</td><td>57.0%</td><td>40.2%</td></tr>
-    <tr><td>TikTok</td><td>36.7%</td><td>42.6%</td><td>32.2%</td></tr>
-    <tr><td>Facebook</td><td>27.0%</td><td>38.9%</td><td>33.1%</td></tr>
-  </table>
-  <p class="src">出典：総務省 情報通信政策研究所「令和7年度 情報通信メディアの利用時間と情報行動に関する調査」。Threadsとnoteは、この調査の項目にありません（そのため上の森川の数字を見てください）。</p>
+  <details>
+    <summary><span>ほかの5つの媒体（今はやらなくてOK）<small>Instagram・Facebook・YouTube・X・TikTok</small></span></summary>
+    <div class="in">
+      <div class="media">
+        <div class="m"><h3>Instagram <span class="tag t-later">Threadsのあとで</span></h3><p>40代の約7割が使っています。女性に強い。写真や画像づくりが要り、投稿の文中のリンクは押せません。Threadsを作るのにアカウントは使います。</p></div>
+        <div class="m"><h3>Facebook <span class="tag t-later">今の人脈向け</span></h3><p>40〜50代の3〜4割。実名の知り合いや、紹介とのつながりに向きます。新しい人には届きにくいので、近況報告くらいで。</p></div>
+        <div class="m"><h3>YouTube <span class="tag t-later">卒業してから</span></h3><p>40代の9割が見ています。信頼はいちばん強い。でも撮影と編集が重いので、卒業してからの宿題に。</p></div>
+        <div class="m"><h3>X（旧Twitter） <span class="tag t-no">今はやらない</span></h3><p>広がるのは速いけれど、言い合いになりやすく、お金の話は荒れがち。最初はやらなくて大丈夫です。</p></div>
+        <div class="m"><h3>TikTok <span class="tag t-no">今はやらない</span></h3><p>10〜20代が中心。保険・お金の相談をする客層とずれるので、最初はやらなくて大丈夫です。</p></div>
+      </div>
+      <h3>年代別の利用率（参考）</h3>
+      <table>
+        <tr><th>媒体</th><th>全年代</th><th>40代</th><th>50代</th></tr>
+        <tr><td>YouTube</td><td>81.5%</td><td>91.6%</td><td>84.9%</td></tr>
+        <tr><td>Instagram</td><td>54.8%</td><td>67.1%</td><td>54.4%</td></tr>
+        <tr><td>X</td><td>44.7%</td><td>57.0%</td><td>40.2%</td></tr>
+        <tr><td>TikTok</td><td>36.7%</td><td>42.6%</td><td>32.2%</td></tr>
+        <tr><td>Facebook</td><td>27.0%</td><td>38.9%</td><td>33.1%</td></tr>
+      </table>
+      <p class="src">出典：総務省 情報通信政策研究所「令和7年度 情報通信メディアの利用時間と情報行動に関する調査」。Threadsとnoteは、この調査の項目にありません（そのため上の森川の数字を見てください）。</p>
+    </div>
+  </details>
 </section>
 
-<section id="make" class="fade">
-  <h2><span class="no">4</span>Threadsの作り方（当日いっしょに）</h2>
-  <p class="lead">ここは読むだけでOK。29日の作業会で、画面を見ながら一緒にやります。</p>
-  <p>Threadsは、Instagramのアカウントで入るのがいちばん迷いません。私用のInstagramと分けたい人は、仕事用のメールで新しく作ります。</p>
-  <h3>A. Instagramのアカウントを作る</h3>
-  <ol class="steps">
-    <li>Instagramのアプリを開き、「新しいアカウントを作成」を押す</li>
-    <li>携帯番号か、メールアドレスを入れる（私用と分けたいなら、仕事用のメールで）</li>
-    <li>届いた数字（確認コード）を入れる</li>
-    <li>パスワード・生年月日・名前を入れる（名前の例：森川｜お金の相談）</li>
-    <li>ユーザー名を決める（半角の英字・数字・「.」「_」だけ。あとで変えられます）</li>
-  </ol>
-  <div class="two">
-    <figure><img src="img/f_ig_phone.jpg" alt="Instagramの登録画面。携帯番号の入力と、メールアドレスで登録のボタン" loading="lazy"><figcaption>②仕事用のメールで作るなら「メールアドレスで登録」</figcaption></figure>
-    <figure><img src="img/f_ig_email.jpg" alt="メールアドレスの入力画面" loading="lazy"><figcaption>③メールアドレスを入れて「次へ」</figcaption></figure>
-  </div>
-  <h3>B. Threadsに入る</h3>
-  <ol class="steps">
-    <li>Threadsのアプリを開き、「Instagramでログイン」を押す</li>
-    <li>さっき作ったアカウントを選ぶ</li>
-    <li>公開の範囲は「公開プロフィール」を選ぶ</li>
-    <li>フォローの候補は、今日は選ばずに先へ</li>
-  </ol>
-  <figure><img src="img/f_th_login.jpg" alt="Threadsの入口。Instagramでログインのボタン" loading="lazy"><figcaption>①「Instagramでログイン」。メールで始める画面が出たら、それでも大丈夫です。</figcaption></figure>
-  <div class="ng"><b>つまずきやすい所</b><br>・確認コードが届かない → 1分待って「再送信」。それでもダメならメールで登録し直す<br>・作りたてで、たくさんフォローしたり続けて投稿したりすると、一時的に止められることがあります。初日はプロフィールを整えて、投稿は1本まで</div>
-</section>
+<section id="day" class="fade">
+  <h2><span class="no">4</span>当日やること（今は開かなくてOK）</h2>
+  <p>29日の作業会で、画面を見ながら一緒にやります。先に見ておきたい人だけ、開いてください。</p>
 
-<section id="profile" class="fade">
-  <h2><span class="no">5</span>プロフィールの作り方</h2>
-  <p class="lead">プロフィールは、Threadsで見た人が「この人に聞いてみたい」と思えるかを決める場所です。</p>
-  <figure><img src="img/f_th_profile.jpg" alt="森川のThreadsのプロフィールの見本" loading="lazy"><figcaption>見本：森川のプロフィール。①名前 ②自己紹介 ③リンク ④編集ボタン。枠の数字（最近の閲覧数）は自動で出ます。</figcaption></figure>
-  <h3>名前は「名前｜役割」</h3>
-  <p>例：森川｜人生設計×資産プランナー。何の人かが、ひと目で分かるようにします。</p>
-  <h3>自己紹介は、3行の型で（150字以内）</h3>
-  <div class="sample">1行目：誰の、何を整える人か（例：共働き家庭の、家計を整える係）
+  <details class="day">
+    <summary><span>A. Threadsの作り方<small>Instagramで登録して、Threadsに入る</small></span></summary>
+    <div class="in">
+      <p>Threadsは、Instagramのアカウントで入るのがいちばん迷いません。私用のInstagramと分けたい人は、仕事用のメールで新しく作ります。</p>
+      <ol class="steps">
+        <li>Instagramのアプリを開き、「新しいアカウントを作成」を押す</li>
+        <li>携帯番号か、メールアドレスを入れる（私用と分けたいなら、仕事用のメールで）</li>
+        <li>届いた数字（確認コード）を入れる</li>
+        <li>パスワード・生年月日・名前を入れる（名前の例：森川｜お金の相談）</li>
+        <li>ユーザー名を決める（半角の英字・数字・「.」「_」だけ。あとで変えられます）</li>
+        <li>Threadsのアプリを開き、「Instagramでログイン」を押して、作ったアカウントを選ぶ</li>
+        <li>公開の範囲は「公開プロフィール」を選ぶ</li>
+      </ol>
+      <div class="two">
+        <figure><img src="img/f_ig_phone.jpg" width="700" height="821" alt="Instagramの登録画面。携帯番号の入力と、メールアドレスで登録のボタン"><figcaption>②仕事用のメールで作るなら「メールアドレスで登録」</figcaption></figure>
+        <figure><img src="img/f_ig_email.jpg" width="700" height="616" alt="メールアドレスの入力画面"><figcaption>③メールアドレスを入れて「次へ」</figcaption></figure>
+      </div>
+      <figure><img src="img/f_th_login.jpg" width="700" height="670" alt="Threadsの入口。Instagramでログインのボタン"><figcaption>⑥「Instagramでログイン」。メールで始める画面が出たら、それでも大丈夫です。</figcaption></figure>
+      <div class="ng"><b>つまずきやすい所</b><br>・確認コードが届かない → 1分待って「再送信」。それでもダメならメールで登録し直す<br>・作りたてで、たくさんフォローしたり続けて投稿したりすると、一時的に止められることがあります。初日はプロフィールを整えて、投稿は1本まで</div>
+    </div>
+  </details>
+
+  <details class="day">
+    <summary><span>B. プロフィールの作り方<small>名前・自己紹介3行・画像・リンク</small></span></summary>
+    <div class="in">
+      <h3>名前は「名前｜役割」</h3>
+      <p>例：森川｜人生設計×資産プランナー。何の人かが、ひと目で分かるようにします。</p>
+      <h3>自己紹介は、3行の型で（150字以内）</h3>
+      <div class="sample">1行目：誰の、何を整える人か（例：共働き家庭の、家計を整える係）
 2行目：実績や経験を、数字で1つ（例：相談○○件・○年）
 3行目：次にしてほしいこと（例：5問のタイプ診断はこちら↓）</div>
-  <p>当日は、判断基準集の「右腕③」で、週1の「選ばれる理由」から3案を出して、いちばん自分が言いそうなものを選びます。</p>
-  <h3>リンクは、週6で入れる</h3>
-  <p>リンクは5本まで置けます。週6で、1本目に診断ページを入れます。今日は場所を確かめるだけです。</p>
-  <figure><img src="img/f_th_edit.jpg" alt="Threadsのプロフィール編集の画面" loading="lazy"><figcaption>編集の画面。①名前 ②自己紹介 ③リンク ④公開の設定 ⑤プロフィール画像</figcaption></figure>
-  <h3>プロフィール画像</h3>
-  <p>自分の写真か、週3の画像スキルで作った絵のどちらかで大丈夫。顔を出すかどうかは、自分で決めてください。画像スキルなら「Threadsのプロフィール画像。正方形で、文字は入れないで」と頼みます。</p>
-  <div class="ng"><b>プロフィールに書かないもの</b><br>商品名・保険料・「○○保険がおすすめ」／根拠のない「No.1」「業界初」／会社名やロゴ（会社のルールで決まっている人以外）</div>
-</section>
-
-<section id="rule" class="fade">
-  <h2><span class="no">6</span>会社のルールを確かめる</h2>
-  <p class="lead">お金のしくみや考え方の話は、自由に発信できます。特定の商品を勧めたり比べたりすると「募集」になり、会社の承認が要ります。</p>
-  <p>会社員の募集人の方は、会社に個人SNSのルールがあることが多いです（業界の点検表でも、社員個人のSNSの方針を決めるよう求められています）。準備の4番で、次の質問をそのまま送ってください。</p>
-  <div id="qs">
-    <div class="q"><span>個人のSNS（Threads・note）で、お金や保険の一般的なしくみを発信してもよいですか。届け出や事前の確認は要りますか。</span><button>コピー</button></div>
-    <div class="q"><span>プロフィールに、会社名・募集人であること・資格を書いてもよいですか。書いてはいけない言い方はありますか。</span><button>コピー</button></div>
-    <div class="q"><span>商品名や保険料に触れたい場合、事前承認（募集文書の番号）の手続きはどうなっていますか。</span><button>コピー</button></div>
-    <div class="q"><span>プロフィールに相談の窓口（診断ページ・LINE公式）を置いてもよいですか。お客様とのやりとりに、記録や保存のルールはありますか。</span><button>コピー</button></div>
-    <div class="q"><span>SNS運用の社内規程やマニュアルがあれば、いただけますか。</span><button>コピー</button></div>
-  </div>
-  <p style="text-align:center"><button class="copyall" id="all">5つまとめてコピー</button></p>
-  <div class="robo"><img src="img/mascot_invite.webp" alt=""><p>返事が来る前でも、29日はアカウント作りとプロフィールまで進められます。投稿は、確かめてからで大丈夫です。</p></div>
+      <p>当日は、判断基準集の「右腕③」で、週1の「選ばれる理由」から3案を出して、いちばん自分が言いそうなものを選びます。</p>
+      <figure><img src="img/f_th_edit.jpg" width="900" height="1308" alt="Threadsのプロフィール編集の画面"><figcaption>編集の画面。①名前 ②自己紹介 ③リンク ④公開の設定 ⑤プロフィール画像</figcaption></figure>
+      <h3>プロフィール画像</h3>
+      <p>自分の写真か、週3の画像スキルで作った絵のどちらかで大丈夫。顔を出すかどうかは、自分で決めてください。画像スキルなら「Threadsのプロフィール画像。正方形で、文字は入れないで」と頼みます。</p>
+      <h3>リンク</h3>
+      <p>リンクは5本まで置けます。週6で、1本目に診断ページを入れます。当日は場所を確かめるだけです。</p>
+      <div class="ng"><b>プロフィールに書かないもの</b><br>商品名・保険料・「○○保険がおすすめ」／根拠のない「No.1」「業界初」／会社名やロゴ（会社のルールで決まっている人以外）</div>
+    </div>
+  </details>
 </section>
 
 <section class="next fade">
   <div class="kicker">次の作業会</div>
   <div class="big">10月29日（木）20:00〜21:30</div>
   <p>Threadsを作って、プロフィールを整えて、投稿案を3本。出せる人は、自己紹介を1本。</p>
-  <p class="src">スマホを手元に。困ったら、スマホの画面をZoomで見せてもらいながら一緒にやります。</p>
+  <p class="src">困ったら、スマホの画面をZoomで見せてもらいながら一緒にやります。</p>
 </section>
 
 <footer>※本教材は情報提供であり、活用の判断と結果は受講生ご本人の責任です。所属会社の規程が常に本教材より優先します。<br>金融AIカレッジ 本講座1期</footer>
@@ -292,16 +332,16 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   lis.forEach(function(li){li.addEventListener('click',function(){st[li.dataset.k]=!st[li.dataset.k];try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}draw();
     window.fxTrack&&fxTrack('SnsPrepCheck',{item:li.dataset.k,on:!!st[li.dataset.k]})})});
   draw();
-  function copy(text,btn){var done=function(){var o=btn.textContent;btn.textContent='コピーしました';btn.classList.add('ok');setTimeout(function(){btn.textContent=o;btn.classList.remove('ok')},1500)};
-    if(navigator.clipboard){navigator.clipboard.writeText(text).then(done,function(){fb()})}else fb();
-    function fb(){var t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(e){}t.remove();done()}}
+  function copy(text,btn){var o=btn.textContent;var done=function(){btn.textContent='コピーしました';btn.classList.add('ok');setTimeout(function(){btn.textContent=o;btn.classList.remove('ok')},1500)};
+    function fb(){var t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(e){}t.remove();done()}
+    if(navigator.clipboard){navigator.clipboard.writeText(text).then(done,fb)}else fb()}
   [].forEach.call(document.querySelectorAll('.q button'),function(b,i){b.addEventListener('click',function(){copy(b.previousElementSibling.textContent,b);window.fxTrack&&fxTrack('SnsCopyQuestion',{q:i+1})})});
-  document.getElementById('all').addEventListener('click',function(){var t=[].map.call(document.querySelectorAll('.q span'),function(s,i){return (i+1)+'. '+s.textContent}).join('\n');copy('SNSの発信について、教えてください。\n'+t,this);window.fxTrack&&fxTrack('SnsCopyQuestion',{q:'all'})});
+  document.getElementById('all').addEventListener('click',function(){var t=[].map.call(document.querySelectorAll('.q span'),function(s,i){return (i+1)+'. '+s.textContent}).join('\n');copy('SNSでの発信について、教えてください。\n'+t,this);window.fxTrack&&fxTrack('SnsCopyQuestion',{q:'all'})});
+  [].forEach.call(document.querySelectorAll('details'),function(d,i){d.addEventListener('toggle',function(){if(d.open&&window.fxTrack)fxTrack('SnsOpen',{i:i})})});
   var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');
     [].forEach.call(e.target.querySelectorAll('[data-n]'),function(el){if(el.dataset.d)return;el.dataset.d=1;var to=+el.dataset.n,t0=performance.now();(function f(t){var p=Math.min(1,(t-t0)/900);el.textContent=Math.round(to*p);if(p<1)requestAnimationFrame(f)})(t0)});
     io.unobserve(e.target)}})},{threshold:.15}):null;
-  [].forEach.call(document.querySelectorAll('.fade'),function(s){io?io.observe(s):s.classList.add('in')});
-  if(!io)[].forEach.call(document.querySelectorAll('[data-n]'),function(el){el.textContent=el.dataset.n});
+  if(io)[].forEach.call(document.querySelectorAll('.fade'),function(s){io.observe(s)});
 })();
 </script>
 </body>
