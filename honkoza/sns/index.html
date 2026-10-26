@@ -42,9 +42,14 @@ figcaption{font-size:15px;color:var(--sub);margin-top:6px}
 .future .big{font-size:24px;font-weight:900;color:var(--navy);line-height:1.5;margin:4px 0 10px}
 .future ul{margin:0;padding-left:1.2em}
 .future li{margin:4px 0;font-weight:700}
-.minipro{display:flex;gap:14px;align-items:center;background:var(--white);border-radius:18px;padding:12px;margin-top:14px}
-.minipro img{width:44%;max-width:240px;height:auto;border-radius:12px;border:2px solid var(--line)}
-.minipro p{margin:0;font-size:16px;font-weight:700}
+.mock{background:var(--white);border-radius:20px;padding:16px;margin-top:14px;border:2px solid var(--line)}
+.mtop{display:flex;gap:12px;align-items:center}
+.mav{flex:none;width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--gold));color:#fff;font-weight:900;font-size:24px;display:flex;align-items:center;justify-content:center}
+.mname{font-weight:900;color:var(--navy);font-size:18px;line-height:1.4}
+.muser{font-size:14px;color:var(--sub)}
+.mbio{white-space:pre-line;margin:10px 0;font-size:16px;font-weight:700;line-height:1.7}
+.mpost{background:var(--soft);border-radius:14px;padding:10px 12px;font-size:16px;font-weight:600}
+.mpost b{display:block;color:var(--teal);font-size:14px}
 .okline{background:var(--gold-l);border-radius:14px;padding:8px 14px;font-weight:800;margin:8px 0}
 .check{list-style:none;padding:0;margin:10px 0}
 .check li{display:flex;gap:12px;align-items:flex-start;padding:12px 4px;border-bottom:1px dashed var(--line);cursor:pointer}
@@ -62,7 +67,8 @@ figcaption{font-size:15px;color:var(--sub);margin-top:6px}
 @keyframes pop{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
 .bring{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
 .bring span{background:var(--soft);border-radius:999px;padding:4px 14px;font-weight:800;font-size:16px}
-.q{background:var(--soft);border-radius:16px;padding:12px 14px;margin:8px 0}
+.qlist{background:var(--soft);border-radius:16px;padding:12px 14px 12px 2.2em;margin:10px 0;font-weight:700;font-size:17px}
+.qlist li{margin:6px 0}
 .q span{display:block;font-weight:700}
 .q button,.copyall{font:inherit;font-size:15px;font-weight:900;border:0;border-radius:12px;padding:8px 14px;background:var(--teal);color:#fff;cursor:pointer;margin-top:8px}
 .q button.ok,.copyall.ok{background:var(--gold)}
@@ -160,9 +166,13 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     <li>プロフィール画像</li>
     <li>そのまま出せる投稿案が3本</li>
   </ul>
-  <div class="minipro">
-    <img src="img/f_th_profile.jpg" width="1100" height="795" alt="完成したThreadsのプロフィールの見本（森川）">
-    <p>見本は森川のThreadsです。直近30日で、78万人に読まれました。もともとのフォロワーは、そのうち413人だけ。<br>フォロワーがいなくても、知らない人に届くのがThreadsです。</p>
+  <div class="mock">
+    <div class="mtop"><div class="mav">さ</div><div><div class="mname">さとう｜共働き家庭の家計を整える係</div><div class="muser">sato_kakei</div></div></div>
+    <div class="mbio">保育園・小学生のいるご夫婦の、毎月のお金を一緒に整理します。
+難しい言葉は使いません。まずは話してみてください。
+5問でわかる、わが家のお金のタイプ診断はこちら↓</div>
+    <div class="mpost"><b>投稿案（1本目）</b>「通帳を見るのが、ちょっとこわい」そう話してくれたご夫婦が、3か月後に笑って言ったこと。</div>
+    <p class="src" style="margin:8px 0 0">見本です（名前・文は例）。あなたの「選ばれる理由」から、当日いっしょに作ります。</p>
   </div>
 </section>
 
@@ -175,30 +185,30 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   <ul class="check" id="check">
     <li data-k="1"><span class="box">✓</span><span class="t"><span>このページの「1」〜「3」をざっと読む</span><small>「当日やること」は29日に一緒に見ます。今は開かなくてOK</small></span><span class="min">5分</span></li>
     <li data-k="2"><span class="box">✓</span><span class="t"><span>Instagramのアカウントがあるか確かめる</span><small>あるなら、私用か仕事用か</small></span><span class="min">1分</span></li>
-    <li data-k="3"><span class="box">✓</span><span class="t"><span>スマホに「Threads」「Instagram」「Zoom」のアプリを入れる</span><small>アプリを入れるパスワードが分からなければ、当日でOK</small></span><span class="min">5分</span></li>
-    <li data-k="4"><span class="box">✓</span><span class="t"><span>会社のルールを確かめる相手に、すぐ下の質問を送っておく</span><small>会社員の方は会社に、代理店の方は保険会社か代理店の管理者に。返事は待たなくてOK</small></span><span class="min">3分</span></li>
+    <li data-k="3"><span class="box">✓</span><span class="t"><span>スマホに「Threads」と「Instagram」のアプリを入れる</span><small>アプリを入れるパスワードが分からなければ、当日でOK</small></span><span class="min">5分</span></li>
+    <li data-k="4"><span class="box">✓</span><span class="t"><span>会社のルールを確かめる相手に、すぐ下の質問を送っておく</span><small>会社員の方は会社に、代理店の方は保険会社か代理店の管理者に。返事は待たなくてOK。送る相手が分からなければ、相手を決めるだけでOK（29日に一緒に確認します）</small></span><span class="min">3分</span></li>
     <li data-k="5"><span class="box">✓</span><span class="t"><span>プロフィール画像の候補を1枚、スマホに保存する</span><small>自分の写真か、週3の画像</small></span><span class="min">3分</span></li>
     <li data-k="6"><span class="box">✓</span><span class="t"><span>週1の「選ばれる理由」3つを、スマホのメモに入れる</span><small><a href="https://kinyu-ai-college.vibely.site/courses/f894dc91-b003-45f0-9ce8-123ff4a66792/chapters/bfac9e69-cbfa-487b-a86f-be50befdae18" onclick="event.stopPropagation()">週1の章を開く</a></small></span><span class="min">2分</span></li>
     <li data-k="7"><span class="box">✓</span><span class="t"><span>私用と分けたい人だけ：仕事用のメールアドレスを控えておく</span></span><span class="min">1分</span></li>
   </ul>
   <div class="done" id="done">準備ばっちりです。29日、一緒に作りましょう！</div>
   <h3>当日の持ち物</h3>
-  <div class="bring"><span>📱 スマホ（充電しておく）</span><span>🔑 Instagramのパスワード（ある人）</span><span>💻 Zoomに入るパソコン</span></div>
+  <div class="bring"><span>📱 スマホ（充電しておく）</span><span>🔑 Instagramのパスワード（ある人）</span><span>💻 Zoomに入るパソコン（ない人はスマホでOK）</span></div>
   <p class="src">チェックは、このスマホ（パソコン）の中だけに残ります。</p>
 </section>
 
 <section id="rule" class="fade">
   <h2><span class="no">Q</span>準備の4番：会社に送る質問</h2>
   <p>お金のしくみや考え方の話は、多くの会社で発信できます。ただ、商品を勧めたり比べたりすると「募集」になり、承認が要ります。代理店の方も、委託先の保険会社のルールに従います。</p>
-  <p>下のボタンで、5つの質問をまとめてコピーして、そのまま送れます。</p>
+  <p>下のボタンで、5つの質問をまとめてコピーして、メールやLINEにそのまま貼れます。</p>
   <button class="copyall" id="all">5つの質問をまとめてコピー</button>
-  <div id="qs">
-    <div class="q"><span>個人のSNS（Threads・note）で、お金や保険の一般的なしくみを発信してもよいですか。届け出や事前の確認は要りますか。</span><button>この1問だけコピー</button></div>
-    <div class="q"><span>プロフィールに、会社名・募集人であること・資格を書いてもよいですか。書いてはいけない言い方はありますか。</span><button>この1問だけコピー</button></div>
-    <div class="q"><span>商品名や保険料に触れたい場合、事前承認（募集文書の番号）の手続きはどうなっていますか。</span><button>この1問だけコピー</button></div>
-    <div class="q"><span>プロフィールに相談の窓口（診断ページ・LINE公式）を置いてもよいですか。お客様とのやりとりに、記録や保存のルールはありますか。</span><button>この1問だけコピー</button></div>
-    <div class="q"><span>SNS運用の社内規程やマニュアルがあれば、いただけますか。</span><button>この1問だけコピー</button></div>
-  </div>
+  <ol class="qlist" id="qs">
+    <li>個人のSNS（Threads・note）で、お金や保険の一般的なしくみを発信してもよいですか。届け出や事前の確認は要りますか。</li>
+    <li>プロフィールに、会社名・募集人であること・資格を書いてもよいですか。書いてはいけない言い方はありますか。</li>
+    <li>商品名や保険料に触れたい場合、事前承認（募集文書の番号）の手続きはどうなっていますか。</li>
+    <li>プロフィールに相談の窓口（診断ページ・LINE公式）を置いてもよいですか。お客様とのやりとりに、記録や保存のルールはありますか。</li>
+    <li>SNS運用の社内規程やマニュアルがあれば、いただけますか。</li>
+  </ol>
   <div class="robo"><img src="img/mascot_invite.webp" width="64" height="64" alt=""><p>返事が来る前でも、29日はアカウント作りとプロフィールまで進められます。投稿は、確かめてからで大丈夫です。</p></div>
 </section>
 
@@ -226,7 +236,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     <div class="stat"><strong><span data-n="78">78</span>万人</strong><span class="l">に届いた</span></div>
     <div class="stat"><strong>約<span data-n="8">8</span>割</strong><span class="l">が35〜64歳</span></div>
   </div>
-  <figure><img src="img/f_th_age.jpg" width="1100" height="921" alt="Threadsのインサイト。読んだ人の年齢は35〜64歳が約8割"><figcaption>読んだ人の年齢。保険・お金の相談をする年代と、ほぼ重なります。</figcaption></figure>
+  <figure><img src="img/f_th_age.jpg" width="1100" height="369" alt="Threadsのインサイト。読んだ人の年齢は35〜64歳が約8割"><figcaption>読んだ人の年齢（35〜64歳の部分）。保険・お金の相談をする年代と、ほぼ重なります。</figcaption></figure>
   <p>読んだ78万人のうち、もともとのフォロワーは413人。<b>ほとんどが、まだ森川を知らない人</b>です。</p>
   <h3>でも、弱みもあります</h3>
   <p>読まれる数のわりに、フォロワーは30日で11人しか増えていません。投稿の中のリンクも、ほとんど押されていません。Threadsは「読んで、反応して、流れていく」場所だからです。</p>
@@ -288,7 +298,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
         <figure><img src="img/f_ig_phone.jpg" width="700" height="821" alt="Instagramの登録画面。携帯番号の入力と、メールアドレスで登録のボタン"><figcaption>②仕事用のメールで作るなら「メールアドレスで登録」</figcaption></figure>
         <figure><img src="img/f_ig_email.jpg" width="700" height="616" alt="メールアドレスの入力画面"><figcaption>③メールアドレスを入れて「次へ」</figcaption></figure>
       </div>
-      <figure><img src="img/f_th_login.jpg" width="700" height="670" alt="Threadsの入口。Instagramでログインのボタン"><figcaption>⑥「Instagramでログイン」。メールで始める画面が出たら、それでも大丈夫です。</figcaption></figure>
+      <figure><img src="img/f_th_login.jpg" width="700" height="720" alt="Threadsの入口。Instagramでログインのボタン"><figcaption>①「Instagramでログイン」（手順の6番）。メールで始める画面が出たら、それでも大丈夫です。</figcaption></figure>
       <div class="ng"><b>つまずきやすい所</b><br>・確認コードが届かない → 1分待って「再送信」。それでもダメならメールで登録し直す<br>・作りたてで、たくさんフォローしたり続けて投稿したりすると、一時的に止められることがあります。初日はプロフィールを整えて、投稿は1本まで</div>
     </div>
   </details>
@@ -317,7 +327,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   <div class="kicker">次の作業会</div>
   <div class="big">10月29日（木）20:00〜21:30</div>
   <p>Threadsを作って、プロフィールを整えて、投稿案を3本。出せる人は、自己紹介を1本。</p>
-  <p class="src">困ったら、スマホの画面をZoomで見せてもらいながら一緒にやります。</p>
+  <p class="src">スマホでThreadsを操作しながら、パソコンのZoomで一緒に見ます。</p>
 </section>
 
 <footer>※本教材は情報提供であり、活用の判断と結果は受講生ご本人の責任です。所属会社の規程が常に本教材より優先します。<br>金融AIカレッジ 本講座1期</footer>
@@ -335,8 +345,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   function copy(text,btn){var o=btn.textContent;var done=function(){btn.textContent='コピーしました';btn.classList.add('ok');setTimeout(function(){btn.textContent=o;btn.classList.remove('ok')},1500)};
     function fb(){var t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(e){}t.remove();done()}
     if(navigator.clipboard){navigator.clipboard.writeText(text).then(done,fb)}else fb()}
-  [].forEach.call(document.querySelectorAll('.q button'),function(b,i){b.addEventListener('click',function(){copy(b.previousElementSibling.textContent,b);window.fxTrack&&fxTrack('SnsCopyQuestion',{q:i+1})})});
-  document.getElementById('all').addEventListener('click',function(){var t=[].map.call(document.querySelectorAll('.q span'),function(s,i){return (i+1)+'. '+s.textContent}).join('\n');copy('SNSでの発信について、教えてください。\n'+t,this);window.fxTrack&&fxTrack('SnsCopyQuestion',{q:'all'})});
+    document.getElementById('all').addEventListener('click',function(){var t=[].map.call(document.querySelectorAll('#qs li'),function(s,i){return (i+1)+'. '+s.textContent}).join('\n');copy('SNSでの発信について、教えてください。\n'+t,this);window.fxTrack&&fxTrack('SnsCopyQuestion',{q:'all'})});
   [].forEach.call(document.querySelectorAll('details'),function(d,i){d.addEventListener('toggle',function(){if(d.open&&window.fxTrack)fxTrack('SnsOpen',{i:i})})});
   var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');
     [].forEach.call(e.target.querySelectorAll('[data-n]'),function(el){if(el.dataset.d)return;el.dataset.d=1;var to=+el.dataset.n,t0=performance.now();(function f(t){var p=Math.min(1,(t-t0)/900);el.textContent=Math.round(to*p);if(p<1)requestAnimationFrame(f)})(t0)});
