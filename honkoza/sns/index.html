@@ -84,6 +84,12 @@ figcaption{font-size:15px;color:var(--sub);margin-top:6px}
 .stat{background:var(--soft);border-radius:18px;padding:14px 6px;text-align:center}
 .stat strong{display:block;font-size:28px;font-weight:900;color:var(--num);line-height:1.2;white-space:nowrap}
 .stat span.l{display:block;font-size:14px;color:var(--sub);font-weight:700;line-height:1.5;word-break:keep-all}
+.chal{background:var(--gold-l);border:2px dashed var(--gold);border-radius:20px;padding:16px;margin:14px 0;text-align:center}
+.chal-t{display:inline-block;background:var(--gold);color:#fff;font-weight:900;border-radius:999px;padding:4px 14px;font-size:15px}
+.chal b{display:block;font-size:20px;color:var(--navy);margin:8px 0;line-height:1.5}
+.chal-s{display:flex;justify-content:center;gap:10px;margin:6px 0 10px}
+.chal-s span{width:72px;height:72px;border-radius:50%;border:3px dashed var(--gold);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--gold-d);background:var(--white)}
+.chal small{display:block;font-size:15px;color:var(--sub);font-weight:700}
 .four{counter-reset:f;list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .four li{counter-increment:f;background:var(--gold-l);border-radius:16px;padding:12px 14px;font-weight:800}
 .four li::before{content:counter(f);display:inline-flex;width:28px;height:28px;border-radius:50%;background:var(--gold);color:#fff;align-items:center;justify-content:center;margin-right:8px;font-size:15px}
@@ -183,7 +189,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <section id="todo" class="fade">
   <h2><span class="no">✓</span>前もってやる準備（20分）</h2>
   <p class="lead">アカウント作りとプロフィール文は、作業会で一緒にやります。前もってやるのは、この7つだけです。</p>
-  <div class="okline">全部できなくても、29日は参加できます。</div>
+  <div class="okline">全部できなくても、29日は参加できます。<br>終わったら、オープンチャットで「準備できた」と教えてください。</div>
   <div class="bar"><i id="bar"></i></div>
   <div class="src" id="cnt">0 / 7</div>
   <ul class="check" id="check">
@@ -195,7 +201,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     <li data-k="6"><span class="box">✓</span><span class="t"><span>週1の「選ばれる理由」3つを、スマホのメモに入れる</span><small><a href="https://kinyu-ai-college.vibely.site/courses/f894dc91-b003-45f0-9ce8-123ff4a66792/chapters/bfac9e69-cbfa-487b-a86f-be50befdae18" onclick="event.stopPropagation()">週1の章を開く</a></small></span><span class="min">2分</span></li>
     <li data-k="7"><span class="box">✓</span><span class="t"><span>私用と分けたい人だけ：仕事用のメールアドレスを控えておく</span></span><span class="min">1分</span></li>
   </ul>
-  <div class="done" id="done">準備ばっちりです。29日、一緒に作りましょう！</div>
+  <div class="done" id="done">準備ばっちりです。オープンチャットに「準備できた！」とひと言どうぞ。29日、一緒に作りましょう！</div>
   <h3>当日の持ち物</h3>
   <div class="bring"><span>📱 スマホ（充電しておく）</span><span>🔑 Instagramのパスワード（ある人）</span><span>💻 Zoomに入るパソコン（ない人はスマホでOK）</span></div>
   <p class="src">チェックは、このスマホ（パソコン）の中だけに残ります。</p>
@@ -245,9 +251,9 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   <h3>でも、弱みもあります</h3>
   <p>読まれる数のわりに、フォロワーは30日で11人しか増えていません。投稿の中のリンクも、ほとんど押されていません。Threadsは「読んで、反応して、流れていく」場所だからです。</p>
   <figure><img src="img/f_th_insights.jpg" width="1100" height="704" alt="Threadsのインサイト。閲覧数161万、閲覧者78万、純フォロワー+11"><figcaption>読まれた数（左）は大きく、増えたフォロワー（右）は11人。</figcaption></figure>
-  <p>だから、この講座では「読まれた数」より、この4つを数えます。</p>
-  <ol class="four"><li>プロフィールを見た</li><li>リンクを押した</li><li>診断を最後までやった</li><li>LINEに登録した</li></ol>
-  <div class="robo"><img src="img/mascot_think.webp" width="64" height="64" alt=""><p>森川もまだ、この4つを伸ばしている途中です。1期のみなさんと一緒に、数字で確かめていきます。</p></div>
+  <p>だから最初は、数字を追いかけるより、出し続けることから。1期は、このチャレンジから始めます。</p>
+  <div class="chal"><span class="chal-t">3本チャレンジ</span><b>11月5日（木）までに、Threadsに3本出す</b><div class="chal-s"><span>1本目</span><span>2本目</span><span>3本目</span></div><small>出したら、投稿のリンクを<br>オープンチャットに貼ってください。<br>みんなで見に行きます👀<br><span style="display:inline-block;margin-top:6px">リンクは、投稿の下の紙飛行機マーク<br>→「リンクをコピー」</span><br>会社の確認がまだの人は、確認が取れた日からでOK。</small></div>
+  <div class="robo"><img src="img/mascot_think.webp" width="64" height="64" alt=""><p>投稿案の3本は、29日の作業会で一緒に作ります。診断ページとLINEにつなぐのは、そのあとです。</p></div>
 </section>
 
 <section id="media" class="fade">
