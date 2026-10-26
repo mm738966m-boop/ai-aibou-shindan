@@ -42,6 +42,7 @@ figcaption{font-size:15px;color:var(--sub);margin-top:6px}
 .future .big{font-size:24px;font-weight:900;color:var(--navy);line-height:1.5;margin:4px 0 10px}
 .future ul{margin:0;padding-left:1.2em}
 .future li{margin:4px 0;font-weight:700}
+.mex{margin:10px 0 0;font-weight:800;color:var(--navy);font-size:16px;background:var(--soft);border-radius:12px;padding:8px 12px}
 .mock{background:var(--white);border-radius:20px;padding:16px;margin-top:14px;border:2px solid var(--line)}
 .mtop{display:flex;gap:12px;align-items:center}
 .mav{flex:none;width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--gold));color:#fff;font-weight:900;font-size:24px;display:flex;align-items:center;justify-content:center}
@@ -120,6 +121,8 @@ ol.steps li::before{content:counter(s);position:absolute;left:0;top:8px;width:32
 footer{font-size:14px;color:var(--sub);text-align:center;margin-top:30px}
 .fade.in{animation:rise .6s ease-out}
 @keyframes rise{from{opacity:.2;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .future .when,:root:not([data-theme="light"]) .t a,:root:not([data-theme="light"]) details>summary::before{color:#5CC8C0}}
+:root[data-theme="dark"] .future .when,:root[data-theme="dark"] .t a,:root[data-theme="dark"] details>summary::before{color:#5CC8C0}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) figure img,:root:not([data-theme="light"]) .hero img,:root:not([data-theme="light"]) .minipro img{filter:brightness(.88)}}
 @media (max-width:560px){.hero h1{font-size:28px}section{padding:22px 16px}.stat strong{font-size:22px}.two,.four{grid-template-columns:1fr}.step b{min-width:96px;font-size:15px}.minipro{flex-direction:column;align-items:stretch}.minipro img{width:100%;max-width:none}}
 @media print{body{background:#fff}details{break-inside:avoid}}
@@ -172,6 +175,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 難しい言葉は使いません。まずは話してみてください。
 5問でわかる、わが家のお金のタイプ診断はこちら↓</div>
     <div class="mpost"><b>投稿案（1本目）</b>「通帳を見るのが、ちょっとこわい」そう話してくれたご夫婦が、3か月後に笑って言ったこと。</div>
+    <p class="mex">ほかの例：会社員の募集人なら「たなか｜定年後のお金を一緒に整える係」</p>
     <p class="src" style="margin:8px 0 0">見本です（名前・文は例）。あなたの「選ばれる理由」から、当日いっしょに作ります。</p>
   </div>
 </section>
@@ -186,7 +190,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     <li data-k="1"><span class="box">✓</span><span class="t"><span>このページの「1」〜「3」をざっと読む</span><small>「当日やること」は29日に一緒に見ます。今は開かなくてOK</small></span><span class="min">5分</span></li>
     <li data-k="2"><span class="box">✓</span><span class="t"><span>Instagramのアカウントがあるか確かめる</span><small>あるなら、私用か仕事用か</small></span><span class="min">1分</span></li>
     <li data-k="3"><span class="box">✓</span><span class="t"><span>スマホに「Threads」と「Instagram」のアプリを入れる</span><small>アプリを入れるパスワードが分からなければ、当日でOK</small></span><span class="min">5分</span></li>
-    <li data-k="4"><span class="box">✓</span><span class="t"><span>会社のルールを確かめる相手に、すぐ下の質問を送っておく</span><small>会社員の方は会社に、代理店の方は保険会社か代理店の管理者に。返事は待たなくてOK。送る相手が分からなければ、相手を決めるだけでOK（29日に一緒に確認します）</small></span><span class="min">3分</span></li>
+    <li data-k="4"><span class="box">✓</span><span class="t"><span>会社のルールを確かめる相手に、すぐ下の質問を送っておく</span><small>会社員は会社に、代理店は保険会社か管理者に。<br>返事は待たなくてOK。<br>相手が分からなければ、決めるだけでOK。</small></span><span class="min">3分</span></li>
     <li data-k="5"><span class="box">✓</span><span class="t"><span>プロフィール画像の候補を1枚、スマホに保存する</span><small>自分の写真か、週3の画像</small></span><span class="min">3分</span></li>
     <li data-k="6"><span class="box">✓</span><span class="t"><span>週1の「選ばれる理由」3つを、スマホのメモに入れる</span><small><a href="https://kinyu-ai-college.vibely.site/courses/f894dc91-b003-45f0-9ce8-123ff4a66792/chapters/bfac9e69-cbfa-487b-a86f-be50befdae18" onclick="event.stopPropagation()">週1の章を開く</a></small></span><span class="min">2分</span></li>
     <li data-k="7"><span class="box">✓</span><span class="t"><span>私用と分けたい人だけ：仕事用のメールアドレスを控えておく</span></span><span class="min">1分</span></li>
