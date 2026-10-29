@@ -75,6 +75,10 @@ function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp
 function fmt(t){ /* 10月21日(水) 20:00〜21:30 → 10月21日（水）/ 20:00〜21:30 */
   var m=t.match(/^(.+?)\s*(\d{1,2}:\d{2}.*)$/); return m?[m[1].replace('(','（').replace(')','）'),m[2]]:[t,''];
 }
+/* 後半の日程は前半の締切（11/15 12:00）まで隠す（2026-10-29）。UTAGEの日程には非公開の設定がないため。確認は ?fx_now=2026-11-15T13:00:00%2B09:00 */
+var HOLD=[{d:/^(11月29日|12月1日|12月2日)/,until:'2026-11-15T12:00:00+09:00'}];
+var NOW=Date.now();try{var qn=new URLSearchParams(location.search).get('fx_now');if(qn)NOW=Date.parse(qn)}catch(e){}
+function held(t){return HOLD.some(function(h){return h.d.test(t)&&NOW<Date.parse(h.until)})}
 function buildDates(){
   var tbl=document.querySelector('.fx-root table.table-borderless');if(!tbl||document.getElementById('fx-dates'))return;
   var rows=[].slice.call(tbl.querySelectorAll('tr')).filter(function(tr){return tr.querySelector('input[type=radio]')});
@@ -84,6 +88,7 @@ function buildDates(){
     var r=tr.querySelector('input[type=radio]'),tds=tr.querySelectorAll('td');
     function own(td){var t='';if(!td)return t;[].forEach.call(td.childNodes,function(n){if(n.nodeType===3)t+=n.textContent;else if(n.nodeType===1&&!n.classList.contains('detail')&&!n.classList.contains('d-md-none'))t+=n.textContent});return t.replace(/\s+/g,' ').trim()}
     var txt=own(tds[0]||tr),place=own(tds[1]),rest=(own(tds[2]).match(/\d+/)||[''])[0];
+    if(held(txt))return;
     var f=fmt(txt),full=r.disabled||/満席|0$/.test(rest)&&rest==='0';
     var b=document.createElement('button');b.type='button';b.className='fx-date'+(full?' full':'')+(r.checked?' on':'');
     b.innerHTML='<i></i><span><span class="fx-d">'+esc(f[0])+'</span>'+(f[1]?' <b class="fx-t">'+esc(f[1])+'</b>':'')+'<small>'+esc(place||'オンライン（Zoom）')+'・本編60分＋質疑30分</small></span>'+(rest&&!full?'<em>残り'+esc(rest)+'席</em>':(full?'<em>満席</em>':''));
