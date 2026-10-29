@@ -570,6 +570,7 @@ summary:before{background:var(--deep)}summary:after{border-color:var(--deep)}det
 <script>
 /* ===== 開催日程（ここだけ書き換えれば、ページ全体の日程表示が変わる） =====
    close = 申込の締切（UTAGEのイベント締切＝各回の当日12:00）。締切を過ぎた回は自動で消える。
+   show = この時刻までは表に出さない（前半の募集中に後半の日程を並べないため）。show のない回はHTMLにも直書きしてある。
    すべての回が締切を過ぎると「次回の日程は準備中」表示に切り替わり、ボタンは waitlist に向く。
    次回を開くときは sessions を新しい回に差し替え、register を新イベントのURLにする。
    URLは変わらないので、広告・fulfull.jpの記事・診断サイトからのリンクはそのまま使える。 */
@@ -578,14 +579,19 @@ var SEMINAR = {
   sessions: [
     { day: '11月11日（水）20:00〜21:30', short: '11/11（水）夜', close: '2026-11-11T12:00:00+09:00' },
     { day: '11月13日（金）15:00〜16:30', short: '11/13（金）昼', close: '2026-11-13T12:00:00+09:00' },
-    { day: '11月15日（日）14:00〜15:30', short: '11/15（日）昼', close: '2026-11-15T12:00:00+09:00' }
+    { day: '11月15日（日）14:00〜15:30', short: '11/15（日）昼', close: '2026-11-15T12:00:00+09:00' },
+    // ↓ 後半（月末の山）。show の時刻（前半の最後の締切）までは表に出さない
+    { day: '11月29日（日）20:00〜21:30', short: '11/29（日）夜', close: '2026-11-29T12:00:00+09:00', show: '2026-11-15T12:00:00+09:00' },
+    { day: '12月1日（火）15:00〜16:30',  short: '12/1（火）昼',  close: '2026-12-01T12:00:00+09:00', show: '2026-11-15T12:00:00+09:00' },
+    { day: '12月2日（水）20:00〜21:30',  short: '12/2（水）夜',  close: '2026-12-02T12:00:00+09:00', show: '2026-11-15T12:00:00+09:00' }
   ],
   waitlist: { url: '../', label: 'AI相棒診断を受けてみる', small: '無料・5問・約1分' }
 };
 (function(){
   var S = SEMINAR, now = Date.now();
   var q = new URLSearchParams(location.search); var t = q.get('sem_now'); if (t) now = Date.parse(t); // 表示確認用
-  var open = S.sessions.filter(function(x){ return Date.parse(x.close) > now; });
+  var open = S.sessions.filter(function(x){ return (!x.show || Date.parse(x.show) <= now) && Date.parse(x.close) > now; });
+  var base = S.sessions.filter(function(x){ return !x.show; });   // HTMLに直書きしてある回
   var marks = ['①','②','③','④','⑤','⑥'];
   var $ = function(id){ return document.getElementById(id); };
   var links = document.querySelectorAll('.cta-link');
@@ -594,7 +600,7 @@ var SEMINAR = {
   try { fxr = window.fxRef || sessionStorage.getItem('fx_ref') || ''; } catch(e) {}
   var regUrl = S.register + (fxr && fxr !== 'direct' ? '?ref=' + encodeURIComponent(fxr) : '');
   links.forEach(function(a){ a.href = open.length ? regUrl : S.waitlist.url; });
-  if (open.length === S.sessions.length && !t) return;           // 全回が受付中なら、書かれたままでよい
+  if (!t && open.length === base.length && open.every(function(x,i){ return x === base[i]; })) return; // 直書きの回がそのまま受付中なら、書かれたままでよい
   if (open.length) {
     var n = open.length;
     $('sem-hero-date').textContent = open.map(function(x){ return x.short; }).join('・') + '　Zoom・参加無料';
