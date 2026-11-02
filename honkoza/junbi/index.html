@@ -46,14 +46,14 @@ figure img{width:100%;max-width:100%;height:auto;border-radius:16px;border:2px s
 .check li{display:flex;gap:12px;align-items:flex-start;padding:12px 4px;border-bottom:1px dashed var(--line);cursor:pointer;border-radius:10px}
 .check li:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 .check li:last-child{border-bottom:0}
-.opt-l{font-size:13px;color:var(--gold-d);background:var(--gold-l);border-radius:999px;padding:1px 8px;margin-right:6px;font-weight:800}
+.opt-l{font-size:14px;color:var(--gold-d);background:var(--gold-l);border-radius:999px;padding:1px 8px;margin-right:6px;font-weight:800}
 .box{flex:none;width:30px;height:30px;border-radius:9px;border:3px solid var(--teal);margin-top:3px;display:flex;align-items:center;justify-content:center;color:transparent;font-weight:900;transition:.2s}
 .check li.on .box{background:var(--teal);color:#fff;animation:pop .35s}
 .check li.on .tt{color:var(--sub);text-decoration:line-through}
 .t{min-width:0}
 .tt{display:block;font-weight:800}
 .t small{display:block;font-size:15px;color:var(--sub);font-weight:600;margin-top:2px}
-.min{display:inline-block;font-size:13px;color:var(--sub);font-weight:800;background:var(--soft);border-radius:999px;padding:0 10px;margin-top:4px}
+.min{display:inline-block;font-size:14px;color:var(--sub);font-weight:800;background:var(--soft);border-radius:999px;padding:0 10px;margin-top:4px}
 .track{position:relative;margin:34px 0 4px}
 .bar{height:14px;background:var(--soft);border-radius:999px;overflow:hidden}
 .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--gold));transition:width .6s}
@@ -86,7 +86,7 @@ details.ex p{margin:8px 0 0;font-weight:600}
 .coming li{margin:6px 0;font-weight:700}
 .foot{text-align:center;color:var(--sub);font-size:14px;margin-top:28px}
 .foot img{width:96px;height:96px}
-.small{font-size:14px;color:var(--sub)}
+.small{font-size:15px;color:var(--sub)}
 @media (max-width:420px){.hero h1{font-size:27px}section{padding:20px 16px}section h2{font-size:21px}}
 @media (prefers-reduced-motion:reduce){.js section{opacity:1;transform:none;transition:none}.hero .robo-top,.walker.go{animation:none}}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
@@ -127,7 +127,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   <h1>1月14日、最初の夜から<br>すぐ手が動くように</h1>
   <p>開講は 2027年1月14日（木）20:00 です。</p>
   <p>やることは4つ、全部で1時間ほど。</p>
-  <p>新しいことは覚えません。</p>
+  <p>むずかしい操作はありません。</p>
   <p>道具をそろえておくだけです。</p>
 </div>
 
@@ -138,7 +138,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   <h2>最初の夜は、あなたが「選ばれる理由」を言葉にします</h2>
   <p>Claudeに質問してもらいながら、お客様があなたを選ぶ理由を3つ、短い言葉にするところから始めます。</p>
   <p>ここで作った言葉が、このあと作るプロフィールや記事の土台になります。</p>
-  <p>Claudeがあなたのことを先に知っていると、その夜のうちに3つそろいます。この準備は、そのためのものです。</p>
+  <p>Claudeがあなたのことを先に知っていると、その夜のうちに3つそろいやすくなります。この準備は、そのためのものです。</p>
   <div class="note">3か月後の卒業のときには、この2つがそろっている形を目指します。<br>・朝5分・面談のあと2分の型で、AIが「調べる・書く・整える・送る」を受け持っている<br>・あなたの名前で、お客様向けの診断ページが公開されている</div>
 </section>
 
@@ -151,12 +151,21 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 </section>
 
 <section>
+  <span class="tag">あなたの道順</span>
+  <h2>どこからやる？</h2>
+  <div class="two">
+    <div class="card"><b>ChatGPTやGeminiを使ってきた人</b><p>1 → 2-A → 2-B → 3 → 4</p></div>
+    <div class="card"><b>AIをほとんど使ってこなかった人</b><p>1 → 2-B → 3 → 4（2-Aは飛ばします）</p></div>
+  </div>
+</section>
+
+<section>
   <span class="tag">チェック表</span>
   <h2>終わったら、タップして印を</h2>
   <ul class="check" id="check">
-    <li data-k="a" role="checkbox" aria-checked="false" tabindex="0"><span class="box" aria-hidden="true">✓</span><span class="t"><span class="tt">1　Claudeを開く</span><small>アカウントを作って、パソコンとスマホにアプリを入れる</small><span class="min">15分</span></span></li>
-    <li data-k="b" role="checkbox" aria-checked="false" tabindex="0"><span class="box" aria-hidden="true">✓</span><span class="t"><span class="tt"><span class="opt-l">AIを使ってきた人</span>2　いままでの記憶を引っ越す</span><small>ChatGPTやGeminiを使ってこなかった人は、飛ばしてOK</small><span class="min">15分</span></span></li>
-    <li data-k="i" role="checkbox" aria-checked="false" tabindex="0"><span class="box" aria-hidden="true">✓</span><span class="t"><span class="tt">2のつづき　Claudeにインタビューしてもらう</span><small>全員。質問に答えるだけ</small><span class="min">10分</span></span></li>
+    <li data-k="a" role="checkbox" aria-checked="false" tabindex="0"><span class="box" aria-hidden="true">✓</span><span class="t"><span class="tt">1　Claudeを開く</span><small>アカウントを作って、パソコンとスマホにアプリを入れる（Proはおすすめ）</small><span class="min">15分</span></span></li>
+    <li data-k="b" role="checkbox" aria-checked="false" tabindex="0"><span class="box" aria-hidden="true">✓</span><span class="t"><span class="tt"><span class="opt-l">AIを使ってきた人</span>2-A　いままでの記憶を引っ越す</span><small>ChatGPTやGeminiを使ってこなかった人は、飛ばしてOK</small><span class="min">15分</span></span></li>
+    <li data-k="i" role="checkbox" aria-checked="false" tabindex="0"><span class="box" aria-hidden="true">✓</span><span class="t"><span class="tt">2-B　Claudeにインタビューしてもらう</span><small>全員。質問に答えるだけ</small><span class="min">10分</span></span></li>
     <li data-k="c" role="checkbox" aria-checked="false" tabindex="0"><span class="box" aria-hidden="true">✓</span><span class="t"><span class="tt">3　「講座メモ」を1つ作る</span><span class="min">5分</span></span></li>
     <li data-k="d" role="checkbox" aria-checked="false" tabindex="0"><span class="box" aria-hidden="true">✓</span><span class="t"><span class="tt">4　ふだんの1週間を棚卸し</span><small>6行の数字を講座メモに</small><span class="min">15分</span></span></li>
   </ul>
@@ -183,6 +192,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     <li>届いたメールのリンクを押すか、届いたコードを入れます（電話番号の確認が出ることもあります）</li>
     <li>名前などを入れて、入力欄のある画面が出たら、成功です</li>
   </ol>
+  <p class="small">有料の「Pro」には、Claudeの画面に出る「アップグレード」から切り替えられます。分からなければ、開講後に一緒にやっても大丈夫です。</p>
   <h3>パソコンとスマホに、アプリを入れる</h3>
   <ol class="steps" start="5">
     <li>パソコンに「Claude」のアプリを入れます（WindowsでもMacでも入ります）</li>
@@ -196,10 +206,10 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 </section>
 
 <section id="s2">
-  <span class="tag">ChatGPTやGeminiを使ってきた人は、ここが大事</span>
-  <h2><span class="no">2</span>いままでの記憶を引っ越す</h2>
+  <h2><span class="no">2</span>Claudeに、あなたを知ってもらう</h2>
+  <h3>2-A　いままでの記憶を引っ越す（AIを使ってきた人）</h3>
   <p>ChatGPTやGeminiは、あなたの仕事や好みを覚えています。それをClaudeに移しておくと、Claudeが最初から「あなたのこと」を分かった状態で話せます。</p>
-  <p>使ってこなかった人は、下の「インタビュー」まで飛ばしてください。</p>
+  <p>使ってこなかった人は、下の「2-B」まで飛ばしてください。</p>
   <p>Claudeの左下の名前 →「設定」→「メモリ」を開き、「他のAIプロバイダーからメモリをインポート」の「インポートを開始」を押します。</p>
   <figure><img src="img/kit_cl_memory_setting.png" alt="Claudeの設定のメモリ画面。インポートを開始を押す" width="895" height="487" loading="lazy"></figure>
   <p>次の画面が出ます。①の灰色の枠の中は英語の文ですが、そのままで大丈夫です。</p>
@@ -213,12 +223,12 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   <figure><img src="img/kit_cl_memory_import.png" alt="メモリをClaudeにインポートする画面。①コピー、②貼る、③メモリに追加" width="1176" height="1029" loading="lazy"></figure>
   <p class="small">プランや時期によって、画面の名前が少し違ったり、この項目が出なかったりすることがあります。そのときは写真を撮って送ってください。開講後に一緒にやっても大丈夫です。</p>
 
-  <h3 id="interview">2のつづき（全員）　Claudeにインタビューしてもらう</h3>
+  <h3 id="interview">2-B　Claudeにインタビューしてもらう（全員）</h3>
   <p>仕上げに、Claudeのほうからあなたに質問してもらいます。</p>
   <p>下の文を「コピー」して、Claudeの入力欄に貼って送るだけです。あとは、質問に思ったまま答えていきます。</p>
   <div class="q"><b>インタビューのお願い</b><span id="q1">はじめまして。これから仕事の相棒になってもらいたいので、まず私のことを知ってください。
 私の仕事、ふだんの1週間の流れ、いま手間に感じていることについて、1問ずつ質問してください。私が答えたら、次の質問へ進んでください。
-5〜7問たったら、分かったことを短くまとめて、覚えておいてください。
+5〜7問聞いたら、分かったことを短くまとめて、覚えておいてください。
 私の強みや「選ばれる理由」は、あとで別に考えるので、今日は聞かなくて大丈夫です。</span><button type="button" data-copy="q1">コピー</button></div>
   <p>答えには、お客様のお名前は入れずに「50代のご夫婦」のように書けば十分です。</p>
   <p>最後のまとめに違うところがあれば、「ここは違って、本当は◯◯です」と返すだけで直ります。</p>
@@ -294,7 +304,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     <div class="card"><b>チャット＝相談相手</b><p>話しながら考える、文章を作る。できた答えは、自分でコピーして使います。</p></div>
     <div class="card"><b>コード＝作業する人</b><p>パソコンの中で、実際に手を動かします。ファイルを作る、ページを公開する、毎朝の作業を回す、まで。</p></div>
   </div>
-  <p>この講座では、<b>基本はコードで大丈夫</b>です。コードの中でも、相談や文章づくりはそのままできます。</p>
+  <p>この講座では、<b>基本はコードで大丈夫</b>です。名前は「コード」ですが、プログラミングの知識は要りません。ふだんの言葉で頼むだけです。相談や文章づくりも、コードの中でそのままできます。</p>
   <p>チャットは、スマホで外から相談したいときに使います。</p>
   <p class="small">コードは、パソコンのClaudeアプリの上のほうにある「Code」から開きます（Proから使えます）。</p>
 
@@ -318,7 +328,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     <li>慣れてきたら「ファイルの変更は任せる」（Accept edits）や「自動」（Auto）に</li>
   </ul>
   <p>どのモードでも、お金の支払い・メールの送信・何かを消す作業は、自分の目で確かめてから進めます。</p>
-  <p class="small">ボタンの名前は、アプリの更新で少し変わることがあります。「自動」はプランによって出てこないこともあります。</p>
+  <p class="small">2026年11月時点の画面で書いています。ボタンの名前は、アプリの更新で少し変わることがあります。「自動」はプランによって出てこないこともあります。</p>
 </section>
 
 <section>
@@ -336,7 +346,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <section>
   <span class="tag">困ったら</span>
   <h2>画面の写真を送ってください</h2>
-  <p>うまく進まないときは、画面の写真を撮って、このページのリンクが届いたメールにそのまま返信してください。</p>
+  <p>うまく進まないときは、画面の写真を撮って、このページのリンクが届いたメールにそのまま返信してください。お客様のお名前などが写っていたら、そこは隠してから送ってください。</p>
   <p>LINEのほうが楽な人は、こちらからどうぞ。</p>
   <a class="go-btn line" href="https://lin.ee/7Pil31t" target="_blank" rel="noopener" onclick="fxTrack('LineTap')">本講座の公式LINEを開く<small>開いたら、写真を送ってください</small></a>
   <p>森川か運営スタッフがお返事します。</p>
@@ -382,6 +392,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     fxTrack('JunbiCopy',{q:b.dataset.copy});
   })});
   var els=document.querySelectorAll('section');
+  setTimeout(function(){els.forEach(function(e){e.classList.add('on')})},4000);
   if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on')});return}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.1});
   els.forEach(function(e){io.observe(e)});
