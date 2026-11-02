@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>開講までの準備｜本講座2期 週0</title>
+<meta property="og:title" content="開講までの準備｜本講座2期 週0">
+<meta property="og:description" content="1月14日にすぐ手が動くように。やることは3つ、約40分です。">
+<meta property="og:image" content="https://mm738966m-boop.github.io/ai-aibou-shindan/honkoza/junbi/img/honka_B00_setup.png">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F4FAF8;--white:#fff;--soft:#E3F3EE;--line:#C9E2DB;--navy:#0F4A40;--ink:#17332D;--sub:#44605A;--teal:#0E7C86;--num:#0E7C86;--gold:#D9A441;--gold-d:#8A6414;--gold-l:#FBF4E3;--dot:#D5E8E3;--btn:#06C755}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#0F2320;--white:#16302B;--soft:#1C3A34;--line:#2B5049;--navy:#D5F0E8;--ink:#E6F3EF;--sub:#A8C6BF;--num:#5FD0D6;--gold-l:#3A3220;--gold-d:#F0C870;--dot:#1E3833;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#0F2320;--white:#16302B;--soft:#1C3A34;--line:#2B5049;--navy:#D5F0E8;--ink:#E6F3EF;--sub:#A8C6BF;--num:#5FD0D6;--gold-l:#3A3220;--gold-d:#F0C870;--dot:#1E3833;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);background-image:radial-gradient(var(--dot) 1.6px,transparent 1.6px);background-size:28px 28px;color:var(--ink);font-family:"M PLUS Rounded 1c","Hiragino Maru Gothic ProN",sans-serif;font-weight:500;font-size:18px;line-height:1.85;text-wrap:pretty}
+.wrap{max-width:760px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-right,0px)) 80px max(16px,env(safe-area-inset-left,0px))}
+h1,h2,h3{font-weight:900;color:var(--navy);line-height:1.4;word-break:auto-phrase;text-wrap:balance}
+p{margin:0 0 10px}
+.hero{text-align:center;padding:32px 0 8px}
+.kicker{display:inline-block;background:var(--gold-l);color:var(--ink);border-radius:999px;padding:4px 16px;font-weight:800;font-size:15px}
+.hero h1{font-size:32px;margin:12px 0 8px}
+.hero p{color:var(--sub);font-weight:700}
+.hero .robo-top{width:120px;height:120px;margin:4px auto 0;display:block;animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-6px)}}
+section{background:var(--white);border:2px solid var(--line);border-radius:28px;padding:22px 20px;margin:18px 0;opacity:0;transform:translateY(16px);transition:.6s}
+section.on{opacity:1;transform:none}
+section h2{font-size:24px;margin:0 0 10px;display:flex;gap:10px;align-items:center}
+section h2 .no{flex:none;width:40px;height:40px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px}
+.tag{display:inline-block;font-size:14px;font-weight:800;color:var(--gold-d);background:var(--gold-l);border-radius:999px;padding:2px 12px;margin-bottom:8px}
+figure{margin:14px 0}
+figure img{width:100%;max-width:100%;height:auto;border-radius:16px;border:2px solid var(--line);background:#fff}
+figcaption{font-size:15px;color:var(--sub);margin-top:6px}
+.robo{display:flex;gap:14px;align-items:flex-start;background:var(--soft);border-radius:20px;padding:14px 16px;margin:14px 0}
+.robo img{width:60px;height:60px;flex:none}
+.robo p{margin:0;font-weight:700}
+.check{list-style:none;padding:0;margin:10px 0}
+.check li{display:flex;gap:12px;align-items:flex-start;padding:12px 4px;border-bottom:1px dashed var(--line);cursor:pointer}
+.check li:last-child{border-bottom:0}
+.box{flex:none;width:30px;height:30px;border-radius:9px;border:3px solid var(--teal);margin-top:3px;display:flex;align-items:center;justify-content:center;color:transparent;font-weight:900;transition:.2s}
+.check li.on .box{background:var(--teal);color:#fff}
+.check li.on .t>span:first-child{color:var(--sub);text-decoration:line-through}
+.t{min-width:0}
+.t small{display:block;font-size:15px;color:var(--sub);font-weight:600;margin-top:2px}
+.min{flex:none;margin-left:auto;font-size:14px;color:var(--sub);font-weight:800;background:var(--soft);border-radius:999px;padding:2px 10px;margin-top:4px;white-space:nowrap}
+.bar{height:14px;background:var(--soft);border-radius:999px;overflow:hidden;margin:6px 0 2px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--gold));transition:width .5s}
+.done{display:none;text-align:center;font-weight:900;color:var(--teal);font-size:20px;margin-top:10px}
+.done.show{display:block;animation:pop .5s}
+@keyframes pop{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
+ol.steps{padding-left:1.4em;margin:8px 0 12px}
+ol.steps li{margin:6px 0;font-weight:700}
+.url{display:block;background:var(--soft);border-radius:12px;padding:8px 12px;font-weight:800;color:var(--teal);word-break:break-all;margin:6px 0}
+.q{background:var(--soft);border-radius:16px;padding:12px 14px;margin:10px 0}
+.q b{display:block;color:var(--teal);font-size:15px}
+.q span{display:block;font-weight:700}
+.q button{font:inherit;font-size:15px;font-weight:900;border:0;border-radius:12px;padding:8px 14px;background:var(--teal);color:#fff;cursor:pointer;margin-top:8px}
+.q button.ok{background:var(--gold)}
+.tbl{overflow-x:auto;margin:10px 0}
+table{width:100%;border-collapse:collapse;font-size:16px}
+th,td{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:top}
+th{background:var(--soft);color:var(--navy);font-weight:900}
+td:last-child{white-space:nowrap;font-weight:800;color:var(--num)}
+.note{background:var(--gold-l);border-radius:16px;padding:12px 16px;font-weight:700}
+.coming li{margin:6px 0;font-weight:700}
+.foot{text-align:center;color:var(--sub);font-size:14px;margin-top:28px}
+.foot img{width:96px;height:96px}
+.small{font-size:14px;color:var(--sub)}
+@media (max-width:420px){.hero h1{font-size:27px}section{padding:20px 16px}section h2{font-size:21px}}
+@media (prefers-reduced-motion:reduce){section{opacity:1;transform:none;transition:none}.hero .robo-top{animation:none}}
+</style>
+<!-- ===== 計測（Meta Pixel 1510200123755162）===== -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+(function(){
+  var KEY='fx_ref';
+  var q=new URLSearchParams(location.search);
+  var ref=q.get('ref')||(q.get('utm_source')?(q.get('utm_source')+(q.get('utm_content')?'_'+q.get('utm_content'):'')):'')||'';
+  try{ if(ref){sessionStorage.setItem(KEY,ref)} else {ref=sessionStorage.getItem(KEY)||'direct'} }catch(e){ ref=ref||'direct' }
+  window.fxRef=ref;
+  window.fxTrack=function(name,params){
+    try{ fbq('trackCustom',name,Object.assign({ref:window.fxRef,page:document.title},params||{})) }catch(e){}
+  };
+  fbq('init','1510200123755162');
+  fbq('track','PageView',{ref:ref});
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1510200123755162&ev=PageView&noscript=1"></noscript>
+</head>
+<body><div class="wrap">
+
+<div class="hero">
+  <img class="robo-top" src="img/mascot_invite.webp" alt="" width="120" height="120">
+  <div class="kicker">本講座2期　週0（開講までの準備）</div>
+  <h1>1月14日、最初の夜から<br>すぐ手が動くように</h1>
+  <p>やることは3つ、約40分です。<br>新しいことは覚えません。<br>道具を置いておくだけです。</p>
+</div>
+
+<figure><img src="img/honka_B00_setup.png" alt="週0で揃える3つ。Claudeのアカウント、講座メモ、換算表の初回" width="2560" height="1600"></figure>
+
+<section>
+  <span class="tag">いつまでに？</span>
+  <h2>1月7日ごろまでに</h2>
+  <p>開講の1週間前が目安です。</p>
+  <p>12月のうちでも、年明けでも大丈夫です。</p>
+  <p>ただ、3つ目の「換算表」だけは、ふだんどおりの1週間で数えたいので、年末年始の休みが明けてからがおすすめです。</p>
+  <p>全部できていなくても、1月14日に来てもらえれば大丈夫です。</p>
+</section>
+
+<section>
+  <span class="tag">チェック表</span>
+  <h2>終わったら、タップして印を</h2>
+  <ul class="check" id="check">
+    <li data-k="a"><span class="box">✓</span><span class="t"><span>Claudeのアカウントを作る</span><small>パソコンとスマホの両方で開けるように</small></span><span class="min">15分</span></li>
+    <li data-k="b"><span class="box">✓</span><span class="t"><span>最初のお願いを3つしてみる</span><small>下の文を貼って送るだけ</small></span><span class="min">5分</span></li>
+    <li data-k="c"><span class="box">✓</span><span class="t"><span>（ChatGPTやGeminiをよく使ってきた人だけ）記憶をClaudeに引っ越す</span><small>使っていない人は、印をつけて飛ばしてOK</small></span><span class="min">15分</span></li>
+    <li data-k="d"><span class="box">✓</span><span class="t"><span>「講座メモ」を1つ作る</span></span><span class="min">5分</span></li>
+    <li data-k="e"><span class="box">✓</span><span class="t"><span>換算表の6行を、講座メモに写して数字を書く</span></span><span class="min">15分</span></li>
+  </ul>
+  <div class="bar"><i id="bar"></i></div>
+  <div class="small" id="cnt">0 / 5</div>
+  <div class="done" id="done">準備完了です。1月14日、お会いできるのを楽しみにしています</div>
+</section>
+
+<section id="s1">
+  <h2><span class="no">1</span>Claudeのアカウントを作る</h2>
+  <p>この講座では、Claude（クロード）というAIを使います。</p>
+  <p>講座で作る道具は、全部Claudeの画面で作ります。</p>
+  <ol class="steps">
+    <li>パソコンで、下のページを開きます</li>
+  </ol>
+  <span class="url">https://claude.ai/</span>
+  <ol class="steps" start="2">
+    <li>「Googleで続ける」を押すか、メールアドレスを入れて登録します</li>
+    <li>メールに届いた確認を押して、名前などを入れれば、入力欄のある画面になります</li>
+    <li>スマホにも「Claude」のアプリを入れて、同じアカウントで入っておきます</li>
+  </ol>
+  <div class="robo"><img src="img/mascot_point.webp" alt="" width="60" height="60"><p>料金のプランは、まず無料で大丈夫です。講座の2週目あたりから、有料の「Pro」（月数千円）があると作業が止まりません。開講前に決めなくて大丈夫です。</p></div>
+
+  <h3>最初のお願いを、3つしてみる</h3>
+  <p>下の文を「コピー」して、Claudeの入力欄に貼って送るだけです。</p>
+  <div class="q"><b>1つ目</b><span id="q1">私はお客様のお金の相談にのる仕事をしています。初めてお会いしたお客様へ送る、お礼のメッセージを短めに3つ考えてください。</span><button type="button" data-copy="q1">コピー</button></div>
+  <div class="q"><b>2つ目</b><span id="q2">いまの3つのうち、2番目を、もう少しやわらかい言い方に直してください。</span><button type="button" data-copy="q2">コピー</button></div>
+  <div class="q"><b>3つ目</b><span id="q3">私がこれからAIを仕事で使うとしたら、何から始めるといいですか？私に質問しながら、一緒に考えてください。</span><button type="button" data-copy="q3">コピー</button></div>
+  <p>3つ目は、Claudeから質問が返ってきます。思ったまま答えてみてください。</p>
+</section>
+
+<section id="s2">
+  <span class="tag">1のつづき・ChatGPTやGeminiをよく使ってきた人だけ</span>
+  <h2><span class="no">＋</span>記憶をClaudeに引っ越す</h2>
+  <p>いままでのAIが覚えている「あなたのこと」を、Claudeに移します。</p>
+  <p>ほとんど使っていない人は、飛ばして大丈夫です。</p>
+  <p>Claudeの左下の名前 →「設定」→「メモリ」を開き、「他のAIプロバイダーからメモリをインポート」の「インポートを開始」を押します。</p>
+  <figure><img src="img/kit_cl_memory_setting.png" alt="Claudeの設定のメモリ画面。インポートを開始を押す" width="895" height="487" loading="lazy"></figure>
+  <p>次の画面が出ます。①の灰色の枠の中は英語の文ですが、そのままで大丈夫です。</p>
+  <ol class="steps">
+    <li>①の「コピー」を押す</li>
+    <li>ChatGPT（またはGemini）の新しいチャットに貼って送る</li>
+    <li>返ってきた答えを全部コピーして、②の枠に貼る</li>
+    <li>③「メモリに追加」を押す</li>
+  </ol>
+  <figure><img src="img/kit_cl_memory_import.png" alt="メモリをClaudeにインポートする画面。①コピー、②貼る、③メモリに追加" width="1176" height="1029" loading="lazy"></figure>
+</section>
+
+<section id="s3">
+  <h2><span class="no">2</span>「講座メモ」を1つ作る</h2>
+  <p>「講座メモ」という名前のメモを、1つだけ作ります。</p>
+  <p>置き場所は、パソコンとスマホの両方で開ける所です。Claudeで作業するのはパソコン、読み返すのはスマホのことが多いからです。</p>
+  <ul>
+    <li>iPhoneとMacの人：「メモ」のアプリ</li>
+    <li>それ以外の人：自分宛てのLINEのKeepメモか、Googleドキュメント（迷ったらKeepメモがいちばん簡単です）</li>
+  </ul>
+  <p>講座の3か月で作るもの（選ばれる理由、記事、プロフィール文など）は、全部ここにためていきます。</p>
+</section>
+
+<section id="s4">
+  <h2><span class="no">3</span>換算表の6行に、数字を入れる</h2>
+  <p>いまの1週間を、数字にしておきます。</p>
+  <p>この数字が、3か月後に「ここが空いた」と比べる元になります。</p>
+  <p>下の6行を講座メモに写して、数字を書きます。</p>
+  <div class="tbl"><table>
+    <tr><th>項目</th><th>1週間あたり</th></tr>
+    <tr><td>移動にかかっている時間</td><td>＿＿時間</td></tr>
+    <tr><td>資料や提案書を作っている時間</td><td>＿＿時間</td></tr>
+    <tr><td>お礼・フォローの文を書いている時間</td><td>＿＿時間</td></tr>
+    <tr><td>面談の件数</td><td>＿＿件</td></tr>
+    <tr><td>面談のうち、次回につながった件数</td><td>＿＿件</td></tr>
+    <tr><td>新しい相談が入ってきた経路と件数（例：紹介2件・SNS0件）</td><td>＿＿</td></tr>
+  </table></div>
+  <p>正確でなくて大丈夫です。「だいたいこのくらい」で埋めてください。</p>
+  <p>1週間だと0になる行は、0のままでも、先月を思い出して「月◯件」と書いても構いません。</p>
+  <p>手帳を見ながらだと、10分ほどで終わります。</p>
+  <p class="note">換算表は、自分を採点する表ではありません。3か月後に「ここが空いた」と分かるための目印です。</p>
+</section>
+
+<section>
+  <span class="tag">こちらからお送りするもの</span>
+  <h2>開講の前に、順番にお届けします</h2>
+  <ul class="coming">
+    <li>教材サイトへの招待（メールで届きます）</li>
+    <li>2期生だけの連絡の場への入り方</li>
+    <li>1月14日のZoomの入り方</li>
+  </ul>
+  <p>届くまでは、このページの3つだけで十分です。</p>
+</section>
+
+<section>
+  <span class="tag">困ったら</span>
+  <h2>画面の写真を送ってください</h2>
+  <p>うまく進まないときは、画面の写真を撮って、案内メールにそのまま返信してください。</p>
+  <p>LINEのほうが楽な人は、こちらからどうぞ。</p>
+  <span class="url"><a href="https://lin.ee/7Pil31t" target="_blank" rel="noopener" style="color:inherit">https://lin.ee/7Pil31t</a></span>
+  <p>僕か運営が返します。</p>
+</section>
+
+<div class="foot">
+  <img src="img/mascot_point.webp" alt="" width="96" height="96">
+  <p>金融AIカレッジ　森川 満章</p>
+  <p class="small">本ページは情報提供です。所属会社の規程がある場合は、そちらが優先します。</p>
+</div>
+
+</div>
+<script>
+(function(){
+  var KEY='honkoza2_junbi_v1',st={};
+  try{st=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){st={}}
+  var lis=[].slice.call(document.querySelectorAll('#check li'));
+  function draw(){
+    var n=0;lis.forEach(function(li){var on=!!st[li.dataset.k];li.classList.toggle('on',on);if(on)n++});
+    document.getElementById('bar').style.width=(n/lis.length*100)+'%';
+    document.getElementById('cnt').textContent=n+' / '+lis.length;
+    document.getElementById('done').classList.toggle('show',n===lis.length);
+  }
+  lis.forEach(function(li){li.addEventListener('click',function(){
+    st[li.dataset.k]=!st[li.dataset.k];
+    try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}
+    if(st[li.dataset.k])fxTrack('JunbiCheck',{item:li.dataset.k});
+    draw();
+  })});
+  draw();
+  document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){
+    var t=document.getElementById(b.dataset.copy).textContent;
+    function ok(){b.textContent='コピーしました';b.classList.add('ok');setTimeout(function(){b.textContent='コピー';b.classList.remove('ok')},1800)}
+    function fb(){var r=document.createRange();r.selectNodeContents(document.getElementById(b.dataset.copy));var s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand('copy');ok()}catch(e){}}
+    if(navigator.clipboard){navigator.clipboard.writeText(t).then(ok,fb)}else{fb()}
+    fxTrack('JunbiCopy',{q:b.dataset.copy});
+  })});
+  var els=document.querySelectorAll('section');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.1});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body></html>
