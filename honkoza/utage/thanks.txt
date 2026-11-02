@@ -1,5 +1,5 @@
 <script>
-/* お金の勉強会／個別相談／本講座 サンクスページ（2026-10-15版）：予約ページと同じデザインに（UTAGE フォーム設定 > サンクスページ > bodyタグの最後に挿入するJavaScript） */
+/* お金の勉強会／個別相談／本講座 サンクスページ（2026-10-15版・審査は2026-11-02に申込ページへの導線つき）：予約ページと同じデザインに（UTAGE フォーム設定 > サンクスページ > bodyタグの最後に挿入するJavaScript） */
 (function(){
 var KIND=/Zkr3kyS81PG7|fHgzbpH9iAuF/.test(location.pathname)?'honkoza':/KczRInaQse9W/.test(location.pathname)?'keiei':/zsNG7V8HsuS7/.test(location.pathname)?'soudan':/wQvZacCdkROE/.test(location.pathname)?'ai_soudan':/oBQLPTad8XgC/.test(location.pathname)?'shinsa':'benkyokai';var SOUDAN=KIND==='soudan';
 var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap';document.head.appendChild(l);
@@ -36,15 +36,12 @@ function boot(){
     +'<p class="fx-sub">届いていないときは、迷惑メールフォルダもご確認ください。</p>';
   var FOOT='fulfull株式会社　お金の増やし方オンライン勉強会';
   if(KIND==='shinsa'){
-    card.querySelector('h2').textContent='参加審査のお申し込み、ありがとうございます';
-    html='<p class="fx-lead">2営業日以内に、審査の結果をメールでお送りします。</p>'
-      +'<p class="fx-sub">通過した方にだけ、本申込みのページをご案内します。届いていないときは、迷惑メールフォルダもご確認ください。</p>'
-      +'<div class="fx-box"><h3>審査で見ていること</h3><ul>'
-      +'<li>保険・金融の営業を、現役で行っている</li>'
-      +'<li>週1回の作業会（Zoom）に参加できる</li>'
-      +'<li>週3時間ほど、作業の時間を取れる</li>'
-      +'</ul></div>'
-      +'<p class="fx-note">2期は<b>2027年1月14日（木）20:00</b>開始予定です。結果のメールをお待ちください。</p>';
+    card.querySelector('h2').textContent='参加審査を受け付けました';
+    html='<p class="fx-lead">お申込みは、次のページで完了します。</p>'
+      +'<p class="fx-sub">審査の結果を待つ必要はありません。受講を決めた方は、下のボタンから申込ページへ進み、「注文を確定する」まで押すとお申込みが完了します。同じご案内をメールでもお送りしました。</p>'
+      +'<div class="fx-line"><p class="fx-line-h">②申込ページへ進む</p><p class="fx-line-p">申込ページで、ご希望のコースの「銀行振込」を選び、金額を確かめてから「注文を確定する」を押してください。振込先がメールで届きます。</p><a class="fx-line-btn" href="https://utage-system.com/p/4NqBcs0FdiAx?ref=shinsa_thanks">申込ページへ進む</a><p class="fx-line-s">カード払いの方は、受付メールかLINEに「カード」と返信してください。専用ページをお送りします。</p></div>'
+      +'<img src="https://mm738966m-boop.github.io/ai-aibou-shindan/honkoza/img/steps.png" alt="お申込みまでの4つの手順。1 参加審査を送る。2 申込ページで注文を確定する（ここでお申込み完了）。3 お支払い。4 1月14日に開講。" style="display:block;width:100%;height:auto;border-radius:16px;margin:0 0 18px">'
+      +'<p class="fx-note">まだ迷っている方は、押さなくて大丈夫です。審査を送っても、受講の義務はありません。<br>2期は<b>2027年1月14日（木）20:00</b>開始です。</p>';
     FOOT='fulfull株式会社　金融AIカレッジ';
   }else if(KIND==='ai_soudan'){
     html+='<div class="fx-box"><h3>当日までに（できれば）</h3><ul>'
