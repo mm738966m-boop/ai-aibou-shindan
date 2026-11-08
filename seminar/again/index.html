@@ -9,7 +9,7 @@
 <meta name="description" content="9月・10月にお申込みいただいた方へ。11月の3回（11/11水20:00・11/13金15:00・11/15日14:00）に、もう一度席を用意しました。Zoom・無料・90分。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="あの日の席、もう一度ご用意しました。">
-<meta name="build" content="again-v2">
+<meta name="build" content="again-v3">
 <meta property="og:description" content="9月・10月にお申込みいただいた方へ。11月の3回に、もう一度席を用意しました。Zoom・無料・90分・見ているだけで大丈夫。">
 <meta property="og:url" content="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/again/">
 <meta property="og:image" content="https://mm738966m-boop.github.io/ai-aibou-shindan/seminar/again/og.png">
@@ -36,7 +36,16 @@ h1,h2,h3{font-weight:900;letter-spacing:.01em;text-wrap:balance;margin:0}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold);font-size:14.5px;font-weight:900;letter-spacing:.14em;margin-bottom:12px}
 .eyebrow:before{content:"";width:26px;height:2px;background:var(--goldfill);border-radius:2px}
 /* hero */
-.hero{position:relative;padding:40px 0 10px;overflow:hidden}
+.hero{position:relative;padding:40px 0 10px;overflow:hidden;background:radial-gradient(900px 420px at 80% 10%,#F3EAD2 0%,rgba(243,234,210,0) 70%),radial-gradient(600px 300px at 10% 90%,#E9EFE6 0%,rgba(233,239,230,0) 70%)}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--goldl),transparent)}
+.sec h2:after{content:"";display:block;width:44px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--goldfill),var(--goldl));margin:12px 0 0}
+.map table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;font-size:16.5px;line-height:1.6}
+.map th{background:var(--deep);color:var(--goldl);font-size:14px;letter-spacing:.08em;padding:10px 14px;text-align:left}
+.map td{padding:11px 14px;border-top:1px solid var(--line);vertical-align:top}
+.map td b{color:var(--gold)}
+.map tr:nth-child(even) td{background:var(--cream)}
+.cap{font-size:15px;color:var(--ink2);margin:10px 0 0}
+.letter .from img{box-shadow:0 0 0 4px #fff,0 0 0 5px var(--goldl)}
 .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center}
 .hero h1{font-size:clamp(30px,5.6vw,44px);line-height:1.35;margin:4px 0 14px}
 .hero .sub{font-size:18px;color:var(--ink2);line-height:1.8}
@@ -176,7 +185,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
       <p>どうも、森川です！</p>
       <p>9月か10月の勉強会に来てくださった方へ。あのときは、ありがとうございました。</p>
       <p>設定文、貼ってみましたか。貼っていなくても大丈夫です。「なんか違うな」「ちょっと薄いな」で止まった方も、それ、正常です。1回目はどうしても<strong>「森川の手順」</strong>として見える。2回目は<span class="mk"><strong>「自分の手順」</strong></span>として見えてきます。</p>
-      <p>そこで11月は、前に来てくださった方には<strong>「写す回」</strong>として使ってもらいたい。実演の場面ごとに「いま貼る設定文はこれ」と番号で言います。質疑の30分は、あなたの設定文を直す時間に使ってください。</p>
+      <p>そこで11月は、前に来てくださった方には<strong>「写す回」</strong>として使ってもらいたい。実演のどの場面で、8本のうちどの設定文を貼るか。その対応表をこのページの下に置きました。手元に出しておけば、見ながら写せます。質疑の30分で、「貼ったけど薄い」の原因も聞いてください。</p>
       <p>手元にClaudeを開いたまま見てもらえたら、いちばん嬉しいです。もちろん、見ているだけでも大丈夫です。</p>
       <p class="sign">何とかなる。何とかする。</p>
     </div>
@@ -208,16 +217,33 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   <div class="eyebrow">持ち帰るもの</div>
   <h2>見て終わり、にはしません。</h2>
   <p class="lead v-k">参加した方全員に、その日から使えるものをお渡しします。</p>
-  <p class="lead v-s hide">前回お渡しした設定文は、そのまま使えます。今回は「写す」ための3つを足しました。</p>
+  <p class="lead v-s hide">前回お渡しした設定文は、そのまま使えます。今回は「写す」ための工夫を足しました。</p>
   <div class="take v-k">
     <div><span class="n">01</span><b>設定文 8本</b>右腕5本・左腕3本。コピーしてClaudeに貼るだけで、同じ型が手元で動きます。</div>
     <div><span class="n">02</span><b>おさらい動画 7本</b>ログインなしで見られます。「はじめてのClaude」の手順つき。</div>
     <div><span class="n">03</span><b>最初の1週間の手順書</b>月曜に何を貼り、金曜に何ができているか。迷わない順番で。</div>
     <div><span class="n">04</span><b>質疑30分</b>あなたの会社・あなたのお客さまの場合はどうか、を聞ける時間。</div>
   </div>
+  <div class="map v-s hide">
+    <div class="eyebrow" style="margin-top:26px">写すときの対応表</div>
+    <table>
+      <thead><tr><th>実演の場面</th><th>貼る設定文</th></tr></thead>
+      <tbody>
+        <tr><td>自分の強みと、向いているお客さまを出す</td><td><b>右腕①</b> 強みと客層の分析</td></tr>
+        <tr><td>発信のネタを10本出す</td><td><b>右腕②</b> 発信ネタ10本</td></tr>
+        <tr><td>1本を発信の文章にする</td><td><b>右腕③</b> 発信の下書き</td></tr>
+        <tr><td>1分診断の質問と結果文を作る</td><td><b>右腕④</b> 診断ページの質問と結果文</td></tr>
+        <tr><td>LINEの自動応答の文を作る</td><td><b>右腕⑤</b> LINEの自動応答文</td></tr>
+        <tr><td>面談の録画・メモから提案の下書きを出す</td><td><b>左腕①</b> 面談の記録 → 提案の下書き</td></tr>
+        <tr><td>面談後のお礼と次回案内を書く</td><td><b>左腕②</b> フォロー文</td></tr>
+        <tr><td>次回の面談を取りつける案内を書く</td><td><b>左腕③</b> 次回予約の案内</td></tr>
+      </tbody>
+    </table>
+    <p class="cap">設定文8本は、前回の配布ページ（kit）にあります。はじめてのClaudeの手順も同じ場所です。</p>
+  </div>
   <div class="take v-s hide">
-    <div><span class="n">01</span><b>場面ごとの「いま貼る設定文」</b>実演の各場面で番号を言います。前回の設定文を、順番どおりに写せます。</div>
-    <div><span class="n">02</span><b>質疑30分＝直す時間</b>「貼ったけど薄い」の原因を、その場で一緒に見ます。</div>
+    <div><span class="n">01</span><b>場面→設定文の対応表</b>下の表です。実演の場面ごとに、貼る設定文の番号が分かります。</div>
+    <div><span class="n">02</span><b>質疑30分</b>「貼ったけど薄い」の原因を聞けます。あなたのお客さまの場合はどうか、も。</div>
     <div><span class="n">03</span><b>最初の1週間の手順書</b>月曜に何を貼り、金曜に何ができているか。迷わない順番で。</div>
     <div><span class="n">04</span><b>おさらい動画 7本</b>ログインなしで、いつでも見直せます。</div>
   </div>
@@ -229,7 +255,6 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     <ul>
       <li><strong>売り込みません。</strong>最後に、希望する方だけに本講座の案内を1枚お見せします。要らなければ、そのまま閉じて大丈夫です。</li>
       <li><strong>見ているだけで大丈夫。</strong>発言は求めません。使うかどうかは、見てから決めてください。</li>
-      <li><strong>使わなくても損はしません。</strong>設定文と手順書は、参加した方全員にお渡しします。</li>
       <li><strong>出られなくなったら、別日程に振替できます。</strong>3回のうち、どれか1回で大丈夫です。</li>
       <li><strong>お客さまへの説明と契約は、募集人本人が行います。</strong>所属会社の規程が優先です。成果を約束するものではありません。</li>
     </ul>
