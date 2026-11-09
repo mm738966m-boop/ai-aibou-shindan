@@ -323,6 +323,20 @@ h1 .g,.cta h2 .g{background:linear-gradient(180deg,#F8E7B0 0%,#E3B74E 50%,#B8862
 .btn small{opacity:.95;text-shadow:none}
 .btn.ring:after{border-color:rgba(241,215,154,.75)}
 .btn-note{color:var(--ink2)}
+.alt{margin:18px 0 0}
+.alt-btn{display:inline-flex;align-items:center;gap:10px;background:#fff;border:2px solid var(--goldfill);color:var(--gold);border-radius:999px;padding:12px 20px 12px 18px;font-size:17px;font-weight:900;letter-spacing:.03em;cursor:pointer;font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif;box-shadow:0 6px 18px rgba(169,123,31,.14);transition:transform .15s,box-shadow .15s}
+.alt-btn:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(169,123,31,.2)}
+.alt-btn:after{content:"";width:9px;height:9px;border-right:2.5px solid currentColor;border-bottom:2.5px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .2s}
+.alt.open .alt-btn:after{transform:rotate(-135deg) translateY(-2px)}
+.alt-body{display:none;margin-top:14px;background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--goldfill);border-radius:16px;padding:18px 18px 16px;animation:fadeup .35s ease-out both}
+.alt.open .alt-body{display:block}
+.alt-body p{margin:0 0 10px;font-size:17.5px;line-height:1.8}
+.alt-body .days{font-weight:900;font-size:17.5px;line-height:1.9;color:var(--ink);margin:0 0 10px}
+.alt-body .days>span{display:block;white-space:nowrap}
+.alt-body .days small{display:block;font-weight:500;color:var(--ink2);font-size:16px;line-height:1.6;margin-top:2px}
+.alt-go{display:inline-block;margin-top:8px;background:linear-gradient(180deg,#2FD66F 0%,#06C755 52%,#04A648 100%);color:#fff;text-decoration:none;font-weight:900;font-size:17.5px;border-radius:999px;padding:13px 22px;box-shadow:0 8px 20px rgba(4,166,72,.28),inset 0 1px 0 rgba(255,255,255,.45);font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif;text-shadow:0 1px 1px rgba(0,0,0,.18)}
+.alt-go:hover{transform:translateY(-1px)}
+@keyframes fadeup{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .hero .btn-note,.cta .btn-note{color:#C9CEDC}
 .lead{color:#D6DAE6}
 .trust span{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.24)}
@@ -521,6 +535,14 @@ summary:before{background:var(--deep)}summary:after{border-color:var(--deep)}det
    <dt>参加費</dt><dd>無料</dd>
    <dt>対象</dt><dd>保険営業（生保・損保・代理店）の個人の方</dd>
   </dl>
+  <div class="alt rv" id="sem-alt" hidden>
+   <button type="button" class="alt-btn" id="sem-alt-btn" aria-expanded="false" aria-controls="sem-alt-body">日程がどうしても合わない方へ</button>
+   <div class="alt-body" id="sem-alt-body">
+    <p>月末にも、同じ内容で開きます。<br>申込画面で、こちらの回を選んでください。</p>
+    <div class="days" id="sem-alt-days"></div>
+    <a class="alt-go cta-link" id="sem-alt-go" href="https://utage-system.com/event/dihhvu6t6jSO/register">月末の回で申し込む →</a>
+   </div>
+  </div>
  </div>
 </section>
 
@@ -596,6 +618,21 @@ var SEMINAR = {
   var $ = function(id){ return document.getElementById(id); };
   var links = document.querySelectorAll('.cta-link');
   window.SEMINAR_OPEN = open.length > 0;
+  /* 後半の先出し：まだ表に出していない回を「日程がどうしても合わない方へ」から選べるようにする */
+  (function(){
+    var later = S.sessions.filter(function(x){ return x.show && Date.parse(x.show) > now && Date.parse(x.close) > now; });
+    var box = $('sem-alt'); if (!box) return;
+    if (!open.length || !later.length) { box.hidden = true; return; }
+    box.hidden = false;
+    var lm = ['④','⑤','⑥','⑦','⑧','⑨'];
+    $('sem-alt-days').innerHTML = later.map(function(x,i){ return '<span>' + lm[i] + ' ' + x.day + '</span>'; }).join('') +
+      '<small>内容は同じです。本編60分＋質疑30分</small>';
+    var btn = $('sem-alt-btn');
+    btn.addEventListener('click', function(){
+      var on = box.classList.toggle('open'); btn.setAttribute('aria-expanded', on ? 'true' : 'false');
+      if (on) { try { fxTrack('AltDatesOpen', {n: later.length}); } catch(e) {} }
+    });
+  })();
   var fxr = '';
   try { fxr = window.fxRef || sessionStorage.getItem('fx_ref') || ''; } catch(e) {}
   var regUrl = S.register + (fxr && fxr !== 'direct' ? '?ref=' + encodeURIComponent(fxr) : '');
