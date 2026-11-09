@@ -624,8 +624,8 @@ var SEMINAR = {
     var box = $('sem-alt'); if (!box) return;
     if (!open.length || !later.length) { box.hidden = true; return; }
     box.hidden = false;
-    var lm = ['④','⑤','⑥','⑦','⑧','⑨'];
-    $('sem-alt-days').innerHTML = later.map(function(x,i){ return '<span>' + lm[i] + ' ' + x.day + '</span>'; }).join('') +
+    var lm = ['①','②','③','④','⑤','⑥','⑦','⑧','⑨'];
+    $('sem-alt-days').innerHTML = later.map(function(x,i){ return '<span>' + (lm[open.length + i] || '・') + ' ' + x.day + '</span>'; }).join('') +
       '<small>内容は同じです。本編60分＋質疑30分</small>';
     var btn = $('sem-alt-btn');
     btn.addEventListener('click', function(){
