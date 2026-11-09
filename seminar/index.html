@@ -637,6 +637,8 @@ var SEMINAR = {
   try { fxr = window.fxRef || sessionStorage.getItem('fx_ref') || ''; } catch(e) {}
   var regUrl = S.register + (fxr && fxr !== 'direct' ? '?ref=' + encodeURIComponent(fxr) : '');
   links.forEach(function(a){ a.href = open.length ? regUrl : S.waitlist.url; });
+  /* 月末の回のボタンだけ、申込フォーム側の「後半を隠す」を解いて開く（フォームJSの fx_now） */
+  (function(){ var g = $('sem-alt-go'); if (g && open.length) { g.href = regUrl + (regUrl.indexOf('?') > -1 ? '&' : '?') + 'fx_now=2026-11-15T12:00:01%2B09:00'; } })();
   if (!t && open.length === base.length && open.every(function(x,i){ return x === base[i]; })) return; // 直書きの回がそのまま受付中なら、書かれたままでよい
   if (open.length) {
     var n = open.length;
