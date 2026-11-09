@@ -45,7 +45,7 @@
 ## 3. ディレクトリ
 
 - `index.html` お金のプロのAI相棒診断（5タイプ・5問）
-- `seminar/` AI仕事術勉強会LP（常設・日程はJSのSEMINAR設定）。v21（2026-10-13）＝いつもの緑系ティール×金・丸ゴシック極太・そろばんロボが案内役（img/ro_*.webp＝Geminiで同タッチ生成・img/mascot_*.webp）。動き＝上の進みバーをロボが歩く・出てくる順のアニメ・数字カウント・2時間→2分の横バー・約束スタンプ。初心者向け＝点線の用語（class yg・data-yg）をタップでロボが言い換える下パネル（用語辞書はJSの Y）・「当てはまる」をタップで数える。孤立文字は fixOrphans()（文末4〜8文字をnowrap）で全幅自動対策。イベント ToRegister/YogoOpen/PainTap/AltDatesOpen＋Lead。OG=og_v4.png。日程表の下の「日程がどうしても合わない方へ」（2026-11-09・森川さん案）＝SEMINARで show が未来の回（まだ表に出していない後半）を折りたたみで先出しし、緑の「月末の回で申し込む」へ。後半が表に出る時刻（show）を過ぎると自動で消える。番号は表の続き。表示確認は ?sem_now=。旧v20（紺×金×明朝）は git 履歴 e41ccf9 以前
+- `seminar/` AI仕事術勉強会LP（常設・日程はJSのSEMINAR設定）。v21（2026-10-13）＝いつもの緑系ティール×金・丸ゴシック極太・そろばんロボが案内役（img/ro_*.webp＝Geminiで同タッチ生成・img/mascot_*.webp）。動き＝上の進みバーをロボが歩く・出てくる順のアニメ・数字カウント・2時間→2分の横バー・約束スタンプ。初心者向け＝点線の用語（class yg・data-yg）をタップでロボが言い換える下パネル（用語辞書はJSの Y）・「当てはまる」をタップで数える。孤立文字は fixOrphans()（文末4〜8文字をnowrap）で全幅自動対策。イベント ToRegister/YogoOpen/PainTap/AltDatesOpen＋Lead。OG=og_v4.png。日程表の下の「日程がどうしても合わない方へ」（2026-11-09・森川さん案）＝SEMINARで show が未来の回（まだ表に出していない後半）を折りたたみで先出しし、緑の「月末の回で申し込む」へ。後半が表に出る時刻（show）を過ぎると自動で消える。番号は表の続き。表示確認は ?sem_now=。🚨申込フォームJS（utage/register_form.js.txt）は HOLD で後半3日程を 11/15 12:00 まで隠すため、月末ボタンの申込URLには `fx_now=2026-11-15T12:00:01+09:00` を付けて解いている（2026-11-09・commit 42406f5）。HOLDの期限を動かすときは両方そろえる。旧v20（紺×金×明朝）は git 履歴 e41ccf9 以前
 - `seminar/utage/register_form.js.txt` UTAGE申込フォーム（event dihhvu6t6jSO）の見た目をLP v22に揃えるJS。UTAGE イベント > 申込フォーム設定 > 登録フォーム > 「bodyタグの最後に挿入するJavaScript」に、元からある流入元自動入力のscriptの**後ろに追記**してある（2026-10-13）。直すときはこのファイルを直して同じ欄に貼り直す。🚨「登録フォーム下部に表示する内容」は保存のたびにタグが二重エスケープされる＝空にして、注記（携帯番号は任意）はこのJSで出している
 - `seminar/thanks/` 受付完了（v22デザイン・LINEへ3秒で自動転送・CompleteRegistration計測）
 - `seminar/kit/` 参加者向け設定文の配布ページ
