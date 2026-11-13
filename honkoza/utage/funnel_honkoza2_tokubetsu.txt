@@ -16,7 +16,8 @@ var css=''
 +'#fx-lp{color:'+INK+';font-size:18px;font-weight:500;line-height:1.9}'
 +'#fx-lp p{margin:0 0 1em}'
 +'#fx-lp .fx-min{font-family:'+MIN+'!important;font-weight:800}'
-+'#fx-lp .nw{white-space:nowrap}'
++'#fx-lp .nw,#main .nw{white-space:nowrap}#fx-lp .sp{display:none}'
++'#fx-lp p,#fx-lp li,#fx-lp h3{text-wrap:pretty}'
 /* hero */
 +'#fx-hero{position:relative;background:linear-gradient(165deg,#1C2F57 0%,'+NAVY+' 70%);color:#fff;text-align:center;padding:40px 20px 36px;overflow:hidden;border-bottom:3px solid '+GOLD+'}'
 +'#fx-hero:before{content:"";position:absolute;inset:12px;border:1px solid rgba(231,207,142,.45);border-radius:12px;pointer-events:none}'
@@ -115,6 +116,7 @@ var css=''
 +'#main .fn-el-footer,#main .fn-el-footer *{font-size:13.5px!important;color:#5b6480!important}'
 +'#main .fn-el-footer a{color:#5A6070!important}'
 +'@media (max-width:600px){#body{padding:14px 8px 90px}#fx-hero{padding:34px 16px 30px}#fx-lp .fx-sec{padding:32px 16px 6px}#fx-letter{padding:20px 16px 16px}#fx-letter .ph{width:92px;height:100px}.fx-two div{font-size:15.5px;padding:16px 8px}.fx-cmp td{padding:12px 10px;font-size:15.5px}.fx-cmp tr.me td:last-child{font-size:21px}.fx-facts div b{font-size:18px}#main table.payment-method tbody td{padding:11px 10px;font-size:15.5px}#main table.payment-method tbody td:last-child{white-space:normal;width:6.6em;font-size:15px;line-height:1.45}}'
++'@media (max-width:600px){#fx-lp .sp{display:inline}#fx-lp .pc{display:none}#fx-hero h1{font-size:30px;line-height:1.5}#fx-hero .fx-seal{font-size:14px;letter-spacing:.08em;padding:8px 18px;line-height:1.5;border-radius:18px}#fx-hero .fx-seal i{display:none}.fx-two div{font-size:15px}}'
 +'@media (min-width:601px){#fx-stick{display:none}}';
 var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
 document.title='本講座 2期 特別参加枠｜金融AIカレッジ';
@@ -138,13 +140,13 @@ function run(){
   var lp=document.createElement('div');lp.id='fx-lp';
   lp.innerHTML=''
   +'<div id="fx-hero">'
-  +  '<span class="fx-seal"><i></i>勉強会にご参加の方だけの 特別参加枠<i></i></span>'
-  +  '<p class="fx-course">金融AIカレッジ　本講座 2期（2027年1月14日開講）</p>'
-  +  '<h1>1期の方と同じ参加費で、<br><em>お迎えします。</em></h1>'
-  +  '<div id="fx-price"><p class="w">通常 <s>598,000円（税込）</s></p><span class="lb">勉強会にご参加の方</span><p class="n">498,000<small>円（税込）</small></p><p class="d">内容は2期の本講座そのまま。変わるのは参加費だけです。</p></div>'
+  +  '<span class="fx-seal"><i></i>勉強会にご参加の方だけの<br class="sp">特別参加枠<i></i></span>'
+  +  '<p class="fx-course">金融AIカレッジ　本講座 2期<br class="sp"><span class="pc">　</span>2027年1月14日（木）開講</p>'
+  +  '<h1>1期の方と<br class="sp">同じ参加費で、<br><em>お迎えします。</em></h1>'
+  +  '<div id="fx-price"><p class="w">通常 <s>598,000円（税込）</s></p><span class="lb">勉強会にご参加の方</span><p class="n">498,000<small>円（税込）</small></p><p class="d">内容は2期の本講座そのまま。<br class="sp">変わるのは参加費だけです。</p></div>'
   +  '<div id="fx-dl">'+dlHtml()+'</div>'
   +  '<a class="fx-cta" href="#fx-formhead" data-go>特別参加枠で申し込む</a>'
-  +  '<span class="fx-cta-sub">銀行振込かカード一括を選べます。ご入金から8日以内は全額返金します。</span>'
+  +  '<span class="fx-cta-sub">銀行振込かカード一括を選べます。<br class="sp">ご入金から8日以内は全額返金します。</span>'
   +'</div>'
 
   +'<div class="fx-sec fx-rv"><span class="fx-kick">LETTER</span><h2>この枠を<br>つくった理由</h2>'
@@ -157,7 +159,7 @@ function run(){
   +  '</div></div>'
 
   +'<div class="fx-sec fx-rv"><span class="fx-kick">AFTER 3 MONTHS</span><h2>3か月後に、<br>そろっているもの</h2>'
-  +  '<div class="fx-two"><div><b>右腕と左腕</b>朝5分・面談後2分の型が、<br>あなたの判断基準で<br>毎日回っている</div><div><b>自分の入口</b>自分の名前の<br>診断ページから、<br>相談の予約が入る</div></div>'
+  +  '<div class="fx-two"><div><b>右腕と左腕</b>朝5分と<br>面談後2分の型が、<br>毎日回っている</div><div><b>自分の入口</b>自分の名前の<br>診断ページから、<br>相談の予約が入る</div></div>'
   +  '<ul class="fx-list">'
   +    '<li>週1回の作業会（Zoom・90分）×12回<span>講義は最初の15分。残りは各自の画面で作ります。録画あり。</span></li>'
   +    '<li>個別セッション（60分）×2回<span>あなたの面談から、勧める基準・断る基準を起こします。</span></li>'
@@ -208,6 +210,22 @@ function run(){
     if(s.indexOf('お支払いは銀行振込です')>-1){t.style.display='none';}
   });
 
+
+  /* 行末の1〜2文字落ちを防ぐ（各文のおしまい5文字を折り返さない） */
+  function fixOrphans(root){
+    [].slice.call(root.querySelectorAll('#fx-lp p,#fx-lp li,#fx-lp h3,#fx-lp li span,#fx-notes li,#main .form-check-label')).forEach(function(el){
+      [].slice.call(el.childNodes).forEach(function(n){
+        if(n.nodeType!==3)return;
+        var nx=n.nextSibling, tx=n.nodeValue;
+        if(nx&&!(nx.nodeName==='BR'||(nx.nodeType===1&&/^(SPAN|SMALL)$/.test(nx.nodeName)&&getComputedStyle(nx).display==='block')))return;
+        var m=tx.replace(/[ \n\t]+$/,'');if(m.length<9)return;
+        var k=5;var head=m.slice(0,m.length-k),tail=m.slice(m.length-k);
+        var sp=document.createElement('span');sp.className='nw';sp.textContent=tail;
+        n.nodeValue=head;n.parentNode.insertBefore(sp,n.nextSibling);
+      });
+    });
+  }
+  fixOrphans(document);
   /* スクロールで申込へ */
   [].slice.call(document.querySelectorAll('[data-go]')).forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();document.getElementById('fx-formhead').scrollIntoView({behavior:'smooth',block:'start'});});});
 
