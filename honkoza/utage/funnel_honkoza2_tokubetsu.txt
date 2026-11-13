@@ -16,7 +16,7 @@ var css=''
 +'#fx-lp{color:'+INK+';font-size:18px;font-weight:500;line-height:1.9}'
 +'#fx-lp p{margin:0 0 1em}'
 +'#fx-lp .nw,#main .nw{white-space:nowrap}#fx-lp .sp{display:none}'
-+'#fx-lp p,#fx-lp li,#fx-lp h3{text-wrap:pretty}'
++'#fx-lp p,#fx-lp li,#fx-lp h3{text-wrap:pretty}#fx-lp li,#fx-lp h3,#fx-lp .fx-two div{word-break:auto-phrase}'
 /* hero */
 +'#fx-hero{position:relative;background:linear-gradient(165deg,#1C2F57 0%,'+NAVY+' 70%);color:#fff;text-align:center;padding:42px 20px 36px;overflow:hidden;border-bottom:3px solid '+GOLD+'}'
 +'#fx-hero:before{content:"";position:absolute;inset:12px;border:1px solid rgba(231,207,142,.45);border-radius:12px;pointer-events:none}'
@@ -144,7 +144,7 @@ var stage=!D?'none':(leftDays(D.a)>=0?'open':(leftDays(D.q)>=0?'soudan':'closed'
 function leftTag(ymd){var n=leftDays(ymd);return n>0?'<span class="fx-left">あと'+n+'日</span>':(n===0?'<span class="fx-left">今日まで</span>':'');}
 function heroDl(){
   if(stage==='none')return '期限は、メール・LINEでお知らせした日付までです。';
-  if(stage==='open')return 'お申込み・個別相談のご予約は<br><b>'+D.at+'</b> まで'+leftTag(D.a)+'<span class="sm">期限のあとは、一般の参加費（598,000円）になります。</span>';
+  if(stage==='open')return 'お申込み・個別相談のご予約は<br><b>'+D.at+'</b> まで'+leftTag(D.a)+'<span class="sm">期限のあとは、一般の参加費になります。</span>';
   if(stage==='soudan')return '個別相談を受けた方のお申込み・お支払いは<br><b>'+D.qt+'</b> まで'+leftTag(D.q);
   return 'この参加費での受付は、終了しました。';
 }
@@ -168,7 +168,7 @@ function run(){
   +  '<span class="fx-seal"><i></i>勉強会にご参加の方だけの<br class="sp">ご案内<i></i></span>'
   +  '<p class="fx-course">金融AIカレッジ　本講座 2期<br class="sp"><span class="pc">　</span>2027年1月14日（木）開講</p>'
   +  '<h1>1期の方と<br class="sp">同じ参加費で、<br><em>お迎えします。</em></h1>'
-  +  '<div id="fx-price"><p class="w">2期の参加費（一般）　598,000円（税込）</p><div class="rule"></div><span class="lb">勉強会にご参加の方</span><p class="n">498,000<small>円（税込）</small></p><p class="d">内容は、2期の本講座そのままです。</p></div>'
+  +  '<div id="fx-price"><p class="w">2期の参加費（一般）<br class="sp"><span class="pc">　</span><span class="nw">598,000円（税込）</span></p><div class="rule"></div><span class="lb">勉強会にご参加の方</span><p class="n">498,000<small>円（税込）</small></p><p class="d">内容は、2期の本講座そのままです。</p></div>'
   +  '<div id="fx-dl">'+heroDl()+'</div>'
   +  (stage==='closed'?'':'<a class="fx-cta" href="#fx-formhead" data-go>この参加費で申し込む</a>'
   +  '<span class="fx-cta-sub">銀行振込かカード一括を選べます。<br class="sp">ご入金から8日以内は、全額返金します。</span>')
@@ -181,7 +181,7 @@ function run(){
   +    '<p>勉強会で「右腕と左腕」を一度見ている方は、1月14日の初回から、同じ景色で始められます。<br>だから、勉強会に来てくださった方は、1期の方と同じ参加費でお迎えすることにしました。</p>'
   +    '<p>作業会の12回も、個別セッションの2回も、2期の本講座の中身そのままです。</p>'
   +    '<p>1月14日の夜、画面の向こうでお会いできるのを楽しみにしています。</p>'
-  +    '<div class="sig"><span class="mono">森</span><span class="who">森川 満章<small>金融AIカレッジ／fulfull株式会社 代表</small></span></div>'
+  +    '<div class="sig"><span class="mono">森</span><span class="who">森川 満章<small>fulfull株式会社 代表</small></span></div>'
   +  '</div></div>'
 
   +'<div class="fx-sec fx-rv"><span class="fx-kick">3か月後</span><h2>卒業のとき、<br>そろっているもの</h2>'
@@ -213,7 +213,7 @@ function run(){
   +  '<p class="fx-txt">定員はこのご案内も含めて20名です。定員に達したら、期限の前でも締め切ります。</p>'
   +'</div>'
 
-  +'<div class="fx-sec fx-rv"><span class="fx-kick">決める前に</span><h2>決める前に、<br>知っておいてほしいこと</h2>'
+  +'<div class="fx-sec fx-rv"><span class="fx-kick">ご安心ください</span><h2>決める前に、<br>知っておいてほしいこと</h2>'
   +  '<div class="fx-rel">'
   +    '<div><h3>ご入金から8日以内は、全額返金</h3><p>理由は問いません。メール1本で手続きできます。</p></div>'
   +    '<div><h3>時間は、週に3時間ほど</h3><p>作業会90分と、毎日の朝5分・面談後2分。出られない週は、録画で追いつけます。</p></div>'
