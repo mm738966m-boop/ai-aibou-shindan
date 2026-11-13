@@ -1,6 +1,6 @@
 <script>
 /* 本講座2期 勉強会参加者の参加費（498,000円）申込ページ＝短めLP版（2026-11-14 v3・紺×金・明朝見出し・AIチーム点検反映）。ファネル 2P6prfv3LOq0 決済ページ（p/I2ppaoXDdA9E）。ページ設定 > bodyタグの最後に挿入するJavaScript。
-   ?g=1111 / 1113 / 1115 を付けると、その回の期限3段と「あと◯日」を出す。申込期限を過ぎたら「相談を受けた方」の期限に切り替え、それも過ぎたら受付終了表示にしてフォームを隠す。
+   ?g=1111 / 1113 / 1115 を付けると、その回の期限（案内から3日間・23:59）と残り時間を出す。申込期限を過ぎたら「相談を予約した方」の支払い期限に切り替え、それも過ぎたら受付終了表示にしてフォームを隠す。2026-11-14 v4＝期間を3日間に短縮。
    付けないと「メール・LINEでお知らせした日付まで」。元=funnel_honkoza2.txt */
 (function(){
 var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Shippori+Mincho:wght@600;800&display=swap';document.head.appendChild(l);
@@ -37,7 +37,7 @@ var css=''
 +'#fx-price .d{font-size:15.5px;font-weight:700;color:#7A5B12;margin:6px 0 0}'
 +'#fx-dl{display:block;max-width:440px;margin:0 auto 20px;font-size:16px;font-weight:700;color:#fff;line-height:1.65}'
 +'#fx-dl b{color:'+GOLD2+'}#fx-dl .sm{display:block;font-size:14.5px;font-weight:500;color:#DDE2EC;margin-top:4px}'
-+'.fx-left{display:inline-block;margin-left:8px;border:1px solid '+GOLD2+';color:'+GOLD2+';border-radius:6px;padding:0 10px;font-size:14.5px;vertical-align:1px}'
++'.fx-left{display:inline-block;margin:4px 0 0 8px;border:1px solid '+GOLD2+';color:'+GOLD2+';border-radius:6px;padding:0 10px;font-size:15px;vertical-align:1px;font-variant-numeric:tabular-nums}.fx-left:empty{display:none}'
 +'.fx-cta{display:block;max-width:440px;margin:0 auto;background:#06C755;color:#fff!important;text-decoration:none!important;border-radius:999px;font-weight:900;font-size:19.5px;padding:17px 10px;box-shadow:0 5px 0 #04994A;text-align:center;transition:transform .15s}'
 +'.fx-cta:active{transform:translateY(3px);box-shadow:0 2px 0 #04994A}'
 +'.fx-cta-sub{display:block;font-size:14.5px;color:#DDE2EC;margin-top:10px;line-height:1.65}'
@@ -135,24 +135,26 @@ document.title='本講座 2期 勉強会にご参加の方へ｜金融AIカレ�
 
 /* 回ごとの期限（?g=）a=申込・相談予約 p=支払い q=相談を受けた方 */
 var DL={
- '1111':{a:'2026-11-18',at:'11月18日（水）',pt:'11月25日（水）',q:'2026-11-29',qt:'11月29日（日）'},
- '1113':{a:'2026-11-16',at:'11月16日（月）',pt:'11月23日（月・祝）',q:'2026-11-27',qt:'11月27日（金）'},
- '1115':{a:'2026-11-18',at:'11月18日（水）',pt:'11月25日（水）',q:'2026-11-29',qt:'11月29日（日）'}};
+ '1111':{a:'2026-11-17',at:'11月17日（火）',q:'2026-11-24',qt:'11月24日（火）'},
+ '1113':{a:'2026-11-17',at:'11月17日（火）',q:'2026-11-24',qt:'11月24日（火）'},
+ '1115':{a:'2026-11-19',at:'11月19日（木）',q:'2026-11-26',qt:'11月26日（木）'}};
 var g=(location.search.match(/[?&]g=([0-9]{4})/)||[])[1];var D=DL[g];
-function leftDays(ymd){var now=new Date(Date.now()+9*3600e3);var today=Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate());var p=ymd.split('-');var end=Date.UTC(+p[0],+p[1]-1,+p[2]);return Math.round((end-today)/864e5);}
-var stage=!D?'none':(leftDays(D.a)>=0?'open':(leftDays(D.q)>=0?'soudan':'closed'));
-function leftTag(ymd){var n=leftDays(ymd);return n>0?'<span class="fx-left">あと'+n+'日</span>':(n===0?'<span class="fx-left">今日まで</span>':'');}
+/* 期限の日の23:59:59（日本時間）までのミリ秒 */
+function msLeft(ymd){var p=ymd.split('-');return Date.UTC(+p[0],+p[1]-1,+p[2],14,59,59)-Date.now();}
+var stage=!D?'none':(msLeft(D.a)>=0?'open':(msLeft(D.q)>=0?'soudan':'closed'));
+function leftText(ymd){var ms=msLeft(ymd);if(ms<0)return '';var m=Math.floor(ms/6e4),d=Math.floor(m/1440),h=Math.floor(m%1440/60),mi=m%60;
+  return d>0?'あと'+d+'日と'+h+'時間':'あと'+h+'時間'+mi+'分';}
+function leftTag(ymd){return '<span class="fx-left" data-left="'+ymd+'">'+leftText(ymd)+'</span>';}
 function heroDl(){
   if(stage==='none')return '期限は、メール・LINEでお知らせした日付までです。';
-  if(stage==='open')return 'お申込み・個別相談のご予約は<br><b>'+D.at+'</b> まで'+leftTag(D.a)+'<span class="sm">期限のあとは、一般の参加費になります。</span>';
-  if(stage==='soudan')return '個別相談を受けた方のお申込み・お支払いは<br><b>'+D.qt+'</b> まで'+leftTag(D.q);
+  if(stage==='open')return 'お申込み・個別相談のご予約は<br><b>'+D.at+' 23:59</b> まで'+leftTag(D.a)+'<span class="sm">期限のあとは、一般の参加費になります。</span>';
+  if(stage==='soudan')return '期限までに個別相談をご予約の方は<br><b>'+D.qt+'</b> までにお申込み・お支払い'+leftTag(D.q);
   return 'この参加費での受付は、終了しました。';
 }
 function formDl(){
   if(stage==='none')return '<div><span>期限</span><span>メール・LINEでお知らせした日付まで</span></div>';
   return '<div><span>お申込み・相談のご予約</span><span><b>'+D.at+'</b>まで</span></div>'
-    +'<div><span>お支払い</span><span><b>'+D.pt+'</b>まで</span></div>'
-    +'<div><span>個別相談を受けた方</span><span><b>'+D.qt+'</b>まで</span></div>';
+    +'<div><span>お支払い（相談を受けた方も）</span><span><b>'+D.qt+'</b>まで</span></div>';
 }
 
 function run(){
@@ -165,7 +167,7 @@ function run(){
   var lp=document.createElement('div');lp.id='fx-lp';
   lp.innerHTML=''
   +'<div id="fx-hero">'
-  +  '<span class="fx-seal"><i></i>勉強会にご参加の方だけの<br class="sp">ご案内<i></i></span>'
+  +  '<span class="fx-seal"><i></i>勉強会にご参加の方だけ<br class="sp"><span class="pc">・</span>'+(D?'3日間の':'')+'ご案内<i></i></span>'
   +  '<p class="fx-course">金融AIカレッジ　本講座 2期<br class="sp"><span class="pc">　</span>2027年1月14日（木）開講</p>'
   +  '<h1>1期の方と<br class="sp">同じ参加費で、<br><em>お迎えします。</em></h1>'
   +  '<div id="fx-price"><p class="w">2期の参加費（一般）<br class="sp"><span class="pc">　</span><span class="nw">598,000円（税込）</span></p><div class="rule"></div><span class="lb">勉強会にご参加の方</span><p class="n">498,000<small>円（税込）</small></p><p class="d">内容は、2期の本講座そのままです。</p></div>'
@@ -208,7 +210,7 @@ function run(){
 
   +'<div class="fx-sec fx-rv"><span class="fx-kick">参加費</span><h2>勉強会にご参加の方の<br>参加費</h2>'
   +  '<div class="fx-pr"><div><span>2期の参加費（一般）</span><b>598,000円</b></div><div class="me"><span>勉強会にご参加の方</span><b>498,000円</b></div></div>'
-  +  '<p class="fx-txt">いずれも税込です。1期の方と同じ参加費です。期限のあとは、一般の参加費になります。</p>'
+  +  '<p class="fx-txt">いずれも税込です。1期の方と同じ参加費です。'+(D?'ご案内から3日間だけの参加費で、':'')+'期限のあとは、一般の参加費になります。</p>'
   +  '<div class="fx-facts"><div><b>1/14</b>開講（木）</div><div><b>毎週木曜</b>夜8時〜9時半</div><div><b>20名</b>定員</div></div>'
   +  '<p class="fx-txt">定員はこのご案内も含めて20名です。定員に達したら、期限の前でも締め切ります。</p>'
   +'</div>'
@@ -266,6 +268,9 @@ function run(){
       n.nodeValue=m.slice(0,m.length-k);n.parentNode.insertBefore(sp,n.nextSibling);
     });
   });
+
+  /* 残り時間を1分ごとに更新 */
+  setInterval(function(){[].slice.call(document.querySelectorAll('[data-left]')).forEach(function(e){e.textContent=leftText(e.getAttribute('data-left'));});},30000);
 
   /* 計測（Meta Pixel が入っていれば送る） */
   function track(name){try{if(window.fbq)fbq('trackCustom',name,{ref:ref,page:'tokubetsu_498'});}catch(e){}}
