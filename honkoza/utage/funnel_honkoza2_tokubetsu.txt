@@ -9,6 +9,7 @@ var NAVY='#0F1E3A',NAVY2='#1A2C52',GOLD='#C9A24B',GOLD2='#E7CF8E',GOLD3='#9C7425
 var MIN='"Shippori Mincho","Hiragino Mincho ProN",serif',NUM='"Cormorant Garamond","Shippori Mincho",serif';
 var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 var FOIL='linear-gradient(110deg,'+GOLD3+' 0%,#D9B65E 22%,#F6E3A6 38%,#C9A24B 52%,#8E6A22 70%,#D9B65E 86%,'+GOLD3+' 100%)';
+var FOILD='linear-gradient(110deg,#8A6420 0%,#B8892E 25%,#D9B65E 40%,#A97D2A 55%,#7C5A1C 72%,#B8892E 88%,#8A6420 100%)';
 var css=''
 /* ---- 土台 ---- */
 +'html,body,#body{background:'+NAVY+'!important;background-image:radial-gradient(900px 520px at 50% -6%,rgba(201,162,75,.20) 0%,transparent 60%),radial-gradient(1200px 700px at 50% 0%,#22355E 0%,'+NAVY+' 62%)!important;background-attachment:fixed!important}'
@@ -25,6 +26,7 @@ var css=''
 +'#fx-lp p,#fx-lp li,#fx-lp h3{text-wrap:pretty}#fx-lp li,#fx-lp h3{word-break:auto-phrase}'
 +'.fx-foil{background:'+FOIL+';background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent!important;-webkit-text-fill-color:transparent;animation:fxFoil 6s linear infinite}'
 +'@keyframes fxFoil{to{background-position:-220% 0}}'
++'#fx-card .fx-foil,#fx-lp .fx-sec .fx-foil:not(.no){background-image:'+FOILD+'}'
 /* ---- ヒーロー（招待状） ---- */
 +'#fx-hero{position:relative;background:radial-gradient(120% 80% at 50% 0%,#24396A 0%,'+NAVY2+' 38%,'+NAVY+' 78%);color:#fff;text-align:center;padding:34px 18px 38px;overflow:hidden;border-bottom:1px solid '+GOLD+'}'
 +'#fx-dust{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}'
@@ -174,6 +176,8 @@ var css=''
 +'#main .fn-el-footer,#main .fn-el-footer *{font-size:13.5px!important;color:#5b6480!important}'
 +'#main .fn-el-footer a{color:#5A6070!important}'
 /* スマホ */
++'#body #fx-lp .dg,#body #fx-lp .roll,#body #fx-lp .roll i,#body #fx-lp .no,#body #fx-cd .bx b,#body #fx-lp .fx-pr b{font-family:'+NUM+'!important;font-variant-numeric:lining-nums tabular-nums}'
++'#body #fx-lp h1,#body #fx-lp h1 span,#body #fx-lp h2 span,#body #fx-lp .fx-ai,#body #fx-lp .fx-same,#body #fx-lp .fx-ki .end,#body #fx-lp p.who,#body #fx-lp .fx-facts b,#body #fx-lp .orn{font-family:'+MIN+'!important}'
 +'@media (max-width:600px){#body{padding:12px 8px 100px}#fx-hero{padding:26px 14px 32px}#fx-card{padding:44px 16px 24px;margin-top:30px}#fx-card h1{font-size:28px}#fx-lp .fx-sec{padding:42px 16px 8px}#fx-letter{padding:26px 16px 18px}#fx-letter .sig svg{width:170px}'
 +  '.fx-two{gap:10px}.fx-two .in{font-size:15.5px;padding:18px 6px 16px}.fx-two b{font-size:21px}.fx-rel{grid-template-columns:1fr}.fx-pr>div{padding:14px;font-size:16px}.fx-pr .me b{font-size:28px}.fx-facts>div{font-size:13.5px}.fx-facts b{font-size:18px}'
 +  '#fx-cd .bx{width:66px}#fx-cd .bx b{font-size:32px}.fx-dl2{font-size:15px;padding:10px 14px}'
