@@ -369,6 +369,7 @@ summary:before{background:var(--deep)}summary:after{border-color:var(--deep)}det
 @keyframes shine{0%,55%{left:-70%}85%,100%{left:130%}}
 @media (prefers-reduced-motion:reduce){.btn:before{display:none}}
 </style>
+<style>/* 2026-11-14 日付の帯がスマホで見切れないように */.date{max-width:100%;box-sizing:border-box}.hero-grid>*{min-width:0}</style>
 </head>
 <body class="dots">
 
@@ -606,7 +607,7 @@ var SEMINAR = {
   if (!t && open.length === base.length && open.every(function(x,i){ return x === base[i]; })) return; // 直書きの回がそのまま受付中なら、書かれたままでよい
   if (open.length) {
     var n = open.length;
-    $('sem-hero-date').innerHTML = open.map(function(x){ return '<span style="white-space:nowrap">' + x.short + '</span>'; }).join('・') + '　<span style="white-space:nowrap">Zoom・参加無料</span>';
+    $('sem-hero-date').innerHTML = open.map(function(x,i){ return '<span style="display:inline-block;white-space:nowrap">' + x.short + (i < open.length - 1 ? '・' : '') + '</span>'; }).join('') + '<span style="display:block">Zoom・参加無料</span>';
     $('sem-sch-h2').innerHTML = n > 1 ? (n + 'つの日程から、<br>選べます。') : '次回の日程は、<br>こちらです。';
     $('sem-sch-dd').innerHTML = open.map(function(x,i){ return (n > 1 ? marks[i] + ' ' : '') + x.day; }).join('<br>') +
       '<br><span style="font-weight:500;color:var(--ink2);font-size:16.5px">内容は毎回同じです。本編60分＋質疑30分</span>';
