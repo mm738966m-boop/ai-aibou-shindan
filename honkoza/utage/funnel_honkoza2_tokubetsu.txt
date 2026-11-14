@@ -53,7 +53,10 @@ var css=''
 +'#fx-card .n .dg{font-weight:700;font-size:clamp(56px,15vw,76px);letter-spacing:.01em;color:'+NAVY+'}'
 +'#fx-card .n{position:relative}#fx-card .n .dg{text-shadow:0 0 22px rgba(201,162,75,.38)}'
 +'#fx-card .kr{position:absolute;font-style:normal;color:#E2BE62;text-shadow:0 0 10px rgba(231,207,142,.95);animation:fxTw 2.4s ease-in-out infinite;pointer-events:none;line-height:1;opacity:0}'
-+'#fx-card .k1{top:-8px;left:6%;font-size:20px}#fx-card .k2{top:22%;right:4%;font-size:26px;animation-delay:.8s}#fx-card .k3{bottom:-6px;left:34%;font-size:15px;animation-delay:1.6s}'
++'#fx-card .k1{top:-14px;left:8%;font-size:24px}#fx-card .k2{top:-6px;right:12%;font-size:30px;animation-delay:.7s}#fx-card .k3{bottom:-10px;left:42%;font-size:18px;animation-delay:1.4s}'
++'#fx-card .kr{color:#D9AE45;text-shadow:0 0 6px #fff,0 0 14px rgba(217,174,69,.95)}'
++'#fx-card .n .dg.gd{background:'+FOILD+';background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:fxFoil 3.5s linear infinite;text-shadow:none;filter:drop-shadow(0 2px 10px rgba(201,162,75,.35))}'
++'#fx-card .n:not(.lit) .kr{animation-play-state:paused}'
 +'@keyframes fxTw{0%,100%{opacity:0;transform:scale(.4) rotate(0)}50%{opacity:1;transform:scale(1) rotate(45deg)}}'
 +'#fx-card .w s{text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:rgba(176,58,46,.85);font-size:1.12em}'
 +'.fx-pr>div:not(.me):not(.hd) b{text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:rgba(176,58,46,.8);color:#7a8199}'
@@ -256,7 +259,7 @@ function run(tries){
   +    '<div id="fx-wax" aria-hidden="true"><b class="fx-foil">森</b></div>'
   +    '<p class="to">'+(D.sep?'9月の勉強会にご参加の方だけ':'勉強会にご参加の方だけ')+'<br class="sp"><span class="pc">・</span>3日間のご案内</p>'
   +    '<p class="course">金融AIカレッジ　本講座 2期<br class="sp"><span class="pc">　</span>2027年1月14日（木）開講</p>'
-  +    '<h1>3日間だけの<br class="sp">特別参加費で、<br><span class="fx-foil">お迎えします。</span></h1>'
+  +    '<h1>3日間だけの<br>特別参加費で、<br><span class="fx-foil">お迎えします。</span></h1>'
   +    '<div class="div"><i></i></div>'
   +    '<p class="w">2期の参加費（一般）<br class="sp"><span class="pc">　</span><span class="nw"><s>598,000円</s>（税込）</span></p>'
   +    '<span class="lb">勉強会にご参加の方だけの特別参加費</span>'
@@ -410,7 +413,7 @@ function run(tries){
 
   /* 招待状が開く順番：ご招待状 → カード → 封蝋 → 数字 → 残り時間とボタン */
   var card=document.getElementById('fx-card');
-  var rollIt=function(){[].slice.call(card.querySelectorAll('.roll')).forEach(function(r,i){var d=+r.getAttribute('data-d');var inner=r.firstChild;inner.style.transitionDelay=(RM?0:i*.09)+'s';inner.style.transform='translateY(-'+d+'em)';});};
+  var rollIt=function(){[].slice.call(card.querySelectorAll('.roll')).forEach(function(r,i){var d=+r.getAttribute('data-d');var inner=r.firstChild;inner.style.transitionDelay=(RM?0:i*.09)+'s';inner.style.transform='translateY(-'+d+'em)';});setTimeout(function(){var dg=card.querySelector('.n .dg');if(dg){dg.textContent='498,000';dg.classList.add('gd');card.querySelector('.n').classList.add('lit');}},RM?0:2300);};
   var heroItems=[].slice.call(document.querySelectorAll('#fx-cd,#fx-hero .fx-cta,#fx-hero .fx-cta2,#fx-hero .fx-cta-sub'));
   if(RM||!card.animate){rollIt();}
   else{
