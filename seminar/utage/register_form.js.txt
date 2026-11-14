@@ -75,8 +75,8 @@ function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp
 function fmt(t){ /* 10月21日(水) 20:00〜21:30 → 10月21日（水）/ 20:00〜21:30 */
   var m=t.match(/^(.+?)\s*(\d{1,2}:\d{2}.*)$/); return m?[m[1].replace('(','（').replace(')','）'),m[2]]:[t,''];
 }
-/* 後半の日程は前半の締切（11/15 12:00）まで隠す（2026-10-29）。UTAGEの日程には非公開の設定がないため。確認は ?fx_now=2026-11-15T13:00:00%2B09:00 */
-var HOLD=[{d:/^(11月29日|12月1日|12月2日)/,until:'2026-11-15T12:00:00+09:00'}];
+/* 後半の日程は前半の締切（11/15 12:00）まで隠す（2026-10-29）→2026-11-14 後半版の広告に合わせて解除（untilを11/14に）。UTAGEの日程には非公開の設定がないため。確認は ?fx_now=2026-11-15T13:00:00%2B09:00 */
+var HOLD=[{d:/^(11月29日|12月1日|12月2日)/,until:'2026-11-14T00:00:00+09:00'}];
 var NOW=Date.now();try{var qn=new URLSearchParams(location.search).get('fx_now');if(qn)NOW=Date.parse(qn)}catch(e){}
 function held(t){return HOLD.some(function(h){return h.d.test(t)&&NOW<Date.parse(h.until)})}
 function buildDates(){
@@ -109,7 +109,7 @@ function boot(){
   /* 見出しの言い換え */
   var h4s=document.querySelectorAll('.fx-root .card-body h4');
   if(h4s[0]&&!document.getElementById('fx-h1')){h4s[0].textContent='参加日程';h4s[0].insertAdjacentHTML('afterend','<p class="fx-h" id="fx-h1">ご都合のよい日を、ひとつ選んでください。</p>');
-    [].forEach.call(document.querySelectorAll('.fx-root .card-body p'),function(p){if(/選択してください/.test(p.textContent))p.textContent='内容は3回とも同じです。あとから別の日に振り替えることもできます。'})}
+    [].forEach.call(document.querySelectorAll('.fx-root .card-body p'),function(p){if(/選択してください/.test(p.textContent))p.textContent='内容はどの回も同じです。あとから別の日に振り替えることもできます。'})}
   if(h4s[1]&&!document.getElementById('fx-h2')){h4s[1].textContent='お客様情報';h4s[1].insertAdjacentHTML('afterend','<p class="fx-h" id="fx-h2">お名前とメールアドレスを入れてください。</p><div id="fx-trust"><span>売り込みなし</span><span>ZoomのURLは前日にメール</span><span>90分で終わります</span></div>')}
   buildDates();
   /* 選んだ日程の表に見出し */
