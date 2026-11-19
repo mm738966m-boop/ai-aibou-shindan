@@ -204,7 +204,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 ・最後に、全部そろったかを教えてください。</pre></div>
   <ol class="steps" style="counter-reset:s 1">
     <li>Claudeが「実行してよいですか」と何度か聞いてきます。<br>この手順の中なら、何度出ても「許可」でOKです。</li>
-    <li>Macの画面に「デベロッパ・ツールが必要です」と出たら、「インストール」を押します。<br>終わるまで10分ほどかかることがあります。</li>
+    <li>Macの画面に「デベロッパ・ツールが必要です」と出たら、「インストール」を押します。<br>Macのパスワードを聞かれたら、ご自身で入れます。<br>終わるまで10分ほどかかることがあります。<br>終わったら、Claudeに「インストールが終わりました」と送ります。</li>
     <li>8けたのコード（例：ABCD-1234）が出たら、次のページを開きます。<span class="url">https://github.com/<wbr>login/device</span></li>
     <li>コードを入れて「Continue」を押し、緑の「Authorize」ボタンを押します。<br>GitHubのログインを聞かれたら、ご自身で入れてください。</li>
     <li>Claudeの画面に戻ります。<br><span class="ok">「そろいました」と返ってくればOK</span></li>
@@ -245,14 +245,15 @@ https://mm738966m-boop.github.io/ai-aibou-shindan/honkoza/share-link/build.mjs
 
 ## 人に渡す資料はリンクにする
 - 人に渡す資料は、デスクトップの share フォルダの src/ にHTMLで置き、share フォルダで node build.mjs を動かす。暗号化・記録・GitHubへの送信まで build.mjs がやるので、git add や commit は自分でしない。
-- PDFや文章で届いた資料は、スマホで読みやすいHTMLに作り直してから src/ に置く。画像はHTMLの中に埋め込む。share フォルダの直下には何も置かない。
+- 資料を直すときは、src/ の同じファイル名のまま上書きする。名前を変えたり消したりしない（送ったリンクが開かなくなる）。
+- build.mjs が 🚨 で止まったら、表示のとおりに対応し、--yes は私に確かめてから使う。
+- PDFや文章で届いた資料は、スマホで読みやすいHTMLに作り直してから src/ に置く。画像はHTMLの中に埋め込む。share フォルダの直下と p/ には何も置かない。
 - お渡し資料には、計測タグ（Metaピクセル・Googleアナリティクスなど）を入れない。
 - 渡すリンクは、build.mjs が最後に出す「?k=」つきのURL。資料ごとに鍵が違う。省略せず、伏せ字にせず、全部見せる。
 - シェアしたときの題名は &lt;meta name="share-title" content="…"&gt; に書く。ここは暗号化されないので、お名前・金額・病気は入れず、「お金の地図」のような資料の種類だけにする。src/ のファイル名は外に出ない。
 - 暗号化しないまま公開しない。アーティファクトやメールの下書きで代わりにしない。
-- 公開したら1〜2分待ち、?k= を外したURLを curl で開いて 200 になることを確かめてから報告する。
-- 「この資料の公開をやめて」と言われたら、node build.mjs --stop ファイル名.html を動かす。
-- Claudeが雲のマーク（クラウド）の画面で動いているときは、作業を始める前に「share フォルダのローカルの画面で開き直してください」と伝える。</pre></div>
+- 公開したら1〜2分待ち、?k= を外したURLを curl で開いて 200 になることを確かめてから報告する。はじめての公開は10分ほどかかることがあるので、200にならなくても10分までは待って何度か試す。設定の作り直しや送り直しはしない。
+- 「この資料の公開をやめて」と言われたら、node build.mjs --stop ファイル名.html を動かす。</pre></div>
   <p><span class="ok">「書き足しました」と出ればOK</span></p>
   <div class="fin"><button type="button">✓ できた</button></div>
 </section>
@@ -270,7 +271,7 @@ https://mm738966m-boop.github.io/ai-aibou-shindan/honkoza/share-link/build.mjs
     <li>そのURLを、LINEの自分用のトーク（Keepメモ）に送って、スマホで開きます。<br><span class="ok">資料の中身が出ればOK</span></li>
     <li>鍵の確かめもしておきます。<br>Macのブラウザのアドレス欄にURLを貼り、<b>?k=</b> から後ろを消して開きます。<br>「お送りしたリンクから、もう一度開いてください」と出て、中身は見えません。</li>
   </ol>
-  <p class="small">公開してから見られるようになるまで、1〜2分かかることがあります。</p>
+  <p class="small">公開してから見られるようになるまで、1〜2分かかります。<br>はじめての1本は、10分ほどかかることがあります。</p>
   <div class="fin"><button type="button">✓ できた</button></div>
 </section>
 
@@ -293,10 +294,10 @@ https://mm738966m-boop.github.io/ai-aibou-shindan/honkoza/share-link/build.mjs
 
 <section id="help">
   <h2>困ったとき</h2>
-  <details><summary>Claudeが「アーティファクトにします」「メールの下書きにします」と言う</summary><div class="a">手順4のルールが入っていない状態です。<br>貼る文③をもう一度送ってから、「GitHubでリンクにして」と伝えてください。</div></details>
+  <details><summary>Claudeが「アーティファクトにします」「メールの下書きにします」と言う</summary><div class="a">まず、雲のマーク☁が出ていないかを見ます。<br>出ていれば、手順1のやり方で share の画面を開き直します。<br>出ていなければ、貼る文③をもう一度送ってから、「GitHubでリンクにして」と伝えてください。</div></details>
   <details><summary>「公開できません」「リポジトリが非公開です」と言われる</summary><div class="a">Claudeがクラウドで動いている状態です。<br>雲のマーク☁が出ていないかを見て、出ていれば手順1から開き直してください。</div></details>
   <details><summary>「gh が見つかりません」「node が見つかりません」と出る</summary><div class="a">道具が入っていないか、場所を覚えていない状態です。<br>貼る文①をもう一度送ってください。</div></details>
-  <details><summary>「公開してはいけない物が、記録に入っています」と出る</summary><div class="a">鍵や元の資料が、GitHubに上がる手前で止まった状態です。<br>その画面のまま、Claudeに「この表示のとおりに直して」と伝えてください。</div></details>
+  <details><summary>🚨 のついた表示が出て止まった</summary><div class="a">公開してはいけない物や、リンクが開かなくなる変更を、手前で止めた状態です。<br>その画面のまま、Claudeに「この表示のとおりに直して」と伝えてください。<br>迷ったら、そのままにして窓口のLINEで聞いてください。</div></details>
   <details><summary>リンクを開くと「お送りしたリンクから、もう一度開いてください」と出る</summary><div class="a">URLの終わりの <b>?k=</b> から後ろが切れています。<br>Claudeが出したURLを、最後まで全部コピーし直してください。</div></details>
   <details><summary>資料を直したのに、古いまま表示される</summary><div class="a">公開に1〜2分かかります。<br>少し待ってから、ページを読み込み直してください。</div></details>
 </section>

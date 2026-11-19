@@ -5,6 +5,7 @@
 //   node build.mjs                        src/ のHTMLを暗号化 →「更新」で記録 → GitHubへ送る
 //   node build.mjs --no-push              送らずに作るだけ
 //   node build.mjs --stop ファイル名.html   その資料の公開をやめる（元のファイルは src/_stopped/ へ）
+//   資料を直すときは、src/ の同じファイル名のまま上書きする（名前を変えるとリンクが変わる）
 //
 // しくみ:
 //   - 資料ごとに別の鍵を作る。Aさんのリンクで、Bさんの資料は開かない
@@ -35,12 +36,12 @@ mkdirSync(PUB, { recursive: true });
 writeFileSync(join(ROOT, 'index.html'), '<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>お渡し資料</title><p style="font-family:sans-serif;padding:24px;font-size:18px">お送りしたリンクから開いてください。</p>\n');
 writeFileSync(join(ROOT, '.nojekyll'), '');
 
-const git = (...a) => execFileSync('git', a, { cwd: ROOT, stdio: ['ignore', 'pipe', 'pipe'] }).toString().trim();
+const git = (...a) => execFileSync('git', ['-c', 'core.quotepath=false', ...a], { cwd: ROOT, stdio: ['ignore', 'pipe', 'pipe'] }).toString().trim();
+const OK_PATH = /^(\.gitignore|build\.mjs|index\.html|\.nojekyll|p\/[a-z0-9]+\/index\.html)$/;
 let isRepo = false;
 try { isRepo = realpathSync(git('rev-parse', '--show-toplevel')) === ROOT; } catch {}
 if (isRepo) {
-  const ok = /^(\.gitignore|build\.mjs|index\.html|\.nojekyll|p\/[a-z0-9]+\/index\.html)$/;
-  const bad = git('ls-files').split('\n').filter(f => f && !ok.test(f));
+  const bad = git('ls-files').split('\n').filter(f => f && !OK_PATH.test(f));
   if (bad.length) {
     console.error('🚨 公開してはいけない物が、記録に入っています:\n  ' + bad.join('\n  ') +
       '\n「git rm -r --cached ファイル名」で記録から外してから、もう一度動かしてください。');
@@ -63,6 +64,8 @@ const SITE = siteUrl();
 // ── 3. 対応表（src/.slugs.json：ファイル名 → 公開の名前と鍵）。src/ の中なので外には出ない
 const MAP_FILE = join(SRC, '.slugs.json');
 const map = existsSync(MAP_FILE) ? JSON.parse(readFileSync(MAP_FILE, 'utf8')) : {};
+if (existsSync(MAP_FILE)) writeFileSync(join(SRC, '.slugs.backup.json'), readFileSync(MAP_FILE));
+const stopped = new Set();
 const rand = (n, abc) => Array.from(crypto.getRandomValues(new Uint8Array(n)), b => abc[b % abc.length]).join('');
 const newSlug = () => rand(10, 'abcdefghjkmnpqrstuvwxyz23456789');
 const newKey = () => rand(24, 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789');
@@ -71,13 +74,26 @@ if (STOP) {
   if (!map[STOP]) { console.error('その名前の資料が見つかりません: ' + STOP + '\n公開中: ' + (Object.keys(map).join(', ') || 'なし')); process.exit(1); }
   mkdirSync(join(SRC, '_stopped'), { recursive: true });
   if (existsSync(join(SRC, STOP))) renameSync(join(SRC, STOP), join(SRC, '_stopped', STOP));
+  stopped.add(map[STOP].slug);
   delete map[STOP];
   console.log('公開をやめます: ' + STOP);
 }
 
 const files = readdirSync(SRC).filter(f => f.toLowerCase().endsWith('.html'));
-// src から消えた資料は、公開もやめる
-for (const f of Object.keys(map)) if (!files.includes(f)) { console.log('src にないので公開をやめます: ' + f); delete map[f]; }
+// src から消えた資料があれば止まる（名前を変えたり消したりすると、送ったリンクが開かなくなるため）
+const missing = Object.keys(map).filter(f => !files.includes(f));
+if (missing.length) {
+  console.error('🚨 送ったリンクの元の資料が src/ に見つかりません:\n  ' + missing.join('\n  ') +
+    '\nこのままだと、そのリンクが開かなくなります。\n・続けて公開するなら：同じファイル名で src/ に戻してください\n・公開をやめるなら：node build.mjs --stop ファイル名.html');
+  process.exit(1);
+}
+// 対応表にない公開フォルダがあれば止まる（対応表をなくしたときに、全部のリンクが消えないように）
+const known = new Set(Object.values(map).map(e => e.slug));
+const unknown = readdirSync(PUB).filter(d => !known.has(d) && !stopped.has(d) && !d.startsWith('.'));
+if (unknown.length && !args.includes('--yes')) {
+  console.error('🚨 対応表（src/.slugs.json）にない公開フォルダが ' + unknown.length + ' 個あります。\n対応表をなくした可能性があります。src/.slugs.backup.json から戻してください。\nそれらのリンクを開かなくしてよい場合だけ、--yes を付けてもう一度動かします。');
+  process.exit(1);
+}
 
 if (files.length && !SITE) {
   writeFileSync(MAP_FILE, JSON.stringify(map, null, 2));
@@ -153,13 +169,25 @@ writeFileSync(MAP_FILE, JSON.stringify(map, null, 2));
 // 対応表にない公開フォルダ（公開をやめた物）を消す
 for (const d of readdirSync(PUB)) if (!Object.values(map).some(e => e.slug === d)) rmSync(join(PUB, d), { recursive: true, force: true });
 
+// 公開フォルダの中は index.html だけにする（写真などを置いても上がらないように）
+for (const d of readdirSync(PUB)) for (const x of readdirSync(join(PUB, d))) if (x !== 'index.html') {
+  console.log('公開フォルダに置かれた物を外しました（src/_moved/ へ）: ' + x);
+  mkdirSync(join(SRC, '_moved'), { recursive: true });
+  renameSync(join(PUB, d, x), join(SRC, '_moved', d + '_' + x));
+}
+
 // ── 4. 記録して GitHub へ送る（記録の言葉は毎回「更新」だけ。お名前や資料名は書かない）
 if (!NO_PUSH && SITE && remote) {
   git('add', '-A');
-  if (git('status', '--porcelain')) git('commit', '-q', '-m', '更新');
+  const staged = git('diff', '--cached', '--name-only').split('\n').filter(f => f && !OK_PATH.test(f));
+  if (staged.length) { git('reset', '-q'); console.error('🚨 公開してはいけない物が入りかけたので止めました:\n  ' + staged.join('\n  ')); process.exit(1); }
+  if (git('status', '--porcelain')) {
+    try { git('commit', '-q', '-m', '更新'); }
+    catch (e) { console.error('🚨 記録できませんでした。git の名前とメールを設定してから、もう一度動かしてください。\n' + (e.stderr || '')); process.exit(1); }
+  }
   try { git('push', '-q', '-u', 'origin', 'HEAD'); }
   catch (e) { console.error('🚨 GitHubへ送れませんでした:\n' + (e.stderr || e.message)); process.exit(1); }
-  console.log('GitHubへ送りました。見られるようになるまで1〜2分かかります。');
+  console.log('GitHubへ送りました。見られるようになるまで1〜2分（はじめての公開は10分ほど）かかります。');
 }
 
 if (links.length) {
