@@ -41,7 +41,7 @@ const OK_PATH = /^(\.gitignore|build\.mjs|index\.html|\.nojekyll|p\/[a-z0-9]+\/i
 let isRepo = false;
 try { isRepo = realpathSync(git('rev-parse', '--show-toplevel')) === ROOT; } catch {}
 if (isRepo) {
-  const bad = git('ls-files').split('\n').filter(f => f && !OK_PATH.test(f));
+  const bad = git('ls-files').split(/\r?\n/).filter(f => f && !OK_PATH.test(f));
   if (bad.length) {
     console.error('🚨 公開してはいけない物が、記録に入っています:\n  ' + bad.join('\n  ') +
       '\n「git rm -r --cached ファイル名」で記録から外してから、もう一度動かしてください。');
@@ -179,7 +179,7 @@ for (const d of readdirSync(PUB)) for (const x of readdirSync(join(PUB, d))) if 
 // ── 4. 記録して GitHub へ送る（記録の言葉は毎回「更新」だけ。お名前や資料名は書かない）
 if (!NO_PUSH && SITE && remote) {
   git('add', '-A');
-  const staged = git('diff', '--cached', '--name-only').split('\n').filter(f => f && !OK_PATH.test(f));
+  const staged = git('diff', '--cached', '--name-only').split(/\r?\n/).filter(f => f && !OK_PATH.test(f));
   if (staged.length) { git('reset', '-q'); console.error('🚨 公開してはいけない物が入りかけたので止めました:\n  ' + staged.join('\n  ')); process.exit(1); }
   if (git('status', '--porcelain')) {
     try { git('commit', '-q', '-m', '更新'); }
