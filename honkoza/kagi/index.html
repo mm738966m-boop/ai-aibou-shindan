@@ -133,6 +133,7 @@ details.long pre{max-height:320px;overflow:auto;font-size:14px}
 .chk input{width:26px;height:26px;accent-color:var(--teal);flex:none}
 .chk input:checked+span{color:var(--deep)}
 .robo p{min-width:0;overflow-wrap:anywhere}
+.fig{display:block;width:100%;height:auto;border-radius:20px;margin:14px 0;border:2px solid var(--line)}
 .all{background:var(--goldbg);border-radius:18px;padding:12px 16px;font-weight:800;color:var(--deep);text-align:center}
 </style>
 <!-- ===== 計測（Meta Pixel 1510200123755162）=====
@@ -177,10 +178,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     <div class="c"><div class="ic">👨‍👩‍👧</div><div><h3>名前を消しても、お客さまの情報です</h3><p>年齢・家族・家計の数字・保険の中身がそろうと、誰のことか分かることがあります。</p></div></div>
     <div class="c"><div class="ic">🔒</div><div><h3>鍵つきなら、中身は読めません</h3><p>置いてあるのは、暗号のかたまりだけ。<br>最後に <b>?k=</b> のついたリンクを受け取った人だけが開けます。</p></div></div>
   </div>
-  <div class="cmp" role="img" aria-label="鍵のないURLと鍵つきのURLのちがい">
-    <div class="u ng"><span class="lab">✕ 鍵なし（送らない）</span><code>https://あなたの名前.github.io/map-1234/</code></div>
-    <div class="u good"><span class="lab">◯ 鍵つき（これを送る）</span><code>https://あなたの名前.github.io/share/p/k3x9q2ab/<mark>?k=Xy7Qp2…</mark></code></div>
-  </div>
+  <img class="fig" src="img/kagi_chigai.png" alt="同じ資料を鍵なしと鍵つきで出したときの画面のちがい。鍵なしは知らない人にも中身が見え、鍵つきは「お送りしたリンクから、もう一度開いてください。」と出て中身が見えない" width="900" loading="lazy">
   <div class="robo"><img src="../img/mascot_think.webp" alt="" width="62" height="62"><p>Claudeに「GitHubに上げて」「公開して」とだけ頼むと、鍵なしで出してしまうことがあります。<br>頼むときは、いつも<b>「この資料を、リンクにして」</b>です。</p></div>
 </section>
 
@@ -196,6 +194,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <section id="check">
   <h2>いま出ているリンクを、確かめる</h2>
   <span class="min">1分</span>
+  <img class="fig" src="img/kagi_kakunin.png" alt="リンクの最後に ?k= か #k= があれば送ってOK、なければ送らずに直す。?k= から後ろを消して開くと「お送りしたリンクから、もう一度開いてください。」と出れば鍵がかかっている" width="900" loading="lazy">
   <ol class="steps">
     <li>これまでに作ったリンク（お客さまに送ったもの・Claudeが出したもの）を見ます。</li>
     <li>最後に <b>?k=</b> か <b>#k=</b> があるかを見ます。</li>
@@ -208,6 +207,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <section id="fix">
   <h2>鍵なしで出ていた物を、直す</h2>
   <span class="min">10〜30分・ほとんど待つだけ</span>
+  <img class="fig" src="img/kagi_naoshi.png" alt="直す流れ。1 あなたが文を貼る、2 Claudeが調べて表で見せる、3 あなたが「直して」と送る、4 Claudeが鍵つきで出し直して古い置き場所を非公開に、5 あなたが新しいリンクをお客さまに送る" width="900" loading="lazy">
   <ol class="steps">
     <li>Claudeのアプリで「＋ 新規作成」を押し、雲のマーク☁のない<b>「このコンピューター（ローカル）」</b>を選びます。<br>フォルダは「デスクトップ」です。</li>
     <li>下の文をコピーして貼り、送ります。</li>
