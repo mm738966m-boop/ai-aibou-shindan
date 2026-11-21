@@ -6,9 +6,9 @@
 <meta name="robots" content="noindex,nofollow">
 <meta name="color-scheme" content="light">
 <title>作った資料を、タップで開くリンクにする｜金融AIカレッジ 本講座</title>
-<meta name="description" content="Claudeに「リンクにして」と言うだけで、お客さまにそのまま送れる形に。準備ははじめの1回だけです。">
+<meta name="description" content="準備は、Claudeに文を1回貼るだけ。あとは「この資料を、リンクにして」のひとことで、お客さまにそのまま送れる形になります。">
 <meta property="og:title" content="作った資料を、タップで開くリンクにする">
-<meta property="og:description" content="Claudeに「リンクにして」と言うだけで、お客さまにそのまま送れる形に。準備ははじめの1回だけです。">
+<meta property="og:description" content="準備は、Claudeに文を1回貼るだけ。あとは「この資料を、リンクにして」のひとことで、お客さまにそのまま送れる形になります。">
 <meta property="og:image" content="https://mm738966m-boop.github.io/ai-aibou-shindan/honkoza/share-link/og.png">
 <meta property="og:url" content="https://mm738966m-boop.github.io/ai-aibou-shindan/honkoza/share-link/">
 <meta property="og:type" content="article">
@@ -119,6 +119,10 @@ html.os-mac [data-os="win"],html.os-win [data-os="mac"]{display:none!important}
 html.os-win .os button[data-set="win"],html.os-mac .os button[data-set="mac"]{background:var(--teal);color:#fff}
 @media (max-width:420px){.hero h1{font-size:27px}section{padding:20px 16px}section h2{font-size:22px}}
 @media print{.top,.fin,.copy button,.line-btn{display:none}.js section{opacity:1;transform:none}body{background:#fff}}
+.step .say{display:block;background:#fff;border-radius:16px;padding:10px 14px;margin:8px 0 0;font-weight:800;color:var(--deep);border:2px dashed var(--teal)}
+details.long{margin-top:18px}
+details.long .copy{margin:0 12px 14px}
+details.long pre{max-height:320px;overflow:auto;font-size:14px}
 </style>
 <!-- ===== 計測（Meta Pixel 1510200123755162）=====
      全ページ共通。head の末尾に貼る。
@@ -145,27 +149,26 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1510200123755162&ev=PageView&noscript=1"></noscript>
 </head>
 <body>
-<div class="top" aria-hidden="true"><div class="in"><span class="lab" id="plab">0 / 6</span><div class="bar"><i id="pbar"></i></div></div></div>
+<div class="top" aria-hidden="true"><div class="in"><span class="lab" id="plab">0 / 3</span><div class="bar"><i id="pbar"></i></div></div></div>
 <div class="wrap">
 
 <header class="hero">
   <span class="kicker">金融AIカレッジ 本講座｜手順書</span>
   <h1>作った資料を、<br>タップで開くリンクにする</h1>
-  <p>Claudeに「リンクにして」と言うだけで、<br>お客さまにそのまま送れる形になります。</p>
-  <span class="time">⏱ 準備は、はじめの1回だけ（30〜60分）</span>
-  <div class="os"><span class="q">お使いのパソコンを選ぶと、手順が切り替わります</span><button type="button" data-set="win">Windows</button><button type="button" data-set="mac">Mac</button></div>
+  <p>準備は、Claudeに<b>文を1回貼るだけ</b>。<br>あとはClaudeが、順番に進めてくれます。</p>
+  <span class="time">⏱ はじめの1回だけ（20〜40分・ほとんど待つだけ）</span>
+  <div class="os"><span class="q">お使いのパソコンを選ぶと、説明が切り替わります</span><button type="button" data-set="win">Windows</button><button type="button" data-set="mac">Mac</button></div>
   <img class="robo-top" src="../img/mascot_invite.webp" alt="そろばんロボ" width="128" height="128">
 </header>
 
 <section id="why">
-  <h2>Claudeが止まるのには、理由があります</h2>
-  <p>「リンクにして」と頼んでも、Claudeが止まってしまう。<br>その理由は、たいてい次の3つです。</p>
+  <h2>やることは、3つだけ</h2>
   <div class="why">
-    <div class="c"><div class="ic">☁</div><div><h3>Claudeが<span class="nw">「クラウド」</span>で動いている</h3><p>パソコンの外にある作業場なので、公開の手続きまで手が届きません。</p></div></div>
-    <div class="c"><div class="ic">🔒</div><div><h3>置き場所が<span class="nw">「非公開」</span>になっている</h3><p>無料のGitHubでは、<span class="nw">非公開の</span>置き場所からページを出せません。</p></div></div>
-    <div class="c"><div class="ic">🛡</div><div><h3>お客さまの情報の守り方を、まだ伝えていない</h3><p>だからClaudeは「出していいのかな」と迷って止まります。<br>これは正しい判断です。</p></div></div>
+    <div class="c"><div class="ic">💻</div><div><h3>① Claudeを<span class="nw">「ローカル」</span>で開く</h3><p>雲のマーク☁のない形で開きます。2分です。</p></div></div>
+    <div class="c"><div class="ic">📋</div><div><h3>② 文を1回、貼って送る</h3><p>道具の準備も、GitHubの設定も、鍵の仕組みも、Claudeがやります。</p></div></div>
+    <div class="c"><div class="ic">📱</div><div><h3>③ 届いたリンクを、スマホで開く</h3><p>「準備はできています」と出たら完成です。</p></div></div>
   </div>
-  <div class="robo"><img src="../img/mascot_point.webp" alt="" width="62" height="62"><p>この3つを、上から順にほどいていきます。<br>準備は最初の1回だけです。</p></div>
+  <div class="robo"><img src="../img/mascot_point.webp" alt="" width="62" height="62"><p>途中でやってもらうのは、<br>「許可」を押す・GitHubでコードを入れる、の2つくらいです。</p></div>
 </section>
 
 <section id="before">
@@ -177,144 +180,232 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 </section>
 
 <section class="step" data-step="1">
-  <h2><span class="no">1</span>Claudeを「自分のパソコンで動く」形にする</h2>
-  <span class="min">5分</span>
+  <h2><span class="no">1</span>Claudeを「ローカル」で開く</h2>
+  <span class="min">2分</span>
   <ol class="steps">
-    <li><span data-os="win">デスクトップの何もないところで右クリックし、「新規作成」→「フォルダー」を押します。</span><span data-os="mac">デスクトップで右クリックし、「新規フォルダ」を押します。</span><br>名前は <b>share</b> にします。</li>
     <li>Claudeのアプリの左上にある「＋ 新規作成」を押します。</li>
-    <li>入力欄の近くに、いまの場所（雲のマーク☁がついたもの）が出ています。<br>そこを押して、<b>雲のマークのない「ローカル」</b>に切り替えます。</li>
-    <li>フォルダを聞かれたら、1で作った <b>share</b> を選びます。<br><span data-os="mac">「デスクトップへのアクセス」の確認が出たら、「許可」を押します。<br></span><span class="ok">雲のマーク☁がどこにも出ていなければOK</span></li>
+    <li>入力欄の下に、いまの場所が出ています。<br>雲のマーク☁がついていたら、そこを押して<b>「このコンピューター（ローカル）」</b>に切り替えます。</li>
+    <li>フォルダを聞かれたら、<b>「デスクトップ」</b>を選びます。<br><span data-os="mac">「デスクトップへのアクセス」の確認が出たら、「許可」を押します。<br></span><span class="ok">雲のマーク☁がどこにも出ていなければOK</span></li>
   </ol>
-  <div class="mock" role="img" aria-label="画面のイメージ。雲のマークのついた場所ではなく、ローカルのshareフォルダを選ぶ">
+  <div class="mock" role="img" aria-label="画面のイメージ。雲のマークのついた場所ではなく、このコンピューター（ローカル）を選ぶ">
     <div class="cap">画面のイメージ（場所を選ぶところ）</div>
     <div class="rows">
-      <div class="row"><span class="v">☁ デフォルト</span><span class="tagx">これはクラウド</span></div>
-      <div class="row"><span class="v">💻 ローカル ／ share</span><span class="tago">こちらにする</span></div>
+      <div class="row"><span class="v">☁ クラウド</span><span class="tagx">これではない</span></div>
+      <div class="row"><span class="v">💻 このコンピューター ／ デスクトップ</span><span class="tago">こちらにする</span></div>
     </div>
   </div>
   <p class="mock-note">表示の言葉は、アプリの版で少し違うことがあります。<br>目印は「雲のマーク☁があるかどうか」です。</p>
-  <div class="note" data-os="win"><b>「Git が必要です」と出たとき</b><br>ローカルを選んだときに、Git を入れるように案内が出ることがあります。<br>そのときは、次のページから「Git for Windows」を入れます。<span class="url">https://git-scm.com/<wbr>downloads/win</span>入れる途中の質問は、すべてそのまま「Next」で大丈夫です。<br>「このアプリがデバイスに変更を加えることを許可しますか」と出たら「はい」を押します。<br>入れ終わったら、Claudeのアプリを一度閉じて開き直し、もう一度「ローカル」を選びます。</div>
+  <div class="note"><b>いまのセッションがクラウドだったとき</b><br>作業の途中なら、先に「別のセッションで続けるので、引き継ぎを作って」と送っておくと、ローカルの新しい画面で続きから始められます。</div>
+  <div class="note" data-os="win"><b>「Git が必要です」と出たとき</b><br>次のページから「Git for Windows」を入れます。<span class="url">https://git-scm.com/<wbr>downloads/win</span>途中の質問は、すべてそのまま「Next」で大丈夫です。<br>「このアプリがデバイスに変更を加えることを許可しますか」と出たら「はい」。<br>入れ終わったら、Claudeのアプリを一度閉じて開き直し、もう一度「ローカル」を選びます。</div>
   <div class="fin"><button type="button">✓ できた</button></div>
 </section>
 
 <section class="step" data-step="2">
-  <h2><span class="no">2</span>パソコンの道具をそろえて、GitHubとつなぐ</h2>
-  <span class="min">15〜40分</span>
+  <h2><span class="no">2</span>この文を貼って、送る</h2>
+  <span class="min">20〜40分・ほとんど待つだけ</span>
   <ol class="steps">
-    <li>1で開いた新しい画面に、下の文をそのまま貼って送ります。</li>
+    <li>1で開いた画面に、下の文をコピーして貼り、送ります。</li>
   </ol>
-  <div class="copy" data-os="win"><div class="hd"><span>貼る文 ①　道具をそろえてつなぐ（Windows）</span><button type="button" data-n="1w">コピー</button></div><pre>このパソコン（Windows）で、GitHubに資料を公開できるように準備してください。
-・git・node・gh（GitHubの道具）が入っているか確かめて、ないものを winget で入れてください（git は Git.Git、node は OpenJS.NodeJS.LTS、gh は GitHub.cli）。
-・「このアプリがデバイスに変更を加えることを許可しますか」と出たら、私が「はい」を押します。終わるまで待ってください。
-・入れたあとに「見つかりません」と出るときは、入った場所（C:\Program Files の中など）を直接使ってください。
-・gh auth login --web --git-protocol https を裏で動かして、出てきた8けたのコードを先に大きく見せてください。私が https://github.com/login/device で許可します。
-・つながったら gh auth setup-git も動かしてください。
-・git の名前はGitHubの名前、メールはGitHubの noreply のアドレス（ID+名前@users.noreply.github.com）で設定してください。
-・最後に、全部そろったかを教えてください。</pre></div>
-  <div class="copy" data-os="mac"><div class="hd"><span>貼る文 ①　道具をそろえてつなぐ（Mac）</span><button type="button" data-n="1">コピー</button></div><pre>このMacで、GitHubに資料を公開できるように準備してください。
-・git・node・gh（GitHubの道具）が入っているか確かめて、ないものを入れてください。
-・Homebrew がないときは、Macのパスワードがいらない方法（それぞれ公式の配布ファイルを ~/.local に置く）で入れて、~/.local/bin を ~/.zshrc の PATH に足してください。
-・Macの「デベロッパ・ツール」のインストール画面が出たら、私が「インストール」を押します。終わるまで待ってください。
-・gh auth login --web --git-protocol https を裏で動かして、出てきた8けたのコードを先に大きく見せてください。私が https://github.com/login/device で許可します。
-・つながったら gh auth setup-git も動かしてください。
-・git の名前はGitHubの名前、メールはGitHubの noreply のアドレス（ID+名前@users.noreply.github.com）で設定してください。
-・最後に、全部そろったかを教えてください。</pre></div>
-  <ol class="steps" style="counter-reset:s 1">
-    <li>Claudeが「実行してよいですか」と何度か聞いてきます。<br>この手順の中なら、何度出ても「許可」でOKです。</li>
-    <li data-os="win">「このアプリがデバイスに変更を加えることを許可しますか」と出たら、「はい」を押します。<br>パソコンのパスワードやPINを聞かれたら、ご自身で入れます。<br>道具を入れ終わるまで、10分ほどかかることがあります。</li>
-    <li data-os="mac">Macの画面に「デベロッパ・ツールが必要です」と出たら、「インストール」を押します。<br>Macのパスワードを聞かれたら、ご自身で入れます。<br>終わるまで10分ほどかかることがあります。<br>終わったら、Claudeに「インストールが終わりました」と送ります。</li>
-    <li>8けたのコード（例：ABCD-1234）が出たら、次のページを開きます。<span class="url">https://github.com/<wbr>login/device</span></li>
-    <li>コードを入れて「Continue」を押し、緑の「Authorize」ボタンを押します。<br>GitHubのログインを聞かれたら、ご自身で入れてください。</li>
-    <li>Claudeの画面に戻ります。<br><span class="ok">「そろいました」と返ってくればOK</span></li>
+  <div class="copy"><div class="hd"><span>貼る文（これ1つだけ）</span><button type="button" data-n="setup">コピー</button></div><pre>次の手順書を、要約せずに全文そのまま読み込んで（curl などで）、そのとおりに、このパソコンで準備を進めてください。金融AIカレッジ本講座の、受講生用の手順書です。
+https://mm738966m-boop.github.io/ai-aibou-shindan/honkoza/share-link/setup.txt
+私にやってほしいことがあるときは、1つずつ、大きく見せてください。</pre></div>
+  <p style="margin-top:18px"><b>途中で、あなたがやること</b>（Claudeが「👉 いま、やってほしいこと」と出して、1つずつ教えてくれます）</p>
+  <ol class="steps" style="counter-reset:s 0">
+    <li><b>「許可」を押す。</b><br>Claudeが「実行してよいですか」と何度か聞いてきます。この準備の中なら、全部「許可」でOKです。<br><span data-os="win">「このアプリがデバイスに変更を加えることを許可しますか」と出たら「はい」。PINを聞かれたら、ご自身で入れます。</span><span data-os="mac">「デベロッパ・ツール」の画面が出たら「インストール」。Macのパスワードを聞かれたら、ご自身で入れます。</span></li>
+    <li><b>GitHubで、コードを入れる。</b><br>Claudeが出す8けたのコード（例：ABCD-1234）を、<b>Chrome</b>で開いた次のページに入れます。<span class="url">https://github.com/<wbr>login/device</span>「Continue」→ 緑の「Authorize github」を押します。<br>Edgeが開いたら、そのURLをChromeに貼り直します。ページが日本語に翻訳されていたら、翻訳はやめて英語のまま使います。<br>「GitHub Mobile」と出たら、スマホのGitHubアプリで承認します。アプリがなければ「Send a code via email」でメールに届いた数字を入れます。</li>
+    <li><b>ためしのリンクを、スマホで開く。</b><br>最後にClaudeが ?k= つきのURLを出します。最後まで全部コピーして、LINEの自分用のトーク（Keepメモ）に送り、スマホで開きます。<br><span class="ok">「このページが見えたら、準備はできています」と出ればOK</span></li>
   </ol>
-  <div class="fin"><button type="button">✓ できた</button></div>
-</section>
+  <details class="long"><summary>Claudeが「ページを読めません」と言ったとき（長い版）</summary><div class="a">下の長い版をコピーして、そのまま貼って送ってください。中身は同じです。</div>
+  <div class="copy"><div class="hd"><span>貼る文（長い版）</span><button type="button" data-n="setup-long">コピー</button></div><pre>次の手順書のとおりに、このパソコンで準備を進めてください。金融AIカレッジ本講座の、受講生用の手順書です。私にやってほしいことがあるときは、1つずつ、大きく見せてください。
 
-<section class="step" data-step="3">
-  <h2><span class="no">3</span>置き場所と、鍵の仕組みを作る</h2>
-  <span class="min">5分</span>
-  <p>置き場所そのものは「公開」にします。<br>そのかわり、中身は鍵がないと読めない形で置きます。<br>鍵は資料ごとに別々なので、Aさんに送ったリンクで、Bさんの資料は開きません。<br>鍵と元の資料はパソコンの中にしまい、GitHubには上げない設定にします。</p>
-  <ol class="steps">
-    <li>同じ画面に、下の文をそのまま貼って送ります。</li>
-  </ol>
-  <div class="copy"><div class="hd"><span>貼る文 ②　置き場所と鍵を作る</span><button type="button" data-n="2">コピー</button></div><pre>渡す資料の置き場所を作ってください。順番どおりに進めてください。
-1. いま開いているフォルダ（share）に、次のひな形をダウンロードして、そのまま build.mjs という名前で保存してください。書き写したり、作り直したりはしないでください。
-https://mm738966m-boop.github.io/ai-aibou-shindan/honkoza/share-link/build.mjs
-2. node build.mjs を一度動かしてください。GitHubに上げない物の設定が、最初に作られます。
-3. git init -b main をして、GitHubに公開リポジトリ「share」を作り、つないでください（同じ名前があれば share-2）。自分で git add や commit はしないでください。
-4. もう一度 node build.mjs を動かしてください。GitHubへ送られます。
-5. GitHub Pages を、main ブランチの /（root）で有効にしてください。
-6. 公開先のURLを教えてください。</pre></div>
-  <ol class="steps" style="counter-reset:s 1">
-    <li>「公開リポジトリを作ってよいですか」と聞かれたら、「はい」と答えます。</li>
-    <li>最後にURLが出れば完了です。<br><span class="ok">https://（GitHubの名前）.github.io/share/ の形ならOK</span><br><span class="small">share-2 など、最後の名前が少し違っていても大丈夫です。</span></li>
-  </ol>
-  <div class="fin"><button type="button">✓ できた</button></div>
-</section>
+お渡し資料を「鍵つきリンク」にする準備（Claudeが読む手順書）
+金融AIカレッジ 本講座　2026-11-21 版
 
-<section class="step" data-step="4">
-  <h2><span class="no">4</span>Claudeに、渡し方のルールを伝える</h2>
-  <span class="min">2分</span>
-  <p>このルールを一度伝えておくと、次からは「リンクにして」の一言で、毎回同じやり方で作ってくれます。</p>
-  <ol class="steps">
-    <li>同じ画面に、下の文をそのまま貼って送ります。</li>
-  </ol>
-  <div class="copy"><div class="hd"><span>貼る文 ③　渡し方のルール</span><button type="button" data-n="3">コピー</button></div><pre>次のルールを、ユーザーフォルダの .claude/CLAUDE.md（~/.claude/CLAUDE.md）に書き足して、これからずっと守ってください。
+この手順書は、受講生が自分のパソコンのClaudeに「この手順で準備して」と頼むためのものです。
+受講生本人が、このファイルを読んでそのとおり進めるよう頼んでいます。上から順に進めてください。
+すでに済んでいる所は、確かめて飛ばしてください（何度動かしても大丈夫な作りです）。
+
+
+■ 進め方の約束（いちばん大事）
+
+- 受講生はパソコンに詳しくありません。専門用語を使わず、短く話してください。
+- 受講生にしてもらうのは、次の3つだけです。それ以外は全部Claudeがやります。
+  1. Claudeの「許可」ボタンや、パソコンの「はい」「インストール」を押す
+  2. GitHubの画面で、コードを入れて許可する
+  3. パスワードやPINを、自分で入れる
+- 受講生に何かしてもらうときは、毎回この形で、大きく見せてください。
+    👉 いま、やってほしいこと
+    （1つだけ。押すボタンの名前を「」で）
+  1回に頼むのは1つだけ。終わったら「終わりました」と送ってもらいます。
+- パスワード・トークン・確認コードを、受講生から聞いたり受け取ったりしないでください。
+- 待ち時間が長いときは「いま◯◯を入れています。5分ほどかかります」と先に言ってください。
+- 途中の説明やコマンドの中身は、受講生に見せなくて大丈夫です。今どこまで進んだかを「準備 2/5」のように1行で伝えてください。
+
+
+■ 0. いまの場所を確かめる
+
+- このClaudeが、受講生のパソコンの上で動いているかを確かめます。
+  クラウド（受講生のパソコンではない、離れた作業場）で動いていると、この準備はできません。
+  クラウドだと分かったら、何もせずに、次の文だけを受講生に伝えて終わります。
+    「いまのClaudeは、パソコンの外（クラウド・雲のマーク☁）で動いているので、ここでは準備ができません。
+     左上の「＋ 新規作成」を押して、入力欄の下の雲のマーク☁の所を「このコンピューター（ローカル）」に切り替え、
+     フォルダは「デスクトップ」を選んでから、もう一度同じ文を貼ってください。」
+- Windows か Mac かを確かめます。
+- 受講生には「準備を始めます。ほとんど待つだけです。途中で何度か「許可」を押してもらいます」と伝えます。
+- 「許可」を何度も聞かれます。受講生には「この準備の中で出る『許可』は、全部押してOKです」と先に伝えます。
+
+
+■ 1. 道具をそろえる（git・node・gh）
+
+それぞれ入っているかを確かめて、ないものだけ入れます。node は 18 以上。
+
+Windows：
+- winget で入れます。
+    git  … winget install --id Git.Git -e --accept-package-agreements --accept-source-agreements
+    node … winget install --id OpenJS.NodeJS.LTS -e --accept-package-agreements --accept-source-agreements
+    gh   … winget install --id GitHub.cli -e --accept-package-agreements --accept-source-agreements
+- 入れる前に、受講生に伝えます。
+    👉 いま、やってほしいこと
+    「このアプリがデバイスに変更を加えることを許可しますか」と出たら「はい」を押してください。
+- 入れたあとに「見つかりません」と出るのは、場所をまだ覚えていないだけです。入った場所を直接使ってください。
+    C:\Program Files\nodejs\node.exe
+    C:\Program Files\GitHub CLI\gh.exe
+    C:\Program Files\Git\cmd\git.exe
+- winget がないときは、受講生に「Microsoft Store で『アプリ インストーラー』を更新してください」と頼みます。
+
+Mac：
+- Homebrew があれば brew install git node gh。
+- Homebrew がないときは、Macのパスワードがいらない方法で入れます。
+    node … nodejs.org の公式の配布ファイル（darwin-arm64 か darwin-x64。uname -m で確かめる）を ~/.local に置く
+    gh   … GitHub の cli/cli のリリースにある macOS 用の配布ファイルを ~/.local に置く
+    ~/.local/bin を ~/.zshrc の PATH に足す
+- git がなくて「デベロッパ・ツール」の画面が出たら、受講生に頼みます。
+    👉 いま、やってほしいこと
+    画面に出た「インストール」を押してください。終わったら「終わりました」と送ってください（10分ほど）。
+
+
+■ 2. GitHubとつなぐ
+
+- gh auth status で、もうつながっているかを確かめます。つながっていれば飛ばします。
+- 受講生に聞きます。「GitHubのアカウントはありますか？」
+  ないときは、次のページで作ってもらい、終わるまで待ちます。
+    https://github.com/signup
+- gh auth login --hostname github.com --git-protocol https --web --clipboard を裏で動かします
+  （--clipboard が使えない版なら外す）。出てきたコード（例：ABCD-1234）を、受講生に大きく見せます。
+    👉 いま、やってほしいこと
+    1. Chrome で次のページを開いてください（Edge が開いたら、このURLを Chrome に貼り直します）
+       https://github.com/login/device
+    2. ページが日本語に翻訳されていたら、翻訳をやめて英語のまま使います
+    3. コード「ABCD-1234」を入れて（コピー済みなので、貼り付けるだけ）「Continue」→ 緑の「Authorize github」を押します
+    4. 「GitHub Mobile」と出たら、スマホのGitHubアプリで承認します。アプリがなければ「Send a code via email」を押して、メールに届いた数字を入れます
+    5. 「Congratulations」と出たら、Claudeに「終わりました」と送ってください
+- つながったら gh auth setup-git を動かします。
+- git の名前とメールが空なら、設定します（メールは個人のアドレスを使わない）。
+    名前 … GitHubのユーザー名（gh api user --jq .login）
+    メール … ID+ユーザー名@users.noreply.github.com（ID は gh api user --jq .id）
+
+
+■ 3. 置き場所と、鍵の仕組みを作る
+
+- 置き場所は、デスクトップの share フォルダです。
+  Windows のデスクトップは OneDrive の中のことがあるので、本当の場所を確かめます
+  （PowerShell の [Environment]::GetFolderPath('Desktop')）。
+- share フォルダがすでにあるとき：
+    ・中に build.mjs と src があって、GitHub につながっていれば、そのまま使います（準備の続き）
+    ・空なら、そのまま使います
+    ・ほかの物が入っていれば、何も消さず、share-2 という名前で作ります
+- ひな形をダウンロードして、share の中に build.mjs という名前で保存します。書き写したり作り直したりしません。
+    https://mm738966m-boop.github.io/ai-aibou-shindan/honkoza/share-link/build.mjs
+  1行目が「// お渡し資料を「タップするだけで開くリンク」で始まっているかを確かめます。
+- share の中で node build.mjs を1回動かします（GitHubに上げない物の設定が、最初に作られます）。
+- git init -b main をします。自分で git add や git commit はしません（build.mjs がやります）。
+- GitHub に「公開」の置き場所（リポジトリ）を作って、つなぎます。
+    gh repo create share --public --source . --remote origin
+  同じ名前がすでにあれば、share-2、share-3 … と名前を変えます。
+  🚨 すでにある置き場所を、使い回したり、非公開から公開に変えたりはしません（暗号化していない資料が入っているかもしれないため）。
+  「公開」でよい理由：中身は資料ごとの鍵で暗号化され、鍵と元の資料はパソコンの中だけに置くからです。受講生に聞かれたら、そう説明します。
+- もう一度 node build.mjs を動かします。GitHub へ送られます。
+- GitHub Pages を、main ブランチの /（root）で有効にします。
+    gh api -X POST repos/{ユーザー名}/{リポジトリ名}/pages -f "source[branch]=main" -f "source[path]=/"
+- 公開先のURL（https://ユーザー名.github.io/リポジトリ名/）が 200 で開けるまで待ちます。
+  はじめては10分ほどかかることがあります。1分おきに確かめ、10分までは待ちます。設定の作り直しや送り直しはしません。
+
+
+■ 4. 渡し方のルールを、ずっと覚えておく
+
+ユーザーフォルダの .claude/CLAUDE.md（Mac は ~/.claude/CLAUDE.md、Windows は C:\Users\名前\.claude\CLAUDE.md）に、
+次のルールを書き足します。前からある中身は消しません。同じ見出しがすでにあれば、その部分だけ入れ替えます。
+{share の場所} は、3で使った share フォルダの本当の場所に置き換えて書きます。
 
 ## 人に渡す資料はリンクにする
-- 人に渡す資料は、デスクトップの share フォルダの src/ にHTMLで置き、share フォルダで node build.mjs を動かす。暗号化・記録・GitHubへの送信まで build.mjs がやるので、git add や commit は自分でしない。
+- 「リンクにして」「お客さまに送れる形にして」と頼まれたら、資料をHTMLにして {share の場所}/src/ に置き、{share の場所} で node build.mjs を動かす。暗号化・記録・GitHubへの送信まで build.mjs がやるので、git add や commit は自分でしない。
+- いまの作業場所が share フォルダでなくても、上の場所で動かす。クラウド（雲のマーク）で動いているときは、できないので「ローカルで開き直してください」と伝える。
 - 資料を直すときは、src/ の同じファイル名のまま上書きする。名前を変えたり消したりしない（送ったリンクが開かなくなる）。
 - build.mjs が 🚨 で止まったら、表示のとおりに対応し、--yes は私に確かめてから使う。
 - PDFや文章で届いた資料は、スマホで読みやすいHTMLに作り直してから src/ に置く。画像はHTMLの中に埋め込む。share フォルダの直下と p/ には何も置かない。
 - お渡し資料には、計測タグ（Metaピクセル・Googleアナリティクスなど）を入れない。
 - 渡すリンクは、build.mjs が最後に出す「?k=」つきのURL。資料ごとに鍵が違う。省略せず、伏せ字にせず、全部見せる。
-- シェアしたときの題名は &lt;meta name="share-title" content="…"&gt; に書く。ここは暗号化されないので、お名前・金額・病気は入れず、「お金の地図」のような資料の種類だけにする。src/ のファイル名は外に出ない。
+- シェアしたときの題名は &lt;meta name="share-title" content="…"&gt; に書く。ここは暗号化されないので、お名前・金額・病気は入れず、「お金の地図」のような資料の種類だけにする。
 - 暗号化しないまま公開しない。アーティファクトやメールの下書きで代わりにしない。
-- 公開したら1〜2分待ち、?k= を外したURLを開いて 200 になることを確かめてから報告する。はじめての公開は10分ほどかかることがあるので、200にならなくても10分までは待って何度か試す。設定の作り直しや送り直しはしない。
-- 「この資料の公開をやめて」と言われたら、node build.mjs --stop ファイル名.html を動かす。</pre></div>
-  <p><span class="ok">「書き足しました」と出ればOK</span></p>
+- 公開したら1〜2分待ち、?k= を外したURLを開いて 200 になることを確かめてから報告する。はじめての公開は10分ほどかかることがある。
+- 「この資料の公開をやめて」と言われたら、node build.mjs --stop ファイル名.html を動かす。
+
+
+■ 5. ためしに1本、リンクにする
+
+- {share の場所}/src/tameshi.html に、次のページを作ります。
+    &lt;meta name="share-title" content="ためしのページ"&gt; を入れる
+    大きな文字で「このページが見えたら、準備はできています」
+    スマホで読みやすい1枚のHTML
+- node build.mjs を動かし、出てきた ?k= つきのURLが開けるまで待ちます（?k= を外したURLが 200 になるまで）。
+- 受講生に頼みます。
+    👉 いま、やってほしいこと
+    下のURLを、最後まで全部コピーして、LINEの自分用のトーク（Keepメモ）に送り、スマホで開いてください。
+    「このページが見えたら、準備はできています」と出たら、Claudeに「見えました」と送ってください。
+    （?k= つきのURLを、省略せずに1行で見せる）
+
+
+■ 6. 終わりの報告
+
+受講生に、次の形で伝えて終わります。
+
+  準備ができました🎉
+  次からは、これだけです。
+  ・Claudeの「＋ 新規作成」で、雲のマークのない「ローカル」を選ぶ（フォルダはデスクトップでOK）
+  ・資料のファイルを入力欄に入れて、「この資料を、リンクにして」と送る
+  ・出てきた ?k= つきのURLを、最後まで全部コピーして、お客さまに送る
+  送る前に、宛先とお名前をもう一度見てください。間違えて送ったときは「この資料の公開をやめて」と言えば、数分で開かなくなります。
+
+- 作業会で作った「お金の地図」のファイルがこのパソコンにあれば、「続けて、地図もリンクにしますか？」と1回だけ聞きます。
+
+
+■ 止まったとき
+
+- 「公開できません」「非公開です」→ クラウドで動いていないかを、もう一度 0 で確かめる。
+- gh や node が「見つからない」→ 1 の「入った場所を直接使う」。
+- push が断られた → gh auth setup-git をもう一度。GitHub の置き場所に README などが先に入っていたら、新しい名前で作り直す（古い置き場所は消さない）。
+- Pages が 404 のまま → 10分までは待つ。10分を過ぎたら gh api repos/{ユーザー名}/{リポジトリ名}/pages で状態を見て、受講生に「GitHubの画面の Settings → Pages で、Branch が main になっているか」だけ見てもらう。
+- どうしても進まないとき → 止まった所と、画面に出ている文を短くまとめて、受講生に「この画面の写真を、本講座の窓口のLINEに送ってください」と伝える。</pre></div></details>
   <div class="fin"><button type="button">✓ できた</button></div>
 </section>
 
-<section class="step" data-step="5">
-  <h2><span class="no">5</span>ためしに1本、リンクにしてみる</h2>
-  <span class="min">5分</span>
+<section class="step" data-step="3">
+  <h2><span class="no">3</span>次からは、ひとことで</h2>
+  <span class="min">毎回1分</span>
   <ol class="steps">
-    <li>渡したい資料のファイルを、<span data-os="win">エクスプローラー</span><span data-os="mac">Finder</span>（デスクトップやダウンロードのフォルダ）から、Claudeの入力欄へドラッグして入れます。</li>
-    <li>続けて、下の文を送ります。</li>
-  </ol>
-  <div class="copy"><div class="hd"><span>貼る文 ④　リンクにする</span><button type="button" data-n="4">コピー</button></div><pre>この資料を、スマホで読みやすいページにして、リンクにしてください。</pre></div>
-  <ol class="steps" style="counter-reset:s 2">
-    <li>出てきたURLを、最後まで全部コピーします。<br>URLの終わりに <b>?k=</b> と英数字がついていれば、それが渡すリンクです。</li>
-    <li>そのURLを、LINEの自分用のトーク（Keepメモ）に送って、スマホで開きます。<br><span class="ok">資料の中身が出ればOK</span></li>
-    <li>鍵の確かめもしておきます。<br>パソコンのブラウザのアドレス欄にURLを貼り、<b>?k=</b> から後ろを消して開きます。<br>「お送りしたリンクから、もう一度開いてください」と出て、中身は見えません。</li>
-  </ol>
-  <p class="small">公開してから見られるようになるまで、1〜2分かかります。<br>はじめての1本は、10分ほどかかることがあります。</p>
-  <div class="fin"><button type="button">✓ できた</button></div>
-</section>
-
-<section class="step" data-step="6">
-  <h2><span class="no">6</span>お客さまに送る前に</h2>
-  <span class="min">1分</span>
-  <ol class="steps">
-    <li><b>送る相手を、もう一度見ます。</b><br>リンクを知っている人は、その資料を開けます。<br>宛先とお名前を確かめてから送ります。</li>
-    <li><b>間違えて送ったときは、止められます。</b><br>Claudeに「この資料の公開をやめて」と伝えます。<br>数分で、リンクから開かなくなります。</li>
+    <li>Claudeの「＋ 新規作成」で、<b>雲のマークのない「ローカル」</b>を選びます（フォルダはデスクトップでOK）。</li>
+    <li>渡したい資料のファイルを、入力欄にドラッグして入れ、ひとこと送ります。<br><span class="say">「この資料を、リンクにして」</span></li>
+    <li>出てきた <b>?k=</b> つきのURLを、最後まで全部コピーして、お客さまに送ります。</li>
+    <li><b>送る前に、宛先とお名前をもう一度見ます。</b><br>リンクを知っている人は、その資料を開けます。<br>間違えて送ったときは、Claudeに「この資料の公開をやめて」と伝えます。数分で開かなくなります。</li>
   </ol>
   <div class="fin"><button type="button">✓ できた</button></div>
-</section>
-
-<section class="next">
-  <h2>次からは、これだけです</h2>
-  <p>Claudeの「＋ 新規作成」で、雲のマークのない <b>share</b> の画面を開きます。<br>資料を入れて、ひとこと送ります。</p>
-  <span class="say">「この資料を、リンクにして」</span>
-  <p>出てきた <b>?k=</b> つきのURLを、そのままお客さまに送ります。</p>
 </section>
 
 <section id="help">
   <h2>困ったとき</h2>
-  <details><summary>Claudeが「アーティファクトにします」「メールの下書きにします」と言う</summary><div class="a">まず、雲のマーク☁が出ていないかを見ます。<br>出ていれば、手順1のやり方で share の画面を開き直します。<br>出ていなければ、貼る文③をもう一度送ってから、「GitHubでリンクにして」と伝えてください。</div></details>
-  <details><summary>「公開できません」「リポジトリが非公開です」と言われる</summary><div class="a">Claudeがクラウドで動いている状態です。<br>雲のマーク☁が出ていないかを見て、出ていれば手順1から開き直してください。</div></details>
-  <details><summary>「gh が見つかりません」「node が見つかりません」と出る</summary><div class="a">道具が入っていないか、場所を覚えていない状態です。<br><span data-os="win">Claudeのアプリを一度閉じて開き直し、share の画面で同じことを頼んでみてください。<br>それでも出るときは、</span>貼る文①をもう一度送ってください。</div></details>
+  <details><summary>「公開できません」「リポジトリが非公開です」と言われる</summary><div class="a">Claudeがクラウドで動いている状態です。<br>入力欄の下に雲のマーク☁が出ていないかを見て、出ていれば手順1から開き直してください。</div></details>
+  <details><summary>Claudeが「アーティファクトにします」「メールの下書きにします」と言う</summary><div class="a">まず、雲のマーク☁が出ていないかを見ます。<br>出ていなければ、手順2の文をもう一度貼って送ってください（済んでいる所は、Claudeが飛ばします）。<br>そのあと「GitHubでリンクにして」と伝えます。</div></details>
+  <details><summary>8けたのコードを入れる所で止まった</summary><div class="a">Chromeで https://github.com/login/device を開き直して、コードを入れます。<br>コードの期限（15分）が切れたら、Claudeに「コードをもう一度出して」と送ります。</div></details>
   <details><summary>🚨 のついた表示が出て止まった</summary><div class="a">公開してはいけない物や、リンクが開かなくなる変更を、手前で止めた状態です。<br>その画面のまま、Claudeに「この表示のとおりに直して」と伝えてください。<br>迷ったら、そのままにして窓口のLINEで聞いてください。</div></details>
   <details><summary>リンクを開くと「お送りしたリンクから、もう一度開いてください」と出る</summary><div class="a">URLの終わりの <b>?k=</b> から後ろが切れています。<br>Claudeが出したURLを、最後まで全部コピーし直してください。</div></details>
   <details><summary>資料を直したのに、古いまま表示される</summary><div class="a">公開に1〜2分かかります。<br>少し待ってから、ページを読み込み直してください。</div></details>
@@ -330,7 +421,7 @@ https://mm738966m-boop.github.io/ai-aibou-shindan/honkoza/share-link/build.mjs
 </div>
 <script>
 (function(){
-  var KEY='honkoza_sharelink_v1';
+  var KEY='honkoza_sharelink_v2';
   var done={};
   try{done=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){done={}}
   var steps=[].slice.call(document.querySelectorAll('section.step'));
