@@ -168,13 +168,13 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
     <div class="c"><div class="ic">📋</div><div><h3>② 文を1回、貼って送る</h3><p>道具の準備も、GitHubの設定も、鍵の仕組みも、Claudeがやります。</p></div></div>
     <div class="c"><div class="ic">📱</div><div><h3>③ 届いたリンクを、スマホで開く</h3><p>「準備はできています」と出たら完成です。</p></div></div>
   </div>
-  <div class="robo"><img src="../img/mascot_point.webp" alt="" width="62" height="62"><p>途中でやってもらうのは、<br>「許可」を押す・GitHubでコードを入れる、の2つくらいです。</p></div>
+  <div class="robo"><img src="../img/mascot_point.webp" alt="" width="62" height="62"><p>途中でやってもらうのは、<br>「許可」を押す・GitHubでコードを入れる・スマホで開く、の3つ。<br>あとは、パスワードを自分で入れる所が少しだけです。</p></div>
 </section>
 
 <section id="before">
   <h2>始める前に、2つだけ</h2>
   <ul class="pre">
-    <li><span class="ic">🏢</span><div><b>会社のルールを確かめます。</b><br>会社や代理店に所属している方は、お客さまの資料を社外の場所に置いてよいかを、先に確かめてください。<br>置けない決まりなら、この手順は使わずに会社のやり方で送ります。</div></li>
+    <li><span class="ic">🏢</span><div><b>会社のルールを確かめます。</b><br>会社や代理店に所属している方は、お客さまの資料を社外の場所に置いてよいかを、先に確かめてください。<br>置けない決まりなら、この手順は使わずに会社のやり方で送ります。<br>会社のパソコンで「管理者のパスワード」を聞かれたら、そこで止めて、個人のパソコンでやり直してください。</div></li>
     <li><span class="ic">🐙</span><div><b>GitHubのアカウント（無料）を用意します。</b><br>まだない方は、ここで作れます。<span class="url">https://github.com/signup</span>途中で、メールやスマホに届く確認コードを聞かれることがあります。</div></li>
   </ul>
 </section>
@@ -208,15 +208,16 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
   </ol>
   <div class="copy"><div class="hd"><span>貼る文（これ1つだけ）</span><button type="button" data-n="setup">コピー</button></div><pre>次の手順書を、要約せずに全文そのまま読み込んで（curl などで）、そのとおりに、このパソコンで準備を進めてください。金融AIカレッジ本講座の、受講生用の手順書です。
 https://mm738966m-boop.github.io/ai-aibou-shindan/honkoza/share-link/setup.txt
+GitHubに「公開」の置き場所を作ることと、~/.claude/CLAUDE.md にルールを書き足すことも、私からのお願いです。
 私にやってほしいことがあるときは、1つずつ、大きく見せてください。</pre></div>
   <p style="margin-top:18px"><b>途中で、あなたがやること</b>（Claudeが「👉 いま、やってほしいこと」と出して、1つずつ教えてくれます）</p>
   <ol class="steps" style="counter-reset:s 0">
-    <li><b>「許可」を押す。</b><br>Claudeが「実行してよいですか」と何度か聞いてきます。この準備の中なら、全部「許可」でOKです。<br><span data-os="win">「このアプリがデバイスに変更を加えることを許可しますか」と出たら「はい」。PINを聞かれたら、ご自身で入れます。</span><span data-os="mac">「デベロッパ・ツール」の画面が出たら「インストール」。Macのパスワードを聞かれたら、ご自身で入れます。</span></li>
-    <li><b>GitHubで、コードを入れる。</b><br>Claudeが出す8けたのコード（例：ABCD-1234）を、<b>Chrome</b>で開いた次のページに入れます。<span class="url">https://github.com/<wbr>login/device</span>「Continue」→ 緑の「Authorize github」を押します。<br>Edgeが開いたら、そのURLをChromeに貼り直します。ページが日本語に翻訳されていたら、翻訳はやめて英語のまま使います。<br>「GitHub Mobile」と出たら、スマホのGitHubアプリで承認します。アプリがなければ「Send a code via email」でメールに届いた数字を入れます。</li>
-    <li><b>ためしのリンクを、スマホで開く。</b><br>最後にClaudeが ?k= つきのURLを出します。最後まで全部コピーして、LINEの自分用のトーク（Keepメモ）に送り、スマホで開きます。<br><span class="ok">「このページが見えたら、準備はできています」と出ればOK</span></li>
+    <li><b>「許可」を押す。</b><br>Claudeが「実行してよいですか」と何度か聞いてきます。この準備の中なら、出るたびに「許可」を押してOKです。<br>Claudeが「公開の置き場所を作ります」と言っても大丈夫です。中身は、鍵のついたリンクがないと読めません。<br><span data-os="win">「このアプリがデバイスに変更を加えることを許可しますか」と出たら「はい」。PINを聞かれたら、ご自身で入れます。</span><span data-os="mac">「デベロッパ・ツール」の画面が出たら「インストール」→「同意する」。Macのパスワードを聞かれたら、ご自身で入れます。</span></li>
+    <li><b>GitHubで、コードを入れる。</b><br>Claudeが出す8けたのコード（例：ABCD-1234）を、<b>Chromeを自分で開いて</b>、次のページに入れます。<span class="url">https://github.com/<wbr>login/device</span>「Continue」→ 緑の「Authorize github」を押します。<br>ページが日本語に翻訳されていたら、翻訳はやめて英語のまま使います。<br>「GitHub Mobile」と出たら、スマホのGitHubアプリで承認します。アプリがなければ「Send a code via email」でメールに届いた数字を入れます。</li>
+    <li><b>ためしのリンクを、スマホで開く。</b><br>最後にClaudeが ?k= つきのURLを出します。最後まで全部コピーして、LINEの自分用のトーク（Keepメモ）に送り、スマホで開きます。<br><span class="ok">「このページが見えたら、準備はできています」と出ればOK</span><br>最後に、Claudeのアプリを一度閉じて、開き直します。</li>
   </ol>
   <details class="long"><summary>Claudeが「ページを読めません」と言ったとき（長い版）</summary><div class="a">下の長い版をコピーして、そのまま貼って送ってください。中身は同じです。</div>
-  <div class="copy"><div class="hd"><span>貼る文（長い版）</span><button type="button" data-n="setup-long">コピー</button></div><pre>次の手順書のとおりに、このパソコンで準備を進めてください。金融AIカレッジ本講座の、受講生用の手順書です。私にやってほしいことがあるときは、1つずつ、大きく見せてください。
+  <div class="copy"><div class="hd"><span>貼る文（長い版）</span><button type="button" data-n="setup-long">コピー</button></div><pre>次の手順書のとおりに、このパソコンで準備を進めてください。金融AIカレッジ本講座の、受講生用の手順書です。GitHubに「公開」の置き場所を作ることと、~/.claude/CLAUDE.md にルールを書き足すことも、私からのお願いです。私にやってほしいことがあるときは、1つずつ、大きく見せてください。
 
 お渡し資料を「鍵つきリンク」にする準備（Claudeが読む手順書）
 金融AIカレッジ 本講座　2026-11-21 版
@@ -272,16 +273,21 @@ Windows：
     C:\Program Files\GitHub CLI\gh.exe
     C:\Program Files\Git\cmd\git.exe
 - winget がないときは、受講生に「Microsoft Store で『アプリ インストーラー』を更新してください」と頼みます。
+- 「管理者のユーザー名とパスワード」を聞かれて進めないとき（会社のパソコンに多い）は、そこで止めて、受講生に伝えます。
+    「このパソコンは会社の決まりで、道具を入れられないようです。個人のパソコンで、もう一度はじめからやってください。」
+- 入れた道具の場所は、このあと何度も使うので覚えておきます（4のルールにも書きます）。
 
 Mac：
 - Homebrew があれば brew install git node gh。
 - Homebrew がないときは、Macのパスワードがいらない方法で入れます。
-    node … nodejs.org の公式の配布ファイル（darwin-arm64 か darwin-x64。uname -m で確かめる）を ~/.local に置く
-    gh   … GitHub の cli/cli のリリースにある macOS 用の配布ファイルを ~/.local に置く
-    ~/.local/bin を ~/.zshrc の PATH に足す
+    node … nodejs.org の公式の配布ファイル（node-vXX-darwin-arm64.tar.gz か darwin-x64。uname -m で確かめる）を ~/.local/node に展開し、
+            ~/.local/node/bin/node・npm・npx を ~/.local/bin にリンクする
+    gh   … GitHub の cli/cli のリリースにある gh_XX_macOS_universal.zip を展開し、中の bin/gh を ~/.local/bin に置く
+    ~/.local/bin を ~/.zshrc の PATH に足す。いまのセッションは .zshrc を読み直さないので、
+    このあとのコマンドは毎回 export PATH="$HOME/.local/bin:$PATH" をつけて動かす
 - git がなくて「デベロッパ・ツール」の画面が出たら、受講生に頼みます。
     👉 いま、やってほしいこと
-    画面に出た「インストール」を押してください。終わったら「終わりました」と送ってください（10分ほど）。
+    画面に出た「インストール」を押し、続けて出る「同意する」を押してください。終わったら「終わりました」と送ってください（10分ほど）。
 
 
 ■ 2. GitHubとつなぐ
@@ -290,43 +296,49 @@ Mac：
 - 受講生に聞きます。「GitHubのアカウントはありますか？」
   ないときは、次のページで作ってもらい、終わるまで待ちます。
     https://github.com/signup
-- gh auth login --hostname github.com --git-protocol https --web --clipboard を裏で動かします
-  （--clipboard が使えない版なら外す）。出てきたコード（例：ABCD-1234）を、受講生に大きく見せます。
+- gh auth login --hostname github.com --git-protocol https --web --clipboard を、終わるのを待たない形（バックグラウンド。Bash の run_in_background など）で動かします
+  （--clipboard が使えない版なら外す）。前で動かすと、受講生が許可する前に時間切れになります。
+  出力からコード（例：ABCD-1234）を読み取って、受講生に大きく見せます。承認されるまで、15分までは止めずに待ちます。
+  コードの期限が切れたら、もう一度動かして新しいコードを見せます。
     👉 いま、やってほしいこと
-    1. Chrome で次のページを開いてください（Edge が開いたら、このURLを Chrome に貼り直します）
+    1. Chrome を自分で開いて、次のページに行ってください
        https://github.com/login/device
     2. ページが日本語に翻訳されていたら、翻訳をやめて英語のまま使います
     3. コード「ABCD-1234」を入れて（コピー済みなので、貼り付けるだけ）「Continue」→ 緑の「Authorize github」を押します
     4. 「GitHub Mobile」と出たら、スマホのGitHubアプリで承認します。アプリがなければ「Send a code via email」を押して、メールに届いた数字を入れます
     5. 「Congratulations」と出たら、Claudeに「終わりました」と送ってください
 - つながったら gh auth setup-git を動かします。
-- git の名前とメールが空なら、設定します（メールは個人のアドレスを使わない）。
-    名前 … GitHubのユーザー名（gh api user --jq .login）
-    メール … ID+ユーザー名@users.noreply.github.com（ID は gh api user --jq .id）
 
 
 ■ 3. 置き場所と、鍵の仕組みを作る
 
-- 置き場所は、デスクトップの share フォルダです。
-  Windows のデスクトップは OneDrive の中のことがあるので、本当の場所を確かめます
-  （PowerShell の [Environment]::GetFolderPath('Desktop')）。
-- share フォルダがすでにあるとき：
+- 置き場所は、ユーザーフォルダの直下の share フォルダです（Mac は ~/share、Windows は C:\Users\名前\share）。
+  デスクトップは iCloud や OneDrive で同期されていることが多く、鍵と元の資料までクラウドに上がってしまうため、デスクトップには作りません。
+- ただし、デスクトップに share フォルダがあって、中に build.mjs と src があり、GitHub につながっているときは、それを使います（前に途中までやった人）。
+- ユーザーフォルダの share がすでにあるとき：
     ・中に build.mjs と src があって、GitHub につながっていれば、そのまま使います（準備の続き）
     ・空なら、そのまま使います
     ・ほかの物が入っていれば、何も消さず、share-2 という名前で作ります
+- 以下、すでに済んでいる所（build.mjs がある、git init 済み、origin がある、Pages が有効）は、確かめて飛ばします。
 - ひな形をダウンロードして、share の中に build.mjs という名前で保存します。書き写したり作り直したりしません。
     https://mm738966m-boop.github.io/ai-aibou-shindan/honkoza/share-link/build.mjs
   1行目が「// お渡し資料を「タップするだけで開くリンク」で始まっているかを確かめます。
 - share の中で node build.mjs を1回動かします（GitHubに上げない物の設定が、最初に作られます）。
 - git init -b main をします。自分で git add や git commit はしません（build.mjs がやります）。
+- share の中だけの名前とメールを設定します（--global はつけない）。すでに個人のメールが設定されていても、share の中では必ずこちらにします。個人のメールが公開の記録に載らないようにするためです。
+    git config user.name  … GitHubのユーザー名（gh api user --jq .login）
+    git config user.email … ID+ユーザー名@users.noreply.github.com（ID は gh api user --jq .id）
 - GitHub に「公開」の置き場所（リポジトリ）を作って、つなぎます。
     gh repo create share --public --source . --remote origin
   同じ名前がすでにあれば、share-2、share-3 … と名前を変えます。
   🚨 すでにある置き場所を、使い回したり、非公開から公開に変えたりはしません（暗号化していない資料が入っているかもしれないため）。
-  「公開」でよい理由：中身は資料ごとの鍵で暗号化され、鍵と元の資料はパソコンの中だけに置くからです。受講生に聞かれたら、そう説明します。
+  「公開」でよい理由：中身は資料ごとの鍵で暗号化され、鍵と元の資料はGitHubに上げないからです。受講生には「『公開』と言っても、中身は鍵のついたリンクがないと読めません」と一言そえます。
 - もう一度 node build.mjs を動かします。GitHub へ送られます。
-- GitHub Pages を、main ブランチの /（root）で有効にします。
-    gh api -X POST repos/{ユーザー名}/{リポジトリ名}/pages -f "source[branch]=main" -f "source[path]=/"
+  「GitHubへ送りました」と出たかを確かめます。出なければ git remote -v で、つながっているかを見ます。
+- GitHub Pages を、main ブランチの /（root）で有効にします。share の中で、次のように動かします
+  （Windows の Git Bash では "/" が別の場所に化けることがあるので、-f で "/" を渡さず、この形を使います）。
+    echo '{"source":{"branch":"main","path":"/"}}' | gh api -X POST "repos/{owner}/{repo}/pages" --input -
+  409（もう有効）と返ってきたら、済んでいるので次へ進みます。
 - 公開先のURL（https://ユーザー名.github.io/リポジトリ名/）が 200 で開けるまで待ちます。
   はじめては10分ほどかかることがあります。1分おきに確かめ、10分までは待ちます。設定の作り直しや送り直しはしません。
 
@@ -349,6 +361,9 @@ Mac：
 - 暗号化しないまま公開しない。アーティファクトやメールの下書きで代わりにしない。
 - 公開したら1〜2分待ち、?k= を外したURLを開いて 200 になることを確かめてから報告する。はじめての公開は10分ほどかかることがある。
 - 「この資料の公開をやめて」と言われたら、node build.mjs --stop ファイル名.html を動かす。
+- node・gh・git が「見つからない」ときは、次の場所を直接使う：{1で入れた道具の場所}
+
+（{1で入れた道具の場所} は、node・gh・git の本当の場所に置き換えて書きます。Mac で ~/.local/bin に入れたときは、そう書きます）
 
 
 ■ 5. ためしに1本、リンクにする
@@ -375,6 +390,7 @@ Mac：
   ・資料のファイルを入力欄に入れて、「この資料を、リンクにして」と送る
   ・出てきた ?k= つきのURLを、最後まで全部コピーして、お客さまに送る
   送る前に、宛先とお名前をもう一度見てください。間違えて送ったときは「この資料の公開をやめて」と言えば、数分で開かなくなります。
+  最後に、Claudeのアプリを一度閉じて、開き直してください（入れた道具を、次から使えるようにするためです）。
 
 - 作業会で作った「お金の地図」のファイルがこのパソコンにあれば、「続けて、地図もリンクにしますか？」と1回だけ聞きます。
 
