@@ -212,26 +212,30 @@ document.title='本講座 2期 勉強会にご参加の方へ｜金融AIカレ�
 
 /* 回ごとの期限（?g=）a=申込・相談予約 q=支払い（相談を受けた方も）。g が無いときは最後の回で扱う */
 var DL={
- '1111':{a:'2026-11-17',at:'11月17日（火）',q:'2026-11-24',qt:'11月24日（火）'},
- '1113':{a:'2026-11-17',at:'11月17日（火）',q:'2026-11-24',qt:'11月24日（火）'},
- '1115':{a:'2026-11-19',at:'11月19日（木）',q:'2026-11-26',qt:'11月26日（木）'},
- '0924':{a:'2026-11-17',at:'11月17日（火）',q:'2026-11-24',qt:'11月24日（火）',sep:1}};  /* 0924＝9月（1期の募集）の勉強会に参加して申し込まなかった方。11/14 12時に案内（本人OK 11/14） */
-var g=(location.search.match(/[?&]g=([0-9]{4})/)||[])[1];/* 1111/1113/1115/0924 */if(!DL[g])g='1115';var D=DL[g];
+ '1111':{a:'2026-11-17',at:'11月17日（火）',q:'2026-11-26',qt:'11月26日（木）',qh:12,last:1},
+ '1113':{a:'2026-11-17',at:'11月17日（火）',q:'2026-11-26',qt:'11月26日（木）',qh:12,last:1},
+ '1115':{a:'2026-11-19',at:'11月19日（木）',q:'2026-11-26',qt:'11月26日（木）',qh:12,last:1},  /* 11/25 本人OK：11月組は「相談を受けた方のお支払い期限にあわせて」全員の最後の受付を11/26（木）12:00に */
+ '1129':{a:'2026-12-03',at:'12月3日（木）',q:'2026-12-10',qt:'12月10日（木）'},
+ '1201':{a:'2026-12-05',at:'12月5日（土）',q:'2026-12-12',qt:'12月12日（土）'},
+ '1202':{a:'2026-12-06',at:'12月6日（日）',q:'2026-12-13',qt:'12月13日（日）'},
+ '0924':{a:'2026-11-17',at:'11月17日（火）',q:'2026-11-24',qt:'11月24日（火）',sep:1},
+ '1021':{a:'2026-11-30',at:'11月30日（月）',q:'2026-11-30',qt:'11月30日（月）',n:'9日間'}};  /* 1021＝10月の勉強会に出て個別相談まで進んだ方（岡さん・金田さん・若佐さん・和田さん）。11/20 1対1で「乗り換えOK・期限11/21」→11/22 本人「急すぎる」で11/30（月）23:59へ延長 */  /* 0924＝9月（1期の募集）の勉強会に参加して申し込まなかった方。11/14 12時に案内（本人OK 11/14） */
+var g=(location.search.match(/[?&]g=([0-9]{4})/)||[])[1];/* 1111/1113/1115/1129/1201/1202/0924/1021 */if(!DL[g])g='1115';var D=DL[g];
 /* 期限の日の23:59:59（日本時間）までのミリ秒 */
-function msLeft(ymd){var p=ymd.split('-');return Date.UTC(+p[0],+p[1]-1,+p[2],14,59,59)-Date.now();}
-var stage=msLeft(D.a)>=0?'open':(msLeft(D.q)>=0?'soudan':'closed');
-var target=stage==='open'?D.a:(stage==='soudan'?D.q:null);
+function msLeft(ymd,hh){var p=ymd.split('-');return (hh?Date.UTC(+p[0],+p[1]-1,+p[2],hh-9,0,0):Date.UTC(+p[0],+p[1]-1,+p[2],14,59,59))-Date.now();}/* hh＝その日の hh:00（日本時間）で締める */
+var stage=msLeft(D.a)>=0?'open':(msLeft(D.q,D.qh)>=0?'soudan':'closed');
+var target=stage==='open'?D.a:(stage==='soudan'?D.q:null);var targetH=stage==='soudan'?D.qh:0;var QT=D.qh?D.qh+':00':'23:59';
 function parts(ms){var s=Math.max(0,Math.floor(ms/1000));return [Math.floor(s/86400),Math.floor(s%86400/3600),Math.floor(s%3600/60),s%60];}
 function pad(n){return (n<10?'0':'')+n;}
 function cdHead(){
   if(stage==='closed')return '<p class="msg">この参加費での受付は、終了しました。</p>';
-  var t=stage==='open'?'お申込み・個別相談のご予約は<br><b>'+D.at+' 23:59</b> まで':'個別相談をご予約の方のお申込み・お支払いは<br><b>'+D.qt+' 23:59</b> まで';
+  var t=stage==='open'?'お申込み・個別相談のご予約は<br><b>'+D.at+' 23:59</b> まで':(D.last?'勉強会にご参加の方の<b>最後の受付</b>は<br><b>'+D.qt+' '+QT+'</b> まで':'個別相談をご予約の方のお申込み・お支払いは<br><b>'+D.qt+' '+QT+'</b> まで');
   return '<p class="t">'+t+'</p><div class="boxes" role="timer" aria-label="締切までの残り時間"><div class="bx"><b data-u="0">0</b><small>日</small></div><div class="bx"><b data-u="1">00</b><small>時間</small></div><div class="bx"><b data-u="2">00</b><small>分</small></div><div class="bx"><b data-u="3">00</b><small>秒</small></div></div>'
     +(stage==='open'?'<span class="sm">期限のあとは、一般の参加費になります。</span>':'');
 }
 function formDl(){
   return '<div><span>お申込み・相談の<br class="sp">ご予約</span><span><b>'+D.at+'</b>まで</span></div>'
-    +'<div><span>お支払い<br class="sp"><span class="nt">（相談を受けた方も）</span></span><span><b>'+D.qt+'</b>まで</span></div>';
+    +'<div><span>お支払い<br class="sp"><span class="nt">（相談を受けた方も）</span></span><span><b>'+D.qt+(D.qh?' '+QT:'')+'</b>まで</span></div>';
 }
 function roll(str){/* 数字を1桁ずつ回す */
   return str.split('').map(function(c){
@@ -257,9 +261,9 @@ function run(tries){
   +  '<p class="orn">ご招待状</p>'
   +  '<div id="fx-card"><span class="cn c1"></span><span class="cn c2"></span><span class="cn c3"></span><span class="cn c4"></span>'
   +    '<div id="fx-wax" aria-hidden="true"><b class="fx-foil">森</b></div>'
-  +    '<p class="to">'+(D.sep?'9月の勉強会にご参加の方だけ':'勉強会にご参加の方だけ')+'<br class="sp"><span class="pc">・</span>3日間のご案内</p>'
+  +    '<p class="to">'+(D.sep?'9月の勉強会にご参加の方だけ':'勉強会にご参加の方だけ')+'<br class="sp"><span class="pc">・</span>'+(D.n||'3日間')+'のご案内</p>'
   +    '<p class="course">金融AIカレッジ　本講座 2期<br class="sp"><span class="pc">　</span>2027年1月14日（木）開講</p>'
-  +    '<h1>3日間だけの<br>特別参加費で、<br><span class="fx-foil">お迎えします。</span></h1>'
+  +    '<h1>'+(D.n||'3日間')+'だけの<br>特別参加費で、<br><span class="fx-foil">お迎えします。</span></h1>'
   +    '<div class="div"><i></i></div>'
   +    '<p class="w">2期の参加費（一般）<br class="sp"><span class="pc">　</span><span class="nw"><s>598,000円</s>（税込）</span></p>'
   +    '<span class="lb">勉強会にご参加の方だけの特別参加費</span>'
@@ -280,7 +284,7 @@ function run(tries){
   +      '<p>9月には「2期からは598,000円」とお伝えしていました。2期の参加費は、いまもその金額です。<br>そのうえで、勉強会に来てくださった方だけ、3日間限定の特別参加費でお迎えすることにしました。</p>'
     :'<p>勉強会では、90分、最後までお付き合いいただき、ありがとうございました。</p>'
   +      '<p>本講座の参加費をお伝えしたとき、真剣に考えてくださる方の顔が、画面越しに見えていました。</p>')
-  +    (D.sep?'<p>勉強会で「右腕と左腕」を一度見ている方は、1月14日の初回から、同じ景色で始められます。</p>':'<p>勉強会で「右腕と左腕」を一度見ている方は、1月14日の初回から、同じ景色で始められます。<br>だから、勉強会に来てくださった方だけに、3日間限定の特別参加費をご用意しました。</p>')
+  +    (D.sep?'<p>勉強会で「右腕と左腕」を一度見ている方は、1月14日の初回から、同じ景色で始められます。</p>':'<p>勉強会で「右腕と左腕」を一度見ている方は、1月14日の初回から、同じ景色で始められます。<br>だから、勉強会に来てくださった方だけに、'+(D.n||'3日間')+'限定の特別参加費をご用意しました。</p>')
   +    '<p>作業会の12回も、個別セッションの2回も、2期の本講座の中身そのままです。</p>'
   +    (D.sep?'<p>3か月後の4月。夜の時間が、自分のために使えるようになっている。<br>そんな春を、一緒につくれたらうれしいです。</p>'
   +      '<p>1月14日の夜、画面の向こうで、もう一度お会いできるのを待っています。</p>'
@@ -312,7 +316,7 @@ function run(tries){
   +'<div class="fx-sec fx-rv"><span class="fx-kick">参加費</span>'+h2('勉強会にご参加の方の','参加費')
   +  '<div class="fx-pr"><div class="hd"><span>本講座（3か月）</span></div><div><span>2期の参加費（一般）</span><b>598,000円</b></div><div class="me"><span>勉強会にご参加の方</span><b>498,000円</b></div></div>'
   +  '<div class="fx-pr"><div class="hd"><span>本講座＋（個別伴走6回）</span></div><div><span>2期の参加費（一般）</span><b>898,000円</b></div><div class="me"><span>勉強会にご参加の方</span><b>798,000円</b></div></div>'
-  +  '<p class="fx-txt">いずれも税込です。勉強会にご参加の方だけの特別参加費です。ご案内から3日間だけの参加費で、期限のあとは、一般の参加費になります。</p>'
+  +  '<p class="fx-txt">いずれも税込です。勉強会にご参加の方だけの特別参加費です。ご案内から'+(D.n||'3日間')+'だけの参加費で、期限のあとは、一般の参加費になります。</p>'
   +  '<p class="fx-txt">本講座＋は、本講座の全部に、本講座とは別の個別伴走Zoom 6回と、診断ページの構築の代行がつきます。作る時間が取れない方、早く公開したい方に向けたコースです。フル伴走のため5名までです（本講座の定員20名に含みます）。</p>'
   +  '<div class="fx-facts fx-st"><div><b>1/14</b>開講（木）</div><div><b>毎週木曜</b>夜8時〜9時半</div><div><b>20名</b>定員</div></div>'
   +  '<p class="fx-txt">定員はこのご案内も含めて20名です。定員に達したら、期限の前でも締め切ります。</p>'
@@ -398,7 +402,7 @@ function run(tries){
   /* 残り時間（毎秒）。開いたまま期限を過ぎたら1回だけ再読み込みして切り替える */
   if(target){
     var els=[].slice.call(document.querySelectorAll('#fx-cd [data-u]')),mini=document.getElementById('fx-mini');
-    var tick=function(){var ms=msLeft(target);
+    var tick=function(){var ms=msLeft(target,targetH);
       if(ms<0){try{if(!sessionStorage.getItem('fxR'+target)){sessionStorage.setItem('fxR'+target,'1');location.reload();return;}}catch(e){}}
       var p=parts(ms);var v=[String(p[0]),pad(p[1]),pad(p[2]),pad(p[3])];
       els.forEach(function(e,i){if(e.textContent!==v[i]){e.textContent=v[i];if(!RM&&i<3){e.classList.remove('tick');void e.offsetWidth;e.classList.add('tick');}}});
